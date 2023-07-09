@@ -21,3 +21,4 @@ export const Fieldset = React.forwardRef<HTMLFieldSetElement, FieldsetProps>(
     )
   }
 )
+Fieldset.displayName = 'Fieldset'

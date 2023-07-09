@@ -55,3 +55,4 @@ export const AppDialog = React.forwardRef<HTMLDivElement, AppDialogProps>(
     )
   }
 )
+AppDialog.displayName = 'AppDialog'

@@ -29,6 +29,7 @@ export const PageToolbar = React.forwardRef<HTMLDivElement, PageToolbarProps>(
     )
   }
 )
+PageToolbar.displayName = 'PageToolbar'
 
 interface PageToolbarStartProps extends React.HTMLAttributes<HTMLDivElement> {
   buttons?: PageToolbarButton[]
@@ -41,6 +42,7 @@ export const PageToolbarStart = React.forwardRef<
 >((props, ref) => {
   return <div ref={ref} {...props}></div>
 })
+PageToolbarStart.displayName = 'PageToolbarStart'
 
 export const PageToolbarCenter = React.forwardRef<
   HTMLDivElement,
@@ -48,6 +50,7 @@ export const PageToolbarCenter = React.forwardRef<
 >(({ className, ...props }, ref) => {
   return <div className={cn('mx-auto', className)} ref={ref} {...props}></div>
 })
+PageToolbarCenter.displayName = 'PageToolbarCenter'
 
 export const PageToolbarEnd = React.forwardRef<
   HTMLDivElement,
@@ -55,3 +58,4 @@ export const PageToolbarEnd = React.forwardRef<
 >(({ className, ...props }, ref) => {
   return <div className={cn('ml-auto', className)} ref={ref} {...props}></div>
 })
+PageToolbarEnd.displayName = 'PageToolbarEnd'

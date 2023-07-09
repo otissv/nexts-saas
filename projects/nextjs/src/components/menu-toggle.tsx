@@ -15,3 +15,4 @@ export const MenuToggle = React.forwardRef<HTMLButtonElement, MenuToggleProps>(
     )
   }
 )
+MenuToggle.displayName = 'MenuToggle'

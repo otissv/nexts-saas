@@ -22,3 +22,4 @@ export const AppLink = React.forwardRef<HTMLAnchorElement, AppLinkProps>(
     )
   }
 )
+AppLink.displayName = 'AppLink'

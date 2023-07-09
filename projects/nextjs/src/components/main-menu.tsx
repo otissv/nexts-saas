@@ -32,6 +32,7 @@ export const LoggedInMenu = React.forwardRef<HTMLElement, LoggedInMenuProps>(
     )
   }
 )
+LoggedInMenu.displayName = 'LoggedInMenu'
 
 export interface LoggedOutMenuProps extends React.RefAttributes<HTMLElement> {}
 
@@ -103,3 +104,4 @@ export const MenuLink = React.forwardRef<HTMLLIElement, MenuLinkProps>(
     )
   }
 )
+MenuLink.displayName = 'MenuLink'

@@ -47,7 +47,7 @@ export const BackButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
     )
   }
 )
-
+BackButton.displayName = 'BackButton'
 interface DeleteButtonProps extends ButtonProps {
   cancel: string
   description: string
@@ -128,6 +128,7 @@ export const DeleteButton = React.forwardRef<
     )
   }
 )
+DeleteButton.displayName = 'DeleteButton'
 
 export const EditButton = React.forwardRef<HTMLAnchorElement, LinkButtonProps>(
   ({ className, children, href, variant, ...props }, ref) => {
@@ -147,6 +148,7 @@ export const EditButton = React.forwardRef<HTMLAnchorElement, LinkButtonProps>(
     )
   }
 )
+EditButton.displayName = 'EditButton'
 
 export const NewButton = React.forwardRef<HTMLAnchorElement, LinkButtonProps>(
   ({ className, children, href, variant, ...props }, ref) => {
@@ -168,6 +170,7 @@ export const NewButton = React.forwardRef<HTMLAnchorElement, LinkButtonProps>(
     )
   }
 )
+NewButton.displayName = 'NewButton'
 
 export const SaveButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, children, ...props }, ref) => {
@@ -187,6 +190,7 @@ export const SaveButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
     )
   }
 )
+SaveButton.displayName = 'SaveButton'
 
 export const SendIconButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, children, ...props }, ref) => {
@@ -205,3 +209,4 @@ export const SendIconButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
     )
   }
 )
+SendIconButton.displayName = 'SendIconButton'

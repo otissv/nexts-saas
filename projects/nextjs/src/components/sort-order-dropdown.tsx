@@ -106,3 +106,4 @@ export const SortOrderDropdown = <Schema extends Record<string, any>>({
     </DropdownMenu>
   )
 }
+SortOrderDropdown.displayName = 'SortOrderDropdown'

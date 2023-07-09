@@ -38,3 +38,4 @@ export const Markdown = React.forwardRef<HTMLElement, MarkdownProps>(
     )
   }
 )
+Markdown.displayName = 'Markdown'

@@ -7,3 +7,4 @@ export const Maybe = ({
 }) => {
   return check || children ? <>{children}</> : null
 }
+Maybe.displayName = 'Maybe'
