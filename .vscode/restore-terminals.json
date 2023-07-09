@@ -1,0 +1,31 @@
+{
+  "artificialDelayMilliseconds": 300,
+  "keepExistingTerminalsOpen": false,
+  "runOnStartup": true,
+  "terminals": [
+    {
+      "splitTerminals": [
+        {
+          "name": "root",
+          "commands": ["git status"]
+        }
+      ]
+    },
+    {
+      "splitTerminals": [
+        {
+          "name": "nextjs",
+          "commands": ["cd projects/nextjs"]
+        }
+      ]
+    },
+    {
+      "splitTerminals": [
+        {
+          "name": "nextjs-tests",
+          "commands": ["cd projects/nextjs-tests"]
+        }
+      ]
+    }
+  ]
+}

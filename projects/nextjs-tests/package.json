@@ -1,0 +1,24 @@
+{
+  "name": "nextjs-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:dev": "playwright test",
+    "test:e2e": "start-server-and-test \"(cd ../nextjs && npm run build && npm run start)\" http://localhost:3000 \"playwright test'\"",
+    "test:ui": "playwright test --ui",
+    "test:show": "playwright show-report",
+    "test:codegen": "playwright codegen http://localhost:3000"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@playwright/test": "^1.35.0",
+    "dotenv": "^16.0.3",
+    "micromark": "^3.2.0",
+    "nextjs": "workspace:*",
+    "playwright-extra": "^4.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "start-server-and-test": "^2.0.0"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "name": "projects-monorepo",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "configs/*",
+    "projects/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prepare": "husky install",
+    "test": "turbo run test",
+    "test:dev": "turbo run test:dev --parallel",
+    "test:e2e": "turbo run test:e2e --parallel",
+    "test:codegen": "turbo run test:codegen --parallel",
+    "purge": "rimraf node_modules; npx turbo run purge",
+    "create": "ts-node ./projects/scripts/libs/create-project.ts"
+  },
+  "devDependencies": {
+    "eslint-config-custom": "workspace:*",
+    "prettier": "latest",
+    "turbo": "latest"
+  },
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "ts-node": "^10.9.1"
+  },
+  "packageManager": "pnpm@7.2.1",
+  "lint-staged": {
+    "config/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix"
+    ],
+    "projects/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix"
+    ],
+    "*.json}": [
+      "prettier --write"
+    ]
+  }
+}
