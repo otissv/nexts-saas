@@ -23,13 +23,17 @@ import {
 } from 'drizzle-orm'
 import { AnyPgTable, SelectedFieldsFlat } from 'drizzle-orm/pg-core'
 
-import { ErrorResponse, SelectProps, SuccessResponse } from '@/types'
+import {
+  ErrorResponse,
+  SelectProps,
+  SuccessResponse,
+} from '@/database/pg/types.pg'
 import {
   serverResponse,
   errorResponse,
   selectColumns,
 } from '@/lib/utils-server-only'
-import { PostgresDatabase } from '@/database/connection'
+import { PostgresDatabase } from '@/database/pg/connection.pg'
 import { env } from '@/config/env'
 
 interface Type {

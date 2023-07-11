@@ -13,11 +13,15 @@ import {
   OauthProviderSignup,
   OauthProviderInsert,
 } from './oauth-providers.types'
-import { ErrorResponse, SelectProps, SuccessResponse } from '@/types'
-import { PostgresDatabase } from '@/database/connection'
+import {
+  ErrorResponse,
+  SelectProps,
+  SuccessResponse,
+} from '@/database/pg/types.pg'
+import { PostgresDatabase } from '@/database/pg/connection.pg'
 import { serverResponse, errorResponse } from '@/lib/utils-server-only'
 import { tenantsSql } from '@/schema/tenant.sql'
-import { dbController } from '@/database/db.module'
+import { dbController } from '@/database/pg/db-controller.pg'
 import {
   oauthProviderSignupValidate,
   oauthProviderInsertValidate,

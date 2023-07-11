@@ -1,6 +1,6 @@
-import { PostgresDatabase } from '@/database/connection'
+import { PostgresDatabase } from '@/database/pg/connection.pg'
 import { users as usersSchema } from '@/schema/app.schema'
-import { dbController } from '@/database/db.module'
+import { dbController } from '@/database/pg/db-controller.pg'
 
 import {
   userInsertValidate,

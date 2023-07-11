@@ -18,7 +18,7 @@ import { AppLink } from '@/components/app-link'
 import { DeleteButton, EditButton } from '@/components/buttons'
 import { useTranslate } from '@/components/translate-client'
 import { SortOrderDropdown } from '@/components/sort-order-dropdown'
-import { SeverReturnType, PageInfo } from '@/types'
+import { SeverReturnType, PageInfo } from '@/database/pg/types.pg'
 import { entriesToArray } from '@/lib/entries'
 import { useMap } from '@/hooks/useMap'
 

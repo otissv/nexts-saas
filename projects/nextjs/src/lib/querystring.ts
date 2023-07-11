@@ -1,4 +1,4 @@
-import { PageInfo } from '@/types'
+import { PageInfo } from '@/database/pg/types.pg'
 
 export function createQueryString<Schema>(params: {
   page?: PageInfo<Schema>['page'] | string

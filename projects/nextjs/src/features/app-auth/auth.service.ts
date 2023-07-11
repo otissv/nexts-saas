@@ -1,4 +1,4 @@
-import { PostgresDatabase } from '@/database/connection'
+import { PostgresDatabase } from '@/database/pg/connection.pg'
 import { SQL, eq } from 'drizzle-orm'
 
 import { checkResultHasData, errorResponse } from '@/lib/utils-server-only'
@@ -53,7 +53,7 @@ export function authService(db: PostgresDatabase) {
             )
           )
           .then(hashPassword)
-          .then(({ data }) =>
+          .then(({ data }: { data: Signup }) =>
             users
               .insert({ data: data as any as UserInsert })
               .catch(errorResponse(422))

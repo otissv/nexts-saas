@@ -3,7 +3,7 @@
 import { serverContext } from '@/app/context-server-only'
 import { UserSchema } from '@/schema/app.schema'
 import { authorize, errorResponse } from '@/lib/utils-server-only'
-import { ActionProps, SeverReturnType } from '@/types'
+import { ActionProps, SeverReturnType } from '@/database/pg/types.pg'
 import { User, UserInsert, UserUpdate } from './users.types'
 
 const { usersService } = serverContext()

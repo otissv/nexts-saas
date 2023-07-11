@@ -11,7 +11,7 @@ import {
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { usePushQueryString } from '@/hooks/querystring-hook'
-import { PageInfo } from '@/types'
+import { PageInfo } from '@/database/pg/types.pg'
 
 export interface PaginationInterface<DataType>
   extends React.HTMLAttributes<HTMLDivElement> {

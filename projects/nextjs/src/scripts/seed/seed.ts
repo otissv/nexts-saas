@@ -1,4 +1,4 @@
-import { connection } from '../../database/connection'
+import { connection } from '../../database/pg/connection.pg'
 import { oauthProviders, tenants, users } from '../../schema/app.schema'
 import { data } from './data'
 

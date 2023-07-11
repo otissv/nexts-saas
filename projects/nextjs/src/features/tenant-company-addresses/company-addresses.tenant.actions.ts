@@ -10,7 +10,7 @@ import {
   TenantCompanyAddressUpdate,
 } from '@/features/tenant-company-addresses/company-addresses.tenant.types'
 import { ServerSession, authOptions } from '@/features/app-auth/auth.options'
-import { SeverReturnType, ActionProps } from '@/types'
+import { SeverReturnType, ActionProps } from '@/database/pg/types.pg'
 
 const { tenantCompanyAddressService } = serverContext()
 

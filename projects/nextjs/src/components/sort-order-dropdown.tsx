@@ -15,7 +15,7 @@ import {
   usePushQueryString,
   useGetSearchParams,
 } from '@/hooks/querystring-hook'
-import { SortDirection } from '@/types'
+import { SortDirection } from '@/database/pg/types.pg'
 
 export interface SortOrderDropdownProps {
   name: string

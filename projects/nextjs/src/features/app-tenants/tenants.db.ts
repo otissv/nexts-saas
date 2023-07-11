@@ -1,13 +1,17 @@
 import { SQL, eq } from 'drizzle-orm'
 
-import { PostgresDatabase } from '@/database/connection'
+import { PostgresDatabase } from '@/database/pg/connection.pg'
 import { errorResponse } from '@/lib/utils-server-only'
-import { ErrorResponse, SelectProps, SuccessResponse } from '@/types'
+import {
+  ErrorResponse,
+  SelectProps,
+  SuccessResponse,
+} from '@/database/pg/types.pg'
 import { Tenant } from './tenants.types'
 import { users as usersSchema } from 'migrations/schema/app.schema'
 import { User } from '@/features/app-users/users.types'
 import { tenants as tenantsSchema } from '@/schema/app.schema'
-import { dbController } from '@/database/db.module'
+import { dbController } from '@/database/pg/db-controller.pg'
 import {
   userInsertValidate,
   userUpdateValidate,

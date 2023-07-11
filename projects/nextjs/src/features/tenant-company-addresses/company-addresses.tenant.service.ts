@@ -1,8 +1,8 @@
 import { eq, SQL } from 'drizzle-orm'
 import { SelectedFieldsFlat } from 'drizzle-orm/pg-core'
 
-import { SelectProps, SeverReturnType } from '@/types'
-import { PostgresDatabase } from '@/database/connection'
+import { SelectProps, SeverReturnType } from '@/database/pg/types.pg'
+import { PostgresDatabase } from '@/database/pg/connection.pg'
 import { errorResponse } from '@/lib/utils-server-only'
 import { tenantCompanyAddressDb } from '@/features/tenant-company-addresses/company-addresses.tenant.db'
 import {

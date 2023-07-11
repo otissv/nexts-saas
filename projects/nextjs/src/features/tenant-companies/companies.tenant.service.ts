@@ -2,11 +2,11 @@ import 'server-only'
 
 import { SelectedFieldsFlat } from 'drizzle-orm/pg-core'
 
-import { PostgresDatabase } from '@/database/connection'
+import { PostgresDatabase } from '@/database/pg/connection.pg'
 import { tenantCompanyDb } from '@/features/tenant-companies/companies.tenant.db'
 
 import { errorResponse } from '@/lib/utils-server-only'
-import { SelectProps, SeverReturnType } from '@/types'
+import { SelectProps, SeverReturnType } from '@/database/pg/types.pg'
 import {
   TenantCompany,
   TenantCompanyInsert,

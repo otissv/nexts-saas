@@ -9,7 +9,7 @@ import { revalidatePath as revalidateCachePath } from 'next/cache'
 
 import { env } from '@/config/env'
 import { createErrorResponse } from '@/lib/response-error'
-import { ErrorResponse, SuccessResponse } from '@/types'
+import { ErrorResponse, SuccessResponse } from '@/database/pg/types.pg'
 
 const { isDev } = env()
 

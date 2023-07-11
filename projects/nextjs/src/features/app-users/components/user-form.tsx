@@ -15,7 +15,7 @@ import { SaveButton } from '@/components/buttons'
 import { cn, isDev } from '@/lib/utils'
 import { useErrorNotify, useSuccessNotify } from '@/components/notify'
 import { useTranslate } from '@/components/translate-client'
-import { ErrorResponse, SuccessResponse } from '@/types'
+import { ErrorResponse, SuccessResponse } from '@/database/pg/types.pg'
 
 export interface UserFormProps {
   name: string

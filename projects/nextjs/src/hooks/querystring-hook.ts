@@ -3,7 +3,7 @@
 import * as React from 'react'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
-import { PageInfo } from '@/types'
+import { PageInfo } from '@/database/pg/types.pg'
 import { createQueryString, decodeSearchParams } from '@/lib/querystring'
 
 export function useGetSearchParams() {
