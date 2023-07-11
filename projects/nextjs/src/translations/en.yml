@@ -1,9 +1,13 @@
 ui:
   misc:
     notFound: Not found
+    sort:
+      ascending: Ascending
+      descending: Descending
+    tryAgain: Try again
 
   menu:
-    loggedOut:
+    marketing:
       about:
         a:
           content: About
@@ -19,7 +23,10 @@ ui:
       login:
         a:
           content: Login
-    loggedIn:
+      signout:
+        a:
+          content: Login
+    admin:
       page:
         a:
           content: Pages
@@ -136,7 +143,7 @@ ui:
       breadcrumb:
         label: Companies
 
-    company:
+    tenantCompany:
       new:
         heading: New Company
         breadcrumb:
@@ -184,12 +191,12 @@ ui:
             title: Something went wrong
             description: Company form was not save.
 
-    addresses:
+    tenantAddresses:
       heading: Company Addresses
       breadcrumb:
         label: Addresses
 
-    address:
+    tenantAddress:
       new:
         heading: New Address
         breadcrumb:
@@ -252,6 +259,17 @@ ui:
       heading: Users
       list:
         notFound: No Users Found
+      table:
+        caption: A list of users
+        headings:
+          id:
+            content: ID
+          name:
+            content: Name
+          email:
+            content: Email
+          action:
+            content: Action
 
     user:
       heading: User

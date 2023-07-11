@@ -13,64 +13,64 @@ export async function menu() {
     marketing: [
       {
         id: 1,
-        label: t('loggedOut.about.a.content'),
+        label: t('marketing.about.a.content'),
         href: '/about',
       },
       {
         id: 2,
-        label: t('loggedOut.contact.a.content'),
+        label: t('marketing.contact.a.content'),
         href: '/contact',
       },
       {
         id: 3,
-        label: t('loggedOut.pricing.a.content'),
+        label: t('marketing.pricing.a.content'),
         href: '/pricing',
       },
       {
         id: 4,
-        label: t('loggedOut.pricing.a.content'),
+        label: t('marketing.pricing.a.content'),
         href: '/pricing',
       },
       {
         id: 5,
-        label: t('loggedOut.blog.a.content'),
+        label: t('marketing.blog.a.content'),
         href: '/blog',
       },
     ],
     admin: [
       {
         id: 1,
-        label: t('loggedIn.page.a.content'),
+        label: t('admin.page.a.content'),
         href: '/admin/pages',
       },
       {
         id: 2,
-        label: t('loggedIn.company.a.content'),
+        label: t('admin.company.a.content'),
         href: '/admin/companies',
       },
       {
         id: 4,
-        label: t('loggedIn.addresses.a.content'),
+        label: t('admin.addresses.a.content'),
         href: '/admin/companies/addresses',
       },
       {
         id: 5,
-        label: t('loggedIn.users.a.content'),
+        label: t('admin.users.a.content'),
         href: '/admin/users',
       },
       {
         id: 6,
-        label: t('loggedIn.menu.a.content'),
+        label: t('admin.menu.a.content'),
         href: '/admin/menu',
       },
       {
         id: 7,
-        label: t('loggedIn.media.a.content'),
+        label: t('admin.media.a.content'),
         href: '/admin/media',
       },
       {
         id: 8,
-        label: t('loggedIn.team.a.content'),
+        label: t('admin.team.a.content'),
         href: '/admin/team',
       },
     ],

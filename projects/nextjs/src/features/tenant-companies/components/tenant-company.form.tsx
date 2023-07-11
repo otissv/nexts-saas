@@ -37,7 +37,7 @@ export const CompanyForm = ({
   className,
   ...props
 }: CompanyFormProps) => {
-  const t = useTranslate('ui.pages.company')
+  const t = useTranslate('ui.pages.tenantCompany')
   const errorNotify = useErrorNotify()
   const successNotify = useSuccessNotify()
   const pathname = usePathname()

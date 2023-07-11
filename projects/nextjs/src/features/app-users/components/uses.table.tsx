@@ -44,7 +44,7 @@ export function UsersTable({
   onDelete,
 }: UsersTableProps) {
   const [users, setUsers] = useMap(data)
-  const t = useTranslate('ui.pages.user.notifications')
+  const t = useTranslate('ui.pages')
   const [isPending, startTransition] = React.useTransition()
 
   const handleDelete = (id: number) => async () => {
@@ -105,10 +105,10 @@ export function UsersTable({
             className="mr-2 p-2 hover:bg-foreground hover:text-gray-950 h-9 w-9"
           />
           <DeleteButton
-            title={t('delete.alert.title')}
-            description={t('delete.alert.description')}
-            cancel={t('delete.alert.buttons.cancel')}
-            ok={t('delete.alert.buttons.ok')}
+            title={t('user.notifications.delete.alert.title')}
+            description={t('user.notifications.delete.alert.description')}
+            cancel={t('user.notifications.delete.alert.buttons.cancel')}
+            ok={t('user.notifications.delete.alert.buttons.ok')}
             onAction={handleDelete(id as number)}
             variant="ghost"
             className="hover:bg-destructive h-9 w-9 hover:text-default"
@@ -126,15 +126,16 @@ export function UsersTable({
     )
   }
 
+  //TODO: translate
   return (
     <Maybe check={Boolean(users)}>
       <Table>
         {total ? (
           <TableCaption>
-            A list of {users.size} Users of {total}
+            {users.size} of {total} {t('users.breadcrumb')}
           </TableCaption>
         ) : (
-          <TableCaption>A list of users</TableCaption>
+          <TableCaption>{t('table.caption')}</TableCaption>
         )}
 
         <TableHeader>
@@ -145,7 +146,7 @@ export function UsersTable({
                 isPending={isPending}
                 startTransition={startTransition}
               >
-                ID
+                {t('users.table.headings.id.content')}
               </SortOrderDropdown>
             </TableHead>
             <TableHead className="pl-0">
@@ -154,7 +155,7 @@ export function UsersTable({
                 isPending={isPending}
                 startTransition={startTransition}
               >
-                Name
+                {t('users.table.headings.name.content')}
               </SortOrderDropdown>
             </TableHead>
             <TableHead className="pl-0">
@@ -163,10 +164,12 @@ export function UsersTable({
                 isPending={isPending}
                 startTransition={startTransition}
               >
-                Email
+                {t('users.table.headings.email.content')}
               </SortOrderDropdown>
             </TableHead>
-            <TableHead className="pl-0 text-right text-base">Actions</TableHead>
+            <TableHead className="pl-0 text-right text-base">
+              {t('users.table.headings.action.content')}
+            </TableHead>
           </TableRow>
         </TableHeader>
 

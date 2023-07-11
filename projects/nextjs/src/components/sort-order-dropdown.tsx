@@ -16,6 +16,7 @@ import {
   useGetSearchParams,
 } from '@/hooks/querystring-hook'
 import { SortDirection } from '@/database/pg/types.pg'
+import { useTranslate } from '@/components/translate-client'
 
 export interface SortOrderDropdownProps {
   name: string
@@ -31,6 +32,7 @@ export const SortOrderDropdown = <Schema extends Record<string, any>>({
   startTransition,
 }: SortOrderDropdownProps) => {
   const pushQueryString = usePushQueryString<Schema>(startTransition)
+  const t = useTranslate('ui.misc')
 
   const searchParams = useGetSearchParams()
   const item = searchParams?.orderBy?.find(([key]: string[]) => key === name)
@@ -87,7 +89,8 @@ export const SortOrderDropdown = <Schema extends Record<string, any>>({
             onClick={handleOnClick('asc')}
             disabled={isPending}
           >
-            <ArrowUpAZ className="inline-flex h-5 w-5 mr-1" /> Ascending
+            <ArrowUpAZ className="inline-flex h-5 w-5 mr-1" />{' '}
+            {t('sort.ascending')}
           </Button>
         </DropdownMenuItem>
         <DropdownMenuItem>
@@ -99,7 +102,8 @@ export const SortOrderDropdown = <Schema extends Record<string, any>>({
             onClick={handleOnClick('desc')}
             disabled={isPending}
           >
-            <ArrowDownZA className="inline-flex h-5 w-5 mr-2" /> Descending
+            <ArrowDownZA className="inline-flex h-5 w-5 mr-2" />{' '}
+            {t('sort.descending')}
           </Button>
         </DropdownMenuItem>
       </DropdownMenuContent>

@@ -34,7 +34,7 @@ export const AddressForm = ({
   className,
   ...props
 }: AddressFormProps) => {
-  const t = useTranslate('ui.pages.address.form')
+  const t = useTranslate('ui.pages.tenantAddress.form')
   const errorNotify = useErrorNotify()
   const successNotify = useSuccessNotify()
 

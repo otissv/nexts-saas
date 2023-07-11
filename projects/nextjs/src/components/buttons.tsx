@@ -219,7 +219,7 @@ export const SignOutButton = React.forwardRef<
 
   return (
     <Link
-      href="/api/auth/signout"
+      href="/signout"
       className={cn(
         buttonVariants({ variant: variant || 'default' }),
         className

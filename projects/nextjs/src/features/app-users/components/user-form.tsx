@@ -94,8 +94,6 @@ export const UserForm = ({
           })
         }
       )
-      // redirect()
-      console.log(x)
     } catch (error) {
       if (isDev()) {
         console.error(error)

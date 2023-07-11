@@ -20,7 +20,7 @@ export default async function AdminLayout({
       {/* mobile nav */}
       <NavSheet items={menuItems.admin} position="left">
         <NavMenuLink
-          href="/api/auth/signout"
+          href="/signout"
           data-radix-collection-item
           className="!m-0 font-semibold w-full rounded-md border border-white focus:outline-none focus:bg-accent focus:text-accent-foreground disabled:opacity-50 disabled:pointer-events-none bg-background hover:bg-accent hover:text-accent-foreground data-[state=open]:bg-accent/50 data-[active]:bg-accent/50 h-10"
         >
@@ -32,7 +32,7 @@ export default async function AdminLayout({
         <NavSidebar items={menuItems.admin}>
           <NavMenuItem className="w-full mt-8">
             <NavMenuLink
-              href="/api/auth/signout"
+              href="/signout"
               data-radix-collection-item
               className="!m-0 font-semibold w-full rounded-md border border-white focus:outline-none focus:bg-accent focus:text-accent-foreground disabled:opacity-50 disabled:pointer-events-none bg-background hover:bg-accent hover:text-accent-foreground data-[state=open]:bg-accent/50 data-[active]:bg-accent/50 h-10"
             >

@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Inter } from 'next/font/google'
 import { notFound } from 'next/navigation'
+import { getServerSession } from 'next-auth'
 
 import '@/app/[locale]/global.css'
 import { PageParams } from '@/types'
@@ -50,6 +51,9 @@ export default async function RootLayout({
   const { pathname } = getHeaders()
   const hideMenu = ['/login', '/admin'].includes(`/${pathname.split('/')[1]}`)
 
+  const session = getServerSession()
+  const isLoggedIn = Boolean(session)
+
   return (
     <html lang={locale} suppressHydrationWarning className="dark">
       <body
@@ -76,7 +80,10 @@ export default async function RootLayout({
                 </NavSheet>
 
                 {/* desktop nav */}
-                <LoggedOutNav items={menuItems.marketing} />
+                <LoggedOutNav
+                  isLoggedIn={isLoggedIn}
+                  items={menuItems.marketing}
+                />
               </Maybe>
               {children}
             </div>
@@ -92,9 +99,15 @@ export default async function RootLayout({
 export interface LoggedOutNavProps extends NavProps {
   items: MenuItem[]
   className?: string
+  isLoggedIn: boolean
 }
 
-const LoggedOutNav = ({ className, items, ...props }: LoggedOutNavProps) => {
+const LoggedOutNav = ({
+  className,
+  items,
+  isLoggedIn,
+  ...props
+}: LoggedOutNavProps) => {
   return (
     <div>
       <Nav
@@ -131,15 +144,28 @@ const LoggedOutNav = ({ className, items, ...props }: LoggedOutNavProps) => {
               </NavMenuItem>
             )
           })}
-          <NavMenuItem className="!mx-2 !ml-auto xl:last:!mr-0">
-            <NavMenuLink
-              href="/login"
-              data-radix-collection-item
-              className="!m-0 font-semibold w-full rounded-md border border-white focus:outline-none focus:bg-accent focus:text-accent-foreground disabled:opacity-50 disabled:pointer-events-none bg-background hover:bg-accent hover:text-accent-foreground data-[state=open]:bg-accent/50 data-[active]:bg-accent/50 h-10"
-            >
-              Login
-            </NavMenuLink>
-          </NavMenuItem>
+
+          {isLoggedIn ? (
+            <NavMenuItem className="!mx-2 !ml-auto xl:last:!mr-0">
+              <NavMenuLink
+                href="/signout"
+                data-radix-collection-item
+                className="!m-0 font-semibold w-full rounded-md border border-white focus:outline-none focus:bg-accent focus:text-accent-foreground disabled:opacity-50 disabled:pointer-events-none bg-background hover:bg-accent hover:text-accent-foreground data-[state=open]:bg-accent/50 data-[active]:bg-accent/50 h-10"
+              >
+                Sign Out
+              </NavMenuLink>
+            </NavMenuItem>
+          ) : (
+            <NavMenuItem className="!mx-2 !ml-auto xl:last:!mr-0">
+              <NavMenuLink
+                href="/login"
+                data-radix-collection-item
+                className="!m-0 font-semibold w-full rounded-md border border-white focus:outline-none focus:bg-accent focus:text-accent-foreground disabled:opacity-50 disabled:pointer-events-none bg-background hover:bg-accent hover:text-accent-foreground data-[state=open]:bg-accent/50 data-[active]:bg-accent/50 h-10"
+              >
+                Login
+              </NavMenuLink>
+            </NavMenuItem>
+          )}
         </NavMenuList>
       </Nav>
     </div>

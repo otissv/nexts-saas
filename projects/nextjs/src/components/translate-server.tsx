@@ -10,7 +10,7 @@ export async function serverUseTranslate(namespace: string) {
   try {
     t = await translateServer(namespace)
   } catch (error) {
-    console.log(error)
+    console.error(error)
   }
 
   return ({ children }: { children: string }) => (
