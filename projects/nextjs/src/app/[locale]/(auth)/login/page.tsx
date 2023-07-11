@@ -12,7 +12,8 @@ import { LoginForm } from '@/features/app-auth/components/login.form'
 
 export default async function LoginPage() {
   const session = await getServerSession()
-  if (session) redirect('/')
+
+  if (session) redirect('/admin')
 
   const provides = await getProviders()
   const T = await serverUseTranslate('ui.pages.authentication')

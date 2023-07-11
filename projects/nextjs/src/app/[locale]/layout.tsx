@@ -1,22 +1,27 @@
 import * as React from 'react'
 import { Inter } from 'next/font/google'
-import { getServerSession } from 'next-auth/next'
 import { notFound } from 'next/navigation'
 
 import '@/app/[locale]/global.css'
-import { LoggedOutMenu } from '@/components/main-menu'
-import { cn } from '@/lib/utils'
-import { Sidebar } from '@/components/sidebar'
-import { PageParams, UserSession } from '@/types'
+import { PageParams } from '@/types'
 import { MenuItem, menu } from './menu'
 import { useLocale } from '@/hooks/useLocale'
 import { TranslationProvider } from '@/components/translations-provider'
-import Link from 'next/link'
-import { MenuToggle } from '@/components/menu-toggle'
 import { Toaster } from '@/components/toaster'
 import { ThemeProvider } from '@/components/theme-provider'
 import { TailwindIndicator } from '@/components/ui/tailwind-indicator'
-import { PageContainer } from '@/components/ui/page-container'
+import {
+  Nav,
+  NavMenuList,
+  NavMenuItem,
+  NavMenuLink,
+  NavProps,
+} from '@/components/nav'
+import { cn } from '@/lib/utils'
+import { NavSheet } from '@/components/nav-sheet'
+import { Maybe } from '@/components/maybe'
+import { getHeaders } from '@/lib/getHeaders'
+import { SheetClose } from '@/components/ui/sheet'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -41,10 +46,9 @@ export default async function RootLayout({
     notFound()
   }
 
-  const session = await getServerSession()
-  const user: UserSession = session?.user || {}
-
-  const items = await menu()
+  const menuItems = await menu()
+  const { pathname } = getHeaders()
+  const hideMenu = ['/login', '/admin'].includes(`/${pathname.split('/')[1]}`)
 
   return (
     <html lang={locale} suppressHydrationWarning className="dark">
@@ -56,13 +60,25 @@ export default async function RootLayout({
       >
         <TranslationProvider locale={locale}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            {session ? (
-              <LoggedIn user={user} items={items}>
-                {children}
-              </LoggedIn>
-            ) : (
-              <LoggedOut> {children}</LoggedOut>
-            )}
+            <div className="flex flex-col">
+              <Maybe check={!hideMenu}>
+                {/* mobile nav */}
+                <NavSheet items={menuItems.loggedOut} position="left">
+                  <SheetClose asChild className="justify-start">
+                    <NavMenuLink
+                      href="/login"
+                      data-radix-collection-item
+                      className="!m-0 font-semibold w-full rounded-md border border-white focus:outline-none focus:bg-accent focus:text-accent-foreground disabled:opacity-50 disabled:pointer-events-none bg-background hover:bg-accent hover:text-accent-foreground data-[state=open]:bg-accent/50 data-[active]:bg-accent/50 h-10"
+                    >
+                      Login
+                    </NavMenuLink>
+                  </SheetClose>
+                </NavSheet>
+                {/* desktop nav */}
+                <LoggedOutNav items={menuItems.loggedOut} />
+              </Maybe>
+              {children}
+            </div>
             <Toaster />
             <TailwindIndicator />
           </ThemeProvider>
@@ -72,36 +88,60 @@ export default async function RootLayout({
   )
 }
 
-function LoggedIn({
-  children,
-  user,
-  items,
-}: {
-  children: React.ReactNode
-  user: UserSession
+export interface LoggedOutNavProps extends NavProps {
   items: MenuItem[]
-}) {
-  return (
-    <PageContainer>
-      <div className="flex flex-col">
-        <div className="flex items-center h-10 mb-4">
-          <MenuToggle title="toggle menu" />
-          <Link href="/">App Name</Link>
-        </div>
-      </div>
-      <div className="flex items-start">
-        <Sidebar items={items} user={user} isOpen={true} />
-        <main className="flex-1">{children}</main>
-      </div>
-    </PageContainer>
-  )
+  className?: string
 }
 
-function LoggedOut({ children }: { children: React.ReactNode }) {
+const LoggedOutNav = ({ className, items, ...props }: LoggedOutNavProps) => {
   return (
     <div>
-      <LoggedOutMenu />
-      {children}
+      <Nav
+        {...props}
+        className={cn('mx-6 my-2 lg:m-0 hidden lg:!block', className)}
+      >
+        <NavMenuList className="justify-start">
+          {items.map(({ id, label, href }) => {
+            return (
+              <NavMenuItem key={id} className="mx-2 my-2 xl:first:m-0">
+                <NavMenuLink
+                  href={href}
+                  data-radix-collection-item
+                  className={`
+                    !m-0
+                    w-full 
+                    h-10
+                    font-semibold 
+                    rounded-md 
+                    justify-center
+                    focus:outline-none 
+                    focus:bg-accent 
+                    focus:text-accent-foreground 
+                    disabled:opacity-50 
+                    disabled:pointer-events-none 
+                    bg-background hover:bg-accent 
+                    hover:text-accent-foreground 
+                    data-[state=open]:bg-accent/50 
+                    data-[active]:bg-accent/50 
+                    `}
+                >
+                  {label}
+                </NavMenuLink>
+              </NavMenuItem>
+            )
+          })}
+          <NavMenuItem className="!mx-2 !ml-auto xl:last:!mr-0">
+            <NavMenuLink
+              href="/login"
+              data-radix-collection-item
+              className="!m-0 font-semibold w-full rounded-md border border-white focus:outline-none focus:bg-accent focus:text-accent-foreground disabled:opacity-50 disabled:pointer-events-none bg-background hover:bg-accent hover:text-accent-foreground data-[state=open]:bg-accent/50 data-[active]:bg-accent/50 h-10"
+            >
+              Login
+            </NavMenuLink>
+          </NavMenuItem>
+        </NavMenuList>
+      </Nav>
     </div>
   )
 }
+LoggedOutNav.displayName = 'LoggedOutNav'

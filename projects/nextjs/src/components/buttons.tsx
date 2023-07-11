@@ -210,3 +210,26 @@ export const SendIconButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
   }
 )
 SendIconButton.displayName = 'SendIconButton'
+
+export const SignOutButton = React.forwardRef<
+  HTMLAnchorElement,
+  LinkButtonProps
+>(({ className, children, href, variant, ...props }, ref) => {
+  const t = useTranslate('ui.pages.a')
+
+  return (
+    <Link
+      href="/api/auth/signout"
+      className={cn(
+        buttonVariants({ variant: variant || 'default' }),
+        className
+      )}
+      title={t('new.a.content')}
+      ref={ref}
+      {...props}
+    >
+      <Plus className="inline-block mr-2" /> {t('new.a.content') || children}
+    </Link>
+  )
+})
+NewButton.displayName = 'NewButton'

@@ -3,44 +3,44 @@ ui:
     notFound: Not found
 
   menu:
-    about:
-      a:
-        content: About
-    contact:
-      a:
-        content: Contact
-    pricing:
-      a:
-        content: Pricing
-    blog:
-      a:
-        content: Blog
-    login:
-      a:
-        content: Login
-
-  sidebar:
-    page:
-      a:
-        content: Pages
-    company:
-      a:
-        content: Company
-    addresses:
-      a:
-        content: Addresses
-    users:
-      a:
-        content: Users
-    menu:
-      a:
-        content: Menu
-    media:
-      a:
-        content: Media
-    team:
-      a:
-        content: Team
+    loggedOut:
+      about:
+        a:
+          content: About
+      contact:
+        a:
+          content: Contact
+      pricing:
+        a:
+          content: Pricing
+      blog:
+        a:
+          content: Blog
+      login:
+        a:
+          content: Login
+    loggedIn:
+      page:
+        a:
+          content: Pages
+      company:
+        a:
+          content: Company
+      addresses:
+        a:
+          content: Addresses
+      users:
+        a:
+          content: Users
+      menu:
+        a:
+          content: Menu
+      media:
+        a:
+          content: Media
+      team:
+        a:
+          content: Team
 
   settings:
     profile:

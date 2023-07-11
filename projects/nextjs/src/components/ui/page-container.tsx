@@ -9,10 +9,6 @@ export const PageContainer = React.forwardRef<
   PageContainerProps
 >(({ className, ...props }, ref) => {
   return (
-    <div
-      className={cn('container bg-background', className)}
-      ref={ref}
-      {...props}
-    />
+    <div className={cn('m-8 bg-background', className)} ref={ref} {...props} />
   )
 })

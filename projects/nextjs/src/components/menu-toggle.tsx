@@ -4,12 +4,20 @@ import { Menu } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 export interface MenuToggleProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant:
+    | 'default'
+    | 'destructive'
+    | 'outline'
+    | 'secondary'
+    | 'ghost'
+    | 'link'
+}
 
 export const MenuToggle = React.forwardRef<HTMLButtonElement, MenuToggleProps>(
-  ({ ...props }, ref) => {
+  ({ variant, ...props }, ref) => {
     return (
-      <Button variant="ghost" ref={ref} {...props}>
+      <Button variant={variant || 'ghost'} ref={ref} {...props}>
         <Menu />
       </Button>
     )

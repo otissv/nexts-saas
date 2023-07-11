@@ -2,14 +2,16 @@ import { headers } from 'next/headers'
 
 export function getHeaders() {
   const headersList = headers()
-  const domain = headersList.get('host') || ''
-  const fullUrl = headersList.get('referer') || ''
-  const [, pathname] =
-    fullUrl.match(new RegExp(`https?:\/\/${domain}(.*)`)) || []
+  const domain = headersList.get('x-forwarded-host') || ''
+  const protocol = headersList.get('x-forwarded-proto') || ''
+  const pathname = headersList.get('x-invoke-path') || ''
+  const local = pathname.split('/')[1]
 
   return {
     domain,
-    fullUrl,
-    pathname,
+    protocol,
+    pathname: pathname.split(`/${local}`)[1],
+    fullUrl: headersList.get('referer'),
+    local,
   }
 }

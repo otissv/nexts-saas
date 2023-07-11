@@ -5,6 +5,6 @@ export const Maybe = ({
   check?: unknown
   children?: React.ReactNode
 }) => {
-  return check || children ? <>{children}</> : null
+  return check ?? children ? <>{children}</> : null
 }
 Maybe.displayName = 'Maybe'
