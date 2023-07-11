@@ -13,8 +13,6 @@ export function createQueryString<Schema>(params: {
     }
   }
 
-  console.log(searchParams.toString())
-
   return searchParams.toString()
 }
 

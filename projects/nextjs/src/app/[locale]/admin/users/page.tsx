@@ -24,7 +24,7 @@ export default async function UsersPage({ searchParams }: UsersPageProps) {
   const t = await translateServer('ui.pages.users')
   const queryParams = decodeSearchParams(searchParams)
 
-  const { data } = await paginateUsersAction(queryParams)
+  const { data, totalPages } = await paginateUsersAction(queryParams)
 
   const breadcrumbs = [{ label: 'Home', crumb: '/' }, { label: 'Users' }]
   const deleteAction = async (id: number) => {
@@ -47,6 +47,7 @@ export default async function UsersPage({ searchParams }: UsersPageProps) {
       {data.length ? (
         <>
           <UsersTable
+            total={totalPages}
             data={data}
             baseUrl="/admin/users"
             onDelete={deleteAction}
@@ -54,7 +55,11 @@ export default async function UsersPage({ searchParams }: UsersPageProps) {
             limit={queryParams.limit || pageLimit}
           />
 
-          <Pagination {...queryParams} limit={queryParams.limit || pageLimit} />
+          <Pagination
+            {...queryParams}
+            total={totalPages}
+            limit={queryParams.limit || pageLimit}
+          />
         </>
       ) : (
         t('list.notFound')

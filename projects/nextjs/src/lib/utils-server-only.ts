@@ -121,6 +121,7 @@ export function errorResponse(code: number, message?: string) {
 
     return {
       data: [],
+      totalPages: 0,
       error: createErrorResponse({
         name: error.name,
         message: message || error.message,
@@ -157,6 +158,7 @@ export function serverResponse<Data>(data: Data[]) {
   return {
     data: data || [],
     error: undefined,
+    totalPages: data.length ? 1 : 0,
   }
 }
 

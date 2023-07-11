@@ -126,14 +126,6 @@ export function buildOrderBy<Schema extends AnyPgTable<{}>>(
     : [asc((schema as any).id)]
 }
 
-export function sqlRowEstimate<Schema extends AnyPgTable<{}>>(schema: Schema) {
-  return sql`
-    SELECT reltuples::bigint AS estimate
-    FROM   pg_class
-    WHERE  oid = to_regclass('${schema}');
-  `
-}
-
 // TODO: omit password
 
 export function dbController(db: PostgresDatabase) {
@@ -186,11 +178,8 @@ export function dbController(db: PostgresDatabase) {
 
       paginate: async (props: any) => {
         const select = props?.columns
-          ? {
-              ...selectColumns({ schema, columns: props.columns }),
-              rowCount: sql<number>`count(*)`,
-            }
-          : { ...schema, rowCount: sql<number>`count(*)` }
+          ? selectColumns({ schema, columns: props.columns })
+          : schema
 
         const page = props?.page || 1
         const limit = props?.limit ? props?.limit : Number(pageLimit)
@@ -211,7 +200,7 @@ export function dbController(db: PostgresDatabase) {
           if (props?.orderBy?.[0][1] === 'desc') {
             cursor = lte((schema as any).id, sq[0].id)
           } else {
-            cursor = gte((schema as any).id, page + limit)
+            cursor = gte((schema as any).id, page * limit)
           }
         }
 
@@ -219,7 +208,14 @@ export function dbController(db: PostgresDatabase) {
           ? and(cursor, buildWhere(schema, props.where))
           : cursor
 
-        return db
+        const total = await db
+          .select({
+            count: sql<number>`count(${(schema as any).id})`,
+          })
+          .from(schema)
+          .where(props?.where)
+
+        const result = await db
           .select(select)
           .from(schema)
           .where(where)
@@ -227,12 +223,15 @@ export function dbController(db: PostgresDatabase) {
           .orderBy(...orderBy)
           .groupBy(({ id }) => id)
           .then(serverResponse)
-          .catch(errorResponse(422)) as Promise<
-          SuccessResponse<Partial<DataType>> | ErrorResponse
-        >
+          .catch(errorResponse(422))
+
+        return {
+          ...result,
+          totalPages: total[0]?.count ?? 0,
+        }
       },
 
-      selectById: ({
+      selectById: async ({
         id,
         columns,
       }: {
@@ -243,14 +242,24 @@ export function dbController(db: PostgresDatabase) {
           ? selectColumns({ schema, columns: columns })
           : undefined
 
-        return db
+        const total = await db
+          .select({
+            count: sql<number>`count(${(schema as any).id})`,
+          })
+          .from(schema)
+          .where(eq((schema as any).id, id) as SQL<Type>)
+
+        const result = await db
           .select(select)
           .from(schema)
           .where(eq((schema as any).id, id) as SQL<Type>)
           .then(serverResponse)
-          .catch(errorResponse(422)) as Promise<
-          SuccessResponse<Partial<DataType>> | ErrorResponse
-        >
+          .catch(errorResponse(422))
+
+        return {
+          ...result,
+          totalPages: total[0]?.count ?? 0,
+        }
       },
 
       /* Mutations */

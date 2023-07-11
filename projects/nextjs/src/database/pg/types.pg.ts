@@ -31,12 +31,13 @@ export type ActionPropsUserById<Schema> = Id & ActionProps<Schema>
 export type SuccessResponse<DataType> = {
   data: DataType[]
   error: unknown
+  totalPages: number
 }
 
 export type ErrorResponse = {
   data: []
   error: unknown
-  pageInfo: unknown
+  totalPages: number
 }
 
 export type SeverReturnType<DataType> =

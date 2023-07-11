@@ -30,7 +30,6 @@ export function usePushQueryString<Schema>(
   const router = useRouter()
 
   return (params: PageInfo<Schema>) => {
-    console.log(params)
     startTransition(() => {
       router.push(`${pathname}?${createQueryString<Schema>(params)}`)
     })

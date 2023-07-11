@@ -30,6 +30,7 @@ export interface UsersTableProps {
   orderBy?: PageInfo<User>['orderBy']
   page?: PageInfo<User>['page']
   where?: PageInfo<User>['where']
+  total?: number
 }
 
 export function UsersTable({
@@ -39,6 +40,7 @@ export function UsersTable({
   limit,
   page,
   orderBy = [],
+  total,
   onDelete,
 }: UsersTableProps) {
   const [users, setUsers] = useMap(data)
@@ -127,7 +129,13 @@ export function UsersTable({
   return (
     <Maybe check={Boolean(users)}>
       <Table>
-        <TableCaption>A list of users</TableCaption>
+        {total ? (
+          <TableCaption>
+            A list of {users.size} Users of {total}
+          </TableCaption>
+        ) : (
+          <TableCaption>A list of users</TableCaption>
+        )}
 
         <TableHeader>
           <TableRow className="hover:bg-transparent mb-4">

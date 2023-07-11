@@ -22,13 +22,12 @@ export async function paginateUsersAction(
     ],
   }
 
-  // Replace name order to sort by last then first name
   let orderBy = undefined
+  // Replace 'name' to sort by last then first name
   if (props.orderBy) {
-    const nameOrder = props.orderBy?.find(
-      ([key]: string[]) => key === 'name'
-    )![1]
+    const orderByName = props.orderBy?.find(([key]: string[]) => key === 'name')
 
+    const nameOrder = orderByName?.[1]
     if (nameOrder) {
       orderBy = props.orderBy
         .filter(([key]) => key !== 'name')

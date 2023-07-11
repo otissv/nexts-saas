@@ -15,54 +15,56 @@ import { PageInfo } from '@/database/pg/types.pg'
 
 export interface PaginationInterface<DataType>
   extends React.HTMLAttributes<HTMLDivElement> {
-  siblingCount?: number
   limit: number
   orderBy?: PageInfo<DataType>['orderBy']
   page?: PageInfo<DataType>['page']
+  siblingCount?: number
+  total: number
   where?: PageInfo<DataType>['where']
 }
 
 export const Pagination = <Schema extends any>({
   className,
-  siblingCount = 1,
-  page = 1,
   limit,
-  where,
   orderBy,
+  page = 1,
+  siblingCount = 1,
+  total,
+  where,
   ...props
 }: PaginationInterface<Schema>) => {
   const [isPending, startTransition] = React.useTransition()
   const pushQueryString = usePushQueryString<Schema>(startTransition)
 
   const currentPage = page
+  const pageCount = Math.floor(total / limit)
 
-  // Memoize pagination range to avoid unnecessary re-renders
   const paginationRange = React.useMemo(() => {
     const delta = siblingCount + 2
 
     const range = []
     for (
-      let i = Math.max(2, Number(currentPage) - delta);
-      i <= Math.min(limit - 1, Number(currentPage) + delta);
+      let i = Math.max(2, Number(page) - delta);
+      i <= Math.min(pageCount, Number(page) + delta);
       i++
     ) {
       range.push(i)
     }
 
-    if (Number(currentPage) - delta > 2) {
+    if (Number(page) - delta > 2) {
       range.unshift('...')
     }
-    if (Number(currentPage) + delta < limit - 1) {
+    if (Number(page) + delta < pageCount - 1) {
       range.push('...')
     }
 
     range.unshift(1)
-    if (limit !== 1) {
-      range.push(limit)
-    }
+    // if (pageCount !== 1) {
+    //   range.push(pageCount)
+    // }
 
     return range
-  }, [limit, currentPage, siblingCount])
+  }, [pageCount, page, siblingCount])
 
   return (
     <div className="grid gap-2" {...props}>
@@ -154,7 +156,14 @@ export const Pagination = <Schema extends any>({
           variant="outline"
           className="h-10 w-10 px-0"
           disabled={Number(currentPage) === (limit ?? 10) || isPending}
-          onClick={() => pushQueryString({ limit, where, orderBy })}
+          onClick={() => {
+            pushQueryString({
+              page: pageCount,
+              limit,
+              where,
+              orderBy,
+            })
+          }}
         >
           <ChevronLast className="h-5 w-5" aria-hidden="true" />
           <span className="sr-only">Last page</span>
