@@ -63,7 +63,7 @@ export default async function RootLayout({
             <div className="flex flex-col">
               <Maybe check={!hideMenu}>
                 {/* mobile nav */}
-                <NavSheet items={menuItems.loggedOut} position="left">
+                <NavSheet items={menuItems.marketing} position="left">
                   <SheetClose asChild className="justify-start">
                     <NavMenuLink
                       href="/login"
@@ -74,8 +74,9 @@ export default async function RootLayout({
                     </NavMenuLink>
                   </SheetClose>
                 </NavSheet>
+
                 {/* desktop nav */}
-                <LoggedOutNav items={menuItems.loggedOut} />
+                <LoggedOutNav items={menuItems.marketing} />
               </Maybe>
               {children}
             </div>

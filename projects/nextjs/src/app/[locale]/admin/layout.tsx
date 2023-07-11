@@ -18,7 +18,7 @@ export default async function AdminLayout({
   return (
     <div className="m-5">
       {/* mobile nav */}
-      <NavSheet items={menuItems.loggedIn} position="left">
+      <NavSheet items={menuItems.admin} position="left">
         <NavMenuLink
           href="/api/auth/signout"
           data-radix-collection-item
@@ -29,7 +29,7 @@ export default async function AdminLayout({
       </NavSheet>
       <div className="flex ">
         {/* desktop nav */}
-        <NavSidebar items={menuItems.loggedIn}>
+        <NavSidebar items={menuItems.admin}>
           <NavMenuItem className="w-full mt-8">
             <NavMenuLink
               href="/api/auth/signout"

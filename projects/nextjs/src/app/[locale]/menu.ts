@@ -10,7 +10,7 @@ export async function menu() {
   const t = await translateServer('ui.menu')
 
   return {
-    loggedOut: [
+    marketing: [
       {
         id: 1,
         label: t('loggedOut.about.a.content'),
@@ -37,7 +37,7 @@ export async function menu() {
         href: '/blog',
       },
     ],
-    loggedIn: [
+    admin: [
       {
         id: 1,
         label: t('loggedIn.page.a.content'),
