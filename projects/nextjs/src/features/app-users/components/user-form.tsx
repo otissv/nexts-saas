@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 import { usePathname } from 'next/navigation'
+import { isDev } from 'c-ufunc/libs/isDev'
 
 import { User } from '@/features/app-users/users.types'
 import { userUpdateValidator } from '@/features/app-users/users.validators'
@@ -12,7 +13,7 @@ import {
   createFormSchema,
 } from '@/components/forms/createFormSchema'
 import { SaveButton } from '@/components/buttons'
-import { cn, isDev } from '@/lib/utils'
+import { cn } from '@/lib/utils'
 import { useErrorNotify, useSuccessNotify } from '@/components/notify'
 import { useTranslate } from '@/components/translate-client'
 import { ErrorResponse, SuccessResponse } from '@/database/pg/types.pg'

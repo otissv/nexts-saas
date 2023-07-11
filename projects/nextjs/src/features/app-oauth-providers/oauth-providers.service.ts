@@ -5,11 +5,11 @@ import { SelectedFieldsFlat } from 'drizzle-orm/pg-core'
 
 import { PostgresDatabase } from '@/database/pg/connection.pg'
 import { oauthProvidersDb } from './oauth-providers.db'
-import { errorResponse } from '@/lib/utils-server-only'
 import { SelectProps } from '@/database/pg/types.pg'
 import { OauthProvider, OauthProviderSignup } from './oauth-providers.types'
 import { oauthProviderSignupValidate } from '@/features/app-oauth-providers/oauth-providers.validators'
 import { OauthProviderSchema } from '@/schema/app.schema'
+import { errorResponse } from '@/database/utils.db'
 
 export function oauthProvidersService(db: PostgresDatabase) {
   const oauthProviders = oauthProvidersDb(db)

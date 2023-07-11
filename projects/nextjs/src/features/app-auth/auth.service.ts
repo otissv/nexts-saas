@@ -1,7 +1,7 @@
 import { PostgresDatabase } from '@/database/pg/connection.pg'
 import { SQL, eq } from 'drizzle-orm'
 
-import { checkResultHasData, errorResponse } from '@/lib/utils-server-only'
+import { checkResultHasData } from '@/lib/utils-server-only'
 import { User, UserInsert } from '@/features/app-users/users.types'
 import { SignIn, Signup } from '@/features/app-auth/auth.types'
 import {
@@ -11,6 +11,7 @@ import {
 } from '@/lib/utils-server-only'
 import { signInValidate, signupValidate } from './auth.validators'
 import { usersService } from '@/features/app-users/users.service'
+import { errorResponse } from '@/database/utils.db'
 
 export function authService(db: PostgresDatabase) {
   const users = usersService(db)

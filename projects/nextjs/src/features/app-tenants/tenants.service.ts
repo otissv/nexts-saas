@@ -5,10 +5,10 @@ import { SQL, eq } from 'drizzle-orm'
 import { tenantsDb } from './tenants.db'
 import { Tenant } from './tenants.types'
 import { PostgresDatabase } from '@/database/pg/connection.pg'
-import { errorResponse } from '@/lib/utils-server-only'
 import { User } from '@/features/app-users/users.types'
 import { tenants as tenantsSchema } from '@/schema/app.schema'
 import { ErrorResponse, SuccessResponse } from '@/database/pg/types.pg'
+import { errorResponse } from '@/database/utils.db'
 
 export function tenantsService(db: PostgresDatabase) {
   const tenants = tenantsDb(db)

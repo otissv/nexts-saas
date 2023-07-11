@@ -1,6 +1,7 @@
 'use client'
 import * as React from 'react'
 import { signIn } from 'next-auth/react'
+import { isDev } from 'c-ufunc/libs/isDev'
 
 import { Button } from '@/components/ui/button'
 import { Form, Submit } from '@/components/form'
@@ -11,7 +12,6 @@ import {
 import { signupValidator } from '@/features/app-auth/auth.validators'
 import { translateClient, useTranslate } from '@/components/translate-client'
 import { useErrorNotify } from '@/components/notify'
-import { isDev } from '@/lib/utils'
 
 export function SignupForm({ providers }: { providers: string[] }) {
   const T = translateClient('ui.pages.authentication')

@@ -2,11 +2,12 @@
  * Company Address Page
  */
 
+import { isDev } from 'c-ufunc/libs/isDev'
+
 import {
   deleteTenantCompanyAddressByIdAction,
   selectTenantCompanyAddressByIdAction,
 } from '@/features/tenant-company-addresses/company-addresses.tenant.actions'
-
 import { AddressForm } from '@/features/tenant-addresses/components/tenant-addresses.form'
 import { PageHeader } from '@/components/page-header'
 import { translateServer } from '@/components/translate-server'
@@ -14,7 +15,6 @@ import { TenantCompanyAddress } from '@/features/tenant-company-addresses/compan
 import { Divider } from '@/components/divider'
 import { DeleteButton } from '@/components/buttons'
 import { getHeaders } from '@/lib/getHeaders'
-import { isDev } from '@/lib/utils'
 import { TenantCompany } from '@/features/tenant-companies/companies.tenant.types'
 
 export interface CompanyAddressesPageProps {

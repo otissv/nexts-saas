@@ -5,12 +5,12 @@ import { SelectedFieldsFlat } from 'drizzle-orm/pg-core'
 import { PostgresDatabase } from '@/database/pg/connection.pg'
 import { tenantCompanyDb } from '@/features/tenant-companies/companies.tenant.db'
 
-import { errorResponse } from '@/lib/utils-server-only'
 import { SelectProps, SeverReturnType } from '@/database/pg/types.pg'
 import {
   TenantCompany,
   TenantCompanyInsert,
 } from '@/features/tenant-companies/companies.tenant.types'
+import { errorResponse } from '@/database/utils.db'
 
 export function tenantCompaniesService(db: PostgresDatabase) {
   return (tenantId: string) => {

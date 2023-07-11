@@ -19,13 +19,13 @@ import {
   SuccessResponse,
 } from '@/database/pg/types.pg'
 import { PostgresDatabase } from '@/database/pg/connection.pg'
-import { serverResponse, errorResponse } from '@/lib/utils-server-only'
 import { tenantsSql } from '@/schema/tenant.sql'
 import { dbController } from '@/database/pg/db-controller.pg'
 import {
   oauthProviderSignupValidate,
   oauthProviderInsertValidate,
 } from '@/features/app-oauth-providers/oauth-providers.validators'
+import { errorResponse, serverResponse } from '@/database/utils.db'
 
 export function oauthProvidersDb(db: PostgresDatabase) {
   const oauthProviders = dbController(db)({

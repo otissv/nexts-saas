@@ -1,6 +1,6 @@
-import { isDev } from '@/lib/utils'
+import { isDev } from 'c-ufunc/libs/isDev'
 import { z } from 'zod'
-import { createErrorResponse } from './response-error'
+import { createErrorResponse } from '@/database/utils.db'
 
 export function validate<Validator extends z.ZodTypeAny>(
   validator: Validator,

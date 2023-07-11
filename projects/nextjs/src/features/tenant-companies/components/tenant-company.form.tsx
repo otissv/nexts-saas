@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 import { usePathname } from 'next/navigation'
+import { isDev } from 'c-ufunc/libs/isDev'
 
 import {
   tenantCompanyUpdateValidator,
@@ -17,7 +18,7 @@ import {
   updateTenantCompanyByIdAction,
   insertTenantCompanyAction,
 } from '@/features/tenant-companies/companies.actions'
-import { cn, isDev } from '@/lib/utils'
+import { cn } from '@/lib/utils'
 import { useErrorNotify, useSuccessNotify } from '@/components/notify'
 import { SaveButton } from '@/components/buttons'
 import { TenantCompany } from '../companies.tenant.types'

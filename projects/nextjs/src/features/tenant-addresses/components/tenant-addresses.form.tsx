@@ -1,5 +1,6 @@
 'use client'
 import * as React from 'react'
+import { isDev } from 'c-ufunc/libs/isDev'
 
 import {
   tenantCompanyAddressInsertValidator,
@@ -15,7 +16,7 @@ import {
   createFormSchema,
 } from '@/components/forms/createFormSchema'
 import { SaveButton } from '@/components/buttons'
-import { cn, isDev } from '@/lib/utils'
+import { cn } from '@/lib/utils'
 import { useErrorNotify, useSuccessNotify } from '@/components/notify'
 import { useTranslate } from '@/components/translate-client'
 import { TenantCompanyAddress } from '@/features/tenant-company-addresses/company-addresses.tenant.types'

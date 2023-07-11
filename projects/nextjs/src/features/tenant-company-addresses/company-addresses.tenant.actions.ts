@@ -3,7 +3,7 @@
 import { getServerSession, AuthOptions } from 'next-auth'
 
 import { serverContext } from '@/app/context-server-only'
-import { authorize, errorResponse } from '@/lib/utils-server-only'
+import { authorize } from '@/lib/utils-server-only'
 import {
   TenantCompanyAddress,
   TenantCompanyAddressInsert,
@@ -11,6 +11,7 @@ import {
 } from '@/features/tenant-company-addresses/company-addresses.tenant.types'
 import { ServerSession, authOptions } from '@/features/app-auth/auth.options'
 import { SeverReturnType, ActionProps } from '@/database/pg/types.pg'
+import { errorResponse } from '@/database/utils.db'
 
 const { tenantCompanyAddressService } = serverContext()
 

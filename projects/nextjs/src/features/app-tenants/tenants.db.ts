@@ -1,7 +1,6 @@
 import { SQL, eq } from 'drizzle-orm'
 
 import { PostgresDatabase } from '@/database/pg/connection.pg'
-import { errorResponse } from '@/lib/utils-server-only'
 import {
   ErrorResponse,
   SelectProps,
@@ -20,6 +19,7 @@ import {
   tenantInsertValidate,
   tenantUpdateValidate,
 } from '@/features/app-tenants/tenants.validator'
+import { errorResponse } from '@/database/utils.db'
 
 export function tenantsDb(db: PostgresDatabase) {
   const tenants = dbController(db)({

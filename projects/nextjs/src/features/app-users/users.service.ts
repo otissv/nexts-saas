@@ -7,8 +7,8 @@ import { PostgresDatabase } from '@/database/pg/connection.pg'
 import { users as usersSchema } from '@/schema/app.schema'
 import { SeverReturnType, SelectProps } from '@/database/pg/types.pg'
 import { User, UserInsert, UserUpdate } from './users.types'
-import { errorResponse } from '@/lib/utils-server-only'
 import { usersDb } from './users.db'
+import { errorResponse } from '@/database/utils.db'
 
 export function usersService(db: PostgresDatabase) {
   const users = usersDb(db)

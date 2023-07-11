@@ -3,6 +3,7 @@
  */
 
 import * as React from 'react'
+import { isDev } from 'c-ufunc/libs/isDev'
 
 import { User } from '@/features/app-users/users.types'
 import { translateServer } from '@/components/translate-server'
@@ -17,7 +18,6 @@ import { Button } from '@/components/ui/button'
 import { Divider } from '@/components/divider'
 import { DeleteButton } from '@/components/buttons'
 import { getHeaders } from '@/lib/getHeaders'
-import { isDev } from '@/lib/utils'
 import { UserForm } from '@/features/app-users/components/user-form'
 import { PageHeader } from '@/components/page-header'
 import { Maybe } from '@/components/maybe'

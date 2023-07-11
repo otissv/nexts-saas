@@ -32,7 +32,7 @@ import {
   serverResponse,
   errorResponse,
   selectColumns,
-} from '@/lib/utils-server-only'
+} from '@/database/utils.db'
 import { PostgresDatabase } from '@/database/pg/connection.pg'
 import { env } from '@/config/env'
 

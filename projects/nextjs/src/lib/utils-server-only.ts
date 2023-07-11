@@ -1,17 +1,11 @@
 import 'server-only'
 
-import { isEmpty } from 'c-ufunc/libs/isEmpty'
-import { AnyPgTable } from 'drizzle-orm/pg-core'
 import { getServerSession } from 'next-auth/next'
 import bcrypt from 'bcrypt'
-import { omit } from 'c-ufunc/libs/omit'
 import { revalidatePath as revalidateCachePath } from 'next/cache'
 
-import { env } from '@/config/env'
-import { createErrorResponse } from '@/lib/response-error'
+import { errorResponse } from '@/database/utils.db'
 import { ErrorResponse, SuccessResponse } from '@/database/pg/types.pg'
-
-const { isDev } = env()
 
 export function authorize(fn: (...args: any[]) => Promise<any>) {
   return async (...args: any[]) => {
@@ -111,29 +105,6 @@ export function doesUserExist<Type, Data>(
   }
 }
 
-export function errorResponse(code: number, message?: string) {
-  return (error: Error) => {
-    //TODO: send error to sentry
-
-    if (isDev) {
-      console.dir(error)
-    }
-
-    return {
-      data: [],
-      totalPages: 0,
-      error: createErrorResponse({
-        name: error.name,
-        message: message || error.message,
-        code: code,
-        stack: error.stack,
-        // @ts-ignore
-        issues: error.issues,
-      }),
-    }
-  }
-}
-
 export function hashPassword<Data>({ data }: { data: Data }) {
   return bcrypt
     .hash((data as any).password as string, 10)
@@ -143,39 +114,4 @@ export function hashPassword<Data>({ data }: { data: Data }) {
         password: hashPassword,
       },
     }))
-}
-
-export function omitPassword<Type extends Record<string, any>>(
-  result: SuccessResponse<Type>
-) {
-  return {
-    ...result,
-    data: result.data.map((item) => omit(['password'])(item)),
-  }
-}
-
-export function serverResponse<Data>(data: Data[]) {
-  return {
-    data: data || [],
-    error: undefined,
-    totalPages: data.length ? 1 : 0,
-  }
-}
-
-export function selectColumns<Schema extends AnyPgTable<{}>, Type>({
-  schema,
-  columns,
-}: {
-  schema: Schema
-  columns?: (keyof Type)[]
-}) {
-  return !isEmpty(columns) && !isEmpty(schema)
-    ? (columns || []).reduce(
-        (acc, column) => ({
-          ...acc,
-          [column]: (schema as any)[column],
-        }),
-        {}
-      )
-    : (undefined as any)
 }
