@@ -8,11 +8,11 @@ export const env = () => {
   return {
     nextAuthSecret: mayString(process.env.NEXTAUTH_SECRET),
 
-    pageLimit: process.env.PAGE_LIMIT ? Number(process.env.PAGE_LIMIT) : 100,
+    pageLimit: process.env.PAGE_LIMIT ? Number(process.env.PAGE_LIMIT) : Number(process.env.PAGE_MAX_ROWS),
 
-    databaseUser: mayString(process.env.DATABASE_USER),
+    databaseUser: mayString(process.env.POSTGRES_USER),
     databasePassword: mayString(process.env.DATABASE_PASSWORD),
-    database: mayString(process.env.DATABASE_DB),
+    database: mayString(process.env.POSTGRES_PASSWORD),
 
     isDev: process.env.NODE_ENV === 'development' || 'dev',
     isTest: process.env.NODE_ENV === 'test',
