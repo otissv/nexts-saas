@@ -11,8 +11,8 @@ export const env = () => {
     pageLimit: process.env.PAGE_LIMIT ? Number(process.env.PAGE_LIMIT) : Number(process.env.PAGE_MAX_ROWS),
 
     databaseUser: mayString(process.env.POSTGRES_USER),
-    databasePassword: mayString(process.env.DATABASE_PASSWORD),
-    database: mayString(process.env.POSTGRES_PASSWORD),
+    databasePassword: mayString(process.env.POSTGRES_PASSWORD),
+    database: mayString(process.env.POSTGRES_DATABASE),
 
     isDev: process.env.NODE_ENV === 'development' || 'dev',
     isTest: process.env.NODE_ENV === 'test',

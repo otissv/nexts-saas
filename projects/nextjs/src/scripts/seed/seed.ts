@@ -4,7 +4,7 @@ import { data } from './data'
 
 import { tenantSchema } from '../../schema/tenant.schema'
 import { tenantsSql } from '../../schema/tenant.sql'
-import { appSql } from '@/schema/app.sql'
+import { appSql } from '../../schema/app.sql'
 
 const db = connection()
 
