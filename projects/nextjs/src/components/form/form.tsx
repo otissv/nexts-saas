@@ -3,9 +3,9 @@
 import * as React from 'react'
 import { z } from 'zod'
 
-import { FormSchema } from '@/components/component.types'
-import { TextField } from '@/components/text.field'
-import { Fieldset } from '@/components/fieldset'
+import { FormSchema } from '@/components/form/types.form'
+import { TextField } from '@/components/form/text.field'
+import { Fieldset } from '@/components/form/fieldset'
 import { updateItemById } from '@/lib/updateArrayById'
 
 export interface Submit {

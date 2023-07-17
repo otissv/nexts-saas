@@ -17,7 +17,10 @@ export interface TwoColumnProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export const TwoColumn = React.forwardRef<HTMLDivElement, TwoColumnProps>(
-  ({ image: { href, ...image }, title, category, contents, ...props }, ref) => {
+  (
+    { image: { href, alt, ...image }, title, category, contents, ...props },
+    ref
+  ) => {
     const isEdit = true
 
     return (
@@ -30,7 +33,7 @@ export const TwoColumn = React.forwardRef<HTMLDivElement, TwoColumnProps>(
                 data-te-ripple-init
                 data-te-ripple-color="light"
               >
-                <Image className="w-full" {...image} />
+                <Image className="w-full" alt={alt} {...image} />
                 <a href={href}>
                   <div className="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-[hsl(0,0%,98.4%,0.2)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"></div>
                 </a>

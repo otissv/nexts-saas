@@ -3,7 +3,7 @@
 import React from 'react'
 import { NavigationMenuProps } from '@radix-ui/react-navigation-menu'
 
-import { NavigationMenuItem } from './ui/navigation-menu'
+import { NavigationMenuItem } from '../ui/navigation-menu'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import {
@@ -30,6 +30,7 @@ export const Nav = React.forwardRef<HTMLHtmlElement, NavProps>(
     )
   }
 )
+Nav.displayName = 'Nav'
 
 export interface NavMenuList extends React.HTMLAttributes<HTMLOListElement> {
   stacked?: boolean
@@ -47,6 +48,7 @@ export const NavMenuList = React.forwardRef<HTMLOListElement, NavMenuList>(
     )
   }
 )
+NavMenuList.displayName = 'NavMenuList'
 
 export interface NavMenuItemProps extends React.HTMLAttributes<HTMLLIElement> {}
 

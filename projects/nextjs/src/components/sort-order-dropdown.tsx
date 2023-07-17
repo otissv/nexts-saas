@@ -16,7 +16,7 @@ import {
   useGetSearchParams,
 } from '@/hooks/querystring-hook'
 import { SortDirection } from '@/database/pg/types.pg'
-import { useTranslate } from '@/components/translate-client'
+import { useTranslateClient } from '@/components/translate/translate-client'
 
 export interface SortOrderDropdownProps {
   name: string
@@ -32,7 +32,7 @@ export const SortOrderDropdown = <Schema extends Record<string, any>>({
   startTransition,
 }: SortOrderDropdownProps) => {
   const pushQueryString = usePushQueryString<Schema>(startTransition)
-  const t = useTranslate('ui.misc')
+  const t = useTranslateClient('ui.misc')
 
   const searchParams = useGetSearchParams()
   const item = searchParams?.orderBy?.find(([key]: string[]) => key === name)

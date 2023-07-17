@@ -6,36 +6,38 @@ import Link from 'next/link'
 import { isDev } from 'c-ufunc/libs/isDev'
 
 import { Button } from '@/components/ui/button'
-import { Form, Submit } from '@/components/form'
-import {
-  FormConfig,
-  createFormSchema,
-} from '@/components/forms/createFormSchema'
+import { Form, Submit } from '@/components/form/form'
+import { FormConfig, useForm } from '@/components/form/useForm'
 import { signInValidator } from '@/features/app-auth/auth.validators'
-import { translateClient, useTranslate } from '@/components/translate-client'
+import {
+  useTranslateClientComponent,
+  useTranslateClient,
+} from '@/components/translate/translate-client'
 import { useErrorNotify } from '@/components/notify'
 
 export function LoginForm({ providers }: { providers: string[] }) {
-  const T = translateClient('ui.pages.authentication')
-  const t = useTranslate('ui.pages.authentication')
+  const T = useTranslateClientComponent('ui.pages.authentication')
+  const t = useTranslateClient('ui.pages.authentication')
   const errorNotify = useErrorNotify()
 
   const config: FormConfig = {
     username: {
-      label: t('form.fields.username.label'),
       attributes: { placeholder: t('form.fields.username.placeholder') },
       classNames: {
         label: 'sr-only',
       },
+      label: t('form.fields.username.label'),
+      ref: React.useRef(null),
       error: t('form.fields.username.error'),
     },
     password: {
-      label: t('form.fields.password.label'),
       type: 'password',
       attributes: { placeholder: t('form.fields.password.placeholder') },
       classNames: {
         label: 'sr-only',
       },
+      label: t('form.fields.password.label'),
+      ref: React.useRef(null),
       error: t('form.fields.password.error'),
     },
   }
@@ -68,7 +70,7 @@ export function LoginForm({ providers }: { providers: string[] }) {
     })
   }
 
-  const schema = createFormSchema(signInValidator, config)
+  const schema = useForm(signInValidator, config)
 
   const form: Record<string, any> = {
     credentials: () => (
@@ -81,7 +83,7 @@ export function LoginForm({ providers }: { providers: string[] }) {
           submit={onSubmit}
         >
           <Button className="mt-2">
-            <T>form.button.content</T>
+            <T>buttons.login.content</T>
           </Button>
         </Form>
 
@@ -90,7 +92,7 @@ export function LoginForm({ providers }: { providers: string[] }) {
             className="underline underline-offset-4 hover:text-primary"
             href="/forgot-password"
           >
-            <T>login.forgotPassword.a.content</T>
+            <T>login.forgotPassword.content</T>
           </Link>
         </p>
 
@@ -100,7 +102,7 @@ export function LoginForm({ providers }: { providers: string[] }) {
             className="underline underline-offset-4 hover:text-primary"
             href="/signup"
           >
-            <T>login.signup.a.content</T>
+            <T>buttons.signup.content</T>
           </Link>
         </p>
 

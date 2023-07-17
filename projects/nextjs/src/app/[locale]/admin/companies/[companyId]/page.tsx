@@ -3,8 +3,8 @@
  */
 
 import { CompanyForm } from '@/features/tenant-companies/components/tenant-company.form'
-import { PageHeader } from '@/components/page-header'
-import { translateServer } from '@/components/translate-server'
+import { PageHeader } from '@/components/page/page-header'
+import { translateServer } from '@/components/translate/translate-server'
 import { TenantCompany } from '@/features/tenant-companies/companies.tenant.types'
 import { selectTenantCompanyByIdAction } from '@/features/tenant-companies/companies.actions'
 import { ChevronRight } from 'lucide-react'

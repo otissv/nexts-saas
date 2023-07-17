@@ -6,7 +6,12 @@ import { NavigationMenu } from '@radix-ui/react-navigation-menu'
 
 import { cn } from '@/lib/utils'
 import { MenuItem } from '@/app/[locale]/menu'
-import { Nav, NavMenuItem, NavMenuLink, NavMenuList } from '@/components/nav'
+import {
+  Nav,
+  NavMenuItem,
+  NavMenuLink,
+  NavMenuList,
+} from '@/components/nav/nav'
 
 export interface NavSidebarProps
   extends React.HtmlHTMLAttributes<typeof NavigationMenu> {

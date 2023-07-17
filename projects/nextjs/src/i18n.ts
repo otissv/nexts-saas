@@ -4,6 +4,9 @@ import fs from 'fs'
 
 export function getTranslation(locale: string) {
   try {
+    if (locale === 'favicon.ico') return {}
+
+
     // load yaml file and convert to json
     return yaml.load(
       fs.readFileSync(`./src/translations/${locale}.yml`, 'utf8')

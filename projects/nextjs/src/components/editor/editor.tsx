@@ -9,7 +9,7 @@ import { postValidator } from '@/features/tenant_posts/posts.tenant.validators'
 import { Button, buttonVariants } from '@/components/ui/button'
 import { TestBlock } from './test-block'
 import { TwoColumnBlock } from './two-column'
-import { BackButton } from '@/components/buttons'
+import { BackButton } from '@/components/buttons/back-button'
 
 interface EditorProps {
   post: any

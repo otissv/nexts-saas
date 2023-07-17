@@ -8,19 +8,16 @@ import {
   tenantCompanyUpdateValidator,
   tenantCompanyInsertValidator,
 } from '@/features/tenant-companies/companies.tenant.validators'
-import {
-  FormConfig,
-  createFormSchema,
-} from '@/components/forms/createFormSchema'
-import { useTranslate } from '@/components/translate-client'
-import { Form, Submit } from '@/components/form'
+import { FormConfig, useForm } from '@/components/form/useForm'
+import { useTranslateClient } from '@/components/translate/translate-client'
+import { Form, Submit } from '@/components/form/form'
 import {
   updateTenantCompanyByIdAction,
   insertTenantCompanyAction,
 } from '@/features/tenant-companies/companies.actions'
 import { cn } from '@/lib/utils'
 import { useErrorNotify, useSuccessNotify } from '@/components/notify'
-import { SaveButton } from '@/components/buttons'
+import { SaveButton } from '@/components/buttons/save-button'
 import { TenantCompany } from '../companies.tenant.types'
 
 export interface CompanyFormProps {
@@ -37,7 +34,7 @@ export const CompanyForm = ({
   className,
   ...props
 }: CompanyFormProps) => {
-  const t = useTranslate('ui.pages.tenantCompany')
+  const t = useTranslateClient('ui.pages.tenantCompany')
   const errorNotify = useErrorNotify()
   const successNotify = useSuccessNotify()
   const pathname = usePathname()
@@ -53,31 +50,35 @@ export const CompanyForm = ({
 
   const config: FormConfig = {
     name: {
-      label: t('form.fields.name.label'),
-      value: company?.name,
       error: t('form.fields.name.error'),
+      label: t('form.fields.name.label'),
+      ref: React.useRef(null),
+      value: company?.name,
     },
     email: {
       type: 'email',
-      label: t('form.fields.email.label'),
       error: t('form.fields.email.error'),
+      label: t('form.fields.email.label'),
+      ref: React.useRef(null),
       value: company?.email,
     },
     phone: {
       type: 'tel',
-      label: t('form.fields.phone.label'),
       error: t('form.fields.phone.error'),
+      label: t('form.fields.phone.label'),
+      ref: React.useRef(null),
       value: company?.phone,
     },
     website: {
       type: 'url',
-      label: t('form.fields.website.label'),
       error: t('form.fields.website.error'),
+      label: t('form.fields.website.label'),
+      ref: React.useRef(null),
       value: company?.website,
     },
   }
 
-  const schema = createFormSchema(
+  const schema = useForm(
     validator.omit({ socialLinks: true, userId: true }),
     config
   )

@@ -9,8 +9,13 @@ import {
   SheetClose,
 } from '@/components/ui/sheet'
 import { MenuItem } from '@/app/[locale]/menu'
-import { MenuToggle } from '@/components/menu-toggle'
-import { Nav, NavMenuItem, NavMenuLink, NavMenuList } from '@/components/nav'
+import { MenuButton } from '@/components/buttons/menu-button'
+import {
+  Nav,
+  NavMenuItem,
+  NavMenuLink,
+  NavMenuList,
+} from '@/components/nav/nav'
 export interface NavSheetProps extends React.HTMLProps<HTMLDivElement> {
   position?: 'top' | 'bottom' | 'left' | 'right'
   items: MenuItem[]
@@ -21,7 +26,7 @@ export const NavSheet = React.forwardRef<HTMLDivElement, NavSheetProps>(
     return (
       <Sheet ref={ref} {...props}>
         <SheetTrigger asChild>
-          <MenuToggle
+          <MenuButton
             className="lg:hidden h-10 w-10"
             title="toggle menu"
             variant="outline"

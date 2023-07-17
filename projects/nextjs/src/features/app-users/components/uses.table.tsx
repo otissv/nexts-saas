@@ -15,8 +15,9 @@ import {
 
 import { User } from '@/features/app-users/users.types'
 import { AppLink } from '@/components/app-link'
-import { DeleteButton, EditButton } from '@/components/buttons'
-import { useTranslate } from '@/components/translate-client'
+import { EditButton } from '@/components/buttons/edit-button'
+import { DeleteButton } from '@/components/buttons/delete-button'
+import { useTranslateClient } from '@/components/translate/translate-client'
 import { SortOrderDropdown } from '@/components/sort-order-dropdown'
 import { SeverReturnType, PageInfo } from '@/database/pg/types.pg'
 import { entriesToArray } from '@/lib/entries'
@@ -44,7 +45,7 @@ export function UsersTable({
   onDelete,
 }: UsersTableProps) {
   const [users, setUsers] = useMap(data)
-  const t = useTranslate('ui.pages')
+  const t = useTranslateClient('ui.pages')
   const [isPending, startTransition] = React.useTransition()
 
   const handleDelete = (id: number) => async () => {
@@ -56,9 +57,11 @@ export function UsersTable({
     return result
   }
 
+  const orderByDep = orderBy?.flat().toString()
+
   React.useEffect(() => {
     setUsers(data)
-  }, [limit, where, orderBy?.flat().toString(), page])
+  }, [limit, where, orderByDep, page, data, setUsers])
 
   const rows = ({ id, firstName, lastName, imageUrl, email }: User) => {
     return (

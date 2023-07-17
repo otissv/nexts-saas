@@ -14,7 +14,7 @@ export interface MenuToggleProps
     | 'link'
 }
 
-export const MenuToggle = React.forwardRef<HTMLButtonElement, MenuToggleProps>(
+export const MenuButton = React.forwardRef<HTMLButtonElement, MenuToggleProps>(
   ({ variant, ...props }, ref) => {
     return (
       <Button variant={variant || 'ghost'} ref={ref} {...props}>
@@ -23,4 +23,4 @@ export const MenuToggle = React.forwardRef<HTMLButtonElement, MenuToggleProps>(
     )
   }
 )
-MenuToggle.displayName = 'MenuToggle'
+MenuButton.displayName = 'MenuButton'

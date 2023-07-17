@@ -9,62 +9,44 @@ ui:
   menu:
     marketing:
       about:
-        a:
-          content: About
+        content: About
       contact:
-        a:
-          content: Contact
+        content: Contact
       pricing:
-        a:
           content: Pricing
       blog:
-        a:
-          content: Blog
+        content: Blog
       login:
-        a:
-          content: Login
+        content: Login
       signout:
-        a:
-          content: Login
+        content: Login
     admin:
       page:
-        a:
-          content: Pages
+        content: Pages
       company:
-        a:
-          content: Company
+        content: Company
       addresses:
-        a:
-          content: Addresses
+        content: Addresses
       users:
-        a:
-          content: Users
+        content: Users
       menu:
-        a:
-          content: Menu
+        content: Menu
       media:
-        a:
-          content: Media
+        content: Media
       team:
-        a:
-          content: Team
+        content: Team
 
   settings:
     profile:
-      a:
-        content: Profile
+      content: Profile
     upgrade:
-      a:
-        content: Upgrade
+      content: Upgrade
     billing:
-      a:
-        content: Billing
+      content: Billing
     settings:
-      a:
-        content: Setting
+      content: Setting
     logout:
-      a:
-        content: Logout
+      content: Logout
 
   form:
     notRequired: (optional)
@@ -72,39 +54,36 @@ ui:
   page:
     toolbar:
       back:
-        a:
-          content: Back
+        content: Back
       edit:
-        a:
-          content: Edit
+        content: Edit
       new:
-        a:
-          content: New
+        content: New
       save:
         button:
           content: Save
       delete:
-        a:
-          content: Delete
+       content: Delete
 
   pages:
     authentication:
+      buttons:
+        signup: 
+          content: Sign Up
+        login:
+          content: Login
       login:
         heading: Login
         text: Don't have an account
-        signup:
-          a:
-            content: Sign Up
         forgotPassword:
-          a:
-            content: Forgot password?
+          content: Forgot password?
       signup:
         heading: Create an account
         button:
-          text: Sign Up
+          content: Sign Up
       continueWith: Or continue with
       terms:
-        content: By clicking continue, you agree to our [Terms of Service](/terms) and [Privacy Policy](/privacy).
+        content: By clicking continue, you agree to our [Terms of Service](/terms) and [Privacy Policy](/privacy)
       form:
         fields:
           username:
@@ -119,8 +98,6 @@ ui:
             label: Email
             placeholder: email
             error: Invalid email address.
-        button:
-          content: Login
       providers:
         google: Google
 

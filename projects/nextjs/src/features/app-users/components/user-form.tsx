@@ -7,15 +7,12 @@ import { isDev } from 'c-ufunc/libs/isDev'
 import { User } from '@/features/app-users/users.types'
 import { userUpdateValidator } from '@/features/app-users/users.validators'
 import { updateUsersByIdAction } from '@/features/app-users/users.actions'
-import { Form, Submit } from '@/components/form'
-import {
-  FormConfig,
-  createFormSchema,
-} from '@/components/forms/createFormSchema'
-import { SaveButton } from '@/components/buttons'
+import { Form, Submit } from '@/components/form/form'
+import { FormConfig, useForm } from '@/components/form/useForm'
+import { SaveButton } from '@/components/buttons/save-button'
 import { cn } from '@/lib/utils'
 import { useErrorNotify, useSuccessNotify } from '@/components/notify'
-import { useTranslate } from '@/components/translate-client'
+import { useTranslateClient } from '@/components/translate/translate-client'
 import { ErrorResponse, SuccessResponse } from '@/database/pg/types.pg'
 
 export interface UserFormProps {
@@ -32,7 +29,7 @@ export const UserForm = ({
   className,
   ...props
 }: UserFormProps) => {
-  const t = useTranslate('ui.pages')
+  const t = useTranslateClient('ui.pages')
   const errorNotify = useErrorNotify()
   const successNotify = useSuccessNotify()
   const pathname = usePathname()
@@ -44,40 +41,46 @@ export const UserForm = ({
 
   const config: FormConfig = {
     username: {
-      label: t('authentication.form.fields.username.label'),
-      value: user?.username,
       error: t('authentication.form.fields.username.error'),
+      label: t('authentication.form.fields.username.label'),
+      ref: React.useRef(null),
+      value: user?.username,
     },
     imageUrl: {
-      label: t('user.form.fields.imageUrl.label'),
       error: t('user.form.fields.imageUrl.error'),
+      label: t('user.form.fields.imageUrl.label'),
+      ref: React.useRef(null),
       value: user?.imageUrl,
     },
     firstName: {
-      label: t('user.form.fields.firstName.label'),
       error: t('user.form.fields.firstName.error'),
+      label: t('user.form.fields.firstName.label'),
+      ref: React.useRef(null),
       value: user?.firstName,
     },
     lastName: {
-      label: t('user.form.fields.lastName.label'),
       error: t('user.form.fields.lastName.error'),
+      label: t('user.form.fields.lastName.label'),
+      ref: React.useRef(null),
       value: user?.lastName,
     },
     email: {
       type: 'email',
-      label: t('user.form.fields.email.label'),
       error: t('user.form.fields.email.error'),
+      label: t('user.form.fields.email.label'),
+      ref: React.useRef(null),
       value: user?.email,
     },
     phone: {
       type: 'tel',
-      label: t('user.form.fields.phone.label'),
       error: t('user.form.fields.phone.error'),
+      label: t('user.form.fields.phone.label'),
+      ref: React.useRef(null),
       value: user?.phone,
     },
   }
 
-  const schema = createFormSchema(userUpdateValidator, config)
+  const schema = useForm(userUpdateValidator, config)
 
   const onSubmit = async ({ error, values }: Submit) => {
     try {
@@ -85,7 +88,7 @@ export const UserForm = ({
 
       const args = id ? { data: values, id } : ({ data: values } as any)
 
-      const x = await action(args, pathname).then(
+      await action(args, pathname).then(
         ({ error }: SuccessResponse<Partial<User>> | ErrorResponse) => {
           if (error) throw error
           successNotify({

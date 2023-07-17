@@ -5,8 +5,8 @@
 import React from 'react'
 
 import { CompanyForm } from '@/features/tenant-companies/components/tenant-company.form'
-import { PageHeader } from '@/components/page-header'
-import { translateServer } from '@/components/translate-server'
+import { PageHeader } from '@/components/page/page-header'
+import { translateServer } from '@/components/translate/translate-server'
 import { Divider } from '@/components/divider'
 
 export interface CompanyPageProps {}

@@ -1,9 +1,9 @@
-import { NavSheet } from '@/components/nav-sheet'
-import { NavSidebar } from '@/components/nav-sidebar'
+import { NavSheet } from '@/components/nav/nav-sheet'
+import { NavSidebar } from '@/components/nav/nav-sidebar'
 import { getServerSession } from 'next-auth/next'
 import { redirect } from 'next/navigation'
 import { menu } from '../menu'
-import { NavMenuItem, NavMenuLink } from '@/components/nav'
+import { NavMenuItem, NavMenuLink } from '@/components/nav/nav'
 
 export default async function AdminLayout({
   children,

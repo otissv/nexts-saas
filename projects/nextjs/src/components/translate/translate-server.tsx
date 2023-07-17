@@ -13,6 +13,7 @@ export async function serverUseTranslate(namespace: string) {
     console.error(error)
   }
 
+  /* eslint-disable react/display-name */
   return ({ children }: { children: string }) => (
     <Markdown>{t(children)}</Markdown>
   )

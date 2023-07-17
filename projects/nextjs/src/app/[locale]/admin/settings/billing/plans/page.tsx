@@ -1,7 +1,7 @@
 /**
  * Pricing plans Page
  */
-import { PageHeader } from '@/components/page-header'
+import { PageHeader } from '@/components/page/page-header'
 
 export default function PlansPage() {
   const breadcrumbs = [{ label: 'Home', crumb: '/' }, { label: 'Plans' }]

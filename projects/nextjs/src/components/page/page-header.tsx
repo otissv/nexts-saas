@@ -1,4 +1,4 @@
-import { TypographyH1 } from '@/components/typography'
+import { TypographyH1 } from '@/components/typography/h1.typography'
 import { Breadcrumb, BreadCrumbs } from '@/components/breadcrumbs'
 import { Maybe } from '@/components/maybe'
 

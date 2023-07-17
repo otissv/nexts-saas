@@ -10,15 +10,12 @@ import {
   updateTenantCompanyAddressByIdAction,
   insertTenantCompanyAddressAction,
 } from '@/features/tenant-company-addresses/company-addresses.tenant.actions'
-import { Form, Submit } from '@/components/form'
-import {
-  FormConfig,
-  createFormSchema,
-} from '@/components/forms/createFormSchema'
-import { SaveButton } from '@/components/buttons'
+import { Form, Submit } from '@/components/form/form'
+import { FormConfig, useForm } from '@/components/form/useForm'
+import { SaveButton } from '@/components/buttons/save-button'
 import { cn } from '@/lib/utils'
 import { useErrorNotify, useSuccessNotify } from '@/components/notify'
-import { useTranslate } from '@/components/translate-client'
+import { useTranslateClient } from '@/components/translate/translate-client'
 import { TenantCompanyAddress } from '@/features/tenant-company-addresses/company-addresses.tenant.types'
 
 export interface AddressFormProps {
@@ -34,7 +31,7 @@ export const AddressForm = ({
   className,
   ...props
 }: AddressFormProps) => {
-  const t = useTranslate('ui.pages.tenantAddress.form')
+  const t = useTranslateClient('ui.pages.tenantAddress.form')
   const errorNotify = useErrorNotify()
   const successNotify = useSuccessNotify()
 
@@ -52,42 +49,49 @@ export const AddressForm = ({
 
   const config: FormConfig = {
     site: {
-      label: t('fields.site.label'),
-      value: address?.site,
       error: t('fields.site.error'),
+      label: t('fields.site.label'),
+      ref: React.useRef(null),
+      value: address?.site,
     },
     streetAddress: {
-      label: t('fields.streetAddress.label'),
-      value: address?.streetAddress,
       error: t('fields.streetAddress.error'),
+      label: t('fields.streetAddress.label'),
+      ref: React.useRef(null),
+      value: address?.streetAddress,
     },
     addressDetails: {
-      label: t('fields.addressDetails.label'),
-      value: address?.addressDetails,
       classNames: {
         label: 'sr-only',
       },
+      label: t('fields.addressDetails.label'),
       error: t('fields.addressDetails.error'),
+      ref: React.useRef(null),
+      value: address?.addressDetails,
     },
     city: {
-      label: t('fields.city.label'),
-      value: address?.city,
       error: t('fields.city.error'),
+      label: t('fields.city.label'),
+      ref: React.useRef(null),
+      value: address?.city,
     },
     state: {
-      label: t('fields.state.label'),
-      value: address?.state,
       error: t('fields.state.error'),
+      label: t('fields.state.label'),
+      ref: React.useRef(null),
+      value: address?.state,
     },
     postalCode: {
-      label: t('fields.postalCode.label'),
-      value: address?.postalCode,
       error: t('fields.postalCode.error'),
+      label: t('fields.postalCode.label'),
+      ref: React.useRef(null),
+      value: address?.postalCode,
     },
     country: {
-      label: t('fields.country.label'),
-      value: address?.country,
       error: t('fields.country.error'),
+      label: t('fields.country.label'),
+      ref: React.useRef(null),
+      value: address?.country,
     },
   }
 
@@ -118,7 +122,7 @@ export const AddressForm = ({
     }
   }
 
-  const schema = createFormSchema(validator, config)
+  const schema = useForm(validator, config)
 
   return (
     <Form

@@ -6,8 +6,8 @@ import { redirect } from 'next/navigation'
 import { getServerSession } from 'next-auth/next'
 import { getProviders } from 'next-auth/react'
 
-import { TypographyH1 } from '@/components/typography'
-import { serverUseTranslate } from '@/components/translate-server'
+import { TypographyH1 } from '@/components/typography/h1.typography'
+import { serverUseTranslate } from '@/components/translate/translate-server'
 import { SignupForm } from '@/features/app-auth/components/signup.form'
 
 export default async function SignupPage() {
@@ -32,7 +32,10 @@ export default async function SignupPage() {
         </TypographyH1>
 
         <SignupForm providers={providerNames} />
-        <T>terms.p</T>
+
+        <p className=" mt-3 text-center text-sm text-muted-foreground">
+          <T>terms.content</T>
+        </p>
       </div>
     </main>
   )

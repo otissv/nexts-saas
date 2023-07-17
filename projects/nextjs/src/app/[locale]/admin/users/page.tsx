@@ -4,14 +4,14 @@
 import * as React from 'react'
 
 import { paginateUsersAction } from '@/features/app-users/users.actions'
-import { PageHeader } from '@/components/page-header'
+import { PageHeader } from '@/components/page/page-header'
 import { deleteUserByIdAction } from '@/features/app-users/users.actions'
 import { getHeaders } from '@/lib/getHeaders'
-import { Pagination } from '@/components/pagination'
+import { Pagination } from '@/components/page/pagination'
 import { UsersTable } from '@/features/app-users/components/uses.table'
 import { decodeSearchParams } from '@/lib/querystring'
 import { env } from '@/config/env'
-import { translateServer } from '@/components/translate-server'
+import { translateServer } from '@/components/translate/translate-server'
 import { Search } from '@/components/search'
 
 const { pageLimit } = env()

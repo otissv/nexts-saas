@@ -6,20 +6,20 @@ import * as React from 'react'
 import { isDev } from 'c-ufunc/libs/isDev'
 
 import { User } from '@/features/app-users/users.types'
-import { translateServer } from '@/components/translate-server'
+import { translateServer } from '@/components/translate/translate-server'
 import {
   deleteUserByIdAction,
   selectUserByIdAction,
 } from '@/features/app-users/users.actions'
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
-import { TypographyH2 } from '@/components/typography'
+import { TypographyH2 } from '@/components/typography/h2.typography'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Divider } from '@/components/divider'
-import { DeleteButton } from '@/components/buttons'
+import { DeleteButton } from '@/components/buttons/delete-button'
 import { getHeaders } from '@/lib/getHeaders'
 import { UserForm } from '@/features/app-users/components/user-form'
-import { PageHeader } from '@/components/page-header'
+import { PageHeader } from '@/components/page/page-header'
 import { Maybe } from '@/components/maybe'
 
 export interface UserPageProps {

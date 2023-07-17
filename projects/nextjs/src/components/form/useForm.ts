@@ -1,8 +1,8 @@
 'use client'
 import { z } from 'zod'
 
-import { FormSchema } from '@/components/component.types'
-import { MutableRefObject, useRef } from 'react'
+import { FormSchema } from '@/components/form/types.form'
+// import { MutableRefObject, useRef } from 'react'
 
 export type FormConfig = Record<string, Partial<FormSchema>>
 
@@ -10,7 +10,7 @@ export type FormConfig = Record<string, Partial<FormSchema>>
  * Creates a form schema
  * @example
  * ```
- * createFormSchema(userValidator, {
+ * useForm(userValidator, {
  *  email: {
  *    type: 'otis',
  *    attributes: {
@@ -20,7 +20,7 @@ export type FormConfig = Record<string, Partial<FormSchema>>
 * });
 ```
 */
-export const createFormSchema = <ZodObject extends z.ZodTypeAny>(
+export const useForm = <ZodObject extends z.ZodTypeAny>(
   zodObject: ZodObject,
   config: FormConfig = {}
 ) => {
@@ -38,18 +38,19 @@ export const createFormSchema = <ZodObject extends z.ZodTypeAny>(
   for (const [name, validator] of Object.entries<z.ZodTypeAny>(
     zodObject._def.shape()
   )) {
-    const ref: MutableRefObject<HTMLFormElement | null> = useRef(null)
+
 
     // @ts-ignore
     const prop = config[name] || {}
     const def: Def = validator._def?.innerType?._def || validator._def
+
 
     const type: FormSchema['type'] = prop.type as any
     const attributes = prop.attributes || {}
     const classNames = prop.classNames
     const description = prop.description || def.description
     const error = prop.error
-    const inputRef = ref || prop.ref
+    const ref = prop.ref
     const invalid = prop.invalid || false
     const label = prop.label
     const required = prop.required ?? def.typeName !== 'ZodOptional'
@@ -68,7 +69,7 @@ export const createFormSchema = <ZodObject extends z.ZodTypeAny>(
       ...value,
       ...(classNames ? { classNames } : undefined),
       ...(description ? { description } : undefined),
-      ...(ref ? { ref: inputRef } : undefined),
+      ...(ref ? { ref } : undefined),
       ...(required ? { required } : undefined),
       ...attributes,
       error: error || '',

@@ -1,13 +1,13 @@
 'use client'
 
 import * as React from 'react'
-
-import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
+import { useTranslateClientComponent } from '@/components/translate/translate-client'
 import { cn } from '@/lib/utils'
-import { translateClient } from '@/components/translate-client'
 
-export interface TextFieldProps extends React.HTMLAttributes<HTMLInputElement> {
+export interface TextareaFieldProps
+  extends React.HTMLAttributes<HTMLTextAreaElement> {
   name: string
   label: string
   required?: boolean
@@ -15,13 +15,15 @@ export interface TextFieldProps extends React.HTMLAttributes<HTMLInputElement> {
     label?: string
     input?: string
   }
-  type?: string
   value?: string
   error: string | null
   invalid?: boolean
 }
 
-export const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
+export const TextareaField = React.forwardRef<
+  HTMLTextAreaElement,
+  TextareaFieldProps
+>(
   (
     {
       name,
@@ -34,24 +36,23 @@ export const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
       value,
       onChange,
       onBlur,
-      type,
       ...props
     },
     ref
   ) => {
-    const T = translateClient('ui.form')
+    const T = useTranslateClientComponent('ui.form')
 
     return (
       <React.Fragment>
-        <Label className={cn('mb-2', classNames?.label)} htmlFor={name}>
-          {label}{' '}
+        <Label className={classNames?.label} htmlFor={name}>
+          {label || name}{' '}
           {required ? null : (
             <span className="inline-block ml-1 text-xs text-muted-foreground">
               <T>notRequired</T>
             </span>
           )}
         </Label>
-        <Input
+        <Textarea
           className={cn(
             'mb-0.5',
             classNames?.input,
@@ -63,7 +64,6 @@ export const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
           value={value}
           onChange={onChange}
           onBlur={onBlur}
-          type={type}
           ref={ref}
           {...props}
         />
@@ -79,4 +79,4 @@ export const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
     )
   }
 )
-TextField.displayName = 'TextField'
+TextareaField.displayName = 'TextareaField'

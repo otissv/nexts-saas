@@ -4,18 +4,18 @@ import { signIn } from 'next-auth/react'
 import { isDev } from 'c-ufunc/libs/isDev'
 
 import { Button } from '@/components/ui/button'
-import { Form, Submit } from '@/components/form'
-import {
-  FormConfig,
-  createFormSchema,
-} from '@/components/forms/createFormSchema'
+import { Form, Submit } from '@/components/form/form'
+import { FormConfig, useForm } from '@/components/form/useForm'
 import { signupValidator } from '@/features/app-auth/auth.validators'
-import { translateClient, useTranslate } from '@/components/translate-client'
+import {
+  useTranslateClientComponent,
+  useTranslateClient,
+} from '@/components/translate/translate-client'
 import { useErrorNotify } from '@/components/notify'
 
 export function SignupForm({ providers }: { providers: string[] }) {
-  const T = translateClient('ui.pages.authentication')
-  const t = useTranslate('ui.pages.authentication')
+  const T = useTranslateClientComponent('ui.pages.authentication')
+  const t = useTranslateClient('ui.pages.authentication')
   const errorNotify = useErrorNotify()
 
   const config: FormConfig = {
@@ -26,6 +26,7 @@ export function SignupForm({ providers }: { providers: string[] }) {
         label: 'sr-only',
       },
       error: t('form.fields.username.error'),
+      ref: React.useRef(null),
     },
     email: {
       label: 'Email',
@@ -35,6 +36,7 @@ export function SignupForm({ providers }: { providers: string[] }) {
         label: 'sr-only',
       },
       error: t('form.fields.email.error'),
+      ref: React.useRef(null),
     },
     password: {
       label: 'Password',
@@ -44,6 +46,7 @@ export function SignupForm({ providers }: { providers: string[] }) {
         label: 'sr-only',
       },
       error: t('form.fields.password.error'),
+      ref: React.useRef(null),
     },
   }
 
@@ -88,7 +91,7 @@ export function SignupForm({ providers }: { providers: string[] }) {
     })
   }
 
-  const schema = createFormSchema(signupValidator, config)
+  const schema = useForm(signupValidator, config)
 
   const form: Record<string, any> = {
     credentials: () => (
@@ -101,7 +104,7 @@ export function SignupForm({ providers }: { providers: string[] }) {
           submit={onSubmit}
         >
           <Button className="mt-2">
-            <T>form.button.content</T>
+            <T>signup.button.content</T>
           </Button>
         </Form>
 
