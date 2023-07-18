@@ -81,3 +81,12 @@ Learn more about the power of Turborepo:
 npm/node-gyp Error: not found: make
 
 `sudo apt install build-essential`
+
+pgAdmin
+
+[Errno 13] Permission denied: '/var/lib/pgadmin/sessions'
+
+# Tests
+
+run `npx playwright install` in nextjs-tests
+

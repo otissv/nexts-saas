@@ -6,7 +6,7 @@ services:
     image: 'postgres:latest'
     restart: always
     env_file:
-      - .env
+      - projects/nextjs/.env
     ports:
       - '5432:5432'
     networks:
@@ -20,7 +20,7 @@ services:
     image: dpage/pgadmin4
     restart: always
     env_file:
-      - .env
+      - projects/nextjs/.env
     ports:
       - '5050:80'
     depends_on:

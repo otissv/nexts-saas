@@ -1,11 +1,16 @@
 {
   "cSpell.words": [
     "clsx",
+    "codegen",
+    "editorjs",
     "kysely",
     "lucide",
     "micromark",
     "NEXTAUTH",
+    "nextjs",
+    "Pluggable",
     "seos",
+    "Signout",
     "Signup",
     "Stringable",
     "tailwindcss",

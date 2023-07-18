@@ -318,6 +318,9 @@ importers:
       react-textarea-autosize:
         specifier: ^8.4.1
         version: 8.5.2(@types/react@18.0.24)(react@18.2.0)
+      react-wrap-balancer:
+        specifier: ^1.0.0
+        version: 1.0.0(react@18.2.0)
       rehype-autolink-headings:
         specifier: ^6.1.1
         version: 6.1.1
@@ -413,7 +416,7 @@ importers:
   projects/nextjs-tests:
     dependencies:
       '@playwright/test':
-        specifier: ^1.35.0
+        specifier: ^1.35.1
         version: 1.35.1
       dotenv:
         specifier: ^16.0.3
@@ -3101,7 +3104,7 @@ packages:
   /@types/hast@2.3.4:
     resolution: {integrity: sha512-wLEm0QvaoawEDoTRwzTXp4b4jpwiJDvR5KMnFnVodm3scufTlBOWRD6N1OBf9TZMhjlNsSfcO5V+7AF4+Vy+9g==}
     dependencies:
-      '@types/unist': 2.0.6
+      '@types/unist': 3.0.0
     dev: false
 
   /@types/inquirer@9.0.3:
@@ -8576,6 +8579,14 @@ packages:
       use-latest: 1.2.1(@types/react@18.0.24)(react@18.2.0)
     transitivePeerDependencies:
       - '@types/react'
+    dev: false
+
+  /react-wrap-balancer@1.0.0(react@18.2.0):
+    resolution: {integrity: sha512-yjDH+I8WGyDfh95gKhX/6ckfSBAltwQkxiYxtLPlyIRQNUVSjvz1uHR6Hpy+zHyOkJQw6GEC5RPglA41QXvzyw==}
+    peerDependencies:
+      react: '>=16.8.0 || ^17.0.0 || ^18'
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react@18.2.0:

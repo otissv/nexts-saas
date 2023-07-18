@@ -27,3 +27,7 @@ projects/redesign-system-react-material-icons/libs
 
 # turbo
 .turbo
+
+# database
+/db-data/
+/pgadmin-data/
