@@ -52,7 +52,14 @@ export function SignupForm({ providers }: { providers: string[] }) {
 
   const onSubmit = async ({ error, values }: Submit) => {
     try {
-      if (error) throw error
+      if (
+        error ||
+        values?.username === '' ||
+        values?.password === '' ||
+        values?.email === ''
+      ) {
+        throw error
+      }
 
       const response = await fetch('/api/auth/signup', {
         method: 'POST',
@@ -83,12 +90,6 @@ export function SignupForm({ providers }: { providers: string[] }) {
         description: 'There was a problem with your request.',
       })
     }
-
-    signIn('credentials', {
-      username: values?.username,
-      password: values?.password,
-      callbackUrl: '/',
-    })
   }
 
   const schema = useForm(signupValidator, config)

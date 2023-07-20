@@ -4,6 +4,7 @@ import * as React from 'react'
 import { signIn } from 'next-auth/react'
 import Link from 'next/link'
 import { isDev } from 'c-ufunc/libs/isDev'
+import { useSearchParams } from 'next/navigation'
 
 import { Button } from '@/components/ui/button'
 import { Form, Submit } from '@/components/form/form'
@@ -19,6 +20,18 @@ export function LoginForm({ providers }: { providers: string[] }) {
   const T = useTranslateClientComponent('ui.pages.authentication')
   const t = useTranslateClient('ui.pages.authentication')
   const errorNotify = useErrorNotify()
+  const searchParams = useSearchParams()
+
+  React.useEffect(() => {
+    const error = searchParams.get('error')
+
+    if (error) {
+      errorNotify({
+        title: 'Login error',
+        description: error,
+      })
+    }
+  }, [])
 
   const config: FormConfig = {
     username: {
@@ -44,7 +57,9 @@ export function LoginForm({ providers }: { providers: string[] }) {
 
   const onSubmit = async ({ error, values }: Submit) => {
     try {
-      if (error) throw error
+      if (error || values?.username === '' || values?.password === '') {
+        throw error
+      }
 
       await signIn('credentials', {
         username: values?.username,
@@ -54,7 +69,6 @@ export function LoginForm({ providers }: { providers: string[] }) {
     } catch (error) {
       if (isDev()) {
         console.error('Error')
-        console.dir(error)
       }
 
       errorNotify({
@@ -62,12 +76,6 @@ export function LoginForm({ providers }: { providers: string[] }) {
         description: 'There was a problem with your request.',
       })
     }
-
-    signIn('credentials', {
-      username: values?.username,
-      password: values?.password,
-      callbackUrl: '/',
-    })
   }
 
   const schema = useForm(signInValidator, config)

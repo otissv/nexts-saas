@@ -82,12 +82,8 @@
           "name": "addresses_user_id_users_id_fk",
           "tableFrom": "addresses",
           "tableTo": "users",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -114,9 +110,7 @@
       "indexes": {
         "stripe_customer_id_idx": {
           "name": "stripe_customer_id_idx",
-          "columns": [
-            "stripe_customer_id"
-          ],
+          "columns": ["stripe_customer_id"],
           "isUnique": false
         }
       },
@@ -125,12 +119,8 @@
           "name": "customers_id_users_id_fk",
           "tableFrom": "customers",
           "tableTo": "users",
-          "columnsFrom": [
-            "id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -215,16 +205,12 @@
       "indexes": {
         "provider_id_idx": {
           "name": "provider_id_idx",
-          "columns": [
-            "provider_id"
-          ],
+          "columns": ["provider_id"],
           "isUnique": false
         },
         "user_id_idx": {
           "name": "user_id_idx",
-          "columns": [
-            "user_id"
-          ],
+          "columns": ["user_id"],
           "isUnique": false
         }
       },
@@ -233,12 +219,8 @@
           "name": "oauth_providers_user_id_users_id_fk",
           "tableFrom": "oauth_providers",
           "tableTo": "users",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -311,12 +293,8 @@
           "name": "orders_user_id_users_id_fk",
           "tableFrom": "orders",
           "tableTo": "users",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -324,12 +302,8 @@
           "name": "orders_customer_id_users_id_fk",
           "tableFrom": "orders",
           "tableTo": "users",
-          "columnsFrom": [
-            "customer_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["customer_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -423,12 +397,8 @@
           "name": "pricing_plans_product_id_products_id_fk",
           "tableFrom": "pricing_plans",
           "tableTo": "products",
-          "columnsFrom": [
-            "product_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["product_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -492,9 +462,7 @@
       "indexes": {
         "slug_idx": {
           "name": "slug_idx",
-          "columns": [
-            "slug"
-          ],
+          "columns": ["slug"],
           "isUnique": false
         }
       },
@@ -651,12 +619,8 @@
           "name": "subscriptions_tenant_id_users_id_fk",
           "tableFrom": "subscriptions",
           "tableTo": "users",
-          "columnsFrom": [
-            "tenant_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["tenant_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -664,12 +628,8 @@
           "name": "subscriptions_price_id_pricing_plans_id_fk",
           "tableFrom": "subscriptions",
           "tableTo": "pricing_plans",
-          "columnsFrom": [
-            "price_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["price_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -696,9 +656,7 @@
       "indexes": {
         "owner_id_idx": {
           "name": "owner_id_idx",
-          "columns": [
-            "owner_id"
-          ],
+          "columns": ["owner_id"],
           "isUnique": false
         }
       },
@@ -707,12 +665,8 @@
           "name": "tenants_owner_id_users_id_fk",
           "tableFrom": "tenants",
           "tableTo": "users",
-          "columnsFrom": [
-            "owner_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["owner_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -772,8 +726,8 @@
           "primaryKey": false,
           "notNull": false
         },
-        "avatar_url": {
-          "name": "avatar_url",
+        "image_url": {
+          "name": "image_url",
           "type": "text  ",
           "primaryKey": false,
           "notNull": false
@@ -801,9 +755,7 @@
       "indexes": {
         "username_idx": {
           "name": "username_idx",
-          "columns": [
-            "username"
-          ],
+          "columns": ["username"],
           "isUnique": false
         }
       },
@@ -812,12 +764,8 @@
           "name": "users_roles_roles_id_fk",
           "tableFrom": "users",
           "tableTo": "roles",
-          "columnsFrom": [
-            "roles"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["roles"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }

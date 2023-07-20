@@ -33,6 +33,7 @@ export const Form = ({
   children,
   ...props
 }: FormProps) => {
+  const formRef = React.useRef<HTMLFormElement | null>(null)
   const reducer = (state: any, { name, data }: any) => {
     return updateItemById({
       list: state,
@@ -91,6 +92,13 @@ export const Form = ({
     submit({ values, error })
   }
 
+  const handleOnKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      e.target = formRef.current as HTMLFormElement
+      handleOnSubmit(e)
+    }
+  }
+
   const formFields = state.map((field) => {
     return (
       <TextField
@@ -98,6 +106,7 @@ export const Form = ({
         {...field}
         onChange={handleOnChange}
         onBlur={handleOnBlur}
+        onKeyDown={handleOnKeyDown}
       />
     )
   })
@@ -105,7 +114,12 @@ export const Form = ({
   // TODO: save state cookie with session and form id before leaving if not saved if persist is true
 
   return (
-    <form onSubmit={handleOnSubmit} className={className} {...props}>
+    <form
+      onSubmit={handleOnSubmit}
+      className={className}
+      ref={formRef}
+      {...props}
+    >
       {legend ? <Fieldset legend={legend}>{formFields}</Fieldset> : formFields}
 
       {children}

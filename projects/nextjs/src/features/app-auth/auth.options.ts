@@ -18,6 +18,8 @@ import { env } from '@/config/env'
 import { authSignIn } from '@/features/app-auth/auth.actions'
 import { oauthProviderSignup } from '@/features/app-oauth-providers/oauth-providers.action'
 import { UserSession } from '@/types'
+import { redirect } from 'next/navigation'
+import { translateServer } from '@/components/translate/translate-server'
 
 const { google, nextAuthSecret } = env()
 const { tenantsService } = serverContext()
@@ -60,12 +62,18 @@ export const authOptions: AuthOptions = {
         password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials, _req) {
+        const t = await translateServer('ui.pages.authentication')
         // You need to provide your own logic here that takes the credentials
-
-        return await authSignIn({
+        const result = await authSignIn({
           username: credentials?.username || '',
           password: credentials?.password || '',
         })
+
+        if (result.error) {
+          return Promise.reject(t('login.error'))
+        } else {
+          return result.data[0] as User
+        }
       },
     }),
   ],
@@ -98,7 +106,6 @@ export const authOptions: AuthOptions = {
           },
         }).catch(console.error)
       }
-
       return true
     },
 

@@ -17,12 +17,13 @@ import {
   NavMenuList,
 } from '@/components/nav/nav'
 export interface NavSheetProps extends React.HTMLProps<HTMLDivElement> {
-  position?: 'top' | 'bottom' | 'left' | 'right'
+  isLoggedIn: boolean
   items: MenuItem[]
+  position?: 'top' | 'bottom' | 'left' | 'right'
 }
 
 export const NavSheet = React.forwardRef<HTMLDivElement, NavSheetProps>(
-  ({ items, children, position, ...props }, ref) => {
+  ({ items, children, isLoggedIn, position, ...props }, ref) => {
     return (
       <Sheet ref={ref} {...props}>
         <SheetTrigger asChild>
@@ -33,20 +34,21 @@ export const NavSheet = React.forwardRef<HTMLDivElement, NavSheetProps>(
           />
         </SheetTrigger>
         <SheetContent className="w-[320px] pt-10" position={position}>
-          <Nav className="w-full overflow-y-auto" stacked>
+          <Nav className="w-full h-full overflow-y-auto" stacked>
             <NavMenuList
-              className="w-full flex-0 items-start justify-start"
+              className="w-full h-full flex-0 items-start justify-start"
               stacked
             >
               {items.map(({ id, label, href }) => {
+                if (!isLoggedIn && id === 'admin') return null
                 return (
-                  <NavMenuItem key={id} className="!mx-0 !my-0.5">
+                  <NavMenuItem key={id} className="!mx-0 !my-0.5 w-full">
                     <SheetClose asChild className="justify-start">
                       <NavMenuLink
                         href={href}
                         key={id}
                         data-radix-collection-item
-                        className="!m-0 w-full h-10 justify-stretch  text-sm font-medium rounded-md focus:outline-none focus:bg-accent focus:text-accent-foreground disabled:opacity-50 disabled:pointer-events-none bg-background hover:bg-accent hover:text-accent-foreground data-[state=open]:bg-accent/50 data-[active]:bg-accent/50"
+                        className="text-sm font-medium rounded-md"
                       >
                         {label}
                       </NavMenuLink>

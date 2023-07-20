@@ -3,6 +3,7 @@
     "clsx",
     "codegen",
     "editorjs",
+    "ilike",
     "kysely",
     "lucide",
     "micromark",

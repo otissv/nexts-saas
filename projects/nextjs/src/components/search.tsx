@@ -26,7 +26,7 @@ export const Search = ({
   const startTransition = React.useTransition()[1]
   const pushQueryString = usePushQueryString<any>(startTransition)
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleOnKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       pushQueryString({
         where: state.trim() !== '' ? state.trim() : undefined,
@@ -44,7 +44,7 @@ export const Search = ({
     <Input
       className="h-10"
       value={state}
-      onKeyDown={handleKeyDown}
+      onKeyDown={handleOnKeyDown}
       onChange={handleOnChange}
       {...props}
       placeholder="Filter users"

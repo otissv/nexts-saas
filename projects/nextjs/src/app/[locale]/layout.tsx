@@ -9,14 +9,15 @@ import { menu } from './menu'
 import { TranslationProvider } from '@/components/translate/translations-provider'
 import { Toaster } from '@/components/toaster'
 import { ThemeProvider } from '@/components/theme-provider'
-import { TailwindIndicator } from '@/components/ui/tailwind-indicator'
-import { NavMenuLink } from '@/components/nav/nav'
+import { NavMenuItem, NavMenuLink } from '@/components/nav/nav'
 import { cn } from '@/lib/utils'
 import { NavSheet } from '@/components/nav/nav-sheet'
 import { Maybe } from '@/components/maybe'
 import { getHeaders } from '@/lib/getHeaders'
 import { SheetClose } from '@/components/ui/sheet'
 import { NavBar } from '@/components/nav/nav-bar'
+import { Indicators } from '@/components/indicators/indicator'
+import { serverUseTranslate } from '@/components/translate/translate-server'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -40,13 +41,18 @@ export default async function RootLayout({
 
   const menuItems = await menu()
   const { pathname } = getHeaders()
-  const hideMenu = ['/login', '/admin'].includes(`/${pathname.split('/')[1]}`)
 
-  const session = getServerSession()
+  //TODO: value not updating
+  const hideMenu = ['/login', '/signup', '/admin'].includes(
+    `/${pathname.split('/')[1]}`
+  )
+
+  const session = await getServerSession()
   const isLoggedIn = Boolean(session)
+  const T = await serverUseTranslate('ui.pages.authentication')
 
   return (
-    <html lang={params.locale} suppressHydrationWarning className="dark">
+    <html lang={params.locale} suppressHydrationWarning>
       <body
         className={cn(
           inter.className,
@@ -59,25 +65,85 @@ export default async function RootLayout({
               <div className="flex flex-col">
                 <Maybe check={!hideMenu}>
                   {/* mobile nav */}
-                  <NavSheet items={menuItems.marketing} position="left">
-                    <SheetClose asChild className="justify-start">
-                      <NavMenuLink
-                        href="/login"
-                        data-radix-collection-item
-                        className="!m-0 font-semibold w-full rounded-md border border-white focus:outline-none focus:bg-accent focus:text-accent-foreground disabled:opacity-50 disabled:pointer-events-none bg-background hover:bg-accent hover:text-accent-foreground data-[state=open]:bg-accent/50 data-[active]:bg-accent/50 h-10"
-                      >
-                        Login
-                      </NavMenuLink>
-                    </SheetClose>
+                  <NavSheet
+                    items={menuItems.marketing}
+                    isLoggedIn={isLoggedIn}
+                    position="left"
+                  >
+                    {isLoggedIn ? (
+                      <NavMenuItem className="!mx-0 w-full">
+                        <NavMenuLink
+                          href="/signout"
+                          variant="outline"
+                          data-radix-collection-item
+                        >
+                          <T>buttons.signout.content</T>
+                        </NavMenuLink>
+                      </NavMenuItem>
+                    ) : (
+                      <>
+                        <NavMenuItem className="!mx-0 w-full">
+                          <NavMenuLink
+                            href="/signup"
+                            data-radix-collection-item
+                          >
+                            <T>buttons.signup.content</T>
+                          </NavMenuLink>
+                        </NavMenuItem>
+                        <NavMenuItem className="!mx-0 w-full">
+                          <SheetClose asChild className="justify-start">
+                            <NavMenuLink
+                              href="/login"
+                              variant="outline"
+                              data-radix-collection-item
+                            >
+                              <T>buttons.login.content</T>
+                            </NavMenuLink>
+                          </SheetClose>
+                        </NavMenuItem>
+                      </>
+                    )}
                   </NavSheet>
 
                   {/* desktop nav */}
-                  <NavBar isLoggedIn={isLoggedIn} items={menuItems.marketing} />
+                  <NavBar items={menuItems.marketing}>
+                    {isLoggedIn ? (
+                      <NavMenuItem className="!mx-2 !ml-auto xl:last:!mr-0">
+                        <NavMenuLink
+                          href="/signout"
+                          variant="outline"
+                          data-radix-collection-item
+                        >
+                          <T>buttons.signout.content</T>
+                        </NavMenuLink>
+                      </NavMenuItem>
+                    ) : (
+                      <div className="flex !mx-2  !ml-auto xl:last:!mr-0">
+                        <NavMenuItem className="mr-2">
+                          <NavMenuLink
+                            href="/signup"
+                            data-radix-collection-item
+                          >
+                            <T>buttons.signup.content</T>
+                          </NavMenuLink>
+                        </NavMenuItem>
+                        <NavMenuItem>
+                          <NavMenuLink
+                            href="/login"
+                            variant="outline"
+                            data-radix-collection-item
+                          >
+                            <T>buttons.login.content</T>
+                          </NavMenuLink>
+                        </NavMenuItem>
+                      </div>
+                    )}
+                  </NavBar>
                 </Maybe>
                 {children}
               </div>
               <Toaster />
-              <TailwindIndicator />
+              <Indicators isLoggedIn={isLoggedIn} />
             </BalancerProvider>
           </ThemeProvider>
         </TranslationProvider>

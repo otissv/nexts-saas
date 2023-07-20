@@ -43,6 +43,8 @@ export const userInsertValidator = userValidator.omit({
   id: true,
   password: true,
   emailVerified: true,
+  createdAt: true,
+  updatedAt: true,
 })
 
 export const userUpdateValidator = userValidator
@@ -50,6 +52,7 @@ export const userUpdateValidator = userValidator
     id: true,
     password: true,
     emailVerified: true,
+    createdAt: true,
   })
   .partial()
 

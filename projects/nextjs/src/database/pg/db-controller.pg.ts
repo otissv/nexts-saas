@@ -298,7 +298,7 @@ export function dbController(db: PostgresDatabase) {
           SuccessResponse<Partial<DataType>> | ErrorResponse
         >,
 
-      insert: <Insert>({
+      insert: async <Insert>({
         data,
         returning,
       }: {
@@ -306,19 +306,24 @@ export function dbController(db: PostgresDatabase) {
         returning?: SelectedFieldsFlat
       }) =>
         insertValidate(data)
-          .then(() =>
-            db
-              .insert(schema)
-              .values(data as any)
-              .returning(returning as any)
-              .then(serverResponse)
-              // .then(omitPassword)
-              .catch(errorResponse(422))
-          )
+          .then(() => {
+            return (
+              db
+                .insert(schema)
+                .values({
+                  ...data,
+                  createdAt: new Date(),
+                  updatedAt: new Date(),
+                } as any)
+                .returning(returning as any)
+                .then(serverResponse)
+                // .then(omitPassword)
+                .catch(errorResponse(422))
+            )
+          })
           .catch(errorResponse(422)) as Promise<
           SuccessResponse<Partial<DataType>> | ErrorResponse
         >,
-
       update: <Update>({
         data,
         where,

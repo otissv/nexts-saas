@@ -36,6 +36,7 @@ export const TextareaField = React.forwardRef<
       value,
       onChange,
       onBlur,
+      onKeyDown,
       ...props
     },
     ref
@@ -64,6 +65,7 @@ export const TextareaField = React.forwardRef<
           value={value}
           onChange={onChange}
           onBlur={onBlur}
+          onKeyDown={onKeyDown}
           ref={ref}
           {...props}
         />

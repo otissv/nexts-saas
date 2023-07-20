@@ -32,8 +32,5 @@ export async function signInValidate(data: SignIn) {
 }
 
 export async function signupValidate(data: Signup) {
-  debugger
-  console.log({signupValidator})
-  console.log({data})
   return validate(signupValidator)(data)
 }

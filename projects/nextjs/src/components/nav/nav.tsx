@@ -71,12 +71,13 @@ NavMenuItem.displayName = 'NavMenuItem'
 export interface NavMenuLinkProps
   extends React.HTMLAttributes<HTMLAnchorElement> {
   href: string
+  variant?: 'default' | 'outline'
 }
 
 export const NavMenuLink = React.forwardRef<
   HTMLAnchorElement,
   NavMenuLinkProps
->(({ href, children, className, ...props }, ref) => {
+>(({ href, children, className, variant = 'default', ...props }, ref) => {
   const pathname = usePathname()
   const isActive = pathname === href
 
@@ -87,7 +88,8 @@ export const NavMenuLink = React.forwardRef<
       href={href}
       data-radix-collection-item
       className={cn(
-        'inline-flex border-transparent py-2 px-4 transition-colors  group',
+        '!m-0 inline-flex w-full font-semibold rounded-md border border-transparent py-2 px-4 transition-colors h-10 focus:outline-none focus:bg-accent focus:text-accent-foreground disabled:opacity-50 disabled:pointer-events-none bg-background hover:bg-accent hover:text-accent-foreground data-[state=open]:bg-accent/50 data-[active]:bg-accent/50 group',
+        variant === 'outline' ? 'border-black dark:border-white' : '',
         className
       )}
       ref={ref}

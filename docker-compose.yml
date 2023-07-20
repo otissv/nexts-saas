@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   database:
-    container_name: pg_nextjs
+    container_name: pg_nextjs_sass
     image: 'postgres:latest'
     restart: always
     env_file:
@@ -13,10 +13,9 @@ services:
       - postgres-network
     volumes:
       - ./db-data/:/var/lib/postgresql/data/
-      # - ./init.sql:/docker-entrypoint-initdb.d/init.sql
 
   pgadmin:
-    container_name: pgadmin4_nextjs
+    container_name: pgadmin4_nextjs_sass
     image: dpage/pgadmin4
     restart: always
     env_file:

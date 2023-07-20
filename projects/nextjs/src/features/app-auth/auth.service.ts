@@ -12,6 +12,7 @@ import {
 import { signInValidate, signupValidate } from './auth.validators'
 import { usersService } from '@/features/app-users/users.service'
 import { errorResponse } from '@/database/utils.db'
+import { SeverReturnType } from '@/database/pg/types.pg'
 
 export function authService(db: PostgresDatabase) {
   const users = usersService(db)
@@ -27,39 +28,30 @@ export function authService(db: PostgresDatabase) {
               where: eq(users.schema.username, username) as SQL<User>,
             })
             .then(checkResultHasData('Invalid username or password'))
-            .then(
-              comparePassword<Partial<User>>(
-                password,
-                'Invalid username or password'
-              )
-            )
+            .then(comparePassword(password, 'Invalid username or password'))
             .catch(errorResponse(422))
         )
-        .catch(errorResponse(422))
+        .catch(errorResponse(422)) as SeverReturnType<User>
     },
 
     /* Mutations */
 
     signup: ({ data }: { data: Signup }) =>
-      signupValidate(data).then(() =>
-        users
-          .select({
-            columns: ['id', 'username'],
-            where: eq(users.schema.username, data.username) as SQL<User>,
-          })
-          .then(
-            doesUserExist<Partial<User>, Signup>(
-              { data },
-              'Username already exists'
+      signupValidate(data).then(
+        () =>
+          users
+            .select({
+              columns: ['id', 'username'],
+              where: eq(users.schema.username, data.username) as SQL<User>,
+            })
+            .then(doesUserExist('Username already exists'))
+            .then(hashPassword)
+            .then(() =>
+              users
+                .insert({ data: data as any as UserInsert })
+                .catch(errorResponse(422))
             )
-          )
-          .then(hashPassword)
-          .then(({ data }: { data: Signup }) =>
-            users
-              .insert({ data: data as any as UserInsert })
-              .catch(errorResponse(422))
-          )
-          .catch(errorResponse(422))
+            .catch(errorResponse(422)) as SeverReturnType<User>
       ),
   }
 }

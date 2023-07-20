@@ -343,7 +343,7 @@ const user = {
   firstName: varchar('first_name', { length: 256 }),
   lastName: varchar('last_name', { length: 256 }),
   phone: varchar('phone', { length: 256 }),
-  imageUrl: text('avatar_url'),
+  imageUrl: text('image_url'),
   password: varchar('password', { length: 256 }),
   emailVerified: boolean('email_verified').notNull().default(false),
 }

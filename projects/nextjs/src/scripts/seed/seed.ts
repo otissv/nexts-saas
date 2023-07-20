@@ -52,6 +52,8 @@ async function seed() {
         await tx.insert(contents).values(data.contents).onConflictDoNothing()
         await tx.insert(medias).values(data.medias).onConflictDoNothing()
         await tx.insert(users).values(data.users).onConflictDoNothing()
+
+        console.log('Data inserted')
       }
     } catch (error) {
       console.error(error)

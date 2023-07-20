@@ -82,11 +82,41 @@ npm/node-gyp Error: not found: make
 
 `sudo apt install build-essential`
 
-pgAdmin
+## pgAdmin docker dev
 
-[Errno 13] Permission denied: '/var/lib/pgadmin/sessions'
+pgadmin-data owner must be 5050
+
+```
+sudo chown -R 5050:5050 pgadmin-data
+```
+
+Must match value in `docker-compose.yml` file.
+
+Login
+username = admin@admin.com
+password = admin
+
+Create server
+
+1. Add New Server
+2. Under General tab, - Name = <name>
+3. Under Connection
+
+- Host Name/address = pg_nextjs_sass
+- Port = 5432
+- Maintenance database = postgres
+  Username = postgres
+  Password = admin
+
+Create database
+Database = nextjs_saas
+
+Create and seed database
+`npm run seed`
+
+Add contrainsts
+`npm run alt`
 
 # Tests
 
 run `npx playwright install` in nextjs-tests
-

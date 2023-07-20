@@ -1,7 +1,7 @@
 import { translateServer } from '@/components/translate/translate-server'
 
 export type MenuItem = {
-  id: number
+  id: string
   label: string
   href: string
 }
@@ -12,64 +12,64 @@ export async function menu() {
   return {
     marketing: [
       {
-        id: 1,
+        id: 'about',
         label: t('marketing.about.content'),
         href: '/about',
       },
       {
-        id: 2,
+        id: 'contact',
         label: t('marketing.contact.content'),
         href: '/contact',
       },
       {
-        id: 3,
+        id: 'pricing',
         label: t('marketing.pricing.content'),
         href: '/pricing',
       },
       {
-        id: 4,
-        label: t('marketing.pricing.content'),
-        href: '/pricing',
-      },
-      {
-        id: 5,
+        id: 'blog',
         label: t('marketing.blog.content'),
         href: '/blog',
+      },
+      {
+        id: 'admin',
+        label: t('marketing.admin.content'),
+        href: '/admin',
       },
     ],
     admin: [
       {
-        id: 1,
+        id: 'pages',
         label: t('admin.page.content'),
         href: '/admin/pages',
       },
       {
-        id: 2,
+        id: 'companies',
         label: t('admin.company.content'),
         href: '/admin/companies',
       },
       {
-        id: 4,
+        id: 'addresses',
         label: t('admin.addresses.content'),
         href: '/admin/companies/addresses',
       },
       {
-        id: 5,
+        id: 'users',
         label: t('admin.users.content'),
         href: '/admin/users',
       },
       {
-        id: 6,
+        id: 'menu',
         label: t('admin.menu.content'),
         href: '/admin/menu',
       },
       {
-        id: 7,
+        id: 'media',
         label: t('admin.media.content'),
         href: '/admin/media',
       },
       {
-        id: 8,
+        id: 'team',
         label: t('admin.team.content'),
         href: '/admin/team',
       },

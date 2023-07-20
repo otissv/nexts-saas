@@ -5,7 +5,7 @@ import bcrypt from 'bcrypt'
 import { revalidatePath as revalidateCachePath } from 'next/cache'
 
 import { errorResponse } from '@/database/utils.db'
-import { ErrorResponse, SuccessResponse } from '@/database/pg/types.pg'
+import { SuccessResponse } from '@/database/pg/types.pg'
 
 export function authorize(fn: (...args: any[]) => Promise<any>) {
   return async (...args: any[]) => {
@@ -45,9 +45,9 @@ export function authorized(fn: Function) {
 }
 
 export function checkResultHasData<Data>(message: string) {
-  return (result: SuccessResponse<Data> | ErrorResponse) => {
+  return (result: SuccessResponse<Data>) => {
     try {
-      if ((result as ErrorResponse).error) return result
+      if (result.error) return result
 
       if (result.data.length === 0) {
         throw new Error(message)
@@ -73,14 +73,14 @@ export function comparePassword<Type extends { password?: string }>(
   message: string
 ) {
   return async (result: SuccessResponse<Type>) => {
-    try {
-      if (!result.data.length) return result
+    if (result.error) return result
+    const [user] = result.data
 
-      const [user] = result.data
+    try {
       if (
         !password ||
         !user.password ||
-        (await bcrypt.compare(
+        !(await bcrypt.compare(
           password, // password to be compared
           user.password // hash password
         ))
@@ -95,23 +95,27 @@ export function comparePassword<Type extends { password?: string }>(
   }
 }
 
-export function doesUserExist<Type, Data>(
-  { data }: { data: Data },
-  message: string
-) {
+export function doesUserExist<Type>(message: string) {
   return (result: SuccessResponse<Type>) => {
-    if (result.data.length) throw new Error(message)
-    return { data }
+    if (result.error) return result
+    try {
+      if (!result.data.length) throw new Error(message)
+      return result
+    } catch (error) {
+      return errorResponse(422)(error as Error)
+    }
   }
 }
 
-export function hashPassword<Data>({ data }: { data: Data }) {
+export function hashPassword<Type>(result: { data: Type; error: unknown }) {
+  if (result.error) return result.error
+
   return bcrypt
-    .hash((data as any).password as string, 10)
-    .then((hashPassword) => ({
+    .hash((result.data as any).password as string, 10)
+    .then((hashedPassword) => ({
       data: {
-        ...data,
-        password: hashPassword,
+        ...result.data,
+        password: hashedPassword,
       },
     }))
 }

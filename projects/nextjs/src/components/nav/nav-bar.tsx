@@ -11,13 +11,12 @@ import {
 export interface LoggedOutNavProps extends NavProps {
   items: MenuItem[]
   className?: string
-  isLoggedIn: boolean
 }
 
 export const NavBar = ({
   className,
   items,
-  isLoggedIn,
+  children,
   ...props
 }: LoggedOutNavProps) => {
   return (
@@ -33,23 +32,7 @@ export const NavBar = ({
                 <NavMenuLink
                   href={href}
                   data-radix-collection-item
-                  className={`
-                    !m-0
-                    w-full 
-                    h-10
-                    font-semibold 
-                    rounded-md 
-                    justify-center
-                    focus:outline-none 
-                    focus:bg-accent 
-                    focus:text-accent-foreground 
-                    disabled:opacity-50 
-                    disabled:pointer-events-none 
-                    bg-background hover:bg-accent 
-                    hover:text-accent-foreground 
-                    data-[state=open]:bg-accent/50 
-                    data-[active]:bg-accent/50 
-                    `}
+                  className="justify-center"
                 >
                   {label}
                 </NavMenuLink>
@@ -57,27 +40,7 @@ export const NavBar = ({
             )
           })}
 
-          {isLoggedIn ? (
-            <NavMenuItem className="!mx-2 !ml-auto xl:last:!mr-0">
-              <NavMenuLink
-                href="/login"
-                data-radix-collection-item
-                className="!m-0 font-semibold w-full rounded-md border border-white focus:outline-none focus:bg-accent focus:text-accent-foreground disabled:opacity-50 disabled:pointer-events-none bg-background hover:bg-accent hover:text-accent-foreground data-[state=open]:bg-accent/50 data-[active]:bg-accent/50 h-10"
-              >
-                Login
-              </NavMenuLink>
-            </NavMenuItem>
-          ) : (
-            <NavMenuItem className="!mx-2 !ml-auto xl:last:!mr-0">
-              <NavMenuLink
-                href="/signout"
-                data-radix-collection-item
-                className="!m-0 font-semibold w-full rounded-md border border-white focus:outline-none focus:bg-accent focus:text-accent-foreground disabled:opacity-50 disabled:pointer-events-none bg-background hover:bg-accent hover:text-accent-foreground data-[state=open]:bg-accent/50 data-[active]:bg-accent/50 h-10"
-              >
-                Sign Out
-              </NavMenuLink>
-            </NavMenuItem>
-          )}
+          {children}
         </NavMenuList>
       </Nav>
     </div>

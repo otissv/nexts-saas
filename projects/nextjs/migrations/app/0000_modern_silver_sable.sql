@@ -115,7 +115,7 @@ CREATE TABLE IF NOT EXISTS "app"."users" (
 	"first_name" varchar (256),
 	"last_name" varchar (256),
 	"phone" varchar (256),
-	"avatar_url" text,
+	"image_url" text,
 	"roles" integer,
 	"created_at" timestamp with time zone NOT NULL,
 	"updated_at" timestamp with time zone DEFAULT now() NOT NULL

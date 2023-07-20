@@ -34,6 +34,7 @@ export const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
       value,
       onChange,
       onBlur,
+      onKeyDown,
       type,
       ...props
     },
@@ -63,6 +64,7 @@ export const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
           value={value}
           onChange={onChange}
           onBlur={onBlur}
+          onKeyDown={onKeyDown}
           type={type}
           ref={ref}
           {...props}

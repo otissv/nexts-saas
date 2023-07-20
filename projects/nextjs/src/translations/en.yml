@@ -20,6 +20,8 @@ ui:
         content: Login
       signout:
         content: Login
+      admin:
+        content: Admin
     admin:
       page:
         content: Pages
@@ -68,6 +70,8 @@ ui:
   pages:
     authentication:
       buttons:
+        signout: 
+          content: Sign Out
         signup: 
           content: Sign Up
         login:
@@ -77,6 +81,7 @@ ui:
         text: Don't have an account
         forgotPassword:
           content: Forgot password?
+        error: Invalid username or email
       signup:
         heading: Create an account
         button:

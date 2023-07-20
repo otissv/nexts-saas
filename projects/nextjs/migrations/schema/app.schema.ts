@@ -41,7 +41,7 @@ export const users = appSchema.table(
     firstName: varchar('first_name', { length: 256 }),
     lastName: varchar('last_name', { length: 256 }),
     phone: varchar('phone', { length: 256 }),
-    imageUrl: text('avatar_url'),
+    imageUrl: text('image_url'),
     rolesId: integer('roles').references(() => roles.id),
     createdAt: timestampz('created_at').notNull(),
     updatedAt: timestampz('updated_at')
