@@ -34,7 +34,7 @@ import {
   selectColumns,
 } from '@/database/utils.db'
 import { PostgresDatabase } from '@/database/pg/connection.pg'
-import { env } from '@/config/env'
+import { env } from 'env/build'
 
 interface Type {
   id: number
@@ -324,6 +324,7 @@ export function dbController(db: PostgresDatabase) {
           .catch(errorResponse(422)) as Promise<
           SuccessResponse<Partial<DataType>> | ErrorResponse
         >,
+
       update: <Update>({
         data,
         where,

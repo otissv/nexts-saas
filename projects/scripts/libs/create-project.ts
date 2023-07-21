@@ -22,7 +22,7 @@ interface ProjectInfo {
 
 const templates = ['nextjs', 'react-components', 'library']
 
-const chekIfProjectNameIsExists = (templates: string[]) => {
+const checkIfProjectNameIsExists = (templates: string[]) => {
   switch (true) {
     case !process.argv[2] || process.argv[2].trim().length === 0:
       return Promise.reject(chalk.red('Project name is required'))
@@ -83,7 +83,7 @@ const getProjectInfo = (templateName: string) => {
   }
 }
 
-const selectTempalte = (_values: string[]) =>
+const selectTemplate = (_values: string[]) =>
   inquirer.prompt({
     type: 'list',
     name: 'templates',
@@ -122,8 +122,8 @@ const selectDependencies = (info: Omit<ProjectInfo, 'dependencies'>) =>
   )
 
 input(templates)
-  // .then(chekIfProjectNameIsExists)
-  .then(selectTempalte)
+  // .then(checkIfProjectNameIsExists)
+  .then(selectTemplate)
   .then(getOneValueFromPairs('templates'))
   .then(getProjectInfo)
   .then(selectDependencies)
@@ -154,4 +154,4 @@ install
 logDone
 getDirNames
 getValuesFromPairs
-chekIfProjectNameIsExists
+checkIfProjectNameIsExists

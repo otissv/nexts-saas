@@ -1,26 +1,43 @@
 import { faker } from '@faker-js/faker'
+import bcrypt from 'bcrypt'
 
 faker.seed(123)
 const count = 100
 
+const hashedPassword = bcrypt.hashSync('!Aa12345', 10)
+
 export const data = {
-  users: faker.helpers.multiple(
-    () => ({
-      username: faker.internet.userName(),
-      // TODO: hash
-      password: '12345678',
-      email: faker.internet.email(),
-      emailVerified: faker.datatype.boolean(),
-      firstName: faker.person.firstName(),
+  users: [
+    {
+      username: 'admin',
+      password: hashedPassword,
+      email: 'admin@admin.com',
+      emailVerified: true,
+      firstName: 'Admin',
       lastName: faker.person.lastName(),
       phone: faker.phone.number(),
       imageUrl: faker.image.avatar(),
       // rolesId: faker.string.uuid(),
       createdAt: faker.date.past(),
       updatedAt: faker.date.recent(),
-    }),
-    { count }
-  ),
+    },
+    ...faker.helpers.multiple(
+      () => ({
+        username: faker.internet.userName(),
+        password: hashedPassword,
+        email: faker.internet.email(),
+        emailVerified: faker.datatype.boolean(),
+        firstName: faker.person.firstName(),
+        lastName: faker.person.lastName(),
+        phone: faker.phone.number(),
+        imageUrl: faker.image.avatar(),
+        // rolesId: faker.string.uuid(),
+        createdAt: faker.date.past(),
+        updatedAt: faker.date.recent(),
+      }),
+      { count: count - 1 }
+    ),
+  ],
 
   oauthProviders: faker.helpers.multiple(
     () => ({

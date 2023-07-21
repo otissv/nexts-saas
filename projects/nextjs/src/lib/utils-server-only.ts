@@ -5,7 +5,7 @@ import bcrypt from 'bcrypt'
 import { revalidatePath as revalidateCachePath } from 'next/cache'
 
 import { errorResponse } from '@/database/utils.db'
-import { SuccessResponse } from '@/database/pg/types.pg'
+import { SuccessResponse, ErrorResponse } from '@/database/pg/types.pg'
 
 export function authorize(fn: (...args: any[]) => Promise<any>) {
   return async (...args: any[]) => {
@@ -97,25 +97,23 @@ export function comparePassword<Type extends { password?: string }>(
 
 export function doesUserExist<Type>(message: string) {
   return (result: SuccessResponse<Type>) => {
-    if (result.error) return result
-    try {
-      if (!result.data.length) throw new Error(message)
-      return result
-    } catch (error) {
-      return errorResponse(422)(error as Error)
-    }
+    if (result.data.length) throw new Error(message)
+    return result
   }
 }
 
-export function hashPassword<Type>(result: { data: Type; error: unknown }) {
-  if (result.error) return result.error
+export function hashPassword<Data>(data: Data) {
+  return <Type>(result: SuccessResponse<Type>) => {
+    if (result.error) throw result.error
 
-  return bcrypt
-    .hash((result.data as any).password as string, 10)
-    .then((hashedPassword) => ({
-      data: {
-        ...result.data,
-        password: hashedPassword,
-      },
-    }))
+    return bcrypt
+      .hash((data as any).password as string, 10)
+      .then((hashedPassword) => ({
+        ...result,
+        data: {
+          ...data,
+          password: hashedPassword,
+        },
+      }))
+  }
 }

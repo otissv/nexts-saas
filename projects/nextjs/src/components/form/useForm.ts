@@ -12,7 +12,7 @@ export type FormConfig = Record<string, Partial<FormSchema>>
  * ```
  * useForm(userValidator, {
  *  email: {
- *    type: 'otis',
+ *    type: 'email',
  *    attributes: {
  *      placeholder: 'Enter email',
  *    },
@@ -38,12 +38,9 @@ export const useForm = <ZodObject extends z.ZodTypeAny>(
   for (const [name, validator] of Object.entries<z.ZodTypeAny>(
     zodObject._def.shape()
   )) {
-
-
     // @ts-ignore
     const prop = config[name] || {}
     const def: Def = validator._def?.innerType?._def || validator._def
-
 
     const type: FormSchema['type'] = prop.type as any
     const attributes = prop.attributes || {}

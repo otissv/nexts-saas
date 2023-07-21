@@ -45,12 +45,8 @@ export function authService(db: PostgresDatabase) {
               where: eq(users.schema.username, data.username) as SQL<User>,
             })
             .then(doesUserExist('Username already exists'))
-            .then(hashPassword)
-            .then(() =>
-              users
-                .insert({ data: data as any as UserInsert })
-                .catch(errorResponse(422))
-            )
+            .then(hashPassword(data))
+            .then(users.insert)
             .catch(errorResponse(422)) as SeverReturnType<User>
       ),
   }

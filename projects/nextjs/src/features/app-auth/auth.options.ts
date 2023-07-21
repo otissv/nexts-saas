@@ -14,11 +14,10 @@ import CredentialsProvider, {
 } from 'next-auth/providers/credentials'
 
 import { serverContext } from '@/app/context-server-only'
-import { env } from '@/config/env'
+import { env } from 'env/build'
 import { authSignIn } from '@/features/app-auth/auth.actions'
 import { oauthProviderSignup } from '@/features/app-oauth-providers/oauth-providers.action'
 import { UserSession } from '@/types'
-import { translateServer } from '@/components/translate/translate-server'
 
 const { google, nextAuthSecret } = env()
 const { tenantsService } = serverContext()
@@ -61,7 +60,6 @@ export const authOptions: AuthOptions = {
         password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials, _req) {
-        const t = await translateServer('ui.pages.authentication')
         // You need to provide your own logic here that takes the credentials
         const result = await authSignIn({
           username: credentials?.username || '',
@@ -69,7 +67,7 @@ export const authOptions: AuthOptions = {
         })
 
         if (result.error) {
-          return Promise.reject(t('login.error'))
+          return Promise.reject('')
         } else {
           return result.data[0] as User
         }

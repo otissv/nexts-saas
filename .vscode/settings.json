@@ -19,5 +19,6 @@
     "trpc",
     "ufunc"
   ],
-  "git.ignoreLimitWarning": true
+  "git.ignoreLimitWarning": true,
+  "git-blame.gitWebUrl": ""
 }

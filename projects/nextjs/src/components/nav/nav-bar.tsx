@@ -1,4 +1,4 @@
-import { MenuItem } from '@/app/[locale]/menu'
+import { MenuItem } from '@/components/layouts/types.layouts'
 import { cn } from '@/lib/utils'
 import {
   Nav,
@@ -8,17 +8,19 @@ import {
   NavProps,
 } from '@/components/nav/nav'
 
-export interface LoggedOutNavProps extends NavProps {
-  items: MenuItem[]
+export interface NavBarProps extends NavProps {
   className?: string
+  isLoggedIn?: boolean
+  items: MenuItem[]
 }
 
 export const NavBar = ({
   className,
   items,
+  isLoggedIn,
   children,
   ...props
-}: LoggedOutNavProps) => {
+}: NavBarProps) => {
   return (
     <div>
       <Nav
@@ -27,6 +29,7 @@ export const NavBar = ({
       >
         <NavMenuList className="justify-start">
           {items.map(({ id, label, href }) => {
+            if (!isLoggedIn && id === 'admin') return null
             return (
               <NavMenuItem key={id} className="mx-2 my-2 xl:first:m-0">
                 <NavMenuLink

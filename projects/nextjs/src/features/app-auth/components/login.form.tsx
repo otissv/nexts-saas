@@ -21,17 +21,18 @@ export function LoginForm({ providers }: { providers: string[] }) {
   const t = useTranslateClient('ui.pages.authentication')
   const errorNotify = useErrorNotify()
   const searchParams = useSearchParams()
+  const error = searchParams.get('error')
 
   React.useEffect(() => {
-    const error = searchParams.get('error')
-
-    if (error) {
-      errorNotify({
-        title: 'Login error',
-        description: error,
+    if (error !== null) {
+      setTimeout(() => {
+        errorNotify({
+          title: 'Login error',
+          description: error || 'Authentication failed',
+        })
       })
     }
-  }, [])
+  }, [error])
 
   const config: FormConfig = {
     username: {

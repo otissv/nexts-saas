@@ -10,7 +10,7 @@ import { getHeaders } from '@/lib/getHeaders'
 import { Pagination } from '@/components/page/pagination'
 import { UsersTable } from '@/features/app-users/components/users.table'
 import { decodeSearchParams } from '@/lib/querystring'
-import { env } from '@/config/env'
+import { env } from 'env/build'
 import { translateServer } from '@/components/translate/translate-server'
 import { Search } from '@/components/search'
 

@@ -42,6 +42,10 @@ export const userValidator = z.object({
 export const userInsertValidator = userValidator.omit({
   id: true,
   password: true,
+  firstName: true,
+  lastName: true,
+  phone: true,
+  imageUrl: true,
   emailVerified: true,
   createdAt: true,
   updatedAt: true,
@@ -51,6 +55,10 @@ export const userUpdateValidator = userValidator
   .omit({
     id: true,
     password: true,
+    firstName: true,
+    lastName: true,
+    phone: true,
+    imageUrl: true,
     emailVerified: true,
     createdAt: true,
   })

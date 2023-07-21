@@ -8,7 +8,7 @@ import {
   SheetTrigger,
   SheetClose,
 } from '@/components/ui/sheet'
-import { MenuItem } from '@/app/[locale]/menu'
+import { MenuItem } from '@/components/layouts/types.layouts'
 import { MenuButton } from '@/components/buttons/menu-button'
 import {
   Nav,

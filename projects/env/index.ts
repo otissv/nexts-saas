@@ -1,6 +1,8 @@
 import dotenv from 'dotenv'
 
-dotenv.config()
+dotenv.config({
+  path: '../../.env',
+})
 
 const mayString = (value?: string) => value || ''
 
@@ -8,7 +10,9 @@ export const env = () => {
   return {
     nextAuthSecret: mayString(process.env.NEXTAUTH_SECRET),
 
-    pageLimit: process.env.PAGE_LIMIT ? Number(process.env.PAGE_LIMIT) : Number(process.env.PAGE_MAX_ROWS),
+    pageLimit: process.env.PAGE_LIMIT
+      ? Number(process.env.PAGE_LIMIT)
+      : Number(process.env.PAGE_MAX_ROWS),
 
     databaseUser: mayString(process.env.POSTGRES_USER),
     databasePassword: mayString(process.env.POSTGRES_PASSWORD),

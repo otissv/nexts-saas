@@ -1,11 +1,5 @@
 import { translateServer } from '@/components/translate/translate-server'
 
-export type MenuItem = {
-  id: string
-  label: string
-  href: string
-}
-
 export async function menu() {
   const t = await translateServer('ui.menu')
 
