@@ -257,9 +257,10 @@ ui:
       heading: User
       edit:
         breadcrumb:
-          label: User
+          label: User Edit
       new:
         breadcrumb:
+
       form:
         legend: My details
         fields:

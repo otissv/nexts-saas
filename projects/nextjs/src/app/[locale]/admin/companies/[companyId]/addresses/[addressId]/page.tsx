@@ -74,7 +74,7 @@ export default async function CompanyAddressesPage({
           description: t('pages.user.notifications.delete.success.description'),
         }}
       >
-        {tToolbar('delete.a.content')}
+        {tToolbar('delete.content')}
       </DeleteButton>
     </div>
   )

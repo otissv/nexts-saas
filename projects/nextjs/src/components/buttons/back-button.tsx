@@ -18,14 +18,14 @@ export const BackButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
         variant="ghost"
         className={className}
         onClick={() => router.back()}
-        title={t('back.a.content')}
+        title={t('back.content')}
         ref={ref}
         {...props}
       >
         {children || (
           <>
             <ArrowLeft className="inline-block mr-2 h-4 w-4" />
-            {t('back.a.content')}
+            {t('back.content')}
           </>
         )}
       </Button>

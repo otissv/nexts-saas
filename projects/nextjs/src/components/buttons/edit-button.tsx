@@ -17,7 +17,7 @@ export const EditButton = React.forwardRef<HTMLAnchorElement, LinkButtonProps>(
       <Link
         href={href}
         className={cn(buttonVariants({ variant }), className)}
-        title={t('edit.a.content')}
+        title={t('edit.content')}
         ref={ref}
         {...props}
       >

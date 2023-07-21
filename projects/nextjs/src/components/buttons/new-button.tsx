@@ -20,11 +20,11 @@ export const NewButton = React.forwardRef<HTMLAnchorElement, LinkButtonProps>(
           buttonVariants({ variant: variant || 'default' }),
           className
         )}
-        title={t('new.a.content')}
+        title={t('new.content')}
         ref={ref}
         {...props}
       >
-        <Plus className="inline-block mr-2" /> {t('new.a.content') || children}
+        <Plus className="inline-block mr-2" /> {t('new.content') || children}
       </Link>
     )
   }

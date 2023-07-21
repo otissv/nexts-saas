@@ -18,7 +18,6 @@ import { env } from '@/config/env'
 import { authSignIn } from '@/features/app-auth/auth.actions'
 import { oauthProviderSignup } from '@/features/app-oauth-providers/oauth-providers.action'
 import { UserSession } from '@/types'
-import { redirect } from 'next/navigation'
 import { translateServer } from '@/components/translate/translate-server'
 
 const { google, nextAuthSecret } = env()

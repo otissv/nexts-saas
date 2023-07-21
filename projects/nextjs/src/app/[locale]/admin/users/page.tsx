@@ -8,7 +8,7 @@ import { PageHeader } from '@/components/page/page-header'
 import { deleteUserByIdAction } from '@/features/app-users/users.actions'
 import { getHeaders } from '@/lib/getHeaders'
 import { Pagination } from '@/components/page/pagination'
-import { UsersTable } from '@/features/app-users/components/uses.table'
+import { UsersTable } from '@/features/app-users/components/users.table'
 import { decodeSearchParams } from '@/lib/querystring'
 import { env } from '@/config/env'
 import { translateServer } from '@/components/translate/translate-server'
@@ -33,6 +33,7 @@ export default async function UsersPage({ searchParams }: UsersPageProps) {
     return deleteUserByIdAction(id, pathname)
   }
 
+  console.log('rendered')
   return (
     <>
       <PageHeader heading="Users" breadcrumbs={breadcrumbs} />

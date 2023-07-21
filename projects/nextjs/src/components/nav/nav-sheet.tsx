@@ -17,7 +17,7 @@ import {
   NavMenuList,
 } from '@/components/nav/nav'
 export interface NavSheetProps extends React.HTMLProps<HTMLDivElement> {
-  isLoggedIn: boolean
+  isLoggedIn?: boolean
   items: MenuItem[]
   position?: 'top' | 'bottom' | 'left' | 'right'
 }

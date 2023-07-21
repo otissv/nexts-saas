@@ -95,7 +95,7 @@ export default async function UserPage({ params: { id } }: UserPageProps) {
           description: t('pages.user.notifications.delete.success.description'),
         }}
       >
-        {t('page.toolbar.delete.a.content')}
+        {t('page.toolbar.delete.content')}
       </DeleteButton>
     </React.Fragment>
   )

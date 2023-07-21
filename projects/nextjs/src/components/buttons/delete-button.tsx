@@ -62,7 +62,7 @@ export const DeleteButton = React.forwardRef<
         trigger={
           <Button
             className={className}
-            title={t('delete.a.content')}
+            title={t('delete.content')}
             ref={ref}
             variant={variant || 'destructive'}
             {...props}

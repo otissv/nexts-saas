@@ -61,7 +61,9 @@ export function UsersTable({
 
   React.useEffect(() => {
     setUsers(data)
-  }, [limit, where, orderByDep, page, data, setUsers])
+  }, [limit, where, orderByDep, page])
+
+  console.log('rendered')
 
   const rows = ({ id, firstName, lastName, imageUrl, email }: User) => {
     return (
@@ -135,7 +137,7 @@ export function UsersTable({
       <Table>
         {total ? (
           <TableCaption>
-            {users.size} of {total} {t('users.breadcrumb')}
+            {users.size} of {total} {t('users.breadcrumb.label')}
           </TableCaption>
         ) : (
           <TableCaption>{t('table.caption')}</TableCaption>
