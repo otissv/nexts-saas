@@ -4,7 +4,7 @@ import {
   tenantInsertValidator,
   tenantUpdateValidator,
   tenantValidator,
-} from './tenants.validator'
+} from '@/features/app-tenants/tenants.validator'
 
 export type Tenant = z.infer<typeof tenantValidator>
 export type TenantInsert = z.infer<typeof tenantInsertValidator>

@@ -3,11 +3,11 @@
  */
 
 import React from 'react'
+import { PageHeader } from 'components/page/page-header'
+import { translateServer } from 'components/translate/translate-server'
+import { Divider } from 'components/divider'
 
 import { CompanyForm } from '@/features/tenant-companies/components/tenant-company.form'
-import { PageHeader } from '@/components/page/page-header'
-import { translateServer } from '@/components/translate/translate-server'
-import { Divider } from '@/components/divider'
 
 export interface CompanyPageProps {}
 

@@ -1,4 +1,4 @@
-import { translateServer } from '@/components/translate/translate-server'
+import { translateServer } from 'components/translate/translate-server'
 
 export async function menu() {
   const t = await translateServer('ui.menu')

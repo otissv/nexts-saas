@@ -1,25 +1,14 @@
 {
-  "extends": "tsconfig/node.json",
+  "extends": "tsconfig/node",
   "compilerOptions": {
     "baseUrl": "./",
     "rootDir": ".",
     "outDir": "build",
     "module": "CommonJS"
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "types/*",
-  ],
-  "exclude": [
-    "dist",
-    "build",
-    "node_modules"
-  ],
+  "include": ["**/*.ts", "**/*.tsx", "types/*"],
+  "exclude": ["dist", "build", "node_modules"],
   "paths": {
-    "*": [
-      "types/*",
-      "node_modules/*",
-    ]
+    "*": ["types/*", "node_modules/*"]
   }
 }

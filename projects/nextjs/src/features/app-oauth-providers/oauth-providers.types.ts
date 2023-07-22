@@ -5,7 +5,7 @@ import {
   oauthProviderValidator,
   oauthProviderSignupValidator,
   oauthProviderInsertValidator,
-} from './oauth-providers.validators'
+} from '@/features/app-oauth-providers/oauth-providers.validators'
 import { UserInsert } from '@/features/app-users/users.types'
 
 export type OauthProvider = z.infer<typeof oauthProviderValidator>

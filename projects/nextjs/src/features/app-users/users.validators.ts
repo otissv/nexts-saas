@@ -1,7 +1,7 @@
 import { z } from 'zod'
+import { validate } from 'utils/validate'
 
-import { User, UserInsert, UserUpdate } from './users.types'
-import { validate } from '@/lib/validate'
+import { User, UserInsert, UserUpdate } from '@/features/app-users/users.types'
 
 export const userValidator = z.object({
   id: z.number().int().positive(),

@@ -2,8 +2,8 @@
  *  Company Address Page
  */
 
-import { PageHeader } from '@/components/page/page-header'
-import { translateServer } from '@/components/translate/translate-server'
+import { PageHeader } from 'components/page/page-header'
+import { translateServer } from 'components/translate/translate-server'
 
 import { TenantCompany } from '@/features/tenant-companies/companies.tenant.types'
 

@@ -2,7 +2,9 @@
  *  Page Page
  */
 
-import { Editor } from '@/components/editor/editor'
+import { Editor } from 'components/editor/editor'
+
+import { postValidator } from '@/features/tenant_posts/posts.tenant.validators'
 
 const post = {
   id: '1',
@@ -106,5 +108,7 @@ const post = {
 }
 
 export default function PagePage() {
-  return <Editor post={post} />
+  const body = postValidator.parse(post)
+
+  return <Editor post={body} />
 }

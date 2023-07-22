@@ -1,14 +1,14 @@
 import 'server-only'
 
 import { SQL, eq } from 'drizzle-orm'
+import { ErrorResponse, SuccessResponse } from 'database/pg/types.pg'
+import { errorResponse } from 'database/utils.db'
+import { PostgresDatabase } from 'database/pg/connection.pg'
 
-import { tenantsDb } from './tenants.db'
-import { Tenant } from './tenants.types'
-import { PostgresDatabase } from '@/database/pg/connection.pg'
+import { tenantsDb } from '@/features/app-tenants/tenants.db'
+import { Tenant } from '@/features/app-tenants/tenants.types'
 import { User } from '@/features/app-users/users.types'
 import { tenants as tenantsSchema } from '@/schema/app.schema'
-import { ErrorResponse, SuccessResponse } from '@/database/pg/types.pg'
-import { errorResponse } from '@/database/utils.db'
 
 export function tenantsService(db: PostgresDatabase) {
   const tenants = tenantsDb(db)

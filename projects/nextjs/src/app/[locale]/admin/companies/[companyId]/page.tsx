@@ -2,15 +2,16 @@
  *  Company Page
  */
 
-import { CompanyForm } from '@/features/tenant-companies/components/tenant-company.form'
-import { PageHeader } from '@/components/page/page-header'
-import { translateServer } from '@/components/translate/translate-server'
-import { TenantCompany } from '@/features/tenant-companies/companies.tenant.types'
-import { selectTenantCompanyByIdAction } from '@/features/tenant-companies/companies.actions'
+import * as React from 'react'
 import { ChevronRight } from 'lucide-react'
 import Link from 'next/link'
-import React from 'react'
-import { Divider } from '@/components/divider'
+import { Divider } from 'components/divider'
+import { PageHeader } from 'components/page/page-header'
+import { translateServer } from 'components/translate/translate-server'
+
+import { CompanyForm } from '@/features/tenant-companies/components/tenant-company.form'
+import { TenantCompany } from '@/features/tenant-companies/companies.tenant.types'
+import { selectTenantCompanyByIdAction } from '@/features/tenant-companies/companies.actions'
 
 export interface CompanyPageProps {
   params: { companyId: TenantCompany['id'] }

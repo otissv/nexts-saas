@@ -3,8 +3,9 @@
  */
 
 import { AddressForm } from '@/features/tenant-addresses/components/tenant-addresses.form'
-import { translateServer } from '@/components/translate/translate-server'
-import { PageHeader } from '@/components/page/page-header'
+
+import { translateServer } from 'components/translate/translate-server'
+import { PageHeader } from 'components/page/page-header'
 
 export default async function CompanyAddressesNePage() {
   const t = await translateServer('ui.pages')

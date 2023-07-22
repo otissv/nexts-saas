@@ -3,12 +3,13 @@ import 'server-only'
 import { SelectedFieldsFlat } from 'drizzle-orm/pg-core'
 import { SQL, eq } from 'drizzle-orm'
 
-import { PostgresDatabase } from '@/database/pg/connection.pg'
+import { PostgresDatabase } from 'database/pg/connection.pg'
+import { errorResponse } from 'database/utils.db'
+import { SeverReturnType, SelectProps } from 'database/pg/types.pg'
+
 import { users as usersSchema } from '@/schema/app.schema'
-import { SeverReturnType, SelectProps } from '@/database/pg/types.pg'
-import { User, UserInsert, UserUpdate } from './users.types'
-import { usersDb } from './users.db'
-import { errorResponse } from '@/database/utils.db'
+import { User, UserInsert, UserUpdate } from '@/features/app-users/users.types'
+import { usersDb } from '@/features/app-users/users.db'
 
 export function usersService(db: PostgresDatabase) {
   const users = usersDb(db)

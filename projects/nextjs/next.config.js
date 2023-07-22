@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  transpilePackages: ['c-ufunc'],
+  transpilePackages: ['c-ufunc', 'env', 'components'],
   experimental: {
     appDir: true,
     serverActions: true,

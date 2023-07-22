@@ -6,7 +6,6 @@ export function getTranslation(locale: string) {
   try {
     if (locale === 'favicon.ico') return {}
 
-
     // load yaml file and convert to json
     return yaml.load(
       fs.readFileSync(`./src/translations/${locale}.yml`, 'utf8')
@@ -21,4 +20,4 @@ export default getRequestConfig(({ locale }: { locale: string }) => {
   return {
     messages: getTranslation(locale),
   }
-})
+}) as Record<string, any>

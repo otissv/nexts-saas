@@ -1,15 +1,16 @@
 import { eq, SQL } from 'drizzle-orm'
 import { SelectedFieldsFlat } from 'drizzle-orm/pg-core'
 
-import { SelectProps, SeverReturnType } from '@/database/pg/types.pg'
-import { PostgresDatabase } from '@/database/pg/connection.pg'
+import { SelectProps, SeverReturnType } from 'database/pg/types.pg'
+import { PostgresDatabase } from 'database/pg/connection.pg'
+import { errorResponse } from 'database/utils.db'
+
 import { tenantCompanyAddressDb } from '@/features/tenant-company-addresses/company-addresses.tenant.db'
 import {
   TenantCompanyAddress,
   TenantCompanyAddressInsert,
   TenantCompanyAddressUpdate,
 } from '@/features/tenant-company-addresses/company-addresses.tenant.types'
-import { errorResponse } from '@/database/utils.db'
 
 export function tenantCompanyAddressService(db: PostgresDatabase) {
   return (tenantId: string) => {

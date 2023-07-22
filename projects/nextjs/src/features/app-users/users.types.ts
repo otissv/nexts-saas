@@ -4,7 +4,7 @@ import {
   userInsertValidator,
   userValidator,
   userUpdateValidator,
-} from './users.validators'
+} from '@/features/app-users/users.validators'
 
 /* Users */
 export type User = z.infer<typeof userValidator>

@@ -2,7 +2,7 @@
  *  Pages Page
  */
 
-import { PageHeader } from '@/components/page/page-header'
+import { PageHeader } from 'components/page/page-header'
 
 export default function PagesPage() {
   const breadcrumbs = [{ label: 'Home', crumb: '/' }, { label: 'Posts' }]

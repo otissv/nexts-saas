@@ -2,16 +2,16 @@
 import * as React from 'react'
 import { signIn } from 'next-auth/react'
 import { isDev } from 'c-ufunc/libs/isDev'
-
-import { Button } from '@/components/ui/button'
-import { Form, Submit } from '@/components/form/form'
-import { FormConfig, useForm } from '@/components/form/useForm'
-import { signupValidator } from '@/features/app-auth/auth.validators'
 import {
   useTranslateClientComponent,
   useTranslateClient,
-} from '@/components/translate/translate-client'
-import { useErrorNotify } from '@/components/notify'
+} from 'components/translate/translate-client'
+import { Button } from 'components/ui/button'
+import { Form, Submit } from 'components/form/form'
+import { FormConfig, useForm } from 'components/form/useForm'
+import { useErrorNotify } from 'components/notify'
+
+import { signupValidator } from '@/features/app-auth/auth.validators'
 
 export function SignupForm({ providers }: { providers: string[] }) {
   const T = useTranslateClientComponent('ui.pages.authentication')

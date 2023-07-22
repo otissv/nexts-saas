@@ -3,18 +3,18 @@
  */
 
 import { isDev } from 'c-ufunc/libs/isDev'
+import { Divider } from 'components/divider'
+import { DeleteButton } from 'components/buttons/delete-button'
+import { PageHeader } from 'components/page/page-header'
+import { translateServer } from 'components/translate/translate-server'
+import { getHeaders } from 'utils/getHeaders'
 
 import {
   deleteTenantCompanyAddressByIdAction,
   selectTenantCompanyAddressByIdAction,
 } from '@/features/tenant-company-addresses/company-addresses.tenant.actions'
 import { AddressForm } from '@/features/tenant-addresses/components/tenant-addresses.form'
-import { PageHeader } from '@/components/page/page-header'
-import { translateServer } from '@/components/translate/translate-server'
 import { TenantCompanyAddress } from '@/features/tenant-company-addresses/company-addresses.tenant.types'
-import { Divider } from '@/components/divider'
-import { DeleteButton } from '@/components/buttons/delete-button'
-import { getHeaders } from '@/lib/getHeaders'
 import { TenantCompany } from '@/features/tenant-companies/companies.tenant.types'
 
 export interface CompanyAddressesPageProps {

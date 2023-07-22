@@ -1,0 +1,15 @@
+{
+  "extends": "tsconfig/lib",
+  "target": "esnext",
+  "module": "esnext",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "rootDir": ".",
+    "outDir": "build"
+  },
+  "include": ["**/*.ts", "**/*.tsx", "types/*"],
+  "exclude": ["dist", "build", "node_modules"],
+  "paths": {
+    "@/*": ["./*"]
+  }
+}

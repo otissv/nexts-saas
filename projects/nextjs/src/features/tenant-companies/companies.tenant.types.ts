@@ -3,7 +3,7 @@ import {
   tenantCompanyInsertValidator,
   tenantCompanyUpdateValidator,
   tenantCompanyValidator,
-} from './companies.tenant.validators'
+} from '@/features/tenant-companies/companies.tenant.validators'
 
 export type TenantCompany = z.infer<typeof tenantCompanyValidator>
 export type TenantCompanyInsert = z.infer<typeof tenantCompanyInsertValidator>

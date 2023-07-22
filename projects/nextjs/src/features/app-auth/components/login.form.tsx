@@ -5,16 +5,16 @@ import { signIn } from 'next-auth/react'
 import Link from 'next/link'
 import { isDev } from 'c-ufunc/libs/isDev'
 import { useSearchParams } from 'next/navigation'
+import { Button } from 'components/ui/button'
+import { Form, Submit } from 'components/form/form'
+import { FormConfig, useForm } from 'components/form/useForm'
 
-import { Button } from '@/components/ui/button'
-import { Form, Submit } from '@/components/form/form'
-import { FormConfig, useForm } from '@/components/form/useForm'
 import { signInValidator } from '@/features/app-auth/auth.validators'
 import {
   useTranslateClientComponent,
   useTranslateClient,
-} from '@/components/translate/translate-client'
-import { useErrorNotify } from '@/components/notify'
+} from 'components/translate/translate-client'
+import { useErrorNotify } from 'components/notify'
 
 export function LoginForm({ providers }: { providers: string[] }) {
   const T = useTranslateClientComponent('ui.pages.authentication')

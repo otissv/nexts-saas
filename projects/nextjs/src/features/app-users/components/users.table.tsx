@@ -1,8 +1,8 @@
 'use client'
 
 import * as React from 'react'
-import { Maybe } from '@/components/maybe'
-import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
+import { Maybe } from 'components/maybe'
+import { Avatar, AvatarImage, AvatarFallback } from 'components/ui/avatar'
 import {
   Table,
   TableCaption,
@@ -11,17 +11,17 @@ import {
   TableHead,
   TableBody,
   TableCell,
-} from '@/components/ui/table'
+} from 'components/ui/table'
+import { AppLink } from 'components/app-link'
+import { EditButton } from 'components/buttons/edit-button'
+import { DeleteButton } from 'components/buttons/delete-button'
+import { useTranslateClient } from 'components/translate/translate-client'
+import { SortOrderDropdown } from 'components/sort-order-dropdown'
+import { SeverReturnType, PageInfo } from 'database/pg/types.pg'
+import { useMap } from 'hooks/useMap'
+import { entriesToArray } from 'utils/entries'
 
 import { User } from '@/features/app-users/users.types'
-import { AppLink } from '@/components/app-link'
-import { EditButton } from '@/components/buttons/edit-button'
-import { DeleteButton } from '@/components/buttons/delete-button'
-import { useTranslateClient } from '@/components/translate/translate-client'
-import { SortOrderDropdown } from '@/components/sort-order-dropdown'
-import { SeverReturnType, PageInfo } from '@/database/pg/types.pg'
-import { entriesToArray } from '@/lib/entries'
-import { useMap } from '@/hooks/useMap'
 
 export interface UsersTableProps {
   data: Partial<User>[]

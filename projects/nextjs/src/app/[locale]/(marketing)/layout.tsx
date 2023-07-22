@@ -1,12 +1,12 @@
 /**
  * Marketing Layout
  */
+import * as React from 'react'
 import { getServerSession } from 'next-auth/next'
+import { DefaultLayout } from 'components/layouts/default-layout'
+import { serverUseTranslate } from 'components/translate/translate-server'
 
-import { DefaultLayout } from '@/components/layouts/default-layout'
 import { menu } from '@/app/[locale]/(marketing)/menu'
-import { serverUseTranslate } from '@/components/translate/translate-server'
-import React from 'react'
 
 export interface MarketingRootLayoutProps
   extends React.HtmlHTMLAttributes<HTMLDivElement> {}

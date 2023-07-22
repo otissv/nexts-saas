@@ -1,15 +1,16 @@
 import { SelectedFieldsFlat } from 'drizzle-orm/pg-core'
 
-import { SelectProps } from '@/database/pg/types.pg'
-import { PostgresDatabase } from '@/database/pg/connection.pg'
+import { SelectProps } from 'database/pg/types.pg'
+import { PostgresDatabase } from 'database/pg/connection.pg'
+import { dbController } from 'database/pg/db-controller.pg'
+import { checkHasTenantId } from 'utils/utils-server-only'
+
 import { tenantSchema } from '@/schema/tenant.schema'
 import {
   TenantCompanyAddress,
   TenantCompanyAddressInsert,
   TenantCompanyAddressUpdate,
 } from './company-addresses.tenant.types'
-import { dbController } from '@/database/pg/db-controller.pg'
-import { checkHasTenantId } from '@/lib/utils-server-only'
 import {
   tenantCompanyAddressInsertValidate,
   tenantCompanyAddressUpdateValidate,
