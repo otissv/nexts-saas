@@ -12,5 +12,5 @@
  * ```
  */
 export const isDev = (): boolean =>
-// @ts-ignore add because it's quicker than process.env.NODE_ENV everywhere
-  process.env.NODE_ENV === 'dev' || process.env.NODE_ENV === 'development'? true:false
+  // @ts-expect-error quiker and easier to read than having `process.env.NODE_ENV === 'dev' || process.env.NODE_ENV === 'development'`
+  process.env.NODE_ENV === 'dev' || process.env.NODE_ENV === 'development'

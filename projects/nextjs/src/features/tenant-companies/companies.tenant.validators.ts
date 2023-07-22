@@ -1,11 +1,11 @@
 import { z } from 'zod'
 
-import { validate } from 'utils/validate'
+import { validate } from '@/lib/validate'
 import {
   TenantCompany,
   TenantCompanyInsert,
   TenantCompanyUpdate,
-} from '@/features/tenant-companies/companies.tenant.types'
+} from './companies.tenant.types'
 
 export const tenantCompanyValidator = z.object({
   id: z.number().int().positive(),

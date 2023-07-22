@@ -1,13 +1,24 @@
 {
-  "extends": "tsconfig/lib",
+  "extends": "tsconfig/lib.json",
   "compilerOptions": {
     "baseUrl": "./",
     "rootDir": ".",
-    "outDir": "build"
+    "outDir": "build",
   },
-  "include": ["**/*.ts", "**/*.tsx", "types/*"],
-  "exclude": ["dist", "build", "node_modules"],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "types/*",
+  ],
+  "exclude": [
+    "dist",
+    "build",
+    "node_modules"
+  ],
   "paths": {
-    "*": ["types/*", "node_modules/*"]
+    "*": [
+      "types/*",
+      "node_modules/*",
+    ]
   }
 }

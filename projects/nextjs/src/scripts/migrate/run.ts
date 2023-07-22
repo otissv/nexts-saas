@@ -1,6 +1,7 @@
 import { migrate } from 'drizzle-orm/postgres-js/migrator'
 import fs from 'fs'
-import { connection } from 'database/pg/connection.pg'
+
+import { connection } from '../../database/pg/connection.pg'
 
 import { errorHandler, ignoreSchemas, input } from './utils'
 

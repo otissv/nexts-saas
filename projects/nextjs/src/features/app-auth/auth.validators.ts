@@ -1,7 +1,6 @@
-import { validate } from 'utils/validate'
-
-import { SignIn, Signup } from '@/features/app-auth/auth.types'
 import { userValidator } from '@/features/app-users/users.validators'
+import { validate } from '@/lib/validate'
+import { SignIn, Signup } from './auth.types'
 
 export const signInValidator = userValidator.omit({
   id: true,

@@ -2,10 +2,10 @@
  * Companies Page
  */
 
-import { PageHeader } from 'components/page/page-header'
-import { translateServer } from 'components/translate/translate-server'
-import { NewButton } from 'components/buttons/new-button'
-import { Divider } from 'components/divider'
+import { PageHeader } from '@/components/page/page-header'
+import { translateServer } from '@/components/translate/translate-server'
+import { NewButton } from '@/components/buttons/new-button'
+import { Divider } from '@/components/divider'
 
 export interface CompaniesPageProps {
   searchParams: {

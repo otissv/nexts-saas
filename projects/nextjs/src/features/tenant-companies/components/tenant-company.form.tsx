@@ -3,23 +3,22 @@
 import * as React from 'react'
 import { usePathname } from 'next/navigation'
 import { isDev } from 'c-ufunc/libs/isDev'
-import { cn } from 'components/lib/utils'
-import { FormConfig, useForm } from 'components/form/useForm'
-import { useTranslateClient } from 'components/translate/translate-client'
-import { Form, Submit } from 'components/form/form'
-import { useErrorNotify, useSuccessNotify } from 'components/notify'
-import { SaveButton } from 'components/buttons/save-button'
 
 import {
   tenantCompanyUpdateValidator,
   tenantCompanyInsertValidator,
 } from '@/features/tenant-companies/companies.tenant.validators'
+import { FormConfig, useForm } from '@/components/form/useForm'
+import { useTranslateClient } from '@/components/translate/translate-client'
+import { Form, Submit } from '@/components/form/form'
 import {
   updateTenantCompanyByIdAction,
   insertTenantCompanyAction,
 } from '@/features/tenant-companies/companies.actions'
-
-import { TenantCompany } from '@/features/tenant-companies/companies.tenant.types'
+import { cn } from '@/lib/utils'
+import { useErrorNotify, useSuccessNotify } from '@/components/notify'
+import { SaveButton } from '@/components/buttons/save-button'
+import { TenantCompany } from '../companies.tenant.types'
 
 export interface CompanyFormProps {
   name: string

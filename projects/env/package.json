@@ -9,6 +9,8 @@
   ],
   "author": "Otis Virginie",
   "license": "MIT",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "scripts": {
     "start": "npx http-server ./docs",
     "dev": "tsc --watch",

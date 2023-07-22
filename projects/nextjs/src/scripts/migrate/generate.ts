@@ -1,6 +1,6 @@
 import fs from 'fs'
 
-import { connection } from 'database/pg/connection.pg'
+import { connection } from '../../database/pg/connection.pg'
 import { sql } from 'drizzle-orm'
 
 import { errorHandler, ignoreSchemas, input, exec, fsExists } from './utils'
@@ -22,7 +22,10 @@ const readASchema = (
       schema,
       content: content
         .replace(`const SCHEMA = 'tenant'`, `const SCHEMA = '${schema}'`)
-        .replace(`'database/pg/data-types.pg'`, `'database/pg/data-types.pg'`),
+        .replace(
+          `'../config/database/pg/data-types.pg'`,
+          `'../../src/config/database/pg/data-types.pg'`
+        ),
     }))
     .catch(errorHandler) as any
 

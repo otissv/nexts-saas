@@ -3,17 +3,17 @@
 import * as React from 'react'
 import { usePathname } from 'next/navigation'
 import { isDev } from 'c-ufunc/libs/isDev'
-import { Form, Submit } from 'components/form/form'
-import { FormConfig, useForm } from 'components/form/useForm'
-import { SaveButton } from 'components/buttons/save-button'
-import { cn } from 'components/lib/utils'
-import { useErrorNotify, useSuccessNotify } from 'components/notify'
-import { useTranslateClient } from 'components/translate/translate-client'
-import { ErrorResponse, SuccessResponse } from 'database/pg/types.pg'
 
 import { User } from '@/features/app-users/users.types'
 import { userUpdateValidator } from '@/features/app-users/users.validators'
 import { updateUsersByIdAction } from '@/features/app-users/users.actions'
+import { Form, Submit } from '@/components/form/form'
+import { FormConfig, useForm } from '@/components/form/useForm'
+import { SaveButton } from '@/components/buttons/save-button'
+import { cn } from '@/lib/utils'
+import { useErrorNotify, useSuccessNotify } from '@/components/notify'
+import { useTranslateClient } from '@/components/translate/translate-client'
+import { ErrorResponse, SuccessResponse } from '@/database/pg/types.pg'
 
 export interface UserFormProps {
   name: string

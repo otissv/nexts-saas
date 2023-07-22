@@ -1,12 +1,6 @@
 'use client'
 import * as React from 'react'
 import { isDev } from 'c-ufunc/libs/isDev'
-import { Form, Submit } from 'components/form/form'
-import { FormConfig, useForm } from 'components/form/useForm'
-import { SaveButton } from 'components/buttons/save-button'
-import { useErrorNotify, useSuccessNotify } from 'components/notify'
-import { useTranslateClient } from 'components/translate/translate-client'
-import { cn } from 'components/lib/utils'
 
 import {
   tenantCompanyAddressInsertValidator,
@@ -16,7 +10,12 @@ import {
   updateTenantCompanyAddressByIdAction,
   insertTenantCompanyAddressAction,
 } from '@/features/tenant-company-addresses/company-addresses.tenant.actions'
-
+import { Form, Submit } from '@/components/form/form'
+import { FormConfig, useForm } from '@/components/form/useForm'
+import { SaveButton } from '@/components/buttons/save-button'
+import { cn } from '@/lib/utils'
+import { useErrorNotify, useSuccessNotify } from '@/components/notify'
+import { useTranslateClient } from '@/components/translate/translate-client'
 import { TenantCompanyAddress } from '@/features/tenant-company-addresses/company-addresses.tenant.types'
 
 export interface AddressFormProps {

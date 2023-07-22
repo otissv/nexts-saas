@@ -1,18 +1,16 @@
 import { SQL, eq } from 'drizzle-orm'
 
-import { PostgresDatabase } from 'database/pg/connection.pg'
+import { PostgresDatabase } from '@/database/pg/connection.pg'
 import {
   ErrorResponse,
   SelectProps,
   SuccessResponse,
-} from 'database/pg/types.pg'
-import { dbController } from 'database/pg/db-controller.pg'
-import { errorResponse } from 'database/utils.db'
+} from '@/database/pg/types.pg'
+import { Tenant } from './tenants.types'
 import { users as usersSchema } from 'migrations/schema/app.schema'
-
-import { Tenant } from '@/features/app-tenants/tenants.types'
 import { User } from '@/features/app-users/users.types'
 import { tenants as tenantsSchema } from '@/schema/app.schema'
+import { dbController } from '@/database/pg/db-controller.pg'
 import {
   userInsertValidate,
   userUpdateValidate,
@@ -21,6 +19,7 @@ import {
   tenantInsertValidate,
   tenantUpdateValidate,
 } from '@/features/app-tenants/tenants.validator'
+import { errorResponse } from '@/database/utils.db'
 
 export function tenantsDb(db: PostgresDatabase) {
   const tenants = dbController(db)({

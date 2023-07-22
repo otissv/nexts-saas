@@ -1,8 +1,8 @@
 import { getServerSession } from 'next-auth/next'
 import { redirect } from 'next/navigation'
-import { AdminLayout } from 'components/layouts/admin-layout'
 
 import { menu } from '@/app/[locale]/admin/menu'
+import { AdminLayout } from '@/components/layouts/admin-layout'
 
 export default async function AdminRootLayout({
   children,

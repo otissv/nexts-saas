@@ -5,9 +5,9 @@
 import { redirect } from 'next/navigation'
 import { getServerSession } from 'next-auth/next'
 import { getProviders } from 'next-auth/react'
-import { TypographyH1 } from 'components/typography/h1.typography'
-import { serverUseTranslate } from 'components/translate/translate-server'
 
+import { TypographyH1 } from '@/components/typography/h1.typography'
+import { serverUseTranslate } from '@/components/translate/translate-server'
 import { LoginForm } from '@/features/app-auth/components/login.form'
 
 export default async function LoginPage() {

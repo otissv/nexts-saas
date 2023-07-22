@@ -10,7 +10,7 @@ import {
   timestampz,
   varchar,
   varcharArray,
-} from 'database/pg/data-types.pg'
+} from '../../src/database/pg/data-types.pg'
 
 const PRICING_TYPE = ['one_time', 'recurring']
 const PRICING_INTERVALS = ['month', 'year']

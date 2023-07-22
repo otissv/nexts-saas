@@ -12,9 +12,9 @@ import { JWT } from 'next-auth/jwt/types'
 import CredentialsProvider, {
   CredentialInput,
 } from 'next-auth/providers/credentials'
-import { env } from 'env'
 
 import { serverContext } from '@/app/context-server-only'
+import { env } from 'env/build'
 import { authSignIn } from '@/features/app-auth/auth.actions'
 import { oauthProviderSignup } from '@/features/app-oauth-providers/oauth-providers.action'
 import { UserSession } from '@/types'

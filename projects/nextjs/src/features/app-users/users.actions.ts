@@ -1,12 +1,11 @@
 'use server'
 
-import { authorize } from 'utils/utils-server-only'
-import { ActionProps, SeverReturnType } from 'database/pg/types.pg'
-import { errorResponse } from 'database/utils.db'
-
-import { User, UserInsert, UserUpdate } from '@/features/app-users/users.types'
 import { serverContext } from '@/app/context-server-only'
 import { UserSchema } from '@/schema/app.schema'
+import { authorize } from '@/lib/utils-server-only'
+import { ActionProps, SeverReturnType } from '@/database/pg/types.pg'
+import { User, UserInsert, UserUpdate } from './users.types'
+import { errorResponse } from '@/database/utils.db'
 
 const { usersService } = serverContext()
 

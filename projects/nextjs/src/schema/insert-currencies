@@ -1,0 +1,336 @@
+INSERT INTO iso_currencies (iso_country_code, currency_name, native_currency_name, iso_currency_code)
+VALUES
+-- AED - United Arab Emirates Dirham
+('AE', 'United Arab Emirates Dirham', 'درهم إماراتي', 'AED'),
+-- AFN - Afghan Afghani
+('AF', 'Afghan Afghani', 'افغانۍ', 'AFN'),
+-- ALL - Albanian Lek
+('AL', 'Albanian Lek', 'Leku Shqiptar', 'ALL'),
+-- AMD - Armenian Dram
+('AM', 'Armenian Dram', 'Հայկական Դրամ', 'AMD'),
+-- ANG - Netherlands Antillean Guilder
+('CW', 'Netherlands Antillean Guilder', 'Nederlands-Antilliaanse gulden', 'ANG'),
+-- AOA - Angolan Kwanza
+('AO', 'Angolan Kwanza', 'Kwanza Angolano', 'AOA'),
+-- ARS - Argentine Peso
+('AR', 'Argentine Peso', 'Peso Argentino', 'ARS'),
+-- AUD - Australian Dollar
+('AU', 'Australian Dollar', 'Australian Dollar', 'AUD'),
+-- AWG - Aruban Florin
+('AW', 'Aruban Florin', 'Arubaanse Florin', 'AWG'),
+-- AZN - Azerbaijani Manat
+('AZ', 'Azerbaijani Manat', 'Azərbaycan Manatı', 'AZN'),
+-- BAM - Bosnia-Herzegovina Convertible Mark
+('BA', 'Bosnia-Herzegovina Convertible Mark', 'Bosanskohercegovačka konvertibilna marka', 'BAM'),
+-- BBD - Barbadian Dollar
+('BB', 'Barbadian Dollar', 'Barbadian Dollar', 'BBD'),
+-- BDT - Bangladeshi Taka
+('BD', 'Bangladeshi Taka', 'টাকা', 'BDT'),
+-- BGN - Bulgarian Lev
+('BG', 'Bulgarian Lev', 'Български лев', 'BGN'),
+-- BHD - Bahraini Dinar
+('BH', 'Bahraini Dinar', 'دينار بحريني', 'BHD'),
+-- BIF - Burundian Franc
+('BI', 'Burundian Franc', 'Franc Burundais', 'BIF'),
+-- BMD - Bermudan Dollar
+('BM', 'Bermudan Dollar', 'Bermudan Dollar', 'BMD'),
+-- BND - Brunei Dollar
+('BN', 'Brunei Dollar', 'Brunei Dollar', 'BND'),
+-- BOB - Bolivian Boliviano
+('BO', 'Bolivian Boliviano', 'Boliviano', 'BOB'),
+-- BRL - Brazilian Real
+('BR', 'Brazilian Real', 'Real Brasileiro', 'BRL'),
+-- BSD - Bahamian Dollar
+('BS', 'Bahamian Dollar', 'Bahamian Dollar', 'BSD'),
+-- BTC - Bitcoin
+('BQ', 'Bitcoin', 'Bitcoin', 'BTC'),
+-- BTN - Bhutanese Ngultrum
+('BT', 'Bhutanese Ngultrum', 'དངུལ་ཀྲ')
+-- BWP - Botswanan Pula
+('BW', 'Botswanan Pula', 'Pula ya Botswana', 'BWP'),
+-- BYN - Belarusian Ruble
+('BY', 'Belarusian Ruble', 'Беларускі рубель', 'BYN'),
+-- BZD - Belize Dollar
+('BZ', 'Belize Dollar', 'Belize Dollar', 'BZD'),
+-- CAD - Canadian Dollar
+('CA', 'Canadian Dollar', 'Canadian Dollar', 'CAD'),
+-- CDF - Congolese Franc
+('CD', 'Congolese Franc', 'Franc Congolais', 'CDF'),
+-- CHF - Swiss Franc
+('CH', 'Swiss Franc', 'Franc Suisse', 'CHF'),
+-- CLF - Chilean Unit of Account (UF)
+('CL', 'Chilean Unit of Account (UF)', 'Unidad de Fomento', 'CLF'),
+-- CLP - Chilean Peso
+('CL', 'Chilean Peso', 'Peso Chileno', 'CLP'),
+-- CNH - Chinese Yuan (Offshore)
+('CN', 'Chinese Yuan (Offshore)', '人民币（离岸）', 'CNH'),
+-- CNY - Chinese Yuan
+('CN', 'Chinese Yuan', '人民币', 'CNY'),
+-- COP - Colombian Peso
+('CO', 'Colombian Peso', 'Peso Colombiano', 'COP'),
+-- CRC - Costa Rican Colón
+('CR', 'Costa Rican Colón', 'Colón Costarricense', 'CRC'),
+-- CUC - Cuban Convertible Peso
+('CU', 'Cuban Convertible Peso', 'Peso Convertible Cubano', 'CUC'),
+-- CUP - Cuban Peso
+('CU', 'Cuban Peso', 'Peso Cubano', 'CUP'),
+-- CVE - Cape Verdean Escudo
+('CV', 'Cape Verdean Escudo', 'Escudo Caboverdiano', 'CVE'),
+-- CZK - Czech Koruna
+('CZ', 'Czech Koruna', 'Česká koruna', 'CZK'),
+-- DJF - Djiboutian Franc
+('DJ', 'Djiboutian Franc', 'Franc Djiboutien', 'DJF'),
+-- DKK - Danish Krone
+('DK', 'Danish Krone', 'Dansk krone', 'DKK'),
+-- DOP - Dominican Peso
+('DO', 'Dominican Peso', 'Peso Dominicano', 'DOP'),
+-- DZD - Algerian Dinar
+('DZ', 'Algerian Dinar', 'دينار جزائري', 'DZD'),
+-- EGP - Egyptian Pound
+('EG', 'Egyptian Pound', 'جنيه مصري', 'EGP'),
+-- ERN - Eritrean Nakfa
+('ER', 'Eritrean Nakfa', 'ናቕፋ', 'ERN'),
+-- ETB - Ethiopian Birr
+('ET', 'Ethiopian Birr', 'ብር', 'ETB'),
+-- EUR - Euro
+('EU', 'Euro', 'Euro', 'EUR'),
+-- FJD - Fijian Dollar
+('FJ', 'Fijian Dollar', 'Fijian Dollar', 'FJD'),
+-- FKP - Falkland Islands Pound
+('FK', 'Falkland Islands Pound', 'Falkland Islands Pound', 'FKP'),
+-- GBP - British Pound Sterling
+('GB', 'British Pound Sterling', 'British Pound Sterling', 'GBP'),
+-- GEL - Georgian Lari
+('GE', 'Georgian Lari', 'ქართული ლარი', 'GEL'),
+-- GGP - Guernsey Pound
+('GG', 'Guernsey Pound', 'Guernsey Pound', 'GGP'),
+-- GHS - Ghanaian Cedi
+('GH', 'Ghanaian Cedi', 'Ghanaian Cedi', 'GHS'),
+-- GIP - Gibraltar Pound
+('GI', 'Gibraltar Pound', 'Gibraltar Pound', 'GIP'),
+-- GMD - Gambian Dalasi
+('GM', 'Gambian Dalasi', 'Gambian Dalasi', 'GMD'),
+-- GNF - Guinean Franc
+('GN', 'Guinean Franc', 'Franc Guinéen', 'GNF'),
+-- GTQ - Guatemalan Quetzal
+('GT', 'Guatemalan Quetzal', 'Quetzal Guatemalteco', 'GTQ'),
+-- GYD - Guyanaese Dollar
+('GY', 'Guyanaese Dollar', 'Guyanaese Dollar', 'GYD'),
+-- HKD - Hong Kong Dollar
+('HK', 'Hong Kong Dollar', 'Hong Kong Dollar', 'HKD'),
+-- HNL - Honduran Lempira
+('HN', 'Honduran Lempira', 'Lempira Hondureña', 'HNL'),
+-- HRK - Croatian Kuna
+('HR', 'Croatian Kuna', 'Hrvatska Kuna', 'HRK'),
+-- HTG - Haitian Gourde
+('HT', 'Haitian Gourde', 'Gourde Haïtienne', 'HTG'),
+-- HUF - Hungarian Forint
+('HU', 'Hungarian Forint', 'Magyar Forint', 'HUF'),
+-- IDR - Indonesian Rupiah
+('ID', 'Indonesian Rupiah', 'Rupiah Indonesia', 'IDR'),
+-- ILS - Israeli New Shekel
+('IL', 'Israeli New Shekel', 'שקל חדש', 'ILS'),
+-- IMP - Manx pound
+('IM', 'Manx pound', 'Manx pound', 'IMP'),
+-- INR - Indian Rupee
+('IN', 'Indian Rupee', 'भारतीय रुपया', 'INR'),
+-- IQD - Iraqi Dinar
+('IQ', 'Iraqi Dinar', 'دينار عراقي', 'IQD'),
+-- IRR - Iranian Rial
+('IR', 'Iranian Rial', 'ریال ایران', 'IRR'),
+-- ISK - Icelandic Króna
+('IS', 'Icelandic Króna', 'Íslensk króna', 'ISK'),
+-- JEP - Jersey Pound
+('JE', 'Jersey Pound', 'Jersey Pound', 'JEP'),
+-- JMD - Jamaican Dollar
+('JM', 'Jamaican Dollar', 'Jamaican Dollar', 'JMD'),
+-- JOD - Jordanian Dinar
+('JO', 'Jordanian Dinar', 'دينار أردني', 'JOD'),
+-- JPY - Japanese Yen
+('JP', 'Japanese Yen', '日本円', 'JPY'),
+-- KES - Kenyan Shilling
+('KE', 'Kenyan Shilling', 'Shilingi ya Kenya', 'KES'),
+-- KGS - Kyrgyzstani Som
+('KG', 'Kyrgyzstani Som', 'Кыргыз сому', 'KGS'),
+-- KHR - Cambodian Riel
+('KH', 'Cambodian Riel', 'រៀល​កម្ពុជា', 'KHR'),
+-- KMF - Comorian Franc
+('KM', 'Comorian Franc', 'Franc Comorien', 'KMF'),
+-- KPW - North Korean Won
+('KP', 'North Korean Won', '조선 민주주의 인민 공화국 원', 'KPW'),
+-- KRW - South Korean Won
+('KR', 'South Korean Won', '대한민국 원', 'KRW'),
+-- KWD - Kuwaiti Dinar
+('KW', 'Kuwaiti Dinar', 'دينار كويتي', 'KWD'),
+-- KYD - Cayman Islands Dollar
+('KY', 'Cayman Islands Dollar', 'Cayman Islands Dollar', 'KYD'),
+-- KZT - Kazakhstani Tenge
+('KZ', 'Kazakhstani Tenge', 'Қазақстан теңгесі', 'KZT'),
+-- LAK - Laotian Kip
+('LA', 'Laotian Kip', 'ກີບ', 'LAK'),
+-- LBP - Lebanese Pound
+('LB', 'Lebanese Pound', 'لبناني جنيه', 'LBP'),
+-- LKR - Sri Lankan Rupee
+('LK', 'Sri Lankan Rupee', 'ශ්‍රී ලංකා රුපියල්', 'LKR'),
+-- LRD - Liberian Dollar
+('LR', 'Liberian Dollar', 'Liberian Dollar', 'LRD'),
+-- LSL - Lesotho Loti
+('LS', 'Lesotho Loti', 'Lesotho Loti', 'LSL'),
+-- LYD - Libyan Dinar
+('LY', 'Libyan Dinar', 'دينار ليبي', 'LYD'),
+-- MAD - Moroccan Dirham
+('MA', 'Moroccan Dirham', 'درهم مغربي', 'MAD'),
+-- MDL - Moldovan Leu
+('MD', 'Moldovan Leu', 'Leu Moldovenesc', 'MDL'),
+-- MGA - Malagasy Ariary
+('MG', 'Malagasy Ariary', 'Ariary Malagasy', 'MGA'),
+-- MKD - Macedonian Denar
+('MK', 'Macedonian Denar', 'Македонски Денар', 'MKD'),
+-- MMK - Myanma Kyat
+('MM', 'Myanma Kyat', 'မြန်မာကျပ်', 'MMK'),
+-- MNT - Mongolian Tugrik
+('MN', 'Mongolian Tugrik', 'Төгрөг', 'MNT'),
+-- MOP - Macanese Pataca
+('MO', 'Macanese Pataca', '澳門幣', 'MOP'),
+-- MRU - Mauritanian Ouguiya
+('MR', 'Mauritanian Ouguiya', 'أوقية موريتانية', 'MRU'),
+-- MUR - Mauritian Rupee
+('MU', 'Mauritian Rupee', 'Mauritian Rupee', 'MUR'),
+-- MVR - Maldivian Rufiyaa
+('MV', 'Maldivian Rufiyaa', 'ދިވެހި ރުފިޔާ', 'MVR'),
+-- MWK - Malawian Kwacha
+('MW', 'Malawian Kwacha', 'Kwacha', 'MWK'),
+-- MXN - Mexican Peso
+('MX', 'Mexican Peso', 'Peso Mexicano', 'MXN'),
+-- MYR - Malaysian Ringgit
+('MY', 'Malaysian Ringgit', 'Ringgit Malaysia', 'MYR'),
+-- MZN - Mozambican Metical
+('MZ', 'Mozambican Metical', 'Metical Moçambicano', 'MZN'),
+-- NAD - Namibian Dollar
+('NA', 'Namibian Dollar', 'Namibian Dollar', 'NAD'),
+-- NGN - Nigerian Naira
+('NG', 'Nigerian Naira', 'Nigerian Naira', 'NGN'),
+-- NIO - Nicaraguan Córdoba
+('NI', 'Nicaraguan Córdoba', 'Córdoba Nicaragüense', 'NIO'),
+-- NOK - Norwegian Krone
+('NO', 'Norwegian Krone', 'Norsk krone', 'NOK'),
+-- NPR - Nepalese Rupee
+('NP', 'Nepalese Rupee', 'नेपाली रुपैयाँ', 'NPR'),
+-- NZD - New Zealand Dollar
+('NZ', 'New Zealand Dollar', 'New Zealand Dollar', 'NZD'),
+-- OMR - Omani Rial
+('OM', 'Omani Rial', 'ريال عماني', 'OMR'),
+-- PAB - Panamanian Balboa
+('PA', 'Panamanian Balboa', 'Balboa Panameño', 'PAB'),
+-- PEN - Peruvian Sol
+('PE', 'Peruvian Sol', 'Sol Peruano', 'PEN'),
+-- PGK - Papua New Guinean Kina
+('PG', 'Papua New Guinean Kina', 'Papua New Guinean Kina', 'PGK'),
+-- PHP - Philippine Peso
+('PH', 'Philippine Peso', 'Piso ng Pilipinas', 'PHP'),
+-- PKR - Pakistani Rupee
+('PK', 'Pakistani Rupee', 'روپیه', 'PKR'),
+-- PLN - Polish Złoty
+('PL', 'Polish Złoty', 'Złoty', 'PLN'),
+-- PYG - Paraguayan Guarani
+('PY', 'Paraguayan Guarani', 'Guaraní Paraguayo', 'PYG'),
+-- QAR - Qatari Rial
+('QA', 'Qatari Rial', 'ريال قطري', 'QAR'),
+-- RON - Romanian Leu
+('RO', 'Romanian Leu', 'Leu Românesc', 'RON'),
+-- RSD - Serbian Dinar
+('RS', 'Serbian Dinar', 'Српски динар', 'RSD'),
+-- RUB - Russian Ruble
+('RU', 'Russian Ruble', 'Российский рубль', 'RUB'),
+-- RWF - Rwandan Franc
+('RW', 'Rwandan Franc', 'Franc Rwandais', 'RWF'),
+-- SAR - Saudi Riyal
+('SA', 'Saudi Riyal', 'ريال سعودي', 'SAR'),
+-- SBD - Solomon Islands Dollar
+('SB', 'Solomon Islands Dollar', 'Solomon Islands Dollar', 'SBD'),
+-- SCR - Seychellois Rupee
+('SC', 'Seychellois Rupee', 'Seychellois Rupee', 'SCR'),
+-- SDG - Sudanese Pound
+('SD', 'Sudanese Pound', 'جنيه سوداني', 'SDG'),
+-- SEK - Swedish Krona
+('SE', 'Swedish Krona', 'Svensk krona', 'SEK'),
+-- SGD - Singapore Dollar
+('SG', 'Singapore Dollar', 'Singapore Dollar', 'SGD'),
+-- SHP - Saint Helena Pound
+('SH', 'Saint Helena Pound', 'Saint Helena Pound', 'SHP'),
+-- SLL - Sierra Leonean Leone
+('SL', 'Sierra Leonean Leone', 'Sierra Leonean Leone', 'SLL'),
+-- SOS - Somali Shilling
+('SO', 'Somali Shilling', 'Somali Shilling', 'SOS'),
+-- SRD - Surinamese Dollar
+('SR', 'Surinamese Dollar', 'Surinamese Dollar', 'SRD'),
+-- STN - São Tomé and Príncipe Dobra
+('ST', 'São Tomé and Príncipe Dobra', 'Dobra São Tomé e Príncipe', 'STN'),
+-- SVC - Salvadoran Colón
+('SV', 'Salvadoran Colón', 'Colón Salvadoreño', 'SVC'),
+-- SYP - Syrian Pound
+('SY', 'Syrian Pound', 'ليرة سورية', 'SYP'),
+-- SZL - Swazi Lilangeni
+('SZ', 'Swazi Lilangeni', 'Swazi Lilangeni', 'SZL'),
+-- THB - Thai Baht
+('TH', 'Thai Baht', 'บาท', 'THB'),
+-- TJS - Tajikistani Somoni
+('TJ', 'Tajikistani Somoni', 'Сомонӣ', 'TJS'),
+-- TMT - Turkmenistan Manat
+('TM', 'Turkmenistan Manat', 'Türkmen manady', 'TMT'),
+-- TND - Tunisian Dinar
+('TN', 'Tunisian Dinar', 'دينار تونسي', 'TND'),
+-- TOP - Tongan Paʻanga
+('TO', 'Tongan Paʻanga', 'Tongan Paʻanga', 'TOP'),
+-- TRY - Turkish Lira
+('TR', 'Turkish Lira', 'Türk Lirası', 'TRY'),
+-- TTD - Trinidad and Tobago Dollar
+('TT', 'Trinidad and Tobago Dollar', 'Trinidad and Tobago Dollar', 'TTD'),
+-- TWD - New Taiwan Dollar
+('TW', 'New Taiwan Dollar', '新台幣', 'TWD'),
+-- TZS - Tanzanian Shilling
+('TZ', 'Tanzanian Shilling', 'Tanzanian Shilling', 'TZS'),
+-- UAH - Ukrainian Hryvnia
+('UA', 'Ukrainian Hryvnia', 'Українська гривня', 'UAH'),
+-- UGX - Ugandan Shilling
+('UG', 'Ugandan Shilling', 'Ugandan Shilling', 'UGX'),
+-- USD - United States Dollar
+('US', 'United States Dollar', 'United States Dollar', 'USD'),
+-- UYU - Uruguayan Peso
+('UY', 'Uruguayan Peso', 'Peso Uruguayo', 'UYU'),
+-- UZS - Uzbekistani Som
+('UZ', 'Uzbekistani Som', 'Ўзбекистон сўми', 'UZS'),
+-- VES - Venezuelan Bolívar Soberano
+('VE', 'Venezuelan Bolívar Soberano', 'Bolívar Soberano', 'VES'),
+-- VND - Vietnamese Đồng
+('VN', 'Vietnamese Đồng', 'đồng', 'VND'),
+-- VUV - Vanuatu Vatu
+('VU', 'Vanuatu Vatu', 'Vanuatu Vatu', 'VUV'),
+-- WST - Samoan Tala
+('WS', 'Samoan Tala', 'Samoan Tala', 'WST'),
+-- XAF - Central African CFA Franc
+('CF', 'Central African CFA Franc', 'Franc CFA', 'XAF'),
+-- XAG - Silver (troy ounce)
+('ZZ', 'Silver (troy ounce)', 'Silver (troy ounce)', 'XAG'),
+-- XAU - Gold (troy ounce)
+('ZZ', 'Gold (troy ounce)', 'Gold (troy ounce)', 'XAU'),
+-- XCD - East Caribbean Dollar
+('ZZ', 'East Caribbean Dollar', 'East Caribbean Dollar', 'XCD'),
+-- XDR - Special Drawing Rights
+('ZZ', 'Special Drawing Rights', 'Special Drawing Rights', 'XDR'),
+-- XOF - West African CFA Franc
+('ZZ', 'West African CFA Franc', 'Franc CFA', 'XOF'),
+-- XPD - Palladium (troy ounce)
+('ZZ', 'Palladium (troy ounce)', 'Palladium (troy ounce)', 'XPD'),
+-- XPF - CFP Franc
+('ZZ', 'CFP Franc', 'Franc CFP', 'XPF'),
+-- XPT - Platinum (troy ounce)
+('ZZ', 'Platinum (troy ounce)', 'Platinum (troy ounce)', 'XPT'),
+-- YER - Yemeni Rial
+('YE', 'Yemeni Rial', 'ريال يمني', 'YER'),
+-- ZAR - South African Rand
+('ZA', 'South African Rand', 'South African Rand', 'ZAR'),
+-- ZMW - Zambian Kwacha
+('ZM', 'Zambian Kwacha', 'Zambian Kwacha', 'ZMW'),
+-- ZWL - Zimbabwean Dollar
+('ZW', 'Zimbabwean Dollar', 'Zimbabwean Dollar', 'ZWL');

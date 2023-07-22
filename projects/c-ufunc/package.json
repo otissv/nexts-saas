@@ -8,8 +8,11 @@
     "typescript",
     "functional programming"
   ],
+  "repository": "git@github.com:otissv/ufunc.git",
   "author": "Otis Virginie",
   "license": "MIT",
+  "main": "build/libs/index.js",
+  "types": "build/libs/index.d.ts",
   "scripts": {
     "start": "npx http-server ./docs",
     "build": "npm run clean && mkdir build && ts-node node_modules/scripts/libs/build-package",

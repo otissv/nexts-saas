@@ -1,12 +1,13 @@
 import { boolean, index, integer, pgSchema } from 'drizzle-orm/pg-core'
 import { sql } from 'drizzle-orm'
+
 import {
   money,
   timestampz,
   varchar,
   serial,
   text,
-} from 'database/pg/data-types.pg'
+} from '../database/pg/data-types.pg'
 
 const PRICING_TYPE = ['one_time', 'recurring']
 const PRICING_INTERVALS = ['month', 'year']

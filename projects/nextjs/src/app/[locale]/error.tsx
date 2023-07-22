@@ -2,8 +2,8 @@
 
 import { XCircle } from 'lucide-react'
 
-import { TypographyH1 } from 'components/typography/h1.typography'
-import { Button } from 'components/ui/button'
+import { TypographyH1 } from '@/components/typography/h1.typography'
+import { Button } from '@/components/ui/button'
 
 export default function RootError({
   error,

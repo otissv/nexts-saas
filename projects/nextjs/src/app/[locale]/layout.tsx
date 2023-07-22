@@ -2,15 +2,14 @@ import * as React from 'react'
 import { Inter } from 'next/font/google'
 import { getServerSession } from 'next-auth'
 import { Provider as BalancerProvider } from 'react-wrap-balancer'
-import { getTranslation } from '@/i18n'
-import { TranslationProvider } from 'components/translate/translations-provider'
-import { Toaster } from 'components/toaster'
-import { ThemeProvider } from 'components/theme-provider'
-import { cn } from 'components/lib/utils'
-import { Indicators } from 'components/indicators/indicator'
 
 import '@/app/[locale]/global.css'
 import { PageParams } from '@/types'
+import { TranslationProvider } from '@/components/translate/translations-provider'
+import { Toaster } from '@/components/toaster'
+import { ThemeProvider } from '@/components/theme-provider'
+import { cn } from '@/lib/utils'
+import { Indicators } from '@/components/indicators/indicator'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -44,10 +43,7 @@ export default async function RootLayout({
           'w-full min-h-screen bg-background font-sans antialiased'
         )}
       >
-        <TranslationProvider
-          locale={params.locale}
-          getTranslation={getTranslation}
-        >
+        <TranslationProvider locale={params.locale}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <BalancerProvider>
               {children}

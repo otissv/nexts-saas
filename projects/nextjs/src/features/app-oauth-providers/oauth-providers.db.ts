@@ -1,14 +1,6 @@
 import { eq, ExtractTablesWithRelations } from 'drizzle-orm'
 import { PostgresJsQueryResultHKT } from 'drizzle-orm/postgres-js'
 import { PgTransaction } from 'drizzle-orm/pg-core'
-import { errorResponse, serverResponse } from 'database/utils.db'
-import {
-  ErrorResponse,
-  SelectProps,
-  SuccessResponse,
-} from 'database/pg/types.pg'
-import { PostgresDatabase } from 'database/pg/connection.pg'
-import { dbController } from 'database/pg/db-controller.pg'
 
 import {
   oauthProviders as oauthProvidersSchema,
@@ -20,12 +12,20 @@ import {
   OauthProvider,
   OauthProviderSignup,
   OauthProviderInsert,
-} from '@/features/app-oauth-providers/oauth-providers.types'
+} from './oauth-providers.types'
+import {
+  ErrorResponse,
+  SelectProps,
+  SuccessResponse,
+} from '@/database/pg/types.pg'
+import { PostgresDatabase } from '@/database/pg/connection.pg'
+import { tenantsSql } from '@/schema/tenant.sql'
+import { dbController } from '@/database/pg/db-controller.pg'
 import {
   oauthProviderSignupValidate,
   oauthProviderInsertValidate,
 } from '@/features/app-oauth-providers/oauth-providers.validators'
-import { tenantsSql } from '@/schema/tenant.sql'
+import { errorResponse, serverResponse } from '@/database/utils.db'
 
 export function oauthProvidersDb(db: PostgresDatabase) {
   const oauthProviders = dbController(db)({

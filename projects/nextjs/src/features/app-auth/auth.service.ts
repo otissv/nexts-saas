@@ -1,18 +1,18 @@
-import { PostgresDatabase } from 'database/pg/connection.pg'
+import { PostgresDatabase } from '@/database/pg/connection.pg'
 import { SQL, eq } from 'drizzle-orm'
+
+import { checkResultHasData } from '@/lib/utils-server-only'
+import { User, UserInsert } from '@/features/app-users/users.types'
+import { SignIn, Signup } from '@/features/app-auth/auth.types'
 import {
   comparePassword,
   doesUserExist,
   hashPassword,
-} from 'utils/utils-server-only'
-import { checkResultHasData } from 'utils/utils-server-only'
-import { errorResponse } from 'database/utils.db'
-import { SeverReturnType } from 'database/pg/types.pg'
-
-import { User } from '@/features/app-users/users.types'
-import { SignIn, Signup } from '@/features/app-auth/auth.types'
+} from '@/lib/utils-server-only'
 import { signInValidate, signupValidate } from './auth.validators'
 import { usersService } from '@/features/app-users/users.service'
+import { errorResponse } from '@/database/utils.db'
+import { SeverReturnType } from '@/database/pg/types.pg'
 
 export function authService(db: PostgresDatabase) {
   const users = usersService(db)

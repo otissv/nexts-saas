@@ -1,17 +1,17 @@
 'use server'
 
 import { AuthOptions, getServerSession } from 'next-auth'
-import { errorResponse } from 'database/utils.db'
-import { SeverReturnType, ActionProps } from 'database/pg/types.pg'
 
 import { serverContext } from '@/app/context-server-only'
 import { ServerSession, authOptions } from '@/features/app-auth/auth.options'
-import { authorize } from 'utils/utils-server-only'
+import { authorize } from '@/lib/utils-server-only'
+import { SeverReturnType, ActionProps } from '@/database/pg/types.pg'
 import {
   TenantCompanyUpdate,
   TenantCompany,
   TenantCompanyInsert,
 } from '@/features/tenant-companies/companies.tenant.types'
+import { errorResponse } from '@/database/utils.db'
 
 const { tenantCompaniesService } = serverContext()
 

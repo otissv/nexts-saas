@@ -1,6 +1,6 @@
 import context from 'server-only-context'
 
-import { connection } from 'database/pg/connection.pg'
+import { connection } from '@/database/pg/connection.pg'
 import { usersService } from '@/features/app-users/users.service'
 import { authService } from '@/features/app-auth/auth.service'
 import { oauthProvidersService } from '@/features/app-oauth-providers/oauth-providers.service'
