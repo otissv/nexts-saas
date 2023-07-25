@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Next.js",
+  "extends": "./base.json",
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "baseUrl": ".",
+    "outDir": "build",
+    "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "preserveWatchOutput": true,
+    "skipLibCheck": true
+  }
+}

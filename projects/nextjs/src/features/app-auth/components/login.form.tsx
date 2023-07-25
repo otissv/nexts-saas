@@ -22,6 +22,7 @@ export function LoginForm({ providers }: { providers: string[] }) {
   const errorNotify = useErrorNotify()
   const searchParams = useSearchParams()
   const error = searchParams.get('error')
+  const [isSubmitting, setIsSubmitting] = React.useState(false)
 
   React.useEffect(() => {
     if (error !== null) {
@@ -62,6 +63,8 @@ export function LoginForm({ providers }: { providers: string[] }) {
         throw error
       }
 
+      setIsSubmitting(true)
+
       await signIn('credentials', {
         username: values?.username,
         password: values?.password,
@@ -77,6 +80,8 @@ export function LoginForm({ providers }: { providers: string[] }) {
         description: 'There was a problem with your request.',
       })
     }
+
+    setIsSubmitting(false)
   }
 
   const schema = useForm(signInValidator, config)
@@ -91,7 +96,7 @@ export function LoginForm({ providers }: { providers: string[] }) {
           validator={signInValidator}
           submit={onSubmit}
         >
-          <Button className="mt-2">
+          <Button className="mt-2" disabled={isSubmitting}>
             <T>buttons.login.content</T>
           </Button>
         </Form>
@@ -128,22 +133,35 @@ export function LoginForm({ providers }: { providers: string[] }) {
       <Button
         onClick={() => signIn('google')}
         className="w-72 mb-2 inline-block"
+        disabled={isSubmitting}
       >
         Google
       </Button>
     ),
     facebook: () => (
-      <Button onClick={() => signIn('facebook')} className="w-72">
+      <Button
+        onClick={() => signIn('facebook')}
+        className="w-72"
+        disabled={isSubmitting}
+      >
         Facebook
       </Button>
     ),
     twitter: () => (
-      <Button onClick={() => signIn('twitter')} className="w-72">
+      <Button
+        onClick={() => signIn('twitter')}
+        className="w-72"
+        disabled={isSubmitting}
+      >
         Twitter
       </Button>
     ),
     github: () => (
-      <Button onClick={() => signIn('github')} className="w-72">
+      <Button
+        onClick={() => signIn('github')}
+        className="w-72"
+        disabled={isSubmitting}
+      >
         Github
       </Button>
     ),

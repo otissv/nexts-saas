@@ -17,6 +17,7 @@ export function SignupForm({ providers }: { providers: string[] }) {
   const T = useTranslateClientComponent('ui.pages.authentication')
   const t = useTranslateClient('ui.pages.authentication')
   const errorNotify = useErrorNotify()
+  const [isSubmitting, setIsSubmitting] = React.useState(false)
 
   const config: FormConfig = {
     username: {
@@ -61,6 +62,8 @@ export function SignupForm({ providers }: { providers: string[] }) {
         throw error
       }
 
+      setIsSubmitting(true)
+
       const response = await fetch('/api/auth/signup', {
         method: 'POST',
         body: JSON.stringify({
@@ -90,6 +93,8 @@ export function SignupForm({ providers }: { providers: string[] }) {
         description: 'There was a problem with your request.',
       })
     }
+
+    setIsSubmitting(false)
   }
 
   const schema = useForm(signupValidator, config)
@@ -104,7 +109,7 @@ export function SignupForm({ providers }: { providers: string[] }) {
           validator={signupValidator}
           submit={onSubmit}
         >
-          <Button className="mt-2">
+          <Button className="mt-2" disabled={isSubmitting}>
             <T>signup.button.content</T>
           </Button>
         </Form>
@@ -122,17 +127,26 @@ export function SignupForm({ providers }: { providers: string[] }) {
       <Button
         onClick={() => signIn('google')}
         className="w-72 mb-2 inline-block"
+        disabled={isSubmitting}
       >
         <T>providers.google</T>
       </Button>
     ),
     facebook: () => (
-      <Button onClick={() => signIn('facebook')} className="w-72">
+      <Button
+        onClick={() => signIn('facebook')}
+        className="w-72"
+        disabled={isSubmitting}
+      >
         <T>providers.facebook</T>
       </Button>
     ),
     github: () => (
-      <Button onClick={() => signIn('github')} className="w-72">
+      <Button
+        onClick={() => signIn('github')}
+        className="w-72"
+        disabled={isSubmitting}
+      >
         <T>providers.github</T>
       </Button>
     ),

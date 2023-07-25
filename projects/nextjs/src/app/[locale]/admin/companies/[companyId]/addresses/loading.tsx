@@ -1,11 +1,9 @@
-/**
- *  Company Address Page
- */
+import * as React from 'react'
 
-import { PageHeader } from '@/components/page/page-header'
+import { TableLoadingLayout } from '@/components/layouts/table-loading-layout'
 import { translateServer } from '@/components/translate/translate-server'
 
-export default async function CompanyAddressesNewPage() {
+export default async function UsersLoading() {
   const t = await translateServer('ui.pages')
 
   const breadcrumbs = [
@@ -15,8 +13,9 @@ export default async function CompanyAddressesNewPage() {
   ]
 
   return (
-    <>
-      <PageHeader heading="Company Addresses" breadcrumbs={breadcrumbs} />
-    </>
+    <TableLoadingLayout
+      heading={t('addresses.heading')}
+      breadcrumbs={breadcrumbs}
+    />
   )
 }

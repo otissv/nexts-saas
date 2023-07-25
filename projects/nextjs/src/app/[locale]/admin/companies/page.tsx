@@ -7,15 +7,7 @@ import { translateServer } from '@/components/translate/translate-server'
 import { NewButton } from '@/components/buttons/new-button'
 import { Divider } from '@/components/divider'
 
-export interface CompaniesPageProps {
-  searchParams: {
-    [key: string]: string | string[] | undefined
-  }
-}
-
-export default async function CompaniesPage({
-  searchParams,
-}: CompaniesPageProps) {
+export default async function CompaniesPage() {
   const t = await translateServer('ui.pages')
 
   const breadcrumbs = [

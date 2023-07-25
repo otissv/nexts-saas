@@ -23,20 +23,22 @@ export interface UsersPageProps {
 export default async function UsersPage({ searchParams }: UsersPageProps) {
   const t = await translateServer('ui.pages.users')
   const queryParams = decodeSearchParams(searchParams)
-
   const { data, totalPages } = await paginateUsersAction(queryParams)
 
-  const breadcrumbs = [{ label: 'Home', crumb: '/' }, { label: 'Users' }]
+  const breadcrumbs = [
+    { label: t('home.breadcrumb.label'), crumb: '/' },
+    { label: t('users.breadcrumb.label') },
+  ]
+
   const deleteAction = async (id: number) => {
     'use server'
     const { pathname } = getHeaders()
     return deleteUserByIdAction(id, pathname)
   }
 
-  console.log('rendered')
   return (
     <>
-      <PageHeader heading="Users" breadcrumbs={breadcrumbs} />
+      <PageHeader heading={t('users.heading')} breadcrumbs={breadcrumbs} />
 
       <Search
         columns={['email', 'firstName', 'lastName']}
