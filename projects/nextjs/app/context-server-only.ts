@@ -10,6 +10,23 @@ import { tenantCompanyAddressService } from '@/features/tenant-company-addresses
 
 const db = connection()
 
+class Locale {
+  private locale = ''
+
+  constructor(locale: string = '') {
+    this.locale = locale
+  }
+
+  get() {
+    return this.locale
+  }
+
+  set(locale: string) {
+    this.locale = locale
+    return this.locale
+  }
+}
+
 export const [serverContext] = context({
   usersService: usersService(db),
   authService: authService(db),
@@ -17,4 +34,5 @@ export const [serverContext] = context({
   tenantCompaniesService: tenantCompaniesService(db),
   tenantsService: tenantsService(db),
   tenantCompanyAddressService: tenantCompanyAddressService(db),
+  localeService: new Locale(),
 })

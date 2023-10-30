@@ -119,9 +119,16 @@ export const authOptions: AuthOptions = {
         email: (token || user).email || '',
       })
 
-      return {
+      const data = {
         ...token,
         ...user,
+      }
+
+      //@ts-ignore do not send password. not to add as
+      delete data.password
+
+      return {
+        ...data,
         accessToken: account?.access_token,
         tenantId: tenant.data[0] ? `t_${tenant.data[0]?.id}` : '',
       }

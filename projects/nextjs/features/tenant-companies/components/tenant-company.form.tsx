@@ -45,8 +45,8 @@ export const CompanyForm = ({
   const action = id ? updateTenantCompanyByIdAction : insertTenantCompanyAction
 
   const validator = company
-    ? tenantCompanyUpdateValidator
-    : tenantCompanyInsertValidator
+    ? tenantCompanyUpdateValidator.omit({ createdAt: true, updatedAt: true })
+    : tenantCompanyInsertValidator.omit({ createdAt: true, updatedAt: true })
 
   const config: FormConfig = {
     name: {
@@ -79,7 +79,10 @@ export const CompanyForm = ({
   }
 
   const schema = useForm(
-    validator.omit({ socialLinks: true, userId: true }),
+    validator.omit({
+      socialLinks: true,
+      userId: true,
+    }),
     config
   )
 
@@ -113,7 +116,7 @@ export const CompanyForm = ({
   }
 
   {
-    /* TODO:// Social */
+    /* TODO:// Social Links */
   }
   return (
     <Form

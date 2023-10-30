@@ -1,10 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   transpilePackages: ['c-ufunc'],
-  experimental: {
-    appDir: true,
-    serverActions: true,
-  },
   images: {
     remotePatterns: [
       {

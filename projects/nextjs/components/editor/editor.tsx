@@ -12,10 +12,22 @@ import { TwoColumnBlock } from './two-column'
 import { BackButton } from '@/components/buttons/back-button'
 
 interface EditorProps {
-  post: any
+  hideToolbar?: boolean
+  data: any
+  id: string
+  placeholder?: string
+  inlineToolbar?: boolean
+  readOnly?: boolean
 }
 
-export function Editor({ post }: EditorProps) {
+export function Editor({
+  data,
+  hideToolbar = false,
+  id,
+  placeholder = 'Type here to write your post...',
+  readOnly = false,
+  inlineToolbar = true,
+}: EditorProps) {
   const ref = useRef<EditorJS>()
   const [isMounted, setIsMounted] = useState<boolean>(false)
 
@@ -36,18 +48,18 @@ export function Editor({ post }: EditorProps) {
     const Table = (await import('@editorjs/table')).default
     const Warning = (await import('@editorjs/warning')).default
 
-    const body = postValidator.parse(post)
+    const body = postValidator.parse(data)
 
     if (!ref.current) {
       const editor = new EditorJS({
-        holder: 'editor',
+        holder: id,
         onReady() {
           ref.current = editor
         },
-        placeholder: 'Type here to write your post...',
-        inlineToolbar: true,
         data: body.content,
-        readOnly: false,
+        placeholder,
+        inlineToolbar,
+        readOnly,
         tools: {
           twoColumn: {
             class: TwoColumnBlock,
@@ -80,7 +92,7 @@ export function Editor({ post }: EditorProps) {
         },
       })
     }
-  }, [post])
+  }, [data])
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -147,7 +159,7 @@ export function Editor({ post }: EditorProps) {
           <div className="flex items-center space-x-10 mb-5">
             <BackButton>Back</BackButton>
             <p className="text-sm text-muted-foreground">
-              {post.published ? 'Published' : 'Draft'}
+              {data.published ? 'Published' : 'Draft'}
             </p>
           </div>
           <Button
@@ -167,7 +179,10 @@ export function Editor({ post }: EditorProps) {
         </p>
 
         <div className="ml-12 prose prose-stone dark:prose-invert border rounded">
-          <div id="editor" className="min-h-[500px] " />
+          <div
+            id={id}
+            className={cn('min-h-[500px]', hideToolbar && 'ce-toolbar-hide')}
+          />
         </div>
       </div>
     </form>

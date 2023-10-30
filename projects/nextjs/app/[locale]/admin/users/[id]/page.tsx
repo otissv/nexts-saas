@@ -21,6 +21,9 @@ import { getHeaders } from '@/lib/getHeaders'
 import { UserForm } from '@/features/app-users/components/user-form'
 import { PageHeader } from '@/components/page/page-header'
 import { Maybe } from '@/components/maybe'
+import { serverContext } from '@/app/context-server-only'
+import { ChevronRight } from 'lucide-react'
+import Link from 'next/link'
 
 export interface UserPageProps {
   params: { id: User['id'] }
@@ -28,7 +31,8 @@ export interface UserPageProps {
 
 export default async function UserPage({ params: { id } }: UserPageProps) {
   const { data } = await selectUserByIdAction({ id })
-  const t = await translateServer('ui')
+  const locale = serverContext().localeService.get()
+  const t = await translateServer(locale, 'ui')
 
   const breadcrumbs = [
     { label: t('pages.home.breadcrumb.label'), crumb: '/' },
@@ -52,6 +56,8 @@ export default async function UserPage({ params: { id } }: UserPageProps) {
     return !error
   }
 
+  //TODO: use correct companyId
+
   return (
     <React.Fragment>
       <div className="grid grid-cols-[40px_auto] gap-x-4 grid-row-2">
@@ -66,6 +72,30 @@ export default async function UserPage({ params: { id } }: UserPageProps) {
         </Maybe>
         <PageHeader heading={fullName} breadcrumbs={breadcrumbs} />
       </div>
+
+      <Link
+        href={`/admin/companies/${'companyId'}/addresses`}
+        className={`
+        inline-flex
+        border border-input 
+        hover:bg-accent 
+        py-2 
+        px-4
+        font-medium
+        text-sm
+        rounded-md
+        h-11
+        justify-center
+        items-center
+        mb-6
+        `}
+      >
+        {t('pages.tenantCompany.heading')}
+        <ChevronRight className="inline-block ml-2" />
+      </Link>
+
+      <Divider className="mt-2 mb-6" />
+
       {user ? <UserForm name="users" data={data} /> : t('misc.notFound')}
 
       <TypographyH2>Change Password</TypographyH2>

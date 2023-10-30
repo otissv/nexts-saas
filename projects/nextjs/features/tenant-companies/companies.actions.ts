@@ -16,6 +16,29 @@ import { errorResponse } from '@/database/utils.db'
 const { tenantCompaniesService } = serverContext()
 
 /* Queries */
+export async function paginateTenantCompaniesAction(
+  props: ActionProps<TenantCompany>,
+  revalidatePath?: string
+) {
+  const session = await getServerSession<AuthOptions, ServerSession>(
+    authOptions
+  )
+
+  const service = tenantCompaniesService(session?.user?.tenantId || '')
+
+  const where = props.where && {
+    or: [
+      { like: ['name', props.where] },
+      { like: ['email', props.where] },
+      { like: ['phone', props.where] },
+      { like: ['website', props.where] },
+    ],
+  }
+
+  return authorize(service.paginate)({ ...props, where }, revalidatePath).catch(
+    errorResponse(422)
+  ) as SeverReturnType<TenantCompany>
+}
 
 export async function selectTenantCompaniesAction(
   props: ActionProps<TenantCompany>,
@@ -48,7 +71,7 @@ export async function selectTenantCompanyByIdAction(
 
 /* Mutations */
 
-export async function deleteUserByIdAction(
+export async function deleteTenantCompanyByIdAction(
   id: TenantCompany['id'],
   revalidatePath?: string
 ) {

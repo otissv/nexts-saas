@@ -12,5 +12,5 @@
  * ```
  */
 export const isDev = (): boolean =>
-  // @ts-expect-error quiker and easier to read than having `process.env.NODE_ENV === 'dev' || process.env.NODE_ENV === 'development'`
+  // @ts-expect-error quicker and easier to read than having `process.env.NODE_ENV === 'dev' || process.env.NODE_ENV === 'development'`
   process.env.NODE_ENV === 'dev' || process.env.NODE_ENV === 'development'

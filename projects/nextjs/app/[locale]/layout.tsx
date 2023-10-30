@@ -10,6 +10,7 @@ import { Toaster } from '@/components/toaster'
 import { ThemeProvider } from '@/components/theme-provider'
 import { cn } from '@/lib/utils'
 import { Indicators } from '@/components/indicators/indicator'
+import { serverContext } from '@/app/context-server-only'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -34,6 +35,8 @@ export default async function RootLayout({
 
   const session = await getServerSession()
   const isLoggedIn = Boolean(session)
+
+  serverContext().localeService.set(params.locale)
 
   return (
     <html lang={params.locale} suppressHydrationWarning>

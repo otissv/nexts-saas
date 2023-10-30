@@ -13,6 +13,7 @@ import { decodeSearchParams } from '@/lib/querystring'
 import { env } from 'env/build'
 import { translateServer } from '@/components/translate/translate-server'
 import { Search } from '@/components/search'
+import { serverContext } from '@/app/context-server-only'
 
 const { pageLimit } = env()
 
@@ -21,7 +22,8 @@ export interface UsersPageProps {
 }
 
 export default async function UsersPage({ searchParams }: UsersPageProps) {
-  const t = await translateServer('ui.pages')
+  const locale = serverContext().localeService.get()
+  const t = await translateServer(locale, 'ui.pages')
   const queryParams = decodeSearchParams(searchParams)
   const { data, totalPages } = await paginateUsersAction(queryParams)
 
@@ -44,7 +46,6 @@ export default async function UsersPage({ searchParams }: UsersPageProps) {
         columns={['email', 'firstName', 'lastName']}
         searchParams={searchParams}
         className="mb-6"
-        // value={where?.[0]?.[1]}
       />
 
       {data.length ? (

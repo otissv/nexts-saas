@@ -16,6 +16,7 @@ import { Divider } from '@/components/divider'
 import { DeleteButton } from '@/components/buttons/delete-button'
 import { getHeaders } from '@/lib/getHeaders'
 import { TenantCompany } from '@/features/tenant-companies/companies.tenant.types'
+import { serverContext } from '@/app/context-server-only'
 
 export interface CompanyAddressesPageProps {
   params: {
@@ -28,15 +29,16 @@ export default async function CompanyAddressesPage({
   params: { addressId, companyId },
 }: CompanyAddressesPageProps) {
   const { data } = await selectTenantCompanyAddressByIdAction(addressId)
-  const t = await translateServer('ui.pages')
-  const tToolbar = await translateServer('ui.page.toolbar')
+  const locale = serverContext().localeService.get()
+  const t = await translateServer(locale, 'ui.pages')
+  const tToolbar = await translateServer(locale, 'ui.page.toolbar')
 
   const breadcrumbs = [
     { label: t('home.breadcrumb.label'), crumb: '/' },
-    { label: t('companies.breadcrumb.label'), crumb: 'admin/companies' },
-    { label: t('company.edit.breadcrumb.label'), crumb: `${companyId}` },
-    { label: t('addresses.breadcrumb.label'), crumb: 'addresses' },
-    { label: t('address.edit.breadcrumb.label') },
+    { label: t('tenantCompanies.breadcrumb.label'), crumb: 'admin/companies' },
+    { label: t('tenantCompany.edit.breadcrumb.label'), crumb: `${companyId}` },
+    { label: t('tenantAddresses.breadcrumb.label'), crumb: 'addresses' },
+    { label: t('tenantAddress.edit.breadcrumb.label') },
   ]
 
   const handleDelete = async () => {

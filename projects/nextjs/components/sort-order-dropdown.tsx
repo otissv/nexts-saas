@@ -94,7 +94,6 @@ export const SortOrderDropdown = <Schema extends Record<string, any>>({
           </Button>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          {' '}
           <Button
             variant={order === 'desc' ? 'secondary' : 'ghost'}
             className=" w-full rounded-none justify-start"

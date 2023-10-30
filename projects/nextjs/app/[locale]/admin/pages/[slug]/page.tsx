@@ -3,6 +3,8 @@
  */
 
 import { Editor } from '@/components/editor/editor'
+import { TestBlock } from '@/components/editor/test-block'
+import { TwoColumnBlock } from '@/components/editor/two-column'
 
 const post = {
   id: '1',
@@ -106,5 +108,5 @@ const post = {
 }
 
 export default function PagePage() {
-  return <Editor post={post} />
+  return <Editor data={post} id="myeditor" />
 }

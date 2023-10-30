@@ -1,11 +1,10 @@
 import { NavSheet } from '@/components/nav/nav-sheet'
-
 import { NavMenuItem, NavMenuLink } from '@/components/nav/nav'
 import { SheetClose } from '@/components/ui/sheet'
 import { NavBar } from '@/components/nav/nav-bar'
 import { MenuItem } from '@/components/layouts/types.layouts'
 
-export interface MarketingLayoutProps
+export interface DefaultLayoutProps
   extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode
   menuItems: MenuItem[]
@@ -18,7 +17,7 @@ export function DefaultLayout({
   isLoggedIn,
   menuItems,
   T,
-}: MarketingLayoutProps) {
+}: DefaultLayoutProps) {
   return (
     <div className="flex flex-col">
       {/* mobile nav */}

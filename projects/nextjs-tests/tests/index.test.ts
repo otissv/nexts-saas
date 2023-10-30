@@ -5,7 +5,9 @@ import { test, expect } from '@playwright/test'
 // const { google } = config()
 
 test('should login with password', async ({ page }) => {
-  await page.goto('http://localhost:3000/')
+  await page.goto('https://tailwindcss.com/docs/visibility')
+
+  await page.locator('table').console.log()
 
   // await page.getByRole('link', { name: 'Login' }).click()
 

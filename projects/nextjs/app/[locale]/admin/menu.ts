@@ -1,7 +1,9 @@
 import { translateServer } from '@/components/translate/translate-server'
+import { serverContext } from '@/app/context-server-only'
 
 export async function menu() {
-  const t = await translateServer('ui.menu.admin')
+  const locale = serverContext().localeService.get()
+  const t = await translateServer(locale, 'ui.menu.admin')
 
   return [
     {

@@ -8,16 +8,18 @@ import { CompanyForm } from '@/features/tenant-companies/components/tenant-compa
 import { PageHeader } from '@/components/page/page-header'
 import { translateServer } from '@/components/translate/translate-server'
 import { Divider } from '@/components/divider'
+import { serverContext } from '@/app/context-server-only'
 
 export interface CompanyPageProps {}
 
 export default async function CompanyPage({}: CompanyPageProps) {
-  const t = await translateServer('ui.pages')
+  const locale = serverContext().localeService.get()
+  const t = await translateServer(locale, 'ui.pages')
 
   const breadcrumbs = [
     { label: t('home.breadcrumb.label'), crumb: '/' },
-    { label: t('companies.breadcrumb.label'), crumb: 'admin/companies' },
-    { label: t('company.new.breadcrumb.label') },
+    { label: t('tenantCompanies.breadcrumb.label'), crumb: 'admin/companies' },
+    { label: t('tenantCompany.new.breadcrumb.label') },
   ]
 
   const data = [
@@ -32,7 +34,7 @@ export default async function CompanyPage({}: CompanyPageProps) {
   return (
     <>
       <PageHeader
-        heading={t('company.new.heading')}
+        heading={t('tenantCompany.new.heading')}
         breadcrumbs={breadcrumbs}
       />
 

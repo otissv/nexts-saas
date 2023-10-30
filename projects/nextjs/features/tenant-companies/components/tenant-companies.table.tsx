@@ -2,7 +2,6 @@
 
 import * as React from 'react'
 import { Maybe } from '@/components/maybe'
-import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
 import {
   Table,
   TableCaption,
@@ -13,7 +12,7 @@ import {
   TableCell,
 } from '@/components/ui/table'
 
-import { User } from '@/features/app-users/users.types'
+import { TenantCompany } from '@/features/tenant-companies/companies.tenant.types'
 import { AppLink } from '@/components/app-link'
 import { EditButton } from '@/components/buttons/edit-button'
 import { DeleteButton } from '@/components/buttons/delete-button'
@@ -23,18 +22,18 @@ import { SeverReturnType, PageInfo } from '@/database/pg/types.pg'
 import { entriesToArray } from '@/lib/entries'
 import { useMap } from '@/hooks/useMap'
 
-export interface UsersTableProps {
-  data: Partial<User>[]
+export interface TenantCompaniesProps {
+  data: Partial<TenantCompany>[]
   baseUrl: string
-  onDelete: (id: number) => SeverReturnType<User>
-  limit?: PageInfo<User>['limit']
-  orderBy?: PageInfo<User>['orderBy']
-  page?: PageInfo<User>['page']
-  where?: PageInfo<User>['where']
+  onDelete: (id: number) => SeverReturnType<TenantCompany>
+  limit?: PageInfo<TenantCompany>['limit']
+  orderBy?: PageInfo<TenantCompany>['orderBy']
+  page?: PageInfo<TenantCompany>['page']
+  where?: PageInfo<TenantCompany>['where']
   total?: number
 }
 
-export function UsersTable({
+export function TenantCompaniesTable({
   data,
   baseUrl,
   where,
@@ -43,8 +42,8 @@ export function UsersTable({
   orderBy = [],
   total,
   onDelete,
-}: UsersTableProps) {
-  const [users, setUsers] = useMap(data)
+}: TenantCompaniesProps) {
+  const [tenantCompanies, setTenantCompanies] = useMap(data)
   const t = useTranslateClient('ui.pages')
   const [isPending, startTransition] = React.useTransition()
 
@@ -60,13 +59,13 @@ export function UsersTable({
   const orderByDep = orderBy?.flat().toString()
 
   React.useEffect(() => {
-    setUsers(data)
+    setTenantCompanies(data)
   }, [limit, where, orderByDep, page])
 
-  const rows = ({ id, firstName, lastName, imageUrl, email }: User) => {
+  const rows = ({ id, name, email }: TenantCompany) => {
     return (
       <TableRow key={id}>
-        <TableCell className="min-h-14 text-base p-0">
+        <TableCell className="min-h-14  text-base p-0">
           <AppLink
             href={`${baseUrl}/${id}`}
             className="flex items-center p-3 text-default"
@@ -75,24 +74,16 @@ export function UsersTable({
           </AppLink>
         </TableCell>
 
-        <TableCell className="min-h-14 text-base p-0">
+        <TableCell className="min-h-14  text-base p-0">
           <AppLink
             href={`${baseUrl}/${id}`}
             className="flex items-center p-3 text-default"
           >
-            <Avatar className="inline-block mr-4">
-              <AvatarImage src={imageUrl} alt={`${firstName}, ${lastName}`} />
-              <AvatarFallback>
-                {firstName?.charAt(0)} {lastName?.charAt(0)}
-              </AvatarFallback>
-            </Avatar>
-            <span>
-              {firstName} {lastName}
-            </span>
+            {name}
           </AppLink>
         </TableCell>
 
-        <TableCell className="min-h-14 text-base p-0">
+        <TableCell className="min-h-14  text-base p-0">
           <AppLink
             href={`${baseUrl}/${id}`}
             className="flex items-center p-3 text-default"
@@ -129,13 +120,12 @@ export function UsersTable({
     )
   }
 
-  //TODO: translate
   return (
-    <Maybe check={Boolean(users)}>
+    <Maybe check={Boolean(tenantCompanies)}>
       <Table>
         {total ? (
           <TableCaption>
-            {users.size} of {total} {t('users.breadcrumb.label')}
+            {tenantCompanies.size} of {total} {t('tenantCompanies.heading')}
           </TableCaption>
         ) : (
           <TableCaption>{t('table.caption')}</TableCaption>
@@ -149,27 +139,27 @@ export function UsersTable({
                 isPending={isPending}
                 startTransition={startTransition}
               >
-                {t('users.table.headings.id.content')}
+                {t('tenantCompanies.table.headings.id.content')}
               </SortOrderDropdown>
             </TableHead>
 
-            <TableHead className="pl-0">
+            <TableHead className=" pl-0">
               <SortOrderDropdown
                 name="name"
                 isPending={isPending}
                 startTransition={startTransition}
               >
-                {t('users.table.headings.name.content')}
+                {t('tenantCompanies.table.headings.name.content')}
               </SortOrderDropdown>
             </TableHead>
 
-            <TableHead className="pl-0">
+            <TableHead className=" pl-0">
               <SortOrderDropdown
-                name="email"
+                name="name"
                 isPending={isPending}
                 startTransition={startTransition}
               >
-                {t('users.table.headings.email.content')}
+                {t('tenantCompanies.table.headings.email.content')}
               </SortOrderDropdown>
             </TableHead>
 
@@ -179,7 +169,7 @@ export function UsersTable({
           </TableRow>
         </TableHeader>
 
-        <TableBody>{entriesToArray(rows)(users)}</TableBody>
+        <TableBody>{entriesToArray(rows)(tenantCompanies)}</TableBody>
       </Table>
     </Maybe>
   )

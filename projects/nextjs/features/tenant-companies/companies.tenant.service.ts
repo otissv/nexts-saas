@@ -20,6 +20,12 @@ export function tenantCompaniesService(db: PostgresDatabase) {
       schema: tenantCompanies.schema,
 
       /* Queries */
+
+      paginate: (props: SelectProps<TenantCompany>) =>
+        tenantCompanies
+          .paginate(props)
+          .catch(errorResponse(422)) as SeverReturnType<TenantCompany>,
+
       select: (props: SelectProps<TenantCompany> = {}) =>
         tenantCompanies
           .select(props)

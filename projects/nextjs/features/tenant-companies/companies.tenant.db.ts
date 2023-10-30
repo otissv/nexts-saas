@@ -31,6 +31,9 @@ export function tenantCompanyDb(db: PostgresDatabase) {
 
       /* Queries */
 
+      paginate: (props: SelectProps<TenantCompany>) =>
+        maybeTenant(tenantCompanies.paginate)(props),
+
       select: (props: SelectProps<TenantCompany> = {}) =>
         maybeTenant(tenantCompanies.select)(props),
 

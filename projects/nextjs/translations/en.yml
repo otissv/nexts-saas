@@ -120,12 +120,32 @@ ui:
       breadcrumb:
         label: Home
 
-    companies:
+    # companies:
+    #   heading: Companies
+    #   breadcrumb:
+    #     label: Companies
+
+
+    tenantCompanies:
       heading: Companies
       breadcrumb:
-        label: Companies
+          label:  Companies
+      list:
+        notFound: No companies found.
+      table:
+        caption: A list of companies.
+        headings:
+          id:
+            content: ID
+          name:
+            content: Name
+          email:
+            content: Email
+          action:
+            content: Action
 
     tenantCompany:
+      heading: Company
       new:
         heading: New Company
         breadcrumb:
@@ -177,8 +197,16 @@ ui:
       heading: Company Addresses
       breadcrumb:
         label: Addresses
+      list:
+        notFound: No addresses found.
+      table:
+        caption: A list of company addresses.
+        headings:
+          id:
+            content: ID
 
     tenantAddress:
+      heading: Company Address
       new:
         heading: New Address
         breadcrumb:
@@ -240,7 +268,7 @@ ui:
         label: Users
       heading: Users
       list:
-        notFound: No Users Found
+        notFound: No users found.
       table:
         caption: A list of users
         headings:

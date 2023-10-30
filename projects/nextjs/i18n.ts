@@ -2,13 +2,15 @@ import { getRequestConfig } from 'next-intl/server'
 import yaml from 'js-yaml'
 import fs from 'fs'
 
+export const defaultLocale = 'en'
+
 export function getTranslation(locale: string) {
   try {
     if (locale === 'favicon.ico') return {}
 
     // load yaml file and convert to json
     return yaml.load(
-      fs.readFileSync(`./translations/${locale}.yml`, 'utf8')
+      fs.readFileSync(`./translations/${locale || defaultLocale}.yml`, 'utf8')
     ) as any
   } catch (e) {
     console.error(e)

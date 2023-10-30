@@ -25,7 +25,7 @@ export const BreadCrumbs = React.forwardRef<HTMLElement, BreadcrumbProps>(
       }
 
       return (
-        <React.Fragment key={crumb}>
+        <React.Fragment key={crumb || 'current'}>
           {crumb ? (
             <li className="inline-flex items-center">
               {separator ? separator : <span className="text-xs  mr-1">/</span>}
