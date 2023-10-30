@@ -7,14 +7,15 @@ import { oauthProvidersService } from '@/features/app-oauth-providers/oauth-prov
 import { tenantsService } from '@/features/app-tenants/tenants.service'
 import { tenantCompaniesService } from '@/features/tenant-companies/companies.tenant.service'
 import { tenantCompanyAddressService } from '@/features/tenant-company-addresses/company-addresses.tenant.service'
+import { defaultLocale } from '@/i18n'
 
 const db = connection()
 
 class Locale {
   private locale = ''
 
-  constructor(locale: string = '') {
-    this.locale = locale
+  constructor(locale: string = defaultLocale) {
+    this.locale = locale === 'favicon.ico' || !locale ? defaultLocale : locale
   }
 
   get() {
