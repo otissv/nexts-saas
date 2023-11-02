@@ -26,7 +26,7 @@ const readASchema = (
       ),
       // .replace(
       //   `'../config/database/pg/data-types.pg'`,
-      //   `'../../src/config/database/pg/data-types.pg'`
+      //   `'../config/database/pg/data-types.pg'`
       // ),
     }))
     .catch(errorHandler) as any

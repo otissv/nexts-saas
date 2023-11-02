@@ -1,7 +1,8 @@
-import { boolean, index, integer, pgSchema } from 'drizzle-orm/pg-core'
+import { boolean, index, integer, json, pgSchema } from 'drizzle-orm/pg-core'
 import { sql } from 'drizzle-orm'
 
 import {
+  integerArray,
   links,
   menuItems,
   money,
@@ -25,6 +26,7 @@ const SUBSCRIPTION_STATUS = [
   'paused',
 ]
 const ADDRESS_TYPE = ['billing', 'shipping']
+const PAGE_TYPE = ['page', 'post']
 
 const SCHEMA = 'tenant'
 const schema = pgSchema(SCHEMA)
@@ -83,22 +85,6 @@ const companyAddressOptions = (table: any) => {
   }
 }
 
-const content = {
-  id: serial('id').primaryKey(),
-  sectionId: integer('section_id')
-    .references(() => sections.id)
-    .notNull(),
-  text: text('text').notNull(),
-  createdAt: timestampz('created_at').notNull(),
-  updatedAt: timestampz('updated_at')
-    .notNull()
-    .default(sql`now()`),
-}
-const contentOptions = (table: any) => {
-  return {
-    userId: index('user_id_idx').on(table.userId),
-  }
-}
 /**
  * CUSTOMERS
  * Note: this is a private table that contains a mapping of user IDs to Stripe customer IDs.
@@ -174,9 +160,21 @@ const orderOptions = (table: any) => {
 const page = {
   id: serial('id').primaryKey(),
   name: varchar('name', { length: 256 }).notNull(),
-  heading1: text('heading1'),
-  heading2: text('heading2'),
+  categories: varcharArray('categories', { length: 256 }),
+  relatedTo: integerArray('related_to'),
+  type: varchar('type', { enum: PAGE_TYPE } as any).notNull(),
+  createdAt: timestampz('created_at').notNull(),
+  updatedAt: timestampz('updated_at')
+    .notNull()
+    .default(sql`now()`),
+}
 
+const pageSection = {
+  id: serial('id').primaryKey(),
+  pageId: integer('page_id')
+    .references(() => pages.id)
+    .notNull(),
+  content: json('content'),
   createdAt: timestampz('created_at').notNull(),
   updatedAt: timestampz('updated_at')
     .notNull()
@@ -184,44 +182,27 @@ const page = {
 }
 
 /**
- * PAGES MEDIA
- * Note: this is a private table that contains a mapping of page IDs to media IDs.
- * This is used to allow users to add multiple media to a page.
+ * PAGE SECTION MEDIA
+ * Note: this is a private table that contains a mapping of section IDs to media IDs.
+ * This is used to allow users to add multiple media to a section.
  */
-const pagesMedia = {
+const pageSectionsMedia = {
   id: serial('id').primaryKey(),
-  pageId: integer('page_id')
-    .references(() => pages.id)
+  sectionId: integer('section_id')
+    .references(() => pageSections.id)
     .notNull(),
   mediaId: integer('media_id')
     .references(() => medias.id)
     .notNull(),
+  createdAt: timestampz('created_at').notNull(),
+  updatedAt: timestampz('updated_at')
+    .notNull()
+    .default(sql`now()`),
 }
-const pagesMediaOptions = (table: any) => {
+const pageSectionsMediaOptions = (table: any) => {
   return {
-    pageIdIndex: index('page_id_idx').on(table.pageId),
+    sectionIdIndex: index('section_id_idx').on(table.sectionId),
     mediaIdIndex: index('media_id_idx').on(table.mediaId),
-  }
-}
-
-/**
- * PAGES SECTION
- * Note: this is a private table that contains a mapping of page IDs to section IDs.
- * This is used to allow users to add multiple sections to a page.
- */
-const pagesSection = {
-  id: serial('id').primaryKey(),
-  pageId: integer('page_id')
-    .references(() => pages.id)
-    .notNull(),
-  sectionId: integer('section_id')
-    .references(() => sections.id)
-    .notNull(),
-}
-const pagesSectionOptions = (table: any) => {
-  return {
-    pageIdIndex: index('page_id_idx').on(table.pageId),
-    sectionId: index('section_id_idx').on(table.sectionId),
   }
 }
 
@@ -271,43 +252,6 @@ const product = {
   updatedAt: timestampz('updated_at')
     .notNull()
     .default(sql`now()`),
-}
-
-const section = {
-  id: serial('id').primaryKey(),
-  heading1: text('heading1'),
-  heading2: text('heading2'),
-  category: varchar('category', { length: 256 }),
-  type: varchar('type', { length: 256 }),
-  createdAt: timestampz('created_at').notNull(),
-  updatedAt: timestampz('updated_at')
-    .notNull()
-    .default(sql`now()`),
-}
-
-/**
- * SECTION MEDIA
- * Note: this is a private table that contains a mapping of section IDs to media IDs.
- * This is used to allow users to add multiple media to a section.
- */
-const sectionsMedia = {
-  id: serial('id').primaryKey(),
-  sectionId: integer('section_id')
-    .references(() => sections.id)
-    .notNull(),
-  mediaId: integer('media_id')
-    .references(() => medias.id)
-    .notNull(),
-  createdAt: timestampz('created_at').notNull(),
-  updatedAt: timestampz('updated_at')
-    .notNull()
-    .default(sql`now()`),
-}
-const sectionsMediaOptions = (table: any) => {
-  return {
-    sectionIdIndex: index('section_id_idx').on(table.sectionId),
-    mediaIdIndex: index('media_id_idx').on(table.mediaId),
-  }
 }
 
 const subscription = {
@@ -417,9 +361,6 @@ export const companyAddresses = schema.table(
 )
 export type TenantCompanyAddressSchema = typeof companyAddresses
 
-export const contents = schema.table('contents', content, contentOptions)
-export type TenantContentSchema = typeof contents
-
 export const customers = schema.table('customers', customer, customerOptions)
 export type TenantCustomerSchema = typeof customers
 
@@ -432,22 +373,18 @@ export type TenantMenuSchema = typeof menu
 export const orders = schema.table('orders', order, orderOptions)
 export type TenantOrderSchema = typeof orders
 
-export const pagesMedias = schema.table(
-  'pageMedias',
-  pagesMedia,
-  pagesMediaOptions
-)
-export type TenantPageMediaSchema = typeof pagesMedias
-
-export const pagesSections = schema.table(
-  'pageSections',
-  pagesSection,
-  pagesSectionOptions
-)
-export type TenantPageSectionSchema = typeof pagesSection
-
 export const pages = schema.table('pages', page)
 export type TenantPageSchema = typeof pages
+
+export const pageSections = schema.table('pageSections', pageSection)
+export type TenantPageSectionSchema = typeof pageSection
+
+export const pageSectionsMedias = schema.table(
+  'pageSectionsMedias',
+  pageSectionsMedia,
+  pageSectionsMediaOptions
+)
+export type TenantPageSectionMediaSchema = typeof pageSectionsMedia
 
 export const pricingPlans = schema.table(
   'pricing_plans',
@@ -458,16 +395,6 @@ export type TenantPricingPlanSchema = typeof pricingPlan
 
 export const products = schema.table('products', product)
 export type TenantProductSchema = typeof product
-
-export const sections = schema.table('sections', section)
-export type TenantSectionSchema = typeof section
-
-export const sectionsMedias = schema.table(
-  'sectionsMedias',
-  sectionsMedia,
-  sectionsMediaOptions
-)
-export type TenantSectionMediaSchema = typeof sectionsMedia
 
 export const seos = schema.table('seos', seo, seoOptions)
 export type TenantSeoSchema = typeof seos
@@ -492,34 +419,25 @@ export function tenantSchema(schema: string) {
     companyAddress
   )
 
-  const contents = tenantSchema.table('contents', content, contentOptions)
   const customers = tenantSchema.table('customers', customer, customerOptions)
   const medias = tenantSchema.table('media', media)
   const menus = tenantSchema.table('menus', menu)
   const orders = tenantSchema.table('orders', order, orderOptions)
-  const pageMedias = tenantSchema.table(
-    'pageMedias',
-    pagesMedia,
-    pagesMediaOptions
-  )
-  const pageSections = tenantSchema.table(
-    'pageSections',
-    pagesSection,
-    pagesSectionOptions
-  )
   const pages = tenantSchema.table('pages', page)
+
+  const pageSections = tenantSchema.table('pageSections', pageSection)
+  const pageSectionsMedias = tenantSchema.table(
+    'pageSectionsMedias',
+    pageSectionsMedia,
+    pageSectionsMediaOptions
+  )
   const pricingPlans = tenantSchema.table(
     'pricing_plans',
     pricingPlan,
     pricingPlanOptions
   )
   const products = tenantSchema.table('products', product)
-  const sections = tenantSchema.table('sections', section)
-  const sectionsMedias = tenantSchema.table(
-    'sectionsMedias',
-    sectionsMedia,
-    sectionsMediaOptions
-  )
+
   const seos = tenantSchema.table('seos', seo, seoOptions)
   const subscriptions = tenantSchema.table(
     'subscriptions',
@@ -532,18 +450,15 @@ export function tenantSchema(schema: string) {
     addresses,
     companies,
     companyAddresses,
-    contents,
     customers,
     medias,
     menus,
     orders,
-    pageMedias,
-    pageSections,
     pages,
+    pageSections,
+    pageSectionsMedias,
     pricingPlans,
     products,
-    sections,
-    sectionsMedias,
     seos,
     subscriptions,
     users,

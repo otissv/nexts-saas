@@ -6,6 +6,9 @@ const count = 100
 
 const hashedPassword = bcrypt.hashSync('!Aa12345', 10)
 
+const randomItem = (list: any[]) =>
+  list[faker.number.int({ min: 0, max: list.length - 1 })]
+
 export const data = {
   users: [
     {
@@ -109,17 +112,6 @@ export const data = {
     }),
     { count }
   ),
-
-  contents: faker.helpers.multiple(
-    () => ({
-      sectionId: faker.number.int({ min: 1, max: 5 }),
-      text: faker.lorem.text(),
-      createdAt: faker.date.past(),
-      updatedAt: faker.date.recent(),
-    }),
-    { count }
-  ),
-
   medias: faker.helpers.multiple(
     () => ({
       url: faker.image.url(),
@@ -165,10 +157,12 @@ export const data = {
   pages: faker.helpers.multiple(
     () => ({
       name: faker.lorem.word(),
-      heading1: faker.lorem.text(),
-      heading2: faker.lorem.text(),
-      isPublished: faker.datatype.boolean(),
-      publishedDate: faker.date.past(),
+      categories: [randomItem(['travel', 'home', 'technology'])],
+      relatedTo: [
+        faker.number.int({ min: 1, max: 20 }),
+        faker.number.int({ min: 1, max: 20 }),
+      ],
+      type: randomItem(['page', 'post']),
       createdAt: faker.date.past(),
       updatedAt: faker.date.recent(),
     }),
@@ -182,26 +176,24 @@ export const data = {
     { count }
   ),
 
-  sections: faker.helpers.multiple(
+  pageSections: faker.helpers.multiple(
     () => ({
-      heading1: faker.lorem.words(),
-      heading2: faker.lorem.words(),
+      content: faker.lorem.text(),
+      pageId: faker.number.int({ min: 1, max: 20 }),
       images: [
         faker.number.int({ min: 1, max: 20 }),
         faker.number.int({ min: 1, max: 20 }),
         faker.number.int({ min: 1, max: 20 }),
       ],
-      category: faker.lorem.word(),
-      type: 'twoColumn',
       createdAt: faker.date.past(),
       updatedAt: faker.date.recent(),
     }),
     { count }
   ),
 
-  sectionsMedia: faker.helpers.multiple(
+  pageSectionsMedia: faker.helpers.multiple(
     () => ({
-      sectionId: faker.number.int({ min: 1, max: 20 }),
+      pageSectionId: faker.number.int({ min: 1, max: 20 }),
       mediaId: faker.number.int({ min: 1, max: 20 }),
     }),
     { count }

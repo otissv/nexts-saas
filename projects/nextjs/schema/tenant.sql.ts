@@ -41,15 +41,7 @@ export function tenantsSql(schema: string) {
     "created_at" timestamp with time zone NOT NULL,
     "updated_at" timestamp with time zone DEFAULT now() NOT NULL
 	);
-	
-	CREATE TABLE IF NOT EXISTS ${schema}."contents" (
-		"id" serial PRIMARY KEY NOT NULL,
-		"section_id" integer NOT NULL,
-		"text" text NOT NULL,
-    "created_at" timestamp with time zone NOT NULL,
-    "updated_at" timestamp with time zone DEFAULT now() NOT NULL
-	);
-	
+
 	CREATE TABLE IF NOT EXISTS ${schema}."customers" (
 		"id" serial PRIMARY KEY NOT NULL,
 		"stripe_customer_id" text
@@ -91,22 +83,27 @@ export function tenantsSql(schema: string) {
 	CREATE TABLE IF NOT EXISTS ${schema}."pages" (
 		"id" serial PRIMARY KEY NOT NULL,
 		"name" varchar (256) NOT NULL,
-		"heading1" text,
-		"heading2" text,
+		"categories" varchar (256) [],
+		"related_to" integer [],
+		"type" varchar (256) NOT NULL,
+    "created_at" timestamp with time zone NOT NULL,
+    "updated_at" timestamp with time zone DEFAULT now() NOT NULL
+	);
+
+	CREATE TABLE IF NOT EXISTS ${schema}."pageSections" (
+		"id" serial PRIMARY KEY NOT NULL,
+		"page_id" integer NOT NULL,
+		"content" json,
     "created_at" timestamp with time zone NOT NULL,
     "updated_at" timestamp with time zone DEFAULT now() NOT NULL
 	);
 	
-	CREATE TABLE IF NOT EXISTS ${schema}."pageMedias" (
+	CREATE TABLE IF NOT EXISTS ${schema}."sectionsMedias" (
 		"id" serial PRIMARY KEY NOT NULL,
-		"page_id" integer NOT NULL,
-		"media_id" integer NOT NULL
-	);
-	
-	CREATE TABLE IF NOT EXISTS ${schema}."pageSections" (
-		"id" serial PRIMARY KEY NOT NULL,
-		"page_id" integer NOT NULL,
-		"section_id" integer NOT NULL
+		"section_id" integer NOT NULL,
+		"media_id" integer NOT NULL,
+    "created_at" timestamp with time zone NOT NULL,
+    "updated_at" timestamp with time zone DEFAULT now() NOT NULL
 	);
 	
 	CREATE TABLE IF NOT EXISTS ${schema}."pricing_plans" (
@@ -133,25 +130,7 @@ export function tenantsSql(schema: string) {
     "created_at" timestamp with time zone NOT NULL,
     "updated_at" timestamp with time zone DEFAULT now() NOT NULL
 	);
-	
-	CREATE TABLE IF NOT EXISTS ${schema}."sections" (
-		"id" serial PRIMARY KEY NOT NULL,
-		"heading1" text,
-		"heading2" text,
-		"category" varchar (256),
-		"type" varchar (256),
-    "created_at" timestamp with time zone NOT NULL,
-    "updated_at" timestamp with time zone DEFAULT now() NOT NULL
-	);
-	
-	CREATE TABLE IF NOT EXISTS ${schema}."sectionsMedias" (
-		"id" serial PRIMARY KEY NOT NULL,
-		"section_id" integer NOT NULL,
-		"media_id" integer NOT NULL,
-    "created_at" timestamp with time zone NOT NULL,
-    "updated_at" timestamp with time zone DEFAULT now() NOT NULL
-	);
-	
+		
 	CREATE TABLE IF NOT EXISTS ${schema}."seos" (
 		"id" serial PRIMARY KEY NOT NULL,
 		"page_id" integer NOT NULL,

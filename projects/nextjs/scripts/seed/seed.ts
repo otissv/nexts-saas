@@ -12,14 +12,14 @@ async function seed() {
   await db.transaction(async (tx) => {
     try {
       // TODO: see if schema exits to stop 'NOTICE' messages
-      await tx.execute(appSql())
+      // await tx.execute(appSql())
 
-      await tx.insert(users).values(data.users).onConflictDoNothing()
-      await tx
-        .insert(oauthProviders)
-        .values(data.oauthProviders)
-        .onConflictDoNothing()
-      await tx.insert(tenants).values(data.tenants).onConflictDoNothing()
+      // await tx.insert(users).values(data.users).onConflictDoNothing()
+      // await tx
+      //   .insert(oauthProviders)
+      //   .values(data.oauthProviders)
+      //   .onConflictDoNothing()
+      // await tx.insert(tenants).values(data.tenants).onConflictDoNothing()
 
       for (const schema of data.tenants) {
         const tenantId = `t_${schema.ownerId}`
@@ -29,29 +29,30 @@ async function seed() {
           menus,
           pages,
           seos,
-          sections,
-          contents,
+          pageSections,
           medias,
           companyAddresses,
           users,
         } = tenantSchema(tenantId)
 
         // TODO: see if schema exits to stop 'NOTICE' messages
-        await tx.execute(tenantsSql(tenantId))
+        // await tx.execute(tenantsSql(tenantId))
 
-        await tx.insert(addresses).values(data.addresses).onConflictDoNothing()
-        await tx.insert(companies).values(data.companies).onConflictDoNothing()
-        await tx
-          .insert(companyAddresses)
-          .values(data.companyAddresses)
-          .onConflictDoNothing()
-        await tx.insert(menus).values(data.menus).onConflictDoNothing()
+        // await tx.insert(addresses).values(data.addresses).onConflictDoNothing()
+        // await tx.insert(companies).values(data.companies).onConflictDoNothing()
+        // await tx
+        //   .insert(companyAddresses)
+        //   .values(data.companyAddresses)
+        //   .onConflictDoNothing()
+        // await tx.insert(menus).values(data.menus).onConflictDoNothing()
         await tx.insert(pages).values(data.pages).onConflictDoNothing()
-        await tx.insert(seos).values(data.seos).onConflictDoNothing()
-        await tx.insert(sections).values(data.sections).onConflictDoNothing()
-        await tx.insert(contents).values(data.contents).onConflictDoNothing()
-        await tx.insert(medias).values(data.medias).onConflictDoNothing()
-        await tx.insert(users).values(data.users).onConflictDoNothing()
+        await tx
+          .insert(pageSections)
+          .values(data.pageSections)
+          .onConflictDoNothing()
+        // await tx.insert(seos).values(data.seos).onConflictDoNothing()
+        // await tx.insert(medias).values(data.medias).onConflictDoNothing()
+        // await tx.insert(users).values(data.users).onConflictDoNothing()
 
         console.log('Data inserted')
       }

@@ -7,9 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "migrate:generate": "ts-node --project src/scripts/tsconfig-module.json ./src/scripts/migrate/generate.ts",
-    "migrate:run": "ts-node --project src/scripts/tsconfig-module.json ./src/scripts/migrate/run.ts",
-    "seed": "ts-node --project src/scripts/tsconfig-module.json ./src/scripts/seed/seed.ts"
+    "migrate:generate": "ts-node --project scripts/tsconfig-module.json ./scripts/migrate/generate.ts",
+    "migrate:run": "ts-node --project scripts/tsconfig-module.json ./scripts/migrate/run.ts",
+    "seed": "ts-node --project scripts/tsconfig-module.json ./scripts/seed/seed.ts"
   },
   "dependencies": {
     "@editorjs/checklist": "^1.5.0",
