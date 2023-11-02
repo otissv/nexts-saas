@@ -94,6 +94,7 @@
     "server-only-context": "^0.0.4",
     "string-width": "^6.1.0",
     "swr": "^2.2.4",
+    "uid": "^2.0.2",
     "zod": "^3.22.4",
     "zustand": "^4.4.5"
   },

@@ -4,6 +4,7 @@
     "codegen",
     "editorjs",
     "ilike",
+    "immer",
     "kysely",
     "lucide",
     "micromark",
@@ -18,7 +19,8 @@
     "tailwindcss",
     "timestampz",
     "trpc",
-    "ufunc"
+    "ufunc",
+    "zustand"
   ],
   "git.ignoreLimitWarning": true,
   "git-blame.gitWebUrl": ""
