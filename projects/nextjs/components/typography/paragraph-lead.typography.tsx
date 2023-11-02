@@ -5,14 +5,20 @@ import Balancer from 'react-wrap-balancer'
 
 import { cn } from '@/lib/utils'
 import { TypographyParagraphProps } from '@/components/typography/types.typography'
+import { variants } from '@/components/typography/variants.typography'
 
-export const TypographyLead = React.forwardRef<
+export const TypographyParagraph = React.forwardRef<
   HTMLParagraphElement,
   TypographyParagraphProps
->(({ children, className, ...props }, ref) => {
+>(({ children, className, variant = 'default', muted, ...props }, ref) => {
   return (
     <p
-      className={cn('text-xl text-muted-foreground', className)}
+      className={cn(
+        'leading-7 [&:not(:first-child)]:mt-6',
+        variant && variants.variant[variant],
+        muted && 'text-muted-foreground',
+        className
+      )}
       ref={ref}
       {...props}
     >
@@ -20,4 +26,4 @@ export const TypographyLead = React.forwardRef<
     </p>
   )
 })
-TypographyLead.displayName = 'TypographyLead'
+TypographyParagraph.displayName = 'TypographyParagraph'

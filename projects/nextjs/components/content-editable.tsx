@@ -1,11 +1,8 @@
 import * as React from 'react'
 
-import { cn } from '@/lib/utils'
-
 export interface ContentEditableProps
   extends React.HTMLAttributes<HTMLDivElement> {
-  id: string
-  isEdit: boolean
+  isEdit?: boolean
   label: string
   expandable?: boolean
   multiline?: boolean
@@ -22,13 +19,11 @@ export const ContentEditable = React.forwardRef<
     {
       children,
       className,
-      id,
       isEdit,
       label,
       multiline,
       required,
       role,
-      srOnly,
       expandable,
       ...props
     },
@@ -36,20 +31,12 @@ export const ContentEditable = React.forwardRef<
   ) => {
     return isEdit ? (
       <>
-        <div
-          id={id}
-          className={cn(srOnly ? 'sr-only' : '', className)}
-          ref={ref}
-          {...props}
-        >
-          {label}
-        </div>
-
         {React.Children.map(children, (child) => {
           const element = child as React.ReactElement<
             any,
             React.JSXElementConstructor<any>
           >
+
           return React.cloneElement(
             element,
             editableProps({
@@ -57,7 +44,12 @@ export const ContentEditable = React.forwardRef<
               label,
               multiline,
               required,
+              onChange: console.log,
+
               role,
+              className:
+                element.props.className +
+                ' outline-none focus:border-2 focus:border-blue-400',
             })
           )
         })}
@@ -89,7 +81,7 @@ function editableProps({
     ? {
         role,
         contentEditable: 'true',
-        'aria-labelledby': label,
+        'aria-label': label,
         'aria-required': `${required}`,
         ...(multiline ? { 'aria-multiline': 'true' } : {}),
         ...props,

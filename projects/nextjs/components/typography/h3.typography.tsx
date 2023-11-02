@@ -5,15 +5,18 @@ import Balancer from 'react-wrap-balancer'
 
 import { cn } from '@/lib/utils'
 import { TypographyHeadingProps } from '@/components/typography/types.typography'
+import { variants } from '@/components/typography/variants.typography'
 
 export const TypographyH3 = React.forwardRef<
   HTMLHeadingElement,
   TypographyHeadingProps
->(({ children, className, ...props }, ref) => {
+>(({ children, className, variant = 'default', muted, ...props }, ref) => {
   return (
     <h3
       className={cn(
         'scroll-m-20 text-2xl font-semibold tracking-tight',
+        variant && variants.variant[variant],
+        muted && 'text-muted-foreground',
         className
       )}
       ref={ref}
