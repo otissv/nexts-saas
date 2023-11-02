@@ -1,0 +1,24 @@
+{
+  "gridAutoFlow": {
+    "row": {
+      "class": "grid-flow-row",
+      "property": "grid-auto-flow: row;"
+    },
+    "col": {
+      "class": "grid-flow-col",
+      "property": "grid-auto-flow: column;"
+    },
+    "dense": {
+      "class": "grid-flow-dense",
+      "property": "grid-auto-flow: dense;"
+    },
+    "row-dense": {
+      "class": "grid-flow-row-dense",
+      "property": "grid-auto-flow: row dense;"
+    },
+    "col-dense": {
+      "class": "grid-flow-col-dense",
+      "property": "grid-auto-flow: column dense;"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "scrollBehavior": {
+    "auto": {
+      "class": "scroll-auto",
+      "property": "scroll-behavior: auto;"
+    },
+    "smooth": {
+      "class": "scroll-smooth",
+      "property": "scroll-behavior: smooth;"
+    }
+  }
+}

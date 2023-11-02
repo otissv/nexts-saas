@@ -1,0 +1,8 @@
+{
+  "appearance": {
+    "none": {
+      "class": "appearance-none",
+      "property": "appearance: none;"
+    }
+  }
+}

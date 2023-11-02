@@ -1,0 +1,20 @@
+{
+  "willChange": {
+    "auto": {
+      "class": "will-change-auto",
+      "property": "will-change: auto;"
+    },
+    "scroll": {
+      "class": "will-change-scroll",
+      "property": "will-change: scroll-position;"
+    },
+    "contents": {
+      "class": "will-change-contents",
+      "property": "will-change: contents;"
+    },
+    "transform": {
+      "class": "will-change-transform",
+      "property": "will-change: transform;"
+    }
+  }
+}

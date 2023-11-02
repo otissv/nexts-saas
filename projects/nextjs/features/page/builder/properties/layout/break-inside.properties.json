@@ -1,0 +1,20 @@
+{
+  "breakInside": {
+    "auto": {
+      "class": "break-inside-auto",
+      "property": "break-inside: auto;"
+    },
+    "avoid": {
+      "class": "break-inside-avoid",
+      "property": "break-inside: avoid;"
+    },
+    "avoid-page": {
+      "class": "break-inside-avoid-page",
+      "property": "break-inside: avoid-page;"
+    },
+    "avoid-column": {
+      "class": "break-inside-avoid-column",
+      "property": "break-inside: avoid-column;"
+    }
+  }
+}

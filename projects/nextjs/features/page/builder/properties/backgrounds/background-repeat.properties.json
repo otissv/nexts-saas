@@ -1,0 +1,28 @@
+{
+  "backgroundRepeat": {
+    "repeat": {
+      "class": "bg-repeat",
+      "property": "background-repeat: repeat;"
+    },
+    "no-repeat": {
+      "class": "bg-no-repeat",
+      "property": "background-repeat: no-repeat;"
+    },
+    "repeat-x": {
+      "class": "bg-repeat-x",
+      "property": "background-repeat: repeat-x;"
+    },
+    "repeat-y": {
+      "class": "bg-repeat-y",
+      "property": "background-repeat: repeat-y;"
+    },
+    "repeat-round": {
+      "class": "bg-repeat-round",
+      "property": "background-repeat: round;"
+    },
+    "repeat-space": {
+      "class": "bg-repeat-space",
+      "property": "background-repeat: space;"
+    }
+  }
+}

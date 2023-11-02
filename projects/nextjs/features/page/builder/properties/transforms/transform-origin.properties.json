@@ -1,0 +1,40 @@
+{
+  "transformOrigin": {
+    "origin-center": {
+      "class": "origin-center",
+      "property": "transform-origin: center;"
+    },
+    "top": {
+      "class": "origin-top",
+      "property": "transform-origin: top;"
+    },
+    "top-right": {
+      "class": "origin-top-right",
+      "property": "transform-origin: top right;"
+    },
+    "right": {
+      "class": "origin-right",
+      "property": "transform-origin: right;"
+    },
+    "bottom-right": {
+      "class": "origin-bottom-right",
+      "property": "transform-origin: bottom right;"
+    },
+    "bottom": {
+      "class": "origin-bottom",
+      "property": "transform-origin: bottom;"
+    },
+    "bottom-left": {
+      "class": "origin-bottom-left",
+      "property": "transform-origin: bottom left;"
+    },
+    "left": {
+      "class": "origin-left",
+      "property": "transform-origin: left;"
+    },
+    "top-left": {
+      "class": "origin-top-left",
+      "property": "transform-origin: top left;"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "scrollSnapType": {
+    "none": {
+      "class": "snap-none",
+      "property": "scroll-snap-type: none;"
+    },
+    "x": {
+      "class": "snap-x",
+      "property": "scroll-snap-type: x var(--tw-scroll-snap-strictness);"
+    },
+    "y": {
+      "class": "snap-y",
+      "property": "scroll-snap-type: y var(--tw-scroll-snap-strictness);"
+    },
+    "both": {
+      "class": "snap-both",
+      "property": "scroll-snap-type: both var(--tw-scroll-snap-strictness);"
+    },
+    "mandatory": {
+      "class": "snap-mandatory",
+      "property": "--tw-scroll-snap-strictness: mandatory;"
+    },
+    "proximity": {
+      "class": "snap-proximity",
+      "property": "--tw-scroll-snap-strictness: proximity;"
+    }
+  }
+}

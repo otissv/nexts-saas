@@ -1,0 +1,256 @@
+{
+  "flexBasis": {
+    "0": {
+      "class": "basis-0",
+      "property": "flex-basis: 0px;"
+    },
+    "1": {
+      "class": "basis-1",
+      "property": "flex-basis: 0.25rem; /* 4px */"
+    },
+    "2": {
+      "class": "basis-2",
+      "property": "flex-basis: 0.5rem; /* 8px */"
+    },
+    "3": {
+      "class": "basis-3",
+      "property": "flex-basis: 0.75rem; /* 12px */"
+    },
+    "4": {
+      "class": "basis-4",
+      "property": "flex-basis: 1rem; /* 16px */"
+    },
+    "5": {
+      "class": "basis-5",
+      "property": "flex-basis: 1.25rem; /* 20px */"
+    },
+    "6": {
+      "class": "basis-6",
+      "property": "flex-basis: 1.5rem; /* 24px */"
+    },
+    "7": {
+      "class": "basis-7",
+      "property": "flex-basis: 1.75rem; /* 28px */"
+    },
+    "8": {
+      "class": "basis-8",
+      "property": "flex-basis: 2rem; /* 32px */"
+    },
+    "9": {
+      "class": "basis-9",
+      "property": "flex-basis: 2.25rem; /* 36px */"
+    },
+    "10": {
+      "class": "basis-10",
+      "property": "flex-basis: 2.5rem; /* 40px */"
+    },
+    "11": {
+      "class": "basis-11",
+      "property": "flex-basis: 2.75rem; /* 44px */"
+    },
+    "12": {
+      "class": "basis-12",
+      "property": "flex-basis: 3rem; /* 48px */"
+    },
+    "14": {
+      "class": "basis-14",
+      "property": "flex-basis: 3.5rem; /* 56px */"
+    },
+    "16": {
+      "class": "basis-16",
+      "property": "flex-basis: 4rem; /* 64px */"
+    },
+    "20": {
+      "class": "basis-20",
+      "property": "flex-basis: 5rem; /* 80px */"
+    },
+    "24": {
+      "class": "basis-24",
+      "property": "flex-basis: 6rem; /* 96px */"
+    },
+    "28": {
+      "class": "basis-28",
+      "property": "flex-basis: 7rem; /* 112px */"
+    },
+    "32": {
+      "class": "basis-32",
+      "property": "flex-basis: 8rem; /* 128px */"
+    },
+    "36": {
+      "class": "basis-36",
+      "property": "flex-basis: 9rem; /* 144px */"
+    },
+    "40": {
+      "class": "basis-40",
+      "property": "flex-basis: 10rem; /* 160px */"
+    },
+    "44": {
+      "class": "basis-44",
+      "property": "flex-basis: 11rem; /* 176px */"
+    },
+    "48": {
+      "class": "basis-48",
+      "property": "flex-basis: 12rem; /* 192px */"
+    },
+    "52": {
+      "class": "basis-52",
+      "property": "flex-basis: 13rem; /* 208px */"
+    },
+    "56": {
+      "class": "basis-56",
+      "property": "flex-basis: 14rem; /* 224px */"
+    },
+    "60": {
+      "class": "basis-60",
+      "property": "flex-basis: 15rem; /* 240px */"
+    },
+    "64": {
+      "class": "basis-64",
+      "property": "flex-basis: 16rem; /* 256px */"
+    },
+    "72": {
+      "class": "basis-72",
+      "property": "flex-basis: 18rem; /* 288px */"
+    },
+    "80": {
+      "class": "basis-80",
+      "property": "flex-basis: 20rem; /* 320px */"
+    },
+    "96": {
+      "class": "basis-96",
+      "property": "flex-basis: 24rem; /* 384px */"
+    },
+    "auto": {
+      "class": "basis-auto",
+      "property": "flex-basis: auto;"
+    },
+    "px": {
+      "class": "basis-px",
+      "property": "flex-basis: 1px;"
+    },
+    "0.5": {
+      "class": "basis-0.5",
+      "property": "flex-basis: 0.125rem; /* 2px */"
+    },
+    "1.5": {
+      "class": "basis-1.5",
+      "property": "flex-basis: 0.375rem; /* 6px */"
+    },
+    "2.5": {
+      "class": "basis-2.5",
+      "property": "flex-basis: 0.625rem; /* 10px */"
+    },
+    "3.5": {
+      "class": "basis-3.5",
+      "property": "flex-basis: 0.875rem; /* 14px */"
+    },
+    "1/2": {
+      "class": "basis-1/2",
+      "property": "flex-basis: 50%;"
+    },
+    "1/3": {
+      "class": "basis-1/3",
+      "property": "flex-basis: 33.333333%;"
+    },
+    "2/3": {
+      "class": "basis-2/3",
+      "property": "flex-basis: 66.666667%;"
+    },
+    "1/4": {
+      "class": "basis-1/4",
+      "property": "flex-basis: 25%;"
+    },
+    "2/4": {
+      "class": "basis-2/4",
+      "property": "flex-basis: 50%;"
+    },
+    "3/4": {
+      "class": "basis-3/4",
+      "property": "flex-basis: 75%;"
+    },
+    "1/5": {
+      "class": "basis-1/5",
+      "property": "flex-basis: 20%;"
+    },
+    "2/5": {
+      "class": "basis-2/5",
+      "property": "flex-basis: 40%;"
+    },
+    "3/5": {
+      "class": "basis-3/5",
+      "property": "flex-basis: 60%;"
+    },
+    "4/5": {
+      "class": "basis-4/5",
+      "property": "flex-basis: 80%;"
+    },
+    "1/6": {
+      "class": "basis-1/6",
+      "property": "flex-basis: 16.666667%;"
+    },
+    "2/6": {
+      "class": "basis-2/6",
+      "property": "flex-basis: 33.333333%;"
+    },
+    "3/6": {
+      "class": "basis-3/6",
+      "property": "flex-basis: 50%;"
+    },
+    "4/6": {
+      "class": "basis-4/6",
+      "property": "flex-basis: 66.666667%;"
+    },
+    "5/6": {
+      "class": "basis-5/6",
+      "property": "flex-basis: 83.333333%;"
+    },
+    "1/12": {
+      "class": "basis-1/12",
+      "property": "flex-basis: 8.333333%;"
+    },
+    "2/12": {
+      "class": "basis-2/12",
+      "property": "flex-basis: 16.666667%;"
+    },
+    "3/12": {
+      "class": "basis-3/12",
+      "property": "flex-basis: 25%;"
+    },
+    "4/12": {
+      "class": "basis-4/12",
+      "property": "flex-basis: 33.333333%;"
+    },
+    "5/12": {
+      "class": "basis-5/12",
+      "property": "flex-basis: 41.666667%;"
+    },
+    "6/12": {
+      "class": "basis-6/12",
+      "property": "flex-basis: 50%;"
+    },
+    "7/12": {
+      "class": "basis-7/12",
+      "property": "flex-basis: 58.333333%;"
+    },
+    "8/12": {
+      "class": "basis-8/12",
+      "property": "flex-basis: 66.666667%;"
+    },
+    "9/12": {
+      "class": "basis-9/12",
+      "property": "flex-basis: 75%;"
+    },
+    "10/12": {
+      "class": "basis-10/12",
+      "property": "flex-basis: 83.333333%;"
+    },
+    "11/12": {
+      "class": "basis-11/12",
+      "property": "flex-basis: 91.666667%;"
+    },
+    "full": {
+      "class": "basis-full",
+      "property": "flex-basis: 100%;"
+    }
+  }
+}

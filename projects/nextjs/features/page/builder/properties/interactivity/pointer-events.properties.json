@@ -1,0 +1,12 @@
+{
+  "pointerEvents": {
+    "none": {
+      "class": "pointer-events-none",
+      "property": "pointer-events: none;"
+    },
+    "auto": {
+      "class": "pointer-events-auto",
+      "property": "pointer-events: auto;"
+    }
+  }
+}

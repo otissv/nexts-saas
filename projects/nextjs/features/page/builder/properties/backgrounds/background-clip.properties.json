@@ -1,0 +1,20 @@
+{
+  "backgroundClip": {
+    "clip-border": {
+      "class": "bg-clip-border",
+      "property": "background-clip: border-box;"
+    },
+    "clip-padding": {
+      "class": "bg-clip-padding",
+      "property": "background-clip: padding-box;"
+    },
+    "clip-content": {
+      "class": "bg-clip-content",
+      "property": "background-clip: content-box;"
+    },
+    "clip-text": {
+      "class": "bg-clip-text",
+      "property": "background-clip: text;"
+    }
+  }
+}

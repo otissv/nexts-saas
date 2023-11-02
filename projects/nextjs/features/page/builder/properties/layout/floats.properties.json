@@ -1,0 +1,16 @@
+{
+  "floats": {
+    "right": {
+      "class": "float-right",
+      "property": "float: right;"
+    },
+    "left": {
+      "class": "float-left",
+      "property": "float: left;"
+    },
+    "none": {
+      "class": "float-none",
+      "property": "float: none;"
+    }
+  }
+}

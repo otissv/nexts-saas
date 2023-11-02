@@ -1,0 +1,16 @@
+{
+  "textOverflow": {
+    "truncate": {
+      "class": "truncate",
+      "property": "overflow: hidden;\ntext-overflow: ellipsis;\nwhite-space: nowrap;"
+    },
+    "ellipsis": {
+      "class": "text-ellipsis",
+      "property": "text-overflow: ellipsis;"
+    },
+    "clip": {
+      "class": "text-clip",
+      "property": "text-overflow: clip;"
+    }
+  }
+}

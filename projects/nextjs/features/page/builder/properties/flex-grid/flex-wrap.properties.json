@@ -1,0 +1,16 @@
+{
+  "flexWrap": {
+    "wrap": {
+      "class": "flex-wrap",
+      "property": "flex-wrap: wrap;"
+    },
+    "wrap-reverse": {
+      "class": "flex-wrap-reverse",
+      "property": "flex-wrap: wrap-reverse;"
+    },
+    "nowrap": {
+      "class": "flex-nowrap",
+      "property": "flex-wrap: nowrap;"
+    }
+  }
+}

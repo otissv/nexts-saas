@@ -1,0 +1,168 @@
+{
+  "maxHeight": {
+    "none": {
+      "class": "max-h-none",
+      "property": "max-height: none;"
+    },
+    "full": {
+      "class": "max-h-full",
+      "property": "max-height: 100%;"
+    },
+    "screen": {
+      "class": "max-h-screen",
+      "property": "max-height: 100vh;"
+    },
+    "fit": {
+      "class": "max-h-fit",
+      "property": "max-height: fit-content;"
+    },
+    "0": {
+      "class": "max-h-0",
+      "property": "max-height: 0px;"
+    },
+    "px": {
+      "class": "max-h-px",
+      "property": "max-height: 1px;"
+    },
+    "0.5": {
+      "class": "max-h-0.5",
+      "property": "max-height: 0.125rem; /* 2px */"
+    },
+    "1": {
+      "class": "max-h-1",
+      "property": "max-height: 0.25rem; /* 4px */"
+    },
+    "1.5": {
+      "class": "max-h-1.5",
+      "property": "max-height: 0.375rem; /* 6px */"
+    },
+    "2": {
+      "class": "max-h-2",
+      "property": "max-height: 0.5rem; /* 8px */"
+    },
+    "2.5": {
+      "class": "max-h-2.5",
+      "property": "max-height: 0.625rem; /* 10px */"
+    },
+    "3": {
+      "class": "max-h-3",
+      "property": "max-height: 0.75rem; /* 12px */"
+    },
+    "3.5": {
+      "class": "max-h-3.5",
+      "property": "max-height: 0.875rem; /* 14px */"
+    },
+    "4": {
+      "class": "max-h-4",
+      "property": "max-height: 1rem; /* 16px */"
+    },
+    "5": {
+      "class": "max-h-5",
+      "property": "max-height: 1.25rem; /* 20px */"
+    },
+    "6": {
+      "class": "max-h-6",
+      "property": "max-height: 1.5rem; /* 24px */"
+    },
+    "7": {
+      "class": "max-h-7",
+      "property": "max-height: 1.75rem; /* 28px */"
+    },
+    "8": {
+      "class": "max-h-8",
+      "property": "max-height: 2rem; /* 32px */"
+    },
+    "9": {
+      "class": "max-h-9",
+      "property": "max-height: 2.25rem; /* 36px */"
+    },
+    "10": {
+      "class": "max-h-10",
+      "property": "max-height: 2.5rem; /* 40px */"
+    },
+    "11": {
+      "class": "max-h-11",
+      "property": "max-height: 2.75rem; /* 44px */"
+    },
+    "12": {
+      "class": "max-h-12",
+      "property": "max-height: 3rem; /* 48px */"
+    },
+    "14": {
+      "class": "max-h-14",
+      "property": "max-height: 3.5rem; /* 56px */"
+    },
+    "16": {
+      "class": "max-h-16",
+      "property": "max-height: 4rem; /* 64px */"
+    },
+    "20": {
+      "class": "max-h-20",
+      "property": "max-height: 5rem; /* 80px */"
+    },
+    "24": {
+      "class": "max-h-24",
+      "property": "max-height: 6rem; /* 96px */"
+    },
+    "28": {
+      "class": "max-h-28",
+      "property": "max-height: 7rem; /* 112px */"
+    },
+    "32": {
+      "class": "max-h-32",
+      "property": "max-height: 8rem; /* 128px */"
+    },
+    "36": {
+      "class": "max-h-36",
+      "property": "max-height: 9rem; /* 144px */"
+    },
+    "40": {
+      "class": "max-h-40",
+      "property": "max-height: 10rem; /* 160px */"
+    },
+    "44": {
+      "class": "max-h-44",
+      "property": "max-height: 11rem; /* 176px */"
+    },
+    "48": {
+      "class": "max-h-48",
+      "property": "max-height: 12rem; /* 192px */"
+    },
+    "52": {
+      "class": "max-h-52",
+      "property": "max-height: 13rem; /* 208px */"
+    },
+    "56": {
+      "class": "max-h-56",
+      "property": "max-height: 14rem; /* 224px */"
+    },
+    "60": {
+      "class": "max-h-60",
+      "property": "max-height: 15rem; /* 240px */"
+    },
+    "64": {
+      "class": "max-h-64",
+      "property": "max-height: 16rem; /* 256px */"
+    },
+    "72": {
+      "class": "max-h-72",
+      "property": "max-height: 18rem; /* 288px */"
+    },
+    "80": {
+      "class": "max-h-80",
+      "property": "max-height: 20rem; /* 320px */"
+    },
+    "96": {
+      "class": "max-h-96",
+      "property": "max-height: 24rem; /* 384px */"
+    },
+    "min": {
+      "class": "max-h-min",
+      "property": "max-height: min-content;"
+    },
+    "max": {
+      "class": "max-h-max",
+      "property": "max-height: max-content;"
+    }
+  }
+}

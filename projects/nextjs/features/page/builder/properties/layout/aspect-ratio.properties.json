@@ -1,0 +1,16 @@
+{
+  "aspectRatio": {
+    "auto": {
+      "class": "aspect-auto",
+      "property": "aspect-ratio: auto;"
+    },
+    "square": {
+      "class": "aspect-square",
+      "property": "aspect-ratio: 1 / 1;"
+    },
+    "video": {
+      "class": "aspect-video",
+      "property": "aspect-ratio: 16 / 9;"
+    }
+  }
+}

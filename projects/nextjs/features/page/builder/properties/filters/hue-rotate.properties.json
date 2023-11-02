@@ -1,0 +1,28 @@
+{
+  "hueRotate": {
+    "0": {
+      "class": "hue-rotate-0",
+      "property": "filter: hue-rotate(0deg);"
+    },
+    "15": {
+      "class": "hue-rotate-15",
+      "property": "filter: hue-rotate(15deg);"
+    },
+    "30": {
+      "class": "hue-rotate-30",
+      "property": "filter: hue-rotate(30deg);"
+    },
+    "60": {
+      "class": "hue-rotate-60",
+      "property": "filter: hue-rotate(60deg);"
+    },
+    "90": {
+      "class": "hue-rotate-90",
+      "property": "filter: hue-rotate(90deg);"
+    },
+    "180": {
+      "class": "hue-rotate-180",
+      "property": "filter: hue-rotate(180deg);"
+    }
+  }
+}

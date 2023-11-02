@@ -1,0 +1,20 @@
+{
+  "gridAutoRows": {
+    "auto": {
+      "class": "auto-rows-auto",
+      "property": "grid-auto-rows: auto;"
+    },
+    "min": {
+      "class": "auto-rows-min",
+      "property": "grid-auto-rows: min-content;"
+    },
+    "max": {
+      "class": "auto-rows-max",
+      "property": "grid-auto-rows: max-content;"
+    },
+    "fr": {
+      "class": "auto-rows-fr",
+      "property": "grid-auto-rows: minmax(0, 1fr);"
+    }
+  }
+}

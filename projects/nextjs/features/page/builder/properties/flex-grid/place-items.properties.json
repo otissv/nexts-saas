@@ -1,0 +1,24 @@
+{
+  "placeItems": {
+    "start": {
+      "class": "place-items-start",
+      "property": "place-items: start;"
+    },
+    "end": {
+      "class": "place-items-end",
+      "property": "place-items: end;"
+    },
+    "center": {
+      "class": "place-items-center",
+      "property": "place-items: center;"
+    },
+    "baseline": {
+      "class": "place-items-baseline",
+      "property": "place-items: baseline;"
+    },
+    "stretch": {
+      "class": "place-items-stretch",
+      "property": "place-items: stretch;"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "backdropInvert": {
+    "0": {
+      "class": "backdrop-invert-0",
+      "property": "backdrop-filter: invert(0);"
+    },
+    "100": {
+      "class": "backdrop-invert",
+      "property": "backdrop-filter: invert(100%);"
+    }
+  }
+}

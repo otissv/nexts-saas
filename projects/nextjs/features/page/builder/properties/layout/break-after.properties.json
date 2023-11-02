@@ -1,0 +1,36 @@
+{
+  "breakAfter": {
+    "after-auto": {
+      "class": "break-after-auto",
+      "property": "break-after: auto;"
+    },
+    "avoid": {
+      "class": "break-after-avoid",
+      "property": "break-after: avoid;"
+    },
+    "all": {
+      "class": "break-after-all",
+      "property": "break-after: all;"
+    },
+    "avoid-page": {
+      "class": "break-after-avoid-page",
+      "property": "break-after: avoid-page;"
+    },
+    "page": {
+      "class": "break-after-page",
+      "property": "break-after: page;"
+    },
+    "left": {
+      "class": "break-after-left",
+      "property": "break-after: left;"
+    },
+    "right": {
+      "class": "break-after-right",
+      "property": "break-after: right;"
+    },
+    "column": {
+      "class": "break-after-column",
+      "property": "break-after: column;"
+    }
+  }
+}

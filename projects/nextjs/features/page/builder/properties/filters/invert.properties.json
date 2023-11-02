@@ -1,0 +1,12 @@
+{
+  "invert": {
+    "0": {
+      "class": "invert-0",
+      "property": "filter: invert(0);"
+    },
+    "100": {
+      "class": "invert",
+      "property": "filter: invert(100%);"
+    }
+  }
+}

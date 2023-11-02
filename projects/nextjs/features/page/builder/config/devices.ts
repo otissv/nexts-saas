@@ -1,0 +1,236 @@
+export const devices = {
+  mobile: {
+    sizes: {
+      sm: "320px",
+      md: "375px",
+      lg: "425px",
+    },
+    tabs: [
+      {
+        breakpoint: "sm",
+        label: "Mobile L - 425px",
+        size: "lg",
+        width: "25px",
+      },
+      {
+        breakpoint: "sm",
+        label: "Mobile M - 375px",
+        size: "md",
+        width: "27px",
+      },
+      {
+        breakpoint: "sm",
+        label: "Mobile S - 320px",
+        size: "sm",
+        width: "320px",
+      },
+      {
+        breakpoint: "sm",
+        label: "Mobile M - 375px",
+        size: "md",
+        width: "27px",
+      },
+      {
+        breakpoint: "sm",
+        label: "Mobile L - 425px",
+        size: "lg",
+        width: "25px",
+      },
+    ],
+  },
+  tablet: {
+    sizes: {
+      sm: "768px",
+      md: "834px",
+      lg: "960px",
+    },
+    tabs: [
+      {
+        breakpoint: "md",
+        label: "Tablet L - 960px",
+        size: "lg",
+        width: "63px",
+      },
+      {
+        breakpoint: "md",
+        label: "Tablet M - 834px",
+        size: "md",
+        width: "33px",
+      },
+      {
+        breakpoint: "md",
+        label: "Tablet S - 768px",
+        size: "sm",
+        width: "768px",
+      },
+      {
+        breakpoint: "md",
+        label: "Tablet M - 834px",
+        size: "md",
+        width: "33px",
+      },
+      {
+        breakpoint: "md",
+        label: "Tablet L - 960px",
+        size: "lg",
+        width: "63px",
+      },
+    ],
+  },
+  laptop: {
+    sizes: {
+      sm: "1024px",
+      md: "1440px",
+      lg: "1920px",
+    },
+    tabs: [
+      {
+        breakpoint: "lg",
+        label: "Laptop L - 1920px",
+        size: "lg",
+        width: "240px",
+      },
+      {
+        breakpoint: "lg",
+        label: "Laptop M - 1440px",
+        size: "md",
+        width: "208px",
+      },
+      {
+        breakpoint: "lg",
+        label: "Laptop S - 1024px",
+        size: "sm",
+        width: "1024px",
+      },
+      {
+        breakpoint: "lg",
+        label: "Laptop M - 1440px",
+        size: "md",
+        width: "208px",
+      },
+      {
+        breakpoint: "lg",
+        label: "Laptop L - 1920px",
+        size: "lg",
+        width: "240px",
+      },
+    ],
+  },
+  full: {
+    sizes: {
+      "sm-sm": "320px",
+      "sm-md": "375px",
+      "sm-lg": "425px",
+      "md-sm": "768px",
+      "md-md": "834px",
+      "md-lg": "960px",
+      "lg-sm": "1024px",
+      "lg-md": "1440px",
+      "lg-lg": "1920px",
+    },
+    tabs: [
+      {
+        breakpoint: "lg",
+        label: "Laptop L - 1920px",
+        size: "lg-lg",
+        width: "240px",
+      },
+      {
+        breakpoint: "lg",
+        label: "Laptop M - 1440px",
+        size: "lg-md",
+        width: "208px",
+      },
+      {
+        breakpoint: "lg",
+        label: "Laptop S - 1024px",
+        size: "lg-sm",
+        width: "32px",
+      },
+      {
+        breakpoint: "md",
+        label: "Tablet L - 960px",
+        size: "md-lg",
+        width: "63px",
+      },
+      {
+        breakpoint: "md",
+        label: "Tablet M - 834px",
+        size: "md-md",
+        width: "33px",
+      },
+      {
+        breakpoint: "md",
+        label: "Tablet S - 768px",
+        size: "md-sm",
+        width: "171px",
+      },
+      {
+        breakpoint: "sm",
+        label: "Mobile L - 425px",
+        size: "sm-lg",
+        width: "25px",
+      },
+      {
+        breakpoint: "sm",
+        label: "Mobile M - 375px",
+        size: "sm-md",
+        width: "27px",
+      },
+      {
+        breakpoint: "sm",
+        label: "Mobile S - 320px",
+        size: "sm-sm",
+        width: "320px",
+      },
+      {
+        breakpoint: "sm",
+        label: "Mobile M - 375px",
+        size: "sm-md",
+        width: "27px",
+      },
+      {
+        breakpoint: "sm",
+        label: "Mobile L - 425px",
+        size: "sm-lg",
+        width: "25px",
+      },
+      {
+        breakpoint: "md",
+        label: "Tablet S - 768px",
+        size: "md-sm",
+        width: "171px",
+      },
+      {
+        breakpoint: "md",
+        label: "Tablet M - 834px",
+        size: "md-md",
+        width: "33px",
+      },
+      {
+        breakpoint: "md",
+        label: "Tablet L - 960px",
+        size: "md-lg",
+        width: "63px",
+      },
+      {
+        breakpoint: "lg",
+        label: "Laptop S - 1024px",
+        size: "lg-sm",
+        width: "32px",
+      },
+      {
+        breakpoint: "lg",
+        label: "Laptop M - 1440px",
+        size: "lg-md",
+        width: "208px",
+      },
+      {
+        breakpoint: "lg",
+        label: "Laptop L - 1920px",
+        size: "lg-lg",
+        width: "240px",
+      },
+    ],
+  },
+}

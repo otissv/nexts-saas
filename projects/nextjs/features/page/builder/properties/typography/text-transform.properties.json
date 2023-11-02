@@ -1,0 +1,20 @@
+{
+  "textTransform": {
+    "uppercase": {
+      "class": "uppercase",
+      "property": "text-transform: uppercase;"
+    },
+    "lowercase": {
+      "class": "lowercase",
+      "property": "text-transform: lowercase;"
+    },
+    "capitalize": {
+      "class": "capitalize",
+      "property": "text-transform: capitalize;"
+    },
+    "normal-case": {
+      "class": "normal-case",
+      "property": "text-transform: none;"
+    }
+  }
+}

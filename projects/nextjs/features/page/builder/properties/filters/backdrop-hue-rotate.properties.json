@@ -1,0 +1,28 @@
+{
+  "backdropHueRotate": {
+    "0": {
+      "class": "backdrop-hue-rotate-0",
+      "property": "backdrop-filter: hue-rotate(0deg);"
+    },
+    "15": {
+      "class": "backdrop-hue-rotate-15",
+      "property": "backdrop-filter: hue-rotate(15deg);"
+    },
+    "30": {
+      "class": "backdrop-hue-rotate-30",
+      "property": "backdrop-filter: hue-rotate(30deg);"
+    },
+    "60": {
+      "class": "backdrop-hue-rotate-60",
+      "property": "backdrop-filter: hue-rotate(60deg);"
+    },
+    "90": {
+      "class": "backdrop-hue-rotate-90",
+      "property": "backdrop-filter: hue-rotate(90deg);"
+    },
+    "180": {
+      "class": "backdrop-hue-rotate-180",
+      "property": "backdrop-filter: hue-rotate(180deg);"
+    }
+  }
+}

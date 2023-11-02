@@ -1,0 +1,20 @@
+{
+  "scrollSnapAlign": {
+    "start": {
+      "class": "snap-start",
+      "property": "scroll-snap-align: start;"
+    },
+    "end": {
+      "class": "snap-end",
+      "property": "scroll-snap-align: end;"
+    },
+    "center": {
+      "class": "snap-center",
+      "property": "scroll-snap-align: center;"
+    },
+    "align-none": {
+      "class": "snap-align-none",
+      "property": "scroll-snap-align: none;"
+    }
+  }
+}

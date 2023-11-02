@@ -1,0 +1,24 @@
+{
+  "backdropSaturate": {
+    "0": {
+      "class": "backdrop-saturate-0",
+      "property": "backdrop-filter: saturate(0);"
+    },
+    "50": {
+      "class": "backdrop-saturate-50",
+      "property": "backdrop-filter: saturate(.5);"
+    },
+    "100": {
+      "class": "backdrop-saturate-100",
+      "property": "backdrop-filter: saturate(1);"
+    },
+    "150": {
+      "class": "backdrop-saturate-150",
+      "property": "backdrop-filter: saturate(1.5);"
+    },
+    "200": {
+      "class": "backdrop-saturate-200",
+      "property": "backdrop-filter: saturate(2);"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "transitionProperty": {
+    "none": {
+      "class": "transition-none",
+      "property": "transition-property: none;"
+    },
+    "all": {
+      "class": "transition-all",
+      "property": "transition-property: all;\ntransition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\ntransition-duration: 150ms;"
+    },
+    "transition": {
+      "class": "transition",
+      "property": "transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;\ntransition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\ntransition-duration: 150ms;"
+    },
+    "colors": {
+      "class": "transition-colors",
+      "property": "transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;\ntransition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\ntransition-duration: 150ms;"
+    },
+    "opacity": {
+      "class": "transition-opacity",
+      "property": "transition-property: opacity;\ntransition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\ntransition-duration: 150ms;"
+    },
+    "shadow": {
+      "class": "transition-shadow",
+      "property": "transition-property: box-shadow;\ntransition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\ntransition-duration: 150ms;"
+    },
+    "transform": {
+      "class": "transition-transform",
+      "property": "transition-property: transform;\ntransition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\ntransition-duration: 150ms;"
+    }
+  }
+}

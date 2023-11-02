@@ -1,0 +1,36 @@
+{
+  "placeContent": {
+    "center": {
+      "class": "place-content-center",
+      "property": "place-content: center;"
+    },
+    "start": {
+      "class": "place-content-start",
+      "property": "place-content: start;"
+    },
+    "end": {
+      "class": "place-content-end",
+      "property": "place-content: end;"
+    },
+    "between": {
+      "class": "place-content-between",
+      "property": "place-content: space-between;"
+    },
+    "around": {
+      "class": "place-content-around",
+      "property": "place-content: space-around;"
+    },
+    "evenly": {
+      "class": "place-content-evenly",
+      "property": "place-content: space-evenly;"
+    },
+    "baseline": {
+      "class": "place-content-baseline",
+      "property": "place-content: baseline;"
+    },
+    "stretch": {
+      "class": "place-content-stretch",
+      "property": "place-content: stretch;"
+    }
+  }
+}

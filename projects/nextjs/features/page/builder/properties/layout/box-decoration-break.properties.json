@@ -1,0 +1,12 @@
+{
+  "boxDecorationBreak": {
+    "clone": {
+      "class": "box-decoration-clone",
+      "property": "box-decoration-break: clone;"
+    },
+    "slice": {
+      "class": "box-decoration-slice",
+      "property": "box-decoration-break: slice;"
+    }
+  }
+}

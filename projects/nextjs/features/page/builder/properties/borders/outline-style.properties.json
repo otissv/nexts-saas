@@ -1,0 +1,24 @@
+{
+  "outlineStyle": {
+    "none": {
+      "class": "outline-none",
+      "property": "outline: 2px solid transparent;\noutline-offset: 2px;"
+    },
+    "outline": {
+      "class": "outline",
+      "property": "outline-style: solid;"
+    },
+    "dashed": {
+      "class": "outline-dashed",
+      "property": "outline-style: dashed;"
+    },
+    "dotted": {
+      "class": "outline-dotted",
+      "property": "outline-style: dotted;"
+    },
+    "double": {
+      "class": "outline-double",
+      "property": "outline-style: double;"
+    }
+  }
+}

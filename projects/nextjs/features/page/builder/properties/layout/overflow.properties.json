@@ -1,0 +1,64 @@
+{
+  "overflow": {
+    "auto": {
+      "class": "overflow-auto",
+      "property": "overflow: auto;"
+    },
+    "hidden": {
+      "class": "overflow-hidden",
+      "property": "overflow: hidden;"
+    },
+    "clip": {
+      "class": "overflow-clip",
+      "property": "overflow: clip;"
+    },
+    "visible": {
+      "class": "overflow-visible",
+      "property": "overflow: visible;"
+    },
+    "scroll": {
+      "class": "overflow-scroll",
+      "property": "overflow: scroll;"
+    },
+    "x-auto": {
+      "class": "overflow-x-auto",
+      "property": "overflow-x: auto;"
+    },
+    "y-auto": {
+      "class": "overflow-y-auto",
+      "property": "overflow-y: auto;"
+    },
+    "x-hidden": {
+      "class": "overflow-x-hidden",
+      "property": "overflow-x: hidden;"
+    },
+    "y-hidden": {
+      "class": "overflow-y-hidden",
+      "property": "overflow-y: hidden;"
+    },
+    "x-clip": {
+      "class": "overflow-x-clip",
+      "property": "overflow-x: clip;"
+    },
+    "y-clip": {
+      "class": "overflow-y-clip",
+      "property": "overflow-y: clip;"
+    },
+    "x-visible": {
+      "class": "overflow-x-visible",
+      "property": "overflow-x: visible;"
+    },
+    "y-visible": {
+      "class": "overflow-y-visible",
+      "property": "overflow-y: visible;"
+    },
+    "x-scroll": {
+      "class": "overflow-x-scroll",
+      "property": "overflow-x: scroll;"
+    },
+    "y-scroll": {
+      "class": "overflow-y-scroll",
+      "property": "overflow-y: scroll;"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "dropShadow": {
+    "shadow-sm": {
+      "class": "drop-shadow-sm",
+      "property": "filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.05));"
+    },
+    "shadow": {
+      "class": "drop-shadow",
+      "property": "filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));"
+    },
+    "shadow-md": {
+      "class": "drop-shadow-md",
+      "property": "filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));"
+    },
+    "shadow-lg": {
+      "class": "drop-shadow-lg",
+      "property": "filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));"
+    },
+    "shadow-xl": {
+      "class": "drop-shadow-xl",
+      "property": "filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));"
+    },
+    "shadow-2xl": {
+      "class": "drop-shadow-2xl",
+      "property": "filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));"
+    },
+    "shadow-none": {
+      "class": "drop-shadow-none",
+      "property": "filter: drop-shadow(0 0 #0000);"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "backdropBlur": {
+    "none": {
+      "class": "backdrop-blur-none",
+      "property": "backdrop-filter: blur(0);"
+    },
+    "sm": {
+      "class": "backdrop-blur-sm",
+      "property": "backdrop-filter: blur(4px);"
+    },
+    "blur": {
+      "class": "backdrop-blur",
+      "property": "backdrop-filter: blur(8px);"
+    },
+    "md": {
+      "class": "backdrop-blur-md",
+      "property": "backdrop-filter: blur(12px);"
+    },
+    "lg": {
+      "class": "backdrop-blur-lg",
+      "property": "backdrop-filter: blur(16px);"
+    },
+    "xl": {
+      "class": "backdrop-blur-xl",
+      "property": "backdrop-filter: blur(24px);"
+    },
+    "2xl": {
+      "class": "backdrop-blur-2xl",
+      "property": "backdrop-filter: blur(40px);"
+    },
+    "3xl": {
+      "class": "backdrop-blur-3xl",
+      "property": "backdrop-filter: blur(64px);"
+    }
+  }
+}

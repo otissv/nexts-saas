@@ -1,0 +1,32 @@
+{
+  "lineClamp": {
+    "clamp-1": {
+      "class": "line-clamp-1",
+      "property": "overflow: hidden;\ndisplay: -webkit-box;\n-webkit-box-orient: vertical;\n-webkit-line-clamp: 1;"
+    },
+    "clamp-2": {
+      "class": "line-clamp-2",
+      "property": "overflow: hidden;\ndisplay: -webkit-box;\n-webkit-box-orient: vertical;\n-webkit-line-clamp: 2;"
+    },
+    "clamp-3": {
+      "class": "line-clamp-3",
+      "property": "overflow: hidden;\ndisplay: -webkit-box;\n-webkit-box-orient: vertical;\n-webkit-line-clamp: 3;"
+    },
+    "clamp-4": {
+      "class": "line-clamp-4",
+      "property": "overflow: hidden;\ndisplay: -webkit-box;\n-webkit-box-orient: vertical;\n-webkit-line-clamp: 4;"
+    },
+    "clamp-5": {
+      "class": "line-clamp-5",
+      "property": "overflow: hidden;\ndisplay: -webkit-box;\n-webkit-box-orient: vertical;\n-webkit-line-clamp: 5;"
+    },
+    "clamp-6": {
+      "class": "line-clamp-6",
+      "property": "overflow: hidden;\ndisplay: -webkit-box;\n-webkit-box-orient: vertical;\n-webkit-line-clamp: 6;"
+    },
+    "clamp-none": {
+      "class": "line-clamp-none",
+      "property": "overflow: visible;\ndisplay: block;\n-webkit-box-orient: horizontal;\n-webkit-line-clamp: none;"
+    }
+  }
+}

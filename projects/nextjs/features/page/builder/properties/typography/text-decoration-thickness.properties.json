@@ -1,0 +1,32 @@
+{
+  "textDecorationThickness": {
+    "auto": {
+      "class": "decoration-auto",
+      "property": "text-decoration-thickness: auto;"
+    },
+    "from-font": {
+      "class": "decoration-from-font",
+      "property": "text-decoration-thickness: from-font;"
+    },
+    "0": {
+      "class": "decoration-0",
+      "property": "text-decoration-thickness: 0px;"
+    },
+    "1": {
+      "class": "decoration-1",
+      "property": "text-decoration-thickness: 1px;"
+    },
+    "2": {
+      "class": "decoration-2",
+      "property": "text-decoration-thickness: 2px;"
+    },
+    "4": {
+      "class": "decoration-4",
+      "property": "text-decoration-thickness: 4px;"
+    },
+    "8": {
+      "class": "decoration-8",
+      "property": "text-decoration-thickness: 8px;"
+    }
+  }
+}

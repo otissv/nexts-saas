@@ -1,0 +1,89 @@
+{
+  "display": {
+    "block": {
+      "class": "block",
+      "property": "display: block;"
+    },
+    "inline-block": {
+      "class": "inline-block",
+      "property": "display: inline-block;"
+    },
+    "inline": {
+      "class": "inline",
+      "property": "display: inline;"
+    },
+    "flex": {
+      "class": "flex",
+      "property": "display: flex;"
+    },
+    "inline-flex": {
+      "class": "inline-flex",
+      "property": "display: inline-flex;"
+    },
+    "grid": {
+      "class": "grid",
+      "property": "display: grid;"
+    },
+    "inline-grid": {
+      "class": "inline-grid",
+      "property": "display: inline-grid;"
+    },
+    "table": {
+      "class": "table",
+      "property": "display: table;"
+    },
+    "inline-table": {
+      "class": "inline-table",
+      "property": "display: inline-table;"
+    },
+    "table-caption": {
+      "class": "table-caption",
+      "property": "display: table-caption;"
+    },
+    "table-cell": {
+      "class": "table-cell",
+      "property": "display: table-cell;"
+    },
+    "table-column": {
+      "class": "table-column",
+      "property": "display: table-column;"
+    },
+    "table-column-group": {
+      "class": "table-column-group",
+      "property": "display: table-column-group;"
+    },
+    "table-footer-group": {
+      "class": "table-footer-group",
+      "property": "display: table-footer-group;"
+    },
+    "table-header-group": {
+      "class": "table-header-group",
+      "property": "display: table-header-group;"
+    },
+    "table-row-group": {
+      "class": "table-row-group",
+      "property": "display: table-row-group;"
+    },
+    "table-row": {
+      "class": "table-row",
+      "property": "display: table-row;"
+    },
+    "flow-root": {
+      "class": "flow-root",
+      "property": "display: flow-root;"
+    },
+
+    "contents": {
+      "class": "contents",
+      "property": "display: contents;"
+    },
+    "list-item": {
+      "class": "list-item",
+      "property": "display: list-item;"
+    },
+    "hidden": {
+      "class": "hidden",
+      "property": "display: none;"
+    }
+  }
+}

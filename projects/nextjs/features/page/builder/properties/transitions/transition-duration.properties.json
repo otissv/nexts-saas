@@ -1,0 +1,40 @@
+{
+  "transitionDuration": {
+    "duration-0": {
+      "class": "duration-0",
+      "property": "transition-duration: 0s;"
+    },
+    "75": {
+      "class": "duration-75",
+      "property": "transition-duration: 75ms;"
+    },
+    "100": {
+      "class": "duration-100",
+      "property": "transition-duration: 100ms;"
+    },
+    "150": {
+      "class": "duration-150",
+      "property": "transition-duration: 150ms;"
+    },
+    "200": {
+      "class": "duration-200",
+      "property": "transition-duration: 200ms;"
+    },
+    "300": {
+      "class": "duration-300",
+      "property": "transition-duration: 300ms;"
+    },
+    "500": {
+      "class": "duration-500",
+      "property": "transition-duration: 500ms;"
+    },
+    "700": {
+      "class": "duration-700",
+      "property": "transition-duration: 700ms;"
+    },
+    "1000": {
+      "class": "duration-1000",
+      "property": "transition-duration: 1000ms;"
+    }
+  }
+}

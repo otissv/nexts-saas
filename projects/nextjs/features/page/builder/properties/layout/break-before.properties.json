@@ -1,0 +1,36 @@
+{
+  "breakBefore": {
+    "auto": {
+      "class": "break-before-auto",
+      "property": "break-before: auto;"
+    },
+    "avoid": {
+      "class": "break-before-avoid",
+      "property": "break-before: avoid;"
+    },
+    "all": {
+      "class": "break-before-all",
+      "property": "break-before: all;"
+    },
+    "avoid-page": {
+      "class": "break-before-avoid-page",
+      "property": "break-before: avoid-page;"
+    },
+    "page": {
+      "class": "break-before-page",
+      "property": "break-before: page;"
+    },
+    "left": {
+      "class": "break-before-left",
+      "property": "break-before: left;"
+    },
+    "right": {
+      "class": "break-before-right",
+      "property": "break-before: right;"
+    },
+    "column": {
+      "class": "break-before-column",
+      "property": "break-before: column;"
+    }
+  }
+}

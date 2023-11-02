@@ -1,0 +1,424 @@
+{
+  "gap": {
+    "0": {
+      "class": "gap-0",
+      "property": "gap: 0px;"
+    },
+    "x-0": {
+      "class": "gap-x-0",
+      "property": "column-gap: 0px;"
+    },
+    "y-0": {
+      "class": "gap-y-0",
+      "property": "row-gap: 0px;"
+    },
+    "px": {
+      "class": "gap-px",
+      "property": "gap: 1px;"
+    },
+    "x-px": {
+      "class": "gap-x-px",
+      "property": "column-gap: 1px;"
+    },
+    "y-px": {
+      "class": "gap-y-px",
+      "property": "row-gap: 1px;"
+    },
+    "0.5": {
+      "class": "gap-0.5",
+      "property": "gap: 0.125rem; /* 2px */"
+    },
+    "x-0.5": {
+      "class": "gap-x-0.5",
+      "property": "column-gap: 0.125rem; /* 2px */"
+    },
+    "y-0.5": {
+      "class": "gap-y-0.5",
+      "property": "row-gap: 0.125rem; /* 2px */"
+    },
+    "1": {
+      "class": "gap-1",
+      "property": "gap: 0.25rem; /* 4px */"
+    },
+    "x-1": {
+      "class": "gap-x-1",
+      "property": "column-gap: 0.25rem; /* 4px */"
+    },
+    "y-1": {
+      "class": "gap-y-1",
+      "property": "row-gap: 0.25rem; /* 4px */"
+    },
+    "1.5": {
+      "class": "gap-1.5",
+      "property": "gap: 0.375rem; /* 6px */"
+    },
+    "x-1.5": {
+      "class": "gap-x-1.5",
+      "property": "column-gap: 0.375rem; /* 6px */"
+    },
+    "y-1.5": {
+      "class": "gap-y-1.5",
+      "property": "row-gap: 0.375rem; /* 6px */"
+    },
+    "2": {
+      "class": "gap-2",
+      "property": "gap: 0.5rem; /* 8px */"
+    },
+    "x-2": {
+      "class": "gap-x-2",
+      "property": "column-gap: 0.5rem; /* 8px */"
+    },
+    "y-2": {
+      "class": "gap-y-2",
+      "property": "row-gap: 0.5rem; /* 8px */"
+    },
+    "2.5": {
+      "class": "gap-2.5",
+      "property": "gap: 0.625rem; /* 10px */"
+    },
+    "x-2.5": {
+      "class": "gap-x-2.5",
+      "property": "column-gap: 0.625rem; /* 10px */"
+    },
+    "y-2.5": {
+      "class": "gap-y-2.5",
+      "property": "row-gap: 0.625rem; /* 10px */"
+    },
+    "3": {
+      "class": "gap-3",
+      "property": "gap: 0.75rem; /* 12px */"
+    },
+    "x-3": {
+      "class": "gap-x-3",
+      "property": "column-gap: 0.75rem; /* 12px */"
+    },
+    "y-3": {
+      "class": "gap-y-3",
+      "property": "row-gap: 0.75rem; /* 12px */"
+    },
+    "3.5": {
+      "class": "gap-3.5",
+      "property": "gap: 0.875rem; /* 14px */"
+    },
+    "x-3.5": {
+      "class": "gap-x-3.5",
+      "property": "column-gap: 0.875rem; /* 14px */"
+    },
+    "y-3.5": {
+      "class": "gap-y-3.5",
+      "property": "row-gap: 0.875rem; /* 14px */"
+    },
+    "4": {
+      "class": "gap-4",
+      "property": "gap: 1rem; /* 16px */"
+    },
+    "x-4": {
+      "class": "gap-x-4",
+      "property": "column-gap: 1rem; /* 16px */"
+    },
+    "y-4": {
+      "class": "gap-y-4",
+      "property": "row-gap: 1rem; /* 16px */"
+    },
+    "5": {
+      "class": "gap-5",
+      "property": "gap: 1.25rem; /* 20px */"
+    },
+    "x-5": {
+      "class": "gap-x-5",
+      "property": "column-gap: 1.25rem; /* 20px */"
+    },
+    "y-5": {
+      "class": "gap-y-5",
+      "property": "row-gap: 1.25rem; /* 20px */"
+    },
+    "6": {
+      "class": "gap-6",
+      "property": "gap: 1.5rem; /* 24px */"
+    },
+    "x-6": {
+      "class": "gap-x-6",
+      "property": "column-gap: 1.5rem; /* 24px */"
+    },
+    "y-6": {
+      "class": "gap-y-6",
+      "property": "row-gap: 1.5rem; /* 24px */"
+    },
+    "7": {
+      "class": "gap-7",
+      "property": "gap: 1.75rem; /* 28px */"
+    },
+    "x-7": {
+      "class": "gap-x-7",
+      "property": "column-gap: 1.75rem; /* 28px */"
+    },
+    "y-7": {
+      "class": "gap-y-7",
+      "property": "row-gap: 1.75rem; /* 28px */"
+    },
+    "8": {
+      "class": "gap-8",
+      "property": "gap: 2rem; /* 32px */"
+    },
+    "x-8": {
+      "class": "gap-x-8",
+      "property": "column-gap: 2rem; /* 32px */"
+    },
+    "y-8": {
+      "class": "gap-y-8",
+      "property": "row-gap: 2rem; /* 32px */"
+    },
+    "9": {
+      "class": "gap-9",
+      "property": "gap: 2.25rem; /* 36px */"
+    },
+    "x-9": {
+      "class": "gap-x-9",
+      "property": "column-gap: 2.25rem; /* 36px */"
+    },
+    "y-9": {
+      "class": "gap-y-9",
+      "property": "row-gap: 2.25rem; /* 36px */"
+    },
+    "10": {
+      "class": "gap-10",
+      "property": "gap: 2.5rem; /* 40px */"
+    },
+    "x-10": {
+      "class": "gap-x-10",
+      "property": "column-gap: 2.5rem; /* 40px */"
+    },
+    "y-10": {
+      "class": "gap-y-10",
+      "property": "row-gap: 2.5rem; /* 40px */"
+    },
+    "11": {
+      "class": "gap-11",
+      "property": "gap: 2.75rem; /* 44px */"
+    },
+    "x-11": {
+      "class": "gap-x-11",
+      "property": "column-gap: 2.75rem; /* 44px */"
+    },
+    "y-11": {
+      "class": "gap-y-11",
+      "property": "row-gap: 2.75rem; /* 44px */"
+    },
+    "12": {
+      "class": "gap-12",
+      "property": "gap: 3rem; /* 48px */"
+    },
+    "x-12": {
+      "class": "gap-x-12",
+      "property": "column-gap: 3rem; /* 48px */"
+    },
+    "y-12": {
+      "class": "gap-y-12",
+      "property": "row-gap: 3rem; /* 48px */"
+    },
+    "14": {
+      "class": "gap-14",
+      "property": "gap: 3.5rem; /* 56px */"
+    },
+    "x-14": {
+      "class": "gap-x-14",
+      "property": "column-gap: 3.5rem; /* 56px */"
+    },
+    "y-14": {
+      "class": "gap-y-14",
+      "property": "row-gap: 3.5rem; /* 56px */"
+    },
+    "16": {
+      "class": "gap-16",
+      "property": "gap: 4rem; /* 64px */"
+    },
+    "x-16": {
+      "class": "gap-x-16",
+      "property": "column-gap: 4rem; /* 64px */"
+    },
+    "y-16": {
+      "class": "gap-y-16",
+      "property": "row-gap: 4rem; /* 64px */"
+    },
+    "20": {
+      "class": "gap-20",
+      "property": "gap: 5rem; /* 80px */"
+    },
+    "x-20": {
+      "class": "gap-x-20",
+      "property": "column-gap: 5rem; /* 80px */"
+    },
+    "y-20": {
+      "class": "gap-y-20",
+      "property": "row-gap: 5rem; /* 80px */"
+    },
+    "24": {
+      "class": "gap-24",
+      "property": "gap: 6rem; /* 96px */"
+    },
+    "x-24": {
+      "class": "gap-x-24",
+      "property": "column-gap: 6rem; /* 96px */"
+    },
+    "y-24": {
+      "class": "gap-y-24",
+      "property": "row-gap: 6rem; /* 96px */"
+    },
+    "28": {
+      "class": "gap-28",
+      "property": "gap: 7rem; /* 112px */"
+    },
+    "x-28": {
+      "class": "gap-x-28",
+      "property": "column-gap: 7rem; /* 112px */"
+    },
+    "y-28": {
+      "class": "gap-y-28",
+      "property": "row-gap: 7rem; /* 112px */"
+    },
+    "32": {
+      "class": "gap-32",
+      "property": "gap: 8rem; /* 128px */"
+    },
+    "x-32": {
+      "class": "gap-x-32",
+      "property": "column-gap: 8rem; /* 128px */"
+    },
+    "y-32": {
+      "class": "gap-y-32",
+      "property": "row-gap: 8rem; /* 128px */"
+    },
+    "36": {
+      "class": "gap-36",
+      "property": "gap: 9rem; /* 144px */"
+    },
+    "x-36": {
+      "class": "gap-x-36",
+      "property": "column-gap: 9rem; /* 144px */"
+    },
+    "y-36": {
+      "class": "gap-y-36",
+      "property": "row-gap: 9rem; /* 144px */"
+    },
+    "40": {
+      "class": "gap-40",
+      "property": "gap: 10rem; /* 160px */"
+    },
+    "x-40": {
+      "class": "gap-x-40",
+      "property": "column-gap: 10rem; /* 160px */"
+    },
+    "y-40": {
+      "class": "gap-y-40",
+      "property": "row-gap: 10rem; /* 160px */"
+    },
+    "44": {
+      "class": "gap-44",
+      "property": "gap: 11rem; /* 176px */"
+    },
+    "x-44": {
+      "class": "gap-x-44",
+      "property": "column-gap: 11rem; /* 176px */"
+    },
+    "y-44": {
+      "class": "gap-y-44",
+      "property": "row-gap: 11rem; /* 176px */"
+    },
+    "48": {
+      "class": "gap-48",
+      "property": "gap: 12rem; /* 192px */"
+    },
+    "x-48": {
+      "class": "gap-x-48",
+      "property": "column-gap: 12rem; /* 192px */"
+    },
+    "y-48": {
+      "class": "gap-y-48",
+      "property": "row-gap: 12rem; /* 192px */"
+    },
+    "52": {
+      "class": "gap-52",
+      "property": "gap: 13rem; /* 208px */"
+    },
+    "x-52": {
+      "class": "gap-x-52",
+      "property": "column-gap: 13rem; /* 208px */"
+    },
+    "y-52": {
+      "class": "gap-y-52",
+      "property": "row-gap: 13rem; /* 208px */"
+    },
+    "56": {
+      "class": "gap-56",
+      "property": "gap: 14rem; /* 224px */"
+    },
+    "x-56": {
+      "class": "gap-x-56",
+      "property": "column-gap: 14rem; /* 224px */"
+    },
+    "y-56": {
+      "class": "gap-y-56",
+      "property": "row-gap: 14rem; /* 224px */"
+    },
+    "60": {
+      "class": "gap-60",
+      "property": "gap: 15rem; /* 240px */"
+    },
+    "x-60": {
+      "class": "gap-x-60",
+      "property": "column-gap: 15rem; /* 240px */"
+    },
+    "y-60": {
+      "class": "gap-y-60",
+      "property": "row-gap: 15rem; /* 240px */"
+    },
+    "64": {
+      "class": "gap-64",
+      "property": "gap: 16rem; /* 256px */"
+    },
+    "x-64": {
+      "class": "gap-x-64",
+      "property": "column-gap: 16rem; /* 256px */"
+    },
+    "y-64": {
+      "class": "gap-y-64",
+      "property": "row-gap: 16rem; /* 256px */"
+    },
+    "72": {
+      "class": "gap-72",
+      "property": "gap: 18rem; /* 288px */"
+    },
+    "x-72": {
+      "class": "gap-x-72",
+      "property": "column-gap: 18rem; /* 288px */"
+    },
+    "y-72": {
+      "class": "gap-y-72",
+      "property": "row-gap: 18rem; /* 288px */"
+    },
+    "80": {
+      "class": "gap-80",
+      "property": "gap: 20rem; /* 320px */"
+    },
+    "x-80": {
+      "class": "gap-x-80",
+      "property": "column-gap: 20rem; /* 320px */"
+    },
+    "y-80": {
+      "class": "gap-y-80",
+      "property": "row-gap: 20rem; /* 320px */"
+    },
+    "96": {
+      "class": "gap-96",
+      "property": "gap: 24rem; /* 384px */"
+    },
+    "x-96": {
+      "class": "gap-x-96",
+      "property": "column-gap: 24rem; /* 384px */"
+    },
+    "y-96": {
+      "class": "gap-y-96",
+      "property": "row-gap: 24rem; /* 384px */"
+    }
+  }
+}

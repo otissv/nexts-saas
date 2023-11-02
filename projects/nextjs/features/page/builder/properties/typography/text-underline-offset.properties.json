@@ -1,0 +1,28 @@
+{
+  "textUnderlineOffset": {
+    "offset-auto": {
+      "class": "underline-offset-auto",
+      "property": "text-underline-offset: auto;"
+    },
+    "offset-0": {
+      "class": "underline-offset-0",
+      "property": "text-underline-offset: 0px;"
+    },
+    "offset-1": {
+      "class": "underline-offset-1",
+      "property": "text-underline-offset: 1px;"
+    },
+    "offset-2": {
+      "class": "underline-offset-2",
+      "property": "text-underline-offset: 2px;"
+    },
+    "offset-4": {
+      "class": "underline-offset-4",
+      "property": "text-underline-offset: 4px;"
+    },
+    "offset-8": {
+      "class": "underline-offset-8",
+      "property": "text-underline-offset: 8px;"
+    }
+  }
+}

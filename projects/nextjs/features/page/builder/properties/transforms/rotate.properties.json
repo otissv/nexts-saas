@@ -1,0 +1,40 @@
+{
+  "rotate": {
+    "0": {
+      "class": "rotate-0",
+      "property": "transform: rotate(0deg);"
+    },
+    "1": {
+      "class": "rotate-1",
+      "property": "transform: rotate(1deg);"
+    },
+    "2": {
+      "class": "rotate-2",
+      "property": "transform: rotate(2deg);"
+    },
+    "3": {
+      "class": "rotate-3",
+      "property": "transform: rotate(3deg);"
+    },
+    "6": {
+      "class": "rotate-6",
+      "property": "transform: rotate(6deg);"
+    },
+    "12": {
+      "class": "rotate-12",
+      "property": "transform: rotate(12deg);"
+    },
+    "45": {
+      "class": "rotate-45",
+      "property": "transform: rotate(45deg);"
+    },
+    "90": {
+      "class": "rotate-90",
+      "property": "transform: rotate(90deg);"
+    },
+    "180": {
+      "class": "rotate-180",
+      "property": "transform: rotate(180deg);"
+    }
+  }
+}

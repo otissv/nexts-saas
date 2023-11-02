@@ -1,0 +1,20 @@
+{
+  "userSelect": {
+    "none": {
+      "class": "select-none",
+      "property": "user-select: none;"
+    },
+    "text": {
+      "class": "select-text",
+      "property": "user-select: text;"
+    },
+    "all": {
+      "class": "select-all",
+      "property": "user-select: all;"
+    },
+    "auto": {
+      "class": "select-auto",
+      "property": "user-select: auto;"
+    }
+  }
+}

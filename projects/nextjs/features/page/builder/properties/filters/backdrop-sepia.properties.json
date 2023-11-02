@@ -1,0 +1,12 @@
+{
+  "backdropSepia": {
+    "sepia-0": {
+      "class": "backdrop-sepia-0",
+      "property": "backdrop-filter: sepia(0);"
+    },
+    "sepia": {
+      "class": "backdrop-sepia",
+      "property": "backdrop-filter: sepia(100%);"
+    }
+  }
+}

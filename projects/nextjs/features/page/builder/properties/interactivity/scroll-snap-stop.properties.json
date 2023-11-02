@@ -1,0 +1,12 @@
+{
+  "scrollSnapStop": {
+    "normal": {
+      "class": "snap-normal",
+      "property": "scroll-snap-stop: normal;"
+    },
+    "always": {
+      "class": "snap-always",
+      "property": "scroll-snap-stop: always;"
+    }
+  }
+}

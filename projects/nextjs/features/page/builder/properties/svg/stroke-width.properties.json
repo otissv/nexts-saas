@@ -1,0 +1,16 @@
+{
+  "strokeWidth": {
+    "0": {
+      "class": "stroke-0",
+      "property": "stroke-width: 0;"
+    },
+    "": {
+      "class": "stroke-1",
+      "property": "stroke-width: 1;"
+    },
+    "stroke-2": {
+      "class": "stroke-2",
+      "property": "stroke-width: 2;"
+    }
+  }
+}

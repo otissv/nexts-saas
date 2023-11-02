@@ -1,0 +1,56 @@
+{
+  "gridTemplateColumns": {
+    "1": {
+      "class": "grid-cols-1",
+      "property": "grid-template-columns: repeat(1, minmax(0, 1fr));"
+    },
+    "2": {
+      "class": "grid-cols-2",
+      "property": "grid-template-columns: repeat(2, minmax(0, 1fr));"
+    },
+    "3": {
+      "class": "grid-cols-3",
+      "property": "grid-template-columns: repeat(3, minmax(0, 1fr));"
+    },
+    "4": {
+      "class": "grid-cols-4",
+      "property": "grid-template-columns: repeat(4, minmax(0, 1fr));"
+    },
+    "5": {
+      "class": "grid-cols-5",
+      "property": "grid-template-columns: repeat(5, minmax(0, 1fr));"
+    },
+    "6": {
+      "class": "grid-cols-6",
+      "property": "grid-template-columns: repeat(6, minmax(0, 1fr));"
+    },
+    "7": {
+      "class": "grid-cols-7",
+      "property": "grid-template-columns: repeat(7, minmax(0, 1fr));"
+    },
+    "8": {
+      "class": "grid-cols-8",
+      "property": "grid-template-columns: repeat(8, minmax(0, 1fr));"
+    },
+    "9": {
+      "class": "grid-cols-9",
+      "property": "grid-template-columns: repeat(9, minmax(0, 1fr));"
+    },
+    "10": {
+      "class": "grid-cols-10",
+      "property": "grid-template-columns: repeat(10, minmax(0, 1fr));"
+    },
+    "11": {
+      "class": "grid-cols-11",
+      "property": "grid-template-columns: repeat(11, minmax(0, 1fr));"
+    },
+    "12": {
+      "class": "grid-cols-12",
+      "property": "grid-template-columns: repeat(12, minmax(0, 1fr));"
+    },
+    "none": {
+      "class": "grid-cols-none",
+      "property": "grid-template-columns: none;"
+    }
+  }
+}

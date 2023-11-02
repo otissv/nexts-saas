@@ -1,0 +1,24 @@
+{
+  "animation": {
+    "none": {
+      "class": "animate-none",
+      "property": "animation: none;"
+    },
+    "pin": {
+      "class": "animate-spin",
+      "property": "animation: spin 1s linear infinite;\n\n@keyframes spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}"
+    },
+    "animate-ping": {
+      "class": "animate-ping",
+      "property": "animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;\n\n@keyframes ping {\n  75%, 100% {\n    transform: scale(2);\n    opacity: 0;\n  }\n}"
+    },
+    "animate-pulse": {
+      "class": "animate-pulse",
+      "property": "animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;\n\n@keyframes pulse {\n  0%, 100% {\n    opacity: 1;\n  }\n  50% {\n    opacity: .5;\n  }\n}"
+    },
+    "animate-bounce": {
+      "class": "animate-bounce",
+      "property": "animation: bounce 1s infinite;\n\n@keyframes bounce {\n  0%, 100% {\n    transform: translateY(-25%);\n    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);\n  }\n  50% {\n    transform: translateY(0);\n    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);\n  }\n}"
+    }
+  }
+}

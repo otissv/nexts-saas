@@ -1,0 +1,12 @@
+{
+  "tableLayout": {
+    "auto": {
+      "class": "table-auto",
+      "property": "table-layout: auto;"
+    },
+    "fixed": {
+      "class": "table-fixed",
+      "property": "table-layout: fixed;"
+    }
+  }
+}

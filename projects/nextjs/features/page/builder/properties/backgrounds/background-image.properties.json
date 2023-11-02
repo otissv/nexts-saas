@@ -1,0 +1,40 @@
+{
+  "backgroundImage": {
+    "none": {
+      "class": "bg-none",
+      "property": "background-image: none;"
+    },
+    "gradient-to-t": {
+      "class": "bg-gradient-to-t",
+      "property": "background-image: linear-gradient(to top, var(--tw-gradient-stops));"
+    },
+    "gradient-to-tr": {
+      "class": "bg-gradient-to-tr",
+      "property": "background-image: linear-gradient(to top right, var(--tw-gradient-stops));"
+    },
+    "gradient-to-r": {
+      "class": "bg-gradient-to-r",
+      "property": "background-image: linear-gradient(to right, var(--tw-gradient-stops));"
+    },
+    "gradient-to-br": {
+      "class": "bg-gradient-to-br",
+      "property": "background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));"
+    },
+    "gradient-to-b": {
+      "class": "bg-gradient-to-b",
+      "property": "background-image: linear-gradient(to bottom, var(--tw-gradient-stops));"
+    },
+    "gradient-to-bl": {
+      "class": "bg-gradient-to-bl",
+      "property": "background-image: linear-gradient(to bottom left, var(--tw-gradient-stops));"
+    },
+    "gradient-to-l": {
+      "class": "bg-gradient-to-l",
+      "property": "background-image: linear-gradient(to left, var(--tw-gradient-stops));"
+    },
+    "gradient-to-tl": {
+      "class": "bg-gradient-to-tl",
+      "property": "background-image: linear-gradient(to top left, var(--tw-gradient-stops));"
+    }
+  }
+}

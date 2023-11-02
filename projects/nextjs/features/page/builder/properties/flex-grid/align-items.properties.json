@@ -1,0 +1,24 @@
+{
+  "alignItems": {
+    "start": {
+      "class": "items-start",
+      "property": "align-items: flex-start;"
+    },
+    "end": {
+      "class": "items-end",
+      "property": "align-items: flex-end;"
+    },
+    "center": {
+      "class": "items-center",
+      "property": "align-items: center;"
+    },
+    "baseline": {
+      "class": "items-baseline",
+      "property": "align-items: baseline;"
+    },
+    "stretch": {
+      "class": "items-stretch",
+      "property": "align-items: stretch;"
+    }
+  }
+}

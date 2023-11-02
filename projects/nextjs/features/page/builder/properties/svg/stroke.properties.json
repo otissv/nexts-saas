@@ -1,0 +1,996 @@
+{
+  "stroke": {
+    "none": {
+      "class": "stroke-none",
+      "property": "stroke: none;"
+    },
+    "inherit": {
+      "class": "stroke-inherit",
+      "property": "stroke: inherit;"
+    },
+    "current": {
+      "class": "stroke-current",
+      "property": "stroke: currentColor;"
+    },
+    "transparent": {
+      "class": "stroke-transparent",
+      "property": "stroke: transparent;"
+    },
+    "black": {
+      "class": "stroke-black",
+      "property": "stroke: #000;"
+    },
+    "white": {
+      "class": "stroke-white",
+      "property": "stroke: #fff;"
+    },
+    "slate-50": {
+      "class": "stroke-slate-50",
+      "property": "stroke: #f8fafc;"
+    },
+    "slate-100": {
+      "class": "stroke-slate-100",
+      "property": "stroke: #f1f5f9;"
+    },
+    "slate-200": {
+      "class": "stroke-slate-200",
+      "property": "stroke: #e2e8f0;"
+    },
+    "slate-300": {
+      "class": "stroke-slate-300",
+      "property": "stroke: #cbd5e1;"
+    },
+    "slate-400": {
+      "class": "stroke-slate-400",
+      "property": "stroke: #94a3b8;"
+    },
+    "slate-500": {
+      "class": "stroke-slate-500",
+      "property": "stroke: #64748b;"
+    },
+    "slate-600": {
+      "class": "stroke-slate-600",
+      "property": "stroke: #475569;"
+    },
+    "slate-700": {
+      "class": "stroke-slate-700",
+      "property": "stroke: #334155;"
+    },
+    "slate-800": {
+      "class": "stroke-slate-800",
+      "property": "stroke: #1e293b;"
+    },
+    "slate-900": {
+      "class": "stroke-slate-900",
+      "property": "stroke: #0f172a;"
+    },
+    "slate-950": {
+      "class": "stroke-slate-950",
+      "property": "stroke: #020617;"
+    },
+    "gray-50": {
+      "class": "stroke-gray-50",
+      "property": "stroke: #f9fafb;"
+    },
+    "gray-100": {
+      "class": "stroke-gray-100",
+      "property": "stroke: #f3f4f6;"
+    },
+    "gray-200": {
+      "class": "stroke-gray-200",
+      "property": "stroke: #e5e7eb;"
+    },
+    "gray-300": {
+      "class": "stroke-gray-300",
+      "property": "stroke: #d1d5db;"
+    },
+    "gray-400": {
+      "class": "stroke-gray-400",
+      "property": "stroke: #9ca3af;"
+    },
+    "gray-500": {
+      "class": "stroke-gray-500",
+      "property": "stroke: #6b7280;"
+    },
+    "gray-600": {
+      "class": "stroke-gray-600",
+      "property": "stroke: #4b5563;"
+    },
+    "gray-700": {
+      "class": "stroke-gray-700",
+      "property": "stroke: #374151;"
+    },
+    "gray-800": {
+      "class": "stroke-gray-800",
+      "property": "stroke: #1f2937;"
+    },
+    "gray-900": {
+      "class": "stroke-gray-900",
+      "property": "stroke: #111827;"
+    },
+    "gray-950": {
+      "class": "stroke-gray-950",
+      "property": "stroke: #030712;"
+    },
+    "zinc-50": {
+      "class": "stroke-zinc-50",
+      "property": "stroke: #fafafa;"
+    },
+    "zinc-100": {
+      "class": "stroke-zinc-100",
+      "property": "stroke: #f4f4f5;"
+    },
+    "zinc-200": {
+      "class": "stroke-zinc-200",
+      "property": "stroke: #e4e4e7;"
+    },
+    "zinc-300": {
+      "class": "stroke-zinc-300",
+      "property": "stroke: #d4d4d8;"
+    },
+    "zinc-400": {
+      "class": "stroke-zinc-400",
+      "property": "stroke: #a1a1aa;"
+    },
+    "zinc-500": {
+      "class": "stroke-zinc-500",
+      "property": "stroke: #71717a;"
+    },
+    "zinc-600": {
+      "class": "stroke-zinc-600",
+      "property": "stroke: #52525b;"
+    },
+    "zinc-700": {
+      "class": "stroke-zinc-700",
+      "property": "stroke: #3f3f46;"
+    },
+    "zinc-800": {
+      "class": "stroke-zinc-800",
+      "property": "stroke: #27272a;"
+    },
+    "zinc-900": {
+      "class": "stroke-zinc-900",
+      "property": "stroke: #18181b;"
+    },
+    "zinc-950": {
+      "class": "stroke-zinc-950",
+      "property": "stroke: #09090b;"
+    },
+    "neutral-50": {
+      "class": "stroke-neutral-50",
+      "property": "stroke: #fafafa;"
+    },
+    "neutral-100": {
+      "class": "stroke-neutral-100",
+      "property": "stroke: #f5f5f5;"
+    },
+    "neutral-200": {
+      "class": "stroke-neutral-200",
+      "property": "stroke: #e5e5e5;"
+    },
+    "neutral-300": {
+      "class": "stroke-neutral-300",
+      "property": "stroke: #d4d4d4;"
+    },
+    "neutral-400": {
+      "class": "stroke-neutral-400",
+      "property": "stroke: #a3a3a3;"
+    },
+    "neutral-500": {
+      "class": "stroke-neutral-500",
+      "property": "stroke: #737373;"
+    },
+    "neutral-600": {
+      "class": "stroke-neutral-600",
+      "property": "stroke: #525252;"
+    },
+    "neutral-700": {
+      "class": "stroke-neutral-700",
+      "property": "stroke: #404040;"
+    },
+    "neutral-800": {
+      "class": "stroke-neutral-800",
+      "property": "stroke: #262626;"
+    },
+    "neutral-900": {
+      "class": "stroke-neutral-900",
+      "property": "stroke: #171717;"
+    },
+    "neutral-950": {
+      "class": "stroke-neutral-950",
+      "property": "stroke: #0a0a0a;"
+    },
+    "stone-50": {
+      "class": "stroke-stone-50",
+      "property": "stroke: #fafaf9;"
+    },
+    "stone-100": {
+      "class": "stroke-stone-100",
+      "property": "stroke: #f5f5f4;"
+    },
+    "stone-200": {
+      "class": "stroke-stone-200",
+      "property": "stroke: #e7e5e4;"
+    },
+    "stone-300": {
+      "class": "stroke-stone-300",
+      "property": "stroke: #d6d3d1;"
+    },
+    "stone-400": {
+      "class": "stroke-stone-400",
+      "property": "stroke: #a8a29e;"
+    },
+    "stone-500": {
+      "class": "stroke-stone-500",
+      "property": "stroke: #78716c;"
+    },
+    "stone-600": {
+      "class": "stroke-stone-600",
+      "property": "stroke: #57534e;"
+    },
+    "stone-700": {
+      "class": "stroke-stone-700",
+      "property": "stroke: #44403c;"
+    },
+    "stone-800": {
+      "class": "stroke-stone-800",
+      "property": "stroke: #292524;"
+    },
+    "stone-900": {
+      "class": "stroke-stone-900",
+      "property": "stroke: #1c1917;"
+    },
+    "stone-950": {
+      "class": "stroke-stone-950",
+      "property": "stroke: #0c0a09;"
+    },
+    "red-50": {
+      "class": "stroke-red-50",
+      "property": "stroke: #fef2f2;"
+    },
+    "red-100": {
+      "class": "stroke-red-100",
+      "property": "stroke: #fee2e2;"
+    },
+    "red-200": {
+      "class": "stroke-red-200",
+      "property": "stroke: #fecaca;"
+    },
+    "red-300": {
+      "class": "stroke-red-300",
+      "property": "stroke: #fca5a5;"
+    },
+    "red-400": {
+      "class": "stroke-red-400",
+      "property": "stroke: #f87171;"
+    },
+    "red-500": {
+      "class": "stroke-red-500",
+      "property": "stroke: #ef4444;"
+    },
+    "red-600": {
+      "class": "stroke-red-600",
+      "property": "stroke: #dc2626;"
+    },
+    "red-700": {
+      "class": "stroke-red-700",
+      "property": "stroke: #b91c1c;"
+    },
+    "red-800": {
+      "class": "stroke-red-800",
+      "property": "stroke: #991b1b;"
+    },
+    "red-900": {
+      "class": "stroke-red-900",
+      "property": "stroke: #7f1d1d;"
+    },
+    "red-950": {
+      "class": "stroke-red-950",
+      "property": "stroke: #450a0a;"
+    },
+    "orange-50": {
+      "class": "stroke-orange-50",
+      "property": "stroke: #fff7ed;"
+    },
+    "orange-100": {
+      "class": "stroke-orange-100",
+      "property": "stroke: #ffedd5;"
+    },
+    "orange-200": {
+      "class": "stroke-orange-200",
+      "property": "stroke: #fed7aa;"
+    },
+    "orange-300": {
+      "class": "stroke-orange-300",
+      "property": "stroke: #fdba74;"
+    },
+    "orange-400": {
+      "class": "stroke-orange-400",
+      "property": "stroke: #fb923c;"
+    },
+    "orange-500": {
+      "class": "stroke-orange-500",
+      "property": "stroke: #f97316;"
+    },
+    "orange-600": {
+      "class": "stroke-orange-600",
+      "property": "stroke: #ea580c;"
+    },
+    "orange-700": {
+      "class": "stroke-orange-700",
+      "property": "stroke: #c2410c;"
+    },
+    "orange-800": {
+      "class": "stroke-orange-800",
+      "property": "stroke: #9a3412;"
+    },
+    "orange-900": {
+      "class": "stroke-orange-900",
+      "property": "stroke: #7c2d12;"
+    },
+    "orange-950": {
+      "class": "stroke-orange-950",
+      "property": "stroke: #431407;"
+    },
+    "amber-50": {
+      "class": "stroke-amber-50",
+      "property": "stroke: #fffbeb;"
+    },
+    "amber-100": {
+      "class": "stroke-amber-100",
+      "property": "stroke: #fef3c7;"
+    },
+    "amber-200": {
+      "class": "stroke-amber-200",
+      "property": "stroke: #fde68a;"
+    },
+    "amber-300": {
+      "class": "stroke-amber-300",
+      "property": "stroke: #fcd34d;"
+    },
+    "amber-400": {
+      "class": "stroke-amber-400",
+      "property": "stroke: #fbbf24;"
+    },
+    "amber-500": {
+      "class": "stroke-amber-500",
+      "property": "stroke: #f59e0b;"
+    },
+    "amber-600": {
+      "class": "stroke-amber-600",
+      "property": "stroke: #d97706;"
+    },
+    "amber-700": {
+      "class": "stroke-amber-700",
+      "property": "stroke: #b45309;"
+    },
+    "amber-800": {
+      "class": "stroke-amber-800",
+      "property": "stroke: #92400e;"
+    },
+    "amber-900": {
+      "class": "stroke-amber-900",
+      "property": "stroke: #78350f;"
+    },
+    "amber-950": {
+      "class": "stroke-amber-950",
+      "property": "stroke: #451a03;"
+    },
+    "yellow-50": {
+      "class": "stroke-yellow-50",
+      "property": "stroke: #fefce8;"
+    },
+    "yellow-100": {
+      "class": "stroke-yellow-100",
+      "property": "stroke: #fef9c3;"
+    },
+    "yellow-200": {
+      "class": "stroke-yellow-200",
+      "property": "stroke: #fef08a;"
+    },
+    "yellow-300": {
+      "class": "stroke-yellow-300",
+      "property": "stroke: #fde047;"
+    },
+    "yellow-400": {
+      "class": "stroke-yellow-400",
+      "property": "stroke: #facc15;"
+    },
+    "yellow-500": {
+      "class": "stroke-yellow-500",
+      "property": "stroke: #eab308;"
+    },
+    "yellow-600": {
+      "class": "stroke-yellow-600",
+      "property": "stroke: #ca8a04;"
+    },
+    "yellow-700": {
+      "class": "stroke-yellow-700",
+      "property": "stroke: #a16207;"
+    },
+    "yellow-800": {
+      "class": "stroke-yellow-800",
+      "property": "stroke: #854d0e;"
+    },
+    "yellow-900": {
+      "class": "stroke-yellow-900",
+      "property": "stroke: #713f12;"
+    },
+    "yellow-950": {
+      "class": "stroke-yellow-950",
+      "property": "stroke: #422006;"
+    },
+    "lime-50": {
+      "class": "stroke-lime-50",
+      "property": "stroke: #f7fee7;"
+    },
+    "lime-100": {
+      "class": "stroke-lime-100",
+      "property": "stroke: #ecfccb;"
+    },
+    "lime-200": {
+      "class": "stroke-lime-200",
+      "property": "stroke: #d9f99d;"
+    },
+    "lime-300": {
+      "class": "stroke-lime-300",
+      "property": "stroke: #bef264;"
+    },
+    "lime-400": {
+      "class": "stroke-lime-400",
+      "property": "stroke: #a3e635;"
+    },
+    "lime-500": {
+      "class": "stroke-lime-500",
+      "property": "stroke: #84cc16;"
+    },
+    "lime-600": {
+      "class": "stroke-lime-600",
+      "property": "stroke: #65a30d;"
+    },
+    "lime-700": {
+      "class": "stroke-lime-700",
+      "property": "stroke: #4d7c0f;"
+    },
+    "lime-800": {
+      "class": "stroke-lime-800",
+      "property": "stroke: #3f6212;"
+    },
+    "lime-900": {
+      "class": "stroke-lime-900",
+      "property": "stroke: #365314;"
+    },
+    "lime-950": {
+      "class": "stroke-lime-950",
+      "property": "stroke: #1a2e05;"
+    },
+    "green-50": {
+      "class": "stroke-green-50",
+      "property": "stroke: #f0fdf4;"
+    },
+    "green-100": {
+      "class": "stroke-green-100",
+      "property": "stroke: #dcfce7;"
+    },
+    "green-200": {
+      "class": "stroke-green-200",
+      "property": "stroke: #bbf7d0;"
+    },
+    "green-300": {
+      "class": "stroke-green-300",
+      "property": "stroke: #86efac;"
+    },
+    "green-400": {
+      "class": "stroke-green-400",
+      "property": "stroke: #4ade80;"
+    },
+    "green-500": {
+      "class": "stroke-green-500",
+      "property": "stroke: #22c55e;"
+    },
+    "green-600": {
+      "class": "stroke-green-600",
+      "property": "stroke: #16a34a;"
+    },
+    "green-700": {
+      "class": "stroke-green-700",
+      "property": "stroke: #15803d;"
+    },
+    "green-800": {
+      "class": "stroke-green-800",
+      "property": "stroke: #166534;"
+    },
+    "green-900": {
+      "class": "stroke-green-900",
+      "property": "stroke: #14532d;"
+    },
+    "green-950": {
+      "class": "stroke-green-950",
+      "property": "stroke: #052e16;"
+    },
+    "emerald-50": {
+      "class": "stroke-emerald-50",
+      "property": "stroke: #ecfdf5;"
+    },
+    "emerald-100": {
+      "class": "stroke-emerald-100",
+      "property": "stroke: #d1fae5;"
+    },
+    "emerald-200": {
+      "class": "stroke-emerald-200",
+      "property": "stroke: #a7f3d0;"
+    },
+    "emerald-300": {
+      "class": "stroke-emerald-300",
+      "property": "stroke: #6ee7b7;"
+    },
+    "emerald-400": {
+      "class": "stroke-emerald-400",
+      "property": "stroke: #34d399;"
+    },
+    "emerald-500": {
+      "class": "stroke-emerald-500",
+      "property": "stroke: #10b981;"
+    },
+    "emerald-600": {
+      "class": "stroke-emerald-600",
+      "property": "stroke: #059669;"
+    },
+    "emerald-700": {
+      "class": "stroke-emerald-700",
+      "property": "stroke: #047857;"
+    },
+    "emerald-800": {
+      "class": "stroke-emerald-800",
+      "property": "stroke: #065f46;"
+    },
+    "emerald-900": {
+      "class": "stroke-emerald-900",
+      "property": "stroke: #064e3b;"
+    },
+    "emerald-950": {
+      "class": "stroke-emerald-950",
+      "property": "stroke: #022c22;"
+    },
+    "teal-50": {
+      "class": "stroke-teal-50",
+      "property": "stroke: #f0fdfa;"
+    },
+    "teal-100": {
+      "class": "stroke-teal-100",
+      "property": "stroke: #ccfbf1;"
+    },
+    "teal-200": {
+      "class": "stroke-teal-200",
+      "property": "stroke: #99f6e4;"
+    },
+    "teal-300": {
+      "class": "stroke-teal-300",
+      "property": "stroke: #5eead4;"
+    },
+    "teal-400": {
+      "class": "stroke-teal-400",
+      "property": "stroke: #2dd4bf;"
+    },
+    "teal-500": {
+      "class": "stroke-teal-500",
+      "property": "stroke: #14b8a6;"
+    },
+    "teal-600": {
+      "class": "stroke-teal-600",
+      "property": "stroke: #0d9488;"
+    },
+    "teal-700": {
+      "class": "stroke-teal-700",
+      "property": "stroke: #0f766e;"
+    },
+    "teal-800": {
+      "class": "stroke-teal-800",
+      "property": "stroke: #115e59;"
+    },
+    "teal-900": {
+      "class": "stroke-teal-900",
+      "property": "stroke: #134e4a;"
+    },
+    "teal-950": {
+      "class": "stroke-teal-950",
+      "property": "stroke: #042f2e;"
+    },
+    "cyan-50": {
+      "class": "stroke-cyan-50",
+      "property": "stroke: #ecfeff;"
+    },
+    "cyan-100": {
+      "class": "stroke-cyan-100",
+      "property": "stroke: #cffafe;"
+    },
+    "cyan-200": {
+      "class": "stroke-cyan-200",
+      "property": "stroke: #a5f3fc;"
+    },
+    "cyan-300": {
+      "class": "stroke-cyan-300",
+      "property": "stroke: #67e8f9;"
+    },
+    "cyan-400": {
+      "class": "stroke-cyan-400",
+      "property": "stroke: #22d3ee;"
+    },
+    "cyan-500": {
+      "class": "stroke-cyan-500",
+      "property": "stroke: #06b6d4;"
+    },
+    "cyan-600": {
+      "class": "stroke-cyan-600",
+      "property": "stroke: #0891b2;"
+    },
+    "cyan-700": {
+      "class": "stroke-cyan-700",
+      "property": "stroke: #0e7490;"
+    },
+    "cyan-800": {
+      "class": "stroke-cyan-800",
+      "property": "stroke: #155e75;"
+    },
+    "cyan-900": {
+      "class": "stroke-cyan-900",
+      "property": "stroke: #164e63;"
+    },
+    "cyan-950": {
+      "class": "stroke-cyan-950",
+      "property": "stroke: #083344;"
+    },
+    "sky-50": {
+      "class": "stroke-sky-50",
+      "property": "stroke: #f0f9ff;"
+    },
+    "sky-100": {
+      "class": "stroke-sky-100",
+      "property": "stroke: #e0f2fe;"
+    },
+    "sky-200": {
+      "class": "stroke-sky-200",
+      "property": "stroke: #bae6fd;"
+    },
+    "sky-300": {
+      "class": "stroke-sky-300",
+      "property": "stroke: #7dd3fc;"
+    },
+    "sky-400": {
+      "class": "stroke-sky-400",
+      "property": "stroke: #38bdf8;"
+    },
+    "sky-500": {
+      "class": "stroke-sky-500",
+      "property": "stroke: #0ea5e9;"
+    },
+    "sky-600": {
+      "class": "stroke-sky-600",
+      "property": "stroke: #0284c7;"
+    },
+    "sky-700": {
+      "class": "stroke-sky-700",
+      "property": "stroke: #0369a1;"
+    },
+    "sky-800": {
+      "class": "stroke-sky-800",
+      "property": "stroke: #075985;"
+    },
+    "sky-900": {
+      "class": "stroke-sky-900",
+      "property": "stroke: #0c4a6e;"
+    },
+    "sky-950": {
+      "class": "stroke-sky-950",
+      "property": "stroke: #082f49;"
+    },
+    "blue-50": {
+      "class": "stroke-blue-50",
+      "property": "stroke: #eff6ff;"
+    },
+    "blue-100": {
+      "class": "stroke-blue-100",
+      "property": "stroke: #dbeafe;"
+    },
+    "blue-200": {
+      "class": "stroke-blue-200",
+      "property": "stroke: #bfdbfe;"
+    },
+    "blue-300": {
+      "class": "stroke-blue-300",
+      "property": "stroke: #93c5fd;"
+    },
+    "blue-400": {
+      "class": "stroke-blue-400",
+      "property": "stroke: #60a5fa;"
+    },
+    "blue-500": {
+      "class": "stroke-blue-500",
+      "property": "stroke: #3b82f6;"
+    },
+    "blue-600": {
+      "class": "stroke-blue-600",
+      "property": "stroke: #2563eb;"
+    },
+    "blue-700": {
+      "class": "stroke-blue-700",
+      "property": "stroke: #1d4ed8;"
+    },
+    "blue-800": {
+      "class": "stroke-blue-800",
+      "property": "stroke: #1e40af;"
+    },
+    "blue-900": {
+      "class": "stroke-blue-900",
+      "property": "stroke: #1e3a8a;"
+    },
+    "blue-950": {
+      "class": "stroke-blue-950",
+      "property": "stroke: #172554;"
+    },
+    "indigo-50": {
+      "class": "stroke-indigo-50",
+      "property": "stroke: #eef2ff;"
+    },
+    "indigo-100": {
+      "class": "stroke-indigo-100",
+      "property": "stroke: #e0e7ff;"
+    },
+    "indigo-200": {
+      "class": "stroke-indigo-200",
+      "property": "stroke: #c7d2fe;"
+    },
+    "indigo-300": {
+      "class": "stroke-indigo-300",
+      "property": "stroke: #a5b4fc;"
+    },
+    "indigo-400": {
+      "class": "stroke-indigo-400",
+      "property": "stroke: #818cf8;"
+    },
+    "indigo-500": {
+      "class": "stroke-indigo-500",
+      "property": "stroke: #6366f1;"
+    },
+    "indigo-600": {
+      "class": "stroke-indigo-600",
+      "property": "stroke: #4f46e5;"
+    },
+    "indigo-700": {
+      "class": "stroke-indigo-700",
+      "property": "stroke: #4338ca;"
+    },
+    "indigo-800": {
+      "class": "stroke-indigo-800",
+      "property": "stroke: #3730a3;"
+    },
+    "indigo-900": {
+      "class": "stroke-indigo-900",
+      "property": "stroke: #312e81;"
+    },
+    "indigo-950": {
+      "class": "stroke-indigo-950",
+      "property": "stroke: #1e1b4b;"
+    },
+    "violet-50": {
+      "class": "stroke-violet-50",
+      "property": "stroke: #f5f3ff;"
+    },
+    "violet-100": {
+      "class": "stroke-violet-100",
+      "property": "stroke: #ede9fe;"
+    },
+    "violet-200": {
+      "class": "stroke-violet-200",
+      "property": "stroke: #ddd6fe;"
+    },
+    "violet-300": {
+      "class": "stroke-violet-300",
+      "property": "stroke: #c4b5fd;"
+    },
+    "violet-400": {
+      "class": "stroke-violet-400",
+      "property": "stroke: #a78bfa;"
+    },
+    "violet-500": {
+      "class": "stroke-violet-500",
+      "property": "stroke: #8b5cf6;"
+    },
+    "violet-600": {
+      "class": "stroke-violet-600",
+      "property": "stroke: #7c3aed;"
+    },
+    "violet-700": {
+      "class": "stroke-violet-700",
+      "property": "stroke: #6d28d9;"
+    },
+    "violet-800": {
+      "class": "stroke-violet-800",
+      "property": "stroke: #5b21b6;"
+    },
+    "violet-900": {
+      "class": "stroke-violet-900",
+      "property": "stroke: #4c1d95;"
+    },
+    "violet-950": {
+      "class": "stroke-violet-950",
+      "property": "stroke: #2e1065;"
+    },
+    "purple-50": {
+      "class": "stroke-purple-50",
+      "property": "stroke: #faf5ff;"
+    },
+    "purple-100": {
+      "class": "stroke-purple-100",
+      "property": "stroke: #f3e8ff;"
+    },
+    "purple-200": {
+      "class": "stroke-purple-200",
+      "property": "stroke: #e9d5ff;"
+    },
+    "purple-300": {
+      "class": "stroke-purple-300",
+      "property": "stroke: #d8b4fe;"
+    },
+    "purple-400": {
+      "class": "stroke-purple-400",
+      "property": "stroke: #c084fc;"
+    },
+    "purple-500": {
+      "class": "stroke-purple-500",
+      "property": "stroke: #a855f7;"
+    },
+    "purple-600": {
+      "class": "stroke-purple-600",
+      "property": "stroke: #9333ea;"
+    },
+    "purple-700": {
+      "class": "stroke-purple-700",
+      "property": "stroke: #7e22ce;"
+    },
+    "purple-800": {
+      "class": "stroke-purple-800",
+      "property": "stroke: #6b21a8;"
+    },
+    "purple-900": {
+      "class": "stroke-purple-900",
+      "property": "stroke: #581c87;"
+    },
+    "purple-950": {
+      "class": "stroke-purple-950",
+      "property": "stroke: #3b0764;"
+    },
+    "fuchsia-50": {
+      "class": "stroke-fuchsia-50",
+      "property": "stroke: #fdf4ff;"
+    },
+    "fuchsia-100": {
+      "class": "stroke-fuchsia-100",
+      "property": "stroke: #fae8ff;"
+    },
+    "fuchsia-200": {
+      "class": "stroke-fuchsia-200",
+      "property": "stroke: #f5d0fe;"
+    },
+    "fuchsia-300": {
+      "class": "stroke-fuchsia-300",
+      "property": "stroke: #f0abfc;"
+    },
+    "fuchsia-400": {
+      "class": "stroke-fuchsia-400",
+      "property": "stroke: #e879f9;"
+    },
+    "fuchsia-500": {
+      "class": "stroke-fuchsia-500",
+      "property": "stroke: #d946ef;"
+    },
+    "fuchsia-600": {
+      "class": "stroke-fuchsia-600",
+      "property": "stroke: #c026d3;"
+    },
+    "fuchsia-700": {
+      "class": "stroke-fuchsia-700",
+      "property": "stroke: #a21caf;"
+    },
+    "fuchsia-800": {
+      "class": "stroke-fuchsia-800",
+      "property": "stroke: #86198f;"
+    },
+    "fuchsia-900": {
+      "class": "stroke-fuchsia-900",
+      "property": "stroke: #701a75;"
+    },
+    "fuchsia-950": {
+      "class": "stroke-fuchsia-950",
+      "property": "stroke: #4a044e;"
+    },
+    "pink-50": {
+      "class": "stroke-pink-50",
+      "property": "stroke: #fdf2f8;"
+    },
+    "pink-100": {
+      "class": "stroke-pink-100",
+      "property": "stroke: #fce7f3;"
+    },
+    "pink-200": {
+      "class": "stroke-pink-200",
+      "property": "stroke: #fbcfe8;"
+    },
+    "pink-300": {
+      "class": "stroke-pink-300",
+      "property": "stroke: #f9a8d4;"
+    },
+    "pink-400": {
+      "class": "stroke-pink-400",
+      "property": "stroke: #f472b6;"
+    },
+    "pink-500": {
+      "class": "stroke-pink-500",
+      "property": "stroke: #ec4899;"
+    },
+    "pink-600": {
+      "class": "stroke-pink-600",
+      "property": "stroke: #db2777;"
+    },
+    "pink-700": {
+      "class": "stroke-pink-700",
+      "property": "stroke: #be185d;"
+    },
+    "pink-800": {
+      "class": "stroke-pink-800",
+      "property": "stroke: #9d174d;"
+    },
+    "pink-900": {
+      "class": "stroke-pink-900",
+      "property": "stroke: #831843;"
+    },
+    "pink-950": {
+      "class": "stroke-pink-950",
+      "property": "stroke: #500724;"
+    },
+    "rose-50": {
+      "class": "stroke-rose-50",
+      "property": "stroke: #fff1f2;"
+    },
+    "rose-100": {
+      "class": "stroke-rose-100",
+      "property": "stroke: #ffe4e6;"
+    },
+    "rose-200": {
+      "class": "stroke-rose-200",
+      "property": "stroke: #fecdd3;"
+    },
+    "rose-300": {
+      "class": "stroke-rose-300",
+      "property": "stroke: #fda4af;"
+    },
+    "rose-400": {
+      "class": "stroke-rose-400",
+      "property": "stroke: #fb7185;"
+    },
+    "rose-500": {
+      "class": "stroke-rose-500",
+      "property": "stroke: #f43f5e;"
+    },
+    "rose-600": {
+      "class": "stroke-rose-600",
+      "property": "stroke: #e11d48;"
+    },
+    "rose-700": {
+      "class": "stroke-rose-700",
+      "property": "stroke: #be123c;"
+    },
+    "rose-800": {
+      "class": "stroke-rose-800",
+      "property": "stroke: #9f1239;"
+    },
+    "rose-900": {
+      "class": "stroke-rose-900",
+      "property": "stroke: #881337;"
+    },
+    "rose-950": {
+      "class": "stroke-rose-950",
+      "property": "stroke: #4c0519;"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "transitionDelay": {
+    "0": {
+      "class": "delay-0",
+      "property": "transition-delay: 0s;"
+    },
+    "75": {
+      "class": "delay-75",
+      "property": "transition-delay: 75ms;"
+    },
+    "100": {
+      "class": "delay-100",
+      "property": "transition-delay: 100ms;"
+    },
+    "150": {
+      "class": "delay-150",
+      "property": "transition-delay: 150ms;"
+    },
+    "200": {
+      "class": "delay-200",
+      "property": "transition-delay: 200ms;"
+    },
+    "300": {
+      "class": "delay-300",
+      "property": "transition-delay: 300ms;"
+    },
+    "500": {
+      "class": "delay-500",
+      "property": "transition-delay: 500ms;"
+    },
+    "700": {
+      "class": "delay-700",
+      "property": "transition-delay: 700ms;"
+    },
+    "1000": {
+      "class": "delay-1000",
+      "property": "transition-delay: 1000ms;"
+    }
+  }
+}

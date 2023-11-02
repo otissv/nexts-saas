@@ -1,0 +1,40 @@
+{
+  "fontWeight": {
+    "thin": {
+      "class": "font-thin",
+      "property": "font-weight: 100;"
+    },
+    "extralight": {
+      "class": "font-extralight",
+      "property": "font-weight: 200;"
+    },
+    "light": {
+      "class": "font-light",
+      "property": "font-weight: 300;"
+    },
+    "normal": {
+      "class": "font-normal",
+      "property": "font-weight: 400;"
+    },
+    "medium": {
+      "class": "font-medium",
+      "property": "font-weight: 500;"
+    },
+    "semibold": {
+      "class": "font-semibold",
+      "property": "font-weight: 600;"
+    },
+    "bold": {
+      "class": "font-bold",
+      "property": "font-weight: 700;"
+    },
+    "extrabold": {
+      "class": "font-extrabold",
+      "property": "font-weight: 800;"
+    },
+    "black": {
+      "class": "font-black",
+      "property": "font-weight: 900;"
+    }
+  }
+}

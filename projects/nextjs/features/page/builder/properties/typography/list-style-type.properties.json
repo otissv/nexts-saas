@@ -1,0 +1,16 @@
+{
+  "listStyleType": {
+    "none": {
+      "class": "list-none",
+      "property": "list-style-type: none;"
+    },
+    "li-disc": {
+      "class": "list-disc",
+      "property": "list-style-type: disc;"
+    },
+    "decimal": {
+      "class": "list-decimal",
+      "property": "list-style-type: decimal;"
+    }
+  }
+}

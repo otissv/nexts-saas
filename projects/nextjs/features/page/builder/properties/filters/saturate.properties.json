@@ -1,0 +1,24 @@
+{
+  "saturate": {
+    "0": {
+      "class": "saturate-0",
+      "property": "filter: saturate(0);"
+    },
+    "50": {
+      "class": "saturate-50",
+      "property": "filter: saturate(.5);"
+    },
+    "100": {
+      "class": "saturate-100",
+      "property": "filter: saturate(1);"
+    },
+    "150": {
+      "class": "saturate-150",
+      "property": "filter: saturate(1.5);"
+    },
+    "200": {
+      "class": "saturate-200",
+      "property": "filter: saturate(2);"
+    }
+  }
+}

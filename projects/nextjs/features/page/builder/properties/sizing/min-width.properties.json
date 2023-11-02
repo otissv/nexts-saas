@@ -1,0 +1,24 @@
+{
+  "minWidth": {
+    "0": {
+      "class": "min-w-0",
+      "property": "min-width: 0px;"
+    },
+    "full": {
+      "class": "min-w-full",
+      "property": "min-width: 100%;"
+    },
+    "min": {
+      "class": "min-w-min",
+      "property": "min-width: min-content;"
+    },
+    "max": {
+      "class": "min-w-max",
+      "property": "min-width: max-content;"
+    },
+    "fit": {
+      "class": "min-w-fit",
+      "property": "min-width: fit-content;"
+    }
+  }
+}

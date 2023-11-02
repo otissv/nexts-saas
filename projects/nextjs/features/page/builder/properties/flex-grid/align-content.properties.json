@@ -1,0 +1,40 @@
+{
+  "alignContent": {
+    "normal": {
+      "class": "content-normal",
+      "property": "align-content: normal;"
+    },
+    "center": {
+      "class": "content-center",
+      "property": "align-content: center;"
+    },
+    "start": {
+      "class": "content-start",
+      "property": "align-content: flex-start;"
+    },
+    "end": {
+      "class": "content-end",
+      "property": "align-content: flex-end;"
+    },
+    "between": {
+      "class": "content-between",
+      "property": "align-content: space-between;"
+    },
+    "around": {
+      "class": "content-around",
+      "property": "align-content: space-around;"
+    },
+    "evenly": {
+      "class": "content-evenly",
+      "property": "align-content: space-evenly;"
+    },
+    "baseline": {
+      "class": "content-baseline",
+      "property": "align-content: baseline;"
+    },
+    "stretch": {
+      "class": "content-stretch",
+      "property": "align-content: stretch;"
+    }
+  }
+}

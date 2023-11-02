@@ -1,0 +1,28 @@
+{
+  "alignSelf": {
+    "auto": {
+      "class": "self-auto",
+      "property": "align-self: auto;"
+    },
+    "start": {
+      "class": "self-start",
+      "property": "align-self: flex-start;"
+    },
+    "end": {
+      "class": "self-end",
+      "property": "align-self: flex-end;"
+    },
+    "center": {
+      "class": "self-center",
+      "property": "align-self: center;"
+    },
+    "stretch": {
+      "class": "self-stretch",
+      "property": "align-self: stretch;"
+    },
+    "baseline": {
+      "class": "self-baseline",
+      "property": "align-self: baseline;"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "listStyleImage": {
+    "none": {
+      "class": "list-image-none",
+      "property": "list-style-image: none;"
+    }
+  }
+}

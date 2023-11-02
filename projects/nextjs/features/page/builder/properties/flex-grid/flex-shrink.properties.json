@@ -1,0 +1,12 @@
+{
+  "flexShrink": {
+    "1": {
+      "class": "shrink",
+      "property": "flex-shrink: 1;"
+    },
+    "0": {
+      "class": "shrink-0",
+      "property": "flex-shrink: 0;"
+    }
+  }
+}

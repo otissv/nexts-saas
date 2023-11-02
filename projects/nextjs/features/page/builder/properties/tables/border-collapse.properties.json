@@ -1,0 +1,12 @@
+{
+  "borderCollapse": {
+    "collapse": {
+      "class": "border-collapse",
+      "property": "border-collapse: collapse;"
+    },
+    "separate": {
+      "class": "border-separate",
+      "property": "border-collapse: separate;"
+    }
+  }
+}

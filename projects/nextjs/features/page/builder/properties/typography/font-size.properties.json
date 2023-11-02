@@ -1,0 +1,56 @@
+{
+  "fontSize": {
+    "xs": {
+      "class": "text-xs",
+      "property": "font-size: 0.75rem; /* 12px */\nline-height: 1rem; /* 16px */"
+    },
+    "sm": {
+      "class": "text-sm",
+      "property": "font-size: 0.875rem; /* 14px */\nline-height: 1.25rem; /* 20px */"
+    },
+    "base": {
+      "class": "text-base",
+      "property": "font-size: 1rem; /* 16px */\nline-height: 1.5rem; /* 24px */"
+    },
+    "lg": {
+      "class": "text-lg",
+      "property": "font-size: 1.125rem; /* 18px */\nline-height: 1.75rem; /* 28px */"
+    },
+    "xl": {
+      "class": "text-xl",
+      "property": "font-size: 1.25rem; /* 20px */\nline-height: 1.75rem; /* 28px */"
+    },
+    "2xl": {
+      "class": "text-2xl",
+      "property": "font-size: 1.5rem; /* 24px */\nline-height: 2rem; /* 32px */"
+    },
+    "3xl": {
+      "class": "text-3xl",
+      "property": "font-size: 1.875rem; /* 30px */\nline-height: 2.25rem; /* 36px */"
+    },
+    "4xl": {
+      "class": "text-4xl",
+      "property": "font-size: 2.25rem; /* 36px */\nline-height: 2.5rem; /* 40px */"
+    },
+    "5xl": {
+      "class": "text-5xl",
+      "property": "font-size: 3rem; /* 48px */\nline-height: 1;"
+    },
+    "6xl": {
+      "class": "text-6xl",
+      "property": "font-size: 3.75rem; /* 60px */\nline-height: 1;"
+    },
+    "7xl": {
+      "class": "text-7xl",
+      "property": "font-size: 4.5rem; /* 72px */\nline-height: 1;"
+    },
+    "8xl": {
+      "class": "text-8xl",
+      "property": "font-size: 6rem; /* 96px */\nline-height: 1;"
+    },
+    "9xl": {
+      "class": "text-9xl",
+      "property": "font-size: 8rem; /* 128px */\nline-height: 1;"
+    }
+  }
+}

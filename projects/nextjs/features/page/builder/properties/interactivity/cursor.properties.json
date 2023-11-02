@@ -1,0 +1,148 @@
+{
+  "cursor": {
+    "auto": {
+      "class": "cursor-auto",
+      "property": "cursor: auto;"
+    },
+    "default": {
+      "class": "cursor-default",
+      "property": "cursor: default;"
+    },
+    "pointer": {
+      "class": "cursor-pointer",
+      "property": "cursor: pointer;"
+    },
+    "wait": {
+      "class": "cursor-wait",
+      "property": "cursor: wait;"
+    },
+    "text": {
+      "class": "cursor-text",
+      "property": "cursor: text;"
+    },
+    "move": {
+      "class": "cursor-move",
+      "property": "cursor: move;"
+    },
+    "help": {
+      "class": "cursor-help",
+      "property": "cursor: help;"
+    },
+    "not-allowed": {
+      "class": "cursor-not-allowed",
+      "property": "cursor: not-allowed;"
+    },
+    "none": {
+      "class": "cursor-none",
+      "property": "cursor: none;"
+    },
+    "context-menu": {
+      "class": "cursor-context-menu",
+      "property": "cursor: context-menu;"
+    },
+    "progress": {
+      "class": "cursor-progress",
+      "property": "cursor: progress;"
+    },
+    "cell": {
+      "class": "cursor-cell",
+      "property": "cursor: cell;"
+    },
+    "crosshair": {
+      "class": "cursor-crosshair",
+      "property": "cursor: crosshair;"
+    },
+    "vertical-text": {
+      "class": "cursor-vertical-text",
+      "property": "cursor: vertical-text;"
+    },
+    "alias": {
+      "class": "cursor-alias",
+      "property": "cursor: alias;"
+    },
+    "copy": {
+      "class": "cursor-copy",
+      "property": "cursor: copy;"
+    },
+    "no-drop": {
+      "class": "cursor-no-drop",
+      "property": "cursor: no-drop;"
+    },
+    "grab": {
+      "class": "cursor-grab",
+      "property": "cursor: grab;"
+    },
+    "grabbing": {
+      "class": "cursor-grabbing",
+      "property": "cursor: grabbing;"
+    },
+    "all-scroll": {
+      "class": "cursor-all-scroll",
+      "property": "cursor: all-scroll;"
+    },
+    "col-resize": {
+      "class": "cursor-col-resize",
+      "property": "cursor: col-resize;"
+    },
+    "row-resize": {
+      "class": "cursor-row-resize",
+      "property": "cursor: row-resize;"
+    },
+    "n-resize": {
+      "class": "cursor-n-resize",
+      "property": "cursor: n-resize;"
+    },
+    "e-resize": {
+      "class": "cursor-e-resize",
+      "property": "cursor: e-resize;"
+    },
+    "s-resize": {
+      "class": "cursor-s-resize",
+      "property": "cursor: s-resize;"
+    },
+    "w-resize": {
+      "class": "cursor-w-resize",
+      "property": "cursor: w-resize;"
+    },
+    "ne-resize": {
+      "class": "cursor-ne-resize",
+      "property": "cursor: ne-resize;"
+    },
+    "nw-resize": {
+      "class": "cursor-nw-resize",
+      "property": "cursor: nw-resize;"
+    },
+    "se-resize": {
+      "class": "cursor-se-resize",
+      "property": "cursor: se-resize;"
+    },
+    "sw-resize": {
+      "class": "cursor-sw-resize",
+      "property": "cursor: sw-resize;"
+    },
+    "ew-resize": {
+      "class": "cursor-ew-resize",
+      "property": "cursor: ew-resize;"
+    },
+    "ns-resize": {
+      "class": "cursor-ns-resize",
+      "property": "cursor: ns-resize;"
+    },
+    "nesw-resize": {
+      "class": "cursor-nesw-resize",
+      "property": "cursor: nesw-resize;"
+    },
+    "nwse-resize": {
+      "class": "cursor-nwse-resize",
+      "property": "cursor: nwse-resize;"
+    },
+    "zoom-in": {
+      "class": "cursor-zoom-in",
+      "property": "cursor: zoom-in;"
+    },
+    "zoom-out": {
+      "class": "cursor-zoom-out",
+      "property": "cursor: zoom-out;"
+    }
+  }
+}

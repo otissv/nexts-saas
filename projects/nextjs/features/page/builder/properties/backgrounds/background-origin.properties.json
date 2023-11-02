@@ -1,0 +1,16 @@
+{
+  "backgroundOrigin": {
+    "origin-border": {
+      "class": "bg-origin-border",
+      "property": "background-origin: border-box;"
+    },
+    "origin-padding": {
+      "class": "bg-origin-padding",
+      "property": "background-origin: padding-box;"
+    },
+    "origin-content": {
+      "class": "bg-origin-content",
+      "property": "background-origin: content-box;"
+    }
+  }
+}

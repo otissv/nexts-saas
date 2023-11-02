@@ -1,0 +1,40 @@
+{
+  "overscrollBehavior": {
+    "auto": {
+      "class": "overscroll-auto",
+      "property": "overscroll-behavior: auto;"
+    },
+    "contain": {
+      "class": "overscroll-contain",
+      "property": "overscroll-behavior: contain;"
+    },
+    "none": {
+      "class": "overscroll-none",
+      "property": "overscroll-behavior: none;"
+    },
+    "y-auto": {
+      "class": "overscroll-y-auto",
+      "property": "overscroll-behavior-y: auto;"
+    },
+    "y-contain": {
+      "class": "overscroll-y-contain",
+      "property": "overscroll-behavior-y: contain;"
+    },
+    "y-none": {
+      "class": "overscroll-y-none",
+      "property": "overscroll-behavior-y: none;"
+    },
+    "x-auto": {
+      "class": "overscroll-x-auto",
+      "property": "overscroll-behavior-x: auto;"
+    },
+    "x-contain": {
+      "class": "overscroll-x-contain",
+      "property": "overscroll-behavior-x: contain;"
+    },
+    "x-none": {
+      "class": "overscroll-x-none",
+      "property": "overscroll-behavior-x: none;"
+    }
+  }
+}

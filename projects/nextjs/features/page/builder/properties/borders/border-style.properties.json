@@ -1,0 +1,28 @@
+{
+  "borderStyle": {
+    "solid": {
+      "class": "border-solid",
+      "property": "border-style: solid;"
+    },
+    "dashed": {
+      "class": "border-dashed",
+      "property": "border-style: dashed;"
+    },
+    "dotted": {
+      "class": "border-dotted",
+      "property": "border-style: dotted;"
+    },
+    "double": {
+      "class": "border-double",
+      "property": "border-style: double;"
+    },
+    "hidden": {
+      "class": "border-hidden",
+      "property": "border-style: hidden;"
+    },
+    "none": {
+      "class": "border-none",
+      "property": "border-style: none;"
+    }
+  }
+}

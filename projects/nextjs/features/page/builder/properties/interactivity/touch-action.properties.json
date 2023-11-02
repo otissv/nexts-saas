@@ -1,0 +1,44 @@
+{
+  "touchAction": {
+    "auto": {
+      "class": "touch-auto",
+      "property": "touch-action: auto;"
+    },
+    "none": {
+      "class": "touch-none",
+      "property": "touch-action: none;"
+    },
+    "pan-x": {
+      "class": "touch-pan-x",
+      "property": "touch-action: pan-x;"
+    },
+    "pan-left": {
+      "class": "touch-pan-left",
+      "property": "touch-action: pan-left;"
+    },
+    "pan-right": {
+      "class": "touch-pan-right",
+      "property": "touch-action: pan-right;"
+    },
+    "pan-y": {
+      "class": "touch-pan-y",
+      "property": "touch-action: pan-y;"
+    },
+    "pan-up": {
+      "class": "touch-pan-up",
+      "property": "touch-action: pan-up;"
+    },
+    "pan-down": {
+      "class": "touch-pan-down",
+      "property": "touch-action: pan-down;"
+    },
+    "pinch-zoom": {
+      "class": "touch-pinch-zoom",
+      "property": "touch-action: pinch-zoom;"
+    },
+    "manipulation": {
+      "class": "touch-manipulation",
+      "property": "touch-action: manipulation;"
+    }
+  }
+}

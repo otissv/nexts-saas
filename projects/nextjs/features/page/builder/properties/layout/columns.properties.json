@@ -1,0 +1,108 @@
+{
+  "columns": {
+    "1": {
+      "class": "columns-1",
+      "property": "columns: 1;"
+    },
+    "2": {
+      "class": "columns-2",
+      "property": "columns: 2;"
+    },
+    "3": {
+      "class": "columns-3",
+      "property": "columns: 3;"
+    },
+    "4": {
+      "class": "columns-4",
+      "property": "columns: 4;"
+    },
+    "5": {
+      "class": "columns-5",
+      "property": "columns: 5;"
+    },
+    "6": {
+      "class": "columns-6",
+      "property": "columns: 6;"
+    },
+    "7": {
+      "class": "columns-7",
+      "property": "columns: 7;"
+    },
+    "8": {
+      "class": "columns-8",
+      "property": "columns: 8;"
+    },
+    "9": {
+      "class": "columns-9",
+      "property": "columns: 9;"
+    },
+    "10": {
+      "class": "columns-10",
+      "property": "columns: 10;"
+    },
+    "11": {
+      "class": "columns-11",
+      "property": "columns: 11;"
+    },
+    "12": {
+      "class": "columns-12",
+      "property": "columns: 12;"
+    },
+    "auto": {
+      "class": "columns-auto",
+      "property": "columns: auto;"
+    },
+    "3xs": {
+      "class": "columns-3xs",
+      "property": "columns: 16rem; /* 256px */"
+    },
+    "2xs": {
+      "class": "columns-2xs",
+      "property": "columns: 18rem; /* 288px */"
+    },
+    "xs": {
+      "class": "columns-xs",
+      "property": "columns: 20rem; /* 320px */"
+    },
+    "sm": {
+      "class": "columns-sm",
+      "property": "columns: 24rem; /* 384px */"
+    },
+    "md": {
+      "class": "columns-md",
+      "property": "columns: 28rem; /* 448px */"
+    },
+    "lg": {
+      "class": "columns-lg",
+      "property": "columns: 32rem; /* 512px */"
+    },
+    "xl": {
+      "class": "columns-xl",
+      "property": "columns: 36rem; /* 576px */"
+    },
+    "2xl": {
+      "class": "columns-2xl",
+      "property": "columns: 42rem; /* 672px */"
+    },
+    "3xl": {
+      "class": "columns-3xl",
+      "property": "columns: 48rem; /* 768px */"
+    },
+    "4xl": {
+      "class": "columns-4xl",
+      "property": "columns: 56rem; /* 896px */"
+    },
+    "5xl": {
+      "class": "columns-5xl",
+      "property": "columns: 64rem; /* 1024px */"
+    },
+    "6xl": {
+      "class": "columns-6xl",
+      "property": "columns: 72rem; /* 1152px */"
+    },
+    "7xl": {
+      "class": "columns-7xl",
+      "property": "columns: 80rem; /* 1280px */"
+    }
+  }
+}

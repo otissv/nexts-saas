@@ -1,0 +1,16 @@
+{
+  "backgroundSize": {
+    "auto": {
+      "class": "bg-auto",
+      "property": "background-size: auto;"
+    },
+    "cover": {
+      "class": "bg-cover",
+      "property": "background-size: cover;"
+    },
+    "contain": {
+      "class": "bg-contain",
+      "property": "background-size: contain;"
+    }
+  }
+}

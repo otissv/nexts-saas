@@ -1,0 +1,992 @@
+{
+  "boxShadowColor": {
+    "inherit": {
+      "class": "shadow-inherit",
+      "property": "--tw-shadow-color: inherit;"
+    },
+    "current": {
+      "class": "shadow-current",
+      "property": "--tw-shadow-color: currentColor;"
+    },
+    "transparent": {
+      "class": "shadow-transparent",
+      "property": "--tw-shadow-color: transparent;"
+    },
+    "black": {
+      "class": "shadow-black",
+      "property": "--tw-shadow-color: #000;"
+    },
+    "white": {
+      "class": "shadow-white",
+      "property": "--tw-shadow-color: #fff;"
+    },
+    "slate-50": {
+      "class": "shadow-slate-50",
+      "property": "--tw-shadow-color: #f8fafc;"
+    },
+    "slate-100": {
+      "class": "shadow-slate-100",
+      "property": "--tw-shadow-color: #f1f5f9;"
+    },
+    "slate-200": {
+      "class": "shadow-slate-200",
+      "property": "--tw-shadow-color: #e2e8f0;"
+    },
+    "slate-300": {
+      "class": "shadow-slate-300",
+      "property": "--tw-shadow-color: #cbd5e1;"
+    },
+    "slate-400": {
+      "class": "shadow-slate-400",
+      "property": "--tw-shadow-color: #94a3b8;"
+    },
+    "slate-500": {
+      "class": "shadow-slate-500",
+      "property": "--tw-shadow-color: #64748b;"
+    },
+    "slate-600": {
+      "class": "shadow-slate-600",
+      "property": "--tw-shadow-color: #475569;"
+    },
+    "slate-700": {
+      "class": "shadow-slate-700",
+      "property": "--tw-shadow-color: #334155;"
+    },
+    "slate-800": {
+      "class": "shadow-slate-800",
+      "property": "--tw-shadow-color: #1e293b;"
+    },
+    "slate-900": {
+      "class": "shadow-slate-900",
+      "property": "--tw-shadow-color: #0f172a;"
+    },
+    "slate-950": {
+      "class": "shadow-slate-950",
+      "property": "--tw-shadow-color: #020617;"
+    },
+    "gray-50": {
+      "class": "shadow-gray-50",
+      "property": "--tw-shadow-color: #f9fafb;"
+    },
+    "gray-100": {
+      "class": "shadow-gray-100",
+      "property": "--tw-shadow-color: #f3f4f6;"
+    },
+    "gray-200": {
+      "class": "shadow-gray-200",
+      "property": "--tw-shadow-color: #e5e7eb;"
+    },
+    "gray-300": {
+      "class": "shadow-gray-300",
+      "property": "--tw-shadow-color: #d1d5db;"
+    },
+    "gray-400": {
+      "class": "shadow-gray-400",
+      "property": "--tw-shadow-color: #9ca3af;"
+    },
+    "gray-500": {
+      "class": "shadow-gray-500",
+      "property": "--tw-shadow-color: #6b7280;"
+    },
+    "gray-600": {
+      "class": "shadow-gray-600",
+      "property": "--tw-shadow-color: #4b5563;"
+    },
+    "gray-700": {
+      "class": "shadow-gray-700",
+      "property": "--tw-shadow-color: #374151;"
+    },
+    "gray-800": {
+      "class": "shadow-gray-800",
+      "property": "--tw-shadow-color: #1f2937;"
+    },
+    "gray-900": {
+      "class": "shadow-gray-900",
+      "property": "--tw-shadow-color: #111827;"
+    },
+    "gray-950": {
+      "class": "shadow-gray-950",
+      "property": "--tw-shadow-color: #030712;"
+    },
+    "zinc-50": {
+      "class": "shadow-zinc-50",
+      "property": "--tw-shadow-color: #fafafa;"
+    },
+    "zinc-100": {
+      "class": "shadow-zinc-100",
+      "property": "--tw-shadow-color: #f4f4f5;"
+    },
+    "zinc-200": {
+      "class": "shadow-zinc-200",
+      "property": "--tw-shadow-color: #e4e4e7;"
+    },
+    "zinc-300": {
+      "class": "shadow-zinc-300",
+      "property": "--tw-shadow-color: #d4d4d8;"
+    },
+    "zinc-400": {
+      "class": "shadow-zinc-400",
+      "property": "--tw-shadow-color: #a1a1aa;"
+    },
+    "zinc-500": {
+      "class": "shadow-zinc-500",
+      "property": "--tw-shadow-color: #71717a;"
+    },
+    "zinc-600": {
+      "class": "shadow-zinc-600",
+      "property": "--tw-shadow-color: #52525b;"
+    },
+    "zinc-700": {
+      "class": "shadow-zinc-700",
+      "property": "--tw-shadow-color: #3f3f46;"
+    },
+    "zinc-800": {
+      "class": "shadow-zinc-800",
+      "property": "--tw-shadow-color: #27272a;"
+    },
+    "zinc-900": {
+      "class": "shadow-zinc-900",
+      "property": "--tw-shadow-color: #18181b;"
+    },
+    "zinc-950": {
+      "class": "shadow-zinc-950",
+      "property": "--tw-shadow-color: #09090b;"
+    },
+    "neutral-50": {
+      "class": "shadow-neutral-50",
+      "property": "--tw-shadow-color: #fafafa;"
+    },
+    "neutral-100": {
+      "class": "shadow-neutral-100",
+      "property": "--tw-shadow-color: #f5f5f5;"
+    },
+    "neutral-200": {
+      "class": "shadow-neutral-200",
+      "property": "--tw-shadow-color: #e5e5e5;"
+    },
+    "neutral-300": {
+      "class": "shadow-neutral-300",
+      "property": "--tw-shadow-color: #d4d4d4;"
+    },
+    "neutral-400": {
+      "class": "shadow-neutral-400",
+      "property": "--tw-shadow-color: #a3a3a3;"
+    },
+    "neutral-500": {
+      "class": "shadow-neutral-500",
+      "property": "--tw-shadow-color: #737373;"
+    },
+    "neutral-600": {
+      "class": "shadow-neutral-600",
+      "property": "--tw-shadow-color: #525252;"
+    },
+    "neutral-700": {
+      "class": "shadow-neutral-700",
+      "property": "--tw-shadow-color: #404040;"
+    },
+    "neutral-800": {
+      "class": "shadow-neutral-800",
+      "property": "--tw-shadow-color: #262626;"
+    },
+    "neutral-900": {
+      "class": "shadow-neutral-900",
+      "property": "--tw-shadow-color: #171717;"
+    },
+    "neutral-950": {
+      "class": "shadow-neutral-950",
+      "property": "--tw-shadow-color: #0a0a0a;"
+    },
+    "stone-50": {
+      "class": "shadow-stone-50",
+      "property": "--tw-shadow-color: #fafaf9;"
+    },
+    "stone-100": {
+      "class": "shadow-stone-100",
+      "property": "--tw-shadow-color: #f5f5f4;"
+    },
+    "stone-200": {
+      "class": "shadow-stone-200",
+      "property": "--tw-shadow-color: #e7e5e4;"
+    },
+    "stone-300": {
+      "class": "shadow-stone-300",
+      "property": "--tw-shadow-color: #d6d3d1;"
+    },
+    "stone-400": {
+      "class": "shadow-stone-400",
+      "property": "--tw-shadow-color: #a8a29e;"
+    },
+    "stone-500": {
+      "class": "shadow-stone-500",
+      "property": "--tw-shadow-color: #78716c;"
+    },
+    "stone-600": {
+      "class": "shadow-stone-600",
+      "property": "--tw-shadow-color: #57534e;"
+    },
+    "stone-700": {
+      "class": "shadow-stone-700",
+      "property": "--tw-shadow-color: #44403c;"
+    },
+    "stone-800": {
+      "class": "shadow-stone-800",
+      "property": "--tw-shadow-color: #292524;"
+    },
+    "stone-900": {
+      "class": "shadow-stone-900",
+      "property": "--tw-shadow-color: #1c1917;"
+    },
+    "stone-950": {
+      "class": "shadow-stone-950",
+      "property": "--tw-shadow-color: #0c0a09;"
+    },
+    "red-50": {
+      "class": "shadow-red-50",
+      "property": "--tw-shadow-color: #fef2f2;"
+    },
+    "red-100": {
+      "class": "shadow-red-100",
+      "property": "--tw-shadow-color: #fee2e2;"
+    },
+    "red-200": {
+      "class": "shadow-red-200",
+      "property": "--tw-shadow-color: #fecaca;"
+    },
+    "red-300": {
+      "class": "shadow-red-300",
+      "property": "--tw-shadow-color: #fca5a5;"
+    },
+    "red-400": {
+      "class": "shadow-red-400",
+      "property": "--tw-shadow-color: #f87171;"
+    },
+    "red-500": {
+      "class": "shadow-red-500",
+      "property": "--tw-shadow-color: #ef4444;"
+    },
+    "red-600": {
+      "class": "shadow-red-600",
+      "property": "--tw-shadow-color: #dc2626;"
+    },
+    "red-700": {
+      "class": "shadow-red-700",
+      "property": "--tw-shadow-color: #b91c1c;"
+    },
+    "red-800": {
+      "class": "shadow-red-800",
+      "property": "--tw-shadow-color: #991b1b;"
+    },
+    "red-900": {
+      "class": "shadow-red-900",
+      "property": "--tw-shadow-color: #7f1d1d;"
+    },
+    "red-950": {
+      "class": "shadow-red-950",
+      "property": "--tw-shadow-color: #450a0a;"
+    },
+    "orange-50": {
+      "class": "shadow-orange-50",
+      "property": "--tw-shadow-color: #fff7ed;"
+    },
+    "orange-100": {
+      "class": "shadow-orange-100",
+      "property": "--tw-shadow-color: #ffedd5;"
+    },
+    "orange-200": {
+      "class": "shadow-orange-200",
+      "property": "--tw-shadow-color: #fed7aa;"
+    },
+    "orange-300": {
+      "class": "shadow-orange-300",
+      "property": "--tw-shadow-color: #fdba74;"
+    },
+    "orange-400": {
+      "class": "shadow-orange-400",
+      "property": "--tw-shadow-color: #fb923c;"
+    },
+    "orange-500": {
+      "class": "shadow-orange-500",
+      "property": "--tw-shadow-color: #f97316;"
+    },
+    "orange-600": {
+      "class": "shadow-orange-600",
+      "property": "--tw-shadow-color: #ea580c;"
+    },
+    "orange-700": {
+      "class": "shadow-orange-700",
+      "property": "--tw-shadow-color: #c2410c;"
+    },
+    "orange-800": {
+      "class": "shadow-orange-800",
+      "property": "--tw-shadow-color: #9a3412;"
+    },
+    "orange-900": {
+      "class": "shadow-orange-900",
+      "property": "--tw-shadow-color: #7c2d12;"
+    },
+    "orange-950": {
+      "class": "shadow-orange-950",
+      "property": "--tw-shadow-color: #431407;"
+    },
+    "amber-50": {
+      "class": "shadow-amber-50",
+      "property": "--tw-shadow-color: #fffbeb;"
+    },
+    "amber-100": {
+      "class": "shadow-amber-100",
+      "property": "--tw-shadow-color: #fef3c7;"
+    },
+    "amber-200": {
+      "class": "shadow-amber-200",
+      "property": "--tw-shadow-color: #fde68a;"
+    },
+    "amber-300": {
+      "class": "shadow-amber-300",
+      "property": "--tw-shadow-color: #fcd34d;"
+    },
+    "amber-400": {
+      "class": "shadow-amber-400",
+      "property": "--tw-shadow-color: #fbbf24;"
+    },
+    "amber-500": {
+      "class": "shadow-amber-500",
+      "property": "--tw-shadow-color: #f59e0b;"
+    },
+    "amber-600": {
+      "class": "shadow-amber-600",
+      "property": "--tw-shadow-color: #d97706;"
+    },
+    "amber-700": {
+      "class": "shadow-amber-700",
+      "property": "--tw-shadow-color: #b45309;"
+    },
+    "amber-800": {
+      "class": "shadow-amber-800",
+      "property": "--tw-shadow-color: #92400e;"
+    },
+    "amber-900": {
+      "class": "shadow-amber-900",
+      "property": "--tw-shadow-color: #78350f;"
+    },
+    "amber-950": {
+      "class": "shadow-amber-950",
+      "property": "--tw-shadow-color: #451a03;"
+    },
+    "yellow-50": {
+      "class": "shadow-yellow-50",
+      "property": "--tw-shadow-color: #fefce8;"
+    },
+    "yellow-100": {
+      "class": "shadow-yellow-100",
+      "property": "--tw-shadow-color: #fef9c3;"
+    },
+    "yellow-200": {
+      "class": "shadow-yellow-200",
+      "property": "--tw-shadow-color: #fef08a;"
+    },
+    "yellow-300": {
+      "class": "shadow-yellow-300",
+      "property": "--tw-shadow-color: #fde047;"
+    },
+    "yellow-400": {
+      "class": "shadow-yellow-400",
+      "property": "--tw-shadow-color: #facc15;"
+    },
+    "yellow-500": {
+      "class": "shadow-yellow-500",
+      "property": "--tw-shadow-color: #eab308;"
+    },
+    "yellow-600": {
+      "class": "shadow-yellow-600",
+      "property": "--tw-shadow-color: #ca8a04;"
+    },
+    "yellow-700": {
+      "class": "shadow-yellow-700",
+      "property": "--tw-shadow-color: #a16207;"
+    },
+    "yellow-800": {
+      "class": "shadow-yellow-800",
+      "property": "--tw-shadow-color: #854d0e;"
+    },
+    "yellow-900": {
+      "class": "shadow-yellow-900",
+      "property": "--tw-shadow-color: #713f12;"
+    },
+    "yellow-950": {
+      "class": "shadow-yellow-950",
+      "property": "--tw-shadow-color: #422006;"
+    },
+    "lime-50": {
+      "class": "shadow-lime-50",
+      "property": "--tw-shadow-color: #f7fee7;"
+    },
+    "lime-100": {
+      "class": "shadow-lime-100",
+      "property": "--tw-shadow-color: #ecfccb;"
+    },
+    "lime-200": {
+      "class": "shadow-lime-200",
+      "property": "--tw-shadow-color: #d9f99d;"
+    },
+    "lime-300": {
+      "class": "shadow-lime-300",
+      "property": "--tw-shadow-color: #bef264;"
+    },
+    "lime-400": {
+      "class": "shadow-lime-400",
+      "property": "--tw-shadow-color: #a3e635;"
+    },
+    "lime-500": {
+      "class": "shadow-lime-500",
+      "property": "--tw-shadow-color: #84cc16;"
+    },
+    "lime-600": {
+      "class": "shadow-lime-600",
+      "property": "--tw-shadow-color: #65a30d;"
+    },
+    "lime-700": {
+      "class": "shadow-lime-700",
+      "property": "--tw-shadow-color: #4d7c0f;"
+    },
+    "lime-800": {
+      "class": "shadow-lime-800",
+      "property": "--tw-shadow-color: #3f6212;"
+    },
+    "lime-900": {
+      "class": "shadow-lime-900",
+      "property": "--tw-shadow-color: #365314;"
+    },
+    "lime-950": {
+      "class": "shadow-lime-950",
+      "property": "--tw-shadow-color: #1a2e05;"
+    },
+    "green-50": {
+      "class": "shadow-green-50",
+      "property": "--tw-shadow-color: #f0fdf4;"
+    },
+    "green-100": {
+      "class": "shadow-green-100",
+      "property": "--tw-shadow-color: #dcfce7;"
+    },
+    "green-200": {
+      "class": "shadow-green-200",
+      "property": "--tw-shadow-color: #bbf7d0;"
+    },
+    "green-300": {
+      "class": "shadow-green-300",
+      "property": "--tw-shadow-color: #86efac;"
+    },
+    "green-400": {
+      "class": "shadow-green-400",
+      "property": "--tw-shadow-color: #4ade80;"
+    },
+    "green-500": {
+      "class": "shadow-green-500",
+      "property": "--tw-shadow-color: #22c55e;"
+    },
+    "green-600": {
+      "class": "shadow-green-600",
+      "property": "--tw-shadow-color: #16a34a;"
+    },
+    "green-700": {
+      "class": "shadow-green-700",
+      "property": "--tw-shadow-color: #15803d;"
+    },
+    "green-800": {
+      "class": "shadow-green-800",
+      "property": "--tw-shadow-color: #166534;"
+    },
+    "green-900": {
+      "class": "shadow-green-900",
+      "property": "--tw-shadow-color: #14532d;"
+    },
+    "green-950": {
+      "class": "shadow-green-950",
+      "property": "--tw-shadow-color: #052e16;"
+    },
+    "emerald-50": {
+      "class": "shadow-emerald-50",
+      "property": "--tw-shadow-color: #ecfdf5;"
+    },
+    "emerald-100": {
+      "class": "shadow-emerald-100",
+      "property": "--tw-shadow-color: #d1fae5;"
+    },
+    "emerald-200": {
+      "class": "shadow-emerald-200",
+      "property": "--tw-shadow-color: #a7f3d0;"
+    },
+    "emerald-300": {
+      "class": "shadow-emerald-300",
+      "property": "--tw-shadow-color: #6ee7b7;"
+    },
+    "emerald-400": {
+      "class": "shadow-emerald-400",
+      "property": "--tw-shadow-color: #34d399;"
+    },
+    "emerald-500": {
+      "class": "shadow-emerald-500",
+      "property": "--tw-shadow-color: #10b981;"
+    },
+    "emerald-600": {
+      "class": "shadow-emerald-600",
+      "property": "--tw-shadow-color: #059669;"
+    },
+    "emerald-700": {
+      "class": "shadow-emerald-700",
+      "property": "--tw-shadow-color: #047857;"
+    },
+    "emerald-800": {
+      "class": "shadow-emerald-800",
+      "property": "--tw-shadow-color: #065f46;"
+    },
+    "emerald-900": {
+      "class": "shadow-emerald-900",
+      "property": "--tw-shadow-color: #064e3b;"
+    },
+    "emerald-950": {
+      "class": "shadow-emerald-950",
+      "property": "--tw-shadow-color: #022c22;"
+    },
+    "teal-50": {
+      "class": "shadow-teal-50",
+      "property": "--tw-shadow-color: #f0fdfa;"
+    },
+    "teal-100": {
+      "class": "shadow-teal-100",
+      "property": "--tw-shadow-color: #ccfbf1;"
+    },
+    "teal-200": {
+      "class": "shadow-teal-200",
+      "property": "--tw-shadow-color: #99f6e4;"
+    },
+    "teal-300": {
+      "class": "shadow-teal-300",
+      "property": "--tw-shadow-color: #5eead4;"
+    },
+    "teal-400": {
+      "class": "shadow-teal-400",
+      "property": "--tw-shadow-color: #2dd4bf;"
+    },
+    "teal-500": {
+      "class": "shadow-teal-500",
+      "property": "--tw-shadow-color: #14b8a6;"
+    },
+    "teal-600": {
+      "class": "shadow-teal-600",
+      "property": "--tw-shadow-color: #0d9488;"
+    },
+    "teal-700": {
+      "class": "shadow-teal-700",
+      "property": "--tw-shadow-color: #0f766e;"
+    },
+    "teal-800": {
+      "class": "shadow-teal-800",
+      "property": "--tw-shadow-color: #115e59;"
+    },
+    "teal-900": {
+      "class": "shadow-teal-900",
+      "property": "--tw-shadow-color: #134e4a;"
+    },
+    "teal-950": {
+      "class": "shadow-teal-950",
+      "property": "--tw-shadow-color: #042f2e;"
+    },
+    "cyan-50": {
+      "class": "shadow-cyan-50",
+      "property": "--tw-shadow-color: #ecfeff;"
+    },
+    "cyan-100": {
+      "class": "shadow-cyan-100",
+      "property": "--tw-shadow-color: #cffafe;"
+    },
+    "cyan-200": {
+      "class": "shadow-cyan-200",
+      "property": "--tw-shadow-color: #a5f3fc;"
+    },
+    "cyan-300": {
+      "class": "shadow-cyan-300",
+      "property": "--tw-shadow-color: #67e8f9;"
+    },
+    "cyan-400": {
+      "class": "shadow-cyan-400",
+      "property": "--tw-shadow-color: #22d3ee;"
+    },
+    "cyan-500": {
+      "class": "shadow-cyan-500",
+      "property": "--tw-shadow-color: #06b6d4;"
+    },
+    "cyan-600": {
+      "class": "shadow-cyan-600",
+      "property": "--tw-shadow-color: #0891b2;"
+    },
+    "cyan-700": {
+      "class": "shadow-cyan-700",
+      "property": "--tw-shadow-color: #0e7490;"
+    },
+    "cyan-800": {
+      "class": "shadow-cyan-800",
+      "property": "--tw-shadow-color: #155e75;"
+    },
+    "cyan-900": {
+      "class": "shadow-cyan-900",
+      "property": "--tw-shadow-color: #164e63;"
+    },
+    "cyan-950": {
+      "class": "shadow-cyan-950",
+      "property": "--tw-shadow-color: #083344;"
+    },
+    "sky-50": {
+      "class": "shadow-sky-50",
+      "property": "--tw-shadow-color: #f0f9ff;"
+    },
+    "sky-100": {
+      "class": "shadow-sky-100",
+      "property": "--tw-shadow-color: #e0f2fe;"
+    },
+    "sky-200": {
+      "class": "shadow-sky-200",
+      "property": "--tw-shadow-color: #bae6fd;"
+    },
+    "sky-300": {
+      "class": "shadow-sky-300",
+      "property": "--tw-shadow-color: #7dd3fc;"
+    },
+    "sky-400": {
+      "class": "shadow-sky-400",
+      "property": "--tw-shadow-color: #38bdf8;"
+    },
+    "sky-500": {
+      "class": "shadow-sky-500",
+      "property": "--tw-shadow-color: #0ea5e9;"
+    },
+    "sky-600": {
+      "class": "shadow-sky-600",
+      "property": "--tw-shadow-color: #0284c7;"
+    },
+    "sky-700": {
+      "class": "shadow-sky-700",
+      "property": "--tw-shadow-color: #0369a1;"
+    },
+    "sky-800": {
+      "class": "shadow-sky-800",
+      "property": "--tw-shadow-color: #075985;"
+    },
+    "sky-900": {
+      "class": "shadow-sky-900",
+      "property": "--tw-shadow-color: #0c4a6e;"
+    },
+    "sky-950": {
+      "class": "shadow-sky-950",
+      "property": "--tw-shadow-color: #082f49;"
+    },
+    "blue-50": {
+      "class": "shadow-blue-50",
+      "property": "--tw-shadow-color: #eff6ff;"
+    },
+    "blue-100": {
+      "class": "shadow-blue-100",
+      "property": "--tw-shadow-color: #dbeafe;"
+    },
+    "blue-200": {
+      "class": "shadow-blue-200",
+      "property": "--tw-shadow-color: #bfdbfe;"
+    },
+    "blue-300": {
+      "class": "shadow-blue-300",
+      "property": "--tw-shadow-color: #93c5fd;"
+    },
+    "blue-400": {
+      "class": "shadow-blue-400",
+      "property": "--tw-shadow-color: #60a5fa;"
+    },
+    "blue-500": {
+      "class": "shadow-blue-500",
+      "property": "--tw-shadow-color: #3b82f6;"
+    },
+    "blue-600": {
+      "class": "shadow-blue-600",
+      "property": "--tw-shadow-color: #2563eb;"
+    },
+    "blue-700": {
+      "class": "shadow-blue-700",
+      "property": "--tw-shadow-color: #1d4ed8;"
+    },
+    "blue-800": {
+      "class": "shadow-blue-800",
+      "property": "--tw-shadow-color: #1e40af;"
+    },
+    "blue-900": {
+      "class": "shadow-blue-900",
+      "property": "--tw-shadow-color: #1e3a8a;"
+    },
+    "blue-950": {
+      "class": "shadow-blue-950",
+      "property": "--tw-shadow-color: #172554;"
+    },
+    "indigo-50": {
+      "class": "shadow-indigo-50",
+      "property": "--tw-shadow-color: #eef2ff;"
+    },
+    "indigo-100": {
+      "class": "shadow-indigo-100",
+      "property": "--tw-shadow-color: #e0e7ff;"
+    },
+    "indigo-200": {
+      "class": "shadow-indigo-200",
+      "property": "--tw-shadow-color: #c7d2fe;"
+    },
+    "indigo-300": {
+      "class": "shadow-indigo-300",
+      "property": "--tw-shadow-color: #a5b4fc;"
+    },
+    "indigo-400": {
+      "class": "shadow-indigo-400",
+      "property": "--tw-shadow-color: #818cf8;"
+    },
+    "indigo-500": {
+      "class": "shadow-indigo-500",
+      "property": "--tw-shadow-color: #6366f1;"
+    },
+    "indigo-600": {
+      "class": "shadow-indigo-600",
+      "property": "--tw-shadow-color: #4f46e5;"
+    },
+    "indigo-700": {
+      "class": "shadow-indigo-700",
+      "property": "--tw-shadow-color: #4338ca;"
+    },
+    "indigo-800": {
+      "class": "shadow-indigo-800",
+      "property": "--tw-shadow-color: #3730a3;"
+    },
+    "indigo-900": {
+      "class": "shadow-indigo-900",
+      "property": "--tw-shadow-color: #312e81;"
+    },
+    "indigo-950": {
+      "class": "shadow-indigo-950",
+      "property": "--tw-shadow-color: #1e1b4b;"
+    },
+    "violet-50": {
+      "class": "shadow-violet-50",
+      "property": "--tw-shadow-color: #f5f3ff;"
+    },
+    "violet-100": {
+      "class": "shadow-violet-100",
+      "property": "--tw-shadow-color: #ede9fe;"
+    },
+    "violet-200": {
+      "class": "shadow-violet-200",
+      "property": "--tw-shadow-color: #ddd6fe;"
+    },
+    "violet-300": {
+      "class": "shadow-violet-300",
+      "property": "--tw-shadow-color: #c4b5fd;"
+    },
+    "violet-400": {
+      "class": "shadow-violet-400",
+      "property": "--tw-shadow-color: #a78bfa;"
+    },
+    "violet-500": {
+      "class": "shadow-violet-500",
+      "property": "--tw-shadow-color: #8b5cf6;"
+    },
+    "violet-600": {
+      "class": "shadow-violet-600",
+      "property": "--tw-shadow-color: #7c3aed;"
+    },
+    "violet-700": {
+      "class": "shadow-violet-700",
+      "property": "--tw-shadow-color: #6d28d9;"
+    },
+    "violet-800": {
+      "class": "shadow-violet-800",
+      "property": "--tw-shadow-color: #5b21b6;"
+    },
+    "violet-900": {
+      "class": "shadow-violet-900",
+      "property": "--tw-shadow-color: #4c1d95;"
+    },
+    "violet-950": {
+      "class": "shadow-violet-950",
+      "property": "--tw-shadow-color: #2e1065;"
+    },
+    "purple-50": {
+      "class": "shadow-purple-50",
+      "property": "--tw-shadow-color: #faf5ff;"
+    },
+    "purple-100": {
+      "class": "shadow-purple-100",
+      "property": "--tw-shadow-color: #f3e8ff;"
+    },
+    "purple-200": {
+      "class": "shadow-purple-200",
+      "property": "--tw-shadow-color: #e9d5ff;"
+    },
+    "purple-300": {
+      "class": "shadow-purple-300",
+      "property": "--tw-shadow-color: #d8b4fe;"
+    },
+    "purple-400": {
+      "class": "shadow-purple-400",
+      "property": "--tw-shadow-color: #c084fc;"
+    },
+    "purple-500": {
+      "class": "shadow-purple-500",
+      "property": "--tw-shadow-color: #a855f7;"
+    },
+    "purple-600": {
+      "class": "shadow-purple-600",
+      "property": "--tw-shadow-color: #9333ea;"
+    },
+    "purple-700": {
+      "class": "shadow-purple-700",
+      "property": "--tw-shadow-color: #7e22ce;"
+    },
+    "purple-800": {
+      "class": "shadow-purple-800",
+      "property": "--tw-shadow-color: #6b21a8;"
+    },
+    "purple-900": {
+      "class": "shadow-purple-900",
+      "property": "--tw-shadow-color: #581c87;"
+    },
+    "purple-950": {
+      "class": "shadow-purple-950",
+      "property": "--tw-shadow-color: #3b0764;"
+    },
+    "fuchsia-50": {
+      "class": "shadow-fuchsia-50",
+      "property": "--tw-shadow-color: #fdf4ff;"
+    },
+    "fuchsia-100": {
+      "class": "shadow-fuchsia-100",
+      "property": "--tw-shadow-color: #fae8ff;"
+    },
+    "fuchsia-200": {
+      "class": "shadow-fuchsia-200",
+      "property": "--tw-shadow-color: #f5d0fe;"
+    },
+    "fuchsia-300": {
+      "class": "shadow-fuchsia-300",
+      "property": "--tw-shadow-color: #f0abfc;"
+    },
+    "fuchsia-400": {
+      "class": "shadow-fuchsia-400",
+      "property": "--tw-shadow-color: #e879f9;"
+    },
+    "fuchsia-500": {
+      "class": "shadow-fuchsia-500",
+      "property": "--tw-shadow-color: #d946ef;"
+    },
+    "fuchsia-600": {
+      "class": "shadow-fuchsia-600",
+      "property": "--tw-shadow-color: #c026d3;"
+    },
+    "fuchsia-700": {
+      "class": "shadow-fuchsia-700",
+      "property": "--tw-shadow-color: #a21caf;"
+    },
+    "fuchsia-800": {
+      "class": "shadow-fuchsia-800",
+      "property": "--tw-shadow-color: #86198f;"
+    },
+    "fuchsia-900": {
+      "class": "shadow-fuchsia-900",
+      "property": "--tw-shadow-color: #701a75;"
+    },
+    "fuchsia-950": {
+      "class": "shadow-fuchsia-950",
+      "property": "--tw-shadow-color: #4a044e;"
+    },
+    "pink-50": {
+      "class": "shadow-pink-50",
+      "property": "--tw-shadow-color: #fdf2f8;"
+    },
+    "pink-100": {
+      "class": "shadow-pink-100",
+      "property": "--tw-shadow-color: #fce7f3;"
+    },
+    "pink-200": {
+      "class": "shadow-pink-200",
+      "property": "--tw-shadow-color: #fbcfe8;"
+    },
+    "pink-300": {
+      "class": "shadow-pink-300",
+      "property": "--tw-shadow-color: #f9a8d4;"
+    },
+    "pink-400": {
+      "class": "shadow-pink-400",
+      "property": "--tw-shadow-color: #f472b6;"
+    },
+    "pink-500": {
+      "class": "shadow-pink-500",
+      "property": "--tw-shadow-color: #ec4899;"
+    },
+    "pink-600": {
+      "class": "shadow-pink-600",
+      "property": "--tw-shadow-color: #db2777;"
+    },
+    "pink-700": {
+      "class": "shadow-pink-700",
+      "property": "--tw-shadow-color: #be185d;"
+    },
+    "pink-800": {
+      "class": "shadow-pink-800",
+      "property": "--tw-shadow-color: #9d174d;"
+    },
+    "pink-900": {
+      "class": "shadow-pink-900",
+      "property": "--tw-shadow-color: #831843;"
+    },
+    "pink-950": {
+      "class": "shadow-pink-950",
+      "property": "--tw-shadow-color: #500724;"
+    },
+    "rose-50": {
+      "class": "shadow-rose-50",
+      "property": "--tw-shadow-color: #fff1f2;"
+    },
+    "rose-100": {
+      "class": "shadow-rose-100",
+      "property": "--tw-shadow-color: #ffe4e6;"
+    },
+    "rose-200": {
+      "class": "shadow-rose-200",
+      "property": "--tw-shadow-color: #fecdd3;"
+    },
+    "rose-300": {
+      "class": "shadow-rose-300",
+      "property": "--tw-shadow-color: #fda4af;"
+    },
+    "rose-400": {
+      "class": "shadow-rose-400",
+      "property": "--tw-shadow-color: #fb7185;"
+    },
+    "rose-500": {
+      "class": "shadow-rose-500",
+      "property": "--tw-shadow-color: #f43f5e;"
+    },
+    "rose-600": {
+      "class": "shadow-rose-600",
+      "property": "--tw-shadow-color: #e11d48;"
+    },
+    "rose-700": {
+      "class": "shadow-rose-700",
+      "property": "--tw-shadow-color: #be123c;"
+    },
+    "rose-800": {
+      "class": "shadow-rose-800",
+      "property": "--tw-shadow-color: #9f1239;"
+    },
+    "rose-900": {
+      "class": "shadow-rose-900",
+      "property": "--tw-shadow-color: #881337;"
+    },
+    "rose-950": {
+      "class": "shadow-rose-950",
+      "property": "--tw-shadow-color: #4c0519;"
+    }
+  }
+}

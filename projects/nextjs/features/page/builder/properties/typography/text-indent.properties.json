@@ -1,0 +1,144 @@
+{
+  "textIndent": {
+    "0": {
+      "class": "indent-0",
+      "property": "text-indent: 0px;"
+    },
+    "px": {
+      "class": "indent-px",
+      "property": "text-indent: 1px;"
+    },
+    "0.5": {
+      "class": "indent-0.5",
+      "property": "text-indent: 0.125rem; /* 2px */"
+    },
+    "1": {
+      "class": "indent-1",
+      "property": "text-indent: 0.25rem; /* 4px */"
+    },
+    "1.5": {
+      "class": "indent-1.5",
+      "property": "text-indent: 0.375rem; /* 6px */"
+    },
+    "2": {
+      "class": "indent-2",
+      "property": "text-indent: 0.5rem; /* 8px */"
+    },
+    "2.5": {
+      "class": "indent-2.5",
+      "property": "text-indent: 0.625rem; /* 10px */"
+    },
+    "3": {
+      "class": "indent-3",
+      "property": "text-indent: 0.75rem; /* 12px */"
+    },
+    "3.5": {
+      "class": "indent-3.5",
+      "property": "text-indent: 0.875rem; /* 14px */"
+    },
+    "4": {
+      "class": "indent-4",
+      "property": "text-indent: 1rem; /* 16px */"
+    },
+    "5": {
+      "class": "indent-5",
+      "property": "text-indent: 1.25rem; /* 20px */"
+    },
+    "6": {
+      "class": "indent-6",
+      "property": "text-indent: 1.5rem; /* 24px */"
+    },
+    "7": {
+      "class": "indent-7",
+      "property": "text-indent: 1.75rem; /* 28px */"
+    },
+    "8": {
+      "class": "indent-8",
+      "property": "text-indent: 2rem; /* 32px */"
+    },
+    "9": {
+      "class": "indent-9",
+      "property": "text-indent: 2.25rem; /* 36px */"
+    },
+    "10": {
+      "class": "indent-10",
+      "property": "text-indent: 2.5rem; /* 40px */"
+    },
+    "11": {
+      "class": "indent-11",
+      "property": "text-indent: 2.75rem; /* 44px */"
+    },
+    "12": {
+      "class": "indent-12",
+      "property": "text-indent: 3rem; /* 48px */"
+    },
+    "14": {
+      "class": "indent-14",
+      "property": "text-indent: 3.5rem; /* 56px */"
+    },
+    "16": {
+      "class": "indent-16",
+      "property": "text-indent: 4rem; /* 64px */"
+    },
+    "20": {
+      "class": "indent-20",
+      "property": "text-indent: 5rem; /* 80px */"
+    },
+    "24": {
+      "class": "indent-24",
+      "property": "text-indent: 6rem; /* 96px */"
+    },
+    "28": {
+      "class": "indent-28",
+      "property": "text-indent: 7rem; /* 112px */"
+    },
+    "32": {
+      "class": "indent-32",
+      "property": "text-indent: 8rem; /* 128px */"
+    },
+    "36": {
+      "class": "indent-36",
+      "property": "text-indent: 9rem; /* 144px */"
+    },
+    "40": {
+      "class": "indent-40",
+      "property": "text-indent: 10rem; /* 160px */"
+    },
+    "44": {
+      "class": "indent-44",
+      "property": "text-indent: 11rem; /* 176px */"
+    },
+    "48": {
+      "class": "indent-48",
+      "property": "text-indent: 12rem; /* 192px */"
+    },
+    "52": {
+      "class": "indent-52",
+      "property": "text-indent: 13rem; /* 208px */"
+    },
+    "56": {
+      "class": "indent-56",
+      "property": "text-indent: 14rem; /* 224px */"
+    },
+    "60": {
+      "class": "indent-60",
+      "property": "text-indent: 15rem; /* 240px */"
+    },
+    "64": {
+      "class": "indent-64",
+      "property": "text-indent: 16rem; /* 256px */"
+    },
+    "72": {
+      "class": "indent-72",
+      "property": "text-indent: 18rem; /* 288px */"
+    },
+    "80": {
+      "class": "indent-80",
+      "property": "text-indent: 20rem; /* 320px */"
+    },
+    "96": {
+      "class": "indent-96",
+      "property": "text-indent: 24rem; /* 384px */"
+    }
+  }
+}

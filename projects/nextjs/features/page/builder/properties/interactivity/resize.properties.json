@@ -1,0 +1,20 @@
+{
+  "resize": {
+    "none": {
+      "class": "resize-none",
+      "property": "resize: none;"
+    },
+    "y": {
+      "class": "resize-y",
+      "property": "resize: vertical;"
+    },
+    "x": {
+      "class": "resize-x",
+      "property": "resize: horizontal;"
+    },
+    "resize": {
+      "class": "resize",
+      "property": "resize: both;"
+    }
+  }
+}

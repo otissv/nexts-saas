@@ -1,0 +1,64 @@
+{
+  "scale": {
+    "number": {
+      "0": { "class": "scale-0", "property": "transform: scale(0);" },
+      "100": { "class": "scale-100", "property": "transform: scale(1);" },
+      "105": { "class": "scale-105", "property": "transform: scale(1.05);" },
+      "110": { "class": "scale-110", "property": "transform: scale(1.1);" },
+      "125": { "class": "scale-125", "property": "transform: scale(1.25);" },
+      "150": { "class": "scale-150", "property": "transform: scale(1.5);" },
+      "50": { "class": "scale-50", "property": "transform: scale(.5);" },
+      "75": { "class": "scale-75", "property": "transform: scale(.75);" },
+      "90": { "class": "scale-90", "property": "transform: scale(.9);" },
+      "95": { "class": "scale-95", "property": "transform: scale(.95);" }
+    },
+    "x": {
+      "0": { "class": "scale-x-0", "property": "transform: scaleX(0);" },
+      "100": { "class": "scale-x-100", "property": "transform: scaleX(1);" },
+      "105": {
+        "class": "scale-x-105",
+        "property": "transform: scaleX(1.05);"
+      },
+      "110": {
+        "class": "scale-x-110",
+        "property": "transform: scaleX(1.1);"
+      },
+      "125": {
+        "class": "scale-x-125",
+        "property": "transform: scaleX(1.25);"
+      },
+      "150": {
+        "class": "scale-x-150",
+        "property": "transform: scaleX(1.5);"
+      },
+      "50": { "class": "scale-x-50", "property": "transform: scaleX(.5);" },
+      "75": { "class": "scale-x-75", "property": "transform: scaleX(.75);" },
+      "90": { "class": "scale-x-90", "property": "transform: scaleX(.9);" },
+      "95": { "class": "scale-x-95", "property": "transform: scaleX(.95);" }
+    },
+    "y": {
+      "0": { "class": "scale-y-0", "property": "transform: scaleY(0);" },
+      "100": { "class": "scale-y-100", "property": "transform: scaleY(1);" },
+      "105": {
+        "class": "scale-y-105",
+        "property": "transform: scaleY(1.05);"
+      },
+      "110": {
+        "class": "scale-y-110",
+        "property": "transform: scaleY(1.1);"
+      },
+      "125": {
+        "class": "scale-y-125",
+        "property": "transform: scaleY(1.25);"
+      },
+      "150": {
+        "class": "scale-y-150",
+        "property": "transform: scaleY(1.5);"
+      },
+      "50": { "class": "scale-y-50", "property": "transform: scaleY(.5);" },
+      "75": { "class": "scale-y-75", "property": "transform: scaleY(.75);" },
+      "90": { "class": "scale-y-90", "property": "transform: scaleY(.9);" },
+      "95": { "class": "scale-y-95", "property": "transform: scaleY(.95);" }
+    }
+  }
+}

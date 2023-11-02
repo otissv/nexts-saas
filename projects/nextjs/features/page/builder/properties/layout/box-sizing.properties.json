@@ -1,0 +1,12 @@
+{
+  "boxSizing": {
+    "border": {
+      "class": "box-border",
+      "property": "box-sizing: border-box;"
+    },
+    "content": {
+      "class": "box-content",
+      "property": "box-sizing: content-box;"
+    }
+  }
+}

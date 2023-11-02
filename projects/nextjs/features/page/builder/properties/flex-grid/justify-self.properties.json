@@ -1,0 +1,24 @@
+{
+  "justifySelf": {
+    "auto": {
+      "class": "justify-self-auto",
+      "property": "justify-self: auto;"
+    },
+    "start": {
+      "class": "justify-self-start",
+      "property": "justify-self: start;"
+    },
+    "end": {
+      "class": "justify-self-end",
+      "property": "justify-self: end;"
+    },
+    "center": {
+      "class": "justify-self-center",
+      "property": "justify-self: center;"
+    },
+    "stretch": {
+      "class": "justify-self-stretch",
+      "property": "justify-self: stretch;"
+    }
+  }
+}

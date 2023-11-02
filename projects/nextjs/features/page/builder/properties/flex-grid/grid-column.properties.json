@@ -1,0 +1,172 @@
+{
+  "gridColumn": {
+    "auto": {
+      "class": "col-auto",
+      "property": "grid-column: auto;"
+    },
+    "1": {
+      "class": "col-span-1",
+      "property": "grid-column: span 1 / span 1;"
+    },
+    "2": {
+      "class": "col-span-2",
+      "property": "grid-column: span 2 / span 2;"
+    },
+    "3": {
+      "class": "col-span-3",
+      "property": "grid-column: span 3 / span 3;"
+    },
+    "4": {
+      "class": "col-span-4",
+      "property": "grid-column: span 4 / span 4;"
+    },
+    "5": {
+      "class": "col-span-5",
+      "property": "grid-column: span 5 / span 5;"
+    },
+    "6": {
+      "class": "col-span-6",
+      "property": "grid-column: span 6 / span 6;"
+    },
+    "7": {
+      "class": "col-span-7",
+      "property": "grid-column: span 7 / span 7;"
+    },
+    "8": {
+      "class": "col-span-8",
+      "property": "grid-column: span 8 / span 8;"
+    },
+    "9": {
+      "class": "col-span-9",
+      "property": "grid-column: span 9 / span 9;"
+    },
+    "10": {
+      "class": "col-span-10",
+      "property": "grid-column: span 10 / span 10;"
+    },
+    "11": {
+      "class": "col-span-11",
+      "property": "grid-column: span 11 / span 11;"
+    },
+    "12": {
+      "class": "col-span-12",
+      "property": "grid-column: span 12 / span 12;"
+    },
+    "full": {
+      "class": "col-span-full",
+      "property": "grid-column: 1 / -1;"
+    },
+    "start-1": {
+      "class": "col-start-1",
+      "property": "grid-column-start: 1;"
+    },
+    "start-2": {
+      "class": "col-start-2",
+      "property": "grid-column-start: 2;"
+    },
+    "start-3": {
+      "class": "col-start-3",
+      "property": "grid-column-start: 3;"
+    },
+    "start-4": {
+      "class": "col-start-4",
+      "property": "grid-column-start: 4;"
+    },
+    "start-5": {
+      "class": "col-start-5",
+      "property": "grid-column-start: 5;"
+    },
+    "start-6": {
+      "class": "col-start-6",
+      "property": "grid-column-start: 6;"
+    },
+    "start-7": {
+      "class": "col-start-7",
+      "property": "grid-column-start: 7;"
+    },
+    "start-8": {
+      "class": "col-start-8",
+      "property": "grid-column-start: 8;"
+    },
+    "start-9": {
+      "class": "col-start-9",
+      "property": "grid-column-start: 9;"
+    },
+    "start-10": {
+      "class": "col-start-10",
+      "property": "grid-column-start: 10;"
+    },
+    "start-11": {
+      "class": "col-start-11",
+      "property": "grid-column-start: 11;"
+    },
+    "start-12": {
+      "class": "col-start-12",
+      "property": "grid-column-start: 12;"
+    },
+    "start-13": {
+      "class": "col-start-13",
+      "property": "grid-column-start: 13;"
+    },
+    "start-auto": {
+      "class": "col-start-auto",
+      "property": "grid-column-start: auto;"
+    },
+    "end-1": {
+      "class": "col-end-1",
+      "property": "grid-column-end: 1;"
+    },
+    "end-2": {
+      "class": "col-end-2",
+      "property": "grid-column-end: 2;"
+    },
+    "end-3": {
+      "class": "col-end-3",
+      "property": "grid-column-end: 3;"
+    },
+    "end-4": {
+      "class": "col-end-4",
+      "property": "grid-column-end: 4;"
+    },
+    "end-5": {
+      "class": "col-end-5",
+      "property": "grid-column-end: 5;"
+    },
+    "end-6": {
+      "class": "col-end-6",
+      "property": "grid-column-end: 6;"
+    },
+    "end-7": {
+      "class": "col-end-7",
+      "property": "grid-column-end: 7;"
+    },
+    "end-8": {
+      "class": "col-end-8",
+      "property": "grid-column-end: 8;"
+    },
+    "end-9": {
+      "class": "col-end-9",
+      "property": "grid-column-end: 9;"
+    },
+    "end-10": {
+      "class": "col-end-10",
+      "property": "grid-column-end: 10;"
+    },
+    "end-11": {
+      "class": "col-end-11",
+      "property": "grid-column-end: 11;"
+    },
+    "end-12": {
+      "class": "col-end-12",
+      "property": "grid-column-end: 12;"
+    },
+    "end-13": {
+      "class": "col-end-13",
+      "property": "grid-column-end: 13;"
+    },
+    "end-auto": {
+      "class": "col-end-auto",
+      "property": "grid-column-end: auto;"
+    }
+  }
+}

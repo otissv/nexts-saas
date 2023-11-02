@@ -1,0 +1,36 @@
+{
+  "justifyContent": {
+    "normal": {
+      "class": "justify-normal",
+      "property": "justify-content: normal;"
+    },
+    "start": {
+      "class": "justify-start",
+      "property": "justify-content: flex-start;"
+    },
+    "end": {
+      "class": "justify-end",
+      "property": "justify-content: flex-end;"
+    },
+    "center": {
+      "class": "justify-center",
+      "property": "justify-content: center;"
+    },
+    "between": {
+      "class": "justify-between",
+      "property": "justify-content: space-between;"
+    },
+    "around": {
+      "class": "justify-around",
+      "property": "justify-content: space-around;"
+    },
+    "evenly": {
+      "class": "justify-evenly",
+      "property": "justify-content: space-evenly;"
+    },
+    "stretch": {
+      "class": "justify-stretch",
+      "property": "justify-content: stretch;"
+    }
+  }
+}

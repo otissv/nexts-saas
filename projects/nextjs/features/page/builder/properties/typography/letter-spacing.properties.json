@@ -1,0 +1,28 @@
+{
+  "letterSpacing": {
+    "tighter": {
+      "class": "tracking-tighter",
+      "property": "letter-spacing: -0.05em;"
+    },
+    "tight": {
+      "class": "tracking-tight",
+      "property": "letter-spacing: -0.025em;"
+    },
+    "normal": {
+      "class": "tracking-normal",
+      "property": "letter-spacing: 0em;"
+    },
+    "wide": {
+      "class": "tracking-wide",
+      "property": "letter-spacing: 0.025em;"
+    },
+    "wider": {
+      "class": "tracking-wider",
+      "property": "letter-spacing: 0.05em;"
+    },
+    "widest": {
+      "class": "tracking-widest",
+      "property": "letter-spacing: 0.1em;"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "clear": {
+    "left": {
+      "class": "clear-left",
+      "property": "clear: left;"
+    },
+    "right": {
+      "class": "clear-right",
+      "property": "clear: right;"
+    },
+    "both": {
+      "class": "clear-both",
+      "property": "clear: both;"
+    },
+    "none": {
+      "class": "clear-none",
+      "property": "clear: none;"
+    }
+  }
+}

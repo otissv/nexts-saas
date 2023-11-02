@@ -1,0 +1,992 @@
+{
+  "ringOffsetColor": {
+    "offset-inherit": {
+      "class": "ring-offset-inherit",
+      "property": "--tw-ring-offset-color: inherit;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-current": {
+      "class": "ring-offset-current",
+      "property": "--tw-ring-offset-color: currentColor;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-transparent": {
+      "class": "ring-offset-transparent",
+      "property": "--tw-ring-offset-color: transparent;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-black": {
+      "class": "ring-offset-black",
+      "property": "--tw-ring-offset-color: #000;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-white": {
+      "class": "ring-offset-white",
+      "property": "--tw-ring-offset-color: #fff;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-slate-50": {
+      "class": "ring-offset-slate-50",
+      "property": "--tw-ring-offset-color: #f8fafc;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-slate-100": {
+      "class": "ring-offset-slate-100",
+      "property": "--tw-ring-offset-color: #f1f5f9;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-slate-200": {
+      "class": "ring-offset-slate-200",
+      "property": "--tw-ring-offset-color: #e2e8f0;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-slate-300": {
+      "class": "ring-offset-slate-300",
+      "property": "--tw-ring-offset-color: #cbd5e1;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-slate-400": {
+      "class": "ring-offset-slate-400",
+      "property": "--tw-ring-offset-color: #94a3b8;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-slate-500": {
+      "class": "ring-offset-slate-500",
+      "property": "--tw-ring-offset-color: #64748b;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-slate-600": {
+      "class": "ring-offset-slate-600",
+      "property": "--tw-ring-offset-color: #475569;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-slate-700": {
+      "class": "ring-offset-slate-700",
+      "property": "--tw-ring-offset-color: #334155;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-slate-800": {
+      "class": "ring-offset-slate-800",
+      "property": "--tw-ring-offset-color: #1e293b;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-slate-900": {
+      "class": "ring-offset-slate-900",
+      "property": "--tw-ring-offset-color: #0f172a;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-slate-950": {
+      "class": "ring-offset-slate-950",
+      "property": "--tw-ring-offset-color: #020617;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-gray-50": {
+      "class": "ring-offset-gray-50",
+      "property": "--tw-ring-offset-color: #f9fafb;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-gray-100": {
+      "class": "ring-offset-gray-100",
+      "property": "--tw-ring-offset-color: #f3f4f6;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-gray-200": {
+      "class": "ring-offset-gray-200",
+      "property": "--tw-ring-offset-color: #e5e7eb;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-gray-300": {
+      "class": "ring-offset-gray-300",
+      "property": "--tw-ring-offset-color: #d1d5db;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-gray-400": {
+      "class": "ring-offset-gray-400",
+      "property": "--tw-ring-offset-color: #9ca3af;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-gray-500": {
+      "class": "ring-offset-gray-500",
+      "property": "--tw-ring-offset-color: #6b7280;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-gray-600": {
+      "class": "ring-offset-gray-600",
+      "property": "--tw-ring-offset-color: #4b5563;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-gray-700": {
+      "class": "ring-offset-gray-700",
+      "property": "--tw-ring-offset-color: #374151;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-gray-800": {
+      "class": "ring-offset-gray-800",
+      "property": "--tw-ring-offset-color: #1f2937;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-gray-900": {
+      "class": "ring-offset-gray-900",
+      "property": "--tw-ring-offset-color: #111827;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-gray-950": {
+      "class": "ring-offset-gray-950",
+      "property": "--tw-ring-offset-color: #030712;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-zinc-50": {
+      "class": "ring-offset-zinc-50",
+      "property": "--tw-ring-offset-color: #fafafa;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-zinc-100": {
+      "class": "ring-offset-zinc-100",
+      "property": "--tw-ring-offset-color: #f4f4f5;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-zinc-200": {
+      "class": "ring-offset-zinc-200",
+      "property": "--tw-ring-offset-color: #e4e4e7;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-zinc-300": {
+      "class": "ring-offset-zinc-300",
+      "property": "--tw-ring-offset-color: #d4d4d8;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-zinc-400": {
+      "class": "ring-offset-zinc-400",
+      "property": "--tw-ring-offset-color: #a1a1aa;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-zinc-500": {
+      "class": "ring-offset-zinc-500",
+      "property": "--tw-ring-offset-color: #71717a;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-zinc-600": {
+      "class": "ring-offset-zinc-600",
+      "property": "--tw-ring-offset-color: #52525b;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-zinc-700": {
+      "class": "ring-offset-zinc-700",
+      "property": "--tw-ring-offset-color: #3f3f46;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-zinc-800": {
+      "class": "ring-offset-zinc-800",
+      "property": "--tw-ring-offset-color: #27272a;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-zinc-900": {
+      "class": "ring-offset-zinc-900",
+      "property": "--tw-ring-offset-color: #18181b;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-zinc-950": {
+      "class": "ring-offset-zinc-950",
+      "property": "--tw-ring-offset-color: #09090b;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-neutral-50": {
+      "class": "ring-offset-neutral-50",
+      "property": "--tw-ring-offset-color: #fafafa;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-neutral-100": {
+      "class": "ring-offset-neutral-100",
+      "property": "--tw-ring-offset-color: #f5f5f5;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-neutral-200": {
+      "class": "ring-offset-neutral-200",
+      "property": "--tw-ring-offset-color: #e5e5e5;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-neutral-300": {
+      "class": "ring-offset-neutral-300",
+      "property": "--tw-ring-offset-color: #d4d4d4;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-neutral-400": {
+      "class": "ring-offset-neutral-400",
+      "property": "--tw-ring-offset-color: #a3a3a3;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-neutral-500": {
+      "class": "ring-offset-neutral-500",
+      "property": "--tw-ring-offset-color: #737373;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-neutral-600": {
+      "class": "ring-offset-neutral-600",
+      "property": "--tw-ring-offset-color: #525252;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-neutral-700": {
+      "class": "ring-offset-neutral-700",
+      "property": "--tw-ring-offset-color: #404040;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-neutral-800": {
+      "class": "ring-offset-neutral-800",
+      "property": "--tw-ring-offset-color: #262626;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-neutral-900": {
+      "class": "ring-offset-neutral-900",
+      "property": "--tw-ring-offset-color: #171717;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-neutral-950": {
+      "class": "ring-offset-neutral-950",
+      "property": "--tw-ring-offset-color: #0a0a0a;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-stone-50": {
+      "class": "ring-offset-stone-50",
+      "property": "--tw-ring-offset-color: #fafaf9;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-stone-100": {
+      "class": "ring-offset-stone-100",
+      "property": "--tw-ring-offset-color: #f5f5f4;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-stone-200": {
+      "class": "ring-offset-stone-200",
+      "property": "--tw-ring-offset-color: #e7e5e4;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-stone-300": {
+      "class": "ring-offset-stone-300",
+      "property": "--tw-ring-offset-color: #d6d3d1;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-stone-400": {
+      "class": "ring-offset-stone-400",
+      "property": "--tw-ring-offset-color: #a8a29e;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-stone-500": {
+      "class": "ring-offset-stone-500",
+      "property": "--tw-ring-offset-color: #78716c;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-stone-600": {
+      "class": "ring-offset-stone-600",
+      "property": "--tw-ring-offset-color: #57534e;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-stone-700": {
+      "class": "ring-offset-stone-700",
+      "property": "--tw-ring-offset-color: #44403c;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-stone-800": {
+      "class": "ring-offset-stone-800",
+      "property": "--tw-ring-offset-color: #292524;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-stone-900": {
+      "class": "ring-offset-stone-900",
+      "property": "--tw-ring-offset-color: #1c1917;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-stone-950": {
+      "class": "ring-offset-stone-950",
+      "property": "--tw-ring-offset-color: #0c0a09;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-red-50": {
+      "class": "ring-offset-red-50",
+      "property": "--tw-ring-offset-color: #fef2f2;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-red-100": {
+      "class": "ring-offset-red-100",
+      "property": "--tw-ring-offset-color: #fee2e2;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-red-200": {
+      "class": "ring-offset-red-200",
+      "property": "--tw-ring-offset-color: #fecaca;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-red-300": {
+      "class": "ring-offset-red-300",
+      "property": "--tw-ring-offset-color: #fca5a5;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-red-400": {
+      "class": "ring-offset-red-400",
+      "property": "--tw-ring-offset-color: #f87171;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-red-500": {
+      "class": "ring-offset-red-500",
+      "property": "--tw-ring-offset-color: #ef4444;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-red-600": {
+      "class": "ring-offset-red-600",
+      "property": "--tw-ring-offset-color: #dc2626;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-red-700": {
+      "class": "ring-offset-red-700",
+      "property": "--tw-ring-offset-color: #b91c1c;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-red-800": {
+      "class": "ring-offset-red-800",
+      "property": "--tw-ring-offset-color: #991b1b;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-red-900": {
+      "class": "ring-offset-red-900",
+      "property": "--tw-ring-offset-color: #7f1d1d;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-red-950": {
+      "class": "ring-offset-red-950",
+      "property": "--tw-ring-offset-color: #450a0a;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-orange-50": {
+      "class": "ring-offset-orange-50",
+      "property": "--tw-ring-offset-color: #fff7ed;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-orange-100": {
+      "class": "ring-offset-orange-100",
+      "property": "--tw-ring-offset-color: #ffedd5;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-orange-200": {
+      "class": "ring-offset-orange-200",
+      "property": "--tw-ring-offset-color: #fed7aa;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-orange-300": {
+      "class": "ring-offset-orange-300",
+      "property": "--tw-ring-offset-color: #fdba74;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-orange-400": {
+      "class": "ring-offset-orange-400",
+      "property": "--tw-ring-offset-color: #fb923c;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-orange-500": {
+      "class": "ring-offset-orange-500",
+      "property": "--tw-ring-offset-color: #f97316;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-orange-600": {
+      "class": "ring-offset-orange-600",
+      "property": "--tw-ring-offset-color: #ea580c;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-orange-700": {
+      "class": "ring-offset-orange-700",
+      "property": "--tw-ring-offset-color: #c2410c;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-orange-800": {
+      "class": "ring-offset-orange-800",
+      "property": "--tw-ring-offset-color: #9a3412;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-orange-900": {
+      "class": "ring-offset-orange-900",
+      "property": "--tw-ring-offset-color: #7c2d12;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-orange-950": {
+      "class": "ring-offset-orange-950",
+      "property": "--tw-ring-offset-color: #431407;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-amber-50": {
+      "class": "ring-offset-amber-50",
+      "property": "--tw-ring-offset-color: #fffbeb;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-amber-100": {
+      "class": "ring-offset-amber-100",
+      "property": "--tw-ring-offset-color: #fef3c7;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-amber-200": {
+      "class": "ring-offset-amber-200",
+      "property": "--tw-ring-offset-color: #fde68a;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-amber-300": {
+      "class": "ring-offset-amber-300",
+      "property": "--tw-ring-offset-color: #fcd34d;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-amber-400": {
+      "class": "ring-offset-amber-400",
+      "property": "--tw-ring-offset-color: #fbbf24;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-amber-500": {
+      "class": "ring-offset-amber-500",
+      "property": "--tw-ring-offset-color: #f59e0b;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-amber-600": {
+      "class": "ring-offset-amber-600",
+      "property": "--tw-ring-offset-color: #d97706;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-amber-700": {
+      "class": "ring-offset-amber-700",
+      "property": "--tw-ring-offset-color: #b45309;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-amber-800": {
+      "class": "ring-offset-amber-800",
+      "property": "--tw-ring-offset-color: #92400e;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-amber-900": {
+      "class": "ring-offset-amber-900",
+      "property": "--tw-ring-offset-color: #78350f;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-amber-950": {
+      "class": "ring-offset-amber-950",
+      "property": "--tw-ring-offset-color: #451a03;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-yellow-50": {
+      "class": "ring-offset-yellow-50",
+      "property": "--tw-ring-offset-color: #fefce8;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-yellow-100": {
+      "class": "ring-offset-yellow-100",
+      "property": "--tw-ring-offset-color: #fef9c3;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-yellow-200": {
+      "class": "ring-offset-yellow-200",
+      "property": "--tw-ring-offset-color: #fef08a;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-yellow-300": {
+      "class": "ring-offset-yellow-300",
+      "property": "--tw-ring-offset-color: #fde047;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-yellow-400": {
+      "class": "ring-offset-yellow-400",
+      "property": "--tw-ring-offset-color: #facc15;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-yellow-500": {
+      "class": "ring-offset-yellow-500",
+      "property": "--tw-ring-offset-color: #eab308;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-yellow-600": {
+      "class": "ring-offset-yellow-600",
+      "property": "--tw-ring-offset-color: #ca8a04;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-yellow-700": {
+      "class": "ring-offset-yellow-700",
+      "property": "--tw-ring-offset-color: #a16207;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-yellow-800": {
+      "class": "ring-offset-yellow-800",
+      "property": "--tw-ring-offset-color: #854d0e;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-yellow-900": {
+      "class": "ring-offset-yellow-900",
+      "property": "--tw-ring-offset-color: #713f12;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-yellow-950": {
+      "class": "ring-offset-yellow-950",
+      "property": "--tw-ring-offset-color: #422006;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-lime-50": {
+      "class": "ring-offset-lime-50",
+      "property": "--tw-ring-offset-color: #f7fee7;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-lime-100": {
+      "class": "ring-offset-lime-100",
+      "property": "--tw-ring-offset-color: #ecfccb;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-lime-200": {
+      "class": "ring-offset-lime-200",
+      "property": "--tw-ring-offset-color: #d9f99d;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-lime-300": {
+      "class": "ring-offset-lime-300",
+      "property": "--tw-ring-offset-color: #bef264;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-lime-400": {
+      "class": "ring-offset-lime-400",
+      "property": "--tw-ring-offset-color: #a3e635;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-lime-500": {
+      "class": "ring-offset-lime-500",
+      "property": "--tw-ring-offset-color: #84cc16;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-lime-600": {
+      "class": "ring-offset-lime-600",
+      "property": "--tw-ring-offset-color: #65a30d;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-lime-700": {
+      "class": "ring-offset-lime-700",
+      "property": "--tw-ring-offset-color: #4d7c0f;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-lime-800": {
+      "class": "ring-offset-lime-800",
+      "property": "--tw-ring-offset-color: #3f6212;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-lime-900": {
+      "class": "ring-offset-lime-900",
+      "property": "--tw-ring-offset-color: #365314;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-lime-950": {
+      "class": "ring-offset-lime-950",
+      "property": "--tw-ring-offset-color: #1a2e05;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-green-50": {
+      "class": "ring-offset-green-50",
+      "property": "--tw-ring-offset-color: #f0fdf4;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-green-100": {
+      "class": "ring-offset-green-100",
+      "property": "--tw-ring-offset-color: #dcfce7;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-green-200": {
+      "class": "ring-offset-green-200",
+      "property": "--tw-ring-offset-color: #bbf7d0;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-green-300": {
+      "class": "ring-offset-green-300",
+      "property": "--tw-ring-offset-color: #86efac;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-green-400": {
+      "class": "ring-offset-green-400",
+      "property": "--tw-ring-offset-color: #4ade80;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-green-500": {
+      "class": "ring-offset-green-500",
+      "property": "--tw-ring-offset-color: #22c55e;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-green-600": {
+      "class": "ring-offset-green-600",
+      "property": "--tw-ring-offset-color: #16a34a;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-green-700": {
+      "class": "ring-offset-green-700",
+      "property": "--tw-ring-offset-color: #15803d;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-green-800": {
+      "class": "ring-offset-green-800",
+      "property": "--tw-ring-offset-color: #166534;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-green-900": {
+      "class": "ring-offset-green-900",
+      "property": "--tw-ring-offset-color: #14532d;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-green-950": {
+      "class": "ring-offset-green-950",
+      "property": "--tw-ring-offset-color: #052e16;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-emerald-50": {
+      "class": "ring-offset-emerald-50",
+      "property": "--tw-ring-offset-color: #ecfdf5;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-emerald-100": {
+      "class": "ring-offset-emerald-100",
+      "property": "--tw-ring-offset-color: #d1fae5;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-emerald-200": {
+      "class": "ring-offset-emerald-200",
+      "property": "--tw-ring-offset-color: #a7f3d0;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-emerald-300": {
+      "class": "ring-offset-emerald-300",
+      "property": "--tw-ring-offset-color: #6ee7b7;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-emerald-400": {
+      "class": "ring-offset-emerald-400",
+      "property": "--tw-ring-offset-color: #34d399;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-emerald-500": {
+      "class": "ring-offset-emerald-500",
+      "property": "--tw-ring-offset-color: #10b981;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-emerald-600": {
+      "class": "ring-offset-emerald-600",
+      "property": "--tw-ring-offset-color: #059669;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-emerald-700": {
+      "class": "ring-offset-emerald-700",
+      "property": "--tw-ring-offset-color: #047857;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-emerald-800": {
+      "class": "ring-offset-emerald-800",
+      "property": "--tw-ring-offset-color: #065f46;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-emerald-900": {
+      "class": "ring-offset-emerald-900",
+      "property": "--tw-ring-offset-color: #064e3b;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-emerald-950": {
+      "class": "ring-offset-emerald-950",
+      "property": "--tw-ring-offset-color: #022c22;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-teal-50": {
+      "class": "ring-offset-teal-50",
+      "property": "--tw-ring-offset-color: #f0fdfa;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-teal-100": {
+      "class": "ring-offset-teal-100",
+      "property": "--tw-ring-offset-color: #ccfbf1;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-teal-200": {
+      "class": "ring-offset-teal-200",
+      "property": "--tw-ring-offset-color: #99f6e4;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-teal-300": {
+      "class": "ring-offset-teal-300",
+      "property": "--tw-ring-offset-color: #5eead4;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-teal-400": {
+      "class": "ring-offset-teal-400",
+      "property": "--tw-ring-offset-color: #2dd4bf;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-teal-500": {
+      "class": "ring-offset-teal-500",
+      "property": "--tw-ring-offset-color: #14b8a6;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-teal-600": {
+      "class": "ring-offset-teal-600",
+      "property": "--tw-ring-offset-color: #0d9488;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-teal-700": {
+      "class": "ring-offset-teal-700",
+      "property": "--tw-ring-offset-color: #0f766e;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-teal-800": {
+      "class": "ring-offset-teal-800",
+      "property": "--tw-ring-offset-color: #115e59;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-teal-900": {
+      "class": "ring-offset-teal-900",
+      "property": "--tw-ring-offset-color: #134e4a;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-teal-950": {
+      "class": "ring-offset-teal-950",
+      "property": "--tw-ring-offset-color: #042f2e;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-cyan-50": {
+      "class": "ring-offset-cyan-50",
+      "property": "--tw-ring-offset-color: #ecfeff;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-cyan-100": {
+      "class": "ring-offset-cyan-100",
+      "property": "--tw-ring-offset-color: #cffafe;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-cyan-200": {
+      "class": "ring-offset-cyan-200",
+      "property": "--tw-ring-offset-color: #a5f3fc;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-cyan-300": {
+      "class": "ring-offset-cyan-300",
+      "property": "--tw-ring-offset-color: #67e8f9;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-cyan-400": {
+      "class": "ring-offset-cyan-400",
+      "property": "--tw-ring-offset-color: #22d3ee;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-cyan-500": {
+      "class": "ring-offset-cyan-500",
+      "property": "--tw-ring-offset-color: #06b6d4;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-cyan-600": {
+      "class": "ring-offset-cyan-600",
+      "property": "--tw-ring-offset-color: #0891b2;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-cyan-700": {
+      "class": "ring-offset-cyan-700",
+      "property": "--tw-ring-offset-color: #0e7490;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-cyan-800": {
+      "class": "ring-offset-cyan-800",
+      "property": "--tw-ring-offset-color: #155e75;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-cyan-900": {
+      "class": "ring-offset-cyan-900",
+      "property": "--tw-ring-offset-color: #164e63;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-cyan-950": {
+      "class": "ring-offset-cyan-950",
+      "property": "--tw-ring-offset-color: #083344;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-sky-50": {
+      "class": "ring-offset-sky-50",
+      "property": "--tw-ring-offset-color: #f0f9ff;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-sky-100": {
+      "class": "ring-offset-sky-100",
+      "property": "--tw-ring-offset-color: #e0f2fe;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-sky-200": {
+      "class": "ring-offset-sky-200",
+      "property": "--tw-ring-offset-color: #bae6fd;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-sky-300": {
+      "class": "ring-offset-sky-300",
+      "property": "--tw-ring-offset-color: #7dd3fc;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-sky-400": {
+      "class": "ring-offset-sky-400",
+      "property": "--tw-ring-offset-color: #38bdf8;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-sky-500": {
+      "class": "ring-offset-sky-500",
+      "property": "--tw-ring-offset-color: #0ea5e9;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-sky-600": {
+      "class": "ring-offset-sky-600",
+      "property": "--tw-ring-offset-color: #0284c7;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-sky-700": {
+      "class": "ring-offset-sky-700",
+      "property": "--tw-ring-offset-color: #0369a1;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-sky-800": {
+      "class": "ring-offset-sky-800",
+      "property": "--tw-ring-offset-color: #075985;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-sky-900": {
+      "class": "ring-offset-sky-900",
+      "property": "--tw-ring-offset-color: #0c4a6e;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-sky-950": {
+      "class": "ring-offset-sky-950",
+      "property": "--tw-ring-offset-color: #082f49;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-blue-50": {
+      "class": "ring-offset-blue-50",
+      "property": "--tw-ring-offset-color: #eff6ff;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-blue-100": {
+      "class": "ring-offset-blue-100",
+      "property": "--tw-ring-offset-color: #dbeafe;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-blue-200": {
+      "class": "ring-offset-blue-200",
+      "property": "--tw-ring-offset-color: #bfdbfe;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-blue-300": {
+      "class": "ring-offset-blue-300",
+      "property": "--tw-ring-offset-color: #93c5fd;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-blue-400": {
+      "class": "ring-offset-blue-400",
+      "property": "--tw-ring-offset-color: #60a5fa;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-blue-500": {
+      "class": "ring-offset-blue-500",
+      "property": "--tw-ring-offset-color: #3b82f6;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-blue-600": {
+      "class": "ring-offset-blue-600",
+      "property": "--tw-ring-offset-color: #2563eb;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-blue-700": {
+      "class": "ring-offset-blue-700",
+      "property": "--tw-ring-offset-color: #1d4ed8;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-blue-800": {
+      "class": "ring-offset-blue-800",
+      "property": "--tw-ring-offset-color: #1e40af;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-blue-900": {
+      "class": "ring-offset-blue-900",
+      "property": "--tw-ring-offset-color: #1e3a8a;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-blue-950": {
+      "class": "ring-offset-blue-950",
+      "property": "--tw-ring-offset-color: #172554;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-indigo-50": {
+      "class": "ring-offset-indigo-50",
+      "property": "--tw-ring-offset-color: #eef2ff;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-indigo-100": {
+      "class": "ring-offset-indigo-100",
+      "property": "--tw-ring-offset-color: #e0e7ff;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-indigo-200": {
+      "class": "ring-offset-indigo-200",
+      "property": "--tw-ring-offset-color: #c7d2fe;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-indigo-300": {
+      "class": "ring-offset-indigo-300",
+      "property": "--tw-ring-offset-color: #a5b4fc;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-indigo-400": {
+      "class": "ring-offset-indigo-400",
+      "property": "--tw-ring-offset-color: #818cf8;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-indigo-500": {
+      "class": "ring-offset-indigo-500",
+      "property": "--tw-ring-offset-color: #6366f1;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-indigo-600": {
+      "class": "ring-offset-indigo-600",
+      "property": "--tw-ring-offset-color: #4f46e5;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-indigo-700": {
+      "class": "ring-offset-indigo-700",
+      "property": "--tw-ring-offset-color: #4338ca;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-indigo-800": {
+      "class": "ring-offset-indigo-800",
+      "property": "--tw-ring-offset-color: #3730a3;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-indigo-900": {
+      "class": "ring-offset-indigo-900",
+      "property": "--tw-ring-offset-color: #312e81;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-indigo-950": {
+      "class": "ring-offset-indigo-950",
+      "property": "--tw-ring-offset-color: #1e1b4b;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-violet-50": {
+      "class": "ring-offset-violet-50",
+      "property": "--tw-ring-offset-color: #f5f3ff;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-violet-100": {
+      "class": "ring-offset-violet-100",
+      "property": "--tw-ring-offset-color: #ede9fe;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-violet-200": {
+      "class": "ring-offset-violet-200",
+      "property": "--tw-ring-offset-color: #ddd6fe;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-violet-300": {
+      "class": "ring-offset-violet-300",
+      "property": "--tw-ring-offset-color: #c4b5fd;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-violet-400": {
+      "class": "ring-offset-violet-400",
+      "property": "--tw-ring-offset-color: #a78bfa;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-violet-500": {
+      "class": "ring-offset-violet-500",
+      "property": "--tw-ring-offset-color: #8b5cf6;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-violet-600": {
+      "class": "ring-offset-violet-600",
+      "property": "--tw-ring-offset-color: #7c3aed;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-violet-700": {
+      "class": "ring-offset-violet-700",
+      "property": "--tw-ring-offset-color: #6d28d9;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-violet-800": {
+      "class": "ring-offset-violet-800",
+      "property": "--tw-ring-offset-color: #5b21b6;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-violet-900": {
+      "class": "ring-offset-violet-900",
+      "property": "--tw-ring-offset-color: #4c1d95;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-violet-950": {
+      "class": "ring-offset-violet-950",
+      "property": "--tw-ring-offset-color: #2e1065;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-purple-50": {
+      "class": "ring-offset-purple-50",
+      "property": "--tw-ring-offset-color: #faf5ff;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-purple-100": {
+      "class": "ring-offset-purple-100",
+      "property": "--tw-ring-offset-color: #f3e8ff;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-purple-200": {
+      "class": "ring-offset-purple-200",
+      "property": "--tw-ring-offset-color: #e9d5ff;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-purple-300": {
+      "class": "ring-offset-purple-300",
+      "property": "--tw-ring-offset-color: #d8b4fe;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-purple-400": {
+      "class": "ring-offset-purple-400",
+      "property": "--tw-ring-offset-color: #c084fc;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-purple-500": {
+      "class": "ring-offset-purple-500",
+      "property": "--tw-ring-offset-color: #a855f7;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-purple-600": {
+      "class": "ring-offset-purple-600",
+      "property": "--tw-ring-offset-color: #9333ea;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-purple-700": {
+      "class": "ring-offset-purple-700",
+      "property": "--tw-ring-offset-color: #7e22ce;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-purple-800": {
+      "class": "ring-offset-purple-800",
+      "property": "--tw-ring-offset-color: #6b21a8;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-purple-900": {
+      "class": "ring-offset-purple-900",
+      "property": "--tw-ring-offset-color: #581c87;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-purple-950": {
+      "class": "ring-offset-purple-950",
+      "property": "--tw-ring-offset-color: #3b0764;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-fuchsia-50": {
+      "class": "ring-offset-fuchsia-50",
+      "property": "--tw-ring-offset-color: #fdf4ff;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-fuchsia-100": {
+      "class": "ring-offset-fuchsia-100",
+      "property": "--tw-ring-offset-color: #fae8ff;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-fuchsia-200": {
+      "class": "ring-offset-fuchsia-200",
+      "property": "--tw-ring-offset-color: #f5d0fe;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-fuchsia-300": {
+      "class": "ring-offset-fuchsia-300",
+      "property": "--tw-ring-offset-color: #f0abfc;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-fuchsia-400": {
+      "class": "ring-offset-fuchsia-400",
+      "property": "--tw-ring-offset-color: #e879f9;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-fuchsia-500": {
+      "class": "ring-offset-fuchsia-500",
+      "property": "--tw-ring-offset-color: #d946ef;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-fuchsia-600": {
+      "class": "ring-offset-fuchsia-600",
+      "property": "--tw-ring-offset-color: #c026d3;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-fuchsia-700": {
+      "class": "ring-offset-fuchsia-700",
+      "property": "--tw-ring-offset-color: #a21caf;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-fuchsia-800": {
+      "class": "ring-offset-fuchsia-800",
+      "property": "--tw-ring-offset-color: #86198f;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-fuchsia-900": {
+      "class": "ring-offset-fuchsia-900",
+      "property": "--tw-ring-offset-color: #701a75;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-fuchsia-950": {
+      "class": "ring-offset-fuchsia-950",
+      "property": "--tw-ring-offset-color: #4a044e;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-pink-50": {
+      "class": "ring-offset-pink-50",
+      "property": "--tw-ring-offset-color: #fdf2f8;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-pink-100": {
+      "class": "ring-offset-pink-100",
+      "property": "--tw-ring-offset-color: #fce7f3;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-pink-200": {
+      "class": "ring-offset-pink-200",
+      "property": "--tw-ring-offset-color: #fbcfe8;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-pink-300": {
+      "class": "ring-offset-pink-300",
+      "property": "--tw-ring-offset-color: #f9a8d4;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-pink-400": {
+      "class": "ring-offset-pink-400",
+      "property": "--tw-ring-offset-color: #f472b6;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-pink-500": {
+      "class": "ring-offset-pink-500",
+      "property": "--tw-ring-offset-color: #ec4899;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-pink-600": {
+      "class": "ring-offset-pink-600",
+      "property": "--tw-ring-offset-color: #db2777;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-pink-700": {
+      "class": "ring-offset-pink-700",
+      "property": "--tw-ring-offset-color: #be185d;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-pink-800": {
+      "class": "ring-offset-pink-800",
+      "property": "--tw-ring-offset-color: #9d174d;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-pink-900": {
+      "class": "ring-offset-pink-900",
+      "property": "--tw-ring-offset-color: #831843;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-pink-950": {
+      "class": "ring-offset-pink-950",
+      "property": "--tw-ring-offset-color: #500724;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-rose-50": {
+      "class": "ring-offset-rose-50",
+      "property": "--tw-ring-offset-color: #fff1f2;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-rose-100": {
+      "class": "ring-offset-rose-100",
+      "property": "--tw-ring-offset-color: #ffe4e6;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-rose-200": {
+      "class": "ring-offset-rose-200",
+      "property": "--tw-ring-offset-color: #fecdd3;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-rose-300": {
+      "class": "ring-offset-rose-300",
+      "property": "--tw-ring-offset-color: #fda4af;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-rose-400": {
+      "class": "ring-offset-rose-400",
+      "property": "--tw-ring-offset-color: #fb7185;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-rose-500": {
+      "class": "ring-offset-rose-500",
+      "property": "--tw-ring-offset-color: #f43f5e;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-rose-600": {
+      "class": "ring-offset-rose-600",
+      "property": "--tw-ring-offset-color: #e11d48;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-rose-700": {
+      "class": "ring-offset-rose-700",
+      "property": "--tw-ring-offset-color: #be123c;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-rose-800": {
+      "class": "ring-offset-rose-800",
+      "property": "--tw-ring-offset-color: #9f1239;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-rose-900": {
+      "class": "ring-offset-rose-900",
+      "property": "--tw-ring-offset-color: #881337;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    },
+    "offset-rose-950": {
+      "class": "ring-offset-rose-950",
+      "property": "--tw-ring-offset-color: #4c0519;\nbox-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);"
+    }
+  }
+}

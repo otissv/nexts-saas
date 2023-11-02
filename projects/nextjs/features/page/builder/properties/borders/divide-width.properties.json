@@ -1,0 +1,52 @@
+{
+  "divideWidth": {
+    "x-0 > * + *": {
+      "class": "divide-x-0 > * + *",
+      "property": "border-right-width: 0px;\nborder-left-width: 0px;"
+    },
+    "x-2 > * + *": {
+      "class": "divide-x-2 > * + *",
+      "property": "border-right-width: 0px;\nborder-left-width: 2px;"
+    },
+    "x-4 > * + *": {
+      "class": "divide-x-4 > * + *",
+      "property": "border-right-width: 0px;\nborder-left-width: 4px;"
+    },
+    "x-8 > * + *": {
+      "class": "divide-x-8 > * + *",
+      "property": "border-right-width: 0px;\nborder-left-width: 8px;"
+    },
+    "x > * + *": {
+      "class": "divide-x > * + *",
+      "property": "border-right-width: 0px;\nborder-left-width: 1px;"
+    },
+    "y-0 > * + *": {
+      "class": "divide-y-0 > * + *",
+      "property": "border-top-width: 0px;\nborder-bottom-width: 0px;"
+    },
+    "y-2 > * + *": {
+      "class": "divide-y-2 > * + *",
+      "property": "border-top-width: 2px;\nborder-bottom-width: 0px;"
+    },
+    "y-4 > * + *": {
+      "class": "divide-y-4 > * + *",
+      "property": "border-top-width: 4px;\nborder-bottom-width: 0px;"
+    },
+    "y-8 > * + *": {
+      "class": "divide-y-8 > * + *",
+      "property": "border-top-width: 8px;\nborder-bottom-width: 0px;"
+    },
+    "y > * + *": {
+      "class": "divide-y > * + *",
+      "property": "border-top-width: 1px;\nborder-bottom-width: 0px;"
+    },
+    "y-reverse > * + *": {
+      "class": "divide-y-reverse > * + *",
+      "property": "--tw-divide-y-reverse: 1;"
+    },
+    "x-reverse > * + *": {
+      "class": "divide-x-reverse > * + *",
+      "property": "--tw-divide-x-reverse: 1;"
+    }
+  }
+}

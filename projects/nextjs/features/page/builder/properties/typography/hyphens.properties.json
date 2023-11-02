@@ -1,0 +1,16 @@
+{
+  "hyphens": {
+    "none": {
+      "class": "hyphens-none",
+      "property": "hyphens: none;"
+    },
+    "manual": {
+      "class": "hyphens-manual",
+      "property": "hyphens: manual;"
+    },
+    "auto": {
+      "class": "hyphens-auto",
+      "property": "hyphens: auto;"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "objectPosition": {
+    "bottom": {
+      "class": "object-bottom",
+      "property": "object-position: bottom;"
+    },
+    "center": {
+      "class": "object-center",
+      "property": "object-position: center;"
+    },
+    "left": {
+      "class": "object-left",
+      "property": "object-position: left;"
+    },
+    "left-bottom": {
+      "class": "object-left-bottom",
+      "property": "object-position: left bottom;"
+    },
+    "left-top": {
+      "class": "object-left-top",
+      "property": "object-position: left top;"
+    },
+    "right": {
+      "class": "object-right",
+      "property": "object-position: right;"
+    },
+    "right-bottom": {
+      "class": "object-right-bottom",
+      "property": "object-position: right bottom;"
+    },
+    "right-top": {
+      "class": "object-right-top",
+      "property": "object-position: right top;"
+    },
+    "top": {
+      "class": "object-top",
+      "property": "object-position: top;"
+    }
+  }
+}

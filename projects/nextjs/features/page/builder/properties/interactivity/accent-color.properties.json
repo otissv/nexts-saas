@@ -1,0 +1,996 @@
+{
+  "accentColor": {
+    "inherit": {
+      "class": "accent-inherit",
+      "property": "accent-color: inherit;"
+    },
+    "current": {
+      "class": "accent-current",
+      "property": "accent-color: currentColor;"
+    },
+    "transparent": {
+      "class": "accent-transparent",
+      "property": "accent-color: transparent;"
+    },
+    "black": {
+      "class": "accent-black",
+      "property": "accent-color: #000;"
+    },
+    "white": {
+      "class": "accent-white",
+      "property": "accent-color: #fff;"
+    },
+    "slate-50": {
+      "class": "accent-slate-50",
+      "property": "accent-color: #f8fafc;"
+    },
+    "slate-100": {
+      "class": "accent-slate-100",
+      "property": "accent-color: #f1f5f9;"
+    },
+    "slate-200": {
+      "class": "accent-slate-200",
+      "property": "accent-color: #e2e8f0;"
+    },
+    "slate-300": {
+      "class": "accent-slate-300",
+      "property": "accent-color: #cbd5e1;"
+    },
+    "slate-400": {
+      "class": "accent-slate-400",
+      "property": "accent-color: #94a3b8;"
+    },
+    "slate-500": {
+      "class": "accent-slate-500",
+      "property": "accent-color: #64748b;"
+    },
+    "slate-600": {
+      "class": "accent-slate-600",
+      "property": "accent-color: #475569;"
+    },
+    "slate-700": {
+      "class": "accent-slate-700",
+      "property": "accent-color: #334155;"
+    },
+    "slate-800": {
+      "class": "accent-slate-800",
+      "property": "accent-color: #1e293b;"
+    },
+    "slate-900": {
+      "class": "accent-slate-900",
+      "property": "accent-color: #0f172a;"
+    },
+    "slate-950": {
+      "class": "accent-slate-950",
+      "property": "accent-color: #020617;"
+    },
+    "gray-50": {
+      "class": "accent-gray-50",
+      "property": "accent-color: #f9fafb;"
+    },
+    "gray-100": {
+      "class": "accent-gray-100",
+      "property": "accent-color: #f3f4f6;"
+    },
+    "gray-200": {
+      "class": "accent-gray-200",
+      "property": "accent-color: #e5e7eb;"
+    },
+    "gray-300": {
+      "class": "accent-gray-300",
+      "property": "accent-color: #d1d5db;"
+    },
+    "gray-400": {
+      "class": "accent-gray-400",
+      "property": "accent-color: #9ca3af;"
+    },
+    "gray-500": {
+      "class": "accent-gray-500",
+      "property": "accent-color: #6b7280;"
+    },
+    "gray-600": {
+      "class": "accent-gray-600",
+      "property": "accent-color: #4b5563;"
+    },
+    "gray-700": {
+      "class": "accent-gray-700",
+      "property": "accent-color: #374151;"
+    },
+    "gray-800": {
+      "class": "accent-gray-800",
+      "property": "accent-color: #1f2937;"
+    },
+    "gray-900": {
+      "class": "accent-gray-900",
+      "property": "accent-color: #111827;"
+    },
+    "gray-950": {
+      "class": "accent-gray-950",
+      "property": "accent-color: #030712;"
+    },
+    "zinc-50": {
+      "class": "accent-zinc-50",
+      "property": "accent-color: #fafafa;"
+    },
+    "zinc-100": {
+      "class": "accent-zinc-100",
+      "property": "accent-color: #f4f4f5;"
+    },
+    "zinc-200": {
+      "class": "accent-zinc-200",
+      "property": "accent-color: #e4e4e7;"
+    },
+    "zinc-300": {
+      "class": "accent-zinc-300",
+      "property": "accent-color: #d4d4d8;"
+    },
+    "zinc-400": {
+      "class": "accent-zinc-400",
+      "property": "accent-color: #a1a1aa;"
+    },
+    "zinc-500": {
+      "class": "accent-zinc-500",
+      "property": "accent-color: #71717a;"
+    },
+    "zinc-600": {
+      "class": "accent-zinc-600",
+      "property": "accent-color: #52525b;"
+    },
+    "zinc-700": {
+      "class": "accent-zinc-700",
+      "property": "accent-color: #3f3f46;"
+    },
+    "zinc-800": {
+      "class": "accent-zinc-800",
+      "property": "accent-color: #27272a;"
+    },
+    "zinc-900": {
+      "class": "accent-zinc-900",
+      "property": "accent-color: #18181b;"
+    },
+    "zinc-950": {
+      "class": "accent-zinc-950",
+      "property": "accent-color: #09090b;"
+    },
+    "neutral-50": {
+      "class": "accent-neutral-50",
+      "property": "accent-color: #fafafa;"
+    },
+    "neutral-100": {
+      "class": "accent-neutral-100",
+      "property": "accent-color: #f5f5f5;"
+    },
+    "neutral-200": {
+      "class": "accent-neutral-200",
+      "property": "accent-color: #e5e5e5;"
+    },
+    "neutral-300": {
+      "class": "accent-neutral-300",
+      "property": "accent-color: #d4d4d4;"
+    },
+    "neutral-400": {
+      "class": "accent-neutral-400",
+      "property": "accent-color: #a3a3a3;"
+    },
+    "neutral-500": {
+      "class": "accent-neutral-500",
+      "property": "accent-color: #737373;"
+    },
+    "neutral-600": {
+      "class": "accent-neutral-600",
+      "property": "accent-color: #525252;"
+    },
+    "neutral-700": {
+      "class": "accent-neutral-700",
+      "property": "accent-color: #404040;"
+    },
+    "neutral-800": {
+      "class": "accent-neutral-800",
+      "property": "accent-color: #262626;"
+    },
+    "neutral-900": {
+      "class": "accent-neutral-900",
+      "property": "accent-color: #171717;"
+    },
+    "neutral-950": {
+      "class": "accent-neutral-950",
+      "property": "accent-color: #0a0a0a;"
+    },
+    "stone-50": {
+      "class": "accent-stone-50",
+      "property": "accent-color: #fafaf9;"
+    },
+    "stone-100": {
+      "class": "accent-stone-100",
+      "property": "accent-color: #f5f5f4;"
+    },
+    "stone-200": {
+      "class": "accent-stone-200",
+      "property": "accent-color: #e7e5e4;"
+    },
+    "stone-300": {
+      "class": "accent-stone-300",
+      "property": "accent-color: #d6d3d1;"
+    },
+    "stone-400": {
+      "class": "accent-stone-400",
+      "property": "accent-color: #a8a29e;"
+    },
+    "stone-500": {
+      "class": "accent-stone-500",
+      "property": "accent-color: #78716c;"
+    },
+    "stone-600": {
+      "class": "accent-stone-600",
+      "property": "accent-color: #57534e;"
+    },
+    "stone-700": {
+      "class": "accent-stone-700",
+      "property": "accent-color: #44403c;"
+    },
+    "stone-800": {
+      "class": "accent-stone-800",
+      "property": "accent-color: #292524;"
+    },
+    "stone-900": {
+      "class": "accent-stone-900",
+      "property": "accent-color: #1c1917;"
+    },
+    "stone-950": {
+      "class": "accent-stone-950",
+      "property": "accent-color: #0c0a09;"
+    },
+    "red-50": {
+      "class": "accent-red-50",
+      "property": "accent-color: #fef2f2;"
+    },
+    "red-100": {
+      "class": "accent-red-100",
+      "property": "accent-color: #fee2e2;"
+    },
+    "red-200": {
+      "class": "accent-red-200",
+      "property": "accent-color: #fecaca;"
+    },
+    "red-300": {
+      "class": "accent-red-300",
+      "property": "accent-color: #fca5a5;"
+    },
+    "red-400": {
+      "class": "accent-red-400",
+      "property": "accent-color: #f87171;"
+    },
+    "red-500": {
+      "class": "accent-red-500",
+      "property": "accent-color: #ef4444;"
+    },
+    "red-600": {
+      "class": "accent-red-600",
+      "property": "accent-color: #dc2626;"
+    },
+    "red-700": {
+      "class": "accent-red-700",
+      "property": "accent-color: #b91c1c;"
+    },
+    "red-800": {
+      "class": "accent-red-800",
+      "property": "accent-color: #991b1b;"
+    },
+    "red-900": {
+      "class": "accent-red-900",
+      "property": "accent-color: #7f1d1d;"
+    },
+    "red-950": {
+      "class": "accent-red-950",
+      "property": "accent-color: #450a0a;"
+    },
+    "orange-50": {
+      "class": "accent-orange-50",
+      "property": "accent-color: #fff7ed;"
+    },
+    "orange-100": {
+      "class": "accent-orange-100",
+      "property": "accent-color: #ffedd5;"
+    },
+    "orange-200": {
+      "class": "accent-orange-200",
+      "property": "accent-color: #fed7aa;"
+    },
+    "orange-300": {
+      "class": "accent-orange-300",
+      "property": "accent-color: #fdba74;"
+    },
+    "orange-400": {
+      "class": "accent-orange-400",
+      "property": "accent-color: #fb923c;"
+    },
+    "orange-500": {
+      "class": "accent-orange-500",
+      "property": "accent-color: #f97316;"
+    },
+    "orange-600": {
+      "class": "accent-orange-600",
+      "property": "accent-color: #ea580c;"
+    },
+    "orange-700": {
+      "class": "accent-orange-700",
+      "property": "accent-color: #c2410c;"
+    },
+    "orange-800": {
+      "class": "accent-orange-800",
+      "property": "accent-color: #9a3412;"
+    },
+    "orange-900": {
+      "class": "accent-orange-900",
+      "property": "accent-color: #7c2d12;"
+    },
+    "orange-950": {
+      "class": "accent-orange-950",
+      "property": "accent-color: #431407;"
+    },
+    "amber-50": {
+      "class": "accent-amber-50",
+      "property": "accent-color: #fffbeb;"
+    },
+    "amber-100": {
+      "class": "accent-amber-100",
+      "property": "accent-color: #fef3c7;"
+    },
+    "amber-200": {
+      "class": "accent-amber-200",
+      "property": "accent-color: #fde68a;"
+    },
+    "amber-300": {
+      "class": "accent-amber-300",
+      "property": "accent-color: #fcd34d;"
+    },
+    "amber-400": {
+      "class": "accent-amber-400",
+      "property": "accent-color: #fbbf24;"
+    },
+    "amber-500": {
+      "class": "accent-amber-500",
+      "property": "accent-color: #f59e0b;"
+    },
+    "amber-600": {
+      "class": "accent-amber-600",
+      "property": "accent-color: #d97706;"
+    },
+    "amber-700": {
+      "class": "accent-amber-700",
+      "property": "accent-color: #b45309;"
+    },
+    "amber-800": {
+      "class": "accent-amber-800",
+      "property": "accent-color: #92400e;"
+    },
+    "amber-900": {
+      "class": "accent-amber-900",
+      "property": "accent-color: #78350f;"
+    },
+    "amber-950": {
+      "class": "accent-amber-950",
+      "property": "accent-color: #451a03;"
+    },
+    "yellow-50": {
+      "class": "accent-yellow-50",
+      "property": "accent-color: #fefce8;"
+    },
+    "yellow-100": {
+      "class": "accent-yellow-100",
+      "property": "accent-color: #fef9c3;"
+    },
+    "yellow-200": {
+      "class": "accent-yellow-200",
+      "property": "accent-color: #fef08a;"
+    },
+    "yellow-300": {
+      "class": "accent-yellow-300",
+      "property": "accent-color: #fde047;"
+    },
+    "yellow-400": {
+      "class": "accent-yellow-400",
+      "property": "accent-color: #facc15;"
+    },
+    "yellow-500": {
+      "class": "accent-yellow-500",
+      "property": "accent-color: #eab308;"
+    },
+    "yellow-600": {
+      "class": "accent-yellow-600",
+      "property": "accent-color: #ca8a04;"
+    },
+    "yellow-700": {
+      "class": "accent-yellow-700",
+      "property": "accent-color: #a16207;"
+    },
+    "yellow-800": {
+      "class": "accent-yellow-800",
+      "property": "accent-color: #854d0e;"
+    },
+    "yellow-900": {
+      "class": "accent-yellow-900",
+      "property": "accent-color: #713f12;"
+    },
+    "yellow-950": {
+      "class": "accent-yellow-950",
+      "property": "accent-color: #422006;"
+    },
+    "lime-50": {
+      "class": "accent-lime-50",
+      "property": "accent-color: #f7fee7;"
+    },
+    "lime-100": {
+      "class": "accent-lime-100",
+      "property": "accent-color: #ecfccb;"
+    },
+    "lime-200": {
+      "class": "accent-lime-200",
+      "property": "accent-color: #d9f99d;"
+    },
+    "lime-300": {
+      "class": "accent-lime-300",
+      "property": "accent-color: #bef264;"
+    },
+    "lime-400": {
+      "class": "accent-lime-400",
+      "property": "accent-color: #a3e635;"
+    },
+    "lime-500": {
+      "class": "accent-lime-500",
+      "property": "accent-color: #84cc16;"
+    },
+    "lime-600": {
+      "class": "accent-lime-600",
+      "property": "accent-color: #65a30d;"
+    },
+    "lime-700": {
+      "class": "accent-lime-700",
+      "property": "accent-color: #4d7c0f;"
+    },
+    "lime-800": {
+      "class": "accent-lime-800",
+      "property": "accent-color: #3f6212;"
+    },
+    "lime-900": {
+      "class": "accent-lime-900",
+      "property": "accent-color: #365314;"
+    },
+    "lime-950": {
+      "class": "accent-lime-950",
+      "property": "accent-color: #1a2e05;"
+    },
+    "green-50": {
+      "class": "accent-green-50",
+      "property": "accent-color: #f0fdf4;"
+    },
+    "green-100": {
+      "class": "accent-green-100",
+      "property": "accent-color: #dcfce7;"
+    },
+    "green-200": {
+      "class": "accent-green-200",
+      "property": "accent-color: #bbf7d0;"
+    },
+    "green-300": {
+      "class": "accent-green-300",
+      "property": "accent-color: #86efac;"
+    },
+    "green-400": {
+      "class": "accent-green-400",
+      "property": "accent-color: #4ade80;"
+    },
+    "green-500": {
+      "class": "accent-green-500",
+      "property": "accent-color: #22c55e;"
+    },
+    "green-600": {
+      "class": "accent-green-600",
+      "property": "accent-color: #16a34a;"
+    },
+    "green-700": {
+      "class": "accent-green-700",
+      "property": "accent-color: #15803d;"
+    },
+    "green-800": {
+      "class": "accent-green-800",
+      "property": "accent-color: #166534;"
+    },
+    "green-900": {
+      "class": "accent-green-900",
+      "property": "accent-color: #14532d;"
+    },
+    "green-950": {
+      "class": "accent-green-950",
+      "property": "accent-color: #052e16;"
+    },
+    "emerald-50": {
+      "class": "accent-emerald-50",
+      "property": "accent-color: #ecfdf5;"
+    },
+    "emerald-100": {
+      "class": "accent-emerald-100",
+      "property": "accent-color: #d1fae5;"
+    },
+    "emerald-200": {
+      "class": "accent-emerald-200",
+      "property": "accent-color: #a7f3d0;"
+    },
+    "emerald-300": {
+      "class": "accent-emerald-300",
+      "property": "accent-color: #6ee7b7;"
+    },
+    "emerald-400": {
+      "class": "accent-emerald-400",
+      "property": "accent-color: #34d399;"
+    },
+    "emerald-500": {
+      "class": "accent-emerald-500",
+      "property": "accent-color: #10b981;"
+    },
+    "emerald-600": {
+      "class": "accent-emerald-600",
+      "property": "accent-color: #059669;"
+    },
+    "emerald-700": {
+      "class": "accent-emerald-700",
+      "property": "accent-color: #047857;"
+    },
+    "emerald-800": {
+      "class": "accent-emerald-800",
+      "property": "accent-color: #065f46;"
+    },
+    "emerald-900": {
+      "class": "accent-emerald-900",
+      "property": "accent-color: #064e3b;"
+    },
+    "emerald-950": {
+      "class": "accent-emerald-950",
+      "property": "accent-color: #022c22;"
+    },
+    "teal-50": {
+      "class": "accent-teal-50",
+      "property": "accent-color: #f0fdfa;"
+    },
+    "teal-100": {
+      "class": "accent-teal-100",
+      "property": "accent-color: #ccfbf1;"
+    },
+    "teal-200": {
+      "class": "accent-teal-200",
+      "property": "accent-color: #99f6e4;"
+    },
+    "teal-300": {
+      "class": "accent-teal-300",
+      "property": "accent-color: #5eead4;"
+    },
+    "teal-400": {
+      "class": "accent-teal-400",
+      "property": "accent-color: #2dd4bf;"
+    },
+    "teal-500": {
+      "class": "accent-teal-500",
+      "property": "accent-color: #14b8a6;"
+    },
+    "teal-600": {
+      "class": "accent-teal-600",
+      "property": "accent-color: #0d9488;"
+    },
+    "teal-700": {
+      "class": "accent-teal-700",
+      "property": "accent-color: #0f766e;"
+    },
+    "teal-800": {
+      "class": "accent-teal-800",
+      "property": "accent-color: #115e59;"
+    },
+    "teal-900": {
+      "class": "accent-teal-900",
+      "property": "accent-color: #134e4a;"
+    },
+    "teal-950": {
+      "class": "accent-teal-950",
+      "property": "accent-color: #042f2e;"
+    },
+    "cyan-50": {
+      "class": "accent-cyan-50",
+      "property": "accent-color: #ecfeff;"
+    },
+    "cyan-100": {
+      "class": "accent-cyan-100",
+      "property": "accent-color: #cffafe;"
+    },
+    "cyan-200": {
+      "class": "accent-cyan-200",
+      "property": "accent-color: #a5f3fc;"
+    },
+    "cyan-300": {
+      "class": "accent-cyan-300",
+      "property": "accent-color: #67e8f9;"
+    },
+    "cyan-400": {
+      "class": "accent-cyan-400",
+      "property": "accent-color: #22d3ee;"
+    },
+    "cyan-500": {
+      "class": "accent-cyan-500",
+      "property": "accent-color: #06b6d4;"
+    },
+    "cyan-600": {
+      "class": "accent-cyan-600",
+      "property": "accent-color: #0891b2;"
+    },
+    "cyan-700": {
+      "class": "accent-cyan-700",
+      "property": "accent-color: #0e7490;"
+    },
+    "cyan-800": {
+      "class": "accent-cyan-800",
+      "property": "accent-color: #155e75;"
+    },
+    "cyan-900": {
+      "class": "accent-cyan-900",
+      "property": "accent-color: #164e63;"
+    },
+    "cyan-950": {
+      "class": "accent-cyan-950",
+      "property": "accent-color: #083344;"
+    },
+    "sky-50": {
+      "class": "accent-sky-50",
+      "property": "accent-color: #f0f9ff;"
+    },
+    "sky-100": {
+      "class": "accent-sky-100",
+      "property": "accent-color: #e0f2fe;"
+    },
+    "sky-200": {
+      "class": "accent-sky-200",
+      "property": "accent-color: #bae6fd;"
+    },
+    "sky-300": {
+      "class": "accent-sky-300",
+      "property": "accent-color: #7dd3fc;"
+    },
+    "sky-400": {
+      "class": "accent-sky-400",
+      "property": "accent-color: #38bdf8;"
+    },
+    "sky-500": {
+      "class": "accent-sky-500",
+      "property": "accent-color: #0ea5e9;"
+    },
+    "sky-600": {
+      "class": "accent-sky-600",
+      "property": "accent-color: #0284c7;"
+    },
+    "sky-700": {
+      "class": "accent-sky-700",
+      "property": "accent-color: #0369a1;"
+    },
+    "sky-800": {
+      "class": "accent-sky-800",
+      "property": "accent-color: #075985;"
+    },
+    "sky-900": {
+      "class": "accent-sky-900",
+      "property": "accent-color: #0c4a6e;"
+    },
+    "sky-950": {
+      "class": "accent-sky-950",
+      "property": "accent-color: #082f49;"
+    },
+    "blue-50": {
+      "class": "accent-blue-50",
+      "property": "accent-color: #eff6ff;"
+    },
+    "blue-100": {
+      "class": "accent-blue-100",
+      "property": "accent-color: #dbeafe;"
+    },
+    "blue-200": {
+      "class": "accent-blue-200",
+      "property": "accent-color: #bfdbfe;"
+    },
+    "blue-300": {
+      "class": "accent-blue-300",
+      "property": "accent-color: #93c5fd;"
+    },
+    "blue-400": {
+      "class": "accent-blue-400",
+      "property": "accent-color: #60a5fa;"
+    },
+    "blue-500": {
+      "class": "accent-blue-500",
+      "property": "accent-color: #3b82f6;"
+    },
+    "blue-600": {
+      "class": "accent-blue-600",
+      "property": "accent-color: #2563eb;"
+    },
+    "blue-700": {
+      "class": "accent-blue-700",
+      "property": "accent-color: #1d4ed8;"
+    },
+    "blue-800": {
+      "class": "accent-blue-800",
+      "property": "accent-color: #1e40af;"
+    },
+    "blue-900": {
+      "class": "accent-blue-900",
+      "property": "accent-color: #1e3a8a;"
+    },
+    "blue-950": {
+      "class": "accent-blue-950",
+      "property": "accent-color: #172554;"
+    },
+    "indigo-50": {
+      "class": "accent-indigo-50",
+      "property": "accent-color: #eef2ff;"
+    },
+    "indigo-100": {
+      "class": "accent-indigo-100",
+      "property": "accent-color: #e0e7ff;"
+    },
+    "indigo-200": {
+      "class": "accent-indigo-200",
+      "property": "accent-color: #c7d2fe;"
+    },
+    "indigo-300": {
+      "class": "accent-indigo-300",
+      "property": "accent-color: #a5b4fc;"
+    },
+    "indigo-400": {
+      "class": "accent-indigo-400",
+      "property": "accent-color: #818cf8;"
+    },
+    "indigo-500": {
+      "class": "accent-indigo-500",
+      "property": "accent-color: #6366f1;"
+    },
+    "indigo-600": {
+      "class": "accent-indigo-600",
+      "property": "accent-color: #4f46e5;"
+    },
+    "indigo-700": {
+      "class": "accent-indigo-700",
+      "property": "accent-color: #4338ca;"
+    },
+    "indigo-800": {
+      "class": "accent-indigo-800",
+      "property": "accent-color: #3730a3;"
+    },
+    "indigo-900": {
+      "class": "accent-indigo-900",
+      "property": "accent-color: #312e81;"
+    },
+    "indigo-950": {
+      "class": "accent-indigo-950",
+      "property": "accent-color: #1e1b4b;"
+    },
+    "violet-50": {
+      "class": "accent-violet-50",
+      "property": "accent-color: #f5f3ff;"
+    },
+    "violet-100": {
+      "class": "accent-violet-100",
+      "property": "accent-color: #ede9fe;"
+    },
+    "violet-200": {
+      "class": "accent-violet-200",
+      "property": "accent-color: #ddd6fe;"
+    },
+    "violet-300": {
+      "class": "accent-violet-300",
+      "property": "accent-color: #c4b5fd;"
+    },
+    "violet-400": {
+      "class": "accent-violet-400",
+      "property": "accent-color: #a78bfa;"
+    },
+    "violet-500": {
+      "class": "accent-violet-500",
+      "property": "accent-color: #8b5cf6;"
+    },
+    "violet-600": {
+      "class": "accent-violet-600",
+      "property": "accent-color: #7c3aed;"
+    },
+    "violet-700": {
+      "class": "accent-violet-700",
+      "property": "accent-color: #6d28d9;"
+    },
+    "violet-800": {
+      "class": "accent-violet-800",
+      "property": "accent-color: #5b21b6;"
+    },
+    "violet-900": {
+      "class": "accent-violet-900",
+      "property": "accent-color: #4c1d95;"
+    },
+    "violet-950": {
+      "class": "accent-violet-950",
+      "property": "accent-color: #2e1065;"
+    },
+    "purple-50": {
+      "class": "accent-purple-50",
+      "property": "accent-color: #faf5ff;"
+    },
+    "purple-100": {
+      "class": "accent-purple-100",
+      "property": "accent-color: #f3e8ff;"
+    },
+    "purple-200": {
+      "class": "accent-purple-200",
+      "property": "accent-color: #e9d5ff;"
+    },
+    "purple-300": {
+      "class": "accent-purple-300",
+      "property": "accent-color: #d8b4fe;"
+    },
+    "purple-400": {
+      "class": "accent-purple-400",
+      "property": "accent-color: #c084fc;"
+    },
+    "purple-500": {
+      "class": "accent-purple-500",
+      "property": "accent-color: #a855f7;"
+    },
+    "purple-600": {
+      "class": "accent-purple-600",
+      "property": "accent-color: #9333ea;"
+    },
+    "purple-700": {
+      "class": "accent-purple-700",
+      "property": "accent-color: #7e22ce;"
+    },
+    "purple-800": {
+      "class": "accent-purple-800",
+      "property": "accent-color: #6b21a8;"
+    },
+    "purple-900": {
+      "class": "accent-purple-900",
+      "property": "accent-color: #581c87;"
+    },
+    "purple-950": {
+      "class": "accent-purple-950",
+      "property": "accent-color: #3b0764;"
+    },
+    "fuchsia-50": {
+      "class": "accent-fuchsia-50",
+      "property": "accent-color: #fdf4ff;"
+    },
+    "fuchsia-100": {
+      "class": "accent-fuchsia-100",
+      "property": "accent-color: #fae8ff;"
+    },
+    "fuchsia-200": {
+      "class": "accent-fuchsia-200",
+      "property": "accent-color: #f5d0fe;"
+    },
+    "fuchsia-300": {
+      "class": "accent-fuchsia-300",
+      "property": "accent-color: #f0abfc;"
+    },
+    "fuchsia-400": {
+      "class": "accent-fuchsia-400",
+      "property": "accent-color: #e879f9;"
+    },
+    "fuchsia-500": {
+      "class": "accent-fuchsia-500",
+      "property": "accent-color: #d946ef;"
+    },
+    "fuchsia-600": {
+      "class": "accent-fuchsia-600",
+      "property": "accent-color: #c026d3;"
+    },
+    "fuchsia-700": {
+      "class": "accent-fuchsia-700",
+      "property": "accent-color: #a21caf;"
+    },
+    "fuchsia-800": {
+      "class": "accent-fuchsia-800",
+      "property": "accent-color: #86198f;"
+    },
+    "fuchsia-900": {
+      "class": "accent-fuchsia-900",
+      "property": "accent-color: #701a75;"
+    },
+    "fuchsia-950": {
+      "class": "accent-fuchsia-950",
+      "property": "accent-color: #4a044e;"
+    },
+    "pink-50": {
+      "class": "accent-pink-50",
+      "property": "accent-color: #fdf2f8;"
+    },
+    "pink-100": {
+      "class": "accent-pink-100",
+      "property": "accent-color: #fce7f3;"
+    },
+    "pink-200": {
+      "class": "accent-pink-200",
+      "property": "accent-color: #fbcfe8;"
+    },
+    "pink-300": {
+      "class": "accent-pink-300",
+      "property": "accent-color: #f9a8d4;"
+    },
+    "pink-400": {
+      "class": "accent-pink-400",
+      "property": "accent-color: #f472b6;"
+    },
+    "pink-500": {
+      "class": "accent-pink-500",
+      "property": "accent-color: #ec4899;"
+    },
+    "pink-600": {
+      "class": "accent-pink-600",
+      "property": "accent-color: #db2777;"
+    },
+    "pink-700": {
+      "class": "accent-pink-700",
+      "property": "accent-color: #be185d;"
+    },
+    "pink-800": {
+      "class": "accent-pink-800",
+      "property": "accent-color: #9d174d;"
+    },
+    "pink-900": {
+      "class": "accent-pink-900",
+      "property": "accent-color: #831843;"
+    },
+    "pink-950": {
+      "class": "accent-pink-950",
+      "property": "accent-color: #500724;"
+    },
+    "rose-50": {
+      "class": "accent-rose-50",
+      "property": "accent-color: #fff1f2;"
+    },
+    "rose-100": {
+      "class": "accent-rose-100",
+      "property": "accent-color: #ffe4e6;"
+    },
+    "rose-200": {
+      "class": "accent-rose-200",
+      "property": "accent-color: #fecdd3;"
+    },
+    "rose-300": {
+      "class": "accent-rose-300",
+      "property": "accent-color: #fda4af;"
+    },
+    "rose-400": {
+      "class": "accent-rose-400",
+      "property": "accent-color: #fb7185;"
+    },
+    "rose-500": {
+      "class": "accent-rose-500",
+      "property": "accent-color: #f43f5e;"
+    },
+    "rose-600": {
+      "class": "accent-rose-600",
+      "property": "accent-color: #e11d48;"
+    },
+    "rose-700": {
+      "class": "accent-rose-700",
+      "property": "accent-color: #be123c;"
+    },
+    "rose-800": {
+      "class": "accent-rose-800",
+      "property": "accent-color: #9f1239;"
+    },
+    "rose-900": {
+      "class": "accent-rose-900",
+      "property": "accent-color: #881337;"
+    },
+    "rose-950": {
+      "class": "accent-rose-950",
+      "property": "accent-color: #4c0519;"
+    },
+    "auto": {
+      "class": "accent-auto",
+      "property": "accent-color: auto;"
+    }
+  }
+}

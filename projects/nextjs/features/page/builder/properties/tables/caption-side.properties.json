@@ -1,0 +1,12 @@
+{
+  "captionSide": {
+    "top": {
+      "class": "caption-top",
+      "property": "caption-side: top;"
+    },
+    "bottom": {
+      "class": "caption-bottom",
+      "property": "caption-side: bottom;"
+    }
+  }
+}

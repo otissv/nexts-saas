@@ -1,0 +1,97 @@
+{
+  "maxWidth": {
+    "none": {
+      "class": "max-w-none",
+      "property": "max-width: none;"
+    },
+    "full": {
+      "class": "max-w-full",
+      "property": "max-width: 100%;"
+    },
+    "fit": {
+      "class": "max-w-fit",
+      "property": "max-width: fit-content;"
+    },
+    "prose": {
+      "class": "max-w-prose",
+      "property": "max-width: 65ch;"
+    },
+    "screen-sm": {
+      "class": "max-w-screen-sm",
+      "property": "max-width: 640px;"
+    },
+    "screen-md": {
+      "class": "max-w-screen-md",
+      "property": "max-width: 768px;"
+    },
+    "screen-lg": {
+      "class": "max-w-screen-lg",
+      "property": "max-width: 1024px;"
+    },
+    "screen-xl": {
+      "class": "max-w-screen-xl",
+      "property": "max-width: 1280px;"
+    },
+    "screen-2xl": {
+      "class": "max-w-screen-2xl",
+      "property": "max-width: 1536px;"
+    },
+    "0": {
+      "class": "max-w-0",
+      "property": "max-width: 0rem; /* 0px */"
+    },
+
+    "max-w-xs": {
+      "class": "max-w-xs",
+      "property": "max-width: 20rem; /* 320px */"
+    },
+    "sm": {
+      "class": "max-w-sm",
+      "property": "max-width: 24rem; /* 384px */"
+    },
+    "md": {
+      "class": "max-w-md",
+      "property": "max-width: 28rem; /* 448px */"
+    },
+    "lg": {
+      "class": "max-w-lg",
+      "property": "max-width: 32rem; /* 512px */"
+    },
+    "xl": {
+      "class": "max-w-xl",
+      "property": "max-width: 36rem; /* 576px */"
+    },
+    "2xl": {
+      "class": "max-w-2xl",
+      "property": "max-width: 42rem; /* 672px */"
+    },
+    "3xl": {
+      "class": "max-w-3xl",
+      "property": "max-width: 48rem; /* 768px */"
+    },
+    "4xl": {
+      "class": "max-w-4xl",
+      "property": "max-width: 56rem; /* 896px */"
+    },
+    "5xl": {
+      "class": "max-w-5xl",
+      "property": "max-width: 64rem; /* 1024px */"
+    },
+    "6xl": {
+      "class": "max-w-6xl",
+      "property": "max-width: 72rem; /* 1152px */"
+    },
+    "7xl": {
+      "class": "max-w-7xl",
+      "property": "max-width: 80rem; /* 1280px */"
+    },
+    "min": {
+      "class": "max-w-min",
+      "property": "max-width: min-content;"
+    },
+    "max": {
+      "class": "max-w-max",
+      "property": "max-width: max-content;"
+    }
+  }
+}

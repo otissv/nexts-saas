@@ -1,0 +1,64 @@
+{
+  "opacity": {
+    "0": {
+      "class": "opacity-0",
+      "property": "opacity: 0;"
+    },
+    "5": {
+      "class": "opacity-5",
+      "property": "opacity: 0.05;"
+    },
+    "10": {
+      "class": "opacity-10",
+      "property": "opacity: 0.1;"
+    },
+    "20": {
+      "class": "opacity-20",
+      "property": "opacity: 0.2;"
+    },
+    "25": {
+      "class": "opacity-25",
+      "property": "opacity: 0.25;"
+    },
+    "30": {
+      "class": "opacity-30",
+      "property": "opacity: 0.3;"
+    },
+    "40": {
+      "class": "opacity-40",
+      "property": "opacity: 0.4;"
+    },
+    "50": {
+      "class": "opacity-50",
+      "property": "opacity: 0.5;"
+    },
+    "60": {
+      "class": "opacity-60",
+      "property": "opacity: 0.6;"
+    },
+    "70": {
+      "class": "opacity-70",
+      "property": "opacity: 0.7;"
+    },
+    "75": {
+      "class": "opacity-75",
+      "property": "opacity: 0.75;"
+    },
+    "80": {
+      "class": "opacity-80",
+      "property": "opacity: 0.8;"
+    },
+    "90": {
+      "class": "opacity-90",
+      "property": "opacity: 0.9;"
+    },
+    "95": {
+      "class": "opacity-95",
+      "property": "opacity: 0.95;"
+    },
+    "100": {
+      "class": "opacity-100",
+      "property": "opacity: 1;"
+    }
+  }
+}

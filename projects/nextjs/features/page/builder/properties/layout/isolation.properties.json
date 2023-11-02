@@ -1,0 +1,12 @@
+{
+  "isolation": {
+    "isolate": {
+      "class": "isolate",
+      "property": "isolation: isolate;"
+    },
+    "auto": {
+      "class": "isolation-auto",
+      "property": "isolation: auto;"
+    }
+  }
+}

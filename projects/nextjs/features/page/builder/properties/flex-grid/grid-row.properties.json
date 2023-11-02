@@ -1,0 +1,100 @@
+{
+  "gridRow": {
+    "auto": {
+      "class": "row-auto",
+      "property": "grid-row: auto;"
+    },
+    "1": {
+      "class": "row-span-1",
+      "property": "grid-row: span 1 / span 1;"
+    },
+    "2": {
+      "class": "row-span-2",
+      "property": "grid-row: span 2 / span 2;"
+    },
+    "3": {
+      "class": "row-span-3",
+      "property": "grid-row: span 3 / span 3;"
+    },
+    "4": {
+      "class": "row-span-4",
+      "property": "grid-row: span 4 / span 4;"
+    },
+    "5": {
+      "class": "row-span-5",
+      "property": "grid-row: span 5 / span 5;"
+    },
+    "6": {
+      "class": "row-span-6",
+      "property": "grid-row: span 6 / span 6;"
+    },
+    "full": {
+      "class": "row-span-full",
+      "property": "grid-row: 1 / -1;"
+    },
+    "start-1": {
+      "class": "row-start-1",
+      "property": "grid-row-start: 1;"
+    },
+    "start-2": {
+      "class": "row-start-2",
+      "property": "grid-row-start: 2;"
+    },
+    "start-3": {
+      "class": "row-start-3",
+      "property": "grid-row-start: 3;"
+    },
+    "start-4": {
+      "class": "row-start-4",
+      "property": "grid-row-start: 4;"
+    },
+    "start-5": {
+      "class": "row-start-5",
+      "property": "grid-row-start: 5;"
+    },
+    "start-6": {
+      "class": "row-start-6",
+      "property": "grid-row-start: 6;"
+    },
+    "start-7": {
+      "class": "row-start-7",
+      "property": "grid-row-start: 7;"
+    },
+    "start-auto": {
+      "class": "row-start-auto",
+      "property": "grid-row-start: auto;"
+    },
+    "end-1": {
+      "class": "row-end-1",
+      "property": "grid-row-end: 1;"
+    },
+    "end-2": {
+      "class": "row-end-2",
+      "property": "grid-row-end: 2;"
+    },
+    "end-3": {
+      "class": "row-end-3",
+      "property": "grid-row-end: 3;"
+    },
+    "end-4": {
+      "class": "row-end-4",
+      "property": "grid-row-end: 4;"
+    },
+    "end-5": {
+      "class": "row-end-5",
+      "property": "grid-row-end: 5;"
+    },
+    "end-6": {
+      "class": "row-end-6",
+      "property": "grid-row-end: 6;"
+    },
+    "end-7": {
+      "class": "row-end-7",
+      "property": "grid-row-end: 7;"
+    },
+    "end-auto": {
+      "class": "row-end-auto",
+      "property": "grid-row-end: auto;"
+    }
+  }
+}

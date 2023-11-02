@@ -1,0 +1,24 @@
+{
+  "placeSelf": {
+    "place-self-auto": {
+      "class": "place-self-auto",
+      "property": "place-self: auto;"
+    },
+    "start": {
+      "class": "place-self-start",
+      "property": "place-self: start;"
+    },
+    "end": {
+      "class": "place-self-end",
+      "property": "place-self: end;"
+    },
+    "center": {
+      "class": "place-self-center",
+      "property": "place-self: center;"
+    },
+    "stretch": {
+      "class": "place-self-stretch",
+      "property": "place-self: stretch;"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "textDecorationStyle": {
+    "solid": {
+      "class": "decoration-solid",
+      "property": "text-decoration-style: solid;"
+    },
+    "double": {
+      "class": "decoration-double",
+      "property": "text-decoration-style: double;"
+    },
+    "dotted": {
+      "class": "decoration-dotted",
+      "property": "text-decoration-style: dotted;"
+    },
+    "dashed": {
+      "class": "decoration-dashed",
+      "property": "text-decoration-style: dashed;"
+    },
+    "wavy": {
+      "class": "decoration-wavy",
+      "property": "text-decoration-style: wavy;"
+    }
+  }
+}

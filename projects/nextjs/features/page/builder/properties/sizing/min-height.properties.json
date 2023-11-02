@@ -1,0 +1,28 @@
+{
+  "minHeight": {
+    "0": {
+      "class": "min-h-0",
+      "property": "min-height: 0px;"
+    },
+    "full": {
+      "class": "min-h-full",
+      "property": "min-height: 100%;"
+    },
+    "screen": {
+      "class": "min-h-screen",
+      "property": "min-height: 100vh;"
+    },
+    "min": {
+      "class": "min-h-min",
+      "property": "min-height: min-content;"
+    },
+    "max": {
+      "class": "min-h-max",
+      "property": "min-height: max-content;"
+    },
+    "fit": {
+      "class": "min-h-fit",
+      "property": "min-height: fit-content;"
+    }
+  }
+}

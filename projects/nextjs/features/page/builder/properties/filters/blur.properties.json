@@ -1,0 +1,36 @@
+{
+  "blur": {
+    "none": {
+      "class": "blur-none",
+      "property": "filter: blur(0);"
+    },
+    "sm": {
+      "class": "blur-sm",
+      "property": "filter: blur(4px);"
+    },
+    "blur": {
+      "class": "blur",
+      "property": "filter: blur(8px);"
+    },
+    "md": {
+      "class": "blur-md",
+      "property": "filter: blur(12px);"
+    },
+    "lg": {
+      "class": "blur-lg",
+      "property": "filter: blur(16px);"
+    },
+    "xl": {
+      "class": "blur-xl",
+      "property": "filter: blur(24px);"
+    },
+    "2xl": {
+      "class": "blur-2xl",
+      "property": "filter: blur(40px);"
+    },
+    "3xl": {
+      "class": "blur-3xl",
+      "property": "filter: blur(64px);"
+    }
+  }
+}

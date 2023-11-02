@@ -1,0 +1,192 @@
+{
+  "borderWidth": {
+    "0": {
+      "class": "border-0",
+      "property": "border-width: 0px;"
+    },
+    "1": {
+      "class": "border",
+      "property": "border-width: 1px;"
+    },
+    "2": {
+      "class": "border-2",
+      "property": "border-width: 2px;"
+    },
+    "4": {
+      "class": "border-4",
+      "property": "border-width: 4px;"
+    },
+    "8": {
+      "class": "border-8",
+      "property": "border-width: 8px;"
+    },
+
+    "x-1": {
+      "class": "border-x",
+      "property": "border-left-width: 1px;\nborder-right-width: 1px;"
+    },
+    "x-0": {
+      "class": "border-x-0",
+      "property": "border-left-width: 0px;\nborder-right-width: 0px;"
+    },
+    "x-2": {
+      "class": "border-x-2",
+      "property": "border-left-width: 2px;\nborder-right-width: 2px;"
+    },
+    "x-4": {
+      "class": "border-x-4",
+      "property": "border-left-width: 4px;\nborder-right-width: 4px;"
+    },
+    "x-8": {
+      "class": "border-x-8",
+      "property": "border-left-width: 8px;\nborder-right-width: 8px;"
+    },
+
+    "y-1": {
+      "class": "border-y",
+      "property": "border-top-width: 1px;\nborder-bottom-width: 1px;"
+    },
+    "y-0": {
+      "class": "border-y-0",
+      "property": "border-top-width: 0px;\nborder-bottom-width: 0px;"
+    },
+    "y-2": {
+      "class": "border-y-2",
+      "property": "border-top-width: 2px;\nborder-bottom-width: 2px;"
+    },
+    "y-4": {
+      "class": "border-y-4",
+      "property": "border-top-width: 4px;\nborder-bottom-width: 4px;"
+    },
+    "y-8": {
+      "class": "border-y-8",
+      "property": "border-top-width: 8px;\nborder-bottom-width: 8px;"
+    },
+
+    "s-1": {
+      "class": "border-s",
+      "property": "border-inline-start-width: 1px;"
+    },
+    "s-0": {
+      "class": "border-s-0",
+      "property": "border-inline-start-width: 0px;"
+    },
+    "s-2": {
+      "class": "border-s-2",
+      "property": "border-inline-start-width: 2px;"
+    },
+    "s-4": {
+      "class": "border-s-4",
+      "property": "border-inline-start-width: 4px;"
+    },
+    "s-8": {
+      "class": "border-s-8",
+      "property": "border-inline-start-width: 8px;"
+    },
+
+    "e-1": {
+      "class": "border-e",
+      "property": "border-inline-end-width: 1px;"
+    },
+    "e-0": {
+      "class": "border-e-0",
+      "property": "border-inline-end-width: 0px;"
+    },
+    "e-2": {
+      "class": "border-e-2",
+      "property": "border-inline-end-width: 2px;"
+    },
+    "e-4": {
+      "class": "border-e-4",
+      "property": "border-inline-end-width: 4px;"
+    },
+    "e-8": {
+      "class": "border-e-8",
+      "property": "border-inline-end-width: 8px;"
+    },
+
+    "t-1": {
+      "class": "border-t",
+      "property": "border-top-width: 1px;"
+    },
+    "t-0": {
+      "class": "border-t-0",
+      "property": "border-top-width: 0px;"
+    },
+    "t-2": {
+      "class": "border-t-2",
+      "property": "border-top-width: 2px;"
+    },
+    "t-4": {
+      "class": "border-t-4",
+      "property": "border-top-width: 4px;"
+    },
+    "t-8": {
+      "class": "border-t-8",
+      "property": "border-top-width: 8px;"
+    },
+
+    "r-1": {
+      "class": "border-r",
+      "property": "border-right-width: 1px;"
+    },
+    "r-0": {
+      "class": "border-r-0",
+      "property": "border-right-width: 0px;"
+    },
+    "r-2": {
+      "class": "border-r-2",
+      "property": "border-right-width: 2px;"
+    },
+    "r-4": {
+      "class": "border-r-4",
+      "property": "border-right-width: 4px;"
+    },
+    "r-8": {
+      "class": "border-r-8",
+      "property": "border-right-width: 8px;"
+    },
+
+    "b-1": {
+      "class": "border-b",
+      "property": "border-bottom-width: 1px;"
+    },
+    "b-0": {
+      "class": "border-b-0",
+      "property": "border-bottom-width: 0px;"
+    },
+    "b-2": {
+      "class": "border-b-2",
+      "property": "border-bottom-width: 2px;"
+    },
+    "b-4": {
+      "class": "border-b-4",
+      "property": "border-bottom-width: 4px;"
+    },
+    "b-8": {
+      "class": "border-b-8",
+      "property": "border-bottom-width: 8px;"
+    },
+
+    "l-1": {
+      "class": "border-l",
+      "property": "border-left-width: 1px;"
+    },
+    "l-0": {
+      "class": "border-l-0",
+      "property": "border-left-width: 0px;"
+    },
+    "l-2": {
+      "class": "border-l-2",
+      "property": "border-left-width: 2px;"
+    },
+    "l-4": {
+      "class": "border-l-4",
+      "property": "border-left-width: 4px;"
+    },
+    "l-8": {
+      "class": "border-l-8",
+      "property": "border-left-width: 8px;"
+    }
+  }
+}

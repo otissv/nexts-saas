@@ -1,0 +1,1264 @@
+{
+  "scrollMargin": {
+    "m-0": {
+      "class": "scroll-m-0",
+      "property": "scroll-margin: 0px;"
+    },
+    "mx-0": {
+      "class": "scroll-mx-0",
+      "property": "scroll-margin-left: 0px;\nscroll-margin-right: 0px;"
+    },
+    "my-0": {
+      "class": "scroll-my-0",
+      "property": "scroll-margin-top: 0px;\nscroll-margin-bottom: 0px;"
+    },
+    "ms-0": {
+      "class": "scroll-ms-0",
+      "property": "scroll-margin-inline-start: 0px;"
+    },
+    "me-0": {
+      "class": "scroll-me-0",
+      "property": "scroll-margin-inline-end: 0px;"
+    },
+    "mt-0": {
+      "class": "scroll-mt-0",
+      "property": "scroll-margin-top: 0px;"
+    },
+    "mr-0": {
+      "class": "scroll-mr-0",
+      "property": "scroll-margin-right: 0px;"
+    },
+    "mb-0": {
+      "class": "scroll-mb-0",
+      "property": "scroll-margin-bottom: 0px;"
+    },
+    "ml-0": {
+      "class": "scroll-ml-0",
+      "property": "scroll-margin-left: 0px;"
+    },
+    "m-px": {
+      "class": "scroll-m-px",
+      "property": "scroll-margin: 1px;"
+    },
+    "mx-px": {
+      "class": "scroll-mx-px",
+      "property": "scroll-margin-left: 1px;\nscroll-margin-right: 1px;"
+    },
+    "my-px": {
+      "class": "scroll-my-px",
+      "property": "scroll-margin-top: 1px;\nscroll-margin-bottom: 1px;"
+    },
+    "ms-px": {
+      "class": "scroll-ms-px",
+      "property": "scroll-margin-inline-start: 1px;"
+    },
+    "me-px": {
+      "class": "scroll-me-px",
+      "property": "scroll-margin-inline-end: 1px;"
+    },
+    "mt-px": {
+      "class": "scroll-mt-px",
+      "property": "scroll-margin-top: 1px;"
+    },
+    "mr-px": {
+      "class": "scroll-mr-px",
+      "property": "scroll-margin-right: 1px;"
+    },
+    "mb-px": {
+      "class": "scroll-mb-px",
+      "property": "scroll-margin-bottom: 1px;"
+    },
+    "ml-px": {
+      "class": "scroll-ml-px",
+      "property": "scroll-margin-left: 1px;"
+    },
+    "m-0.5": {
+      "class": "scroll-m-0.5",
+      "property": "scroll-margin: 0.125rem; /* 2px */"
+    },
+    "mx-0.5": {
+      "class": "scroll-mx-0.5",
+      "property": "scroll-margin-left: 0.125rem; /* 2px */\nscroll-margin-right: 0.125rem; /* 2px */"
+    },
+    "my-0.5": {
+      "class": "scroll-my-0.5",
+      "property": "scroll-margin-top: 0.125rem; /* 2px */\nscroll-margin-bottom: 0.125rem; /* 2px */"
+    },
+    "ms-0.5": {
+      "class": "scroll-ms-0.5",
+      "property": "scroll-margin-inline-start: 0.125rem; /* 2px */"
+    },
+    "me-0.5": {
+      "class": "scroll-me-0.5",
+      "property": "scroll-margin-inline-end: 0.125rem; /* 2px */"
+    },
+    "mt-0.5": {
+      "class": "scroll-mt-0.5",
+      "property": "scroll-margin-top: 0.125rem; /* 2px */"
+    },
+    "mr-0.5": {
+      "class": "scroll-mr-0.5",
+      "property": "scroll-margin-right: 0.125rem; /* 2px */"
+    },
+    "mb-0.5": {
+      "class": "scroll-mb-0.5",
+      "property": "scroll-margin-bottom: 0.125rem; /* 2px */"
+    },
+    "ml-0.5": {
+      "class": "scroll-ml-0.5",
+      "property": "scroll-margin-left: 0.125rem; /* 2px */"
+    },
+    "m-1": {
+      "class": "scroll-m-1",
+      "property": "scroll-margin: 0.25rem; /* 4px */"
+    },
+    "mx-1": {
+      "class": "scroll-mx-1",
+      "property": "scroll-margin-left: 0.25rem; /* 4px */\nscroll-margin-right: 0.25rem; /* 4px */"
+    },
+    "my-1": {
+      "class": "scroll-my-1",
+      "property": "scroll-margin-top: 0.25rem; /* 4px */\nscroll-margin-bottom: 0.25rem; /* 4px */"
+    },
+    "ms-1": {
+      "class": "scroll-ms-1",
+      "property": "scroll-margin-inline-start: 0.25rem; /* 4px */"
+    },
+    "me-1": {
+      "class": "scroll-me-1",
+      "property": "scroll-margin-inline-end: 0.25rem; /* 4px */"
+    },
+    "mt-1": {
+      "class": "scroll-mt-1",
+      "property": "scroll-margin-top: 0.25rem; /* 4px */"
+    },
+    "mr-1": {
+      "class": "scroll-mr-1",
+      "property": "scroll-margin-right: 0.25rem; /* 4px */"
+    },
+    "mb-1": {
+      "class": "scroll-mb-1",
+      "property": "scroll-margin-bottom: 0.25rem; /* 4px */"
+    },
+    "ml-1": {
+      "class": "scroll-ml-1",
+      "property": "scroll-margin-left: 0.25rem; /* 4px */"
+    },
+    "m-1.5": {
+      "class": "scroll-m-1.5",
+      "property": "scroll-margin: 0.375rem; /* 6px */"
+    },
+    "mx-1.5": {
+      "class": "scroll-mx-1.5",
+      "property": "scroll-margin-left: 0.375rem; /* 6px */\nscroll-margin-right: 0.375rem; /* 6px */"
+    },
+    "my-1.5": {
+      "class": "scroll-my-1.5",
+      "property": "scroll-margin-top: 0.375rem; /* 6px */\nscroll-margin-bottom: 0.375rem; /* 6px */"
+    },
+    "ms-1.5": {
+      "class": "scroll-ms-1.5",
+      "property": "scroll-margin-inline-start: 0.375rem; /* 6px */"
+    },
+    "me-1.5": {
+      "class": "scroll-me-1.5",
+      "property": "scroll-margin-inline-end: 0.375rem; /* 6px */"
+    },
+    "mt-1.5": {
+      "class": "scroll-mt-1.5",
+      "property": "scroll-margin-top: 0.375rem; /* 6px */"
+    },
+    "mr-1.5": {
+      "class": "scroll-mr-1.5",
+      "property": "scroll-margin-right: 0.375rem; /* 6px */"
+    },
+    "mb-1.5": {
+      "class": "scroll-mb-1.5",
+      "property": "scroll-margin-bottom: 0.375rem; /* 6px */"
+    },
+    "ml-1.5": {
+      "class": "scroll-ml-1.5",
+      "property": "scroll-margin-left: 0.375rem; /* 6px */"
+    },
+    "m-2": {
+      "class": "scroll-m-2",
+      "property": "scroll-margin: 0.5rem; /* 8px */"
+    },
+    "mx-2": {
+      "class": "scroll-mx-2",
+      "property": "scroll-margin-left: 0.5rem; /* 8px */\nscroll-margin-right: 0.5rem; /* 8px */"
+    },
+    "my-2": {
+      "class": "scroll-my-2",
+      "property": "scroll-margin-top: 0.5rem; /* 8px */\nscroll-margin-bottom: 0.5rem; /* 8px */"
+    },
+    "ms-2": {
+      "class": "scroll-ms-2",
+      "property": "scroll-margin-inline-start: 0.5rem; /* 8px */"
+    },
+    "me-2": {
+      "class": "scroll-me-2",
+      "property": "scroll-margin-inline-end: 0.5rem; /* 8px */"
+    },
+    "mt-2": {
+      "class": "scroll-mt-2",
+      "property": "scroll-margin-top: 0.5rem; /* 8px */"
+    },
+    "mr-2": {
+      "class": "scroll-mr-2",
+      "property": "scroll-margin-right: 0.5rem; /* 8px */"
+    },
+    "mb-2": {
+      "class": "scroll-mb-2",
+      "property": "scroll-margin-bottom: 0.5rem; /* 8px */"
+    },
+    "ml-2": {
+      "class": "scroll-ml-2",
+      "property": "scroll-margin-left: 0.5rem; /* 8px */"
+    },
+    "m-2.5": {
+      "class": "scroll-m-2.5",
+      "property": "scroll-margin: 0.625rem; /* 10px */"
+    },
+    "mx-2.5": {
+      "class": "scroll-mx-2.5",
+      "property": "scroll-margin-left: 0.625rem; /* 10px */\nscroll-margin-right: 0.625rem; /* 10px */"
+    },
+    "my-2.5": {
+      "class": "scroll-my-2.5",
+      "property": "scroll-margin-top: 0.625rem; /* 10px */\nscroll-margin-bottom: 0.625rem; /* 10px */"
+    },
+    "ms-2.5": {
+      "class": "scroll-ms-2.5",
+      "property": "scroll-margin-inline-start: 0.625rem; /* 10px */"
+    },
+    "me-2.5": {
+      "class": "scroll-me-2.5",
+      "property": "scroll-margin-inline-end: 0.625rem; /* 10px */"
+    },
+    "mt-2.5": {
+      "class": "scroll-mt-2.5",
+      "property": "scroll-margin-top: 0.625rem; /* 10px */"
+    },
+    "mr-2.5": {
+      "class": "scroll-mr-2.5",
+      "property": "scroll-margin-right: 0.625rem; /* 10px */"
+    },
+    "mb-2.5": {
+      "class": "scroll-mb-2.5",
+      "property": "scroll-margin-bottom: 0.625rem; /* 10px */"
+    },
+    "ml-2.5": {
+      "class": "scroll-ml-2.5",
+      "property": "scroll-margin-left: 0.625rem; /* 10px */"
+    },
+    "m-3": {
+      "class": "scroll-m-3",
+      "property": "scroll-margin: 0.75rem; /* 12px */"
+    },
+    "mx-3": {
+      "class": "scroll-mx-3",
+      "property": "scroll-margin-left: 0.75rem; /* 12px */\nscroll-margin-right: 0.75rem; /* 12px */"
+    },
+    "my-3": {
+      "class": "scroll-my-3",
+      "property": "scroll-margin-top: 0.75rem; /* 12px */\nscroll-margin-bottom: 0.75rem; /* 12px */"
+    },
+    "ms-3": {
+      "class": "scroll-ms-3",
+      "property": "scroll-margin-inline-start: 0.75rem; /* 12px */"
+    },
+    "me-3": {
+      "class": "scroll-me-3",
+      "property": "scroll-margin-inline-end: 0.75rem; /* 12px */"
+    },
+    "mt-3": {
+      "class": "scroll-mt-3",
+      "property": "scroll-margin-top: 0.75rem; /* 12px */"
+    },
+    "mr-3": {
+      "class": "scroll-mr-3",
+      "property": "scroll-margin-right: 0.75rem; /* 12px */"
+    },
+    "mb-3": {
+      "class": "scroll-mb-3",
+      "property": "scroll-margin-bottom: 0.75rem; /* 12px */"
+    },
+    "ml-3": {
+      "class": "scroll-ml-3",
+      "property": "scroll-margin-left: 0.75rem; /* 12px */"
+    },
+    "m-3.5": {
+      "class": "scroll-m-3.5",
+      "property": "scroll-margin: 0.875rem; /* 14px */"
+    },
+    "mx-3.5": {
+      "class": "scroll-mx-3.5",
+      "property": "scroll-margin-left: 0.875rem; /* 14px */\nscroll-margin-right: 0.875rem; /* 14px */"
+    },
+    "my-3.5": {
+      "class": "scroll-my-3.5",
+      "property": "scroll-margin-top: 0.875rem; /* 14px */\nscroll-margin-bottom: 0.875rem; /* 14px */"
+    },
+    "ms-3.5": {
+      "class": "scroll-ms-3.5",
+      "property": "scroll-margin-inline-start: 0.875rem; /* 14px */"
+    },
+    "me-3.5": {
+      "class": "scroll-me-3.5",
+      "property": "scroll-margin-inline-end: 0.875rem; /* 14px */"
+    },
+    "mt-3.5": {
+      "class": "scroll-mt-3.5",
+      "property": "scroll-margin-top: 0.875rem; /* 14px */"
+    },
+    "mr-3.5": {
+      "class": "scroll-mr-3.5",
+      "property": "scroll-margin-right: 0.875rem; /* 14px */"
+    },
+    "mb-3.5": {
+      "class": "scroll-mb-3.5",
+      "property": "scroll-margin-bottom: 0.875rem; /* 14px */"
+    },
+    "ml-3.5": {
+      "class": "scroll-ml-3.5",
+      "property": "scroll-margin-left: 0.875rem; /* 14px */"
+    },
+    "m-4": {
+      "class": "scroll-m-4",
+      "property": "scroll-margin: 1rem; /* 16px */"
+    },
+    "mx-4": {
+      "class": "scroll-mx-4",
+      "property": "scroll-margin-left: 1rem; /* 16px */\nscroll-margin-right: 1rem; /* 16px */"
+    },
+    "my-4": {
+      "class": "scroll-my-4",
+      "property": "scroll-margin-top: 1rem; /* 16px */\nscroll-margin-bottom: 1rem; /* 16px */"
+    },
+    "ms-4": {
+      "class": "scroll-ms-4",
+      "property": "scroll-margin-inline-start: 1rem; /* 16px */"
+    },
+    "me-4": {
+      "class": "scroll-me-4",
+      "property": "scroll-margin-inline-end: 1rem; /* 16px */"
+    },
+    "mt-4": {
+      "class": "scroll-mt-4",
+      "property": "scroll-margin-top: 1rem; /* 16px */"
+    },
+    "mr-4": {
+      "class": "scroll-mr-4",
+      "property": "scroll-margin-right: 1rem; /* 16px */"
+    },
+    "mb-4": {
+      "class": "scroll-mb-4",
+      "property": "scroll-margin-bottom: 1rem; /* 16px */"
+    },
+    "ml-4": {
+      "class": "scroll-ml-4",
+      "property": "scroll-margin-left: 1rem; /* 16px */"
+    },
+    "m-5": {
+      "class": "scroll-m-5",
+      "property": "scroll-margin: 1.25rem; /* 20px */"
+    },
+    "mx-5": {
+      "class": "scroll-mx-5",
+      "property": "scroll-margin-left: 1.25rem; /* 20px */\nscroll-margin-right: 1.25rem; /* 20px */"
+    },
+    "my-5": {
+      "class": "scroll-my-5",
+      "property": "scroll-margin-top: 1.25rem; /* 20px */\nscroll-margin-bottom: 1.25rem; /* 20px */"
+    },
+    "ms-5": {
+      "class": "scroll-ms-5",
+      "property": "scroll-margin-inline-start: 1.25rem; /* 20px */"
+    },
+    "me-5": {
+      "class": "scroll-me-5",
+      "property": "scroll-margin-inline-end: 1.25rem; /* 20px */"
+    },
+    "mt-5": {
+      "class": "scroll-mt-5",
+      "property": "scroll-margin-top: 1.25rem; /* 20px */"
+    },
+    "mr-5": {
+      "class": "scroll-mr-5",
+      "property": "scroll-margin-right: 1.25rem; /* 20px */"
+    },
+    "mb-5": {
+      "class": "scroll-mb-5",
+      "property": "scroll-margin-bottom: 1.25rem; /* 20px */"
+    },
+    "ml-5": {
+      "class": "scroll-ml-5",
+      "property": "scroll-margin-left: 1.25rem; /* 20px */"
+    },
+    "m-6": {
+      "class": "scroll-m-6",
+      "property": "scroll-margin: 1.5rem; /* 24px */"
+    },
+    "mx-6": {
+      "class": "scroll-mx-6",
+      "property": "scroll-margin-left: 1.5rem; /* 24px */\nscroll-margin-right: 1.5rem; /* 24px */"
+    },
+    "my-6": {
+      "class": "scroll-my-6",
+      "property": "scroll-margin-top: 1.5rem; /* 24px */\nscroll-margin-bottom: 1.5rem; /* 24px */"
+    },
+    "ms-6": {
+      "class": "scroll-ms-6",
+      "property": "scroll-margin-inline-start: 1.5rem; /* 24px */"
+    },
+    "me-6": {
+      "class": "scroll-me-6",
+      "property": "scroll-margin-inline-end: 1.5rem; /* 24px */"
+    },
+    "mt-6": {
+      "class": "scroll-mt-6",
+      "property": "scroll-margin-top: 1.5rem; /* 24px */"
+    },
+    "mr-6": {
+      "class": "scroll-mr-6",
+      "property": "scroll-margin-right: 1.5rem; /* 24px */"
+    },
+    "mb-6": {
+      "class": "scroll-mb-6",
+      "property": "scroll-margin-bottom: 1.5rem; /* 24px */"
+    },
+    "ml-6": {
+      "class": "scroll-ml-6",
+      "property": "scroll-margin-left: 1.5rem; /* 24px */"
+    },
+    "m-7": {
+      "class": "scroll-m-7",
+      "property": "scroll-margin: 1.75rem; /* 28px */"
+    },
+    "mx-7": {
+      "class": "scroll-mx-7",
+      "property": "scroll-margin-left: 1.75rem; /* 28px */\nscroll-margin-right: 1.75rem; /* 28px */"
+    },
+    "my-7": {
+      "class": "scroll-my-7",
+      "property": "scroll-margin-top: 1.75rem; /* 28px */\nscroll-margin-bottom: 1.75rem; /* 28px */"
+    },
+    "ms-7": {
+      "class": "scroll-ms-7",
+      "property": "scroll-margin-inline-start: 1.75rem; /* 28px */"
+    },
+    "me-7": {
+      "class": "scroll-me-7",
+      "property": "scroll-margin-inline-end: 1.75rem; /* 28px */"
+    },
+    "mt-7": {
+      "class": "scroll-mt-7",
+      "property": "scroll-margin-top: 1.75rem; /* 28px */"
+    },
+    "mr-7": {
+      "class": "scroll-mr-7",
+      "property": "scroll-margin-right: 1.75rem; /* 28px */"
+    },
+    "mb-7": {
+      "class": "scroll-mb-7",
+      "property": "scroll-margin-bottom: 1.75rem; /* 28px */"
+    },
+    "ml-7": {
+      "class": "scroll-ml-7",
+      "property": "scroll-margin-left: 1.75rem; /* 28px */"
+    },
+    "m-8": {
+      "class": "scroll-m-8",
+      "property": "scroll-margin: 2rem; /* 32px */"
+    },
+    "mx-8": {
+      "class": "scroll-mx-8",
+      "property": "scroll-margin-left: 2rem; /* 32px */\nscroll-margin-right: 2rem; /* 32px */"
+    },
+    "my-8": {
+      "class": "scroll-my-8",
+      "property": "scroll-margin-top: 2rem; /* 32px */\nscroll-margin-bottom: 2rem; /* 32px */"
+    },
+    "ms-8": {
+      "class": "scroll-ms-8",
+      "property": "scroll-margin-inline-start: 2rem; /* 32px */"
+    },
+    "me-8": {
+      "class": "scroll-me-8",
+      "property": "scroll-margin-inline-end: 2rem; /* 32px */"
+    },
+    "mt-8": {
+      "class": "scroll-mt-8",
+      "property": "scroll-margin-top: 2rem; /* 32px */"
+    },
+    "mr-8": {
+      "class": "scroll-mr-8",
+      "property": "scroll-margin-right: 2rem; /* 32px */"
+    },
+    "mb-8": {
+      "class": "scroll-mb-8",
+      "property": "scroll-margin-bottom: 2rem; /* 32px */"
+    },
+    "ml-8": {
+      "class": "scroll-ml-8",
+      "property": "scroll-margin-left: 2rem; /* 32px */"
+    },
+    "m-9": {
+      "class": "scroll-m-9",
+      "property": "scroll-margin: 2.25rem; /* 36px */"
+    },
+    "mx-9": {
+      "class": "scroll-mx-9",
+      "property": "scroll-margin-left: 2.25rem; /* 36px */\nscroll-margin-right: 2.25rem; /* 36px */"
+    },
+    "my-9": {
+      "class": "scroll-my-9",
+      "property": "scroll-margin-top: 2.25rem; /* 36px */\nscroll-margin-bottom: 2.25rem; /* 36px */"
+    },
+    "ms-9": {
+      "class": "scroll-ms-9",
+      "property": "scroll-margin-inline-start: 2.25rem; /* 36px */"
+    },
+    "me-9": {
+      "class": "scroll-me-9",
+      "property": "scroll-margin-inline-end: 2.25rem; /* 36px */"
+    },
+    "mt-9": {
+      "class": "scroll-mt-9",
+      "property": "scroll-margin-top: 2.25rem; /* 36px */"
+    },
+    "mr-9": {
+      "class": "scroll-mr-9",
+      "property": "scroll-margin-right: 2.25rem; /* 36px */"
+    },
+    "mb-9": {
+      "class": "scroll-mb-9",
+      "property": "scroll-margin-bottom: 2.25rem; /* 36px */"
+    },
+    "ml-9": {
+      "class": "scroll-ml-9",
+      "property": "scroll-margin-left: 2.25rem; /* 36px */"
+    },
+    "m-10": {
+      "class": "scroll-m-10",
+      "property": "scroll-margin: 2.5rem; /* 40px */"
+    },
+    "mx-10": {
+      "class": "scroll-mx-10",
+      "property": "scroll-margin-left: 2.5rem; /* 40px */\nscroll-margin-right: 2.5rem; /* 40px */"
+    },
+    "my-10": {
+      "class": "scroll-my-10",
+      "property": "scroll-margin-top: 2.5rem; /* 40px */\nscroll-margin-bottom: 2.5rem; /* 40px */"
+    },
+    "ms-10": {
+      "class": "scroll-ms-10",
+      "property": "scroll-margin-inline-start: 2.5rem; /* 40px */"
+    },
+    "me-10": {
+      "class": "scroll-me-10",
+      "property": "scroll-margin-inline-end: 2.5rem; /* 40px */"
+    },
+    "mt-10": {
+      "class": "scroll-mt-10",
+      "property": "scroll-margin-top: 2.5rem; /* 40px */"
+    },
+    "mr-10": {
+      "class": "scroll-mr-10",
+      "property": "scroll-margin-right: 2.5rem; /* 40px */"
+    },
+    "mb-10": {
+      "class": "scroll-mb-10",
+      "property": "scroll-margin-bottom: 2.5rem; /* 40px */"
+    },
+    "ml-10": {
+      "class": "scroll-ml-10",
+      "property": "scroll-margin-left: 2.5rem; /* 40px */"
+    },
+    "m-11": {
+      "class": "scroll-m-11",
+      "property": "scroll-margin: 2.75rem; /* 44px */"
+    },
+    "mx-11": {
+      "class": "scroll-mx-11",
+      "property": "scroll-margin-left: 2.75rem; /* 44px */\nscroll-margin-right: 2.75rem; /* 44px */"
+    },
+    "my-11": {
+      "class": "scroll-my-11",
+      "property": "scroll-margin-top: 2.75rem; /* 44px */\nscroll-margin-bottom: 2.75rem; /* 44px */"
+    },
+    "ms-11": {
+      "class": "scroll-ms-11",
+      "property": "scroll-margin-inline-start: 2.75rem; /* 44px */"
+    },
+    "me-11": {
+      "class": "scroll-me-11",
+      "property": "scroll-margin-inline-end: 2.75rem; /* 44px */"
+    },
+    "mt-11": {
+      "class": "scroll-mt-11",
+      "property": "scroll-margin-top: 2.75rem; /* 44px */"
+    },
+    "mr-11": {
+      "class": "scroll-mr-11",
+      "property": "scroll-margin-right: 2.75rem; /* 44px */"
+    },
+    "mb-11": {
+      "class": "scroll-mb-11",
+      "property": "scroll-margin-bottom: 2.75rem; /* 44px */"
+    },
+    "ml-11": {
+      "class": "scroll-ml-11",
+      "property": "scroll-margin-left: 2.75rem; /* 44px */"
+    },
+    "m-12": {
+      "class": "scroll-m-12",
+      "property": "scroll-margin: 3rem; /* 48px */"
+    },
+    "mx-12": {
+      "class": "scroll-mx-12",
+      "property": "scroll-margin-left: 3rem; /* 48px */\nscroll-margin-right: 3rem; /* 48px */"
+    },
+    "my-12": {
+      "class": "scroll-my-12",
+      "property": "scroll-margin-top: 3rem; /* 48px */\nscroll-margin-bottom: 3rem; /* 48px */"
+    },
+    "ms-12": {
+      "class": "scroll-ms-12",
+      "property": "scroll-margin-inline-start: 3rem; /* 48px */"
+    },
+    "me-12": {
+      "class": "scroll-me-12",
+      "property": "scroll-margin-inline-end: 3rem; /* 48px */"
+    },
+    "mt-12": {
+      "class": "scroll-mt-12",
+      "property": "scroll-margin-top: 3rem; /* 48px */"
+    },
+    "mr-12": {
+      "class": "scroll-mr-12",
+      "property": "scroll-margin-right: 3rem; /* 48px */"
+    },
+    "mb-12": {
+      "class": "scroll-mb-12",
+      "property": "scroll-margin-bottom: 3rem; /* 48px */"
+    },
+    "ml-12": {
+      "class": "scroll-ml-12",
+      "property": "scroll-margin-left: 3rem; /* 48px */"
+    },
+    "m-14": {
+      "class": "scroll-m-14",
+      "property": "scroll-margin: 3.5rem; /* 56px */"
+    },
+    "mx-14": {
+      "class": "scroll-mx-14",
+      "property": "scroll-margin-left: 3.5rem; /* 56px */\nscroll-margin-right: 3.5rem; /* 56px */"
+    },
+    "my-14": {
+      "class": "scroll-my-14",
+      "property": "scroll-margin-top: 3.5rem; /* 56px */\nscroll-margin-bottom: 3.5rem; /* 56px */"
+    },
+    "ms-14": {
+      "class": "scroll-ms-14",
+      "property": "scroll-margin-inline-start: 3.5rem; /* 56px */"
+    },
+    "me-14": {
+      "class": "scroll-me-14",
+      "property": "scroll-margin-inline-end: 3.5rem; /* 56px */"
+    },
+    "mt-14": {
+      "class": "scroll-mt-14",
+      "property": "scroll-margin-top: 3.5rem; /* 56px */"
+    },
+    "mr-14": {
+      "class": "scroll-mr-14",
+      "property": "scroll-margin-right: 3.5rem; /* 56px */"
+    },
+    "mb-14": {
+      "class": "scroll-mb-14",
+      "property": "scroll-margin-bottom: 3.5rem; /* 56px */"
+    },
+    "ml-14": {
+      "class": "scroll-ml-14",
+      "property": "scroll-margin-left: 3.5rem; /* 56px */"
+    },
+    "m-16": {
+      "class": "scroll-m-16",
+      "property": "scroll-margin: 4rem; /* 64px */"
+    },
+    "mx-16": {
+      "class": "scroll-mx-16",
+      "property": "scroll-margin-left: 4rem; /* 64px */\nscroll-margin-right: 4rem; /* 64px */"
+    },
+    "my-16": {
+      "class": "scroll-my-16",
+      "property": "scroll-margin-top: 4rem; /* 64px */\nscroll-margin-bottom: 4rem; /* 64px */"
+    },
+    "ms-16": {
+      "class": "scroll-ms-16",
+      "property": "scroll-margin-inline-start: 4rem; /* 64px */"
+    },
+    "me-16": {
+      "class": "scroll-me-16",
+      "property": "scroll-margin-inline-end: 4rem; /* 64px */"
+    },
+    "mt-16": {
+      "class": "scroll-mt-16",
+      "property": "scroll-margin-top: 4rem; /* 64px */"
+    },
+    "mr-16": {
+      "class": "scroll-mr-16",
+      "property": "scroll-margin-right: 4rem; /* 64px */"
+    },
+    "mb-16": {
+      "class": "scroll-mb-16",
+      "property": "scroll-margin-bottom: 4rem; /* 64px */"
+    },
+    "ml-16": {
+      "class": "scroll-ml-16",
+      "property": "scroll-margin-left: 4rem; /* 64px */"
+    },
+    "m-20": {
+      "class": "scroll-m-20",
+      "property": "scroll-margin: 5rem; /* 80px */"
+    },
+    "mx-20": {
+      "class": "scroll-mx-20",
+      "property": "scroll-margin-left: 5rem; /* 80px */\nscroll-margin-right: 5rem; /* 80px */"
+    },
+    "my-20": {
+      "class": "scroll-my-20",
+      "property": "scroll-margin-top: 5rem; /* 80px */\nscroll-margin-bottom: 5rem; /* 80px */"
+    },
+    "ms-20": {
+      "class": "scroll-ms-20",
+      "property": "scroll-margin-inline-start: 5rem; /* 80px */"
+    },
+    "me-20": {
+      "class": "scroll-me-20",
+      "property": "scroll-margin-inline-end: 5rem; /* 80px */"
+    },
+    "mt-20": {
+      "class": "scroll-mt-20",
+      "property": "scroll-margin-top: 5rem; /* 80px */"
+    },
+    "mr-20": {
+      "class": "scroll-mr-20",
+      "property": "scroll-margin-right: 5rem; /* 80px */"
+    },
+    "mb-20": {
+      "class": "scroll-mb-20",
+      "property": "scroll-margin-bottom: 5rem; /* 80px */"
+    },
+    "ml-20": {
+      "class": "scroll-ml-20",
+      "property": "scroll-margin-left: 5rem; /* 80px */"
+    },
+    "m-24": {
+      "class": "scroll-m-24",
+      "property": "scroll-margin: 6rem; /* 96px */"
+    },
+    "mx-24": {
+      "class": "scroll-mx-24",
+      "property": "scroll-margin-left: 6rem; /* 96px */\nscroll-margin-right: 6rem; /* 96px */"
+    },
+    "my-24": {
+      "class": "scroll-my-24",
+      "property": "scroll-margin-top: 6rem; /* 96px */\nscroll-margin-bottom: 6rem; /* 96px */"
+    },
+    "ms-24": {
+      "class": "scroll-ms-24",
+      "property": "scroll-margin-inline-start: 6rem; /* 96px */"
+    },
+    "me-24": {
+      "class": "scroll-me-24",
+      "property": "scroll-margin-inline-end: 6rem; /* 96px */"
+    },
+    "mt-24": {
+      "class": "scroll-mt-24",
+      "property": "scroll-margin-top: 6rem; /* 96px */"
+    },
+    "mr-24": {
+      "class": "scroll-mr-24",
+      "property": "scroll-margin-right: 6rem; /* 96px */"
+    },
+    "mb-24": {
+      "class": "scroll-mb-24",
+      "property": "scroll-margin-bottom: 6rem; /* 96px */"
+    },
+    "ml-24": {
+      "class": "scroll-ml-24",
+      "property": "scroll-margin-left: 6rem; /* 96px */"
+    },
+    "m-28": {
+      "class": "scroll-m-28",
+      "property": "scroll-margin: 7rem; /* 112px */"
+    },
+    "mx-28": {
+      "class": "scroll-mx-28",
+      "property": "scroll-margin-left: 7rem; /* 112px */\nscroll-margin-right: 7rem; /* 112px */"
+    },
+    "my-28": {
+      "class": "scroll-my-28",
+      "property": "scroll-margin-top: 7rem; /* 112px */\nscroll-margin-bottom: 7rem; /* 112px */"
+    },
+    "ms-28": {
+      "class": "scroll-ms-28",
+      "property": "scroll-margin-inline-start: 7rem; /* 112px */"
+    },
+    "me-28": {
+      "class": "scroll-me-28",
+      "property": "scroll-margin-inline-end: 7rem; /* 112px */"
+    },
+    "mt-28": {
+      "class": "scroll-mt-28",
+      "property": "scroll-margin-top: 7rem; /* 112px */"
+    },
+    "mr-28": {
+      "class": "scroll-mr-28",
+      "property": "scroll-margin-right: 7rem; /* 112px */"
+    },
+    "mb-28": {
+      "class": "scroll-mb-28",
+      "property": "scroll-margin-bottom: 7rem; /* 112px */"
+    },
+    "ml-28": {
+      "class": "scroll-ml-28",
+      "property": "scroll-margin-left: 7rem; /* 112px */"
+    },
+    "m-32": {
+      "class": "scroll-m-32",
+      "property": "scroll-margin: 8rem; /* 128px */"
+    },
+    "mx-32": {
+      "class": "scroll-mx-32",
+      "property": "scroll-margin-left: 8rem; /* 128px */\nscroll-margin-right: 8rem; /* 128px */"
+    },
+    "my-32": {
+      "class": "scroll-my-32",
+      "property": "scroll-margin-top: 8rem; /* 128px */\nscroll-margin-bottom: 8rem; /* 128px */"
+    },
+    "ms-32": {
+      "class": "scroll-ms-32",
+      "property": "scroll-margin-inline-start: 8rem; /* 128px */"
+    },
+    "me-32": {
+      "class": "scroll-me-32",
+      "property": "scroll-margin-inline-end: 8rem; /* 128px */"
+    },
+    "mt-32": {
+      "class": "scroll-mt-32",
+      "property": "scroll-margin-top: 8rem; /* 128px */"
+    },
+    "mr-32": {
+      "class": "scroll-mr-32",
+      "property": "scroll-margin-right: 8rem; /* 128px */"
+    },
+    "mb-32": {
+      "class": "scroll-mb-32",
+      "property": "scroll-margin-bottom: 8rem; /* 128px */"
+    },
+    "ml-32": {
+      "class": "scroll-ml-32",
+      "property": "scroll-margin-left: 8rem; /* 128px */"
+    },
+    "m-36": {
+      "class": "scroll-m-36",
+      "property": "scroll-margin: 9rem; /* 144px */"
+    },
+    "mx-36": {
+      "class": "scroll-mx-36",
+      "property": "scroll-margin-left: 9rem; /* 144px */\nscroll-margin-right: 9rem; /* 144px */"
+    },
+    "my-36": {
+      "class": "scroll-my-36",
+      "property": "scroll-margin-top: 9rem; /* 144px */\nscroll-margin-bottom: 9rem; /* 144px */"
+    },
+    "ms-36": {
+      "class": "scroll-ms-36",
+      "property": "scroll-margin-inline-start: 9rem; /* 144px */"
+    },
+    "me-36": {
+      "class": "scroll-me-36",
+      "property": "scroll-margin-inline-end: 9rem; /* 144px */"
+    },
+    "mt-36": {
+      "class": "scroll-mt-36",
+      "property": "scroll-margin-top: 9rem; /* 144px */"
+    },
+    "mr-36": {
+      "class": "scroll-mr-36",
+      "property": "scroll-margin-right: 9rem; /* 144px */"
+    },
+    "mb-36": {
+      "class": "scroll-mb-36",
+      "property": "scroll-margin-bottom: 9rem; /* 144px */"
+    },
+    "ml-36": {
+      "class": "scroll-ml-36",
+      "property": "scroll-margin-left: 9rem; /* 144px */"
+    },
+    "m-40": {
+      "class": "scroll-m-40",
+      "property": "scroll-margin: 10rem; /* 160px */"
+    },
+    "mx-40": {
+      "class": "scroll-mx-40",
+      "property": "scroll-margin-left: 10rem; /* 160px */\nscroll-margin-right: 10rem; /* 160px */"
+    },
+    "my-40": {
+      "class": "scroll-my-40",
+      "property": "scroll-margin-top: 10rem; /* 160px */\nscroll-margin-bottom: 10rem; /* 160px */"
+    },
+    "ms-40": {
+      "class": "scroll-ms-40",
+      "property": "scroll-margin-inline-start: 10rem; /* 160px */"
+    },
+    "me-40": {
+      "class": "scroll-me-40",
+      "property": "scroll-margin-inline-end: 10rem; /* 160px */"
+    },
+    "mt-40": {
+      "class": "scroll-mt-40",
+      "property": "scroll-margin-top: 10rem; /* 160px */"
+    },
+    "mr-40": {
+      "class": "scroll-mr-40",
+      "property": "scroll-margin-right: 10rem; /* 160px */"
+    },
+    "mb-40": {
+      "class": "scroll-mb-40",
+      "property": "scroll-margin-bottom: 10rem; /* 160px */"
+    },
+    "ml-40": {
+      "class": "scroll-ml-40",
+      "property": "scroll-margin-left: 10rem; /* 160px */"
+    },
+    "m-44": {
+      "class": "scroll-m-44",
+      "property": "scroll-margin: 11rem; /* 176px */"
+    },
+    "mx-44": {
+      "class": "scroll-mx-44",
+      "property": "scroll-margin-left: 11rem; /* 176px */\nscroll-margin-right: 11rem; /* 176px */"
+    },
+    "my-44": {
+      "class": "scroll-my-44",
+      "property": "scroll-margin-top: 11rem; /* 176px */\nscroll-margin-bottom: 11rem; /* 176px */"
+    },
+    "ms-44": {
+      "class": "scroll-ms-44",
+      "property": "scroll-margin-inline-start: 11rem; /* 176px */"
+    },
+    "me-44": {
+      "class": "scroll-me-44",
+      "property": "scroll-margin-inline-end: 11rem; /* 176px */"
+    },
+    "mt-44": {
+      "class": "scroll-mt-44",
+      "property": "scroll-margin-top: 11rem; /* 176px */"
+    },
+    "mr-44": {
+      "class": "scroll-mr-44",
+      "property": "scroll-margin-right: 11rem; /* 176px */"
+    },
+    "mb-44": {
+      "class": "scroll-mb-44",
+      "property": "scroll-margin-bottom: 11rem; /* 176px */"
+    },
+    "ml-44": {
+      "class": "scroll-ml-44",
+      "property": "scroll-margin-left: 11rem; /* 176px */"
+    },
+    "m-48": {
+      "class": "scroll-m-48",
+      "property": "scroll-margin: 12rem; /* 192px */"
+    },
+    "mx-48": {
+      "class": "scroll-mx-48",
+      "property": "scroll-margin-left: 12rem; /* 192px */\nscroll-margin-right: 12rem; /* 192px */"
+    },
+    "my-48": {
+      "class": "scroll-my-48",
+      "property": "scroll-margin-top: 12rem; /* 192px */\nscroll-margin-bottom: 12rem; /* 192px */"
+    },
+    "ms-48": {
+      "class": "scroll-ms-48",
+      "property": "scroll-margin-inline-start: 12rem; /* 192px */"
+    },
+    "me-48": {
+      "class": "scroll-me-48",
+      "property": "scroll-margin-inline-end: 12rem; /* 192px */"
+    },
+    "mt-48": {
+      "class": "scroll-mt-48",
+      "property": "scroll-margin-top: 12rem; /* 192px */"
+    },
+    "mr-48": {
+      "class": "scroll-mr-48",
+      "property": "scroll-margin-right: 12rem; /* 192px */"
+    },
+    "mb-48": {
+      "class": "scroll-mb-48",
+      "property": "scroll-margin-bottom: 12rem; /* 192px */"
+    },
+    "ml-48": {
+      "class": "scroll-ml-48",
+      "property": "scroll-margin-left: 12rem; /* 192px */"
+    },
+    "m-52": {
+      "class": "scroll-m-52",
+      "property": "scroll-margin: 13rem; /* 208px */"
+    },
+    "mx-52": {
+      "class": "scroll-mx-52",
+      "property": "scroll-margin-left: 13rem; /* 208px */\nscroll-margin-right: 13rem; /* 208px */"
+    },
+    "my-52": {
+      "class": "scroll-my-52",
+      "property": "scroll-margin-top: 13rem; /* 208px */\nscroll-margin-bottom: 13rem; /* 208px */"
+    },
+    "ms-52": {
+      "class": "scroll-ms-52",
+      "property": "scroll-margin-inline-start: 13rem; /* 208px */"
+    },
+    "me-52": {
+      "class": "scroll-me-52",
+      "property": "scroll-margin-inline-end: 13rem; /* 208px */"
+    },
+    "mt-52": {
+      "class": "scroll-mt-52",
+      "property": "scroll-margin-top: 13rem; /* 208px */"
+    },
+    "mr-52": {
+      "class": "scroll-mr-52",
+      "property": "scroll-margin-right: 13rem; /* 208px */"
+    },
+    "mb-52": {
+      "class": "scroll-mb-52",
+      "property": "scroll-margin-bottom: 13rem; /* 208px */"
+    },
+    "ml-52": {
+      "class": "scroll-ml-52",
+      "property": "scroll-margin-left: 13rem; /* 208px */"
+    },
+    "m-56": {
+      "class": "scroll-m-56",
+      "property": "scroll-margin: 14rem; /* 224px */"
+    },
+    "mx-56": {
+      "class": "scroll-mx-56",
+      "property": "scroll-margin-left: 14rem; /* 224px */\nscroll-margin-right: 14rem; /* 224px */"
+    },
+    "my-56": {
+      "class": "scroll-my-56",
+      "property": "scroll-margin-top: 14rem; /* 224px */\nscroll-margin-bottom: 14rem; /* 224px */"
+    },
+    "ms-56": {
+      "class": "scroll-ms-56",
+      "property": "scroll-margin-inline-start: 14rem; /* 224px */"
+    },
+    "me-56": {
+      "class": "scroll-me-56",
+      "property": "scroll-margin-inline-end: 14rem; /* 224px */"
+    },
+    "mt-56": {
+      "class": "scroll-mt-56",
+      "property": "scroll-margin-top: 14rem; /* 224px */"
+    },
+    "mr-56": {
+      "class": "scroll-mr-56",
+      "property": "scroll-margin-right: 14rem; /* 224px */"
+    },
+    "mb-56": {
+      "class": "scroll-mb-56",
+      "property": "scroll-margin-bottom: 14rem; /* 224px */"
+    },
+    "ml-56": {
+      "class": "scroll-ml-56",
+      "property": "scroll-margin-left: 14rem; /* 224px */"
+    },
+    "m-60": {
+      "class": "scroll-m-60",
+      "property": "scroll-margin: 15rem; /* 240px */"
+    },
+    "mx-60": {
+      "class": "scroll-mx-60",
+      "property": "scroll-margin-left: 15rem; /* 240px */\nscroll-margin-right: 15rem; /* 240px */"
+    },
+    "my-60": {
+      "class": "scroll-my-60",
+      "property": "scroll-margin-top: 15rem; /* 240px */\nscroll-margin-bottom: 15rem; /* 240px */"
+    },
+    "ms-60": {
+      "class": "scroll-ms-60",
+      "property": "scroll-margin-inline-start: 15rem; /* 240px */"
+    },
+    "me-60": {
+      "class": "scroll-me-60",
+      "property": "scroll-margin-inline-end: 15rem; /* 240px */"
+    },
+    "mt-60": {
+      "class": "scroll-mt-60",
+      "property": "scroll-margin-top: 15rem; /* 240px */"
+    },
+    "mr-60": {
+      "class": "scroll-mr-60",
+      "property": "scroll-margin-right: 15rem; /* 240px */"
+    },
+    "mb-60": {
+      "class": "scroll-mb-60",
+      "property": "scroll-margin-bottom: 15rem; /* 240px */"
+    },
+    "ml-60": {
+      "class": "scroll-ml-60",
+      "property": "scroll-margin-left: 15rem; /* 240px */"
+    },
+    "m-64": {
+      "class": "scroll-m-64",
+      "property": "scroll-margin: 16rem; /* 256px */"
+    },
+    "mx-64": {
+      "class": "scroll-mx-64",
+      "property": "scroll-margin-left: 16rem; /* 256px */\nscroll-margin-right: 16rem; /* 256px */"
+    },
+    "my-64": {
+      "class": "scroll-my-64",
+      "property": "scroll-margin-top: 16rem; /* 256px */\nscroll-margin-bottom: 16rem; /* 256px */"
+    },
+    "ms-64": {
+      "class": "scroll-ms-64",
+      "property": "scroll-margin-inline-start: 16rem; /* 256px */"
+    },
+    "me-64": {
+      "class": "scroll-me-64",
+      "property": "scroll-margin-inline-end: 16rem; /* 256px */"
+    },
+    "mt-64": {
+      "class": "scroll-mt-64",
+      "property": "scroll-margin-top: 16rem; /* 256px */"
+    },
+    "mr-64": {
+      "class": "scroll-mr-64",
+      "property": "scroll-margin-right: 16rem; /* 256px */"
+    },
+    "mb-64": {
+      "class": "scroll-mb-64",
+      "property": "scroll-margin-bottom: 16rem; /* 256px */"
+    },
+    "ml-64": {
+      "class": "scroll-ml-64",
+      "property": "scroll-margin-left: 16rem; /* 256px */"
+    },
+    "m-72": {
+      "class": "scroll-m-72",
+      "property": "scroll-margin: 18rem; /* 288px */"
+    },
+    "mx-72": {
+      "class": "scroll-mx-72",
+      "property": "scroll-margin-left: 18rem; /* 288px */\nscroll-margin-right: 18rem; /* 288px */"
+    },
+    "my-72": {
+      "class": "scroll-my-72",
+      "property": "scroll-margin-top: 18rem; /* 288px */\nscroll-margin-bottom: 18rem; /* 288px */"
+    },
+    "ms-72": {
+      "class": "scroll-ms-72",
+      "property": "scroll-margin-inline-start: 18rem; /* 288px */"
+    },
+    "me-72": {
+      "class": "scroll-me-72",
+      "property": "scroll-margin-inline-end: 18rem; /* 288px */"
+    },
+    "mt-72": {
+      "class": "scroll-mt-72",
+      "property": "scroll-margin-top: 18rem; /* 288px */"
+    },
+    "mr-72": {
+      "class": "scroll-mr-72",
+      "property": "scroll-margin-right: 18rem; /* 288px */"
+    },
+    "mb-72": {
+      "class": "scroll-mb-72",
+      "property": "scroll-margin-bottom: 18rem; /* 288px */"
+    },
+    "ml-72": {
+      "class": "scroll-ml-72",
+      "property": "scroll-margin-left: 18rem; /* 288px */"
+    },
+    "m-80": {
+      "class": "scroll-m-80",
+      "property": "scroll-margin: 20rem; /* 320px */"
+    },
+    "mx-80": {
+      "class": "scroll-mx-80",
+      "property": "scroll-margin-left: 20rem; /* 320px */\nscroll-margin-right: 20rem; /* 320px */"
+    },
+    "my-80": {
+      "class": "scroll-my-80",
+      "property": "scroll-margin-top: 20rem; /* 320px */\nscroll-margin-bottom: 20rem; /* 320px */"
+    },
+    "ms-80": {
+      "class": "scroll-ms-80",
+      "property": "scroll-margin-inline-start: 20rem; /* 320px */"
+    },
+    "me-80": {
+      "class": "scroll-me-80",
+      "property": "scroll-margin-inline-end: 20rem; /* 320px */"
+    },
+    "mt-80": {
+      "class": "scroll-mt-80",
+      "property": "scroll-margin-top: 20rem; /* 320px */"
+    },
+    "mr-80": {
+      "class": "scroll-mr-80",
+      "property": "scroll-margin-right: 20rem; /* 320px */"
+    },
+    "mb-80": {
+      "class": "scroll-mb-80",
+      "property": "scroll-margin-bottom: 20rem; /* 320px */"
+    },
+    "ml-80": {
+      "class": "scroll-ml-80",
+      "property": "scroll-margin-left: 20rem; /* 320px */"
+    },
+    "m-96": {
+      "class": "scroll-m-96",
+      "property": "scroll-margin: 24rem; /* 384px */"
+    },
+    "mx-96": {
+      "class": "scroll-mx-96",
+      "property": "scroll-margin-left: 24rem; /* 384px */\nscroll-margin-right: 24rem; /* 384px */"
+    },
+    "my-96": {
+      "class": "scroll-my-96",
+      "property": "scroll-margin-top: 24rem; /* 384px */\nscroll-margin-bottom: 24rem; /* 384px */"
+    },
+    "ms-96": {
+      "class": "scroll-ms-96",
+      "property": "scroll-margin-inline-start: 24rem; /* 384px */"
+    },
+    "me-96": {
+      "class": "scroll-me-96",
+      "property": "scroll-margin-inline-end: 24rem; /* 384px */"
+    },
+    "mt-96": {
+      "class": "scroll-mt-96",
+      "property": "scroll-margin-top: 24rem; /* 384px */"
+    },
+    "mr-96": {
+      "class": "scroll-mr-96",
+      "property": "scroll-margin-right: 24rem; /* 384px */"
+    },
+    "mb-96": {
+      "class": "scroll-mb-96",
+      "property": "scroll-margin-bottom: 24rem; /* 384px */"
+    },
+    "ml-96": {
+      "class": "scroll-ml-96",
+      "property": "scroll-margin-left: 24rem; /* 384px */"
+    }
+  }
+}

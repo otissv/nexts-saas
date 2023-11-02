@@ -1,0 +1,12 @@
+{
+  "sepia": {
+    "0": {
+      "class": "sepia-0",
+      "property": "filter: sepia(0);"
+    },
+    "100": {
+      "class": "sepia",
+      "property": "filter: sepia(100%);"
+    }
+  }
+}

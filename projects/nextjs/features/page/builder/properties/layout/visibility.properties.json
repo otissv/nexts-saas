@@ -1,0 +1,16 @@
+{
+  "visibility": {
+    "visible": {
+      "class": "visible",
+      "property": "visibility: visible;"
+    },
+    "invisible": {
+      "class": "invisible",
+      "property": "visibility: hidden;"
+    },
+    "collapse": {
+      "class": "collapse",
+      "property": "visibility: collapse;"
+    }
+  }
+}

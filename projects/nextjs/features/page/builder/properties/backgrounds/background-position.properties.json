@@ -1,0 +1,40 @@
+{
+  "backgroundPosition": {
+    "bottom": {
+      "class": "bg-bottom",
+      "property": "background-position: bottom;"
+    },
+    "center": {
+      "class": "bg-center",
+      "property": "background-position: center;"
+    },
+    "left": {
+      "class": "bg-left",
+      "property": "background-position: left;"
+    },
+    "left-bottom": {
+      "class": "bg-left-bottom",
+      "property": "background-position: left bottom;"
+    },
+    "left-top": {
+      "class": "bg-left-top",
+      "property": "background-position: left top;"
+    },
+    "right": {
+      "class": "bg-right",
+      "property": "background-position: right;"
+    },
+    "right-bottom": {
+      "class": "bg-right-bottom",
+      "property": "background-position: right bottom;"
+    },
+    "right-top": {
+      "class": "bg-right-top",
+      "property": "background-position: right top;"
+    },
+    "top": {
+      "class": "bg-top",
+      "property": "background-position: top;"
+    }
+  }
+}

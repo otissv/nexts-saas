@@ -1,0 +1,12 @@
+{
+  "fontStyle": {
+    "italic": {
+      "class": "italic",
+      "property": "font-style: italic;"
+    },
+    "notItalic": {
+      "class": "not-italic",
+      "property": "font-style: normal;"
+    }
+  }
+}

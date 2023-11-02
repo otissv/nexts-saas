@@ -1,0 +1,12 @@
+{
+  "listStylePosition": {
+    "inside": {
+      "class": "list-inside",
+      "property": "list-style-position: inside;"
+    },
+    "outside": {
+      "class": "list-outside",
+      "property": "list-style-position: outside;"
+    }
+  }
+}

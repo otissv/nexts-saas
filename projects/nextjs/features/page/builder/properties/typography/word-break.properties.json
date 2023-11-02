@@ -1,0 +1,20 @@
+{
+  "wordBreak": {
+    "break-normal": {
+      "class": "break-normal",
+      "property": "overflow-wrap: normal;\nword-break: normal;"
+    },
+    "words": {
+      "class": "break-words",
+      "property": "overflow-wrap: break-word;"
+    },
+    "all": {
+      "class": "break-all",
+      "property": "word-break: break-all;"
+    },
+    "keep": {
+      "class": "break-keep",
+      "property": "word-break: keep-all;"
+    }
+  }
+}

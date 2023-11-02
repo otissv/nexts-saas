@@ -1,0 +1,20 @@
+{
+  "flex": {
+    "1": {
+      "class": "flex-1",
+      "property": "flex: 1 1 0%;"
+    },
+    "auto": {
+      "class": "flex-auto",
+      "property": "flex: 1 1 auto;"
+    },
+    "initial": {
+      "class": "flex-initial",
+      "property": "flex: 0 1 auto;"
+    },
+    "none": {
+      "class": "flex-none",
+      "property": "flex: none;"
+    }
+  }
+}

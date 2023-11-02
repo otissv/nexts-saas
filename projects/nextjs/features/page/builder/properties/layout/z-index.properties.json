@@ -1,0 +1,32 @@
+{
+  "zIndex": {
+    "z-0": {
+      "class": "z-0",
+      "property": "z-index: 0;"
+    },
+    "10": {
+      "class": "z-10",
+      "property": "z-index: 10;"
+    },
+    "20": {
+      "class": "z-20",
+      "property": "z-index: 20;"
+    },
+    "30": {
+      "class": "z-30",
+      "property": "z-index: 30;"
+    },
+    "40": {
+      "class": "z-40",
+      "property": "z-index: 40;"
+    },
+    "50": {
+      "class": "z-50",
+      "property": "z-index: 50;"
+    },
+    "auto": {
+      "class": "z-auto",
+      "property": "z-index: auto;"
+    }
+  }
+}

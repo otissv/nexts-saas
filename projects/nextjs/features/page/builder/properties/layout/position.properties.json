@@ -1,0 +1,24 @@
+{
+  "position": {
+    "static": {
+      "class": "static",
+      "property": "position: static;"
+    },
+    "fixed": {
+      "class": "fixed",
+      "property": "position: fixed;"
+    },
+    "absolute": {
+      "class": "absolute",
+      "property": "position: absolute;"
+    },
+    "relative": {
+      "class": "relative",
+      "property": "position: relative;"
+    },
+    "sticky": {
+      "class": "sticky",
+      "property": "position: sticky;"
+    }
+  }
+}

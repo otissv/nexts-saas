@@ -1,0 +1,12 @@
+{
+  "backdropGrayscale": {
+    "0": {
+      "class": "backdrop-grayscale-0",
+      "property": "backdrop-filter: grayscale(0);"
+    },
+    "100": {
+      "class": "backdrop-grayscale",
+      "property": "backdrop-filter: grayscale(100%);"
+    }
+  }
+}

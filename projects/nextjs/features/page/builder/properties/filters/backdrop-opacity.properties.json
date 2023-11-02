@@ -1,0 +1,64 @@
+{
+  "backdropOpacity": {
+    "0": {
+      "class": "backdrop-opacity-0",
+      "property": "backdrop-filter: opacity(0);"
+    },
+    "5": {
+      "class": "backdrop-opacity-5",
+      "property": "backdrop-filter: opacity(0.05);"
+    },
+    "10": {
+      "class": "backdrop-opacity-10",
+      "property": "backdrop-filter: opacity(0.1);"
+    },
+    "20": {
+      "class": "backdrop-opacity-20",
+      "property": "backdrop-filter: opacity(0.2);"
+    },
+    "25": {
+      "class": "backdrop-opacity-25",
+      "property": "backdrop-filter: opacity(0.25);"
+    },
+    "30": {
+      "class": "backdrop-opacity-30",
+      "property": "backdrop-filter: opacity(0.3);"
+    },
+    "40": {
+      "class": "backdrop-opacity-40",
+      "property": "backdrop-filter: opacity(0.4);"
+    },
+    "50": {
+      "class": "backdrop-opacity-50",
+      "property": "backdrop-filter: opacity(0.5);"
+    },
+    "60": {
+      "class": "backdrop-opacity-60",
+      "property": "backdrop-filter: opacity(0.6);"
+    },
+    "70": {
+      "class": "backdrop-opacity-70",
+      "property": "backdrop-filter: opacity(0.7);"
+    },
+    "75": {
+      "class": "backdrop-opacity-75",
+      "property": "backdrop-filter: opacity(0.75);"
+    },
+    "80": {
+      "class": "backdrop-opacity-80",
+      "property": "backdrop-filter: opacity(0.8);"
+    },
+    "90": {
+      "class": "backdrop-opacity-90",
+      "property": "backdrop-filter: opacity(0.9);"
+    },
+    "95": {
+      "class": "backdrop-opacity-95",
+      "property": "backdrop-filter: opacity(0.95);"
+    },
+    "100": {
+      "class": "backdrop-opacity-100",
+      "property": "backdrop-filter: opacity(1);"
+    }
+  }
+}

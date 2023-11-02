@@ -1,0 +1,48 @@
+{
+  "brightness": {
+    "0": {
+      "class": "brightness-0",
+      "property": "filter: brightness(0);"
+    },
+    "50": {
+      "class": "brightness-50",
+      "property": "filter: brightness(.5);"
+    },
+    "75": {
+      "class": "brightness-75",
+      "property": "filter: brightness(.75);"
+    },
+    "90": {
+      "class": "brightness-90",
+      "property": "filter: brightness(.9);"
+    },
+    "95": {
+      "class": "brightness-95",
+      "property": "filter: brightness(.95);"
+    },
+    "100": {
+      "class": "brightness-100",
+      "property": "filter: brightness(1);"
+    },
+    "105": {
+      "class": "brightness-105",
+      "property": "filter: brightness(1.05);"
+    },
+    "110": {
+      "class": "brightness-110",
+      "property": "filter: brightness(1.1);"
+    },
+    "125": {
+      "class": "brightness-125",
+      "property": "filter: brightness(1.25);"
+    },
+    "150": {
+      "class": "brightness-150",
+      "property": "filter: brightness(1.5);"
+    },
+    "200": {
+      "class": "brightness-200",
+      "property": "filter: brightness(2);"
+    }
+  }
+}

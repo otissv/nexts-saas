@@ -1,0 +1,40 @@
+{
+  "fontVariantNumeric": {
+    "normal-nums": {
+      "class": "normal-nums",
+      "property": "font-variant-numeric: normal;"
+    },
+    "ordinal": {
+      "class": "ordinal",
+      "property": "font-variant-numeric: ordinal;"
+    },
+    "slashed-zero": {
+      "class": "slashed-zero",
+      "property": "font-variant-numeric: slashed-zero;"
+    },
+    "lining-nums": {
+      "class": "lining-nums",
+      "property": "font-variant-numeric: lining-nums;"
+    },
+    "oldstyle-nums": {
+      "class": "oldstyle-nums",
+      "property": "font-variant-numeric: oldstyle-nums;"
+    },
+    "proportional-nums": {
+      "class": "proportional-nums",
+      "property": "font-variant-numeric: proportional-nums;"
+    },
+    "tabular-nums": {
+      "class": "tabular-nums",
+      "property": "font-variant-numeric: tabular-nums;"
+    },
+    "diagonal-fractions": {
+      "class": "diagonal-fractions",
+      "property": "font-variant-numeric: diagonal-fractions;"
+    },
+    "stacked-fractions": {
+      "class": "stacked-fractions",
+      "property": "font-variant-numeric: stacked-fractions;"
+    }
+  }
+}

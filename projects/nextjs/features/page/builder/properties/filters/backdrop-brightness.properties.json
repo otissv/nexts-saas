@@ -1,0 +1,48 @@
+{
+  "backdropBrightness": {
+    "brightness-0": {
+      "class": "backdrop-brightness-0",
+      "property": "backdrop-filter: brightness(0);"
+    },
+    "50": {
+      "class": "backdrop-brightness-50",
+      "property": "backdrop-filter: brightness(.5);"
+    },
+    "75": {
+      "class": "backdrop-brightness-75",
+      "property": "backdrop-filter: brightness(.75);"
+    },
+    "90": {
+      "class": "backdrop-brightness-90",
+      "property": "backdrop-filter: brightness(.9);"
+    },
+    "95": {
+      "class": "backdrop-brightness-95",
+      "property": "backdrop-filter: brightness(.95);"
+    },
+    "100": {
+      "class": "backdrop-brightness-100",
+      "property": "backdrop-filter: brightness(1);"
+    },
+    "105": {
+      "class": "backdrop-brightness-105",
+      "property": "backdrop-filter: brightness(1.05);"
+    },
+    "110": {
+      "class": "backdrop-brightness-110",
+      "property": "backdrop-filter: brightness(1.1);"
+    },
+    "125": {
+      "class": "backdrop-brightness-125",
+      "property": "backdrop-filter: brightness(1.25);"
+    },
+    "150": {
+      "class": "backdrop-brightness-150",
+      "property": "backdrop-filter: brightness(1.5);"
+    },
+    "200": {
+      "class": "backdrop-brightness-200",
+      "property": "backdrop-filter: brightness(2);"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "fontSmoothing": {
+    "antialiased": {
+      "class": "antialiased",
+      "property": "-webkit-font-smoothing: antialiased;\n-moz-osx-font-smoothing: grayscale;"
+    },
+    "subpixel": {
+      "class": "subpixel-antialiased",
+      "property": "-webkit-font-smoothing: auto;\n-moz-osx-font-smoothing: auto;"
+    }
+  }
+}

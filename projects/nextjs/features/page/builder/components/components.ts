@@ -1,0 +1,15 @@
+export const components = {
+  hero1: require("./hero/hero-1").default,
+  typography: require("./text").default,
+  blockquote: require("./text").default,
+  code: require("./text").default,
+  h1: require("./text").default,
+  h2: require("./text").default,
+  h3: require("./text").default,
+  h4: require("./text").default,
+  p: require("./text").default,
+  section: require("./section").default,
+  navbar1: require("./navbar").default,
+  row: require("./blocks").RowBlock,
+  column: require("./blocks").ColumnBlock,
+} as const

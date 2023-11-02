@@ -1,0 +1,8 @@
+{
+  "content": {
+    "none": {
+      "class": "content-none",
+      "property": "content: none;"
+    }
+  }
+}

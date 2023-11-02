@@ -1,0 +1,20 @@
+{
+  "transitionTimingFunction": {
+    "ease-linear": {
+      "class": "ease-linear",
+      "property": "transition-timing-function: linear;"
+    },
+    "ease-in": {
+      "class": "ease-in",
+      "property": "transition-timing-function: cubic-bezier(0.4, 0, 1, 1);"
+    },
+    "ease-out": {
+      "class": "ease-out",
+      "property": "transition-timing-function: cubic-bezier(0, 0, 0.2, 1);"
+    },
+    "ease-in-out": {
+      "class": "ease-in-out",
+      "property": "transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "outlineWidth": {
+    "0": {
+      "class": "outline-0",
+      "property": "outline-width: 0px;"
+    },
+    "1": {
+      "class": "outline-1",
+      "property": "outline-width: 1px;"
+    },
+    "2": {
+      "class": "outline-2",
+      "property": "outline-width: 2px;"
+    },
+    "4": {
+      "class": "outline-4",
+      "property": "outline-width: 4px;"
+    },
+    "8": {
+      "class": "outline-8",
+      "property": "outline-width: 8px;"
+    }
+  }
+}

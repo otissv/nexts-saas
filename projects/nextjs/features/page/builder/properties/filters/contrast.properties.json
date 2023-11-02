@@ -1,0 +1,32 @@
+{
+  "contrast": {
+    "0": {
+      "class": "contrast-0",
+      "property": "filter: contrast(0);"
+    },
+    "50": {
+      "class": "contrast-50",
+      "property": "filter: contrast(.5);"
+    },
+    "75": {
+      "class": "contrast-75",
+      "property": "filter: contrast(.75);"
+    },
+    "100": {
+      "class": "contrast-100",
+      "property": "filter: contrast(1);"
+    },
+    "125": {
+      "class": "contrast-125",
+      "property": "filter: contrast(1.25);"
+    },
+    "150": {
+      "class": "contrast-150",
+      "property": "filter: contrast(1.5);"
+    },
+    "200": {
+      "class": "contrast-200",
+      "property": "filter: contrast(2);"
+    }
+  }
+}

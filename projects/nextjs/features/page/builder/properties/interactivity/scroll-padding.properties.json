@@ -1,0 +1,1264 @@
+{
+  "scrollPadding": {
+    "p-0": {
+      "class": "scroll-p-0",
+      "property": "scroll-padding: 0px;"
+    },
+    "px-0": {
+      "class": "scroll-px-0",
+      "property": "scroll-padding-left: 0px;\nscroll-padding-right: 0px;"
+    },
+    "py-0": {
+      "class": "scroll-py-0",
+      "property": "scroll-padding-top: 0px;\nscroll-padding-bottom: 0px;"
+    },
+    "ps-0": {
+      "class": "scroll-ps-0",
+      "property": "scroll-padding-inline-start: 0px;"
+    },
+    "pe-0": {
+      "class": "scroll-pe-0",
+      "property": "scroll-padding-inline-end: 0px;"
+    },
+    "pt-0": {
+      "class": "scroll-pt-0",
+      "property": "scroll-padding-top: 0px;"
+    },
+    "pr-0": {
+      "class": "scroll-pr-0",
+      "property": "scroll-padding-right: 0px;"
+    },
+    "pb-0": {
+      "class": "scroll-pb-0",
+      "property": "scroll-padding-bottom: 0px;"
+    },
+    "pl-0": {
+      "class": "scroll-pl-0",
+      "property": "scroll-padding-left: 0px;"
+    },
+    "p-px": {
+      "class": "scroll-p-px",
+      "property": "scroll-padding: 1px;"
+    },
+    "px-px": {
+      "class": "scroll-px-px",
+      "property": "scroll-padding-left: 1px;\nscroll-padding-right: 1px;"
+    },
+    "py-px": {
+      "class": "scroll-py-px",
+      "property": "scroll-padding-top: 1px;\nscroll-padding-bottom: 1px;"
+    },
+    "ps-px": {
+      "class": "scroll-ps-px",
+      "property": "scroll-padding-inline-start: 1px;"
+    },
+    "pe-px": {
+      "class": "scroll-pe-px",
+      "property": "scroll-padding-inline-end: 1px;"
+    },
+    "pt-px": {
+      "class": "scroll-pt-px",
+      "property": "scroll-padding-top: 1px;"
+    },
+    "pr-px": {
+      "class": "scroll-pr-px",
+      "property": "scroll-padding-right: 1px;"
+    },
+    "pb-px": {
+      "class": "scroll-pb-px",
+      "property": "scroll-padding-bottom: 1px;"
+    },
+    "pl-px": {
+      "class": "scroll-pl-px",
+      "property": "scroll-padding-left: 1px;"
+    },
+    "p-0.5": {
+      "class": "scroll-p-0.5",
+      "property": "scroll-padding: 0.125rem; /* 2px */"
+    },
+    "px-0.5": {
+      "class": "scroll-px-0.5",
+      "property": "scroll-padding-left: 0.125rem; /* 2px */\nscroll-padding-right: 0.125rem; /* 2px */"
+    },
+    "py-0.5": {
+      "class": "scroll-py-0.5",
+      "property": "scroll-padding-top: 0.125rem; /* 2px */\nscroll-padding-bottom: 0.125rem; /* 2px */"
+    },
+    "ps-0.5": {
+      "class": "scroll-ps-0.5",
+      "property": "scroll-padding-inline-start: 0.125rem; /* 2px */"
+    },
+    "pe-0.5": {
+      "class": "scroll-pe-0.5",
+      "property": "scroll-padding-inline-end: 0.125rem; /* 2px */"
+    },
+    "pt-0.5": {
+      "class": "scroll-pt-0.5",
+      "property": "scroll-padding-top: 0.125rem; /* 2px */"
+    },
+    "pr-0.5": {
+      "class": "scroll-pr-0.5",
+      "property": "scroll-padding-right: 0.125rem; /* 2px */"
+    },
+    "pb-0.5": {
+      "class": "scroll-pb-0.5",
+      "property": "scroll-padding-bottom: 0.125rem; /* 2px */"
+    },
+    "pl-0.5": {
+      "class": "scroll-pl-0.5",
+      "property": "scroll-padding-left: 0.125rem; /* 2px */"
+    },
+    "p-1": {
+      "class": "scroll-p-1",
+      "property": "scroll-padding: 0.25rem; /* 4px */"
+    },
+    "px-1": {
+      "class": "scroll-px-1",
+      "property": "scroll-padding-left: 0.25rem; /* 4px */\nscroll-padding-right: 0.25rem; /* 4px */"
+    },
+    "py-1": {
+      "class": "scroll-py-1",
+      "property": "scroll-padding-top: 0.25rem; /* 4px */\nscroll-padding-bottom: 0.25rem; /* 4px */"
+    },
+    "ps-1": {
+      "class": "scroll-ps-1",
+      "property": "scroll-padding-inline-start: 0.25rem; /* 4px */"
+    },
+    "pe-1": {
+      "class": "scroll-pe-1",
+      "property": "scroll-padding-inline-end: 0.25rem; /* 4px */"
+    },
+    "pt-1": {
+      "class": "scroll-pt-1",
+      "property": "scroll-padding-top: 0.25rem; /* 4px */"
+    },
+    "pr-1": {
+      "class": "scroll-pr-1",
+      "property": "scroll-padding-right: 0.25rem; /* 4px */"
+    },
+    "pb-1": {
+      "class": "scroll-pb-1",
+      "property": "scroll-padding-bottom: 0.25rem; /* 4px */"
+    },
+    "pl-1": {
+      "class": "scroll-pl-1",
+      "property": "scroll-padding-left: 0.25rem; /* 4px */"
+    },
+    "p-1.5": {
+      "class": "scroll-p-1.5",
+      "property": "scroll-padding: 0.375rem; /* 6px */"
+    },
+    "px-1.5": {
+      "class": "scroll-px-1.5",
+      "property": "scroll-padding-left: 0.375rem; /* 6px */\nscroll-padding-right: 0.375rem; /* 6px */"
+    },
+    "py-1.5": {
+      "class": "scroll-py-1.5",
+      "property": "scroll-padding-top: 0.375rem; /* 6px */\nscroll-padding-bottom: 0.375rem; /* 6px */"
+    },
+    "ps-1.5": {
+      "class": "scroll-ps-1.5",
+      "property": "scroll-padding-inline-start: 0.375rem; /* 6px */"
+    },
+    "pe-1.5": {
+      "class": "scroll-pe-1.5",
+      "property": "scroll-padding-inline-end: 0.375rem; /* 6px */"
+    },
+    "pt-1.5": {
+      "class": "scroll-pt-1.5",
+      "property": "scroll-padding-top: 0.375rem; /* 6px */"
+    },
+    "pr-1.5": {
+      "class": "scroll-pr-1.5",
+      "property": "scroll-padding-right: 0.375rem; /* 6px */"
+    },
+    "pb-1.5": {
+      "class": "scroll-pb-1.5",
+      "property": "scroll-padding-bottom: 0.375rem; /* 6px */"
+    },
+    "pl-1.5": {
+      "class": "scroll-pl-1.5",
+      "property": "scroll-padding-left: 0.375rem; /* 6px */"
+    },
+    "p-2": {
+      "class": "scroll-p-2",
+      "property": "scroll-padding: 0.5rem; /* 8px */"
+    },
+    "px-2": {
+      "class": "scroll-px-2",
+      "property": "scroll-padding-left: 0.5rem; /* 8px */\nscroll-padding-right: 0.5rem; /* 8px */"
+    },
+    "py-2": {
+      "class": "scroll-py-2",
+      "property": "scroll-padding-top: 0.5rem; /* 8px */\nscroll-padding-bottom: 0.5rem; /* 8px */"
+    },
+    "ps-2": {
+      "class": "scroll-ps-2",
+      "property": "scroll-padding-inline-start: 0.5rem; /* 8px */"
+    },
+    "pe-2": {
+      "class": "scroll-pe-2",
+      "property": "scroll-padding-inline-end: 0.5rem; /* 8px */"
+    },
+    "pt-2": {
+      "class": "scroll-pt-2",
+      "property": "scroll-padding-top: 0.5rem; /* 8px */"
+    },
+    "pr-2": {
+      "class": "scroll-pr-2",
+      "property": "scroll-padding-right: 0.5rem; /* 8px */"
+    },
+    "pb-2": {
+      "class": "scroll-pb-2",
+      "property": "scroll-padding-bottom: 0.5rem; /* 8px */"
+    },
+    "pl-2": {
+      "class": "scroll-pl-2",
+      "property": "scroll-padding-left: 0.5rem; /* 8px */"
+    },
+    "p-2.5": {
+      "class": "scroll-p-2.5",
+      "property": "scroll-padding: 0.625rem; /* 10px */"
+    },
+    "px-2.5": {
+      "class": "scroll-px-2.5",
+      "property": "scroll-padding-left: 0.625rem; /* 10px */\nscroll-padding-right: 0.625rem; /* 10px */"
+    },
+    "py-2.5": {
+      "class": "scroll-py-2.5",
+      "property": "scroll-padding-top: 0.625rem; /* 10px */\nscroll-padding-bottom: 0.625rem; /* 10px */"
+    },
+    "ps-2.5": {
+      "class": "scroll-ps-2.5",
+      "property": "scroll-padding-inline-start: 0.625rem; /* 10px */"
+    },
+    "pe-2.5": {
+      "class": "scroll-pe-2.5",
+      "property": "scroll-padding-inline-end: 0.625rem; /* 10px */"
+    },
+    "pt-2.5": {
+      "class": "scroll-pt-2.5",
+      "property": "scroll-padding-top: 0.625rem; /* 10px */"
+    },
+    "pr-2.5": {
+      "class": "scroll-pr-2.5",
+      "property": "scroll-padding-right: 0.625rem; /* 10px */"
+    },
+    "pb-2.5": {
+      "class": "scroll-pb-2.5",
+      "property": "scroll-padding-bottom: 0.625rem; /* 10px */"
+    },
+    "pl-2.5": {
+      "class": "scroll-pl-2.5",
+      "property": "scroll-padding-left: 0.625rem; /* 10px */"
+    },
+    "p-3": {
+      "class": "scroll-p-3",
+      "property": "scroll-padding: 0.75rem; /* 12px */"
+    },
+    "px-3": {
+      "class": "scroll-px-3",
+      "property": "scroll-padding-left: 0.75rem; /* 12px */\nscroll-padding-right: 0.75rem; /* 12px */"
+    },
+    "py-3": {
+      "class": "scroll-py-3",
+      "property": "scroll-padding-top: 0.75rem; /* 12px */\nscroll-padding-bottom: 0.75rem; /* 12px */"
+    },
+    "ps-3": {
+      "class": "scroll-ps-3",
+      "property": "scroll-padding-inline-start: 0.75rem; /* 12px */"
+    },
+    "pe-3": {
+      "class": "scroll-pe-3",
+      "property": "scroll-padding-inline-end: 0.75rem; /* 12px */"
+    },
+    "pt-3": {
+      "class": "scroll-pt-3",
+      "property": "scroll-padding-top: 0.75rem; /* 12px */"
+    },
+    "pr-3": {
+      "class": "scroll-pr-3",
+      "property": "scroll-padding-right: 0.75rem; /* 12px */"
+    },
+    "pb-3": {
+      "class": "scroll-pb-3",
+      "property": "scroll-padding-bottom: 0.75rem; /* 12px */"
+    },
+    "pl-3": {
+      "class": "scroll-pl-3",
+      "property": "scroll-padding-left: 0.75rem; /* 12px */"
+    },
+    "p-3.5": {
+      "class": "scroll-p-3.5",
+      "property": "scroll-padding: 0.875rem; /* 14px */"
+    },
+    "px-3.5": {
+      "class": "scroll-px-3.5",
+      "property": "scroll-padding-left: 0.875rem; /* 14px */\nscroll-padding-right: 0.875rem; /* 14px */"
+    },
+    "py-3.5": {
+      "class": "scroll-py-3.5",
+      "property": "scroll-padding-top: 0.875rem; /* 14px */\nscroll-padding-bottom: 0.875rem; /* 14px */"
+    },
+    "ps-3.5": {
+      "class": "scroll-ps-3.5",
+      "property": "scroll-padding-inline-start: 0.875rem; /* 14px */"
+    },
+    "pe-3.5": {
+      "class": "scroll-pe-3.5",
+      "property": "scroll-padding-inline-end: 0.875rem; /* 14px */"
+    },
+    "pt-3.5": {
+      "class": "scroll-pt-3.5",
+      "property": "scroll-padding-top: 0.875rem; /* 14px */"
+    },
+    "pr-3.5": {
+      "class": "scroll-pr-3.5",
+      "property": "scroll-padding-right: 0.875rem; /* 14px */"
+    },
+    "pb-3.5": {
+      "class": "scroll-pb-3.5",
+      "property": "scroll-padding-bottom: 0.875rem; /* 14px */"
+    },
+    "pl-3.5": {
+      "class": "scroll-pl-3.5",
+      "property": "scroll-padding-left: 0.875rem; /* 14px */"
+    },
+    "p-4": {
+      "class": "scroll-p-4",
+      "property": "scroll-padding: 1rem; /* 16px */"
+    },
+    "px-4": {
+      "class": "scroll-px-4",
+      "property": "scroll-padding-left: 1rem; /* 16px */\nscroll-padding-right: 1rem; /* 16px */"
+    },
+    "py-4": {
+      "class": "scroll-py-4",
+      "property": "scroll-padding-top: 1rem; /* 16px */\nscroll-padding-bottom: 1rem; /* 16px */"
+    },
+    "ps-4": {
+      "class": "scroll-ps-4",
+      "property": "scroll-padding-inline-start: 1rem; /* 16px */"
+    },
+    "pe-4": {
+      "class": "scroll-pe-4",
+      "property": "scroll-padding-inline-end: 1rem; /* 16px */"
+    },
+    "pt-4": {
+      "class": "scroll-pt-4",
+      "property": "scroll-padding-top: 1rem; /* 16px */"
+    },
+    "pr-4": {
+      "class": "scroll-pr-4",
+      "property": "scroll-padding-right: 1rem; /* 16px */"
+    },
+    "pb-4": {
+      "class": "scroll-pb-4",
+      "property": "scroll-padding-bottom: 1rem; /* 16px */"
+    },
+    "pl-4": {
+      "class": "scroll-pl-4",
+      "property": "scroll-padding-left: 1rem; /* 16px */"
+    },
+    "p-5": {
+      "class": "scroll-p-5",
+      "property": "scroll-padding: 1.25rem; /* 20px */"
+    },
+    "px-5": {
+      "class": "scroll-px-5",
+      "property": "scroll-padding-left: 1.25rem; /* 20px */\nscroll-padding-right: 1.25rem; /* 20px */"
+    },
+    "py-5": {
+      "class": "scroll-py-5",
+      "property": "scroll-padding-top: 1.25rem; /* 20px */\nscroll-padding-bottom: 1.25rem; /* 20px */"
+    },
+    "ps-5": {
+      "class": "scroll-ps-5",
+      "property": "scroll-padding-inline-start: 1.25rem; /* 20px */"
+    },
+    "pe-5": {
+      "class": "scroll-pe-5",
+      "property": "scroll-padding-inline-end: 1.25rem; /* 20px */"
+    },
+    "pt-5": {
+      "class": "scroll-pt-5",
+      "property": "scroll-padding-top: 1.25rem; /* 20px */"
+    },
+    "pr-5": {
+      "class": "scroll-pr-5",
+      "property": "scroll-padding-right: 1.25rem; /* 20px */"
+    },
+    "pb-5": {
+      "class": "scroll-pb-5",
+      "property": "scroll-padding-bottom: 1.25rem; /* 20px */"
+    },
+    "pl-5": {
+      "class": "scroll-pl-5",
+      "property": "scroll-padding-left: 1.25rem; /* 20px */"
+    },
+    "p-6": {
+      "class": "scroll-p-6",
+      "property": "scroll-padding: 1.5rem; /* 24px */"
+    },
+    "px-6": {
+      "class": "scroll-px-6",
+      "property": "scroll-padding-left: 1.5rem; /* 24px */\nscroll-padding-right: 1.5rem; /* 24px */"
+    },
+    "py-6": {
+      "class": "scroll-py-6",
+      "property": "scroll-padding-top: 1.5rem; /* 24px */\nscroll-padding-bottom: 1.5rem; /* 24px */"
+    },
+    "ps-6": {
+      "class": "scroll-ps-6",
+      "property": "scroll-padding-inline-start: 1.5rem; /* 24px */"
+    },
+    "pe-6": {
+      "class": "scroll-pe-6",
+      "property": "scroll-padding-inline-end: 1.5rem; /* 24px */"
+    },
+    "pt-6": {
+      "class": "scroll-pt-6",
+      "property": "scroll-padding-top: 1.5rem; /* 24px */"
+    },
+    "pr-6": {
+      "class": "scroll-pr-6",
+      "property": "scroll-padding-right: 1.5rem; /* 24px */"
+    },
+    "pb-6": {
+      "class": "scroll-pb-6",
+      "property": "scroll-padding-bottom: 1.5rem; /* 24px */"
+    },
+    "pl-6": {
+      "class": "scroll-pl-6",
+      "property": "scroll-padding-left: 1.5rem; /* 24px */"
+    },
+    "p-7": {
+      "class": "scroll-p-7",
+      "property": "scroll-padding: 1.75rem; /* 28px */"
+    },
+    "px-7": {
+      "class": "scroll-px-7",
+      "property": "scroll-padding-left: 1.75rem; /* 28px */\nscroll-padding-right: 1.75rem; /* 28px */"
+    },
+    "py-7": {
+      "class": "scroll-py-7",
+      "property": "scroll-padding-top: 1.75rem; /* 28px */\nscroll-padding-bottom: 1.75rem; /* 28px */"
+    },
+    "ps-7": {
+      "class": "scroll-ps-7",
+      "property": "scroll-padding-inline-start: 1.75rem; /* 28px */"
+    },
+    "pe-7": {
+      "class": "scroll-pe-7",
+      "property": "scroll-padding-inline-end: 1.75rem; /* 28px */"
+    },
+    "pt-7": {
+      "class": "scroll-pt-7",
+      "property": "scroll-padding-top: 1.75rem; /* 28px */"
+    },
+    "pr-7": {
+      "class": "scroll-pr-7",
+      "property": "scroll-padding-right: 1.75rem; /* 28px */"
+    },
+    "pb-7": {
+      "class": "scroll-pb-7",
+      "property": "scroll-padding-bottom: 1.75rem; /* 28px */"
+    },
+    "pl-7": {
+      "class": "scroll-pl-7",
+      "property": "scroll-padding-left: 1.75rem; /* 28px */"
+    },
+    "p-8": {
+      "class": "scroll-p-8",
+      "property": "scroll-padding: 2rem; /* 32px */"
+    },
+    "px-8": {
+      "class": "scroll-px-8",
+      "property": "scroll-padding-left: 2rem; /* 32px */\nscroll-padding-right: 2rem; /* 32px */"
+    },
+    "py-8": {
+      "class": "scroll-py-8",
+      "property": "scroll-padding-top: 2rem; /* 32px */\nscroll-padding-bottom: 2rem; /* 32px */"
+    },
+    "ps-8": {
+      "class": "scroll-ps-8",
+      "property": "scroll-padding-inline-start: 2rem; /* 32px */"
+    },
+    "pe-8": {
+      "class": "scroll-pe-8",
+      "property": "scroll-padding-inline-end: 2rem; /* 32px */"
+    },
+    "pt-8": {
+      "class": "scroll-pt-8",
+      "property": "scroll-padding-top: 2rem; /* 32px */"
+    },
+    "pr-8": {
+      "class": "scroll-pr-8",
+      "property": "scroll-padding-right: 2rem; /* 32px */"
+    },
+    "pb-8": {
+      "class": "scroll-pb-8",
+      "property": "scroll-padding-bottom: 2rem; /* 32px */"
+    },
+    "pl-8": {
+      "class": "scroll-pl-8",
+      "property": "scroll-padding-left: 2rem; /* 32px */"
+    },
+    "p-9": {
+      "class": "scroll-p-9",
+      "property": "scroll-padding: 2.25rem; /* 36px */"
+    },
+    "px-9": {
+      "class": "scroll-px-9",
+      "property": "scroll-padding-left: 2.25rem; /* 36px */\nscroll-padding-right: 2.25rem; /* 36px */"
+    },
+    "py-9": {
+      "class": "scroll-py-9",
+      "property": "scroll-padding-top: 2.25rem; /* 36px */\nscroll-padding-bottom: 2.25rem; /* 36px */"
+    },
+    "ps-9": {
+      "class": "scroll-ps-9",
+      "property": "scroll-padding-inline-start: 2.25rem; /* 36px */"
+    },
+    "pe-9": {
+      "class": "scroll-pe-9",
+      "property": "scroll-padding-inline-end: 2.25rem; /* 36px */"
+    },
+    "pt-9": {
+      "class": "scroll-pt-9",
+      "property": "scroll-padding-top: 2.25rem; /* 36px */"
+    },
+    "pr-9": {
+      "class": "scroll-pr-9",
+      "property": "scroll-padding-right: 2.25rem; /* 36px */"
+    },
+    "pb-9": {
+      "class": "scroll-pb-9",
+      "property": "scroll-padding-bottom: 2.25rem; /* 36px */"
+    },
+    "pl-9": {
+      "class": "scroll-pl-9",
+      "property": "scroll-padding-left: 2.25rem; /* 36px */"
+    },
+    "p-10": {
+      "class": "scroll-p-10",
+      "property": "scroll-padding: 2.5rem; /* 40px */"
+    },
+    "px-10": {
+      "class": "scroll-px-10",
+      "property": "scroll-padding-left: 2.5rem; /* 40px */\nscroll-padding-right: 2.5rem; /* 40px */"
+    },
+    "py-10": {
+      "class": "scroll-py-10",
+      "property": "scroll-padding-top: 2.5rem; /* 40px */\nscroll-padding-bottom: 2.5rem; /* 40px */"
+    },
+    "ps-10": {
+      "class": "scroll-ps-10",
+      "property": "scroll-padding-inline-start: 2.5rem; /* 40px */"
+    },
+    "pe-10": {
+      "class": "scroll-pe-10",
+      "property": "scroll-padding-inline-end: 2.5rem; /* 40px */"
+    },
+    "pt-10": {
+      "class": "scroll-pt-10",
+      "property": "scroll-padding-top: 2.5rem; /* 40px */"
+    },
+    "pr-10": {
+      "class": "scroll-pr-10",
+      "property": "scroll-padding-right: 2.5rem; /* 40px */"
+    },
+    "pb-10": {
+      "class": "scroll-pb-10",
+      "property": "scroll-padding-bottom: 2.5rem; /* 40px */"
+    },
+    "pl-10": {
+      "class": "scroll-pl-10",
+      "property": "scroll-padding-left: 2.5rem; /* 40px */"
+    },
+    "p-11": {
+      "class": "scroll-p-11",
+      "property": "scroll-padding: 2.75rem; /* 44px */"
+    },
+    "px-11": {
+      "class": "scroll-px-11",
+      "property": "scroll-padding-left: 2.75rem; /* 44px */\nscroll-padding-right: 2.75rem; /* 44px */"
+    },
+    "py-11": {
+      "class": "scroll-py-11",
+      "property": "scroll-padding-top: 2.75rem; /* 44px */\nscroll-padding-bottom: 2.75rem; /* 44px */"
+    },
+    "ps-11": {
+      "class": "scroll-ps-11",
+      "property": "scroll-padding-inline-start: 2.75rem; /* 44px */"
+    },
+    "pe-11": {
+      "class": "scroll-pe-11",
+      "property": "scroll-padding-inline-end: 2.75rem; /* 44px */"
+    },
+    "pt-11": {
+      "class": "scroll-pt-11",
+      "property": "scroll-padding-top: 2.75rem; /* 44px */"
+    },
+    "pr-11": {
+      "class": "scroll-pr-11",
+      "property": "scroll-padding-right: 2.75rem; /* 44px */"
+    },
+    "pb-11": {
+      "class": "scroll-pb-11",
+      "property": "scroll-padding-bottom: 2.75rem; /* 44px */"
+    },
+    "pl-11": {
+      "class": "scroll-pl-11",
+      "property": "scroll-padding-left: 2.75rem; /* 44px */"
+    },
+    "p-12": {
+      "class": "scroll-p-12",
+      "property": "scroll-padding: 3rem; /* 48px */"
+    },
+    "px-12": {
+      "class": "scroll-px-12",
+      "property": "scroll-padding-left: 3rem; /* 48px */\nscroll-padding-right: 3rem; /* 48px */"
+    },
+    "py-12": {
+      "class": "scroll-py-12",
+      "property": "scroll-padding-top: 3rem; /* 48px */\nscroll-padding-bottom: 3rem; /* 48px */"
+    },
+    "ps-12": {
+      "class": "scroll-ps-12",
+      "property": "scroll-padding-inline-start: 3rem; /* 48px */"
+    },
+    "pe-12": {
+      "class": "scroll-pe-12",
+      "property": "scroll-padding-inline-end: 3rem; /* 48px */"
+    },
+    "pt-12": {
+      "class": "scroll-pt-12",
+      "property": "scroll-padding-top: 3rem; /* 48px */"
+    },
+    "pr-12": {
+      "class": "scroll-pr-12",
+      "property": "scroll-padding-right: 3rem; /* 48px */"
+    },
+    "pb-12": {
+      "class": "scroll-pb-12",
+      "property": "scroll-padding-bottom: 3rem; /* 48px */"
+    },
+    "pl-12": {
+      "class": "scroll-pl-12",
+      "property": "scroll-padding-left: 3rem; /* 48px */"
+    },
+    "p-14": {
+      "class": "scroll-p-14",
+      "property": "scroll-padding: 3.5rem; /* 56px */"
+    },
+    "px-14": {
+      "class": "scroll-px-14",
+      "property": "scroll-padding-left: 3.5rem; /* 56px */\nscroll-padding-right: 3.5rem; /* 56px */"
+    },
+    "py-14": {
+      "class": "scroll-py-14",
+      "property": "scroll-padding-top: 3.5rem; /* 56px */\nscroll-padding-bottom: 3.5rem; /* 56px */"
+    },
+    "ps-14": {
+      "class": "scroll-ps-14",
+      "property": "scroll-padding-inline-start: 3.5rem; /* 56px */"
+    },
+    "pe-14": {
+      "class": "scroll-pe-14",
+      "property": "scroll-padding-inline-end: 3.5rem; /* 56px */"
+    },
+    "pt-14": {
+      "class": "scroll-pt-14",
+      "property": "scroll-padding-top: 3.5rem; /* 56px */"
+    },
+    "pr-14": {
+      "class": "scroll-pr-14",
+      "property": "scroll-padding-right: 3.5rem; /* 56px */"
+    },
+    "pb-14": {
+      "class": "scroll-pb-14",
+      "property": "scroll-padding-bottom: 3.5rem; /* 56px */"
+    },
+    "pl-14": {
+      "class": "scroll-pl-14",
+      "property": "scroll-padding-left: 3.5rem; /* 56px */"
+    },
+    "p-16": {
+      "class": "scroll-p-16",
+      "property": "scroll-padding: 4rem; /* 64px */"
+    },
+    "px-16": {
+      "class": "scroll-px-16",
+      "property": "scroll-padding-left: 4rem; /* 64px */\nscroll-padding-right: 4rem; /* 64px */"
+    },
+    "py-16": {
+      "class": "scroll-py-16",
+      "property": "scroll-padding-top: 4rem; /* 64px */\nscroll-padding-bottom: 4rem; /* 64px */"
+    },
+    "ps-16": {
+      "class": "scroll-ps-16",
+      "property": "scroll-padding-inline-start: 4rem; /* 64px */"
+    },
+    "pe-16": {
+      "class": "scroll-pe-16",
+      "property": "scroll-padding-inline-end: 4rem; /* 64px */"
+    },
+    "pt-16": {
+      "class": "scroll-pt-16",
+      "property": "scroll-padding-top: 4rem; /* 64px */"
+    },
+    "pr-16": {
+      "class": "scroll-pr-16",
+      "property": "scroll-padding-right: 4rem; /* 64px */"
+    },
+    "pb-16": {
+      "class": "scroll-pb-16",
+      "property": "scroll-padding-bottom: 4rem; /* 64px */"
+    },
+    "pl-16": {
+      "class": "scroll-pl-16",
+      "property": "scroll-padding-left: 4rem; /* 64px */"
+    },
+    "p-20": {
+      "class": "scroll-p-20",
+      "property": "scroll-padding: 5rem; /* 80px */"
+    },
+    "px-20": {
+      "class": "scroll-px-20",
+      "property": "scroll-padding-left: 5rem; /* 80px */\nscroll-padding-right: 5rem; /* 80px */"
+    },
+    "py-20": {
+      "class": "scroll-py-20",
+      "property": "scroll-padding-top: 5rem; /* 80px */\nscroll-padding-bottom: 5rem; /* 80px */"
+    },
+    "ps-20": {
+      "class": "scroll-ps-20",
+      "property": "scroll-padding-inline-start: 5rem; /* 80px */"
+    },
+    "pe-20": {
+      "class": "scroll-pe-20",
+      "property": "scroll-padding-inline-end: 5rem; /* 80px */"
+    },
+    "pt-20": {
+      "class": "scroll-pt-20",
+      "property": "scroll-padding-top: 5rem; /* 80px */"
+    },
+    "pr-20": {
+      "class": "scroll-pr-20",
+      "property": "scroll-padding-right: 5rem; /* 80px */"
+    },
+    "pb-20": {
+      "class": "scroll-pb-20",
+      "property": "scroll-padding-bottom: 5rem; /* 80px */"
+    },
+    "pl-20": {
+      "class": "scroll-pl-20",
+      "property": "scroll-padding-left: 5rem; /* 80px */"
+    },
+    "p-24": {
+      "class": "scroll-p-24",
+      "property": "scroll-padding: 6rem; /* 96px */"
+    },
+    "px-24": {
+      "class": "scroll-px-24",
+      "property": "scroll-padding-left: 6rem; /* 96px */\nscroll-padding-right: 6rem; /* 96px */"
+    },
+    "py-24": {
+      "class": "scroll-py-24",
+      "property": "scroll-padding-top: 6rem; /* 96px */\nscroll-padding-bottom: 6rem; /* 96px */"
+    },
+    "ps-24": {
+      "class": "scroll-ps-24",
+      "property": "scroll-padding-inline-start: 6rem; /* 96px */"
+    },
+    "pe-24": {
+      "class": "scroll-pe-24",
+      "property": "scroll-padding-inline-end: 6rem; /* 96px */"
+    },
+    "pt-24": {
+      "class": "scroll-pt-24",
+      "property": "scroll-padding-top: 6rem; /* 96px */"
+    },
+    "pr-24": {
+      "class": "scroll-pr-24",
+      "property": "scroll-padding-right: 6rem; /* 96px */"
+    },
+    "pb-24": {
+      "class": "scroll-pb-24",
+      "property": "scroll-padding-bottom: 6rem; /* 96px */"
+    },
+    "pl-24": {
+      "class": "scroll-pl-24",
+      "property": "scroll-padding-left: 6rem; /* 96px */"
+    },
+    "p-28": {
+      "class": "scroll-p-28",
+      "property": "scroll-padding: 7rem; /* 112px */"
+    },
+    "px-28": {
+      "class": "scroll-px-28",
+      "property": "scroll-padding-left: 7rem; /* 112px */\nscroll-padding-right: 7rem; /* 112px */"
+    },
+    "py-28": {
+      "class": "scroll-py-28",
+      "property": "scroll-padding-top: 7rem; /* 112px */\nscroll-padding-bottom: 7rem; /* 112px */"
+    },
+    "ps-28": {
+      "class": "scroll-ps-28",
+      "property": "scroll-padding-inline-start: 7rem; /* 112px */"
+    },
+    "pe-28": {
+      "class": "scroll-pe-28",
+      "property": "scroll-padding-inline-end: 7rem; /* 112px */"
+    },
+    "pt-28": {
+      "class": "scroll-pt-28",
+      "property": "scroll-padding-top: 7rem; /* 112px */"
+    },
+    "pr-28": {
+      "class": "scroll-pr-28",
+      "property": "scroll-padding-right: 7rem; /* 112px */"
+    },
+    "pb-28": {
+      "class": "scroll-pb-28",
+      "property": "scroll-padding-bottom: 7rem; /* 112px */"
+    },
+    "pl-28": {
+      "class": "scroll-pl-28",
+      "property": "scroll-padding-left: 7rem; /* 112px */"
+    },
+    "p-32": {
+      "class": "scroll-p-32",
+      "property": "scroll-padding: 8rem; /* 128px */"
+    },
+    "px-32": {
+      "class": "scroll-px-32",
+      "property": "scroll-padding-left: 8rem; /* 128px */\nscroll-padding-right: 8rem; /* 128px */"
+    },
+    "py-32": {
+      "class": "scroll-py-32",
+      "property": "scroll-padding-top: 8rem; /* 128px */\nscroll-padding-bottom: 8rem; /* 128px */"
+    },
+    "ps-32": {
+      "class": "scroll-ps-32",
+      "property": "scroll-padding-inline-start: 8rem; /* 128px */"
+    },
+    "pe-32": {
+      "class": "scroll-pe-32",
+      "property": "scroll-padding-inline-end: 8rem; /* 128px */"
+    },
+    "pt-32": {
+      "class": "scroll-pt-32",
+      "property": "scroll-padding-top: 8rem; /* 128px */"
+    },
+    "pr-32": {
+      "class": "scroll-pr-32",
+      "property": "scroll-padding-right: 8rem; /* 128px */"
+    },
+    "pb-32": {
+      "class": "scroll-pb-32",
+      "property": "scroll-padding-bottom: 8rem; /* 128px */"
+    },
+    "pl-32": {
+      "class": "scroll-pl-32",
+      "property": "scroll-padding-left: 8rem; /* 128px */"
+    },
+    "p-36": {
+      "class": "scroll-p-36",
+      "property": "scroll-padding: 9rem; /* 144px */"
+    },
+    "px-36": {
+      "class": "scroll-px-36",
+      "property": "scroll-padding-left: 9rem; /* 144px */\nscroll-padding-right: 9rem; /* 144px */"
+    },
+    "py-36": {
+      "class": "scroll-py-36",
+      "property": "scroll-padding-top: 9rem; /* 144px */\nscroll-padding-bottom: 9rem; /* 144px */"
+    },
+    "ps-36": {
+      "class": "scroll-ps-36",
+      "property": "scroll-padding-inline-start: 9rem; /* 144px */"
+    },
+    "pe-36": {
+      "class": "scroll-pe-36",
+      "property": "scroll-padding-inline-end: 9rem; /* 144px */"
+    },
+    "pt-36": {
+      "class": "scroll-pt-36",
+      "property": "scroll-padding-top: 9rem; /* 144px */"
+    },
+    "pr-36": {
+      "class": "scroll-pr-36",
+      "property": "scroll-padding-right: 9rem; /* 144px */"
+    },
+    "pb-36": {
+      "class": "scroll-pb-36",
+      "property": "scroll-padding-bottom: 9rem; /* 144px */"
+    },
+    "pl-36": {
+      "class": "scroll-pl-36",
+      "property": "scroll-padding-left: 9rem; /* 144px */"
+    },
+    "p-40": {
+      "class": "scroll-p-40",
+      "property": "scroll-padding: 10rem; /* 160px */"
+    },
+    "px-40": {
+      "class": "scroll-px-40",
+      "property": "scroll-padding-left: 10rem; /* 160px */\nscroll-padding-right: 10rem; /* 160px */"
+    },
+    "py-40": {
+      "class": "scroll-py-40",
+      "property": "scroll-padding-top: 10rem; /* 160px */\nscroll-padding-bottom: 10rem; /* 160px */"
+    },
+    "ps-40": {
+      "class": "scroll-ps-40",
+      "property": "scroll-padding-inline-start: 10rem; /* 160px */"
+    },
+    "pe-40": {
+      "class": "scroll-pe-40",
+      "property": "scroll-padding-inline-end: 10rem; /* 160px */"
+    },
+    "pt-40": {
+      "class": "scroll-pt-40",
+      "property": "scroll-padding-top: 10rem; /* 160px */"
+    },
+    "pr-40": {
+      "class": "scroll-pr-40",
+      "property": "scroll-padding-right: 10rem; /* 160px */"
+    },
+    "pb-40": {
+      "class": "scroll-pb-40",
+      "property": "scroll-padding-bottom: 10rem; /* 160px */"
+    },
+    "pl-40": {
+      "class": "scroll-pl-40",
+      "property": "scroll-padding-left: 10rem; /* 160px */"
+    },
+    "p-44": {
+      "class": "scroll-p-44",
+      "property": "scroll-padding: 11rem; /* 176px */"
+    },
+    "px-44": {
+      "class": "scroll-px-44",
+      "property": "scroll-padding-left: 11rem; /* 176px */\nscroll-padding-right: 11rem; /* 176px */"
+    },
+    "py-44": {
+      "class": "scroll-py-44",
+      "property": "scroll-padding-top: 11rem; /* 176px */\nscroll-padding-bottom: 11rem; /* 176px */"
+    },
+    "ps-44": {
+      "class": "scroll-ps-44",
+      "property": "scroll-padding-inline-start: 11rem; /* 176px */"
+    },
+    "pe-44": {
+      "class": "scroll-pe-44",
+      "property": "scroll-padding-inline-end: 11rem; /* 176px */"
+    },
+    "pt-44": {
+      "class": "scroll-pt-44",
+      "property": "scroll-padding-top: 11rem; /* 176px */"
+    },
+    "pr-44": {
+      "class": "scroll-pr-44",
+      "property": "scroll-padding-right: 11rem; /* 176px */"
+    },
+    "pb-44": {
+      "class": "scroll-pb-44",
+      "property": "scroll-padding-bottom: 11rem; /* 176px */"
+    },
+    "pl-44": {
+      "class": "scroll-pl-44",
+      "property": "scroll-padding-left: 11rem; /* 176px */"
+    },
+    "p-48": {
+      "class": "scroll-p-48",
+      "property": "scroll-padding: 12rem; /* 192px */"
+    },
+    "px-48": {
+      "class": "scroll-px-48",
+      "property": "scroll-padding-left: 12rem; /* 192px */\nscroll-padding-right: 12rem; /* 192px */"
+    },
+    "py-48": {
+      "class": "scroll-py-48",
+      "property": "scroll-padding-top: 12rem; /* 192px */\nscroll-padding-bottom: 12rem; /* 192px */"
+    },
+    "ps-48": {
+      "class": "scroll-ps-48",
+      "property": "scroll-padding-inline-start: 12rem; /* 192px */"
+    },
+    "pe-48": {
+      "class": "scroll-pe-48",
+      "property": "scroll-padding-inline-end: 12rem; /* 192px */"
+    },
+    "pt-48": {
+      "class": "scroll-pt-48",
+      "property": "scroll-padding-top: 12rem; /* 192px */"
+    },
+    "pr-48": {
+      "class": "scroll-pr-48",
+      "property": "scroll-padding-right: 12rem; /* 192px */"
+    },
+    "pb-48": {
+      "class": "scroll-pb-48",
+      "property": "scroll-padding-bottom: 12rem; /* 192px */"
+    },
+    "pl-48": {
+      "class": "scroll-pl-48",
+      "property": "scroll-padding-left: 12rem; /* 192px */"
+    },
+    "p-52": {
+      "class": "scroll-p-52",
+      "property": "scroll-padding: 13rem; /* 208px */"
+    },
+    "px-52": {
+      "class": "scroll-px-52",
+      "property": "scroll-padding-left: 13rem; /* 208px */\nscroll-padding-right: 13rem; /* 208px */"
+    },
+    "py-52": {
+      "class": "scroll-py-52",
+      "property": "scroll-padding-top: 13rem; /* 208px */\nscroll-padding-bottom: 13rem; /* 208px */"
+    },
+    "ps-52": {
+      "class": "scroll-ps-52",
+      "property": "scroll-padding-inline-start: 13rem; /* 208px */"
+    },
+    "pe-52": {
+      "class": "scroll-pe-52",
+      "property": "scroll-padding-inline-end: 13rem; /* 208px */"
+    },
+    "pt-52": {
+      "class": "scroll-pt-52",
+      "property": "scroll-padding-top: 13rem; /* 208px */"
+    },
+    "pr-52": {
+      "class": "scroll-pr-52",
+      "property": "scroll-padding-right: 13rem; /* 208px */"
+    },
+    "pb-52": {
+      "class": "scroll-pb-52",
+      "property": "scroll-padding-bottom: 13rem; /* 208px */"
+    },
+    "pl-52": {
+      "class": "scroll-pl-52",
+      "property": "scroll-padding-left: 13rem; /* 208px */"
+    },
+    "p-56": {
+      "class": "scroll-p-56",
+      "property": "scroll-padding: 14rem; /* 224px */"
+    },
+    "px-56": {
+      "class": "scroll-px-56",
+      "property": "scroll-padding-left: 14rem; /* 224px */\nscroll-padding-right: 14rem; /* 224px */"
+    },
+    "py-56": {
+      "class": "scroll-py-56",
+      "property": "scroll-padding-top: 14rem; /* 224px */\nscroll-padding-bottom: 14rem; /* 224px */"
+    },
+    "ps-56": {
+      "class": "scroll-ps-56",
+      "property": "scroll-padding-inline-start: 14rem; /* 224px */"
+    },
+    "pe-56": {
+      "class": "scroll-pe-56",
+      "property": "scroll-padding-inline-end: 14rem; /* 224px */"
+    },
+    "pt-56": {
+      "class": "scroll-pt-56",
+      "property": "scroll-padding-top: 14rem; /* 224px */"
+    },
+    "pr-56": {
+      "class": "scroll-pr-56",
+      "property": "scroll-padding-right: 14rem; /* 224px */"
+    },
+    "pb-56": {
+      "class": "scroll-pb-56",
+      "property": "scroll-padding-bottom: 14rem; /* 224px */"
+    },
+    "pl-56": {
+      "class": "scroll-pl-56",
+      "property": "scroll-padding-left: 14rem; /* 224px */"
+    },
+    "p-60": {
+      "class": "scroll-p-60",
+      "property": "scroll-padding: 15rem; /* 240px */"
+    },
+    "px-60": {
+      "class": "scroll-px-60",
+      "property": "scroll-padding-left: 15rem; /* 240px */\nscroll-padding-right: 15rem; /* 240px */"
+    },
+    "py-60": {
+      "class": "scroll-py-60",
+      "property": "scroll-padding-top: 15rem; /* 240px */\nscroll-padding-bottom: 15rem; /* 240px */"
+    },
+    "ps-60": {
+      "class": "scroll-ps-60",
+      "property": "scroll-padding-inline-start: 15rem; /* 240px */"
+    },
+    "pe-60": {
+      "class": "scroll-pe-60",
+      "property": "scroll-padding-inline-end: 15rem; /* 240px */"
+    },
+    "pt-60": {
+      "class": "scroll-pt-60",
+      "property": "scroll-padding-top: 15rem; /* 240px */"
+    },
+    "pr-60": {
+      "class": "scroll-pr-60",
+      "property": "scroll-padding-right: 15rem; /* 240px */"
+    },
+    "pb-60": {
+      "class": "scroll-pb-60",
+      "property": "scroll-padding-bottom: 15rem; /* 240px */"
+    },
+    "pl-60": {
+      "class": "scroll-pl-60",
+      "property": "scroll-padding-left: 15rem; /* 240px */"
+    },
+    "p-64": {
+      "class": "scroll-p-64",
+      "property": "scroll-padding: 16rem; /* 256px */"
+    },
+    "px-64": {
+      "class": "scroll-px-64",
+      "property": "scroll-padding-left: 16rem; /* 256px */\nscroll-padding-right: 16rem; /* 256px */"
+    },
+    "py-64": {
+      "class": "scroll-py-64",
+      "property": "scroll-padding-top: 16rem; /* 256px */\nscroll-padding-bottom: 16rem; /* 256px */"
+    },
+    "ps-64": {
+      "class": "scroll-ps-64",
+      "property": "scroll-padding-inline-start: 16rem; /* 256px */"
+    },
+    "pe-64": {
+      "class": "scroll-pe-64",
+      "property": "scroll-padding-inline-end: 16rem; /* 256px */"
+    },
+    "pt-64": {
+      "class": "scroll-pt-64",
+      "property": "scroll-padding-top: 16rem; /* 256px */"
+    },
+    "pr-64": {
+      "class": "scroll-pr-64",
+      "property": "scroll-padding-right: 16rem; /* 256px */"
+    },
+    "pb-64": {
+      "class": "scroll-pb-64",
+      "property": "scroll-padding-bottom: 16rem; /* 256px */"
+    },
+    "pl-64": {
+      "class": "scroll-pl-64",
+      "property": "scroll-padding-left: 16rem; /* 256px */"
+    },
+    "p-72": {
+      "class": "scroll-p-72",
+      "property": "scroll-padding: 18rem; /* 288px */"
+    },
+    "px-72": {
+      "class": "scroll-px-72",
+      "property": "scroll-padding-left: 18rem; /* 288px */\nscroll-padding-right: 18rem; /* 288px */"
+    },
+    "py-72": {
+      "class": "scroll-py-72",
+      "property": "scroll-padding-top: 18rem; /* 288px */\nscroll-padding-bottom: 18rem; /* 288px */"
+    },
+    "ps-72": {
+      "class": "scroll-ps-72",
+      "property": "scroll-padding-inline-start: 18rem; /* 288px */"
+    },
+    "pe-72": {
+      "class": "scroll-pe-72",
+      "property": "scroll-padding-inline-end: 18rem; /* 288px */"
+    },
+    "pt-72": {
+      "class": "scroll-pt-72",
+      "property": "scroll-padding-top: 18rem; /* 288px */"
+    },
+    "pr-72": {
+      "class": "scroll-pr-72",
+      "property": "scroll-padding-right: 18rem; /* 288px */"
+    },
+    "pb-72": {
+      "class": "scroll-pb-72",
+      "property": "scroll-padding-bottom: 18rem; /* 288px */"
+    },
+    "pl-72": {
+      "class": "scroll-pl-72",
+      "property": "scroll-padding-left: 18rem; /* 288px */"
+    },
+    "p-80": {
+      "class": "scroll-p-80",
+      "property": "scroll-padding: 20rem; /* 320px */"
+    },
+    "px-80": {
+      "class": "scroll-px-80",
+      "property": "scroll-padding-left: 20rem; /* 320px */\nscroll-padding-right: 20rem; /* 320px */"
+    },
+    "py-80": {
+      "class": "scroll-py-80",
+      "property": "scroll-padding-top: 20rem; /* 320px */\nscroll-padding-bottom: 20rem; /* 320px */"
+    },
+    "ps-80": {
+      "class": "scroll-ps-80",
+      "property": "scroll-padding-inline-start: 20rem; /* 320px */"
+    },
+    "pe-80": {
+      "class": "scroll-pe-80",
+      "property": "scroll-padding-inline-end: 20rem; /* 320px */"
+    },
+    "pt-80": {
+      "class": "scroll-pt-80",
+      "property": "scroll-padding-top: 20rem; /* 320px */"
+    },
+    "pr-80": {
+      "class": "scroll-pr-80",
+      "property": "scroll-padding-right: 20rem; /* 320px */"
+    },
+    "pb-80": {
+      "class": "scroll-pb-80",
+      "property": "scroll-padding-bottom: 20rem; /* 320px */"
+    },
+    "pl-80": {
+      "class": "scroll-pl-80",
+      "property": "scroll-padding-left: 20rem; /* 320px */"
+    },
+    "p-96": {
+      "class": "scroll-p-96",
+      "property": "scroll-padding: 24rem; /* 384px */"
+    },
+    "px-96": {
+      "class": "scroll-px-96",
+      "property": "scroll-padding-left: 24rem; /* 384px */\nscroll-padding-right: 24rem; /* 384px */"
+    },
+    "py-96": {
+      "class": "scroll-py-96",
+      "property": "scroll-padding-top: 24rem; /* 384px */\nscroll-padding-bottom: 24rem; /* 384px */"
+    },
+    "ps-96": {
+      "class": "scroll-ps-96",
+      "property": "scroll-padding-inline-start: 24rem; /* 384px */"
+    },
+    "pe-96": {
+      "class": "scroll-pe-96",
+      "property": "scroll-padding-inline-end: 24rem; /* 384px */"
+    },
+    "pt-96": {
+      "class": "scroll-pt-96",
+      "property": "scroll-padding-top: 24rem; /* 384px */"
+    },
+    "pr-96": {
+      "class": "scroll-pr-96",
+      "property": "scroll-padding-right: 24rem; /* 384px */"
+    },
+    "pb-96": {
+      "class": "scroll-pb-96",
+      "property": "scroll-padding-bottom: 24rem; /* 384px */"
+    },
+    "pl-96": {
+      "class": "scroll-pl-96",
+      "property": "scroll-padding-left: 24rem; /* 384px */"
+    }
+  }
+}

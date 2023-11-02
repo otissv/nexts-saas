@@ -1,0 +1,20 @@
+{
+  "textDecoration": {
+    "underline": {
+      "class": "underline",
+      "property": "text-decoration-line: underline;"
+    },
+    "overline": {
+      "class": "overline",
+      "property": "text-decoration-line: overline;"
+    },
+    "line-through": {
+      "class": "line-through",
+      "property": "text-decoration-line: line-through;"
+    },
+    "no-underline": {
+      "class": "no-underline",
+      "property": "text-decoration-line: none;"
+    }
+  }
+}

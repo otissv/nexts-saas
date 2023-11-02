@@ -1,0 +1,16 @@
+{
+  "backgroundAttachment": {
+    "fixed": {
+      "class": "bg-fixed",
+      "property": "background-attachment: fixed;"
+    },
+    "local": {
+      "class": "bg-local",
+      "property": "background-attachment: local;"
+    },
+    "scroll": {
+      "class": "bg-scroll",
+      "property": "background-attachment: scroll;"
+    }
+  }
+}

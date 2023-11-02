@@ -1,0 +1,32 @@
+{
+  "backdropContrast": {
+    "0": {
+      "class": "backdrop-contrast-0",
+      "property": "backdrop-filter: contrast(0);"
+    },
+    "50": {
+      "class": "backdrop-contrast-50",
+      "property": "backdrop-filter: contrast(.5);"
+    },
+    "75": {
+      "class": "backdrop-contrast-75",
+      "property": "backdrop-filter: contrast(.75);"
+    },
+    "100": {
+      "class": "backdrop-contrast-100",
+      "property": "backdrop-filter: contrast(1);"
+    },
+    "125": {
+      "class": "backdrop-contrast-125",
+      "property": "backdrop-filter: contrast(1.25);"
+    },
+    "150": {
+      "class": "backdrop-contrast-150",
+      "property": "backdrop-filter: contrast(1.5);"
+    },
+    "200": {
+      "class": "backdrop-contrast-200",
+      "property": "backdrop-filter: contrast(2);"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "flexGrow": {
+    "1": {
+      "class": "grow",
+      "property": "flex-grow: 1;"
+    },
+    "0": {
+      "class": "grow-0",
+      "property": "flex-grow: 0;"
+    }
+  }
+}

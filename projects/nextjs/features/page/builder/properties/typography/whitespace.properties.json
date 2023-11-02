@@ -1,0 +1,28 @@
+{
+  "whitespace": {
+    "normal": {
+      "class": "whitespace-normal",
+      "property": "white-space: normal;"
+    },
+    "nowrap": {
+      "class": "whitespace-nowrap",
+      "property": "white-space: nowrap;"
+    },
+    "pre": {
+      "class": "whitespace-pre",
+      "property": "white-space: pre;"
+    },
+    "pre-line": {
+      "class": "whitespace-pre-line",
+      "property": "white-space: pre-line;"
+    },
+    "pre-wrap": {
+      "class": "whitespace-pre-wrap",
+      "property": "white-space: pre-wrap;"
+    },
+    "break-spaces": {
+      "class": "whitespace-break-spaces",
+      "property": "white-space: break-spaces;"
+    }
+  }
+}

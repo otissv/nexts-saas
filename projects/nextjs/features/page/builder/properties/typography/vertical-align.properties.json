@@ -1,0 +1,36 @@
+{
+  "verticalAlign": {
+    "baseline": {
+      "class": "align-baseline",
+      "property": "vertical-align: baseline;"
+    },
+    "top": {
+      "class": "align-top",
+      "property": "vertical-align: top;"
+    },
+    "middle": {
+      "class": "align-middle",
+      "property": "vertical-align: middle;"
+    },
+    "bottom": {
+      "class": "align-bottom",
+      "property": "vertical-align: bottom;"
+    },
+    "text-top": {
+      "class": "align-text-top",
+      "property": "vertical-align: text-top;"
+    },
+    "text-bottom": {
+      "class": "align-text-bottom",
+      "property": "vertical-align: text-bottom;"
+    },
+    "sub": {
+      "class": "align-sub",
+      "property": "vertical-align: sub;"
+    },
+    "super": {
+      "class": "align-super",
+      "property": "vertical-align: super;"
+    }
+  }
+}

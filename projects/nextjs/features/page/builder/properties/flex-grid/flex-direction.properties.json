@@ -1,0 +1,20 @@
+{
+  "flexDirection": {
+    "row": {
+      "class": "flex-row",
+      "property": "flex-direction: row;"
+    },
+    "reverse": {
+      "class": "flex-row-reverse",
+      "property": "flex-direction: row-reverse;"
+    },
+    "col": {
+      "class": "flex-col",
+      "property": "flex-direction: column;"
+    },
+    "col-reverse": {
+      "class": "flex-col-reverse",
+      "property": "flex-direction: column-reverse;"
+    }
+  }
+}

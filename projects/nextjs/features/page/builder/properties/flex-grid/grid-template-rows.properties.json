@@ -1,0 +1,32 @@
+{
+  "gridTemplateRows": {
+    "grid-rows-1": {
+      "class": "grid-rows-1",
+      "property": "grid-template-rows: repeat(1, minmax(0, 1fr));"
+    },
+    "2": {
+      "class": "grid-rows-2",
+      "property": "grid-template-rows: repeat(2, minmax(0, 1fr));"
+    },
+    "3": {
+      "class": "grid-rows-3",
+      "property": "grid-template-rows: repeat(3, minmax(0, 1fr));"
+    },
+    "4": {
+      "class": "grid-rows-4",
+      "property": "grid-template-rows: repeat(4, minmax(0, 1fr));"
+    },
+    "5": {
+      "class": "grid-rows-5",
+      "property": "grid-template-rows: repeat(5, minmax(0, 1fr));"
+    },
+    "6": {
+      "class": "grid-rows-6",
+      "property": "grid-template-rows: repeat(6, minmax(0, 1fr));"
+    },
+    "none": {
+      "class": "grid-rows-none",
+      "property": "grid-template-rows: none;"
+    }
+  }
+}

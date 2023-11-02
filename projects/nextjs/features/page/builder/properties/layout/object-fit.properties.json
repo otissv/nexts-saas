@@ -1,0 +1,24 @@
+{
+  "objectFit": {
+    "contain": {
+      "class": "object-contain",
+      "property": "object-fit: contain;"
+    },
+    "cover": {
+      "class": "object-cover",
+      "property": "object-fit: cover;"
+    },
+    "fill": {
+      "class": "object-fill",
+      "property": "object-fit: fill;"
+    },
+    "none": {
+      "class": "object-none",
+      "property": "object-fit: none;"
+    },
+    "scale-down": {
+      "class": "object-scale-down",
+      "property": "object-fit: scale-down;"
+    }
+  }
+}

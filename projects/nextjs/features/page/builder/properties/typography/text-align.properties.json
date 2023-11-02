@@ -1,0 +1,28 @@
+{
+  "textAlign": {
+    "left": {
+      "class": "text-left",
+      "property": "text-align: left;"
+    },
+    "center": {
+      "class": "text-center",
+      "property": "text-align: center;"
+    },
+    "right": {
+      "class": "text-right",
+      "property": "text-align: right;"
+    },
+    "justify": {
+      "class": "text-justify",
+      "property": "text-align: justify;"
+    },
+    "start": {
+      "class": "text-start",
+      "property": "text-align: start;"
+    },
+    "end": {
+      "class": "text-end",
+      "property": "text-align: end;"
+    }
+  }
+}

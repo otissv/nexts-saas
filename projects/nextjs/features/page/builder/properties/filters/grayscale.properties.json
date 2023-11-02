@@ -1,0 +1,12 @@
+{
+  "grayscale": {
+    "0": {
+      "class": "grayscale-0",
+      "property": "filter: grayscale(0);"
+    },
+    "100": {
+      "class": "grayscale",
+      "property": "filter: grayscale(100%);"
+    }
+  }
+}

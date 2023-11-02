@@ -1,0 +1,544 @@
+{
+  "borderRadius": {
+    "none": {
+      "class": "rounded-none",
+      "property": "border-radius: 0px;"
+    },
+    "sm": {
+      "class": "rounded-sm",
+      "property": "border-radius: 0.125rem; /* 2px */"
+    },
+    "rounded": {
+      "class": "rounded",
+      "property": "border-radius: 0.25rem; /* 4px */"
+    },
+    "md": {
+      "class": "rounded-md",
+      "property": "border-radius: 0.375rem; /* 6px */"
+    },
+    "lg": {
+      "class": "rounded-lg",
+      "property": "border-radius: 0.5rem; /* 8px */"
+    },
+    "xl": {
+      "class": "rounded-xl",
+      "property": "border-radius: 0.75rem; /* 12px */"
+    },
+    "2xl": {
+      "class": "rounded-2xl",
+      "property": "border-radius: 1rem; /* 16px */"
+    },
+    "3xl": {
+      "class": "rounded-3xl",
+      "property": "border-radius: 1.5rem; /* 24px */"
+    },
+    "full": {
+      "class": "rounded-full",
+      "property": "border-radius: 9999px;"
+    },
+    "s-none": {
+      "class": "rounded-s-none",
+      "property": "border-start-start-radius: 0px;\nborder-end-start-radius: 0px;"
+    },
+    "s-sm": {
+      "class": "rounded-s-sm",
+      "property": "border-start-start-radius: 0.125rem; /* 2px */\nborder-end-start-radius: 0.125rem; /* 2px */"
+    },
+    "s": {
+      "class": "rounded-s",
+      "property": "border-start-start-radius: 0.25rem; /* 4px */\nborder-end-start-radius: 0.25rem; /* 4px */"
+    },
+    "s-md": {
+      "class": "rounded-s-md",
+      "property": "border-start-start-radius: 0.375rem; /* 6px */\nborder-end-start-radius: 0.375rem; /* 6px */"
+    },
+    "s-lg": {
+      "class": "rounded-s-lg",
+      "property": "border-start-start-radius: 0.5rem; /* 8px */\nborder-end-start-radius: 0.5rem; /* 8px */"
+    },
+    "s-xl": {
+      "class": "rounded-s-xl",
+      "property": "border-start-start-radius: 0.75rem; /* 12px */\nborder-end-start-radius: 0.75rem; /* 12px */"
+    },
+    "s-2xl": {
+      "class": "rounded-s-2xl",
+      "property": "border-start-start-radius: 1rem; /* 16px */\nborder-end-start-radius: 1rem; /* 16px */"
+    },
+    "s-3xl": {
+      "class": "rounded-s-3xl",
+      "property": "border-start-start-radius: 1.5rem; /* 24px */\nborder-end-start-radius: 1.5rem; /* 24px */"
+    },
+    "s-full": {
+      "class": "rounded-s-full",
+      "property": "border-start-start-radius: 9999px;\nborder-end-start-radius: 9999px;"
+    },
+    "e-none": {
+      "class": "rounded-e-none",
+      "property": "border-start-end-radius: 0px;\nborder-end-end-radius: 0px;"
+    },
+    "e-sm": {
+      "class": "rounded-e-sm",
+      "property": "border-start-end-radius: 0.125rem; /* 2px */\nborder-end-end-radius: 0.125rem; /* 2px */"
+    },
+    "e": {
+      "class": "rounded-e",
+      "property": "border-start-end-radius: 0.25rem; /* 4px */\nborder-end-end-radius: 0.25rem; /* 4px */"
+    },
+    "e-md": {
+      "class": "rounded-e-md",
+      "property": "border-start-end-radius: 0.375rem; /* 6px */\nborder-end-end-radius: 0.375rem; /* 6px */"
+    },
+    "e-lg": {
+      "class": "rounded-e-lg",
+      "property": "border-start-end-radius: 0.5rem; /* 8px */\nborder-end-end-radius: 0.5rem; /* 8px */"
+    },
+    "e-xl": {
+      "class": "rounded-e-xl",
+      "property": "border-start-end-radius: 0.75rem; /* 12px */\nborder-end-end-radius: 0.75rem; /* 12px */"
+    },
+    "e-2xl": {
+      "class": "rounded-e-2xl",
+      "property": "border-start-end-radius: 1rem; /* 16px */\nborder-end-end-radius: 1rem; /* 16px */"
+    },
+    "e-3xl": {
+      "class": "rounded-e-3xl",
+      "property": "border-start-end-radius: 1.5rem; /* 24px */\nborder-end-end-radius: 1.5rem; /* 24px */"
+    },
+    "e-full": {
+      "class": "rounded-e-full",
+      "property": "border-start-end-radius: 9999px;\nborder-end-end-radius: 9999px;"
+    },
+    "t-none": {
+      "class": "rounded-t-none",
+      "property": "border-top-left-radius: 0px;\nborder-top-right-radius: 0px;"
+    },
+    "t-sm": {
+      "class": "rounded-t-sm",
+      "property": "border-top-left-radius: 0.125rem; /* 2px */\nborder-top-right-radius: 0.125rem; /* 2px */"
+    },
+    "t": {
+      "class": "rounded-t",
+      "property": "border-top-left-radius: 0.25rem; /* 4px */\nborder-top-right-radius: 0.25rem; /* 4px */"
+    },
+    "t-md": {
+      "class": "rounded-t-md",
+      "property": "border-top-left-radius: 0.375rem; /* 6px */\nborder-top-right-radius: 0.375rem; /* 6px */"
+    },
+    "t-lg": {
+      "class": "rounded-t-lg",
+      "property": "border-top-left-radius: 0.5rem; /* 8px */\nborder-top-right-radius: 0.5rem; /* 8px */"
+    },
+    "t-xl": {
+      "class": "rounded-t-xl",
+      "property": "border-top-left-radius: 0.75rem; /* 12px */\nborder-top-right-radius: 0.75rem; /* 12px */"
+    },
+    "t-2xl": {
+      "class": "rounded-t-2xl",
+      "property": "border-top-left-radius: 1rem; /* 16px */\nborder-top-right-radius: 1rem; /* 16px */"
+    },
+    "t-3xl": {
+      "class": "rounded-t-3xl",
+      "property": "border-top-left-radius: 1.5rem; /* 24px */\nborder-top-right-radius: 1.5rem; /* 24px */"
+    },
+    "t-full": {
+      "class": "rounded-t-full",
+      "property": "border-top-left-radius: 9999px;\nborder-top-right-radius: 9999px;"
+    },
+    "r-none": {
+      "class": "rounded-r-none",
+      "property": "border-top-right-radius: 0px;\nborder-bottom-right-radius: 0px;"
+    },
+    "r-sm": {
+      "class": "rounded-r-sm",
+      "property": "border-top-right-radius: 0.125rem; /* 2px */\nborder-bottom-right-radius: 0.125rem; /* 2px */"
+    },
+    "r": {
+      "class": "rounded-r",
+      "property": "border-top-right-radius: 0.25rem; /* 4px */\nborder-bottom-right-radius: 0.25rem; /* 4px */"
+    },
+    "r-md": {
+      "class": "rounded-r-md",
+      "property": "border-top-right-radius: 0.375rem; /* 6px */\nborder-bottom-right-radius: 0.375rem; /* 6px */"
+    },
+    "r-lg": {
+      "class": "rounded-r-lg",
+      "property": "border-top-right-radius: 0.5rem; /* 8px */\nborder-bottom-right-radius: 0.5rem; /* 8px */"
+    },
+    "r-xl": {
+      "class": "rounded-r-xl",
+      "property": "border-top-right-radius: 0.75rem; /* 12px */\nborder-bottom-right-radius: 0.75rem; /* 12px */"
+    },
+    "r-2xl": {
+      "class": "rounded-r-2xl",
+      "property": "border-top-right-radius: 1rem; /* 16px */\nborder-bottom-right-radius: 1rem; /* 16px */"
+    },
+    "r-3xl": {
+      "class": "rounded-r-3xl",
+      "property": "border-top-right-radius: 1.5rem; /* 24px */\nborder-bottom-right-radius: 1.5rem; /* 24px */"
+    },
+    "r-full": {
+      "class": "rounded-r-full",
+      "property": "border-top-right-radius: 9999px;\nborder-bottom-right-radius: 9999px;"
+    },
+    "b-none": {
+      "class": "rounded-b-none",
+      "property": "border-bottom-right-radius: 0px;\nborder-bottom-left-radius: 0px;"
+    },
+    "b-sm": {
+      "class": "rounded-b-sm",
+      "property": "border-bottom-right-radius: 0.125rem; /* 2px */\nborder-bottom-left-radius: 0.125rem; /* 2px */"
+    },
+    "b": {
+      "class": "rounded-b",
+      "property": "border-bottom-right-radius: 0.25rem; /* 4px */\nborder-bottom-left-radius: 0.25rem; /* 4px */"
+    },
+    "b-md": {
+      "class": "rounded-b-md",
+      "property": "border-bottom-right-radius: 0.375rem; /* 6px */\nborder-bottom-left-radius: 0.375rem; /* 6px */"
+    },
+    "b-lg": {
+      "class": "rounded-b-lg",
+      "property": "border-bottom-right-radius: 0.5rem; /* 8px */\nborder-bottom-left-radius: 0.5rem; /* 8px */"
+    },
+    "b-xl": {
+      "class": "rounded-b-xl",
+      "property": "border-bottom-right-radius: 0.75rem; /* 12px */\nborder-bottom-left-radius: 0.75rem; /* 12px */"
+    },
+    "b-2xl": {
+      "class": "rounded-b-2xl",
+      "property": "border-bottom-right-radius: 1rem; /* 16px */\nborder-bottom-left-radius: 1rem; /* 16px */"
+    },
+    "b-3xl": {
+      "class": "rounded-b-3xl",
+      "property": "border-bottom-right-radius: 1.5rem; /* 24px */\nborder-bottom-left-radius: 1.5rem; /* 24px */"
+    },
+    "b-full": {
+      "class": "rounded-b-full",
+      "property": "border-bottom-right-radius: 9999px;\nborder-bottom-left-radius: 9999px;"
+    },
+    "l-none": {
+      "class": "rounded-l-none",
+      "property": "border-top-left-radius: 0px;\nborder-bottom-left-radius: 0px;"
+    },
+    "l-sm": {
+      "class": "rounded-l-sm",
+      "property": "border-top-left-radius: 0.125rem; /* 2px */\nborder-bottom-left-radius: 0.125rem; /* 2px */"
+    },
+    "l": {
+      "class": "rounded-l",
+      "property": "border-top-left-radius: 0.25rem; /* 4px */\nborder-bottom-left-radius: 0.25rem; /* 4px */"
+    },
+    "l-md": {
+      "class": "rounded-l-md",
+      "property": "border-top-left-radius: 0.375rem; /* 6px */\nborder-bottom-left-radius: 0.375rem; /* 6px */"
+    },
+    "l-lg": {
+      "class": "rounded-l-lg",
+      "property": "border-top-left-radius: 0.5rem; /* 8px */\nborder-bottom-left-radius: 0.5rem; /* 8px */"
+    },
+    "l-xl": {
+      "class": "rounded-l-xl",
+      "property": "border-top-left-radius: 0.75rem; /* 12px */\nborder-bottom-left-radius: 0.75rem; /* 12px */"
+    },
+    "l-2xl": {
+      "class": "rounded-l-2xl",
+      "property": "border-top-left-radius: 1rem; /* 16px */\nborder-bottom-left-radius: 1rem; /* 16px */"
+    },
+    "l-3xl": {
+      "class": "rounded-l-3xl",
+      "property": "border-top-left-radius: 1.5rem; /* 24px */\nborder-bottom-left-radius: 1.5rem; /* 24px */"
+    },
+    "l-full": {
+      "class": "rounded-l-full",
+      "property": "border-top-left-radius: 9999px;\nborder-bottom-left-radius: 9999px;"
+    },
+    "ss-none": {
+      "class": "rounded-ss-none",
+      "property": "border-start-start-radius: 0px;"
+    },
+    "ss-sm": {
+      "class": "rounded-ss-sm",
+      "property": "border-start-start-radius: 0.125rem; /* 2px */"
+    },
+    "ss": {
+      "class": "rounded-ss",
+      "property": "border-start-start-radius: 0.25rem; /* 4px */"
+    },
+    "ss-md": {
+      "class": "rounded-ss-md",
+      "property": "border-start-start-radius: 0.375rem; /* 6px */"
+    },
+    "ss-lg": {
+      "class": "rounded-ss-lg",
+      "property": "border-start-start-radius: 0.5rem; /* 8px */"
+    },
+    "ss-xl": {
+      "class": "rounded-ss-xl",
+      "property": "border-start-start-radius: 0.75rem; /* 12px */"
+    },
+    "ss-2xl": {
+      "class": "rounded-ss-2xl",
+      "property": "border-start-start-radius: 1rem; /* 16px */"
+    },
+    "ss-3xl": {
+      "class": "rounded-ss-3xl",
+      "property": "border-start-start-radius: 1.5rem; /* 24px */"
+    },
+    "ss-full": {
+      "class": "rounded-ss-full",
+      "property": "border-start-start-radius: 9999px;"
+    },
+    "se-none": {
+      "class": "rounded-se-none",
+      "property": "border-start-end-radius: 0px;"
+    },
+    "se-sm": {
+      "class": "rounded-se-sm",
+      "property": "border-start-end-radius: 0.125rem; /* 2px */"
+    },
+    "se": {
+      "class": "rounded-se",
+      "property": "border-start-end-radius: 0.25rem; /* 4px */"
+    },
+    "se-md": {
+      "class": "rounded-se-md",
+      "property": "border-start-end-radius: 0.375rem; /* 6px */"
+    },
+    "se-lg": {
+      "class": "rounded-se-lg",
+      "property": "border-start-end-radius: 0.5rem; /* 8px */"
+    },
+    "se-xl": {
+      "class": "rounded-se-xl",
+      "property": "border-start-end-radius: 0.75rem; /* 12px */"
+    },
+    "se-2xl": {
+      "class": "rounded-se-2xl",
+      "property": "border-start-end-radius: 1rem; /* 16px */"
+    },
+    "se-3xl": {
+      "class": "rounded-se-3xl",
+      "property": "border-start-end-radius: 1.5rem; /* 24px */"
+    },
+    "se-full": {
+      "class": "rounded-se-full",
+      "property": "border-start-end-radius: 9999px;"
+    },
+    "ee-none": {
+      "class": "rounded-ee-none",
+      "property": "border-end-end-radius: 0px;"
+    },
+    "ee-sm": {
+      "class": "rounded-ee-sm",
+      "property": "border-end-end-radius: 0.125rem; /* 2px */"
+    },
+    "ee": {
+      "class": "rounded-ee",
+      "property": "border-end-end-radius: 0.25rem; /* 4px */"
+    },
+    "ee-md": {
+      "class": "rounded-ee-md",
+      "property": "border-end-end-radius: 0.375rem; /* 6px */"
+    },
+    "ee-lg": {
+      "class": "rounded-ee-lg",
+      "property": "border-end-end-radius: 0.5rem; /* 8px */"
+    },
+    "ee-xl": {
+      "class": "rounded-ee-xl",
+      "property": "border-end-end-radius: 0.75rem; /* 12px */"
+    },
+    "ee-2xl": {
+      "class": "rounded-ee-2xl",
+      "property": "border-end-end-radius: 1rem; /* 16px */"
+    },
+    "ee-3xl": {
+      "class": "rounded-ee-3xl",
+      "property": "border-end-end-radius: 1.5rem; /* 24px */"
+    },
+    "ee-full": {
+      "class": "rounded-ee-full",
+      "property": "border-end-end-radius: 9999px;"
+    },
+    "es-none": {
+      "class": "rounded-es-none",
+      "property": "border-end-start-radius: 0px;"
+    },
+    "es-sm": {
+      "class": "rounded-es-sm",
+      "property": "border-end-start-radius: 0.125rem; /* 2px */"
+    },
+    "es": {
+      "class": "rounded-es",
+      "property": "border-end-start-radius: 0.25rem; /* 4px */"
+    },
+    "es-md": {
+      "class": "rounded-es-md",
+      "property": "border-end-start-radius: 0.375rem; /* 6px */"
+    },
+    "es-lg": {
+      "class": "rounded-es-lg",
+      "property": "border-end-start-radius: 0.5rem; /* 8px */"
+    },
+    "es-xl": {
+      "class": "rounded-es-xl",
+      "property": "border-end-start-radius: 0.75rem; /* 12px */"
+    },
+    "es-2xl": {
+      "class": "rounded-es-2xl",
+      "property": "border-end-start-radius: 1rem; /* 16px */"
+    },
+    "es-3xl": {
+      "class": "rounded-es-3xl",
+      "property": "border-end-start-radius: 1.5rem; /* 24px */"
+    },
+    "es-full": {
+      "class": "rounded-es-full",
+      "property": "border-end-start-radius: 9999px;"
+    },
+    "tl-none": {
+      "class": "rounded-tl-none",
+      "property": "border-top-left-radius: 0px;"
+    },
+    "tl-sm": {
+      "class": "rounded-tl-sm",
+      "property": "border-top-left-radius: 0.125rem; /* 2px */"
+    },
+    "tl": {
+      "class": "rounded-tl",
+      "property": "border-top-left-radius: 0.25rem; /* 4px */"
+    },
+    "tl-md": {
+      "class": "rounded-tl-md",
+      "property": "border-top-left-radius: 0.375rem; /* 6px */"
+    },
+    "tl-lg": {
+      "class": "rounded-tl-lg",
+      "property": "border-top-left-radius: 0.5rem; /* 8px */"
+    },
+    "tl-xl": {
+      "class": "rounded-tl-xl",
+      "property": "border-top-left-radius: 0.75rem; /* 12px */"
+    },
+    "tl-2xl": {
+      "class": "rounded-tl-2xl",
+      "property": "border-top-left-radius: 1rem; /* 16px */"
+    },
+    "tl-3xl": {
+      "class": "rounded-tl-3xl",
+      "property": "border-top-left-radius: 1.5rem; /* 24px */"
+    },
+    "tl-full": {
+      "class": "rounded-tl-full",
+      "property": "border-top-left-radius: 9999px;"
+    },
+    "tr-none": {
+      "class": "rounded-tr-none",
+      "property": "border-top-right-radius: 0px;"
+    },
+    "tr-sm": {
+      "class": "rounded-tr-sm",
+      "property": "border-top-right-radius: 0.125rem; /* 2px */"
+    },
+    "tr": {
+      "class": "rounded-tr",
+      "property": "border-top-right-radius: 0.25rem; /* 4px */"
+    },
+    "tr-md": {
+      "class": "rounded-tr-md",
+      "property": "border-top-right-radius: 0.375rem; /* 6px */"
+    },
+    "tr-lg": {
+      "class": "rounded-tr-lg",
+      "property": "border-top-right-radius: 0.5rem; /* 8px */"
+    },
+    "tr-xl": {
+      "class": "rounded-tr-xl",
+      "property": "border-top-right-radius: 0.75rem; /* 12px */"
+    },
+    "tr-2xl": {
+      "class": "rounded-tr-2xl",
+      "property": "border-top-right-radius: 1rem; /* 16px */"
+    },
+    "tr-3xl": {
+      "class": "rounded-tr-3xl",
+      "property": "border-top-right-radius: 1.5rem; /* 24px */"
+    },
+    "tr-full": {
+      "class": "rounded-tr-full",
+      "property": "border-top-right-radius: 9999px;"
+    },
+    "br-none": {
+      "class": "rounded-br-none",
+      "property": "border-bottom-right-radius: 0px;"
+    },
+    "br-sm": {
+      "class": "rounded-br-sm",
+      "property": "border-bottom-right-radius: 0.125rem; /* 2px */"
+    },
+    "br": {
+      "class": "rounded-br",
+      "property": "border-bottom-right-radius: 0.25rem; /* 4px */"
+    },
+    "br-md": {
+      "class": "rounded-br-md",
+      "property": "border-bottom-right-radius: 0.375rem; /* 6px */"
+    },
+    "br-lg": {
+      "class": "rounded-br-lg",
+      "property": "border-bottom-right-radius: 0.5rem; /* 8px */"
+    },
+    "br-xl": {
+      "class": "rounded-br-xl",
+      "property": "border-bottom-right-radius: 0.75rem; /* 12px */"
+    },
+    "br-2xl": {
+      "class": "rounded-br-2xl",
+      "property": "border-bottom-right-radius: 1rem; /* 16px */"
+    },
+    "br-3xl": {
+      "class": "rounded-br-3xl",
+      "property": "border-bottom-right-radius: 1.5rem; /* 24px */"
+    },
+    "br-full": {
+      "class": "rounded-br-full",
+      "property": "border-bottom-right-radius: 9999px;"
+    },
+    "bl-none": {
+      "class": "rounded-bl-none",
+      "property": "border-bottom-left-radius: 0px;"
+    },
+    "bl-sm": {
+      "class": "rounded-bl-sm",
+      "property": "border-bottom-left-radius: 0.125rem; /* 2px */"
+    },
+    "bl": {
+      "class": "rounded-bl",
+      "property": "border-bottom-left-radius: 0.25rem; /* 4px */"
+    },
+    "bl-md": {
+      "class": "rounded-bl-md",
+      "property": "border-bottom-left-radius: 0.375rem; /* 6px */"
+    },
+    "bl-lg": {
+      "class": "rounded-bl-lg",
+      "property": "border-bottom-left-radius: 0.5rem; /* 8px */"
+    },
+    "bl-xl": {
+      "class": "rounded-bl-xl",
+      "property": "border-bottom-left-radius: 0.75rem; /* 12px */"
+    },
+    "bl-2xl": {
+      "class": "rounded-bl-2xl",
+      "property": "border-bottom-left-radius: 1rem; /* 16px */"
+    },
+    "bl-3xl": {
+      "class": "rounded-bl-3xl",
+      "property": "border-bottom-left-radius: 1.5rem; /* 24px */"
+    },
+    "bl-full": {
+      "class": "rounded-bl-full",
+      "property": "border-bottom-left-radius: 9999px;"
+    }
+  }
+}

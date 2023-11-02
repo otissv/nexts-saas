@@ -1,0 +1,20 @@
+{
+  "justifyItems": {
+    "start": {
+      "class": "justify-items-start",
+      "property": "justify-items: start;"
+    },
+    "end": {
+      "class": "justify-items-end",
+      "property": "justify-items: end;"
+    },
+    "center": {
+      "class": "justify-items-center",
+      "property": "justify-items: center;"
+    },
+    "stretch": {
+      "class": "justify-items-stretch",
+      "property": "justify-items: stretch;"
+    }
+  }
+}

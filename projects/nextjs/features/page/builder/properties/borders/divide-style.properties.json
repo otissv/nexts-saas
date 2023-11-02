@@ -1,0 +1,24 @@
+{
+  "divideStyle": {
+    "solid > * + *": {
+      "class": "divide-solid > * + *",
+      "property": "border-style: solid;"
+    },
+    "dashed > * + *": {
+      "class": "divide-dashed > * + *",
+      "property": "border-style: dashed;"
+    },
+    "dotted > * + *": {
+      "class": "divide-dotted > * + *",
+      "property": "border-style: dotted;"
+    },
+    "double > * + *": {
+      "class": "divide-double > * + *",
+      "property": "border-style: double;"
+    },
+    "none > * + *": {
+      "class": "divide-none > * + *",
+      "property": "border-style: none;"
+    }
+  }
+}

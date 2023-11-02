@@ -1,0 +1,56 @@
+{
+  "skew": {
+    "x": {
+      "0": {
+        "class": "skew-x-0",
+        "property": "transform: skewX(0deg);"
+      },
+      "1": {
+        "class": "skew-x-1",
+        "property": "transform: skewX(1deg);"
+      },
+      "2": {
+        "class": "skew-x-2",
+        "property": "transform: skewX(2deg);"
+      },
+      "3": {
+        "class": "skew-x-3",
+        "property": "transform: skewX(3deg);"
+      },
+      "6": {
+        "class": "skew-x-6",
+        "property": "transform: skewX(6deg);"
+      },
+      "12": {
+        "class": "skew-x-12",
+        "property": "transform: skewX(12deg);"
+      }
+    },
+    "y": {
+      "0": {
+        "class": "skew-y-0",
+        "property": "transform: skewY(0deg);"
+      },
+      "1": {
+        "class": "skew-y-1",
+        "property": "transform: skewY(1deg);"
+      },
+      "2": {
+        "class": "skew-y-2",
+        "property": "transform: skewY(2deg);"
+      },
+      "3": {
+        "class": "skew-y-3",
+        "property": "transform: skewY(3deg);"
+      },
+      "6": {
+        "class": "skew-y-6",
+        "property": "transform: skewY(6deg);"
+      },
+      "12": {
+        "class": "skew-y-12",
+        "property": "transform: skewY(12deg);"
+      }
+    }
+  }
+}

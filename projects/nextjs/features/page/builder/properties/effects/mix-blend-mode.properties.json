@@ -1,0 +1,72 @@
+{
+  "mixBlendMode": {
+    "normal": {
+      "class": "mix-blend-normal",
+      "property": "mix-blend-mode: normal;"
+    },
+    "multiply": {
+      "class": "mix-blend-multiply",
+      "property": "mix-blend-mode: multiply;"
+    },
+    "screen": {
+      "class": "mix-blend-screen",
+      "property": "mix-blend-mode: screen;"
+    },
+    "overlay": {
+      "class": "mix-blend-overlay",
+      "property": "mix-blend-mode: overlay;"
+    },
+    "darken": {
+      "class": "mix-blend-darken",
+      "property": "mix-blend-mode: darken;"
+    },
+    "lighten": {
+      "class": "mix-blend-lighten",
+      "property": "mix-blend-mode: lighten;"
+    },
+    "color-dodge": {
+      "class": "mix-blend-color-dodge",
+      "property": "mix-blend-mode: color-dodge;"
+    },
+    "color-burn": {
+      "class": "mix-blend-color-burn",
+      "property": "mix-blend-mode: color-burn;"
+    },
+    "hard-light": {
+      "class": "mix-blend-hard-light",
+      "property": "mix-blend-mode: hard-light;"
+    },
+    "soft-light": {
+      "class": "mix-blend-soft-light",
+      "property": "mix-blend-mode: soft-light;"
+    },
+    "difference": {
+      "class": "mix-blend-difference",
+      "property": "mix-blend-mode: difference;"
+    },
+    "exclusion": {
+      "class": "mix-blend-exclusion",
+      "property": "mix-blend-mode: exclusion;"
+    },
+    "hue": {
+      "class": "mix-blend-hue",
+      "property": "mix-blend-mode: hue;"
+    },
+    "saturation": {
+      "class": "mix-blend-saturation",
+      "property": "mix-blend-mode: saturation;"
+    },
+    "color": {
+      "class": "mix-blend-color",
+      "property": "mix-blend-mode: color;"
+    },
+    "luminosity": {
+      "class": "mix-blend-luminosity",
+      "property": "mix-blend-mode: luminosity;"
+    },
+    "plus-lighter": {
+      "class": "mix-blend-plus-lighter",
+      "property": "mix-blend-mode: plus-lighter;"
+    }
+  }
+}

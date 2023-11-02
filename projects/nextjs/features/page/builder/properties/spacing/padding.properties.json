@@ -1,0 +1,1264 @@
+{
+  "padding": {
+    "p-0": {
+      "class": "p-0",
+      "property": "padding: 0px;"
+    },
+    "px-0": {
+      "class": "px-0",
+      "property": "padding-left: 0px;\npadding-right: 0px;"
+    },
+    "py-0": {
+      "class": "py-0",
+      "property": "padding-top: 0px;\npadding-bottom: 0px;"
+    },
+    "ps-0": {
+      "class": "ps-0",
+      "property": "padding-inline-start: 0px;"
+    },
+    "pe-0": {
+      "class": "pe-0",
+      "property": "padding-inline-end: 0px;"
+    },
+    "pt-0": {
+      "class": "pt-0",
+      "property": "padding-top: 0px;"
+    },
+    "pr-0": {
+      "class": "pr-0",
+      "property": "padding-right: 0px;"
+    },
+    "pb-0": {
+      "class": "pb-0",
+      "property": "padding-bottom: 0px;"
+    },
+    "pl-0": {
+      "class": "pl-0",
+      "property": "padding-left: 0px;"
+    },
+    "p-px": {
+      "class": "p-px",
+      "property": "padding: 1px;"
+    },
+    "px-px": {
+      "class": "px-px",
+      "property": "padding-left: 1px;\npadding-right: 1px;"
+    },
+    "py-px": {
+      "class": "py-px",
+      "property": "padding-top: 1px;\npadding-bottom: 1px;"
+    },
+    "ps-px": {
+      "class": "ps-px",
+      "property": "padding-inline-start: 1px;"
+    },
+    "pe-px": {
+      "class": "pe-px",
+      "property": "padding-inline-end: 1px;"
+    },
+    "pt-px": {
+      "class": "pt-px",
+      "property": "padding-top: 1px;"
+    },
+    "pr-px": {
+      "class": "pr-px",
+      "property": "padding-right: 1px;"
+    },
+    "pb-px": {
+      "class": "pb-px",
+      "property": "padding-bottom: 1px;"
+    },
+    "pl-px": {
+      "class": "pl-px",
+      "property": "padding-left: 1px;"
+    },
+    "p-0.5": {
+      "class": "p-0.5",
+      "property": "padding: 0.125rem; /* 2px */"
+    },
+    "px-0.5": {
+      "class": "px-0.5",
+      "property": "padding-left: 0.125rem; /* 2px */\npadding-right: 0.125rem; /* 2px */"
+    },
+    "py-0.5": {
+      "class": "py-0.5",
+      "property": "padding-top: 0.125rem; /* 2px */\npadding-bottom: 0.125rem; /* 2px */"
+    },
+    "ps-0.5": {
+      "class": "ps-0.5",
+      "property": "padding-inline-start: 0.125rem; /* 2px */"
+    },
+    "pe-0.5": {
+      "class": "pe-0.5",
+      "property": "padding-inline-end: 0.125rem; /* 2px */"
+    },
+    "pt-0.5": {
+      "class": "pt-0.5",
+      "property": "padding-top: 0.125rem; /* 2px */"
+    },
+    "pr-0.5": {
+      "class": "pr-0.5",
+      "property": "padding-right: 0.125rem; /* 2px */"
+    },
+    "pb-0.5": {
+      "class": "pb-0.5",
+      "property": "padding-bottom: 0.125rem; /* 2px */"
+    },
+    "pl-0.5": {
+      "class": "pl-0.5",
+      "property": "padding-left: 0.125rem; /* 2px */"
+    },
+    "p-1": {
+      "class": "p-1",
+      "property": "padding: 0.25rem; /* 4px */"
+    },
+    "px-1": {
+      "class": "px-1",
+      "property": "padding-left: 0.25rem; /* 4px */\npadding-right: 0.25rem; /* 4px */"
+    },
+    "py-1": {
+      "class": "py-1",
+      "property": "padding-top: 0.25rem; /* 4px */\npadding-bottom: 0.25rem; /* 4px */"
+    },
+    "ps-1": {
+      "class": "ps-1",
+      "property": "padding-inline-start: 0.25rem; /* 4px */"
+    },
+    "pe-1": {
+      "class": "pe-1",
+      "property": "padding-inline-end: 0.25rem; /* 4px */"
+    },
+    "pt-1": {
+      "class": "pt-1",
+      "property": "padding-top: 0.25rem; /* 4px */"
+    },
+    "pr-1": {
+      "class": "pr-1",
+      "property": "padding-right: 0.25rem; /* 4px */"
+    },
+    "pb-1": {
+      "class": "pb-1",
+      "property": "padding-bottom: 0.25rem; /* 4px */"
+    },
+    "pl-1": {
+      "class": "pl-1",
+      "property": "padding-left: 0.25rem; /* 4px */"
+    },
+    "p-1.5": {
+      "class": "p-1.5",
+      "property": "padding: 0.375rem; /* 6px */"
+    },
+    "px-1.5": {
+      "class": "px-1.5",
+      "property": "padding-left: 0.375rem; /* 6px */\npadding-right: 0.375rem; /* 6px */"
+    },
+    "py-1.5": {
+      "class": "py-1.5",
+      "property": "padding-top: 0.375rem; /* 6px */\npadding-bottom: 0.375rem; /* 6px */"
+    },
+    "ps-1.5": {
+      "class": "ps-1.5",
+      "property": "padding-inline-start: 0.375rem; /* 6px */"
+    },
+    "pe-1.5": {
+      "class": "pe-1.5",
+      "property": "padding-inline-end: 0.375rem; /* 6px */"
+    },
+    "pt-1.5": {
+      "class": "pt-1.5",
+      "property": "padding-top: 0.375rem; /* 6px */"
+    },
+    "pr-1.5": {
+      "class": "pr-1.5",
+      "property": "padding-right: 0.375rem; /* 6px */"
+    },
+    "pb-1.5": {
+      "class": "pb-1.5",
+      "property": "padding-bottom: 0.375rem; /* 6px */"
+    },
+    "pl-1.5": {
+      "class": "pl-1.5",
+      "property": "padding-left: 0.375rem; /* 6px */"
+    },
+    "p-2": {
+      "class": "p-2",
+      "property": "padding: 0.5rem; /* 8px */"
+    },
+    "px-2": {
+      "class": "px-2",
+      "property": "padding-left: 0.5rem; /* 8px */\npadding-right: 0.5rem; /* 8px */"
+    },
+    "py-2": {
+      "class": "py-2",
+      "property": "padding-top: 0.5rem; /* 8px */\npadding-bottom: 0.5rem; /* 8px */"
+    },
+    "ps-2": {
+      "class": "ps-2",
+      "property": "padding-inline-start: 0.5rem; /* 8px */"
+    },
+    "pe-2": {
+      "class": "pe-2",
+      "property": "padding-inline-end: 0.5rem; /* 8px */"
+    },
+    "pt-2": {
+      "class": "pt-2",
+      "property": "padding-top: 0.5rem; /* 8px */"
+    },
+    "pr-2": {
+      "class": "pr-2",
+      "property": "padding-right: 0.5rem; /* 8px */"
+    },
+    "pb-2": {
+      "class": "pb-2",
+      "property": "padding-bottom: 0.5rem; /* 8px */"
+    },
+    "pl-2": {
+      "class": "pl-2",
+      "property": "padding-left: 0.5rem; /* 8px */"
+    },
+    "p-2.5": {
+      "class": "p-2.5",
+      "property": "padding: 0.625rem; /* 10px */"
+    },
+    "px-2.5": {
+      "class": "px-2.5",
+      "property": "padding-left: 0.625rem; /* 10px */\npadding-right: 0.625rem; /* 10px */"
+    },
+    "py-2.5": {
+      "class": "py-2.5",
+      "property": "padding-top: 0.625rem; /* 10px */\npadding-bottom: 0.625rem; /* 10px */"
+    },
+    "ps-2.5": {
+      "class": "ps-2.5",
+      "property": "padding-inline-start: 0.625rem; /* 10px */"
+    },
+    "pe-2.5": {
+      "class": "pe-2.5",
+      "property": "padding-inline-end: 0.625rem; /* 10px */"
+    },
+    "pt-2.5": {
+      "class": "pt-2.5",
+      "property": "padding-top: 0.625rem; /* 10px */"
+    },
+    "pr-2.5": {
+      "class": "pr-2.5",
+      "property": "padding-right: 0.625rem; /* 10px */"
+    },
+    "pb-2.5": {
+      "class": "pb-2.5",
+      "property": "padding-bottom: 0.625rem; /* 10px */"
+    },
+    "pl-2.5": {
+      "class": "pl-2.5",
+      "property": "padding-left: 0.625rem; /* 10px */"
+    },
+    "p-3": {
+      "class": "p-3",
+      "property": "padding: 0.75rem; /* 12px */"
+    },
+    "px-3": {
+      "class": "px-3",
+      "property": "padding-left: 0.75rem; /* 12px */\npadding-right: 0.75rem; /* 12px */"
+    },
+    "py-3": {
+      "class": "py-3",
+      "property": "padding-top: 0.75rem; /* 12px */\npadding-bottom: 0.75rem; /* 12px */"
+    },
+    "ps-3": {
+      "class": "ps-3",
+      "property": "padding-inline-start: 0.75rem; /* 12px */"
+    },
+    "pe-3": {
+      "class": "pe-3",
+      "property": "padding-inline-end: 0.75rem; /* 12px */"
+    },
+    "pt-3": {
+      "class": "pt-3",
+      "property": "padding-top: 0.75rem; /* 12px */"
+    },
+    "pr-3": {
+      "class": "pr-3",
+      "property": "padding-right: 0.75rem; /* 12px */"
+    },
+    "pb-3": {
+      "class": "pb-3",
+      "property": "padding-bottom: 0.75rem; /* 12px */"
+    },
+    "pl-3": {
+      "class": "pl-3",
+      "property": "padding-left: 0.75rem; /* 12px */"
+    },
+    "p-3.5": {
+      "class": "p-3.5",
+      "property": "padding: 0.875rem; /* 14px */"
+    },
+    "px-3.5": {
+      "class": "px-3.5",
+      "property": "padding-left: 0.875rem; /* 14px */\npadding-right: 0.875rem; /* 14px */"
+    },
+    "py-3.5": {
+      "class": "py-3.5",
+      "property": "padding-top: 0.875rem; /* 14px */\npadding-bottom: 0.875rem; /* 14px */"
+    },
+    "ps-3.5": {
+      "class": "ps-3.5",
+      "property": "padding-inline-start: 0.875rem; /* 14px */"
+    },
+    "pe-3.5": {
+      "class": "pe-3.5",
+      "property": "padding-inline-end: 0.875rem; /* 14px */"
+    },
+    "pt-3.5": {
+      "class": "pt-3.5",
+      "property": "padding-top: 0.875rem; /* 14px */"
+    },
+    "pr-3.5": {
+      "class": "pr-3.5",
+      "property": "padding-right: 0.875rem; /* 14px */"
+    },
+    "pb-3.5": {
+      "class": "pb-3.5",
+      "property": "padding-bottom: 0.875rem; /* 14px */"
+    },
+    "pl-3.5": {
+      "class": "pl-3.5",
+      "property": "padding-left: 0.875rem; /* 14px */"
+    },
+    "p-4": {
+      "class": "p-4",
+      "property": "padding: 1rem; /* 16px */"
+    },
+    "px-4": {
+      "class": "px-4",
+      "property": "padding-left: 1rem; /* 16px */\npadding-right: 1rem; /* 16px */"
+    },
+    "py-4": {
+      "class": "py-4",
+      "property": "padding-top: 1rem; /* 16px */\npadding-bottom: 1rem; /* 16px */"
+    },
+    "ps-4": {
+      "class": "ps-4",
+      "property": "padding-inline-start: 1rem; /* 16px */"
+    },
+    "pe-4": {
+      "class": "pe-4",
+      "property": "padding-inline-end: 1rem; /* 16px */"
+    },
+    "pt-4": {
+      "class": "pt-4",
+      "property": "padding-top: 1rem; /* 16px */"
+    },
+    "pr-4": {
+      "class": "pr-4",
+      "property": "padding-right: 1rem; /* 16px */"
+    },
+    "pb-4": {
+      "class": "pb-4",
+      "property": "padding-bottom: 1rem; /* 16px */"
+    },
+    "pl-4": {
+      "class": "pl-4",
+      "property": "padding-left: 1rem; /* 16px */"
+    },
+    "p-5": {
+      "class": "p-5",
+      "property": "padding: 1.25rem; /* 20px */"
+    },
+    "px-5": {
+      "class": "px-5",
+      "property": "padding-left: 1.25rem; /* 20px */\npadding-right: 1.25rem; /* 20px */"
+    },
+    "py-5": {
+      "class": "py-5",
+      "property": "padding-top: 1.25rem; /* 20px */\npadding-bottom: 1.25rem; /* 20px */"
+    },
+    "ps-5": {
+      "class": "ps-5",
+      "property": "padding-inline-start: 1.25rem; /* 20px */"
+    },
+    "pe-5": {
+      "class": "pe-5",
+      "property": "padding-inline-end: 1.25rem; /* 20px */"
+    },
+    "pt-5": {
+      "class": "pt-5",
+      "property": "padding-top: 1.25rem; /* 20px */"
+    },
+    "pr-5": {
+      "class": "pr-5",
+      "property": "padding-right: 1.25rem; /* 20px */"
+    },
+    "pb-5": {
+      "class": "pb-5",
+      "property": "padding-bottom: 1.25rem; /* 20px */"
+    },
+    "pl-5": {
+      "class": "pl-5",
+      "property": "padding-left: 1.25rem; /* 20px */"
+    },
+    "p-6": {
+      "class": "p-6",
+      "property": "padding: 1.5rem; /* 24px */"
+    },
+    "px-6": {
+      "class": "px-6",
+      "property": "padding-left: 1.5rem; /* 24px */\npadding-right: 1.5rem; /* 24px */"
+    },
+    "py-6": {
+      "class": "py-6",
+      "property": "padding-top: 1.5rem; /* 24px */\npadding-bottom: 1.5rem; /* 24px */"
+    },
+    "ps-6": {
+      "class": "ps-6",
+      "property": "padding-inline-start: 1.5rem; /* 24px */"
+    },
+    "pe-6": {
+      "class": "pe-6",
+      "property": "padding-inline-end: 1.5rem; /* 24px */"
+    },
+    "pt-6": {
+      "class": "pt-6",
+      "property": "padding-top: 1.5rem; /* 24px */"
+    },
+    "pr-6": {
+      "class": "pr-6",
+      "property": "padding-right: 1.5rem; /* 24px */"
+    },
+    "pb-6": {
+      "class": "pb-6",
+      "property": "padding-bottom: 1.5rem; /* 24px */"
+    },
+    "pl-6": {
+      "class": "pl-6",
+      "property": "padding-left: 1.5rem; /* 24px */"
+    },
+    "p-7": {
+      "class": "p-7",
+      "property": "padding: 1.75rem; /* 28px */"
+    },
+    "px-7": {
+      "class": "px-7",
+      "property": "padding-left: 1.75rem; /* 28px */\npadding-right: 1.75rem; /* 28px */"
+    },
+    "py-7": {
+      "class": "py-7",
+      "property": "padding-top: 1.75rem; /* 28px */\npadding-bottom: 1.75rem; /* 28px */"
+    },
+    "ps-7": {
+      "class": "ps-7",
+      "property": "padding-inline-start: 1.75rem; /* 28px */"
+    },
+    "pe-7": {
+      "class": "pe-7",
+      "property": "padding-inline-end: 1.75rem; /* 28px */"
+    },
+    "pt-7": {
+      "class": "pt-7",
+      "property": "padding-top: 1.75rem; /* 28px */"
+    },
+    "pr-7": {
+      "class": "pr-7",
+      "property": "padding-right: 1.75rem; /* 28px */"
+    },
+    "pb-7": {
+      "class": "pb-7",
+      "property": "padding-bottom: 1.75rem; /* 28px */"
+    },
+    "pl-7": {
+      "class": "pl-7",
+      "property": "padding-left: 1.75rem; /* 28px */"
+    },
+    "p-8": {
+      "class": "p-8",
+      "property": "padding: 2rem; /* 32px */"
+    },
+    "px-8": {
+      "class": "px-8",
+      "property": "padding-left: 2rem; /* 32px */\npadding-right: 2rem; /* 32px */"
+    },
+    "py-8": {
+      "class": "py-8",
+      "property": "padding-top: 2rem; /* 32px */\npadding-bottom: 2rem; /* 32px */"
+    },
+    "ps-8": {
+      "class": "ps-8",
+      "property": "padding-inline-start: 2rem; /* 32px */"
+    },
+    "pe-8": {
+      "class": "pe-8",
+      "property": "padding-inline-end: 2rem; /* 32px */"
+    },
+    "pt-8": {
+      "class": "pt-8",
+      "property": "padding-top: 2rem; /* 32px */"
+    },
+    "pr-8": {
+      "class": "pr-8",
+      "property": "padding-right: 2rem; /* 32px */"
+    },
+    "pb-8": {
+      "class": "pb-8",
+      "property": "padding-bottom: 2rem; /* 32px */"
+    },
+    "pl-8": {
+      "class": "pl-8",
+      "property": "padding-left: 2rem; /* 32px */"
+    },
+    "p-9": {
+      "class": "p-9",
+      "property": "padding: 2.25rem; /* 36px */"
+    },
+    "px-9": {
+      "class": "px-9",
+      "property": "padding-left: 2.25rem; /* 36px */\npadding-right: 2.25rem; /* 36px */"
+    },
+    "py-9": {
+      "class": "py-9",
+      "property": "padding-top: 2.25rem; /* 36px */\npadding-bottom: 2.25rem; /* 36px */"
+    },
+    "ps-9": {
+      "class": "ps-9",
+      "property": "padding-inline-start: 2.25rem; /* 36px */"
+    },
+    "pe-9": {
+      "class": "pe-9",
+      "property": "padding-inline-end: 2.25rem; /* 36px */"
+    },
+    "pt-9": {
+      "class": "pt-9",
+      "property": "padding-top: 2.25rem; /* 36px */"
+    },
+    "pr-9": {
+      "class": "pr-9",
+      "property": "padding-right: 2.25rem; /* 36px */"
+    },
+    "pb-9": {
+      "class": "pb-9",
+      "property": "padding-bottom: 2.25rem; /* 36px */"
+    },
+    "pl-9": {
+      "class": "pl-9",
+      "property": "padding-left: 2.25rem; /* 36px */"
+    },
+    "p-10": {
+      "class": "p-10",
+      "property": "padding: 2.5rem; /* 40px */"
+    },
+    "px-10": {
+      "class": "px-10",
+      "property": "padding-left: 2.5rem; /* 40px */\npadding-right: 2.5rem; /* 40px */"
+    },
+    "py-10": {
+      "class": "py-10",
+      "property": "padding-top: 2.5rem; /* 40px */\npadding-bottom: 2.5rem; /* 40px */"
+    },
+    "ps-10": {
+      "class": "ps-10",
+      "property": "padding-inline-start: 2.5rem; /* 40px */"
+    },
+    "pe-10": {
+      "class": "pe-10",
+      "property": "padding-inline-end: 2.5rem; /* 40px */"
+    },
+    "pt-10": {
+      "class": "pt-10",
+      "property": "padding-top: 2.5rem; /* 40px */"
+    },
+    "pr-10": {
+      "class": "pr-10",
+      "property": "padding-right: 2.5rem; /* 40px */"
+    },
+    "pb-10": {
+      "class": "pb-10",
+      "property": "padding-bottom: 2.5rem; /* 40px */"
+    },
+    "pl-10": {
+      "class": "pl-10",
+      "property": "padding-left: 2.5rem; /* 40px */"
+    },
+    "p-11": {
+      "class": "p-11",
+      "property": "padding: 2.75rem; /* 44px */"
+    },
+    "px-11": {
+      "class": "px-11",
+      "property": "padding-left: 2.75rem; /* 44px */\npadding-right: 2.75rem; /* 44px */"
+    },
+    "py-11": {
+      "class": "py-11",
+      "property": "padding-top: 2.75rem; /* 44px */\npadding-bottom: 2.75rem; /* 44px */"
+    },
+    "ps-11": {
+      "class": "ps-11",
+      "property": "padding-inline-start: 2.75rem; /* 44px */"
+    },
+    "pe-11": {
+      "class": "pe-11",
+      "property": "padding-inline-end: 2.75rem; /* 44px */"
+    },
+    "pt-11": {
+      "class": "pt-11",
+      "property": "padding-top: 2.75rem; /* 44px */"
+    },
+    "pr-11": {
+      "class": "pr-11",
+      "property": "padding-right: 2.75rem; /* 44px */"
+    },
+    "pb-11": {
+      "class": "pb-11",
+      "property": "padding-bottom: 2.75rem; /* 44px */"
+    },
+    "pl-11": {
+      "class": "pl-11",
+      "property": "padding-left: 2.75rem; /* 44px */"
+    },
+    "p-12": {
+      "class": "p-12",
+      "property": "padding: 3rem; /* 48px */"
+    },
+    "px-12": {
+      "class": "px-12",
+      "property": "padding-left: 3rem; /* 48px */\npadding-right: 3rem; /* 48px */"
+    },
+    "py-12": {
+      "class": "py-12",
+      "property": "padding-top: 3rem; /* 48px */\npadding-bottom: 3rem; /* 48px */"
+    },
+    "ps-12": {
+      "class": "ps-12",
+      "property": "padding-inline-start: 3rem; /* 48px */"
+    },
+    "pe-12": {
+      "class": "pe-12",
+      "property": "padding-inline-end: 3rem; /* 48px */"
+    },
+    "pt-12": {
+      "class": "pt-12",
+      "property": "padding-top: 3rem; /* 48px */"
+    },
+    "pr-12": {
+      "class": "pr-12",
+      "property": "padding-right: 3rem; /* 48px */"
+    },
+    "pb-12": {
+      "class": "pb-12",
+      "property": "padding-bottom: 3rem; /* 48px */"
+    },
+    "pl-12": {
+      "class": "pl-12",
+      "property": "padding-left: 3rem; /* 48px */"
+    },
+    "p-14": {
+      "class": "p-14",
+      "property": "padding: 3.5rem; /* 56px */"
+    },
+    "px-14": {
+      "class": "px-14",
+      "property": "padding-left: 3.5rem; /* 56px */\npadding-right: 3.5rem; /* 56px */"
+    },
+    "py-14": {
+      "class": "py-14",
+      "property": "padding-top: 3.5rem; /* 56px */\npadding-bottom: 3.5rem; /* 56px */"
+    },
+    "ps-14": {
+      "class": "ps-14",
+      "property": "padding-inline-start: 3.5rem; /* 56px */"
+    },
+    "pe-14": {
+      "class": "pe-14",
+      "property": "padding-inline-end: 3.5rem; /* 56px */"
+    },
+    "pt-14": {
+      "class": "pt-14",
+      "property": "padding-top: 3.5rem; /* 56px */"
+    },
+    "pr-14": {
+      "class": "pr-14",
+      "property": "padding-right: 3.5rem; /* 56px */"
+    },
+    "pb-14": {
+      "class": "pb-14",
+      "property": "padding-bottom: 3.5rem; /* 56px */"
+    },
+    "pl-14": {
+      "class": "pl-14",
+      "property": "padding-left: 3.5rem; /* 56px */"
+    },
+    "p-16": {
+      "class": "p-16",
+      "property": "padding: 4rem; /* 64px */"
+    },
+    "px-16": {
+      "class": "px-16",
+      "property": "padding-left: 4rem; /* 64px */\npadding-right: 4rem; /* 64px */"
+    },
+    "py-16": {
+      "class": "py-16",
+      "property": "padding-top: 4rem; /* 64px */\npadding-bottom: 4rem; /* 64px */"
+    },
+    "ps-16": {
+      "class": "ps-16",
+      "property": "padding-inline-start: 4rem; /* 64px */"
+    },
+    "pe-16": {
+      "class": "pe-16",
+      "property": "padding-inline-end: 4rem; /* 64px */"
+    },
+    "pt-16": {
+      "class": "pt-16",
+      "property": "padding-top: 4rem; /* 64px */"
+    },
+    "pr-16": {
+      "class": "pr-16",
+      "property": "padding-right: 4rem; /* 64px */"
+    },
+    "pb-16": {
+      "class": "pb-16",
+      "property": "padding-bottom: 4rem; /* 64px */"
+    },
+    "pl-16": {
+      "class": "pl-16",
+      "property": "padding-left: 4rem; /* 64px */"
+    },
+    "p-20": {
+      "class": "p-20",
+      "property": "padding: 5rem; /* 80px */"
+    },
+    "px-20": {
+      "class": "px-20",
+      "property": "padding-left: 5rem; /* 80px */\npadding-right: 5rem; /* 80px */"
+    },
+    "py-20": {
+      "class": "py-20",
+      "property": "padding-top: 5rem; /* 80px */\npadding-bottom: 5rem; /* 80px */"
+    },
+    "ps-20": {
+      "class": "ps-20",
+      "property": "padding-inline-start: 5rem; /* 80px */"
+    },
+    "pe-20": {
+      "class": "pe-20",
+      "property": "padding-inline-end: 5rem; /* 80px */"
+    },
+    "pt-20": {
+      "class": "pt-20",
+      "property": "padding-top: 5rem; /* 80px */"
+    },
+    "pr-20": {
+      "class": "pr-20",
+      "property": "padding-right: 5rem; /* 80px */"
+    },
+    "pb-20": {
+      "class": "pb-20",
+      "property": "padding-bottom: 5rem; /* 80px */"
+    },
+    "pl-20": {
+      "class": "pl-20",
+      "property": "padding-left: 5rem; /* 80px */"
+    },
+    "p-24": {
+      "class": "p-24",
+      "property": "padding: 6rem; /* 96px */"
+    },
+    "px-24": {
+      "class": "px-24",
+      "property": "padding-left: 6rem; /* 96px */\npadding-right: 6rem; /* 96px */"
+    },
+    "py-24": {
+      "class": "py-24",
+      "property": "padding-top: 6rem; /* 96px */\npadding-bottom: 6rem; /* 96px */"
+    },
+    "ps-24": {
+      "class": "ps-24",
+      "property": "padding-inline-start: 6rem; /* 96px */"
+    },
+    "pe-24": {
+      "class": "pe-24",
+      "property": "padding-inline-end: 6rem; /* 96px */"
+    },
+    "pt-24": {
+      "class": "pt-24",
+      "property": "padding-top: 6rem; /* 96px */"
+    },
+    "pr-24": {
+      "class": "pr-24",
+      "property": "padding-right: 6rem; /* 96px */"
+    },
+    "pb-24": {
+      "class": "pb-24",
+      "property": "padding-bottom: 6rem; /* 96px */"
+    },
+    "pl-24": {
+      "class": "pl-24",
+      "property": "padding-left: 6rem; /* 96px */"
+    },
+    "p-28": {
+      "class": "p-28",
+      "property": "padding: 7rem; /* 112px */"
+    },
+    "px-28": {
+      "class": "px-28",
+      "property": "padding-left: 7rem; /* 112px */\npadding-right: 7rem; /* 112px */"
+    },
+    "py-28": {
+      "class": "py-28",
+      "property": "padding-top: 7rem; /* 112px */\npadding-bottom: 7rem; /* 112px */"
+    },
+    "ps-28": {
+      "class": "ps-28",
+      "property": "padding-inline-start: 7rem; /* 112px */"
+    },
+    "pe-28": {
+      "class": "pe-28",
+      "property": "padding-inline-end: 7rem; /* 112px */"
+    },
+    "pt-28": {
+      "class": "pt-28",
+      "property": "padding-top: 7rem; /* 112px */"
+    },
+    "pr-28": {
+      "class": "pr-28",
+      "property": "padding-right: 7rem; /* 112px */"
+    },
+    "pb-28": {
+      "class": "pb-28",
+      "property": "padding-bottom: 7rem; /* 112px */"
+    },
+    "pl-28": {
+      "class": "pl-28",
+      "property": "padding-left: 7rem; /* 112px */"
+    },
+    "p-32": {
+      "class": "p-32",
+      "property": "padding: 8rem; /* 128px */"
+    },
+    "px-32": {
+      "class": "px-32",
+      "property": "padding-left: 8rem; /* 128px */\npadding-right: 8rem; /* 128px */"
+    },
+    "py-32": {
+      "class": "py-32",
+      "property": "padding-top: 8rem; /* 128px */\npadding-bottom: 8rem; /* 128px */"
+    },
+    "ps-32": {
+      "class": "ps-32",
+      "property": "padding-inline-start: 8rem; /* 128px */"
+    },
+    "pe-32": {
+      "class": "pe-32",
+      "property": "padding-inline-end: 8rem; /* 128px */"
+    },
+    "pt-32": {
+      "class": "pt-32",
+      "property": "padding-top: 8rem; /* 128px */"
+    },
+    "pr-32": {
+      "class": "pr-32",
+      "property": "padding-right: 8rem; /* 128px */"
+    },
+    "pb-32": {
+      "class": "pb-32",
+      "property": "padding-bottom: 8rem; /* 128px */"
+    },
+    "pl-32": {
+      "class": "pl-32",
+      "property": "padding-left: 8rem; /* 128px */"
+    },
+    "p-36": {
+      "class": "p-36",
+      "property": "padding: 9rem; /* 144px */"
+    },
+    "px-36": {
+      "class": "px-36",
+      "property": "padding-left: 9rem; /* 144px */\npadding-right: 9rem; /* 144px */"
+    },
+    "py-36": {
+      "class": "py-36",
+      "property": "padding-top: 9rem; /* 144px */\npadding-bottom: 9rem; /* 144px */"
+    },
+    "ps-36": {
+      "class": "ps-36",
+      "property": "padding-inline-start: 9rem; /* 144px */"
+    },
+    "pe-36": {
+      "class": "pe-36",
+      "property": "padding-inline-end: 9rem; /* 144px */"
+    },
+    "pt-36": {
+      "class": "pt-36",
+      "property": "padding-top: 9rem; /* 144px */"
+    },
+    "pr-36": {
+      "class": "pr-36",
+      "property": "padding-right: 9rem; /* 144px */"
+    },
+    "pb-36": {
+      "class": "pb-36",
+      "property": "padding-bottom: 9rem; /* 144px */"
+    },
+    "pl-36": {
+      "class": "pl-36",
+      "property": "padding-left: 9rem; /* 144px */"
+    },
+    "p-40": {
+      "class": "p-40",
+      "property": "padding: 10rem; /* 160px */"
+    },
+    "px-40": {
+      "class": "px-40",
+      "property": "padding-left: 10rem; /* 160px */\npadding-right: 10rem; /* 160px */"
+    },
+    "py-40": {
+      "class": "py-40",
+      "property": "padding-top: 10rem; /* 160px */\npadding-bottom: 10rem; /* 160px */"
+    },
+    "ps-40": {
+      "class": "ps-40",
+      "property": "padding-inline-start: 10rem; /* 160px */"
+    },
+    "pe-40": {
+      "class": "pe-40",
+      "property": "padding-inline-end: 10rem; /* 160px */"
+    },
+    "pt-40": {
+      "class": "pt-40",
+      "property": "padding-top: 10rem; /* 160px */"
+    },
+    "pr-40": {
+      "class": "pr-40",
+      "property": "padding-right: 10rem; /* 160px */"
+    },
+    "pb-40": {
+      "class": "pb-40",
+      "property": "padding-bottom: 10rem; /* 160px */"
+    },
+    "pl-40": {
+      "class": "pl-40",
+      "property": "padding-left: 10rem; /* 160px */"
+    },
+    "p-44": {
+      "class": "p-44",
+      "property": "padding: 11rem; /* 176px */"
+    },
+    "px-44": {
+      "class": "px-44",
+      "property": "padding-left: 11rem; /* 176px */\npadding-right: 11rem; /* 176px */"
+    },
+    "py-44": {
+      "class": "py-44",
+      "property": "padding-top: 11rem; /* 176px */\npadding-bottom: 11rem; /* 176px */"
+    },
+    "ps-44": {
+      "class": "ps-44",
+      "property": "padding-inline-start: 11rem; /* 176px */"
+    },
+    "pe-44": {
+      "class": "pe-44",
+      "property": "padding-inline-end: 11rem; /* 176px */"
+    },
+    "pt-44": {
+      "class": "pt-44",
+      "property": "padding-top: 11rem; /* 176px */"
+    },
+    "pr-44": {
+      "class": "pr-44",
+      "property": "padding-right: 11rem; /* 176px */"
+    },
+    "pb-44": {
+      "class": "pb-44",
+      "property": "padding-bottom: 11rem; /* 176px */"
+    },
+    "pl-44": {
+      "class": "pl-44",
+      "property": "padding-left: 11rem; /* 176px */"
+    },
+    "p-48": {
+      "class": "p-48",
+      "property": "padding: 12rem; /* 192px */"
+    },
+    "px-48": {
+      "class": "px-48",
+      "property": "padding-left: 12rem; /* 192px */\npadding-right: 12rem; /* 192px */"
+    },
+    "py-48": {
+      "class": "py-48",
+      "property": "padding-top: 12rem; /* 192px */\npadding-bottom: 12rem; /* 192px */"
+    },
+    "ps-48": {
+      "class": "ps-48",
+      "property": "padding-inline-start: 12rem; /* 192px */"
+    },
+    "pe-48": {
+      "class": "pe-48",
+      "property": "padding-inline-end: 12rem; /* 192px */"
+    },
+    "pt-48": {
+      "class": "pt-48",
+      "property": "padding-top: 12rem; /* 192px */"
+    },
+    "pr-48": {
+      "class": "pr-48",
+      "property": "padding-right: 12rem; /* 192px */"
+    },
+    "pb-48": {
+      "class": "pb-48",
+      "property": "padding-bottom: 12rem; /* 192px */"
+    },
+    "pl-48": {
+      "class": "pl-48",
+      "property": "padding-left: 12rem; /* 192px */"
+    },
+    "p-52": {
+      "class": "p-52",
+      "property": "padding: 13rem; /* 208px */"
+    },
+    "px-52": {
+      "class": "px-52",
+      "property": "padding-left: 13rem; /* 208px */\npadding-right: 13rem; /* 208px */"
+    },
+    "py-52": {
+      "class": "py-52",
+      "property": "padding-top: 13rem; /* 208px */\npadding-bottom: 13rem; /* 208px */"
+    },
+    "ps-52": {
+      "class": "ps-52",
+      "property": "padding-inline-start: 13rem; /* 208px */"
+    },
+    "pe-52": {
+      "class": "pe-52",
+      "property": "padding-inline-end: 13rem; /* 208px */"
+    },
+    "pt-52": {
+      "class": "pt-52",
+      "property": "padding-top: 13rem; /* 208px */"
+    },
+    "pr-52": {
+      "class": "pr-52",
+      "property": "padding-right: 13rem; /* 208px */"
+    },
+    "pb-52": {
+      "class": "pb-52",
+      "property": "padding-bottom: 13rem; /* 208px */"
+    },
+    "pl-52": {
+      "class": "pl-52",
+      "property": "padding-left: 13rem; /* 208px */"
+    },
+    "p-56": {
+      "class": "p-56",
+      "property": "padding: 14rem; /* 224px */"
+    },
+    "px-56": {
+      "class": "px-56",
+      "property": "padding-left: 14rem; /* 224px */\npadding-right: 14rem; /* 224px */"
+    },
+    "py-56": {
+      "class": "py-56",
+      "property": "padding-top: 14rem; /* 224px */\npadding-bottom: 14rem; /* 224px */"
+    },
+    "ps-56": {
+      "class": "ps-56",
+      "property": "padding-inline-start: 14rem; /* 224px */"
+    },
+    "pe-56": {
+      "class": "pe-56",
+      "property": "padding-inline-end: 14rem; /* 224px */"
+    },
+    "pt-56": {
+      "class": "pt-56",
+      "property": "padding-top: 14rem; /* 224px */"
+    },
+    "pr-56": {
+      "class": "pr-56",
+      "property": "padding-right: 14rem; /* 224px */"
+    },
+    "pb-56": {
+      "class": "pb-56",
+      "property": "padding-bottom: 14rem; /* 224px */"
+    },
+    "pl-56": {
+      "class": "pl-56",
+      "property": "padding-left: 14rem; /* 224px */"
+    },
+    "p-60": {
+      "class": "p-60",
+      "property": "padding: 15rem; /* 240px */"
+    },
+    "px-60": {
+      "class": "px-60",
+      "property": "padding-left: 15rem; /* 240px */\npadding-right: 15rem; /* 240px */"
+    },
+    "py-60": {
+      "class": "py-60",
+      "property": "padding-top: 15rem; /* 240px */\npadding-bottom: 15rem; /* 240px */"
+    },
+    "ps-60": {
+      "class": "ps-60",
+      "property": "padding-inline-start: 15rem; /* 240px */"
+    },
+    "pe-60": {
+      "class": "pe-60",
+      "property": "padding-inline-end: 15rem; /* 240px */"
+    },
+    "pt-60": {
+      "class": "pt-60",
+      "property": "padding-top: 15rem; /* 240px */"
+    },
+    "pr-60": {
+      "class": "pr-60",
+      "property": "padding-right: 15rem; /* 240px */"
+    },
+    "pb-60": {
+      "class": "pb-60",
+      "property": "padding-bottom: 15rem; /* 240px */"
+    },
+    "pl-60": {
+      "class": "pl-60",
+      "property": "padding-left: 15rem; /* 240px */"
+    },
+    "p-64": {
+      "class": "p-64",
+      "property": "padding: 16rem; /* 256px */"
+    },
+    "px-64": {
+      "class": "px-64",
+      "property": "padding-left: 16rem; /* 256px */\npadding-right: 16rem; /* 256px */"
+    },
+    "py-64": {
+      "class": "py-64",
+      "property": "padding-top: 16rem; /* 256px */\npadding-bottom: 16rem; /* 256px */"
+    },
+    "ps-64": {
+      "class": "ps-64",
+      "property": "padding-inline-start: 16rem; /* 256px */"
+    },
+    "pe-64": {
+      "class": "pe-64",
+      "property": "padding-inline-end: 16rem; /* 256px */"
+    },
+    "pt-64": {
+      "class": "pt-64",
+      "property": "padding-top: 16rem; /* 256px */"
+    },
+    "pr-64": {
+      "class": "pr-64",
+      "property": "padding-right: 16rem; /* 256px */"
+    },
+    "pb-64": {
+      "class": "pb-64",
+      "property": "padding-bottom: 16rem; /* 256px */"
+    },
+    "pl-64": {
+      "class": "pl-64",
+      "property": "padding-left: 16rem; /* 256px */"
+    },
+    "p-72": {
+      "class": "p-72",
+      "property": "padding: 18rem; /* 288px */"
+    },
+    "px-72": {
+      "class": "px-72",
+      "property": "padding-left: 18rem; /* 288px */\npadding-right: 18rem; /* 288px */"
+    },
+    "py-72": {
+      "class": "py-72",
+      "property": "padding-top: 18rem; /* 288px */\npadding-bottom: 18rem; /* 288px */"
+    },
+    "ps-72": {
+      "class": "ps-72",
+      "property": "padding-inline-start: 18rem; /* 288px */"
+    },
+    "pe-72": {
+      "class": "pe-72",
+      "property": "padding-inline-end: 18rem; /* 288px */"
+    },
+    "pt-72": {
+      "class": "pt-72",
+      "property": "padding-top: 18rem; /* 288px */"
+    },
+    "pr-72": {
+      "class": "pr-72",
+      "property": "padding-right: 18rem; /* 288px */"
+    },
+    "pb-72": {
+      "class": "pb-72",
+      "property": "padding-bottom: 18rem; /* 288px */"
+    },
+    "pl-72": {
+      "class": "pl-72",
+      "property": "padding-left: 18rem; /* 288px */"
+    },
+    "p-80": {
+      "class": "p-80",
+      "property": "padding: 20rem; /* 320px */"
+    },
+    "px-80": {
+      "class": "px-80",
+      "property": "padding-left: 20rem; /* 320px */\npadding-right: 20rem; /* 320px */"
+    },
+    "py-80": {
+      "class": "py-80",
+      "property": "padding-top: 20rem; /* 320px */\npadding-bottom: 20rem; /* 320px */"
+    },
+    "ps-80": {
+      "class": "ps-80",
+      "property": "padding-inline-start: 20rem; /* 320px */"
+    },
+    "pe-80": {
+      "class": "pe-80",
+      "property": "padding-inline-end: 20rem; /* 320px */"
+    },
+    "pt-80": {
+      "class": "pt-80",
+      "property": "padding-top: 20rem; /* 320px */"
+    },
+    "pr-80": {
+      "class": "pr-80",
+      "property": "padding-right: 20rem; /* 320px */"
+    },
+    "pb-80": {
+      "class": "pb-80",
+      "property": "padding-bottom: 20rem; /* 320px */"
+    },
+    "pl-80": {
+      "class": "pl-80",
+      "property": "padding-left: 20rem; /* 320px */"
+    },
+    "p-96": {
+      "class": "p-96",
+      "property": "padding: 24rem; /* 384px */"
+    },
+    "px-96": {
+      "class": "px-96",
+      "property": "padding-left: 24rem; /* 384px */\npadding-right: 24rem; /* 384px */"
+    },
+    "py-96": {
+      "class": "py-96",
+      "property": "padding-top: 24rem; /* 384px */\npadding-bottom: 24rem; /* 384px */"
+    },
+    "ps-96": {
+      "class": "ps-96",
+      "property": "padding-inline-start: 24rem; /* 384px */"
+    },
+    "pe-96": {
+      "class": "pe-96",
+      "property": "padding-inline-end: 24rem; /* 384px */"
+    },
+    "pt-96": {
+      "class": "pt-96",
+      "property": "padding-top: 24rem; /* 384px */"
+    },
+    "pr-96": {
+      "class": "pr-96",
+      "property": "padding-right: 24rem; /* 384px */"
+    },
+    "pb-96": {
+      "class": "pb-96",
+      "property": "padding-bottom: 24rem; /* 384px */"
+    },
+    "pl-96": {
+      "class": "pl-96",
+      "property": "padding-left: 24rem; /* 384px */"
+    }
+  }
+}
