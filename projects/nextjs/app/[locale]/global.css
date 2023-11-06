@@ -83,3 +83,22 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .page-builder-layout {
+    grid-template-columns: 280px 1fr 280px;
+  }
+
+  .h-toolbar {
+    height: 56px;
+  }
+  .h-app {
+    height: calc(100vh - 56px);
+  }
+ 
+}

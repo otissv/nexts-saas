@@ -82,17 +82,6 @@ export const styles = `
     .scrollbar-hide::-webkit-scrollbar {
       display: none;
     }
-
-    .editor-layout {
-      grid-template-columns: 280px 1fr 280px;
-    }
-
-    .h-toolbar {
-      height: 56px;
-    }
-    .h-app {
-      height: calc(100vh - 56px);
-    }
     .clip-path-r {
       clip-path: inset(0px -15px 0px 0px);
     }

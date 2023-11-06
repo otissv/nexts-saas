@@ -15,13 +15,8 @@ import { cn } from '@/lib/utils'
 import { EditableButton } from '@/components/editable-button'
 
 export const SectionsPanel = () => {
-  const {
-    selectedPage,
-    getPageNames,
-    setSelectedPage,
-    getPageName,
-    setPageName,
-  } = usePageStore()
+  const { selectedPage, getPageNames, setSelectedPage, setPageName } =
+    usePageStore()
   const [isOpen, setIsOpen] = React.useState(false)
   const [option, setOption] = React.useState<string | null>(null)
 
@@ -59,6 +54,7 @@ export const SectionsPanel = () => {
                 const isActive = selectedPage === key
                 return (
                   <EditableButton
+                    update={setPageName}
                     key={key}
                     value={value}
                     isActive={isActive}

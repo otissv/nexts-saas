@@ -127,6 +127,7 @@ const initialState: PageState = {
                     component: 'p',
                     props: {
                       root: {
+                        className: 'text-red-500',
                         children: 'This is a **simple** WYSIWYG editor.',
                       },
                     },

@@ -10,7 +10,7 @@ export interface EditableButtonProps
   input?: typeof Input
   isActive?: boolean
   defaultValue?: string
-  setPageName: (pageName: string) => void
+  update: (value: string) => void
 }
 
 export const EditableButton = ({
@@ -19,7 +19,7 @@ export const EditableButton = ({
   input,
   isActive,
   defaultValue = '',
-  setPageName,
+  update,
   ...props
 }: EditableButtonProps) => {
   const [isEdit, setIsEdit] = React.useState(false)
@@ -36,12 +36,12 @@ export const EditableButton = ({
       onKeyUp={(event: React.KeyboardEvent<HTMLInputElement>) => {
         if (event.key === 'Escape' || event.key === 'Enter') {
           setIsEdit(false)
-          setPageName(currentValue || defaultValue)
+          update(currentValue || defaultValue)
         }
       }}
       onBlur={() => {
         setIsEdit(false)
-        setPageName(currentValue || defaultValue)
+        update(currentValue || defaultValue)
       }}
       onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value

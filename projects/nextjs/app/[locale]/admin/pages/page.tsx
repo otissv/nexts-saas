@@ -2,14 +2,12 @@
  *  Pages Page
  */
 
-import { PageHeader } from '@/components/page/page-header'
+import { PageBuilder } from '@/features/page/builder/builder'
 
 export default function PagesPage() {
-  const breadcrumbs = [{ label: 'Home', crumb: '/' }, { label: 'Posts' }]
-
   return (
     <>
-      <PageHeader heading="Posts" breadcrumbs={breadcrumbs} />
+      <PageBuilder />
     </>
   )
 }

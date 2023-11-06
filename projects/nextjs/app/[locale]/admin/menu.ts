@@ -5,6 +5,8 @@ export async function menu() {
   const locale = serverContext().localeService.get()
   const t = await translateServer(locale, 'ui.menu.admin')
 
+  console.log('LOCALE: ', locale)
+
   return [
     {
       id: 'pages',
