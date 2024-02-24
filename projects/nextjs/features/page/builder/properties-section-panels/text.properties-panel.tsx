@@ -162,7 +162,16 @@ export const TextPropertiesPanel = ({
 
       <div className="flex items-center mb-2">
         <PropertyLabel>Transform</PropertyLabel>
-        <ToggleGroup className="w-[170px]" type="single" label="Text Alignment">
+        <ToggleGroup
+          className="w-[170px]"
+          type="single"
+          label="Text Alignment"
+          value={getProperty({
+            classNames: properties,
+            breakpoint,
+            prop: textTransform,
+          })}
+        >
           <ToggleGroupItem
             className="w-full p-2"
             label="Uppercase"
@@ -204,7 +213,11 @@ export const TextPropertiesPanel = ({
         <ToggleGroup
           className="w-[170px]"
           type="single"
-          defaultValue="left"
+          value={getProperty({
+            classNames: properties,
+            breakpoint,
+            prop: textAlign,
+          })}
           label="Text Alignment"
         >
           <ToggleGroupItem

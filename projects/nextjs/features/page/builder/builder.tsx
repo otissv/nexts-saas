@@ -1,6 +1,7 @@
 'use client'
 
 import * as React from 'react'
+import Link from 'next/link'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import { EditIcon, LucideZoomIn, MonitorSmartphone, Move } from 'lucide-react'
@@ -12,6 +13,9 @@ import { usePageStore, LayoutMode } from '@/features/page/store/page.store'
 import { Button } from '@/components/ui/button'
 import { ToggleGroup, ToggleGroupItem } from '@/components/toggle-group'
 import { Input } from '@/components/ui/input'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { EditPanel } from './edit-panel'
+import { CssPanel } from './css-panels'
 
 export const PageBuilder = () => {
   const {
@@ -45,6 +49,7 @@ export const PageBuilder = () => {
   return (
     <DndProvider backend={HTML5Backend}>
       <div className="h-toolbar flex items-center border px-4">
+        <Link href="/admin">Admin</Link>
         <Button onClick={() => addPage()}>New Page</Button>
 
         <Input
@@ -101,11 +106,40 @@ export const PageBuilder = () => {
           </ToggleGroupItem>
         </ToggleGroup>
       </div>
-      <div className="grid h-app page-builder-layout border-l-1 overflow-hidden">
-        <SectionsPanel />
-        <MainWindow isFullView={isFullView} />
+      <div className="h-app overflow-hidden">
+        <div className="builder-grid border-l-1 ">
+          <SectionsPanel />
+          <MainWindow isFullView={isFullView} />
 
-        <PropertiesPanel />
+          <div>
+            /component/breadcrumbs
+            <Tabs defaultValue="edit" className="w-full h-app border-l">
+              <TabsList className="grid w-full grid-cols-3 rounded-none">
+                <TabsTrigger value="edit">Edit</TabsTrigger>
+
+                <TabsTrigger value="properties" disabled={!selectedPage}>
+                  Properties
+                </TabsTrigger>
+
+                <TabsTrigger value="css" disabled={!selectedPage}>
+                  Class
+                </TabsTrigger>
+              </TabsList>
+
+              <TabsContent className="h-[calc(100%-80px)]" value="edit">
+                <EditPanel />
+              </TabsContent>
+
+              <TabsContent value="properties">
+                <PropertiesPanel />
+              </TabsContent>
+
+              <TabsContent value="css">
+                <CssPanel />
+              </TabsContent>
+            </Tabs>
+          </div>
+        </div>
       </div>
     </DndProvider>
   )

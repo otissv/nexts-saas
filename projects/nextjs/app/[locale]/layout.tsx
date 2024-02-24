@@ -10,7 +10,9 @@ import { Toaster } from '@/components/toaster'
 import { ThemeProvider } from '@/components/theme-provider'
 import { cn } from '@/lib/utils'
 import { Indicators } from '@/components/indicators/indicator'
-import { serverContext } from '@/app/context-server-only'
+import { serverContext } from '@/features/context-server-only'
+import { authOptions } from '@/features/app-auth/auth.options'
+import { AuthSession } from '@/features/app-auth/auth.types'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -33,20 +35,20 @@ export default async function RootLayout({
    * May read files in translation folder
    */
 
-  const session = await getServerSession()
-  const isLoggedIn = Boolean(session)
+  const session: AuthSession = await getServerSession(authOptions)
+  const isLoggedIn = Boolean(session?.user?.tenantId)
 
   serverContext().localeService.set(params.locale)
 
   return (
     <html lang={params.locale} suppressHydrationWarning>
-      <body
-        className={cn(
-          inter.className,
-          'w-full min-h-screen bg-background font-sans antialiased'
-        )}
-      >
-        <TranslationProvider locale={params.locale}>
+      <TranslationProvider locale={params.locale}>
+        <body
+          className={cn(
+            inter.className,
+            'w-full min-h-screen bg-background font-sans antialiased gd-cols-[3] translate3d-[2]'
+          )}
+        >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <BalancerProvider>
               {children}
@@ -54,8 +56,8 @@ export default async function RootLayout({
               <Indicators isLoggedIn={isLoggedIn} />
             </BalancerProvider>
           </ThemeProvider>
-        </TranslationProvider>
-      </body>
+        </body>
+      </TranslationProvider>
     </html>
   )
 }

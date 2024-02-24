@@ -4,7 +4,6 @@ import { Typography, TypographyProps } from '@/components/typography/typography'
 import { PageState, BlockActions } from '@/features/page/store/page.store'
 
 export interface TextProps extends TypographyProps {
-  isEdit?: boolean
   edit: string
   root: Record<string, any>
   pageStore: () => PageState & BlockActions
@@ -12,12 +11,11 @@ export interface TextProps extends TypographyProps {
 
 const Text = ({
   as = 'p',
-  isEdit,
-  root,
+  edit = 'root',
   id,
   onClick,
-  edit = 'root',
   pageStore,
+  root,
   ...props
 }: TextProps) => {
   return (

@@ -90,17 +90,23 @@ export const previews: Record<string, Omit<Component, 'id'>[]> = {
     {
       type: 'component',
       component: 'hero1',
-
       props: {
-        heading: {
-          children: 'Heading',
+        className: 'p-10',
+        image: {
+          src: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1773&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+          alt: 'beach',
+          width: '600',
+          height: '600',
         },
-        lead: {
+        heading: {
+          children: 'About Heading',
+        },
+        content: {
           children:
-            'Numquam consequatur nihil quo quae accusamus in dolores maiores.',
+            'Sed aperiam aut nihil. Eos culpa fugiat. Voluptas perferendis velit nemo ullam. Est facere totam.',
         },
         cta: {
-          children: 'CTA',
+          children: 'call to action',
         },
       },
     },

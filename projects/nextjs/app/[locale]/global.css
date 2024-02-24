@@ -86,12 +86,16 @@
 
 
 @layer utilities {
+  .center {
+    text-align: center;
+    justify-content: center;
+  }
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
 
   .page-builder-layout {
-    grid-template-columns: 280px 1fr 280px;
+    grid-template-columns: 280px 1fr;
   }
 
   .h-toolbar {
@@ -100,5 +104,13 @@
   .h-app {
     height: calc(100vh - 56px);
   }
+
+  .builder-grid {
+    display: grid; 
+    grid-template-columns: 300px 1fr 300px; 
+  }
  
+  .editor-panel-editor div {
+      height: inherit;
+  }
 }

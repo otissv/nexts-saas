@@ -1,6 +1,6 @@
 'use server'
 
-import { serverContext } from 'app/context-server-only'
+import { serverContext } from '@/features/context-server-only'
 import { OauthProviderSignup } from '@/features/app-oauth-providers/oauth-providers.types'
 
 const { oauthProvidersService } = serverContext()

@@ -5,6 +5,7 @@ export function createQueryString<Schema>(params: {
   limit?: PageInfo<Schema>['limit']
   where?: PageInfo<Schema>['where']
   orderBy?: PageInfo<Schema>['orderBy']
+  columnOrder?: string[]
 }) {
   const searchParams = new URLSearchParams()
   for (let [name, value] of Object.entries(params)) {

@@ -1,7 +1,7 @@
 'use server'
 
-import { serverContext } from 'app/context-server-only'
-import { UserSchema } from '@/schema/app.schema'
+import { serverContext } from '@/features/context-server-only'
+import { UserSchema } from '@/schema/orm/app.schema'
 import { authorize } from '@/lib/utils-server-only'
 import { ActionProps, SeverReturnType } from '@/database/pg/types.pg'
 import { User, UserInsert, UserUpdate } from './users.types'
@@ -11,7 +11,7 @@ const { usersService } = serverContext()
 
 /* Queries */
 
-export async function paginateUsersAction(
+export async function selectUsersAction(
   props: Omit<ActionProps<UserSchema>, 'orderBy'> & { orderBy?: string[][] },
   revalidatePath?: string
 ) {
@@ -42,19 +42,10 @@ export async function paginateUsersAction(
     }
   }
 
-  return authorize(usersService.paginate)(
+  return authorize(usersService.select)(
     { ...props, where, orderBy },
     revalidatePath
   ).catch(errorResponse(422)) as SeverReturnType<User>
-}
-
-export async function selectUsersAction(
-  props: ActionProps<UserSchema>,
-  revalidatePath?: string
-) {
-  return authorize(usersService.select)(props, revalidatePath).catch(
-    errorResponse(422)
-  ) as SeverReturnType<User>
 }
 
 export async function selectUserByIdAction(

@@ -6,26 +6,28 @@ import {
   oauthProviders as oauthProvidersSchema,
   users as usersSchema,
   tenants as tenantsSchema,
-  TenantSchema,
-} from '@/schema/app.schema'
-import {
-  OauthProvider,
-  OauthProviderSignup,
-  OauthProviderInsert,
-} from './oauth-providers.types'
+} from '@/schema/orm/app.schema'
+import { OauthProvider, OauthProviderSignup } from './oauth-providers.types'
 import {
   ErrorResponse,
   SelectProps,
   SuccessResponse,
 } from '@/database/pg/types.pg'
 import { PostgresDatabase } from '@/database/pg/connection.pg'
-import { tenantsSql } from '@/schema/tenant.sql'
+import { tenantsSql } from '@/schema/sql/tenant.sql'
 import { dbController } from '@/database/pg/db-controller.pg'
 import {
   oauthProviderSignupValidate,
   oauthProviderInsertValidate,
 } from '@/features/app-oauth-providers/oauth-providers.validators'
 import { errorResponse, serverResponse } from '@/database/utils.db'
+import { isDev } from 'c-ufunc/libs/isDev'
+
+type TenantId = number | null
+type Provider = OauthProviderSignup['provider']
+type ProviderUser = OauthProviderSignup['user']
+type OauthId = number | null
+type UserId = number | null
 
 export function oauthProvidersDb(db: PostgresDatabase) {
   const oauthProviders = dbController(db)({
@@ -43,16 +45,21 @@ export function oauthProvidersDb(db: PostgresDatabase) {
     /* Mutations */
 
     signup: ({ data }: { data: OauthProviderSignup }) => {
-      db.transaction((tx) =>
-        selectProviderTransaction(tx)(data)
+      db.transaction((tx) => {
+        return selectTenantIdFromOauthProviderTransaction(tx)(data)
+          .then(insertTenant(tx))
+          .then(insertOauthProviderTransaction(tx))
+          .then(findUserByEmailTransaction(tx))
           .then(insertUserTransaction(tx))
-          .then(insertProviderTransaction(tx))
-          .then((result) => insertTenant(tx)(result).then(createTenantDb(tx)))
+          .then(createTenantDb(tx))
           .catch((error: Error) => {
+            isDev() && console.error('Oauth signup:', error)
+
+            // remove cookie
             tx.rollback()
             return errorResponse(422)(error)
           })
-      ).catch(errorResponse(422))
+      }).catch(errorResponse(422))
     },
 
     delete: ({
@@ -60,7 +67,7 @@ export function oauthProvidersDb(db: PostgresDatabase) {
     }: {
       where?: SelectProps<OauthProvider>['where']
     } = {}) => {
-      // TODO: delete user and tenant via transaction
+      // TODO: delete user and tenant via transaction?
       return db
         .delete(oauthProvidersSchema)
         .where(where as any)
@@ -73,78 +80,31 @@ export function oauthProvidersDb(db: PostgresDatabase) {
   }
 }
 
-function selectProviderTransaction(
+function selectTenantIdFromOauthProviderTransaction(
   tx: PgTransaction<
     PostgresJsQueryResultHKT,
     Record<string, never>,
     ExtractTablesWithRelations<Record<string, never>>
   >
 ) {
-  return (data: OauthProviderSignup) =>
-    tx
+  return (props: OauthProviderSignup) => {
+    return tx
       .select({
-        providerId: oauthProvidersSchema.providerId,
+        tenantId: oauthProvidersSchema.tenantId,
       })
       .from(oauthProvidersSchema)
-      .where(eq(oauthProvidersSchema.providerId, data.provider.providerId))
-      .then((result) => {
-        if (result.length) {
-          throw new Error('Provider already exists')
-        }
-
-        return data
-      })
-      .catch((error) => {
-        console.error(error)
-        return error
-      })
-}
-
-function insertUserTransaction(
-  tx: PgTransaction<
-    PostgresJsQueryResultHKT,
-    Record<string, never>,
-    ExtractTablesWithRelations<Record<string, never>>
-  >
-) {
-  //TODO: if email already exists, use that user
-
-  return ({ user, provider }: OauthProviderSignup) =>
-    tx
-      .insert(usersSchema)
-      .values(user)
-      .returning({
-        id: usersSchema.id,
-      })
+      .where(eq(oauthProvidersSchema.providerId, props.provider.providerId))
       .then((result) => ({
-        userId: result[0].id,
-        ...provider,
+        data: {
+          ...props,
+          tenantId: result[0].tenantId,
+        },
       }))
-      .catch((error) => {
-        console.error(error)
-        return error
+      .catch((error: Error) => {
+        isDev() && console.error(error)
+        return { data: { ...props, tenantId: null }, error }
       })
-}
-function insertProviderTransaction(
-  tx: PgTransaction<
-    PostgresJsQueryResultHKT,
-    Record<string, never>,
-    ExtractTablesWithRelations<Record<string, never>>
-  >
-) {
-  return (data: OauthProviderInsert) =>
-    tx
-      .insert(oauthProvidersSchema)
-      .values(data)
-      .returning({
-        userId: oauthProvidersSchema.userId,
-        provider: oauthProvidersSchema.provider,
-        providerId: oauthProvidersSchema.providerId,
-      })
-      .catch((error) => {
-        console.log(error)
-        return error
-      })
+  }
 }
 
 function insertTenant(
@@ -154,15 +114,184 @@ function insertTenant(
     ExtractTablesWithRelations<Record<string, never>>
   >
 ) {
-  return (data: OauthProvider[]) =>
-    tx
+  return ({
+    data,
+    error,
+  }: {
+    data: {
+      tenantId: TenantId
+      provider: Provider
+      user: ProviderUser
+    }
+    error?: Error
+  }) => {
+    if (error) throw error
+
+    return tx
       .insert(tenantsSchema)
-      .values({ ownerId: data[0].userId })
-      .returning({ id: tenantsSchema.id })
-      .catch((error) => {
-        console.error(error)
-        return error
+      .values({})
+      .returning({
+        id: tenantsSchema.id,
       })
+      .then((tenants) => {
+        return {
+          data: {
+            ...data,
+            tenantId: tenants[0]?.id,
+          },
+        }
+      })
+      .catch((error: Error) => {
+        isDev() && console.error(error)
+        return { data: { ...data, tenantId: null }, error }
+      })
+  }
+}
+
+function insertOauthProviderTransaction(
+  tx: PgTransaction<
+    PostgresJsQueryResultHKT,
+    Record<string, never>,
+    ExtractTablesWithRelations<Record<string, never>>
+  >
+) {
+  return ({
+    data,
+    error,
+  }: {
+    data: {
+      tenantId: TenantId
+      provider: Provider
+      user: ProviderUser
+    }
+    error?: Error
+  }) => {
+    const { tenantId, provider } = data
+
+    if (error || tenantId) throw error
+
+    console.log('insertOauthProviderTransaction', { data, error })
+
+    return tx
+      .insert(oauthProvidersSchema)
+      .values({
+        tenantId: tenantId as number,
+        ...provider,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      })
+      .returning()
+      .then((oauths) => {
+        console.log('====insertOauthProviderTransaction', {
+          data: {
+            ...data,
+            oauthId: oauths[0]?.id,
+          },
+        })
+
+        return {
+          data: {
+            ...data,
+            oauthId: oauths[0]?.id,
+          },
+        }
+      })
+      .catch((error: Error) => {
+        isDev() && console.error(error)
+        return { data: { ...data, oauthId: null }, error }
+      })
+  }
+}
+
+function findUserByEmailTransaction(
+  tx: PgTransaction<
+    PostgresJsQueryResultHKT,
+    Record<string, never>,
+    ExtractTablesWithRelations<Record<string, never>>
+  >
+) {
+  return async ({
+    data,
+    error,
+  }: {
+    data: {
+      tenantId: TenantId
+      provider: Provider
+      user: ProviderUser
+      oauthId: OauthId
+    }
+    error?: Error
+  }) => {
+    console.log('====findUserByEmailTransaction', { data, error })
+
+    const { tenantId, oauthId, user } = data
+    if (error || tenantId || oauthId) throw error
+
+    return tx
+      .select({
+        id: usersSchema.id,
+      })
+      .from(usersSchema)
+      .where(eq(usersSchema.email, user.email))
+      .then((result) => ({
+        data: {
+          ...data,
+          userId: result[0]?.id,
+        },
+      }))
+      .catch((error: Error) => {
+        isDev() && console.error(error)
+        return { data: { ...data, userId: null }, error }
+      })
+  }
+}
+
+function insertUserTransaction(
+  tx: PgTransaction<
+    PostgresJsQueryResultHKT,
+    Record<string, never>,
+    ExtractTablesWithRelations<Record<string, never>>
+  >
+) {
+  return async ({
+    data,
+    error,
+  }: {
+    data: {
+      tenantId: TenantId
+      provider: Provider
+      user: ProviderUser
+      oauthId: OauthId
+    }
+    error?: Error
+  }) => {
+    const { tenantId, oauthId, user } = data
+    if (error || tenantId || oauthId) throw error
+
+    return tx
+      .insert(usersSchema)
+      .values({
+        ...user,
+        tenantId: tenantId as number,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      })
+      .returning({
+        id: usersSchema.id,
+      })
+      .then((result) => {
+        return {
+          data: {
+            ...data,
+            userId: result[0].id,
+          },
+        }
+      })
+      .catch((error: Error) => {
+        isDev() && console.error(error)
+        return { data: { ...data, userId: null }, error }
+      })
+  }
 }
 
 function createTenantDb(
@@ -172,9 +301,28 @@ function createTenantDb(
     ExtractTablesWithRelations<Record<string, never>>
   >
 ) {
-  return (data: { id: TenantSchema['id'] }[]) =>
-    tx.execute(tenantsSql(`t_${data[0].id}`)).catch((error) => {
-      console.error(error)
-      return error
-    })
+  return ({
+    data,
+    error,
+  }: {
+    data: {
+      tenantId: TenantId
+      provider: Provider
+      user: ProviderUser
+      oauthId: OauthId
+      userId: UserId
+    }
+    error?: Error
+  }) => {
+    const { tenantId } = data
+    if (tenantId) throw error
+
+    return tx
+      .execute(tenantsSql(tenantId as number))
+      .then(() => data)
+      .catch((error: Error) => {
+        isDev() && console.error(error)
+        return { data, error }
+      })
+  }
 }

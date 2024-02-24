@@ -5,6 +5,8 @@ import { validate } from '@/lib/validate'
 
 export const userValidator = z.object({
   id: z.number().int().positive(),
+  oauthId: z.number().int().positive(),
+  tenantId: z.number().int().positive(),
   username: z
     .string()
     .regex(/^[a-z0-9_-]{3,30}$/)

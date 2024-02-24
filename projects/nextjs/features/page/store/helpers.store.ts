@@ -295,7 +295,6 @@ export function removeChildFromChildren({
     targetPath,
     callback,
   }).filter(({ children = [] }) => {
-    logState('updateChildrenLocation: ', children)
     return children.length
   })
 }
@@ -314,12 +313,21 @@ export function updateChildren({
   if (path.length === 1) {
     if (element) {
       const [id, prop] = element.split('-')
+      const childProps = prop.split('.')
       let item: LayoutChildren
       let props: Record<string, any>
 
       if (prop === 'root') {
         item = children.find((item) => item.id === id) as any
         props = item.props as any
+      } else if (childProps.length > 1) {
+        item = children[0]
+        props = childProps.reduce(
+          (acc: any, curr: any) => {
+            return acc[curr] || acc
+          },
+          item?.props
+        )
       } else {
         item = children.find(
           (item: any) => item.id === id && item.props[prop]
@@ -329,7 +337,7 @@ export function updateChildren({
 
       if (item) {
         update({
-          props,
+          props: props || {},
         } as LayoutChildren)
       }
     }
@@ -362,7 +370,7 @@ export function updateChildrenClassNames({
 }) {
   return (children: LayoutChildren) => {
     //TODO:
-    const props = children.props
+    const props = children?.props
 
     if (!props) return children
 
@@ -397,23 +405,6 @@ export function updateChildrenClassNames({
   }
 }
 
-export function updateSelectedProperties({
-  children,
-  path,
-  element,
-}: {
-  children: LayoutChildren[]
-  path: string
-  element: string
-}) {
-  return updateProps({
-    children,
-    path: path.split('-'),
-    element,
-    update: (props: Record<string, any>) => props.className?.split(' ') || [],
-  })
-}
-
 export function updateProps({
   children,
   path,
@@ -427,17 +418,25 @@ export function updateProps({
 }) {
   if (path.length === 1) {
     const [id, prop] = element.split('-')
+    const childProps = prop.split('.')
     let item: LayoutChildren
     let props: Record<string, any>
 
     if (prop === 'root') {
       item = children.find((item) => item.id === id) as any
-      props = item.props || {}
+      props = item?.props || {}
+    } else if (childProps.length > 1) {
+      props = childProps.reduce(
+        (acc: any, curr: any) => {
+          return acc[curr] || acc
+        },
+        children[0]?.props || {}
+      )
     } else {
       item = children.find(
-        (item: any) => item.id === id && item.props[prop]
+        (item: any) => item?.id === id && item?.props[prop]
       ) as any
-      props = item.props?.[prop] || {}
+      props = item?.props?.[prop] || {}
     }
 
     return update(props)
@@ -449,6 +448,25 @@ export function updateProps({
   return updateProps({
     children: nodeChildren.children,
     path: path.slice(1),
+    element,
+    update,
+  })
+}
+
+export function updateSelectedChildren({
+  children,
+  path,
+  element,
+  update,
+}: {
+  children: LayoutChildren[]
+  path: string
+  element: string
+  update: (props: Record<string, any>) => unknown
+}) {
+  return updateProps({
+    children,
+    path: path.split('-'),
     element,
     update,
   })

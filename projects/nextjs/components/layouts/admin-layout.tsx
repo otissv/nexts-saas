@@ -16,7 +16,7 @@ export const AdminLayout = ({
   menuItems: MenuItem[]
 }) => {
   return (
-    <div className="m-5">
+    <div>
       {/* mobile nav */}
       <NavSheet items={menuItems} position="left">
         <NavMenuLink
@@ -29,7 +29,7 @@ export const AdminLayout = ({
       </NavSheet>
       <div className="flex ">
         {/* desktop nav */}
-        <NavSidebar items={menuItems}>
+        <NavSidebar items={menuItems} className="ml-5 my-5">
           <NavMenuItem className="w-full mt-8">
             <NavMenuLink
               href="/signout"

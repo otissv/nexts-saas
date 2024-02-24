@@ -8,7 +8,7 @@ import { oauthProvidersDb } from './oauth-providers.db'
 import { SelectProps } from '@/database/pg/types.pg'
 import { OauthProvider, OauthProviderSignup } from './oauth-providers.types'
 import { oauthProviderSignupValidate } from '@/features/app-oauth-providers/oauth-providers.validators'
-import { OauthProviderSchema } from '@/schema/app.schema'
+import { OauthProviderSchema } from '@/schema/orm/app.schema'
 import { errorResponse } from '@/database/utils.db'
 
 export function oauthProvidersService(db: PostgresDatabase) {

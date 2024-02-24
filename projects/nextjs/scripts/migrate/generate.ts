@@ -17,7 +17,7 @@ const readASchema = (
   content: string
 }> =>
   fs.promises
-    .readFile(`./schema/${tenant || schema}.schema.ts`, 'utf8')
+    .readFile(`./schema/orm/${tenant || schema}.schema.ts`, 'utf8')
     .then((content) => ({
       schema,
       content: content.replace(
@@ -39,17 +39,21 @@ const writeSchema = ({
   content: string
 }) =>
   fs.promises
-    .writeFile(`./migrations/schema/${schema}.schema.ts`, content)
+    .writeFile(`./schema/.generated/${schema}.schema.ts`, content)
     .catch(errorHandler)
 
 const mkMigrationsDirs = () =>
   fsExists('./migrations')
-    .then(() => exec('rm -rf ./migrations/schema'))
-    .then(() => exec('mkdir -p ./migrations/schema'))
+    .then(() => exec('rm -rf ./schema/.generated'))
+    .then(() => exec('mkdir -p ./schema/.generated'))
     .catch(errorHandler)
 
 const generateAppSchema = () =>
-  readASchema('app').then(writeSchema).catch(errorHandler)
+  readASchema('app')
+    .then(writeSchema)
+    .catch(errorHandler)
+    .then(() => console.log('Finished generating app schema'))
+    .catch(errorHandler) as any
 
 const getTenants = (): Promise<string[]> =>
   db
@@ -57,7 +61,7 @@ const getTenants = (): Promise<string[]> =>
       sql`
 SELECT nspname
 FROM pg_catalog.pg_namespace
-WHERE nspname NOT LIKE 'pg_%' AND nspname != 'information_schema' AND nspname != 'public' AND nspname != 'tenant'
+WHERE nspname NOT LIKE 'pg_%' AND nspname != 'information_schema'AND nspname != 'drizzle' AND nspname != 'public' AND nspname != 'tenant'
 ORDER BY nspname;`
     )
     .then((result) => result.map((row) => row.nspname as string))
@@ -70,14 +74,17 @@ const generateTenantSchema = (tenants: string[]): Promise<string[]> =>
       return readASchema(tenant, 'tenant').then(writeSchema)
     })
   )
-    .then(() => tenants)
+    .then(() => {
+      console.log(`Finished generating tenants schema`)
+      return tenants
+    })
     .catch(errorHandler) as any
 
 const generateMigrations = (tenants: string[]) => {
   return Promise.all(
     tenants.map((tenant) => {
       exec(
-        `npx drizzle-kit generate:pg --out migrations/${tenant} --schema migrations/schema/${tenant}.schema.ts`
+        `npx drizzle-kit generate:pg --out migrations/${tenant} --schema schema/.generated/${tenant}.schema.ts`
       ).catch(errorHandler)
     })
   ).catch(errorHandler)
@@ -91,6 +98,7 @@ export function generate() {
     .then(getTenants)
     .then(generateTenantSchema)
     .then((tenants) => generateMigrations(['app', ...tenants]))
+    .then(() => db.end())
     .catch(errorHandler)
 }
 

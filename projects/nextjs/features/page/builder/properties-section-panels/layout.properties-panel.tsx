@@ -148,6 +148,18 @@ export const LayoutPropertiesPanel = ({
                   type="single"
                   label="Layout type"
                   disabled={!isFlex}
+                  value={
+                    getProperty({
+                      classNames: properties,
+                      breakpoint,
+                      prop: flexGrow,
+                    }) ||
+                    getProperty({
+                      classNames: properties,
+                      breakpoint,
+                      prop: flexShrink,
+                    })
+                  }
                 >
                   <ToggleGroupItem
                     className="w-full p-2"
@@ -182,6 +194,11 @@ export const LayoutPropertiesPanel = ({
                   type="single"
                   label="Layout type"
                   disabled={!isFlex}
+                  value={getProperty({
+                    classNames: properties,
+                    breakpoint,
+                    prop: flexWrap,
+                  })}
                 >
                   <ToggleGroupItem
                     className="w-full"
@@ -227,6 +244,11 @@ export const LayoutPropertiesPanel = ({
                   defaultValue="row"
                   label="Flex Direction"
                   disabled={!isFlex}
+                  value={getProperty({
+                    classNames: properties,
+                    breakpoint,
+                    prop: flexDirection,
+                  })}
                 >
                   <ToggleGroupItem
                     className="w-full p-2"

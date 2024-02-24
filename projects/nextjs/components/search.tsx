@@ -47,7 +47,6 @@ export const Search = ({
       onKeyDown={handleOnKeyDown}
       onChange={handleOnChange}
       {...props}
-      placeholder="Filter users"
     />
   )
 }

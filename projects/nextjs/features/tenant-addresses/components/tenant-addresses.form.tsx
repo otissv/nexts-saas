@@ -3,30 +3,30 @@ import * as React from 'react'
 import { isDev } from 'c-ufunc/libs/isDev'
 
 import {
-  tenantCompanyAddressInsertValidator,
-  tenantCompanyAddressUpdateValidator,
-} from '@/features/tenant-company-addresses/company-addresses.tenant.validators'
+  tenantAddressInsertValidator,
+  tenantAddressUpdateValidator,
+} from '@/features/tenant-addresses/addresses.tenant.validators'
 import {
-  updateTenantCompanyAddressByIdAction,
-  insertTenantCompanyAddressAction,
-} from '@/features/tenant-company-addresses/company-addresses.tenant.actions'
+  updateTenantAddressByIdAction,
+  insertTenantAddressAction,
+} from '@/features/tenant-addresses/addresses.tenant.actions'
 import { Form, Submit } from '@/components/form/form'
 import { FormConfig, useForm } from '@/components/form/useForm'
 import { SaveButton } from '@/components/buttons/save-button'
 import { cn } from '@/lib/utils'
 import { useErrorNotify, useSuccessNotify } from '@/components/notify'
 import { useTranslateClient } from '@/components/translate/translate-client'
-import { TenantCompanyAddress } from '@/features/tenant-company-addresses/company-addresses.tenant.types'
+import { TenantAddress } from '@/features/tenant-addresses/addresses.tenant.types'
 
 export interface AddressFormProps {
   name: string
-  data: Partial<TenantCompanyAddress>[]
+  data: Partial<TenantAddress>[]
   children?: React.ReactNode
   className?: string
 }
 export const AddressForm = ({
   name,
-  data,
+  data = [],
   children,
   className,
   ...props
@@ -38,13 +38,11 @@ export const AddressForm = ({
   const [address] = data
   const id = address?.id
 
-  const action = id
-    ? updateTenantCompanyAddressByIdAction
-    : insertTenantCompanyAddressAction
+  const action = id ? updateTenantAddressByIdAction : insertTenantAddressAction
 
   const addressValidator = address
-    ? tenantCompanyAddressUpdateValidator
-    : tenantCompanyAddressInsertValidator
+    ? tenantAddressUpdateValidator
+    : tenantAddressInsertValidator
   const validator = addressValidator
 
   const config: FormConfig = {
@@ -134,7 +132,7 @@ export const AddressForm = ({
       validator={validator}
       {...props}
     >
-      {children || <SaveButton />}
+      <SaveButton>Save Address</SaveButton>
     </Form>
   )
 }

@@ -68,6 +68,10 @@ ui:
        content: Delete
 
   pages:
+    admin: 
+      heading: Admin
+      breadcrumb:
+        label: Admin
     authentication:
       buttons:
         signout: 
@@ -283,14 +287,11 @@ ui:
 
     user:
       heading: User
-      edit:
-        breadcrumb:
-          label: User Edit
-      new:
-        breadcrumb:
+      breadcrumb:
+          label: User
 
       form:
-        legend: My details
+        legend: User Details
         fields:
           username:
             label: Username

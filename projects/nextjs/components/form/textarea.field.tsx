@@ -10,13 +10,13 @@ export interface TextareaFieldProps
   extends React.HTMLAttributes<HTMLTextAreaElement> {
   name: string
   label: string
+  error: string | null
   required?: boolean
   classNames?: {
     label?: string
     input?: string
   }
   value?: string
-  error: string | null
   invalid?: boolean
 }
 

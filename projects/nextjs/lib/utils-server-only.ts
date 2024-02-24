@@ -16,28 +16,14 @@ export function authorize(fn: (...args: any[]) => Promise<any>) {
         throw new Error('User not logged in')
       }
 
+      //TODO: ADD ACL Check HERE
+
       const revalidatePath: string = args.slice(args.length)[0]
       revalidatePath && revalidateCachePath(revalidatePath)
 
       const props = args.slice(0, args.length - 1)
 
       return await fn(...props)
-    } catch (error) {
-      return errorResponse(403)(error as Error)
-    }
-  }
-}
-export function authorized(fn: Function) {
-  return async (revalidatePath?: string) => {
-    try {
-      const session = await getServerSession()
-
-      if (!session?.user) {
-        throw new Error('User not logged in')
-      }
-
-      revalidatePath && revalidateCachePath(revalidatePath)
-      return fn()
     } catch (error) {
       return errorResponse(403)(error as Error)
     }
@@ -60,9 +46,9 @@ export function checkResultHasData<Data>(message: string) {
   }
 }
 
-export function checkHasTenantId(tenantId: string) {
+export function checkHasTenantId(tenantId: number) {
   return <DbAction extends Function>(dbAction: DbAction) =>
-    typeof tenantId !== 'string' || tenantId.trim() === ''
+    typeof tenantId !== 'number' || tenantId > 1
       ? () =>
           Promise.resolve(errorResponse(422)(new Error('tenantId is required')))
       : dbAction

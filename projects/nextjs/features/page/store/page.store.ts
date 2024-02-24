@@ -8,43 +8,18 @@ import {
   moveSidebarComponentIntoParent,
   updateChildren,
   updateChildrenClassNames,
-  updateSelectedProperties,
   updateProps,
+  updateSelectedChildren,
   logState,
 } from '@/features/page/store/helpers.store'
+import { object } from 'zod'
 
 const initialState: PageState = {
   mode: 'edit',
-  selectedPage: 'page1',
+  selectedPage: 'defaultPage',
   pages: {
-    // defaultPage: {
-    //   name: "Untitled",
-    //   seo: {},
-    //   layout: {
-    //     selectedElement: {
-    //       path: "",
-    //       element: "",
-    //     },
-    //     selectedProperties: [],
-    //     children: [
-    //       {
-    //         type: "row",
-    //         component: "row",
-    //         id: uid(),
-    //         children: [
-    //           {
-    //             type: "column",
-    //             component: "column",
-    //             id: uid(),
-    //             children: [],
-    //           },
-    //         ],
-    //       },
-    //     ],
-    //   },
-    // },
-    page1: {
-      name: 'Home Page',
+    defaultPage: {
+      name: 'Untitled',
       seo: {},
       layout: {
         selectedElement: {
@@ -53,104 +28,109 @@ const initialState: PageState = {
         },
         selectedProperties: [],
         children: [
-          // {
-          //   type: "row",
-          //   component: "row",
-          //   id: uid(),
-          //   props: {
-          //     className: "border-2 border-red-500",
-          //   },
-          //   children: [
-          //     {
-          //       type: "column",
-          //       component: "column",
-          //       id: uid(),
-          //       props: {
-          //         className: "border-2 border-blue-500",
-          //       },
-          //       children: [
-          //         {
-          //           type: "component",
-          //           id: uid(),
-          //           component: "p",
-          //           props: {
-          //             root: {
-          //               placeholder: "Placeholder",
-          //               children: "This is a **simple** WYSIWYG editor.",
-          //             },
-          //           },
-          //         },
-          //       ],
-          //     },
-          //     {
-          //       type: "column",
-          //       component: "column",
-          //       id: uid(),
-          //       props: {
-          //         className: "border-2 border-blue-500",
-          //       },
-          //       children: [
-          //         {
-          //           type: "component",
-          //           id: uid(),
-          //           component: "p",
-          //           props: {
-          //             root: {
-          //               placeholder: "Placeholder",
-          //               children: "**component1**",
-          //             },
-          //           },
-          //         },
-          //       ],
-          //     },
-          //   ],
-          // },
           {
             type: 'row',
             component: 'row',
             id: uid(),
-            props: {
-              className: 'border-2 border-red-500',
-            },
             children: [
               {
                 type: 'column',
                 component: 'column',
                 id: uid(),
-                props: {
-                  className: 'border-2 border-blue-500',
-                },
                 children: [
                   {
                     type: 'component',
                     id: uid(),
-                    component: 'p',
+                    component: 'section',
+                    edit: {
+                      label: 'Hero',
+                      type: 'heading',
+                      id: uid(),
+                      order: 0,
+                    },
                     props: {
-                      root: {
-                        className: 'text-red-500',
-                        children: 'This is a **simple** WYSIWYG editor.',
+                      heading: {
+                        edit: {
+                          label: 'Heading',
+                          type: 'text',
+                          id: uid(),
+                          order: 1,
+                        },
+                        className: '!mt-8 text-red-500',
+                        children: ['**Heading**'],
+                      },
+                      image: {
+                        edit: {
+                          label: 'Image',
+                          type: 'image',
+                          id: uid(),
+                          order: 2,
+                        },
+                        children: [
+                          {
+                            src: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1773&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+                            alt: 'beach',
+                            width: '600',
+                            height: '600',
+                          },
+                        ],
+                      },
+                      contents: {
+                        edit: {
+                          label: 'Contents',
+                          type: 'richtext',
+                          id: uid(),
+                          order: 3,
+                        },
+                        children: [
+                          {
+                            children:
+                              'Sed aperiam aut nihil. Eos culpa fugiat. Voluptas perferendis velit nemo ullam. Est facere totam.',
+                          },
+                          {
+                            children: 'Another paragraph',
+                          },
+                        ],
+                      },
+                      footer: {
+                        edit: {
+                          label: 'Footer',
+                          type: 'heading',
+                          id: uid(),
+                          order: 4,
+                        },
+                        links: {
+                          edit: {
+                            label: 'Links',
+                            type: 'links',
+                            id: uid(),
+                            order: 5,
+                          },
+                          children: [
+                            {
+                              className: 'w-auto inline-block',
+                              children: 'Learn more',
+                              href: '/#',
+                            },
+                          ],
+                        },
+                        contents: {
+                          edit: {
+                            label: 'Contents',
+                            type: 'richtext',
+                            id: uid(),
+                            order: 6,
+                          },
+                          children: [
+                            {
+                              className: 'text-blue-500',
+                              children: 'Some cta text',
+                            },
+                          ],
+                        },
                       },
                     },
                   },
-                  // {
-                  //   type: "component",
-                  //   id: uid(),
-                  //   component: "section",
-                  //   props: {
-                  //     cta: {
-                  //       children: "Call to action",
-                  //     },
-                  //     heading: {
-                  //       className: "bg-red-500 inline relative text-blue-500",
-                  //       children: "Section Heading",
-                  //     },
-                  //     content: {
-                  //       className: "lg:font-extrabold",
-                  //       children:
-                  //         "Sed aperiam aut nihil. Eos culpa fugiat. Voluptas perferendis velit nemo ullam. Est facere totam.",
-                  //     },
-                  //   },
-                  // },
                 ],
               },
             ],
@@ -158,54 +138,182 @@ const initialState: PageState = {
         ],
       },
     },
-    // page2: {
-    //   name: "About Page",
+    // page1: {
+    //   name: 'Home Page',
     //   seo: {},
     //   layout: {
     //     selectedElement: {
-    //       path: "",
-    //       element: "",
+    //       path: '',
+    //       element: '',
     //     },
     //     selectedProperties: [],
     //     children: [
-    //       {
-    //         type: "row",
-    //         component: "row",
-    //         id: uid(),
-    //         props: {
-    //           className: "border-2 border-red-500",
-    //         },
-    //         children: [
-    //           {
-    //             type: "column",
-    //             component: "column",
-    //             id: uid(),
-    //             props: {
-    //               className: "border-2 border-blue-500",
+    // {
+    //   type: "row",
+    //   component: "row",
+    //   id: uid(),
+    //   props: {
+    //     className: "border-2 border-red-500",
+    //   },
+    //   children: [
+    //     {
+    //       type: "column",
+    //       component: "column",
+    //       id: uid(),
+    //       props: {
+    //         className: "border-2 border-blue-500",
+    //       },
+    //       children: [
+    //         {
+    //           type: "component",
+    //           id: uid(),
+    //           component: "p",
+    //           props: {
+    //             root: {
+    //               placeholder: "Placeholder",
+    //               children: "This is a **simple** WYSIWYG editor.",
     //             },
-    //             children: [
-    //               {
-    //                 type: "component",
-    //                 id: "section1",
-    //                 component: "section",
-    //                 props: {
-    //                   className: "p-10",
-    //                   heading: {
-    //                     children: "About Heading",
-    //                   },
-    //                   content: {
-    //                     children:
-    //                       "Sed aperiam aut nihil. Eos culpa fugiat. Voluptas perferendis velit nemo ullam. Est facere totam.",
+    //           },
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       type: "column",
+    //       component: "column",
+    //       id: uid(),
+    //       props: {
+    //         className: "border-2 border-blue-500",
+    //       },
+    //       children: [
+    //         {
+    //           type: "component",
+    //           id: uid(),
+    //           component: "p",
+    //           props: {
+    //             root: {
+    //               placeholder: "Placeholder",
+    //               children: "**component1**",
+    //             },
+    //           },
+    //         },
+    //       ],
+    //     },
+    //   ],
+    // },
+    //         {
+    //           type: 'row',
+    //           component: 'row',
+    //           id: uid(),
+    //           props: {
+    //             className: 'border-2 border-red-500',
+    //           },
+    //           children: [
+    //             {
+    //               type: 'column',
+    //               component: 'column',
+    //               id: uid(),
+    //               props: {
+    //                 className: 'border-2 border-blue-500',
+    //               },
+    //               children: [
+    //                 {
+    //                   type: 'component',
+    //                   id: uid(),
+    //                   component: 'p',
+    //                   props: {
+    //                     root: {
+    //                       className: 'text-red-500',
+    //                       children: 'This is a **simple** WYSIWYG editor.',
+    //                     },
     //                   },
     //                 },
-    //               },
-    //             ],
-    //           },
-    //         ],
-    //       },
-    //     ],
+    //                 {
+    //                   type: 'component',
+    //                   id: uid(),
+    //                   component: 'section',
+    //                   props: {
+    //                     heading: {
+    //                       className: 'bg-red-500 inline relative text-blue-500',
+    //                       children: 'Section Heading',
+    //                     },
+    //                     content: {
+    //                       className: 'lg:font-extrabold',
+    //                       children:
+    //                         'Sed aperiam aut nihil. Eos culpa fugiat. Voluptas perferendis velit nemo ullam. Est facere totam.',
+    //                     },
+    //                   },
+    //                 },
+    //               ],
+    //             },
+    //           ],
+    //         },
+    //       ],
+    //     },
     //   },
-    // },
+    //   page2: {
+    //     name: 'About Page',
+    //     seo: {},
+    //     layout: {
+    //       selectedElement: {
+    //         path: '',
+    //         element: '',
+    //       },
+    //       selectedProperties: [],
+    //       children: [
+    //         {
+    //           type: 'row',
+    //           component: 'row',
+    //           id: uid(),
+    //           props: {
+    //             className: 'border-2 border-red-500',
+    //           },
+    //           children: [
+    //             {
+    //               type: 'column',
+    //               component: 'column',
+    //               id: uid(),
+    //               props: {
+    //                 className: 'border-2 border-blue-500',
+    //               },
+    //               children: [
+    //                 {
+    //                   type: 'component',
+    //                   id: 'hero1',
+    //                   component: 'hero2',
+    //                   props: {
+    //                     className: 'p-10',
+    //                     image: {
+    //                       src: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1773&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    //                       alt: 'beach',
+    //                       width: '600',
+    //                       height: '600',
+    //                     },
+    //                     heading: {
+    //                       children: 'About Heading',
+    //                     },
+    //                     content: {
+    //                       children:
+    //                         'Sed aperiam aut nihil. Eos culpa fugiat. Voluptas perferendis velit nemo ullam. Est facere totam.',
+    //                     },
+    //                     cta: {
+    //                       link: {
+    //                         className: 'w-auto inline-block',
+    //                         children: 'call to action',
+    //                         href: '/contact',
+    //                       },
+    //                       content: {
+    //                         children: 'Some cta text Lean more',
+    //                       },
+    //                     },
+    //                   },
+    //                 },
+    //               ],
+    //             },
+    //           ],
+    //         },
+    //       ],
+    //     },
+    //   },
   },
 }
 
@@ -285,6 +393,7 @@ export type BlockActions = {
   getPageName: () => string
   getPageNames: () => [key: string, value: string][]
   setPageName: (pageName: string) => void
+  setSelectedClassNames: (classNames: string[]) => void
   setSelectedElement: (selectedElement: SelectedElement) => void
   setSelectedPage: (pageName: string) => void
   updatePageContent: (
@@ -314,7 +423,6 @@ export const usePageStore = createStore<PageState & BlockActions>(
     mode: initialState.mode,
     pages: initialState.pages,
     selectedPage: initialState.selectedPage,
-
     addPage: () =>
       set((state) => {
         const key = uid()
@@ -373,7 +481,60 @@ export const usePageStore = createStore<PageState & BlockActions>(
       ])
     },
 
-    setPageName: (pageName: string) =>
+    getEditableFields: () => {
+      const state = get()
+
+      //TODO: Loop over all children and get get editable fields
+      const layout = state.pages[state.selectedPage].layout
+      if (
+        !layout?.selectedElement ||
+        !layout?.selectedElement?.path ||
+        !layout?.selectedElement?.element
+      ) {
+        return []
+      }
+
+      const getEditFields = (layoutItem = [], fields = []) => {
+        const editableFelids = (props) =>
+          Object.values(props).reduce(
+            (previousValue, { edit, children, ...rest }) => {
+              return !edit
+                ? previousValue
+                : [
+                    ...previousValue,
+                    {
+                      ...(edit ? { edit } : {}),
+                      ...(children ? { children } : {}),
+                    },
+                    ...Object.values(rest || []).map(({ edit, children }) => ({
+                      ...(edit ? { edit } : {}),
+                      ...(children ? { children } : {}),
+                    })),
+                  ]
+            },
+            []
+          )
+
+        return layoutItem.reduce((previousValue, { props, children }) => {
+          if (props) {
+            previousValue.push(editableFelids(props))
+
+            if (props.children) {
+              return getEditFields(props.children, fields)
+            }
+          }
+          if (children) {
+            return getEditFields(children, fields)
+          }
+
+          return previousValue
+        }, fields)
+      }
+
+      return getEditFields(layout.children).flat()
+    },
+
+    setPageName: (pageName) =>
       set((state) => {
         if (!state.pages[state.selectedPage]) return
         state.pages[state.selectedPage].name = pageName
@@ -386,17 +547,44 @@ export const usePageStore = createStore<PageState & BlockActions>(
 
         layout.selectedElement = selectedElement
 
+        const update = (props: Record<string, any>) => {
+          return props?.className?.split(' ') || []
+        }
+
         //TODO: fix missing classes when changing selected element
-        layout.selectedProperties = updateSelectedProperties({
+        layout.selectedProperties = updateSelectedChildren({
           children: layout.children,
           path: selectedElement.path,
           element: selectedElement.element,
+          update,
         })
       }),
 
-    setSelectedPage: (pageKey: string) =>
+    setSelectedPage: (pageKey) =>
       set((state) => {
         state.selectedPage = pageKey
+      }),
+
+    setSelectedClassNames: (classNames) =>
+      set((state) => {
+        const layout = state.pages[state.selectedPage].layout
+        if (!layout?.selectedElement.path || !layout?.selectedElement.element) {
+          return
+        }
+
+        const update = (props: Record<string, any>) => {
+          logState('Props: ', props)
+          props.className = classNames
+          return classNames
+        }
+
+        //TODO: fix missing classes when changing selected element
+        layout.selectedProperties = updateSelectedChildren({
+          children: layout.children,
+          path: layout.selectedElement.path,
+          element: layout.selectedElement.element,
+          update,
+        })
       }),
 
     updateLayout: ({ path, target, ...item }) =>
@@ -488,6 +676,33 @@ export const usePageStore = createStore<PageState & BlockActions>(
             element,
           }) as Row[]
         }
+      })
+    },
+
+    updateSelectedChildren: (content) => {
+      set((state) => {
+        const layout = state.pages[state.selectedPage].layout
+        if (
+          !layout?.selectedElement ||
+          !layout?.selectedElement?.path ||
+          !layout?.selectedElement?.element
+        ) {
+          return ['']
+        }
+
+        // console.log('updateSelectedChildren: ', content.split('\n\n'))
+        // console.log('updateSelectedChildren: ', content)
+
+        const update = (props: Record<string, any>) => {
+          props.children = content.split('\n\n').map((c) => ({ children: c }))
+        }
+
+        return updateSelectedChildren({
+          children: layout.children,
+          path: layout.selectedElement.path,
+          element: layout.selectedElement.element,
+          update,
+        })
       })
     },
   }))

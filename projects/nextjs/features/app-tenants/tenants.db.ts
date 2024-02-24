@@ -7,9 +7,9 @@ import {
   SuccessResponse,
 } from '@/database/pg/types.pg'
 import { Tenant } from './tenants.types'
-import { users as usersSchema } from 'migrations/schema/app.schema'
+import { users as usersSchema } from 'schema/orm/app.schema'
 import { User } from '@/features/app-users/users.types'
-import { tenants as tenantsSchema } from '@/schema/app.schema'
+import { tenants as tenantsSchema } from '@/schema/orm/app.schema'
 import { dbController } from '@/database/pg/db-controller.pg'
 import {
   userInsertValidate,
@@ -22,12 +22,12 @@ import {
 import { errorResponse } from '@/database/utils.db'
 
 export function tenantsDb(db: PostgresDatabase) {
-  const tenants = dbController(db)({
+  const tenants = dbController(db)<Tenant, typeof tenantsSchema>({
     schema: tenantsSchema,
     insertValidate: tenantInsertValidate,
     updateValidate: tenantUpdateValidate,
   })
-  const users = dbController(db)({
+  const users = dbController(db)<User, typeof usersSchema>({
     schema: usersSchema,
     insertValidate: userInsertValidate,
     updateValidate: userUpdateValidate,
@@ -48,18 +48,19 @@ export function tenantsDb(db: PostgresDatabase) {
     }) => {
       const userResult = await users
         .select({
+          // columns: ['tenant_id'],
           where: eq(usersSchema.email, email) as SQL<User>,
         })
         .catch(errorResponse(422))
 
-      if (!userResult.data.length) return userResult
+      const tenantId = userResult.data[0]?.tenantId
 
-      const userId = userResult.data[0]?.id as number
+      if (!tenantId) return errorResponse(422, 'Tenant not found')
 
       return tenants
         .select({
           columns,
-          where: eq(tenantsSchema.ownerId, userId) as SQL<Tenant>,
+          where: eq(tenantsSchema.id, tenantId) as SQL<Tenant>,
         })
         .catch(errorResponse(422)) as Promise<
         SuccessResponse<Partial<Tenant> | ErrorResponse>

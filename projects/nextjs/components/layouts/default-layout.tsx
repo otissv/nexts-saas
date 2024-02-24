@@ -9,14 +9,12 @@ export interface DefaultLayoutProps
   children: React.ReactNode
   menuItems: MenuItem[]
   isLoggedIn: boolean
-  T: ({ children }: { children: string }) => JSX.Element
 }
 
 export function DefaultLayout({
   children,
   isLoggedIn,
   menuItems,
-  T,
 }: DefaultLayoutProps) {
   return (
     <div className="flex flex-col">
@@ -29,14 +27,14 @@ export function DefaultLayout({
               variant="outline"
               data-radix-collection-item
             >
-              <T>buttons.signout.content</T>
+              Sign out
             </NavMenuLink>
           </NavMenuItem>
         ) : (
           <>
             <NavMenuItem className="!mx-0 w-full">
               <NavMenuLink href="/signup" data-radix-collection-item>
-                <T>buttons.signup.content</T>
+                Sign up
               </NavMenuLink>
             </NavMenuItem>
             <NavMenuItem className="!mx-0 w-full">
@@ -46,7 +44,7 @@ export function DefaultLayout({
                   variant="outline"
                   data-radix-collection-item
                 >
-                  <T>buttons.login.content</T>
+                  Login
                 </NavMenuLink>
               </SheetClose>
             </NavMenuItem>
@@ -63,14 +61,14 @@ export function DefaultLayout({
               variant="outline"
               data-radix-collection-item
             >
-              <T>buttons.signout.content</T>
+              Sign out
             </NavMenuLink>
           </NavMenuItem>
         ) : (
           <div className="flex !mx-2  !ml-auto xl:last:!mr-0">
             <NavMenuItem className="mr-2">
               <NavMenuLink href="/signup" data-radix-collection-item>
-                <T>buttons.signup.content</T>
+                Sign up
               </NavMenuLink>
             </NavMenuItem>
             <NavMenuItem>
@@ -79,7 +77,7 @@ export function DefaultLayout({
                 variant="outline"
                 data-radix-collection-item
               >
-                <T>buttons.login.content</T>
+                Login
               </NavMenuLink>
             </NavMenuItem>
           </div>

@@ -13,18 +13,13 @@ import {
 import { errorResponse } from '@/database/utils.db'
 
 export function tenantCompaniesService(db: PostgresDatabase) {
-  return (tenantId: string) => {
+  return (tenantId: number) => {
     const tenantCompanies = tenantCompanyDb(db)(tenantId)
 
     return {
       schema: tenantCompanies.schema,
 
       /* Queries */
-
-      paginate: (props: SelectProps<TenantCompany>) =>
-        tenantCompanies
-          .paginate(props)
-          .catch(errorResponse(422)) as SeverReturnType<TenantCompany>,
 
       select: (props: SelectProps<TenantCompany> = {}) =>
         tenantCompanies

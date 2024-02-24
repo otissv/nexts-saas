@@ -190,7 +190,7 @@ export const ComponentBlock = ({
 
   return isDragging ? null : (
     <>
-      <div ref={ref} {...props}>
+      <div ref={ref} data-blockpath={path} {...props}>
         {children}
       </div>
       {noDrop ? null : (

@@ -3,13 +3,12 @@
  */
 
 import { PageHeader } from '@/components/page/page-header'
+import AdminRootLayout from '@/app/[locale]/admin/(admin-layout)/layout'
 
 export default async function Admin() {
-  const breadcrumbs = [{ label: 'Home', crumb: '/' }, { label: 'Admin' }]
-
   return (
-    <>
-      <PageHeader heading="Admin" breadcrumbs={breadcrumbs} />
-    </>
+    <AdminRootLayout>
+      <PageHeader heading="Admin" />
+    </AdminRootLayout>
   )
 }

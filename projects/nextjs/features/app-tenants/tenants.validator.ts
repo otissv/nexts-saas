@@ -9,7 +9,7 @@ import {
 
 export const tenantValidator = z.object({
   id: z.number().int().positive(),
-  ownerId: z.number().int().positive(),
+  name: z.string().min(1).max(100).optional(),
 })
 
 export const tenantInsertValidator = tenantValidator.omit({

@@ -24,7 +24,7 @@ export const NewButton = React.forwardRef<HTMLAnchorElement, LinkButtonProps>(
         ref={ref}
         {...props}
       >
-        <Plus className="inline-block mr-2" /> {t('new.content') || children}
+        <Plus className="inline-block mr-2" /> {children || t('new.content')}
       </Link>
     )
   }

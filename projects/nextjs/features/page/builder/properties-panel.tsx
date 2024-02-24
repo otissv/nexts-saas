@@ -65,11 +65,8 @@ export const PropertiesPanel = ({
   }
 
   return (
-    <div
-      className={cn('flex flex-col h-full overflow-y-auto border-l', className)}
-      {...props}
-    >
-      <div className="flex flex-col h-full border-l p-2">
+    <div className={cn('flex flex-col ', className)} {...props}>
+      <div className="flex flex-col h-full border-l px-2">
         <Tabs
           value={breakpoint === '' ? 'sm' : breakpoint.replace(':', '')}
           className="relative w-full flex flex-col "

@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ESNext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
     "allowJs": true,
@@ -31,7 +31,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "**/*.d.ts"
+    "**/*.d.ts",
+    "lib/session",
+    "app/[locale]/admin/api/route"
   ],
   "exclude": ["node_modules"]
 }

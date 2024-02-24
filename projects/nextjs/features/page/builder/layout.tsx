@@ -4,34 +4,22 @@ import * as React from 'react'
 import { useFrame } from 'react-frame-component'
 
 import { Button } from '@/components/ui/button'
-import {
-  ColumnBlock,
-  ComponentBlock,
-  RowBlock,
-} from '@/features/page/builder/components/blocks'
+
 import { DndFrame } from '@/components/frame'
 import { cn } from '@/lib/utils'
-import { components } from '@/features/page/builder/components/components'
 import { tailwind } from '@/features/page/builder/config/tailwind.config'
-import {
-  usePageStore,
-  LayoutItem,
-  LayoutTypes,
-} from '@/features/page/store/page.store'
+import { usePageStore, LayoutTypes } from '@/features/page/store/page.store'
 
 import {
   PropertyBreakpoints,
   usePropertiesStore,
 } from '../store/properties.store'
-import { DropZone, DropZoneProps } from './dropzone'
+import { DropZone } from './dropzone'
+import { BuildLayout } from './build-layout'
 
 export interface LayoutInitProps extends React.HTMLAttributes<HTMLElement> {}
 
 export const LayoutInit = ({ children }: LayoutInitProps) => {
-  //TODO: remove if not used
-  const { getPageLayout } = usePageStore()
-  const { document: doc } = useFrame()
-
   return <>{children}</>
 }
 LayoutInit.displayName = 'LayoutInit'
@@ -75,7 +63,7 @@ export const Layout = ({
         breakpoint === '' ? 'sm-sm' : `${breakpoint.replace(':', '')}-sm`
       setWidth(size)
     }
-  }, [breakpoint])
+  }, [breakpoint, isFullView])
 
   React.useEffect(() => {
     if (iframeRef?.current?.style) {
@@ -168,126 +156,3 @@ export const Layout = ({
   )
 }
 Layout.displayName = 'Layout'
-
-function BuildLayout({
-  drop,
-  layout,
-  parent,
-}: {
-  drop: (target: string, type: LayoutTypes) => DropZoneProps['drop']
-  layout: LayoutItem[]
-  parent: string
-}) {
-  const { mode, setSelectedElement } = usePageStore()
-
-  if (!layout) return null
-
-  const isEdit = mode === 'edit'
-
-  const handleOnElementClick = (e: React.MouseEvent<HTMLElement>) => {
-    setSelectedElement({
-      // @ts-expect-error dataset exits
-      path: e.target.dataset.blockpath,
-      // @ts-expect-error dataset exits
-      element: e.target.dataset.editor,
-    })
-  }
-
-  return (layout || []).map((item, index) => {
-    const path = `${parent.trim() === '' ? '' : parent + '-'}${index}`
-
-    switch (item.type) {
-      case 'column': {
-        return (
-          <React.Fragment key={item.id}>
-            <ColumnBlock
-              data-editor={`${item.id}-root`}
-              data-blockpath={path}
-              path={path}
-              item={item}
-              drop={drop}
-              onClick={handleOnElementClick}
-              className={cn(
-                'column-block flex flex-col',
-                item.props?.className
-              )}
-            >
-              {item.children ? (
-                <>
-                  <DropZone
-                    data-blockpath={`${path}-0`}
-                    direction="horizontal"
-                    drop={drop(`${path}-0`, 'column')}
-                    data-type="column"
-                  />
-                  <BuildLayout
-                    layout={item.children}
-                    drop={drop}
-                    parent={path}
-                  />
-                </>
-              ) : null}
-            </ColumnBlock>
-          </React.Fragment>
-        )
-      }
-
-      case 'component': {
-        const Component = components[item.component]
-        return (
-          <ComponentBlock
-            data-blockpath={path}
-            key={item.id}
-            path={path}
-            item={item as any}
-            drop={drop}
-            className="component-block"
-          >
-            <Component
-              data-blockpath={path}
-              data-editor={`${item.id}-root`}
-              onClick={handleOnElementClick}
-              id={item.id}
-              key={item.id}
-              isEdit={isEdit}
-              {...item.props}
-            />
-          </ComponentBlock>
-        )
-      }
-
-      case 'row':
-      default: {
-        return (
-          <RowBlock
-            data-blockpath={path}
-            data-editor={`${item.id}-root`}
-            key={item.id}
-            path={path}
-            onClick={handleOnElementClick}
-            item={item as any}
-            drop={drop}
-            className={cn('row-block flex', item.props?.className)}
-          >
-            {item.children ? (
-              <>
-                <DropZone
-                  data-blockpath={`${parseInt(path)}-0`}
-                  direction="vertical"
-                  drop={drop(`${parseInt(path)}-0`, 'column')}
-                  data-type="column"
-                />
-
-                <BuildLayout
-                  layout={item.children}
-                  drop={drop}
-                  parent={`${parseInt(path)}`}
-                />
-              </>
-            ) : null}
-          </RowBlock>
-        )
-      }
-    }
-  })
-}

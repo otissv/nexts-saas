@@ -29,7 +29,7 @@ export interface CompanyFormProps {
 
 export const CompanyForm = ({
   name,
-  data,
+  data = [],
   children,
   className,
   ...props
@@ -128,7 +128,7 @@ export const CompanyForm = ({
       validator={validator}
       {...props}
     >
-      <SaveButton />
+      <SaveButton>Save Company</SaveButton>
     </Form>
   )
 }

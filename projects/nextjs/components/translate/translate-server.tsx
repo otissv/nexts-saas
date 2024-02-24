@@ -1,17 +1,17 @@
 import * as React from 'react'
 
-import { getTranslator } from 'next-intl/server'
+import { getTranslations } from 'next-intl/server'
 import { Markdown } from '@/components/markdown'
-import { serverContext } from '@/app/context-server-only'
+import { serverContext } from '@/features/context-server-only'
 
-export const translateServer = getTranslator
+export const translateServer = getTranslations
 
 export async function serverUseTranslate(namespace: string) {
   const locale = serverContext().localeService.get()
 
   let t: (children: string) => string
   try {
-    t = await translateServer(locale, namespace)
+    t = await translateServer({ locale, namespace })
   } catch (error) {
     console.error(error)
   }

@@ -27,6 +27,7 @@ const run = async () => {
     .then(console.log)
     .then(getMigrationDirs)
     .then(migrateSchema)
+    .then(() => db.end())
     .catch(errorHandler)
 }
 

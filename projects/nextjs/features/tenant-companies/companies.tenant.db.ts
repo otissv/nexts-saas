@@ -3,7 +3,7 @@ import { SelectedFieldsFlat } from 'drizzle-orm/pg-core'
 import { checkHasTenantId } from '@/lib/utils-server-only'
 import { SelectProps } from '@/database/pg/types.pg'
 import { PostgresDatabase } from '@/database/pg//connection.pg'
-import { tenantSchema } from '@/schema/tenant.schema'
+import { tenantSchema } from '@/schema/orm/tenant.schema'
 import {
   TenantCompany,
   TenantCompanyInsert,
@@ -16,7 +16,7 @@ import {
 } from '@/features/tenant-companies/companies.tenant.validators'
 
 export function tenantCompanyDb(db: PostgresDatabase) {
-  return (tenantId: string) => {
+  return (tenantId: number) => {
     const tenantCompaniesSchema = tenantSchema(tenantId).companies
     const tenantCompanies = dbController(db)({
       schema: tenantCompaniesSchema,
@@ -30,9 +30,6 @@ export function tenantCompanyDb(db: PostgresDatabase) {
       schema: tenantCompaniesSchema,
 
       /* Queries */
-
-      paginate: (props: SelectProps<TenantCompany>) =>
-        maybeTenant(tenantCompanies.paginate)(props),
 
       select: (props: SelectProps<TenantCompany> = {}) =>
         maybeTenant(tenantCompanies.select)(props),

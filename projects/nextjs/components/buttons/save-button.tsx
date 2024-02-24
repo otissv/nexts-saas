@@ -21,7 +21,7 @@ export const SaveButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       >
         <Save className="inline-block mr-2" />{' '}
-        {t('save.button.content') || children}
+        {children || t('save.button.content')}
       </Button>
     )
   }

@@ -2,8 +2,9 @@
 
 import { AuthOptions, getServerSession } from 'next-auth'
 
-import { serverContext } from 'app/context-server-only'
-import { ServerSession, authOptions } from '@/features/app-auth/auth.options'
+import { serverContext } from '@/features/context-server-only'
+import { authOptions } from '@/features/app-auth/auth.options'
+import { AuthSession } from '@/features/app-auth/auth.types'
 import { authorize } from '@/lib/utils-server-only'
 import { SeverReturnType, ActionProps } from '@/database/pg/types.pg'
 import {
@@ -16,15 +17,13 @@ import { errorResponse } from '@/database/utils.db'
 const { tenantCompaniesService } = serverContext()
 
 /* Queries */
-export async function paginateTenantCompaniesAction(
+export async function selectTenantCompaniesAction(
   props: ActionProps<TenantCompany>,
   revalidatePath?: string
 ) {
-  const session = await getServerSession<AuthOptions, ServerSession>(
-    authOptions
-  )
+  const session = await getServerSession<AuthOptions, AuthSession>(authOptions)
 
-  const service = tenantCompaniesService(session?.user?.tenantId || '')
+  const service = tenantCompaniesService(session?.user?.tenantId as number)
 
   const where = props.where && {
     or: [
@@ -35,22 +34,16 @@ export async function paginateTenantCompaniesAction(
     ],
   }
 
-  return authorize(service.paginate)({ ...props, where }, revalidatePath).catch(
+  return authorize(service.select)({ ...props, where }, revalidatePath).catch(
     errorResponse(422)
   ) as SeverReturnType<TenantCompany>
 }
 
-export async function selectTenantCompaniesAction(
-  props: ActionProps<TenantCompany>,
-  revalidatePath?: string
-) {
-  const session = await getServerSession<AuthOptions, ServerSession>(
-    authOptions
-  )
+export async function selectTenantCompanyAction(revalidatePath?: string) {
+  const session = await getServerSession<AuthOptions, AuthSession>(authOptions)
+  const service = tenantCompaniesService(session?.user?.tenantId as number)
 
-  const service = tenantCompaniesService(session?.user?.tenantId || '')
-
-  return authorize(service.select)(props, revalidatePath).catch(
+  return authorize(service.select)({}, revalidatePath).catch(
     errorResponse(422)
   ) as SeverReturnType<TenantCompany>
 }
@@ -59,10 +52,8 @@ export async function selectTenantCompanyByIdAction(
   id: TenantCompany['id'],
   revalidatePath?: string
 ) {
-  const session = await getServerSession<AuthOptions, ServerSession>(
-    authOptions
-  )
-  const service = tenantCompaniesService(session?.user?.tenantId || '')
+  const session = await getServerSession<AuthOptions, AuthSession>(authOptions)
+  const service = tenantCompaniesService(session?.user?.tenantId as number)
 
   return authorize(service.selectById)({ id }, revalidatePath).catch(
     errorResponse(422)
@@ -75,10 +66,8 @@ export async function deleteTenantCompanyByIdAction(
   id: TenantCompany['id'],
   revalidatePath?: string
 ) {
-  const session = await getServerSession<AuthOptions, ServerSession>(
-    authOptions
-  )
-  const service = tenantCompaniesService(session?.user?.tenantId || '')
+  const session = await getServerSession<AuthOptions, AuthSession>(authOptions)
+  const service = tenantCompaniesService(session?.user?.tenantId as number)
 
   return authorize(service.deleteById)({ id }, revalidatePath).catch(
     errorResponse(422)
@@ -89,11 +78,9 @@ export async function insertTenantCompanyAction(
   props: { data: TenantCompanyInsert },
   revalidatePath?: string
 ) {
-  const session = await getServerSession<AuthOptions, ServerSession>(
-    authOptions
-  )
+  const session = await getServerSession<AuthOptions, AuthSession>(authOptions)
 
-  const service = tenantCompaniesService(session?.user?.tenantId || '')
+  const service = tenantCompaniesService(session?.user?.tenantId as number)
 
   return authorize(service.insert)(props, revalidatePath).catch(
     errorResponse(422)
@@ -107,10 +94,8 @@ export async function updateTenantCompanyByIdAction(
   },
   revalidatePath?: string
 ) {
-  const session = await getServerSession<AuthOptions, ServerSession>(
-    authOptions
-  )
-  const service = tenantCompaniesService(session?.user?.tenantId || '')
+  const session = await getServerSession<AuthOptions, AuthSession>(authOptions)
+  const service = tenantCompaniesService(session?.user?.tenantId as number)
 
   return authorize(service.updateById)(props, revalidatePath).catch(
     errorResponse(422)

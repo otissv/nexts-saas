@@ -5,17 +5,17 @@ import { getServerSession } from 'next-auth/next'
 
 import { DefaultLayout } from '@/components/layouts/default-layout'
 import { menu } from 'app/[locale]/(marketing)/menu'
-import { serverUseTranslate } from '@/components/translate/translate-server'
+import { authOptions } from '@/features/app-auth/auth.options'
+import { AuthSession } from '@/features/app-auth/auth.types'
 
 export default async function Home() {
-  const session = await getServerSession()
-  const isLoggedIn = Boolean(session)
-  const T = await serverUseTranslate('ui.pages.authentication')
+  const session: AuthSession = await getServerSession(authOptions)
+  const isLoggedIn = Boolean(session?.user?.tenantId)
 
   const menuItems = await menu()
 
   return (
-    <DefaultLayout menuItems={menuItems} isLoggedIn={isLoggedIn} T={T}>
+    <DefaultLayout menuItems={menuItems} isLoggedIn={isLoggedIn}>
       <h1>Home</h1>
     </DefaultLayout>
   )

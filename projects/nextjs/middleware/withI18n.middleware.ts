@@ -14,3 +14,8 @@ const intlMiddleware = createMiddleware({
 export const withI18n: MiddlewareFactory = (next) => {
   return intlMiddleware
 }
+
+export const config = {
+  // Match only internationalized pathnames
+  matcher: ['/', '/(de|en)/:path*'],
+}

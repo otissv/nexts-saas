@@ -4,7 +4,7 @@ import { SelectedFieldsFlat } from 'drizzle-orm/pg-core'
 import { SQL, eq } from 'drizzle-orm'
 
 import { PostgresDatabase } from '@/database/pg/connection.pg'
-import { users as usersSchema } from '@/schema/app.schema'
+import { users as usersSchema } from '@/schema/orm/app.schema'
 import { SeverReturnType, SelectProps } from '@/database/pg/types.pg'
 import { User, UserInsert, UserUpdate } from './users.types'
 import { usersDb } from './users.db'
@@ -18,11 +18,19 @@ export function usersService(db: PostgresDatabase) {
 
     /* Queries */
 
-    paginate: (props: SelectProps<User>) =>
-      users.paginate(props).catch(errorResponse(422)) as SeverReturnType<User>,
-
     select: (props: SelectProps<User>) =>
       users.select(props).catch(errorResponse(422)) as SeverReturnType<User>,
+
+    selectByEmail: ({
+      email,
+      columns,
+    }: {
+      email: User['email']
+      columns?: SelectProps<User>['columns']
+    }) =>
+      users
+        .selectByEmail({ email, columns })
+        .catch(errorResponse(422)) as SeverReturnType<User>,
 
     selectById: (props: {
       id: User['id']

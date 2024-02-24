@@ -13,18 +13,15 @@ import CredentialsProvider, {
   CredentialInput,
 } from 'next-auth/providers/credentials'
 
-import { serverContext } from 'app/context-server-only'
+import { serverContext } from '@/features/context-server-only'
 import { env } from 'env/build'
 import { authSignIn } from '@/features/app-auth/auth.actions'
 import { oauthProviderSignup } from '@/features/app-oauth-providers/oauth-providers.action'
-import { UserSession } from '@/types'
+import { UserSession } from './auth.types'
+import { isDev } from 'c-ufunc/libs/isDev'
 
 const { google, nextAuthSecret } = env()
-const { tenantsService } = serverContext()
-
-export interface ServerSession {
-  user?: UserSession
-}
+const { tenantsService, usersService } = serverContext()
 
 export const authOptions: AuthOptions = {
   secret: nextAuthSecret,
@@ -67,7 +64,7 @@ export const authOptions: AuthOptions = {
         })
 
         if (result.error) {
-          return Promise.reject('')
+          return Promise.reject('Sign in failed')
         } else {
           return result.data[0] as User
         }
@@ -87,23 +84,34 @@ export const authOptions: AuthOptions = {
       profile?: Profile | undefined
       credentials?: Record<string, CredentialInput> | undefined
     }) {
-      if (!credentials) {
-        await oauthProviderSignup({
-          provider: {
-            provider: account?.provider || '',
-            providerId: user.id,
-          },
-          user: {
-            email: user.email || '',
-            username: user.id || '',
-            imageUrl: user.image || '',
-            firstName: (profile as any)?.given_name || '',
-            lastName: (profile as any)?.family_name || '',
-            emailVerified: Boolean(account?.email_verified),
-          },
-        }).catch(console.error)
+      try {
+        if (credentials) {
+          return true
+        } else {
+          const oauth = await oauthProviderSignup({
+            provider: {
+              provider: account?.provider || '',
+              providerId: user.id,
+            },
+            user: {
+              email: user.email || '',
+              username: user.id || '',
+              imageUrl: user.image || '',
+              firstName: (profile as any)?.given_name || '',
+              lastName: (profile as any)?.family_name || '',
+              emailVerified: Boolean(account?.email_verified),
+            },
+          })
+
+          if (oauth.error) throw oauth.error
+          return true
+        }
+      } catch (error) {
+        if (isDev()) {
+          console.error(error)
+        }
+        return false
       }
-      return true
     },
 
     async jwt({
@@ -119,9 +127,19 @@ export const authOptions: AuthOptions = {
         email: (token || user).email || '',
       })
 
+      if (!tenant.data?.[0]) return {}
+
+      const appUser = await usersService.selectByEmail({
+        email: (token || user).email || '',
+        columns: ['id'],
+      })
+
+      if (!appUser.data?.[0]) return {}
+
       const data = {
         ...token,
         ...user,
+        userId: appUser.data[0]?.id,
       }
 
       //@ts-ignore do not send password. not to add as
@@ -130,12 +148,14 @@ export const authOptions: AuthOptions = {
       return {
         ...data,
         accessToken: account?.access_token,
-        tenantId: tenant.data[0] ? `t_${tenant.data[0]?.id}` : '',
+        tenantId: tenant.data[0] ? tenant.data[0]?.id : null,
       }
     },
 
     async session({ session, token }: { session: Session; token: JWT }) {
-      session.user = token as any
+      // TODO: FIX
+
+      session.user = token
       return session
     },
   },

@@ -1,72 +1,71 @@
 import { translateServer } from '@/components/translate/translate-server'
-import { serverContext } from '@/app/context-server-only'
+import { serverContext } from '@/features/context-server-only'
 
 export async function menu() {
-  const locale = serverContext().localeService.get()
   const t = await translateServer(locale, 'ui.menu')
 
   return {
     marketing: [
       {
         id: 'about',
-        label: t('marketing.about.content'),
+        label: 'About Us',
         href: '/about',
       },
       {
         id: 'contact',
-        label: t('marketing.contact.content'),
+        label: 'Contact',
         href: '/contact',
       },
       {
         id: 'pricing',
-        label: t('marketing.pricing.content'),
+        label: 'Pricing',
         href: '/pricing',
       },
       {
         id: 'blog',
-        label: t('marketing.blog.content'),
+        label: 'Blog',
         href: '/blog',
       },
       {
         id: 'admin',
-        label: t('marketing.admin.content'),
+        label: 'Admin',
         href: '/admin',
       },
     ],
     admin: [
       {
         id: 'pages',
-        label: t('admin.page.content'),
+        label: 'Pages',
         href: '/admin/pages',
       },
       {
-        id: 'companies',
-        label: t('admin.company.content'),
+        id: 'company',
+        label: 'Companies',
         href: '/admin/companies',
       },
       {
-        id: 'addresses',
-        label: t('admin.addresses.content'),
-        href: '/admin/companies/addresses',
+        id: 'address',
+        label: 'address',
+        href: '/admin/company/address',
       },
       {
-        id: 'users',
-        label: t('admin.users.content'),
-        href: '/admin/users',
+        id: 'account',
+        label: 'account',
+        href: '/admin/account',
       },
       {
         id: 'menu',
-        label: t('admin.menu.content'),
+        label: 'menu',
         href: '/admin/menu',
       },
       {
         id: 'media',
-        label: t('admin.media.content'),
+        label: 'media',
         href: '/admin/media',
       },
       {
         id: 'team',
-        label: t('admin.team.content'),
+        label: 'team',
         href: '/admin/team',
       },
     ],

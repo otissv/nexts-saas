@@ -4,6 +4,8 @@ import { SignIn, Signup } from './auth.types'
 
 export const signInValidator = userValidator.omit({
   id: true,
+  oauthId: true,
+  tenantId: true,
   firstName: true,
   lastName: true,
   email: true,
@@ -17,6 +19,8 @@ export const signInValidator = userValidator.omit({
 
 export const signupValidator = userValidator.omit({
   id: true,
+  oauthId: true,
+  tenantId: true,
   firstName: true,
   lastName: true,
   phone: true,

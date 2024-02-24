@@ -33,7 +33,7 @@ export const SectionsPanel = () => {
   let pageNames = getPageNames()
 
   return (
-    <div className="relative h-inherit border-x">
+    <div className="relative h-inherit border-x overflow-y-auto">
       <div className="p-4">
         <Tabs defaultValue="pages" className="w-full">
           <TabsList className="grid w-full grid-cols-3">

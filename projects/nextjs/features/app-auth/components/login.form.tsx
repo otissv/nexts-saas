@@ -10,15 +10,9 @@ import { Button } from '@/components/ui/button'
 import { Form, Submit } from '@/components/form/form'
 import { FormConfig, useForm } from '@/components/form/useForm'
 import { signInValidator } from '@/features/app-auth/auth.validators'
-import {
-  useTranslateClientComponent,
-  useTranslateClient,
-} from '@/components/translate/translate-client'
 import { useErrorNotify } from '@/components/notify'
 
 export function LoginForm({ providers }: { providers: string[] }) {
-  const T = useTranslateClientComponent('ui.pages.authentication')
-  const t = useTranslateClient('ui.pages.authentication')
   const errorNotify = useErrorNotify()
   const searchParams = useSearchParams()
   const error = searchParams.get('error')
@@ -37,23 +31,24 @@ export function LoginForm({ providers }: { providers: string[] }) {
 
   const config: FormConfig = {
     username: {
-      attributes: { placeholder: t('form.fields.username.placeholder') },
+      attributes: { placeholder: 'username' },
       classNames: {
         label: 'sr-only',
       },
-      label: t('form.fields.username.label'),
+      label: 'Username',
       ref: React.useRef(null),
-      error: t('form.fields.username.error'),
+      error: 'Username should only should only contain letters and numbers.',
     },
     password: {
       type: 'password',
-      attributes: { placeholder: t('form.fields.password.placeholder') },
+      attributes: { placeholder: 'password' },
       classNames: {
         label: 'sr-only',
       },
-      label: t('form.fields.password.label'),
+      label: 'Password',
       ref: React.useRef(null),
-      error: t('form.fields.password.error'),
+      error:
+        'Minimum eight characters, at least one upper case English letter, one lower case English letter, one number and one special character.',
     },
   }
 
@@ -97,7 +92,7 @@ export function LoginForm({ providers }: { providers: string[] }) {
           submit={onSubmit}
         >
           <Button className="mt-2" disabled={isSubmitting}>
-            <T>buttons.login.content</T>
+            Login
           </Button>
         </Form>
 
@@ -106,24 +101,24 @@ export function LoginForm({ providers }: { providers: string[] }) {
             className="underline underline-offset-4 hover:text-primary"
             href="/forgot-password"
           >
-            <T>login.forgotPassword.content</T>
+            Forgot password
           </Link>
         </p>
 
         <p className=" mt-3 text-center text-sm text-muted-foreground">
-          <T>login.text</T>{' '}
+          Don&apos;t have an account
           <Link
             className="underline underline-offset-4 hover:text-primary"
             href="/signup"
           >
-            <T>buttons.signup.content</T>
+            OR CONTINUE WITH
           </Link>
         </p>
 
         {providers.length > 0 && (
           <div className="relative flex justify-center text-xs uppercase my-5">
             <span className="bg-background px-2 text-muted-foreground ">
-              <T>continueWith</T>
+              OR CONTINUE WITH
             </span>
           </div>
         )}

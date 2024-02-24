@@ -11,7 +11,7 @@ export const oauthProviderValidator = z.object({
   id: z.number().int().positive(),
   providerId: z.string().min(1).max(256),
   provider: z.string().min(1).max(256),
-  userId: z.number().int().positive(),
+  tenantId: z.number().int().positive(),
   createdAt: z.coerce.date(),
   updatedAt: z.coerce.date(),
 })

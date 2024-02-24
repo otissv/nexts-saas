@@ -21,7 +21,11 @@ import {
   and,
   or,
 } from 'drizzle-orm'
-import { AnyPgTable, SelectedFieldsFlat } from 'drizzle-orm/pg-core'
+import {
+  AnyPgTable,
+  PgTableWithColumns,
+  SelectedFieldsFlat,
+} from 'drizzle-orm/pg-core'
 
 import {
   ErrorResponse,
@@ -32,6 +36,7 @@ import {
   serverResponse,
   errorResponse,
   selectColumns,
+  groupByColumns,
 } from '@/database/utils.db'
 import { PostgresDatabase } from '@/database/pg/connection.pg'
 import { env } from 'env/build'
@@ -113,9 +118,10 @@ export const buildWhere = <Schema extends AnyPgTable<{}>>(
   return getOperator(operator, [(schema as any)[values[0]], values[1]])
 }
 
-export function buildOrderBy<Schema extends AnyPgTable<{}>>(
+export function buildOrderBy<Schema extends AnyPgTable<{}>, DBTables>(
   schema: Schema,
-  orderBy: SelectProps<Schema>['orderBy']
+  orderBy: SelectProps<Schema, DBTables>['orderBy'],
+  defaultValue = [asc((schema as any).id)]
 ) {
   return Boolean(orderBy?.[0])
     ? ((orderBy || []).map(([column, order]: any) =>
@@ -123,63 +129,51 @@ export function buildOrderBy<Schema extends AnyPgTable<{}>>(
           ? asc((schema as any)[column])
           : desc((schema as any)[column])
       ) as SQL<Type>[])
-    : [asc((schema as any).id)]
+    : defaultValue
 }
 
-// TODO: omit password
-
 export function dbController(db: PostgresDatabase) {
-  return <DataType extends Type, Schema extends AnyPgTable<{}>>({
+  return <
+    DataType extends Type,
+    Schema extends AnyPgTable<{}>,
+    DBTables extends Record<string, PgTableWithColumns<any>>,
+  >({
     schema,
     insertValidate,
     updateValidate,
+    tables,
   }: {
     schema: Schema
     insertValidate: (data: any) => Promise<any>
     updateValidate: (data: any) => Promise<any>
+    tables: DBTables
   }) => {
     return {
       schema,
 
       /* Queries */
 
-      count: (props?: SelectProps<DataType>) =>
+      count: (props?: SelectProps<DataType, DBTables>) =>
         db
           .select({ count: sql<number>`count(*)` })
           .from(schema)
           .where(props?.where as any)
           .then(serverResponse)
-          // .then(omitPassword)
 
           .catch(errorResponse(422)) as Promise<
           SuccessResponse<Partial<DataType>> | ErrorResponse
         >,
 
-      select: async (props: any) => {
-        const select = selectColumns({ schema, columns: props?.columns })
-        const orderBy = buildOrderBy(schema, props.orderBy)
-
-        return (
-          db
-            .select(select)
-            .from(schema)
-            .where(props?.where)
-            .limit(props?.limit)
-            .orderBy(...orderBy)
-            .groupBy()
-            .then(serverResponse)
-            // .then(omitPassword)
-
-            .catch(errorResponse(422)) as Promise<
-            SuccessResponse<Partial<DataType>> | ErrorResponse
-          >
-        )
-      },
-
-      paginate: async (props: any) => {
+      select: async (props?: SelectProps<DataType, DBTables>) => {
         const select = props?.columns
-          ? selectColumns({ schema, columns: props.columns })
+          ? selectColumns({ schema, columns: props.columns as any, tables })
           : schema
+
+        const groupBy = groupByColumns<Schema, DBTables>({
+          schema,
+          tables,
+          columns: props?.groupBy as any,
+        })
 
         const page = props?.page || 1
         const limit = props?.limit ? props?.limit : Number(pageLimit)
@@ -191,7 +185,7 @@ export function dbController(db: PostgresDatabase) {
           })
           .from(schema)
           .orderBy(desc((schema as any).id))
-          .limit(1)
+          .limit(limit)
           .offset((page - 1) * limit)
 
         let cursor = undefined
@@ -216,12 +210,12 @@ export function dbController(db: PostgresDatabase) {
           .where(props?.where)
 
         const result = await db
-          .select(select)
+          .select(select as any)
           .from(schema)
           .where(where)
           .limit(limit)
           .orderBy(...orderBy)
-          .groupBy(({ id }) => id)
+          .groupBy(...groupBy)
           .then(serverResponse)
           .catch(errorResponse(422))
 
@@ -236,10 +230,14 @@ export function dbController(db: PostgresDatabase) {
         columns,
       }: {
         id: DataType['id']
-        columns?: SelectProps<DataType>['columns']
+        columns?: SelectProps<DataType, DBTables>['columns']
       }) => {
         const select = columns
-          ? selectColumns({ schema, columns: columns })
+          ? selectColumns({
+              schema,
+              columns: columns as any,
+              tables,
+            })
           : undefined
 
         const total = await db
@@ -250,7 +248,7 @@ export function dbController(db: PostgresDatabase) {
           .where(eq((schema as any).id, id) as SQL<Type>)
 
         const result = await db
-          .select(select)
+          .select(select as any)
           .from(schema)
           .where(eq((schema as any).id, id) as SQL<Type>)
           .then(serverResponse)
@@ -269,14 +267,13 @@ export function dbController(db: PostgresDatabase) {
         returning,
       }: {
         returning?: SelectedFieldsFlat
-        where: SelectProps<Type>['where']
+        where: SelectProps<Type, DBTables>['where']
       }) =>
         db
           .delete(schema)
           .where(where as any)
           .returning(returning as any)
           .then(serverResponse)
-          // .then(omitPassword)
           .catch(errorResponse(422)) as Promise<
           SuccessResponse<Partial<DataType>> | ErrorResponse
         >,
@@ -293,33 +290,36 @@ export function dbController(db: PostgresDatabase) {
           .where(eq((schema as any).id, id) as SQL<DataType>)
           .returning(returning as any)
           .then(serverResponse)
-          // .then(omitPassword)
           .catch(errorResponse(422)) as Promise<
           SuccessResponse<Partial<DataType>> | ErrorResponse
         >,
 
       insert: async <Insert>({
         data,
-        returning,
+        columns,
       }: {
         data: Insert
-        returning?: SelectedFieldsFlat
+        columns?: SelectProps<Insert, DBTables>['columns']
       }) =>
         insertValidate(data)
           .then(() => {
-            return (
-              db
-                .insert(schema)
-                .values({
-                  ...data,
-                  createdAt: new Date(),
-                  updatedAt: new Date(),
-                } as any)
-                .returning(returning as any)
-                .then(serverResponse)
-                // .then(omitPassword)
-                .catch(errorResponse(422))
-            )
+            const returning = columns
+              ? selectColumns({
+                  schema,
+                  columns: columns as any,
+                  tables,
+                }) || schema
+              : schema
+            return db
+              .insert(schema)
+              .values({
+                ...data,
+                createdAt: new Date(),
+                updatedAt: new Date(),
+              } as any)
+              .returning(returning as any)
+              .then(serverResponse)
+              .catch(errorResponse(422))
           })
           .catch(errorResponse(422)) as Promise<
           SuccessResponse<Partial<DataType>> | ErrorResponse
@@ -328,50 +328,66 @@ export function dbController(db: PostgresDatabase) {
       update: <Update>({
         data,
         where,
-        returning,
+        columns,
       }: {
         data: Update
-        returning?: SelectedFieldsFlat
-        where?: SelectProps<Type>['where']
-      }) =>
-        updateValidate(data)
-          .then(() =>
-            db
+        columns?: SelectProps<Update, DBTables>['columns']
+        where?: SelectProps<Update, DBTables>['where']
+      }) => {
+        return updateValidate(data)
+          .then(() => {
+            const returning = columns
+              ? selectColumns({
+                  schema,
+                  columns: columns as any,
+                  tables,
+                }) || schema
+              : schema
+
+            return db
               .update(schema)
               .set(data as any)
               .where(where as any)
               .returning(returning as any)
               .then(serverResponse)
-              // .then(omitPassword)
               .catch(errorResponse(422))
-          )
+          })
           .catch(errorResponse(422)) as Promise<
           SuccessResponse<Partial<DataType>> | ErrorResponse
-        >,
+        >
+      },
 
       updateById: <Update>({
         id,
         data,
-        returning,
+        columns,
       }: {
         id: DataType['id']
         data: Update
-        returning?: SelectedFieldsFlat
-      }) =>
-        updateValidate(data)
-          .then(() =>
-            db
+        columns?: SelectProps<Update, DBTables>['columns']
+      }) => {
+        return updateValidate(data)
+          .then(() => {
+            const returning = columns
+              ? selectColumns({
+                  schema,
+                  columns: columns as any,
+                  tables,
+                }) || schema
+              : schema
+
+            return db
               .update(schema)
               .set(data as any)
               .where(eq((schema as any).id, id) as SQL<DataType>)
-              .returning(returning as any)
+              .returning(returning)
               .then(serverResponse)
-              // .then(omitPassword)
               .catch(errorResponse(422))
-          )
+          })
           .catch(errorResponse(422)) as Promise<
           SuccessResponse<Partial<DataType>> | ErrorResponse
-        >,
+        >
+      },
     }
   }
 }

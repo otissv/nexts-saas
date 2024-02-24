@@ -24,7 +24,7 @@ export const MainWindow = ({ isFullView }: MainWindowProps) => {
   return (
     <div
       className={cn(
-        'main-window h-full  overflow-auto flex',
+        'main-window h-full overflow-auto flex',
         !isFullView && 'py-10 px-[200px]',
         canPan && 'select-none'
       )}
