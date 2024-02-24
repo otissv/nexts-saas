@@ -19,7 +19,7 @@
       "name": "Next Dev",
       "type": "node-terminal",
       "request": "launch",
-      "command": "cd projects/nextjs &&  npm run dev"
+      "command": "cd projects/nextjs && NODE_OPTIONS='--inspect' npm run dev"
     },
     {
       "name": "Edge localhost:3010",
@@ -32,16 +32,11 @@
       "name": "Typescript",
       "type": "node",
       "request": "launch",
-      "args": [
-        "${relativeFile}"
-      ],
-      "runtimeArgs": [
-        "-r",
-        "ts-node/register"
-      ],
+      "args": ["${relativeFile}"],
+      "runtimeArgs": ["-r", "ts-node/register"],
       "cwd": "${workspaceRoot}",
       "internalConsoleOptions": "openOnSessionStart"
-    },
+    }
   ]
 }
 // /home/ninja/Projects/projects-monorepo/projects/playground/tsconfig.json

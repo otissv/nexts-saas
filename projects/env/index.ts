@@ -14,9 +14,16 @@ export const env = () => {
       ? Number(process.env.PAGE_LIMIT)
       : Number(process.env.PAGE_MAX_ROWS),
 
-    databaseUser: mayString(process.env.POSTGRES_USER),
-    databasePassword: mayString(process.env.POSTGRES_PASSWORD),
-    database: mayString(process.env.POSTGRES_DATABASE),
+    database: {
+      database: mayString(process.env.POSTGRES_DATABASE),
+      host: mayString(process.env.POSTGRES_HOST),
+      idleTimeout: mayString(process.env.POSTGRES_IDLE_TIMEOUT),
+      maxConnections: mayString(process.env.POSTGRES_MAX_CONNECTIONS),
+      maxLifetime: mayString(process.env.POSTGRES_MAX_LIFETIME),
+      password: mayString(process.env.POSTGRES_PASSWORD),
+      port: mayString(process.env.POSTGRES_DATABASE_PORT),
+      user: mayString(process.env.POSTGRES_USER),
+    },
 
     isDev: process.env.NODE_ENV === 'development' || 'dev',
     isTest: process.env.NODE_ENV === 'test',
@@ -43,5 +50,5 @@ export const env = () => {
       smtpPassword: process.env.SMTP_PASSWORD,
       smtpEndpoint: process.env.SMTP_ENDPOINT,
     },
-  }
+  } as const
 }
