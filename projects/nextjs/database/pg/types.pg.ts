@@ -12,7 +12,7 @@ export type SelectProps<DataType, DBTables> = {
   limit?: number
   orderBy?: [keyof DataType, SortDirection][]
   page?: PageInfo<DataType>['page']
-  where?: SQL<DataType>
+  where?: SQL<DataType> | ((tables: DBTables) => SQL<DataType>)
   groupBy?: (keyof DataType | ((tables: DBTables) => PgColumn<any>))[]
 }
 
@@ -25,7 +25,7 @@ export type PageInfo<DataType> = {
 
 export type ActionProps<DataType> = {
   pageId?: number
-} & SelectProps<DataType, Record<string, PgTableWithColumns<any>>
+} & SelectProps<DataType, Record<string, PgTableWithColumns<any>>>
 
 export type ActionPropsUserById<Schema, Table> = Id & ActionProps<Schema>
 

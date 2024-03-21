@@ -7,7 +7,7 @@ import { oauthProvidersService } from '@/features/app-oauth-providers/oauth-prov
 import { tenantsService } from '@/features/app-tenants/tenants.service'
 import { tenantCompaniesService } from '@/features/tenant-companies/companies.tenant.service'
 import { tenantAddressService } from '@/features/tenant-addresses/addresses.tenant.service'
-import { tenantCmsCollectionsService } from '@/features/tenant-cms-collections/cms-collections.tenant.service'
+import { cmsCollectionsService } from '@/features/cms/cms.service'
 
 const db = connection()
 
@@ -35,6 +35,6 @@ export const [serverContext] = context({
   tenantCompaniesService: tenantCompaniesService(db),
   tenantsService: tenantsService(db),
   tenantAddressService: tenantAddressService(db),
-  tenantCmsCollectionsService: tenantCmsCollectionsService(db),
+  cmsCollectionsService: cmsCollectionsService(db),
   localeService: new Locale(),
 })

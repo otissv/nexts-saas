@@ -2,6 +2,7 @@ import * as React from 'react'
 
 import { cn } from '@/lib/utils'
 import { AppLink } from '@/components/app-link'
+import { ChevronRight, Home } from 'lucide-react'
 
 export interface Breadcrumb {
   label: React.ReactNode
@@ -28,7 +29,11 @@ export const BreadCrumbs = React.forwardRef<HTMLElement, BreadcrumbProps>(
         <React.Fragment key={crumb || 'current'}>
           {crumb ? (
             <li className="inline-flex items-center">
-              {separator ? separator : <span className="text-xs  mr-1">/</span>}
+              {separator ? (
+                separator
+              ) : (
+                <ChevronRight className="h-4 w-4 text-muted-foreground dark:text-muted-foreground " />
+              )}
               <AppLink
                 href={url}
                 className="inline-flex items-center text-sm font-medium ml-1 whitespace-nowrap"
@@ -38,9 +43,13 @@ export const BreadCrumbs = React.forwardRef<HTMLElement, BreadcrumbProps>(
             </li>
           ) : (
             <li className="inline-flex items-center">
-              {separator ? separator : <span className="text-xs mr-1">/</span>}
+              {separator ? (
+                separator
+              ) : (
+                <ChevronRight className="h-4 w-4 text-muted-foreground dark:text-muted-foreground " />
+              )}
 
-              <span className="inline-flex text-sm font-medium ml-1 text-gray-500 dark:text-gray-400 whitespace-nowrap">
+              <span className="inline-flex text-sm font-medium ml-1 text-muted-foreground dark:text-muted-foreground whitespace-nowrap">
                 {label}
               </span>
             </li>
@@ -57,6 +66,14 @@ export const BreadCrumbs = React.forwardRef<HTMLElement, BreadcrumbProps>(
         {...props}
       >
         <ol className="inline-flex items-center space-x-1 md:space-x-3">
+          <li className="inline-flex items-center">
+            <AppLink
+              href="/"
+              className="inline-flex items-center text-sm font-medium ml-1 whitespace-nowrap"
+            >
+              <Home className="h-4 w-4" />
+            </AppLink>
+          </li>
           {breadcrumbs}
         </ol>
       </nav>

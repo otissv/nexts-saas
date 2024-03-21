@@ -44,7 +44,9 @@ export const tenantCompanyValidator = z.object({
     )
     .optional(),
   createdAt: z.coerce.date(),
+  createdBy: z.number().int().positive(),
   updatedAt: z.coerce.date(),
+  updatedBy: z.number().int().positive(),
 })
 
 export const tenantCompanyInsertValidator = tenantCompanyValidator.omit({

@@ -100,10 +100,14 @@ export function selectColumns<Schema extends AnyPgTable<{}>, DBTables>({
   return columns.reduce((acc, column) => {
     switch (true) {
       case typeof column === 'string':
-        return {
-          ...acc,
-          [column]: (schema as any)[column],
-        }
+        const value = (schema as any)[column]
+
+        return value
+          ? {
+              ...acc,
+              [column]: value,
+            }
+          : acc
 
       case typeof column === 'function':
         return tables ? { ...acc, ...column(tables) } : acc
@@ -118,6 +122,5 @@ export function serverResponse<Data>(data: Data[]) {
   return {
     data: data || [],
     error: undefined,
-    totalPages: data.length ? 1 : 0,
   }
 }

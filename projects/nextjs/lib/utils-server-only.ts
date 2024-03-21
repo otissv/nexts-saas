@@ -1,6 +1,7 @@
 import 'server-only'
 
-import { getServerSession } from 'next-auth/next'
+import { getServerSession } from 'next-auth'
+
 import bcrypt from 'bcrypt'
 import { revalidatePath as revalidateCachePath } from 'next/cache'
 
@@ -101,5 +102,45 @@ export function hashPassword<Data>(data: Data) {
           password: hashedPassword,
         },
       }))
+  }
+}
+
+export function maybeDeleteMutation(tenantId: number) {
+  return (query: any) => {
+    return async (props: any) => {
+      return checkHasTenantId(tenantId)(query)(props)
+    }
+  }
+}
+
+export function maybeInsertMutation(tenantId: number) {
+  return (userId: number) => (query: any) => {
+    return async <Data, Props extends { data: Data }>(props: Props) => {
+      return checkHasTenantId(tenantId)(query)({
+        ...props,
+        data: {
+          ...props.data,
+          createdAt: new Date(),
+          createdBy: userId,
+          updatedAt: new Date(),
+          updatedBy: userId,
+        },
+      })
+    }
+  }
+}
+
+export function maybeUpdateMutation(tenantId: number) {
+  return (userId: number) => (query: any) => {
+    return async <Data>(props: { data: Data; [key: string]: any }) => {
+      return checkHasTenantId(tenantId)(query)({
+        ...props,
+        data: {
+          ...props.data,
+          updatedAt: new Date(),
+          updatedBy: userId,
+        },
+      })
+    }
   }
 }

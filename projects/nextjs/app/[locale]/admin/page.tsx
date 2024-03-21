@@ -8,7 +8,7 @@ import AdminRootLayout from '@/app/[locale]/admin/(admin-layout)/layout'
 export default async function Admin() {
   return (
     <AdminRootLayout>
-      <PageHeader heading="Admin" />
+      <PageHeader heading="Admin" breadcrumbs={[{ label: 'Admin' }]} />
     </AdminRootLayout>
   )
 }

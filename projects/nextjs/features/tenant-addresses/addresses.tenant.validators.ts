@@ -18,7 +18,9 @@ export const tenantAddressValidator = z.object({
   postalCode: z.string().min(3).max(10),
   country: z.string().min(3).max(256),
   createdAt: z.coerce.date(),
+  createdBy: z.number().int().positive(),
   updatedAt: z.coerce.date(),
+  updatedBy: z.number().int().positive(),
 })
 
 export const tenantAddressInsertValidator = tenantAddressValidator.omit({

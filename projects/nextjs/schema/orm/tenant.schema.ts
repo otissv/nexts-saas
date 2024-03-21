@@ -16,66 +16,6 @@ import {
   pgSchema,
 } from '../../database/pg/data-types.pg'
 
-export type ColumnTypes =
-  | 'text'
-  | 'multi-reference'
-  | 'reference'
-  | 'number'
-  | 'rich-text'
-  | 'rich-content'
-
-type ColumnType = {
-  displayName: string
-  fieldId: string
-  type: ColumnTypes
-  defaultValue?: string
-  enableDelete?: boolean
-  enableSort?: boolean
-  enableHide?: boolean
-  enableFilter?: boolean
-
-  index?: {
-    direction: 'asc' | 'desc'
-    nulls: 'first' | 'last'
-  }
-
-  // user settings
-  order?: number
-  filter?: string
-}
-
-export type MultiReferenceColumn = ColumnType & {
-  validation?: { required?: boolean }
-}
-
-export type NumberColumn = ColumnType & {
-  validation?: { required?: boolean; min?: number; max?: number }
-}
-
-export type ReferenceColumn = ColumnType & {
-  validation?: { required?: boolean }
-}
-
-export type RichContentColumn = ColumnType & {
-  validation?: { required?: boolean }
-}
-
-export type RichTextColumn = ColumnType & {
-  validation?: { required?: boolean }
-}
-
-export type TextColumn = ColumnType & {
-  validation?: { required?: boolean; minLength?: number; maxLength?: number }
-}
-
-export type Column =
-  | MultiReferenceColumn
-  | NumberColumn
-  | ReferenceColumn
-  | RichContentColumn
-  | RichContentColumn
-  | TextColumn
-
 // const PRICING_TYPE = ['one_time', 'recurring']
 // const PRICING_INTERVALS = ['month', 'year']
 // const SUBSCRIPTION_STATUS = [
@@ -107,10 +47,12 @@ const address = {
   postalCode: varchar('postal_code', { length: 256 }).notNull(),
   country: varchar('country', { length: 256 }).notNull(),
   type: varchar('type', { length: 25 }).notNull(),
+  createdBy: integer('created_by').notNull(),
   createdAt: timestampz('created_at').notNull(),
   updatedAt: timestampz('updated_at')
     .notNull()
     .default(sql`now()`),
+  updatedBy: integer('updated_by').notNull(),
 }
 
 const company = {
@@ -120,10 +62,68 @@ const company = {
   phone: varchar('phone', { length: 256 }),
   website: text('website'),
   socialLinks: links('social_links'),
+  createdBy: integer('created_by').notNull(),
   createdAt: timestampz('created_at').notNull(),
   updatedAt: timestampz('updated_at')
     .notNull()
     .default(sql`now()`),
+  updatedBy: integer('updated_by').notNull(),
+}
+
+const dataset_id = varchar('dataset_id', { length: 50 }).notNull()
+
+const cmsCollection = {
+  id: serial('id').primaryKey(),
+  userId: integer('user_id').notNull(),
+  datasetId: dataset_id.notNull(),
+  collectionName: varchar('collection_name', { length: 256 }).notNull(),
+  columnOrder: jsonb('column_order').$type<string[]>(),
+  type: varchar('type', { length: 25 }).notNull(),
+  createdBy: integer('created_by').notNull(),
+  createdAt: timestampz('created_at').notNull(),
+  updatedAt: timestampz('updated_at')
+    .notNull()
+    .default(sql`now()`),
+  updatedBy: integer('updated_by').notNull(),
+}
+
+const cmsCollectionColumn = {
+  id: serial('id').primaryKey(),
+  datasetId: dataset_id.notNull(),
+  columnName: varchar('column_name', { length: 100 }).notNull(),
+  fieldId: varchar('field_id', { length: 15 }).notNull(),
+  type: varchar('type', { length: 100 }).notNull(),
+  defaultValue: jsonb('default_value').$type<string[]>(),
+  help: text('help').default(''),
+  enableDelete: boolean('enable_delete').default(true),
+  enableSortBy: boolean('enable_sort_by').default(true),
+  enableHide: boolean('enable_hide').default(true),
+  enableFilter: boolean('enable_filter').default(true),
+  filter: jsonb('filter').$type<(string | boolean | number)[]>(),
+  sortBy: varchar('sort_by', { length: 4 }).default('asc'),
+  visibility: boolean('visibility').default(true),
+  index: jsonb('index').$type<{
+    direction: 'asc' | 'desc'
+    nulls: 'first' | 'last'
+  }>(),
+  createdBy: integer('created_by').notNull(),
+  createdAt: timestampz('created_at').notNull(),
+  updatedAt: timestampz('updated_at')
+    .notNull()
+    .default(sql`now()`),
+  updatedBy: integer('updated_by').notNull(),
+}
+
+const CmsCollectionDocument = {
+  id: serial('id').primaryKey(),
+  datasetId: dataset_id.notNull(),
+  data: jsonb('data'),
+  createdBy: integer('created_by').notNull(),
+  createdAt: timestampz('created_at').notNull(),
+  updatedAt: timestampz('updated_at')
+    .notNull()
+    .default(sql`now()`),
+  updatedBy: integer('updated_by').notNull(),
 }
 
 /**
@@ -153,19 +153,23 @@ const media = {
   caption: text('caption'),
   category: varchar('category', { length: 256 }),
   type: varchar('type', { length: 256 }).notNull(),
+  createdBy: integer('created_by').notNull(),
   createdAt: timestampz('created_at').notNull(),
   updatedAt: timestampz('updated_at')
     .notNull()
     .default(sql`now()`),
+  updatedBy: integer('updated_by').notNull(),
 }
 
 const menu = {
   id: serial('id').primaryKey(),
   items: menuItems('items'),
+  createdBy: integer('created_by').notNull(),
   createdAt: timestampz('created_at').notNull(),
   updatedAt: timestampz('updated_at')
     .notNull()
     .default(sql`now()`),
+  updatedBy: integer('updated_by').notNull(),
 }
 
 /**
@@ -173,9 +177,7 @@ const menu = {
  */
 const order = {
   id: serial('id').primaryKey(),
-  userId: integer('user_id')
-    .references(() => users.id)
-    .notNull(),
+  userId: integer('user_id').notNull(),
   customerId: integer('customer_id')
     .references(() => users.id)
     .notNull(),
@@ -184,12 +186,12 @@ const order = {
   currency: varchar('currency', { length: 256 }).notNull(),
   paymentIntentId: varchar('payment_intent_id', { length: 256 }),
   shippingMethod: varchar('shipping_method', { length: 256 }),
-  createdAt: timestampz('created_at')
-    .notNull()
-    .default(sql`now()`),
+  createdBy: integer('created_by').notNull(),
+  createdAt: timestampz('created_at').notNull(),
   updatedAt: timestampz('updated_at')
     .notNull()
     .default(sql`now()`),
+  updatedBy: integer('updated_by').notNull(),
 }
 const orderOptions = (table: any) => {
   return {
@@ -204,10 +206,12 @@ const page = {
   categories: json('categories').$type<string[]>(),
   relatedTo: json('related_to').$type<number[]>(),
   type: varchar('type', { length: 25 }).notNull(),
+  createdBy: integer('created_by').notNull(),
   createdAt: timestampz('created_at').notNull(),
   updatedAt: timestampz('updated_at')
     .notNull()
     .default(sql`now()`),
+  updatedBy: integer('updated_by').notNull(),
 }
 
 const pageSection = {
@@ -216,10 +220,12 @@ const pageSection = {
     .references(() => pages.id)
     .notNull(),
   content: jsonb('content'),
+  createdBy: integer('created_by').notNull(),
   createdAt: timestampz('created_at').notNull(),
   updatedAt: timestampz('updated_at')
     .notNull()
     .default(sql`now()`),
+  updatedBy: integer('updated_by').notNull(),
 }
 
 /**
@@ -235,10 +241,12 @@ const pageSectionsMedia = {
   mediaId: integer('media_id')
     .references(() => medias.id)
     .notNull(),
+  createdBy: integer('created_by').notNull(),
   createdAt: timestampz('created_at').notNull(),
   updatedAt: timestampz('updated_at')
     .notNull()
     .default(sql`now()`),
+  updatedBy: integer('updated_by').notNull(),
 }
 const pageSectionsMediaOptions = (table: any) => {
   return {
@@ -269,10 +277,12 @@ const pricingPlan = {
   intervalCount: integer('interval_count').notNull(),
   /* Default number of trial days when subscribing a customer to this price using [`trial_from_plan=true`](https:/*stripe.com/docs/api#create_subscription-trial_from_plan). */
   trialPeriodDays: integer('trial_period_days'),
+  createdBy: integer('created_by').notNull(),
   createdAt: timestampz('created_at').notNull(),
   updatedAt: timestampz('updated_at')
     .notNull()
     .default(sql`now()`),
+  updatedBy: integer('updated_by').notNull(),
 }
 const pricingPlanOptions = (table: any) => {
   return {
@@ -291,18 +301,18 @@ const product = {
   price: varchar('price', { length: 256 }).notNull(),
   imageUrl: text('image_url'),
   slug: varchar('slug', { length: 256 }),
+  createdBy: integer('created_by').notNull(),
   createdAt: timestampz('created_at').notNull(),
   updatedAt: timestampz('updated_at')
     .notNull()
     .default(sql`now()`),
+  updatedBy: integer('updated_by').notNull(),
 }
 
 const subscription = {
   /* Subscription ID from Stripe, e.g. sub_1234. */
   id: serial('id').primaryKey(),
-  userId: integer('user_id')
-    .references(() => users.id)
-    .notNull(),
+  userId: integer('user_id').notNull(),
   /* ID of the price that created this subscription. */
   priceId: integer('price_id')
     .references(() => pricingPlans.id)
@@ -343,10 +353,12 @@ const subscription = {
   trialEnd: timestampz('trial_end')
     .notNull()
     .default(sql`now()`),
+  createdBy: integer('created_by').notNull(),
   createdAt: timestampz('created_at').notNull(),
   updatedAt: timestampz('updated_at')
     .notNull()
     .default(sql`now()`),
+  updatedBy: integer('updated_by').notNull(),
 }
 const subscriptionOptions = (table: any) => {
   return {
@@ -364,10 +376,12 @@ const seo = {
   description: text('description').notNull(),
   author: varchar('author', { length: 256 }),
   keywords: json('keywords').$type<string[]>(),
+  createdBy: integer('created_by').notNull(),
   createdAt: timestampz('created_at').notNull(),
   updatedAt: timestampz('updated_at')
     .notNull()
     .default(sql`now()`),
+  updatedBy: integer('updated_by').notNull(),
 }
 const seoOptions = (table: any) => {
   return {
@@ -385,42 +399,12 @@ const user = {
   imageUrl: text('image_url'),
   password: varchar('password', { length: 256 }),
   emailVerified: boolean('email_verified').notNull().default(false),
+  createdBy: integer('created_by').notNull(),
   createdAt: timestampz('created_at').notNull(),
   updatedAt: timestampz('updated_at')
     .notNull()
     .default(sql`now()`),
-}
-
-const cmsCollection = {
-  id: serial('id').primaryKey(),
-  userId: integer('user_id').notNull(),
-  displayName: varchar('displayName', { length: 256 }).notNull(),
-  datasetId: varchar('datasetId', { length: 50, unique: true }).notNull(),
-  type: varchar('type', { length: 25 }).notNull(),
-  columns: jsonb('columns').$type<Column[]>(),
-  columnFilters: json('column_filters').$type<{ id: string; value: any }[]>(),
-  columnOrder: json('column_order').$type<string[]>(),
-  columnSort: json('column_sort').$type<
-    { id: string; asc: boolean } | { id: string; asc: boolean }[]
-  >(),
-  columnVisibility:
-    json('column_visibility').$type<{ [key: string]: boolean }[]>(),
-  createdAt: timestampz('created_at').notNull(),
-  updatedAt: timestampz('updated_at')
-    .notNull()
-    .default(sql`now()`),
-}
-
-const CmsCollectionDocument = {
-  id: serial('id').primaryKey(),
-  collectionId: integer('collection_id')
-    .references(() => cmsCollections.id)
-    .notNull(),
-  data: jsonb('data'),
-  createdAt: timestampz('created_at').notNull(),
-  updatedAt: timestampz('updated_at')
-    .notNull()
-    .default(sql`now()`),
+  updatedBy: integer('updated_by').notNull(),
 }
 
 export const addresses = schema.table('addresses', address)
@@ -431,6 +415,12 @@ export type TenantCompanySchema = typeof companies
 
 export const cmsCollections = schema.table('cms_collections', cmsCollection)
 export type TenantCmsCollectionsSchema = typeof cmsCollections
+
+export const cmsCollectionColumns = schema.table(
+  'cms_collection_columns',
+  cmsCollectionColumn
+)
+export type TenantCmsCollectionsColumnsSchema = typeof cmsCollectionColumns
 
 export const cmsCollectionDocuments = schema.table(
   'cms_documents',
@@ -510,7 +500,6 @@ export function tenantSchema(schemaId: number) {
     pricingPlanOptions
   )
   const products = tenantSchema.table('products', product)
-
   const seos = tenantSchema.table('seos', seo, seoOptions)
   const subscriptions = tenantSchema.table(
     'subscriptions',
@@ -518,7 +507,12 @@ export function tenantSchema(schemaId: number) {
     subscriptionOptions
   )
   const users = tenantSchema.table('users', user)
+
   const cmsCollections = tenantSchema.table('cms_collections', cmsCollection)
+  const cmsCollectionColumns = tenantSchema.table(
+    'cms_collection_columns',
+    cmsCollectionColumn
+  )
   const cmsCollectionDocuments = tenantSchema.table(
     'cms_documents',
     CmsCollectionDocument
@@ -526,20 +520,21 @@ export function tenantSchema(schemaId: number) {
 
   return {
     addresses,
+    cmsCollectionColumns,
+    cmsCollectionDocuments,
+    cmsCollections,
     companies,
     customers,
     medias,
     menus,
     orders,
-    pages,
     pageSections,
     pageSectionsMedias,
+    pages,
     pricingPlans,
     products,
     seos,
     subscriptions,
     users,
-    cmsCollections,
-    cmsCollectionDocuments,
   }
 }

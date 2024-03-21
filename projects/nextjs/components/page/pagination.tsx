@@ -23,6 +23,7 @@ import {
 import { usePushQueryString } from '@/hooks/querystring-hook'
 import { PageInfo } from '@/database/pg/types.pg'
 import { env } from 'env'
+import { cn } from '@/lib/utils'
 
 const { pageLimit } = env()
 
@@ -38,7 +39,7 @@ export interface PaginationInterface<DataType>
 
 export function usePagination({
   page = 1,
-  total,
+  total = 0,
   limit = pageLimit,
   siblingCount = 1,
 }) {
@@ -49,7 +50,8 @@ export function usePagination({
   const pageCount = Math.floor(total / limit)
 
   const paginationRange = React.useMemo(() => {
-    const delta = siblingCount + 2
+    const delta =
+      siblingCount + (currentPage === 1 || currentPage === total ? 3 : 1)
 
     const range = []
     for (
@@ -68,9 +70,6 @@ export function usePagination({
     }
 
     range.unshift(1)
-    // if (pageCount !== 1) {
-    //   range.push(pageCount)
-    // }
 
     return range
   }, [pageCount, page, siblingCount])
@@ -82,6 +81,7 @@ export function usePagination({
     currentPage,
     limit,
     pageCount,
+    total,
   }
 }
 
@@ -90,7 +90,6 @@ export const Pagination = <Schema extends any>({
   orderBy,
   page = 1,
   siblingCount = 1,
-  total,
   where,
   isPending,
   pushQueryString,
@@ -98,32 +97,14 @@ export const Pagination = <Schema extends any>({
   currentPage,
   pageCount,
 }: PaginationInterface<Schema>) => {
-  // const { isPending, pushQueryString, paginationRange, currentPage } =
-  //   usePagination<Schema>({
-  //     page,
-  //     total,
-  //     limit,
-  //     siblingCount,
-  //   })
-
   return (
     <UiPagination>
       <UiPaginationContent>
         <UiPaginationItem>
-          <UiPaginationFirstPage
-            href="#"
-            size="sm"
-            disabled={Number(currentPage) === 1 || isPending}
-            onClick={() =>
-              pushQueryString({ page: '1', limit, where, orderBy })
-            }
-          />
-        </UiPaginationItem>
-
-        <UiPaginationItem>
           <UiPaginationPrevious
             href="#"
             size="sm"
+            className="w-auto p-4"
             disabled={Number(currentPage) === 1 || isPending}
             onClick={() =>
               pushQueryString({
@@ -133,21 +114,25 @@ export const Pagination = <Schema extends any>({
                 orderBy,
               })
             }
-          />
+          >
+            Previous
+          </UiPaginationPrevious>
         </UiPaginationItem>
 
-        {paginationRange.map((pageNumber, i) => {
-          return pageNumber === '...' ? (
-            <UiPaginationItem>
-              <UiPaginationEllipsis key={i}>...</UiPaginationEllipsis>
+        {paginationRange.map((pageNumber: number, i: number) => {
+          return `${pageNumber}` === '...' ? (
+            <UiPaginationItem key={i}>
+              <UiPaginationEllipsis>...</UiPaginationEllipsis>
             </UiPaginationItem>
           ) : (
-            <UiPaginationItem key={i}>
+            <UiPaginationItem
+              key={i}
+              className={cn(Number(pageNumber) === pageCount && 'hidden')}
+            >
               <UiPaginationLink
                 href="#"
                 size="sm"
                 aria-label={`Page ${pageNumber}`}
-                key={i}
                 isActive={Number(currentPage) === pageNumber}
                 onClick={() =>
                   pushQueryString({
@@ -166,11 +151,34 @@ export const Pagination = <Schema extends any>({
         })}
 
         <UiPaginationItem>
+          <UiPaginationLink
+            href="#"
+            size="sm"
+            aria-label={`Page ${pageCount}`}
+            isActive={Number(currentPage) === pageCount}
+            onClick={() =>
+              pushQueryString({
+                page: pageCount as any,
+                limit,
+                where,
+                orderBy,
+              })
+            }
+            disabled={isPending}
+          >
+            {pageCount}
+          </UiPaginationLink>
+        </UiPaginationItem>
+
+        <UiPaginationItem>
           <UiPaginationNext
             href="#"
             size="sm"
+            className="w-auto p-4"
             disabled={
-              total === 1 || Number(currentPage) === (limit ?? 10) || isPending
+              pageCount === 1 ||
+              Number(currentPage) === (limit ?? 10) ||
+              isPending
             }
             onClick={() =>
               pushQueryString({
@@ -180,151 +188,13 @@ export const Pagination = <Schema extends any>({
                 orderBy,
               })
             }
-          />
-        </UiPaginationItem>
-
-        <UiPaginationItem>
-          <UiPaginationLastPage
-            href="#"
-            size="sm"
-            disabled={
-              total === 1 || Number(currentPage) === (limit ?? 10) || isPending
-            }
-            onClick={() => {
-              pushQueryString({
-                page: `${pageCount}`,
-                limit,
-                where,
-                orderBy,
-              })
-            }}
-          />
+          >
+            Next
+          </UiPaginationNext>
         </UiPaginationItem>
       </UiPaginationContent>
-      <UiPaginationItem className="text-muted-foreground ml-4">
-        Page {currentPage} of {total}
-      </UiPaginationItem>
     </UiPagination>
   )
-  //   return (
-  //     <div className="grid gap-2" {...props}>
-  //       <div
-  //         className={cn(
-  //           'mt-6 flex flex-wrap items-center justify-center gap-2',
-  //           className
-  //         )}
-  //       >
-  //         <Button
-  //           variant="outline"
-  //           className={cn(
-  //             'h-4 w-10 px-0',
-  //             Number(currentPage) !== 1 && 'text-accent-foreground'
-  //           )}
-  //           disabled={Number(currentPage) === 1 || isPending}
-  //           onClick={() => pushQueryString({ page: '1', limit, where, orderBy })}
-  //         >
-  //           <ChevronFirst className="h-5 w-5" aria-hidden="true" />
-  //           <span className="sr-only">First page</span>
-  //         </Button>
-
-  //         <Button
-  //           variant="outline"
-  //           className={cn(
-  //             'h-10 w-10 px-0 text-sm',
-  //             Number(currentPage) !== 1 && 'text-accent-foreground'
-  //           )}
-  //           disabled={Number(currentPage) === 1 || isPending}
-  //           onClick={() =>
-  //             pushQueryString({
-  //               page: `${Number(currentPage) - 1}`,
-  //               limit,
-  //               where,
-  //               orderBy,
-  //             })
-  //           }
-  //         >
-  //           <ChevronLeft className="h-5 w-5" aria-hidden="true" />
-  //           <span className="sr-only">Previous page</span>
-  //         </Button>
-
-  //         {paginationRange.map((pageNumber, i) =>
-  //           pageNumber === '...' ? (
-  //             <Button
-  //               aria-label="Page separator"
-  //               key={i}
-  //               variant="outline"
-  //               className="h-10 w-10 px-0 text-sm"
-  //               disabled
-  //             >
-  //               ...
-  //             </Button>
-  //           ) : (
-  //             <Button
-  //               aria-label={`Page ${pageNumber}`}
-  //               key={i}
-  //               variant={
-  //                 Number(currentPage) === pageNumber ? 'default' : 'outline'
-  //               }
-  //               className="h-10 w-10 px-0 text-sm background-accent-foreground bg-gray-900 text-accent-foreground font-medium border hover:bg-accent hover:text-accent-foreground"
-  //               onClick={() =>
-  //                 pushQueryString({
-  //                   page: pageNumber as any,
-  //                   limit,
-  //                   where,
-  //                   orderBy,
-  //                 })
-  //               }
-  //               disabled={isPending}
-  //             >
-  //               {pageNumber}
-  //             </Button>
-  //           )
-  //         )}
-
-  //         <Button
-  //           variant="outline"
-  //           className={cn(
-  //             'h-10 w-10 px-0 text-sm ',
-  //             Number(currentPage) !== (limit ?? 10) && 'text-accent-foreground'
-  //           )}
-  //           disabled={Number(currentPage) === (limit ?? 10) || isPending}
-  //           onClick={() =>
-  //             pushQueryString({
-  //               page: `${Number(currentPage) + 1}`,
-  //               limit,
-  //               where,
-  //               orderBy,
-  //             })
-  //           }
-  //         >
-  //           <ChevronRight className="h-5 w-5" aria-hidden="true" />
-  //           <span className="sr-only">Next page</span>
-  //         </Button>
-
-  //         <Button
-  //           variant="outline"
-  //           className={
-  //             cn(
-  //               'h-10 w-10 px-0 text-sm',
-  //               Number(currentPage) !== (limit ?? 10)
-  //             ) && 'text-accent-foreground'
-  //           }
-  //           disabled={Number(currentPage) === (limit ?? 10) || isPending}
-  //           onClick={() => {
-  //             pushQueryString({
-  //               page: `${pageCount}`,
-  //               limit,
-  //               where,
-  //               orderBy,
-  //             })
-  //           }}
-  //         >
-  //           <ChevronLast className="h-5 w-5 text-sm" aria-hidden="true" />
-  //           <span className="sr-only">Last page</span>
-  //         </Button>
-  //       </div>
-  //     </div>
-  //   )
 }
 
 Pagination.displayName = 'Pagination'

@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
 const plugin = require('tailwindcss/plugin')
+const { fontFamily } = require('tailwindcss/defaultTheme')
 
 module.exports = {
   content: [
@@ -74,6 +75,10 @@ module.exports = {
         app: 'calc(100vh - 56px)',
       },
       'transform-style': { inherit: 'inherit' },
+
+      fontFamily: {
+        sans: ['var(--font-sans)', ...fontFamily.sans],
+      },
 
       colors: {
         border: 'hsl(var(--border))',

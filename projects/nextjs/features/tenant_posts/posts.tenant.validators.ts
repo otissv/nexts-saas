@@ -5,4 +5,8 @@ export const postValidator = z.object({
 
   // TODO: Type this properly from editorjs block types?
   content: z.any().optional(),
+  createdAt: z.coerce.date(),
+  createdBy: z.number().int().positive(),
+  updatedAt: z.coerce.date(),
+  updatedBy: z.number().int().positive(),
 })

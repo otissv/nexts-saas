@@ -10,7 +10,6 @@ import {
   updateChildrenClassNames,
   updateProps,
   updateSelectedChildren,
-  logState,
 } from '@/features/page/store/helpers.store'
 import { object } from 'zod'
 

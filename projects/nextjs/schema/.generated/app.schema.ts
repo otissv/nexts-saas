@@ -1,4 +1,3 @@
-import { pgSchema } from 'drizzle-orm/pg-core'
 import { sql } from 'drizzle-orm'
 
 import {
@@ -10,6 +9,7 @@ import {
   boolean,
   index,
   integer,
+  pgSchema,
 } from '../../database/pg/data-types.pg'
 
 // const PRICING_TYPE = ['one_time', 'recurring']

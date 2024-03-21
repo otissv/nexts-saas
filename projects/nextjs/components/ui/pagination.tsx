@@ -97,6 +97,7 @@ const PaginationLastPage = ({
 
 const PaginationPrevious = ({
   className,
+  children,
   ...props
 }: React.ComponentProps<typeof PaginationLink>) => (
   <PaginationLink
@@ -107,12 +108,14 @@ const PaginationPrevious = ({
   >
     <ChevronLeft className="h-4 w-4" />
     <span className="sr-only">Previous page</span>
+    {children}
   </PaginationLink>
 )
 PaginationPrevious.displayName = 'PaginationPrevious'
 
 const PaginationNext = ({
   className,
+  children,
   ...props
 }: React.ComponentProps<typeof PaginationLink>) => (
   <PaginationLink
@@ -121,6 +124,7 @@ const PaginationNext = ({
     className={className}
     {...props}
   >
+    {children}
     <ChevronRight className="h-4 w-4" />
     <span className="sr-only">Next page</span>
   </PaginationLink>
@@ -131,7 +135,7 @@ const PaginationEllipsis = ({
   className,
   ...props
 }: React.ComponentProps<'span'>) => (
-  <span aria-hidden className={className} {...props}>
+  <span aria-hidden className={cn('self-end p-2', className)} {...props}>
     <MoreHorizontal className="h-4 w-4" />
     <span className="sr-only">More pages</span>
   </span>

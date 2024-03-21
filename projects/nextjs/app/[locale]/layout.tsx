@@ -14,7 +14,7 @@ import { serverContext } from '@/features/context-server-only'
 import { authOptions } from '@/features/app-auth/auth.options'
 import { AuthSession } from '@/features/app-auth/auth.types'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 
 export const metadata = {
   title: 'Create Next App',
@@ -30,11 +30,6 @@ export default async function RootLayout({
   children,
   params,
 }: RootLayoutProps) {
-  /* TODO: if local not exist redirect to default.
-   * Can't use useLocal from next-inlt.
-   * May read files in translation folder
-   */
-
   const session: AuthSession = await getServerSession(authOptions)
   const isLoggedIn = Boolean(session?.user?.tenantId)
 
@@ -46,6 +41,7 @@ export default async function RootLayout({
         <body
           className={cn(
             inter.className,
+            inter.variable,
             'w-full min-h-screen bg-background font-sans antialiased gd-cols-[3] translate3d-[2]'
           )}
         >

@@ -1,41 +1,141 @@
 import { faker } from '@faker-js/faker'
-import bcrypt from 'bcrypt'
 
 faker.seed(1234)
 
-const randomItem = (list: any[]) =>
+const randomItem = (list: readonly any[]) =>
   list[faker.number.int({ min: 0, max: list.length - 1 })]
 const types = ['single', 'single', 'multiple']
 
 const collectionCount = 3
 
-const CmsCollectionDocument = [...Array(collectionCount)]
+const cmsCollectionDocument = [...Array(collectionCount)]
   .map((_, index) => {
     return faker.helpers.multiple(
       () => {
         return {
-          collectionId: index + 1,
+          datasetId: `${index + 1}`,
           data:
+            // fieldId
             types[index] === 'single'
               ? [
                   {
+                    address: {
+                      streetAddress: faker.location.streetAddress(),
+                      secondaryAddress: faker.location.secondaryAddress(),
+                      city: faker.location.city(),
+                      state: faker.location.state(),
+                      country: faker.location.country(),
+                      zipCode: faker.location.zipCode(),
+                    },
+                    // audio: [faker.internet.url()],
+                    // audioFiles: [faker.internet.url(), faker.internet.url()],
+                    boolean: faker.datatype.boolean(),
+                    date: [faker.date.past()],
+                    // dateRange: [faker.date.past(), faker.date.recent()],
+                    // document: [faker.internet.url()],
+                    // documents: [faker.internet.url(), faker.internet.url()],
+                    // gallery: [faker.internet.url(), faker.internet.url()],
+                    // image: [faker.internet.url()],
+                    // multiReference: [1, 2, 3],
+                    number: faker.number.int(),
+                    privateText: faker.lorem.word(),
+                    privateNumber: faker.number.int(),
+                    // reference: [1],
+                    richContent: [
+                      {
+                        type: 'p',
+                        children: [
+                          {
+                            text: faker.lorem.paragraphs(3),
+                          },
+                        ],
+                      },
+                    ],
+                    richtext: [
+                      {
+                        type: 'p',
+                        children: [
+                          {
+                            text: faker.lorem.sentence(),
+                          },
+                        ],
+                      },
+                    ],
+                    // tags: [
+                    //   { id: 1, value: 'tags1' },
+                    //   { id: 2, value: 'tags2' },
+                    //   { id: 3, value: 'tags3' },
+                    // ],
+                    time: ['12:00'],
                     title: faker.lorem.word(),
-                    service: faker.lorem.word(),
-                    description: faker.lorem.sentence(),
-                    content: faker.lorem.paragraphs(3),
+                    text: faker.lorem.word(),
+                    url: [faker.internet.url()],
+                    video: [faker.internet.url()],
+                    videos: [faker.internet.url()],
                   },
                 ]
               : faker.helpers.multiple(
                   () => ({
+                    address: {
+                      streetAddress: faker.location.streetAddress(),
+                      secondaryAddress: faker.location.secondaryAddress(),
+                      city: faker.location.city(),
+                      state: faker.location.state(),
+                      country: faker.location.country(),
+                      zipCode: faker.location.zipCode(),
+                    },
+                    // audio: [faker.internet.url()],
+                    // audioFiles: [faker.internet.url(), faker.internet.url()],
+                    boolean: faker.datatype.boolean(),
+                    date: [faker.date.past()],
+                    // dateRange: [faker.date.past(), faker.date.recent()],
+                    // document: [faker.internet.url()],
+                    // documents: [faker.internet.url(), faker.internet.url()],
+                    // gallery: [faker.internet.url(), faker.internet.url()],
+                    // image: [faker.internet.url()],
+                    // multiReference: [1, 2, 3],
+                    number: faker.number.int(),
+                    privateText: faker.lorem.word(),
+                    privateNumber: faker.number.int(),
+                    // reference: [1],
+                    richContent: [
+                      {
+                        type: 'p',
+                        children: [
+                          {
+                            text: faker.lorem.paragraphs(3),
+                          },
+                        ],
+                      },
+                    ],
+                    richtext: [
+                      {
+                        type: 'p',
+                        children: [
+                          {
+                            text: faker.lorem.sentence(),
+                          },
+                        ],
+                      },
+                    ],
+                    // tags: [
+                    //   { id: 1, value: 'tags1' },
+                    //   { id: 2, value: 'tags2' },
+                    //   { id: 3, value: 'tags3' },
+                    // ],
+                    time: ['12:00'],
                     title: faker.lorem.word(),
-                    service: faker.lorem.word(),
-                    description: faker.lorem.sentence(),
-                    content: faker.lorem.paragraphs(3),
+                    text: faker.lorem.word(),
+                    url: [faker.internet.url()],
+                    video: [faker.internet.url()],
+                    videos: [faker.internet.url()],
                   }),
                   { count: 100 }
                 ),
           createdAt: faker.date.past(),
           updatedAt: faker.date.recent(),
+          createdBy: 1,
+          updatedBy: 1,
         }
       },
       { count: 1 }
@@ -56,6 +156,8 @@ export const tenantData = {
       type: 'billing',
       createdAt: faker.date.past(),
       updatedAt: faker.date.recent(),
+      createdBy: 1,
+      updatedBy: 1,
     },
   ],
 
@@ -74,40 +176,50 @@ export const tenantData = {
       ],
       createdAt: faker.date.past(),
       updatedAt: faker.date.recent(),
+      createdBy: 1,
+      updatedBy: 1,
     },
   ],
 
   cmsCollection: [...Array(collectionCount)].map((_, index) => {
-    const columns = Object.keys(CmsCollectionDocument[0].data[0]).map(
-      (key) => ({
-        displayName: key.toUpperCase(),
-        fieldId: key,
-        type: randomItem([
-          'text',
-          'multi-reference',
-          'reference',
-          'number',
-          'rich-text',
-          'rich-content',
-        ]),
-        validation: {
-          required: randomItem([true, false]),
-        },
-      })
-    )
-
-    return {
-      userId: 1,
-      displayName: faker.lorem.word(),
-      datasetId: faker.lorem.word(),
-      type: types[index],
-      columns,
-      createdAt: faker.date.past(),
-      updatedAt: faker.date.recent(),
-    }
+    return faker.helpers.multiple(
+      () => ({
+        userId: 1,
+        collectionName: faker.lorem.word(),
+        datasetId: `${index + 1}`,
+        type: types[index],
+        createdAt: faker.date.past(),
+        updatedAt: faker.date.recent(),
+        createdBy: 1,
+        updatedBy: 1,
+      }),
+      { count: 1 }
+    )[0]
   }),
 
-  CmsCollectionDocument,
+  cmsCollectionColumn: [...Array(collectionCount)].reduce((acc, _, index) => {
+    return [
+      ...acc,
+      ...Object.keys(cmsCollectionDocument[0].data[0]).map((key) => {
+        return {
+          userId: 1,
+          datasetId: `${index + 1}`,
+          columnName: key.toUpperCase(),
+          fieldId: key,
+          type: key,
+          validation: {
+            required: randomItem([true, false]),
+          },
+          createdAt: faker.date.past(),
+          updatedAt: faker.date.recent(),
+          createdBy: 1,
+          updatedBy: 1,
+        }
+      }),
+    ]
+  }, []),
+
+  cmsCollectionDocument,
 
   // medias: faker.helpers.multiple(
   //   () => ({

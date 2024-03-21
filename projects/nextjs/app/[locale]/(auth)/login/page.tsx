@@ -21,7 +21,9 @@ export const metadata: Metadata = {
 export default async function LoginPage() {
   const session: AuthSession = await getServerSession(authOptions)
 
-  if (session?.user) redirect('/')
+  console.log('===============================:', session?.user?.tenantId)
+
+  if (session?.user?.tenantId) redirect('/')
 
   const provides = await getProviders()
   const T = await serverUseTranslate('ui.pages.authentication')
