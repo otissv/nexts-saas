@@ -1,14 +1,13 @@
 'use client'
 
 import React from 'react'
-import { DndProvider } from 'react-dnd'
-import { HTML5Backend } from 'react-dnd-html5-backend'
 
 import { GetFieldComponent } from '@/features/cms/components/cms.input-fields'
 
 export function DataTableCell({ getValue, row, column, table }) {
   const initialValue = getValue()
   const [value, setValue] = React.useState(initialValue)
+  const [isMounted, setMounted] = React.useState(false)
 
   const { type, fieldId } = column.columnDef.values
 
@@ -17,21 +16,22 @@ export function DataTableCell({ getValue, row, column, table }) {
   }, [initialValue])
 
   const onUpdate = (value: unknown) => {
-    console.log(value)
-    table.options.meta?.updateData(row.index, column.id, value)
+    isMounted && table.options.meta?.updateData(row.index, column.id, value)
   }
   const isSelected = row.getIsSelected()
 
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
+
   return (
-    <DndProvider backend={HTML5Backend}>
-      <GetFieldComponent
-        type={type}
-        value={value}
-        isSelected={isSelected}
-        onUpdate={onUpdate}
-        fieldId={fieldId}
-        isInline={true}
-      />
-    </DndProvider>
+    <GetFieldComponent
+      type={type}
+      value={value}
+      isSelected={isSelected}
+      onUpdate={onUpdate}
+      fieldId={fieldId}
+      isInline={true}
+    />
   )
 }

@@ -14,9 +14,15 @@ export function PrivateInput({
   className,
   type = 'text',
   hasPreview = true,
+  onBlur,
   ...props
 }: PrivateHTMLProps) {
   const [isVisible, setIsVisible] = React.useState(false)
+
+  const handleOnBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+    setIsVisible(false)
+    onBlur && onBlur(e)
+  }
 
   return (
     <div className="relative">
@@ -29,6 +35,7 @@ export function PrivateInput({
           className
         )}
         value={value}
+        onBlur={handleOnBlur}
       />
       {hasPreview ? (
         <Button

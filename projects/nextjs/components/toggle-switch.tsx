@@ -57,10 +57,6 @@ const ToggleSwitch = React.forwardRef<
     on = 'Approve'
     off = 'Reject'
   }
-  if (onOff === 'okCancel') {
-    on = 'OK'
-    off = 'Cancel'
-  }
   if (onOff === 'optInOptOut') {
     on = 'Opt In'
     off = 'Opt Out'
@@ -77,19 +73,19 @@ const ToggleSwitch = React.forwardRef<
   return (
     <SwitchPrimitives.Root
       className={cn(
-        'relative peer inline-flex h-10  cursor-pointer items-center rounded-md border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-accent data-[state=unchecked]:bg-input',
+        'relative peer inline-flex h-10 cursor-pointer items-center rounded-md border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-accent data-[state=unchecked]:bg-input',
         className
       )}
       {...props}
       ref={ref}
     >
-      <div className="relative grid gap-2 grid-cols-2 p-2 justify-center items-center">
+      <div className="relative grid gap-2 grid-cols-2 p-2 justify-center items-center w-full">
         <div className=" flex justify-center px-1">{on}</div>
         <div className="flex justify-center px-1">{off}</div>
       </div>
       <SwitchPrimitives.Thumb
         className={cn(
-          'absolute pointer-events-none block h-9 w-[50%] bg-background rounded-md shadow-lg ring-0 transition-transform data-[state=checked]:translate-x-[100%] data-[state=unchecked]:translate-x-0'
+          'absolute pointer-events-none block h-full w-[50%] bg-background rounded-md shadow-lg ring-0 transition-transform data-[state=checked]:translate-x-[100%] data-[state=unchecked]:translate-x-0'
         )}
       />
     </SwitchPrimitives.Root>

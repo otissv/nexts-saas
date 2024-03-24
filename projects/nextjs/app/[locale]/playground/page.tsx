@@ -2,7 +2,13 @@
 
 import React from 'react'
 
-import { TagsInput, TagInput, TagItem, TagInputItem } from '@/components/tags'
+import {
+  TagsInput,
+  TagInput,
+  TagItem,
+  TagInputItem,
+  TagInputSelect,
+} from '@/components/tags'
 
 const fruits = [
   { id: 'apple', value: 'Apples' },
@@ -61,29 +67,6 @@ export default function Playground() {
   const [state, setState] = React.useState<TagInputItem[]>([])
   const [selectedState, setSelectedState] = React.useState<TagInputItem[]>([])
 
-  const handleClose = (id: string) => {
-    setState(state.filter((s) => s.id !== id))
-  }
-
-  const handleOnUpdate = (tagItems: TagInputItem[]) => {
-    // const item = fruits.find((f) => f.id === tagItem.id)
-
-    // //TODO: fix duplicate
-    // if (!item || state.find((s) => s.id === tagItem.id)) return
-
-    // console.log([...state, item])
-
-    setState(tagItems)
-  }
-
-  const handleRemoveItem = (id: string) => {
-    setSelectedState(selectedState.filter((s) => s.id !== id))
-  }
-
-  const handleOnSelectedUpdate = (items: TagInputItem[]) => {
-    setSelectedState(items)
-  }
-
   return (
     <div className="grid p-4 justify-center grid-rows-2 gap-8">
       <TagsInput>
@@ -93,11 +76,17 @@ export default function Playground() {
               key={id}
               id={id}
               value={value}
-              onRemoveItem={handleClose}
+              onRemoveItem={(id: string) =>
+                setState(state.filter((item) => item.id !== id))
+              }
             />
           )
         })}
-        <TagInput placeholder="Fruits..." onUpdate={handleOnUpdate} />
+        <TagInput
+          placeholder="Fruits..."
+          selectedItems={state}
+          onUpdate={setState}
+        />
       </TagsInput>
 
       <TagsInput>
@@ -107,15 +96,17 @@ export default function Playground() {
               key={id}
               id={id}
               value={value}
-              onRemoveItem={handleRemoveItem}
+              onRemoveItem={(id: string) =>
+                setSelectedState(selectedState.filter((s) => s.id !== id))
+              }
             />
           )
         })}
-        <TagInput
+        <TagInputSelect
           selectedItems={selectedState}
           items={fruits}
-          placeholder="Fruits..."
-          onUpdate={handleOnSelectedUpdate}
+          onUpdate={setSelectedState}
+          placeholder="Select"
         />
       </TagsInput>
     </div>

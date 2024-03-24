@@ -64,7 +64,7 @@ import {
   TableRow,
 } from '@/components/ui/table'
 import { Pagination, usePagination } from '@/components/page/pagination'
-import { GetFieldIcon, fieldTypeConfig } from './cms.input-fields'
+import { fieldTypeConfig } from './cms.input-fields'
 
 export type CmsState = {
   collectionName: CmsCollection['collectionName']
@@ -343,17 +343,49 @@ export function CollectionDataTable<TData extends Record<string, any>>({
   const handleOnAddItem = () => {}
 
   const handleOnDeleteItem = () => {}
+  const handleOnDupliacteItem = (fieldId: string, withContent: boolean) => {}
 
-  const handleOnEditCell = (fieldId: string, withContent: boolean) => {}
+  const handleOnUpdateData = (
+    rowIndex: number,
+    columnId: string,
+    value: string
+  ) => {
+    console.log('handleOnUpdateData: ', {
+      rowIndex,
+      columnId,
+      value,
+    })
 
-  const tableColumns = getTableColumns({
-    collectionType,
-    collectionName,
-    columns,
-    onEditColumn: handleOnColumnEdit,
-    onSortColumn: handleOnColumnSort,
-    onVisibilityToggle: handleOnColumnVisibility,
-  })
+    dispatch({
+      type: 'setState',
+      set: (state) => ({
+        ...state,
+        data: state.data.map((row, index) =>
+          index === rowIndex
+            ? {
+                ...state.data[rowIndex],
+                [columnId]: value,
+              }
+            : row
+        ),
+      }),
+    })
+
+    //TODO: added database, rollback if fail
+  }
+
+  const tableColumns = React.useMemo(
+    () =>
+      getTableColumns({
+        collectionType,
+        collectionName,
+        columns,
+        onEditColumn: handleOnColumnEdit,
+        onSortColumn: handleOnColumnSort,
+        onVisibilityToggle: handleOnColumnVisibility,
+      }),
+    [columns.join(',')]
+  )
 
   const table = useReactTable<TData>({
     state: {
@@ -368,28 +400,7 @@ export function CollectionDataTable<TData extends Record<string, any>>({
     getFilteredRowModel: getFilteredRowModel(),
     onColumnOrderChange: handleOnColumnOrderChange,
     meta: {
-      updateData: (rowIndex: number, columnId: string, value: string) => {
-        console.log('cms table: ', {
-          rowIndex,
-          columnId,
-          value,
-        })
-
-        dispatch({
-          type: 'setState',
-          set: (state) => ({
-            ...state,
-            data: state.data.map((row, index) =>
-              index === rowIndex
-                ? {
-                    ...state.data[rowIndex],
-                    [columnId]: value,
-                  }
-                : row
-            ),
-          }),
-        })
-      },
+      updateData: handleOnUpdateData,
     },
   })
 
@@ -621,7 +632,7 @@ export function CollectionDataTable<TData extends Record<string, any>>({
             </Table>
 
             <ColumnDialog step={1} onAddColumn={handleOnAddColumn}>
-              <Button className="data-table-add-column h-10 bg-gray-900 text-sm text-accent-foreground  font-medium border rounded-none p-4 hover:bg-accent hover:text-accent-foreground">
+              <Button className="data-table-add-column text-sm  bg-gray-900 text-accent-foreground  font-medium border border-l-0 rounded-none p-5 hover:bg-accent hover:text-accent-foreground">
                 <Plus className="mr-2 h-4 w-4" />
                 <span className="whitespace-nowrap">Add Column</span>
               </Button>
@@ -642,10 +653,6 @@ export function CollectionDataTable<TData extends Record<string, any>>({
         </div>
       </DndProvider>
       {type === 'multiple' && <Pagination {...queryParams} {...pagination} />}
-
-      <code>
-        <pre>{JSON.stringify(data[0].date, null, 3)}</pre>
-      </code>
     </>
   )
 }

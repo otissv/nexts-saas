@@ -1,3 +1,4 @@
+import { cmsColumnTypes } from '../../features/cms/cms-column-types'
 import { faker } from '@faker-js/faker'
 
 faker.seed(1234)
@@ -61,12 +62,25 @@ const cmsCollectionDocument = [...Array(collectionCount)]
                         ],
                       },
                     ],
-                    // tags: [
-                    //   { id: 1, value: 'tags1' },
-                    //   { id: 2, value: 'tags2' },
-                    //   { id: 3, value: 'tags3' },
-                    // ],
-                    time: ['12:00'],
+
+                    select: {
+                      items: [
+                        { id: 'apples', value: 'Apples' },
+                        { id: 'pears', value: 'Pears' },
+                        { id: 'oranges', value: 'Oranges' },
+                        { id: 'bananas', value: 'Bananas' },
+                      ],
+                    },
+                    tags: [{ id: 'apples', value: 'Apples' }],
+                    tagSelect: {
+                      items: [
+                        { id: 'apples', value: 'Apples' },
+                        { id: 'pears', value: 'Pears' },
+                        { id: 'oranges', value: 'Oranges' },
+                        { id: 'bananas', value: 'Bananas' },
+                      ],
+                    },
+                    time: '12:00',
                     title: faker.lorem.word(),
                     text: faker.lorem.word(),
                     url: [faker.internet.url()],
@@ -84,7 +98,8 @@ const cmsCollectionDocument = [...Array(collectionCount)]
                       country: faker.location.country(),
                       zipCode: faker.location.zipCode(),
                     },
-                    // audio: [faker.internet.url()],
+                    audio: [],
+
                     // audioFiles: [faker.internet.url(), faker.internet.url()],
                     boolean: faker.datatype.boolean(),
                     date: [faker.date.past()],
@@ -92,7 +107,7 @@ const cmsCollectionDocument = [...Array(collectionCount)]
                     // document: [faker.internet.url()],
                     // documents: [faker.internet.url(), faker.internet.url()],
                     // gallery: [faker.internet.url(), faker.internet.url()],
-                    // image: [faker.internet.url()],
+                    image: [faker.internet.url()],
                     // multiReference: [1, 2, 3],
                     number: faker.number.int(),
                     privateText: faker.lorem.word(),
@@ -200,22 +215,36 @@ export const tenantData = {
   cmsCollectionColumn: [...Array(collectionCount)].reduce((acc, _, index) => {
     return [
       ...acc,
-      ...Object.keys(cmsCollectionDocument[0].data[0]).map((key) => {
-        return {
-          userId: 1,
-          datasetId: `${index + 1}`,
-          columnName: key.toUpperCase(),
-          fieldId: key,
-          type: key,
-          validation: {
-            required: randomItem([true, false]),
-          },
-          createdAt: faker.date.past(),
-          updatedAt: faker.date.recent(),
-          createdBy: 1,
-          updatedBy: 1,
-        }
-      }),
+      ...cmsColumnTypes.map((key) => ({
+        userId: 1,
+        datasetId: `${index + 1}`,
+        columnName: key.toUpperCase(),
+        fieldId: key,
+        type: key,
+        validation: {
+          required: randomItem([true, false]),
+        },
+        createdAt: faker.date.past(),
+        updatedAt: faker.date.recent(),
+        createdBy: 1,
+        updatedBy: 1,
+      })),
+      // ...Object.keys(cmsCollectionDocument[0].data[0]).map((key) => {
+      //   return {
+      //     userId: 1,
+      //     datasetId: `${index + 1}`,
+      //     columnName: key.toUpperCase(),
+      //     fieldId: key,
+      //     type: key,
+      //     validation: {
+      //       required: randomItem([true, false]),
+      //     },
+      //     createdAt: faker.date.past(),
+      //     updatedAt: faker.date.recent(),
+      //     createdBy: 1,
+      //     updatedBy: 1,
+      //   }
+      // }),
     ]
   }, []),
 

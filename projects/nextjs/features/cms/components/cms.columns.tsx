@@ -64,7 +64,7 @@ export function getTableColumns<TData, TValue>({
     {
       id: '_select',
       header: ({ table }: { table: TanstackTable<TData> }) => (
-        <div className="flex items-center  min-h-10 border">
+        <div className="flex items-center  min-h-10">
           <Checkbox
             className="mx-4"
             checked={
@@ -79,7 +79,7 @@ export function getTableColumns<TData, TValue>({
         </div>
       ),
       cell: ({ row }) => (
-        <div className="flex items-center h-10 border">
+        <div className="flex items-center h-10 border border-t-0">
           <Checkbox
             className="mx-4"
             checked={row.getIsSelected()}
@@ -94,7 +94,7 @@ export function getTableColumns<TData, TValue>({
     {
       id: '_action',
       header: () => (
-        <div className="flex items-center px-4 border min-h-10 min-w-10 text-muted-foreground ">
+        <div className="flex items-center px-4 min-h-10 min-w-10 text-muted-foreground ">
           ID
         </div>
       ),
@@ -106,8 +106,7 @@ export function getTableColumns<TData, TValue>({
 
         return (
           <Link
-            className="flex items-center 
-             text-sm h-10 border rounded-none"
+            className="flex items-center border-t-0 text-sm h-10 border rounded-none"
             href={`/admin/cms/collections/${collectionName}/${title}`}
             passHref
           >

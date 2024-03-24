@@ -2,8 +2,7 @@
 
 import React from 'react'
 
-import TextareaAutosize from 'react-textarea-autosize'
-import { useDropzone } from 'react-dropzone'
+import { Accept, FileRejection, useDropzone } from 'react-dropzone'
 
 import { Plate, Value } from '@udecode/plate-common'
 import { format, parseISO } from 'date-fns'
@@ -14,9 +13,10 @@ import {
   CalendarRange,
   CircleX,
   Clock4,
+  CloudUpload,
   Expand,
-  Eye,
-  EyeOff,
+  File,
+  FileMusic,
   FileStack,
   FileText,
   FileType,
@@ -34,6 +34,7 @@ import {
   ScrollText,
   SquareAsterisk,
   Tags,
+  TextCursorInput,
   ToggleLeft,
   Video,
   Volume1,
@@ -48,7 +49,7 @@ import { TooltipProvider } from '@/components/plate-ui/tooltip'
 import { Input } from '@/components/ui/input'
 
 import { Button } from '@/components/ui/button'
-import { Calendar, CalendarProps } from '@/components/ui/calendar'
+import { Calendar, CalendarMode, CalendarProps } from '@/components/ui/calendar'
 import {
   Popover,
   PopoverContent,
@@ -58,6 +59,33 @@ import { Label } from '@radix-ui/react-label'
 import { ToggleSwitch } from '@/components/toggle-switch'
 import { DateRange } from 'react-day-picker'
 import { PrivateInput } from '@/components/private-input'
+import {
+  TagsInput,
+  TagInput,
+  TagItem,
+  TagInputItem,
+  TagSelect,
+  TagSelectTrigger,
+  TagSelectContent,
+  TagSelectGroup,
+  TagSelectItems,
+  TagSelectSelected,
+} from '@/components/tags'
+import {
+  ComboboxList,
+  Combobox,
+  ComboboxContent,
+  ComboboxGroup,
+  ComboboxEmpty,
+  ComboboxInput,
+} from '@/components/combobox'
+import { isEmpty } from 'c-ufunc/libs/isEmpty'
+import { formatBytes } from '@/lib/formatBytes'
+import {
+  compareCollections,
+  deepCompareObjects,
+  isObjectInCollectionByProperty,
+} from '@/lib/compareCollections'
 
 export type CmsField<TElement> = Omit<
   React.InputHTMLAttributes<TElement>,
@@ -70,13 +98,18 @@ export type CmsField<TElement> = Omit<
 }
 
 export type FieldProps =
-  | BooleanFieldProps
   | AddressFieldProps
+  | BooleanFieldProps
   | DateFieldProps
   | InputFieldProps
   | RichTextFieldProps
   | UploadFieldProps
-// | TextFieldProps
+  | UploadImageFieldProps
+  | UploadVideoFieldProps
+  | SelectFieldProps
+  // | TextFieldProps
+  | TagSelectFieldProps
+  | TagsFieldProps
 
 type Config = {
   [k in CmsCollectionColumn['type']]: {
@@ -85,7 +118,6 @@ type Config = {
     Icon?: (props: Record<string, any>) => React.JSX.Element
     description: string
     validation: any
-    component: (props: FieldProps) => React.JSX.Element
   }
 }
 
@@ -101,9 +133,7 @@ export const fieldTypeConfig: Config = {
     type: 'address',
     description: 'Location',
     validation: { required: false },
-    component: (props: FieldProps) => (
-      <AddressField {...(props as AddressFieldProps)} />
-    ),
+    // component: (props) => <AddressField {...(props as AddressFieldProps)} />,
   },
   audio: {
     title: 'Audio',
@@ -119,9 +149,6 @@ export const fieldTypeConfig: Config = {
       required: false,
       size: '300kb',
     },
-    component: (props) => (
-      <UploadField {...(props as UploadFieldProps)} type="audio" />
-    ),
   },
   audioFiles: {
     title: 'Audio Files',
@@ -139,13 +166,6 @@ export const fieldTypeConfig: Config = {
       minItems: '',
       maxItems: '',
     },
-    component: (props) => (
-      <UploadField
-        {...(props as UploadFieldProps)}
-        type="audio"
-        isMultiple={true}
-      />
-    ),
   },
   boolean: {
     title: 'Boolean',
@@ -158,7 +178,6 @@ export const fieldTypeConfig: Config = {
     type: 'boolean',
     description: 'Yes or no, true or false',
     validation: { required: false },
-    component: (props) => <BooleanField {...(props as BooleanFieldProps)} />,
   },
   date: {
     title: 'Date',
@@ -171,9 +190,6 @@ export const fieldTypeConfig: Config = {
     type: 'date',
     description: 'Data of event, date added',
     validation: { required: false, before: '', after: '', start: '', end: '' },
-    component: (props) => (
-      <DateField {...(props as DateFieldProps)} type="single" />
-    ),
   },
   dateRange: {
     title: 'Date Range',
@@ -186,9 +202,6 @@ export const fieldTypeConfig: Config = {
     type: 'date',
     description: 'Duration of event',
     validation: { required: false, before: '', after: '', start: '', end: '' },
-    component: (props) => (
-      <DateField {...(props as DateFieldProps)} type="range" />
-    ),
   },
   document: {
     title: 'Document',
@@ -206,9 +219,6 @@ export const fieldTypeConfig: Config = {
       minItems: '',
       maxItems: '',
     },
-    component: (props) => (
-      <UploadField {...(props as UploadFieldProps)} type="document" />
-    ),
   },
   documents: {
     title: 'Documents',
@@ -221,13 +231,6 @@ export const fieldTypeConfig: Config = {
     type: 'documents',
     description: 'Add files to a collection',
     validation: { required: false, size: 300 },
-    component: (props) => (
-      <UploadField
-        {...(props as UploadFieldProps)}
-        type="document"
-        isMultiple={true}
-      />
-    ),
   },
 
   gallery: {
@@ -246,13 +249,6 @@ export const fieldTypeConfig: Config = {
       minItems: '',
       maxItems: '',
     },
-    component: (props) => (
-      <UploadField
-        {...(props as UploadFieldProps)}
-        type="image"
-        isMultiple={true}
-      />
-    ),
   },
   image: {
     title: 'Image',
@@ -268,9 +264,6 @@ export const fieldTypeConfig: Config = {
       required: false,
       size: 300,
     },
-    component: (props) => (
-      <UploadField {...(props as UploadFieldProps)} type="image" />
-    ),
   },
   number: {
     title: 'Number',
@@ -280,9 +273,6 @@ export const fieldTypeConfig: Config = {
     type: 'number',
     description: 'ID, rating, oder number',
     validation: { required: false, min: '', max: '' },
-    component: (props) => (
-      <InputField {...(props as InputFieldProps)} type="number" />
-    ),
   },
 
   multiReference: {
@@ -300,7 +290,6 @@ export const fieldTypeConfig: Config = {
       minItems: '',
       maxItems: '',
     },
-    component: (props) => <TagsField {...(props as TagFieldProps)} />,
   },
   privateText: {
     title: 'Private',
@@ -317,7 +306,6 @@ export const fieldTypeConfig: Config = {
       minLength: '',
       maxLength: '',
     },
-    component: (props) => <PrivateField {...(props as PrivateFieldProps)} />,
   },
 
   privateNumber: {
@@ -331,9 +319,6 @@ export const fieldTypeConfig: Config = {
     type: 'privateNumber',
     description: 'Hidden number',
     validation: { required: false, min: '', max: '' },
-    component: (props) => (
-      <PrivateField {...(props as PrivateFieldProps)} type="number" />
-    ),
   },
 
   reference: {
@@ -347,9 +332,6 @@ export const fieldTypeConfig: Config = {
     type: 'reference',
     description: 'Link to another collection',
     validation: { required: false },
-    component: (props) => (
-      <TagsField {...(props as TagFieldProps)} type="single" />
-    ),
   },
 
   richContent: {
@@ -363,9 +345,6 @@ export const fieldTypeConfig: Config = {
     description: 'Text with links and media',
     type: 'richContent',
     validation: { required: false },
-    component: (props) => (
-      <RichTextField {...(props as RichTextFieldProps)} hasInsert={true} />
-    ),
   },
   richtext: {
     title: 'Rich Text',
@@ -378,12 +357,28 @@ export const fieldTypeConfig: Config = {
     description: 'text with formatting',
     type: 'richtext',
     validation: { required: false },
-    component: (props) => <RichTextField {...(props as RichTextFieldProps)} />,
+  },
+  select: {
+    title: 'Select',
+    Icon: ({ className, ...props }: Record<string, any>) => (
+      <TextCursorInput
+        {...props}
+        className={cn('h-3 text-muted-foreground', className)}
+      />
+    ),
+    type: 'select',
+    description: '',
+    validation: {
+      minItems: '',
+      maxItems: '',
+      minLength: '',
+      maxLength: '',
+    },
   },
   tags: {
     title: 'Tags',
     Icon: ({ className, ...props }: Record<string, any>) => (
-      <Tags {...props} type="tags" />
+      <Tags {...props} className={cn('h-3 text-muted-foreground', className)} />
     ),
     type: 'tags',
     description: '',
@@ -393,7 +388,20 @@ export const fieldTypeConfig: Config = {
       minLength: '',
       maxLength: '',
     },
-    component: (props) => <TagsField {...(props as TagFieldProps)} />,
+  },
+  tagSelect: {
+    title: 'Tag Select',
+    Icon: ({ className, ...props }: Record<string, any>) => (
+      <Tags {...props} className={cn('h-3 text-muted-foreground', className)} />
+    ),
+    type: 'tagSelect',
+    description: '',
+    validation: {
+      minItems: '',
+      maxItems: '',
+      minLength: '',
+      maxLength: '',
+    },
   },
   text: {
     title: 'Text',
@@ -407,7 +415,6 @@ export const fieldTypeConfig: Config = {
       minLength: '',
       maxLength: '',
     },
-    component: (props) => <InputField {...(props as InputFieldProps)} />,
   },
   time: {
     title: 'Time',
@@ -420,9 +427,6 @@ export const fieldTypeConfig: Config = {
     type: 'time',
     description: 'Opening hours, time of event',
     validation: { required: false, start: '', end: '' },
-    component: (props) => (
-      <InputField type="time" {...(props as InputFieldProps)} />
-    ),
   },
   title: {
     title: 'Title',
@@ -440,7 +444,6 @@ export const fieldTypeConfig: Config = {
       minLength: '',
       maxLength: '',
     },
-    component: (props) => <InputField {...(props as InputFieldProps)} />,
   },
   url: {
     title: 'URL',
@@ -450,7 +453,6 @@ export const fieldTypeConfig: Config = {
     description: 'Links',
     type: 'url',
     validation: { required: false },
-    component: (props) => <InputField {...(props as InputFieldProps)} />,
   },
   video: {
     title: 'Video',
@@ -463,9 +465,6 @@ export const fieldTypeConfig: Config = {
     type: 'video',
     description: 'Upload a single video',
     validation: { required: false, size: 300 },
-    component: (props) => (
-      <UploadField {...(props as UploadFieldProps)} type="video" />
-    ),
   },
   videos: {
     title: 'Video',
@@ -478,13 +477,6 @@ export const fieldTypeConfig: Config = {
     type: 'video',
     description: 'Upload videos',
     validation: { required: false, size: 300, minItems: '', maxItems: '' },
-    component: (props) => (
-      <UploadField
-        {...(props as UploadFieldProps)}
-        type="video"
-        isMultiple={true}
-      />
-    ),
   },
 } as const
 
@@ -496,24 +488,19 @@ type AddressFieldValue = {
   country: string
   zipCode: string
 }
-export type AddressFieldProps = CmsField<HTMLInputElement> & {
+export type AddressInputFieldsProps = CmsField<HTMLInputElement> & {
   value: AddressFieldValue
   onUpdate: (newValue: AddressFieldValue) => void
+  setValue: React.Dispatch<React.SetStateAction<AddressFieldValue>>
 }
 function AddressInputFields({
   value,
-  className,
   fieldId,
   isSelected,
-  isInline,
-  onUpdate,
-}: AddressFieldProps) {
-  const [state, setState] = React.useState<AddressFieldValue>(value)
-
-  const handleOnBlur = () => onUpdate && onUpdate(state)
-
+  setValue,
+}: AddressInputFieldsProps) {
   return (
-    <div>
+    <>
       <div className="mb-4">
         <Label className="mb-2" htmlFor={fieldId && '-streetAddress'}>
           Street Address
@@ -524,14 +511,13 @@ function AddressInputFields({
             'rounded-mb bg-background border focus:ring-blue-500 focus:border-blue-500 block p-2 cursor-text',
             isSelected && 'bg-gray-800'
           )}
-          value={state.streetAddress}
+          value={value.streetAddress}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-            setState({
-              ...state,
+            setValue({
+              ...value,
               streetAddress: e.target.value,
             })
           }
-          onBlur={handleOnBlur}
         />
       </div>
       <div className="mb-4">
@@ -544,14 +530,13 @@ function AddressInputFields({
             'rounded-mb bg-background border focus:ring-blue-500 focus:border-blue-500 block p-2 cursor-text',
             isSelected && 'bg-gray-800'
           )}
-          value={state.secondaryAddress}
+          value={value.secondaryAddress}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-            setState({
-              ...state,
+            setValue({
+              ...value,
               secondaryAddress: e.target.value,
             })
           }
-          onBlur={handleOnBlur}
         />
       </div>
       <div className="mb-4">
@@ -564,34 +549,32 @@ function AddressInputFields({
             'rounded-mb bg-background border focus:ring-blue-500 focus:border-blue-500 block p-2 cursor-text',
             isSelected && 'bg-gray-800'
           )}
-          value={state.city}
+          value={value.city}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-            setState({
-              ...state,
+            setValue({
+              ...value,
               city: e.target.value,
             })
           }
-          onBlur={handleOnBlur}
         />
       </div>
       <div className="mb-4">
-        <Label className="mb-2" htmlFor={fieldId && '-state'}>
+        <Label className="mb-2" htmlFor={fieldId && '-value'}>
           Sate
         </Label>
         <Input
-          id={fieldId && '-state'}
+          id={fieldId && '-value'}
           className={cn(
             'rounded-mb bg-background border focus:ring-blue-500 focus:border-blue-500 block p-2 cursor-text',
             isSelected && 'bg-gray-800'
           )}
-          value={state.state}
+          value={value.state}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-            setState({
-              ...state,
+            setValue({
+              ...value,
               state: e.target.value,
             })
           }
-          onBlur={handleOnBlur}
         />
       </div>
       <div className="mb-4">
@@ -604,14 +587,13 @@ function AddressInputFields({
             'rounded-mb bg-background border focus:ring-blue-500 focus:border-blue-500 block p-2 cursor-text',
             isSelected && 'bg-gray-800'
           )}
-          value={state.country}
+          value={value.country}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-            setState({
-              ...state,
+            setValue({
+              ...value,
               country: e.target.value,
             })
           }
-          onBlur={handleOnBlur}
         />
       </div>
       <div className="mb-4">
@@ -624,36 +606,56 @@ function AddressInputFields({
             'rounded-mb bg-background border focus:ring-blue-500 focus:border-blue-500 block p-2 cursor-text',
             isSelected && 'bg-gray-800'
           )}
-          value={state.zipCode}
+          value={value.zipCode}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-            setState({
-              ...state,
+            setValue({
+              ...value,
               zipCode: e.target.value,
             })
           }
-          onBlur={handleOnBlur}
         />
       </div>
-    </div>
+    </>
   )
 }
+export type AddressFieldProps = CmsField<HTMLInputElement> & {
+  value: AddressFieldValue
+  onUpdate: (newValue: AddressFieldValue) => void
+}
 export function AddressField({
-  value,
+  value: initialValue = {
+    streetAddress: '',
+    secondaryAddress: '',
+    city: '',
+    state: '',
+    country: '',
+    zipCode: '',
+  },
   className,
   fieldId,
   isSelected,
   isInline,
   onUpdate,
 }: AddressFieldProps) {
+  const [value, setValue] = React.useState<AddressFieldValue>(initialValue)
+  const [isOpen, setIsOpen] = React.useState(false)
+
   const maybeAddress = (value: string) => (value ? `${value}, ` : '')
 
+  React.useEffect(() => {
+    if (!isOpen && onUpdate && !deepCompareObjects(value)(initialValue)) {
+      onUpdate(value)
+    }
+  }, [isOpen])
+
   return isInline ? (
-    <Popover>
+    <Popover open={isOpen} onOpenChange={setIsOpen}>
       <PopoverTrigger asChild>
         <Input
           className={cn(
-            'flex w-64 align-start p-2 rounded-none border focus:border-white focus:bg-gray-900 cursor-text',
+            'min-w-48 flex align-start p-2 rounded-none focus:border-white focus:bg-gray-900 cursor-text',
             className,
+            isInline && 'border-t-0',
             isSelected && 'bg-gray-800'
           )}
           value={
@@ -675,6 +677,7 @@ export function AddressField({
           isSelected={isSelected}
           isInline={isInline}
           onUpdate={onUpdate}
+          setValue={setValue}
         />
       </PopoverContent>
     </Popover>
@@ -685,6 +688,7 @@ export function AddressField({
       isSelected={isSelected}
       isInline={isInline}
       onUpdate={onUpdate}
+      setValue={setValue}
     />
   )
 }
@@ -707,11 +711,13 @@ export function BooleanField({
   return isInline ? (
     <div
       className={cn(
-        'h-10 p-1 flex items-center justify-center border',
+        'h-10  flex items-center justify-center border',
+        isInline && 'border-t-0',
         className
       )}
     >
       <ToggleSwitch
+        className="w-full rounded-none"
         checked={value}
         id="airplane-mode"
         onCheckedChange={onUpdate}
@@ -728,7 +734,7 @@ export function BooleanField({
 
 export type DateFieldProps = CmsField<HTMLInputElement> &
   Omit<CalendarProps, 'selected'> & {
-    type: 'single' | 'range'
+    type: CalendarMode
     onUpdate: (newValue: (string | undefined)[]) => void
     value?: string[]
   }
@@ -744,6 +750,8 @@ export function DateField({
   onUpdate,
 }: DateFieldProps) {
   const handleOnUpdate = (newValue?: Date | DateRange) => {
+    console.log('handleOnUpdate: ', newValue)
+
     if (type === 'single') {
       onUpdate && onUpdate([(newValue as Date)?.toISOString()])
     } else {
@@ -755,14 +763,39 @@ export function DateField({
     }
   }
 
-  let date: Date | DateRange
+  let date: Date | DateRange | undefined
+
   let label
   if (type === 'single') {
-    date = parseISO(value[0])
+    date = value[0] ? parseISO(value[0]) : undefined
     label = date ? format(date as Date, 'PPP') : <span>Pick a date</span>
   } else {
-    date = { from: parseISO(value[0]), to: parseISO(value[1]) } as DateRange
-    label = date ? format(date.from as any, 'PPP') : <span>Pick a date</span>
+    date = value[0]
+      ? ({
+          from: value[0] && parseISO(value[0]),
+          to: value[1] && parseISO(value[1]),
+        } as DateRange)
+      : undefined
+
+    if (date) {
+      label = !date.to ? (
+        <>
+          {format(date.from as any, 'PPP')}
+          <>
+            <span className="inline-flex mx-1 text-muted-full">&mdash;</span>
+            Pick To date
+          </>
+        </>
+      ) : (
+        <>
+          {format(date.from as any, 'PPP')}
+          <span className="inline-flex mx-1 text-muted-full">&mdash;</span>
+          {format(date.to as any, 'PPP')}
+        </>
+      )
+    } else {
+      label = <span>Pick From date</span>
+    }
   }
 
   return (
@@ -771,9 +804,9 @@ export function DateField({
         <Button
           variant={'outline'}
           className={cn(
-            'w-[280px] justify-start text-left font-normal rounded-md',
+            'min-w-48 justify-start text-left font-normal rounded-md',
             !date && 'text-muted-foreground',
-            isInline && 'rounded-none'
+            isInline && 'rounded-none border-t-0'
           )}
         >
           <CalendarIcon className="mr-2 h-4 w-4" />
@@ -807,7 +840,13 @@ export function InputField({
   onUpdate,
   ...props
 }: InputFieldProps) {
-  const [state, setState] = React.useState(value)
+  const [state, setState] = React.useState(value || '')
+
+  const handleOnBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+    if (state !== value && onUpdate) {
+      onUpdate(state)
+    }
+  }
 
   return (
     <Input
@@ -816,18 +855,16 @@ export function InputField({
       id={fieldId}
       aria-describedby="helper-text-explanation"
       className={cn(
-        'rounded-mb bg-background border focus:ring-blue-500 focus:border-blue-500 block p-2 cursor-text',
-        isInline && 'rounded-none',
+        'min-w-48 rounded-mb bg-background border focus:ring-blue-500 focus:border-blue-500 block p-2 cursor-text',
+        isInline && 'rounded-none border-t-0',
         isSelected && 'bg-gray-800',
         className
       )}
       value={state}
-      onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+      onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
         setState(e.target.value)
       }
-      onBlur={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
-        onUpdate && onUpdate(state)
-      }
+      onBlur={handleOnBlur}
     />
   )
 }
@@ -850,6 +887,12 @@ export function PrivateField({
 }: PrivateFieldProps) {
   const [state, setState] = React.useState(value)
 
+  const handleOnBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+    if (state !== value && onUpdate) {
+      onUpdate(state)
+    }
+  }
+
   return (
     <div className="relative">
       <PrivateInput
@@ -857,8 +900,8 @@ export function PrivateField({
         type={type}
         id={fieldId}
         className={cn(
-          'rounded-mb bg-background border focus:ring-blue-500 focus:border-blue-500 block p-2 cursor-text pr-10',
-          isInline && 'rounded-none',
+          'min-w-48 rounded-mb bg-background border focus:ring-blue-500 focus:border-blue-500 block p-2 cursor-text pr-10',
+          isInline && 'rounded-none border-t-0',
           isSelected && 'bg-gray-800',
           className
         )}
@@ -866,9 +909,7 @@ export function PrivateField({
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           setState(e.target.value)
         }
-        onBlur={(e: React.ChangeEvent<HTMLInputElement>) =>
-          onUpdate && onUpdate(state)
-        }
+        onBlur={handleOnBlur}
       />
     </div>
   )
@@ -928,15 +969,14 @@ export function RichTextField({
     </TooltipProvider>
   )
 
-  // console.log(value?.[0].children?.[0]?.text)
-
   return isInline ? (
-    <Popover style={{ width: '100%' }}>
+    <Popover>
       <PopoverTrigger asChild>
         <Input
           className={cn(
-            'flex align-start p-2 text-start rounded-none border focus:border-white focus:bg-gray-900 cursor-text',
+            'min-w-48 max-w-96 flex align-start p-2 text-start rounded-none border focus:border-white focus:bg-gray-900 cursor-text',
             className,
+            isInline && 'border-t-0',
             isSelected && 'bg-gray-800'
           )}
           value={value?.[0].children?.[0]?.text}
@@ -993,145 +1033,429 @@ export function RichTextField({
 //   )
 // }
 
-export type TagFieldProps = CmsField<HTMLInputElement> & {
-  type?: 'single' | 'multiple'
+export type SelectFieldItem = {
+  id: string
   value: string
-  component?: React.ReactNode
-  isFilter?: boolean
-  onUpdate: (newValue: string) => void
+}
+export type SelectFieldValue = {
+  value: string
+  items: SelectFieldItem[]
+}
+export type SelectFieldProps = CmsField<HTMLInputElement> & {
+  value: SelectFieldValue
+  options: SelectFieldItem[]
+  onUpdate: (value: SelectFieldValue) => void
+}
+
+export function SelectField({
+  className,
+  fieldId,
+  isInline,
+  isSelected,
+  value: initialValue = {
+    value: '',
+    items: [],
+  },
+  onUpdate,
+  defaultValue,
+  ...props
+}: SelectFieldProps) {
+  const [state, setValue] = React.useState<SelectFieldValue>(initialValue)
+  const [isOpen, setIsOpen] = React.useState(false)
+
+  const handleOnSelect = (value: string) => {
+    setValue({
+      ...state,
+      value,
+    })
+  }
+
+  React.useEffect(() => {
+    if (!isOpen && !deepCompareObjects(state)(initialValue)) {
+      onUpdate && onUpdate(state)
+    }
+  }, [isOpen])
+
+  const options = initialValue.items.map(({ id, value }) => ({
+    value: id,
+    label: value,
+  }))
+  return (
+    <Combobox
+      {...props}
+      options={options}
+      value={state.value}
+      placeholder={`Search ${fieldId}...`}
+      isOpen={isOpen}
+      setIsOpen={setIsOpen}
+      className={cn(
+        'min-w-48',
+        isInline && 'rounded-none border-t-0',
+        className
+      )}
+    >
+      <ComboboxContent>
+        <ComboboxInput placeholder="Filter..." />
+        <ComboboxEmpty>{`${fieldId} not found.`}</ComboboxEmpty>
+        <ComboboxGroup>
+          <ComboboxList
+            options={options}
+            value={state.value}
+            onSelect={handleOnSelect}
+            setIsOpen={setIsOpen}
+          />
+        </ComboboxGroup>
+      </ComboboxContent>
+    </Combobox>
+  )
+}
+export type TagsFieldProps = CmsField<HTMLInputElement> & {
+  value: TagInputItem[]
+  onUpdate?: (items: TagInputItem[]) => void
 }
 export function TagsField({
   className,
   fieldId,
   isInline,
   isSelected,
-  isFilter = false,
-  type = 'multiple',
-  value,
+  value = [],
   onUpdate,
   onBlur,
-  ...props
-}: TagFieldProps) {
+}: TagsFieldProps) {
+  const [state, setState] = React.useState<TagInputItem[]>(value)
+  const [isOpen, setIsOpen] = React.useState(false)
+
+  const tagItems = state.map(({ id, value }) => {
+    return (
+      <TagItem
+        key={id}
+        id={id}
+        value={value}
+        onRemoveItem={(id: string) =>
+          setState(state.filter((item) => item.id !== id))
+        }
+      />
+    )
+  })
+
+  React.useEffect(() => {
+    if (!isOpen && !compareCollections(value)(state)) {
+      onUpdate && onUpdate(state)
+    }
+  }, [isOpen, value, state])
+
   return (
-    <Input
-      id={fieldId}
-      aria-describedby="helper-text-explanation"
-      className={cn(
-        'rounded-mb bg-background border focus:ring-blue-500 focus:border-blue-500 block p-2 cursor-text',
-        isInline && 'rounded-none',
-        isSelected && 'bg-gray-800',
-        className
-      )}
-      value={value}
-      onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
-        onUpdate && onUpdate(e.target.value)
-      }
-      {...props}
-    />
+    <Popover open={isOpen} onOpenChange={setIsOpen}>
+      <PopoverTrigger asChild>
+        <div
+          className={cn(
+            'min-w-48 flex gap-2 items-center w-full h-10 p-2 border',
+            isInline && 'border-t-0',
+            className
+          )}
+        >
+          {tagItems}
+        </div>
+      </PopoverTrigger>
+
+      <PopoverContent className={cn('w-full min-w-80 p-0')}>
+        <TagsInput>
+          {tagItems}
+          <TagInput
+            id={fieldId}
+            placeholder="Fruits..."
+            selectedItems={state}
+            onUpdate={setState}
+          />
+        </TagsInput>
+      </PopoverContent>
+    </Popover>
+  )
+}
+
+export type TagSelectFieldProps = CmsField<HTMLInputElement> & {
+  value: TagSelectSelected
+  onUpdate: (selectItem: TagSelectSelected) => void
+  items?: TagInputItem[]
+}
+export function TagsSelectField({
+  value: initialValue = {
+    selectedItems: [],
+    items: [],
+  },
+  className,
+  fieldId,
+  isInline,
+  isSelected,
+  onUpdate,
+  onBlur,
+}: TagSelectFieldProps) {
+  const [{ items, selectedItems }, setState] =
+    React.useState<TagSelectSelected>({
+      selectedItems: initialValue.selectedItems || [],
+      items: initialValue.items || [],
+    })
+
+  const [previousSelectedItems, setPreviousSelectedItems] = React.useState(
+    initialValue.selectedItems || []
+  )
+  const [isOpen, setIsOpen] = React.useState(false)
+
+  React.useEffect(() => {
+    if (
+      !isOpen &&
+      !deepCompareObjects({
+        items,
+        selectedItems: previousSelectedItems,
+      })({ items, selectedItems })
+    ) {
+      setPreviousSelectedItems(selectedItems)
+      onUpdate && onUpdate({ items, selectedItems })
+    }
+  }, [isOpen, initialValue, selectedItems])
+
+  const updateState = (
+    nextSelectedItems: TagSelectSelected['selectedItems'],
+    previousSelectedItems: TagSelectSelected['selectedItems']
+  ) => {
+    setState({
+      items,
+      selectedItems: nextSelectedItems,
+    })
+    setPreviousSelectedItems(previousSelectedItems)
+  }
+
+  return (
+    <TagsInput className={cn(isInline && 'rounded-none border-t-0', className)}>
+      {selectedItems.map(({ id, value }) => {
+        return (
+          <TagItem
+            key={id}
+            id={id}
+            value={value}
+            onRemoveItem={(id: string) =>
+              updateState(
+                selectedItems.filter((s) => s.id !== id),
+                selectedItems
+              )
+            }
+          />
+        )
+      })}
+      <TagSelect open={isOpen} onOpenChange={setIsOpen}>
+        <TagSelectTrigger placeholder="Select" selectedItems={selectedItems} />
+        <TagSelectContent>
+          <TagSelectGroup>
+            <TagSelectItems
+              items={items}
+              selectedItems={selectedItems}
+              onSelect={updateState}
+            />
+          </TagSelectGroup>
+        </TagSelectContent>
+      </TagSelect>
+    </TagsInput>
   )
 }
 
 type ColumnFile = File & {
+  alt: string
   preview: string
 }
 
-export type UploadFieldProps = CmsField<HTMLInputElement> & {
-  type: 'multiple' | 'document' | 'image' | 'video'
-  isMultiple?: boolean
-  value: ColumnFile[]
-  onUpdate: (newValue: ColumnFile[]) => void
-}
-
 function UploadInputField({
-  multiple,
-  maxFiles = 1,
-  maxSize,
-  minSize,
-  accept = {
-    'image/*': [],
-  },
+  id,
+  accept,
   files = [],
-  onFilesUpdate,
+  maxFiles = 1,
+  maxSize = 500000,
+  minSize,
+  multiple,
+  type,
+  setFiles,
 }: {
-  multiple?: boolean
-  maxFiles?: number
+  id: string
+  accept?: Accept
+  files: ColumnFile[]
+  maxFiles?: File['size']
   maxSize?: number
   minSize?: number
-  accept?: Record<string, string[]>
-  onFilesUpdate: (newValue: ColumnFile[]) => void
-  files: ColumnFile[]
+  multiple?: boolean
+  type: 'audio' | 'document' | 'image' | 'video'
+  setFiles: (newValue: ColumnFile[]) => void
 }) {
+  const [fileRejections, setFileRejections] = React.useState<FileRejection[]>(
+    []
+  )
+
   const { getRootProps, getInputProps } = useDropzone({
-    accept,
+    accept: accept,
     maxFiles,
     maxSize,
     minSize,
     multiple,
+    onDropRejected: setFileRejections,
     onDrop: (acceptedFiles) => {
-      console.log(JSON.stringify(acceptedFiles, null, 2))
-      onFilesUpdate([
-        ...(multiple ? files : []),
-        ...acceptedFiles.map((file) =>
-          Object.assign(file, {
-            preview: URL.createObjectURL(file),
-          })
-        ),
-      ])
+      setFileRejections([])
+
+      const hasItem =
+        isObjectInCollectionByProperty(acceptedFiles)(files)('name')
+
+      if (!hasItem) {
+        setFiles([
+          ...(multiple ? files : []),
+          ...acceptedFiles.map((file) =>
+            Object.assign(file, {
+              preview: URL.createObjectURL(file),
+              alt: '',
+            })
+          ),
+        ])
+      }
+
+      // const acceptedFiles = [
+      //   {
+      //     path: 'sys..jpg',
+      //     preview:
+      //       'blob:http://localhost:3000/0fe02943-0922-4f66-a5ea-d49fc8022a2e',
+      //     lastModified: 1710932691176,
+      //     lastModifiedDate: new Date(
+      //       'Wed Mar 20 2024 11:04:51 GMT+0000 (Greenwich Mean Time)'
+      //     ),
+      //     name: 'sys..jpg',
+      //     size: 291052,
+      //     type: 'image/jpeg',
+      //     webkitRelativePath: '',
+      //   },
+      // ]
     },
   })
 
-  const thumbs = files.map((file) => (
-    <div
-      className="relative inline-flex rounded-md border "
-      style={{
-        width: 64,
-        height: 64,
-      }}
-      key={file.name}
-    >
-      <div className="flex min-w-0 overflow-hidden relative">
-        <img
-          src={file.preview}
-          className="h-full w-auto block rounded-md"
-          // Revoke data uri after image is loaded
-          onLoad={() => {
-            URL.revokeObjectURL(file.preview)
-          }}
-        />
-      </div>
-      <Button
-        variant="outline"
-        className="absolute p-0 rounded-full h-[26px] w-[26px] top-[-0.5rem] right-[-0.5rem]"
-        onClick={() => onFilesUpdate(files.filter((f) => f.name !== file.name))}
-      >
-        <CircleX />
-      </Button>
-    </div>
-  ))
+  const handleOnDescriptionChange =
+    (index: number) => (e: React.ChangeEvent<HTMLInputElement>) => {
+      const updateFiles = [...files]
+      const file = updateFiles[index]
+
+      file.alt = e.target.value
+      updateFiles[index] = file
+
+      setFiles(updateFiles)
+    }
+
+  const preview = (file: ColumnFile) => {
+    switch (type) {
+      case 'image':
+      case 'video':
+        return (
+          <div className="flex min-w-0 overflow-hidden rounded-md justify-center border">
+            <img
+              src={file.preview}
+              className="h-full w-auto block rounded-md"
+              // Revoke data uri after image is loaded
+              onLoad={() => {
+                URL.revokeObjectURL(file.preview)
+              }}
+            />
+          </div>
+        )
+      case 'audio':
+        return (
+          <div className="flex min-w-0 overflow-hidden rounded-md justify-center border p-2">
+            <FileMusic className="w-10 h-10 text-muted-foreground" />
+          </div>
+        )
+      default:
+        return (
+          <div className="flex min-w-0 overflow-hidden rounded-md justify-center border p-2">
+            <File className="w-10 h-10 text-muted-foreground" />
+          </div>
+        )
+    }
+  }
+
+  //TODO: double click to zoom in
+  const thumbs = files.map((file, index) => {
+    return (
+      <li key={file.name} className="flex mb-2 items-top">
+        <div className="relative w-14 h-16 translate-y-3">
+          {preview(file)}
+          <Button
+            variant="outline"
+            className="absolute p-0 rounded-full h-[26px] w-[26px] top-[-0.5rem] right-[-0.5rem]"
+            onClick={() => setFiles(files.filter((f) => f.name !== file.name))}
+          >
+            <CircleX />
+          </Button>
+        </div>
+
+        <div className="ml-4 text-sm">
+          <p className="max-w-52 truncate mb-1">{file.name}</p>
+          <p className="mt-1 text-xs">Size {formatBytes(file.size)}</p>
+
+          {type === 'image' || type === 'video' ? (
+            <div className="mt-2">
+              <Label className="mb-1" htmlFor={id}>
+                Description
+              </Label>
+              <Input
+                id={id}
+                size="sm"
+                value={(file as any)?.alt || ''}
+                onChange={handleOnDescriptionChange(index)}
+              />
+            </div>
+          ) : null}
+        </div>
+      </li>
+    )
+  })
 
   React.useEffect(() => {
     // Make sure to revoke the data uris to avoid memory leaks, will run on unmount
     return () => files.forEach((file) => URL.revokeObjectURL(file.preview))
   }, [])
 
+  // const errorMessage = (error as any)?.[0]?.errors[0]?.message.replace('/*', '') || null
+  const errorMessage = !isEmpty(fileRejections)
+    ? ` File must be of type ${type} and maximum size of ${formatBytes(
+        maxSize
+      )}kb`
+    : null
+
+  const accepts = Object.values(accept || {}).flat()
+
   return (
     <section>
+      <p className="text-destructive mb-1">{errorMessage}</p>
       <div {...getRootProps({ className: 'dropzone' })}>
         <input {...getInputProps()} />
-        <p className="border-2 rounded-md border-dashed p-4">
-          Drag 'n' drop {multiple ? 'some files' : 'a file'} here, or click to
-          select {multiple ? 'some files' : 'a file'}
+        <p className="grid grid-rows-2 items-center text-center justify-center border-2 rounded-md border-dashed p-4  ">
+          <CloudUpload className="h-20 w-20 text-muted-foreground m-auto" />
+          Drag 'n' drop {multiple ? 'some files' : 'a file'} here,
+          <br /> or click to select {multiple ? 'files' : 'a file'}
         </p>
       </div>
+      <p className="text-sm text-muted-foreground mt-1 mb-2">
+        {accepts ? accepts.join(', ') : null}
+      </p>
       {thumbs.length > 0 ? (
-        <aside className="flex flex-row flex-wrap gap-4 mt-4">{thumbs}</aside>
+        <aside className="mt-4">
+          <ul className="flex flex-col gap-2">{thumbs}</ul>
+        </aside>
       ) : null}
     </section>
   )
 }
-
+export type UploadFieldProps = Omit<CmsField<HTMLInputElement>, 'accept'> & {
+  type: 'audio' | 'document' | 'image' | 'video'
+  isMultiple?: boolean
+  value: ColumnFile[]
+  onUpdate: (newValue: ColumnFile[]) => void
+  accept: Accept
+}
 export function UploadField({
   className,
+  accept,
   fieldId,
   isInline,
   isMultiple = false,
@@ -1139,35 +1463,91 @@ export function UploadField({
   type,
   value = [],
   onUpdate,
-  onBlur,
 }: UploadFieldProps) {
+  const [files, setFiles] = React.useState(value)
+  const [isOpen, setIsOpen] = React.useState(false)
+
   return isInline ? (
-    <Popover>
+    <Popover open={isOpen} onOpenChange={setIsOpen}>
       <PopoverTrigger asChild>
         <Input
           className={cn(
-            'flex w-64 align-start p-2 rounded-none border focus:border-white focus:bg-gray-900 cursor-text',
-            className,
-            isSelected && 'bg-gray-800'
+            'min-w-48 flex align-star w-48 max-w-64 rounded-none border border-t-0 p-2 focus:border-white focus:bg-gray-900 cursor-text',
+            isSelected && 'bg-gray-800',
+            className
           )}
-          value={value.map((f) => f.name)}
+          value={files.map((f) => f.name)}
           onChange={() => {}}
         />
       </PopoverTrigger>
 
       <PopoverContent className={cn('w-full min-w-80')}>
         <UploadInputField
+          id={fieldId}
+          type={type}
           multiple={isMultiple}
-          files={value}
-          onFilesUpdate={onUpdate}
+          files={files}
+          accept={accept}
+          setFiles={setFiles}
         />
       </PopoverContent>
     </Popover>
   ) : (
     <UploadInputField
+      id={fieldId}
+      type={type}
       multiple={isMultiple}
-      files={value}
-      onFilesUpdate={onUpdate}
+      files={files}
+      accept={accept}
+      setFiles={setFiles}
+    />
+  )
+}
+
+export type UploadAudioFieldProps = Omit<UploadFieldProps, 'accept'> & {
+  accept?: (' .mp3' | '.aac' | '.flac')[]
+}
+
+export function UploadAudioField({ accept, ...props }: UploadAudioFieldProps) {
+  return (
+    <UploadField
+      {...(props as UploadFieldProps)}
+      type="audio"
+      accept={{
+        'audio/*': accept || ['.mp3', '.aac', '.flac'],
+      }}
+    />
+  )
+}
+
+export type UploadImageFieldProps = Omit<UploadFieldProps, 'accept'> & {
+  accept?: ('.gif' | '.jpg' | '.jpeg' | '.png' | '.svg' | '.webp')[]
+}
+
+export function UploadImageField({ accept, ...props }: UploadImageFieldProps) {
+  return (
+    <UploadField
+      {...(props as UploadFieldProps)}
+      type="image"
+      accept={{
+        'image/*': accept || ['.gif', '.jpg', '.jpeg', '.png', '.svg', '.webp'],
+      }}
+    />
+  )
+}
+
+export type UploadVideoFieldProps = Omit<UploadFieldProps, 'accept'> & {
+  accept?: ('mp4' | 'webm' | 'ogg')[]
+}
+
+export function UploadVideoField({ accept, ...props }: UploadVideoFieldProps) {
+  return (
+    <UploadField
+      {...(props as UploadFieldProps)}
+      type="video"
+      accept={{
+        'video/*': accept || ['mp4', 'webm', 'ogg'],
+      }}
     />
   )
 }
@@ -1179,8 +1559,111 @@ export function GetFieldComponent({
   type: CmsCollectionColumn['type']
   [key: string]: any
 }) {
-  const Component = (fieldTypeConfig as any)[type]?.component
-  return Component ? <Component {...props} /> : <></>
+  // const Component = React.memo((fieldTypeConfig as any)[type]?.component)
+  // return Component ? <Component {...props} /> : <></>
+
+  switch (type) {
+    case 'address': {
+      return <AddressField {...(props as AddressFieldProps)} />
+    }
+    case 'audio': {
+      return <UploadAudioField {...(props as UploadAudioFieldProps)} />
+    }
+
+    case 'audioFiles': {
+      return (
+        <UploadAudioField
+          {...(props as UploadAudioFieldProps)}
+          isMultiple={true}
+        />
+      )
+    }
+    case 'boolean': {
+      return <BooleanField {...(props as BooleanFieldProps)} />
+    }
+    case 'date': {
+      return <DateField {...(props as DateFieldProps)} type="single" />
+    }
+    case 'dateRange': {
+      return <DateField {...(props as DateFieldProps)} type="range" />
+    }
+    case 'document': {
+      return <UploadField {...(props as UploadFieldProps)} type="document" />
+    }
+    case 'documents': {
+      return (
+        <UploadField
+          {...(props as UploadFieldProps)}
+          type="document"
+          isMultiple={true}
+        />
+      )
+    }
+    case 'gallery': {
+      return (
+        <UploadImageField
+          {...(props as UploadImageFieldProps)}
+          isMultiple={true}
+        />
+      )
+    }
+    case 'image': {
+      return <UploadImageField {...(props as UploadImageFieldProps)} />
+    }
+    case 'multiReference': {
+      return <TagsField {...(props as TagFieldProps)} />
+    }
+    case 'number': {
+      return <InputField {...(props as InputFieldProps)} type="number" />
+    }
+    case 'privateNumber': {
+      return <PrivateField {...(props as PrivateFieldProps)} type="number" />
+    }
+    case 'privateText': {
+      return <PrivateField {...(props as PrivateFieldProps)} />
+    }
+    case 'reference': {
+      return <TagsField {...(props as TagFieldProps)} type="single" />
+    }
+    case 'richContent': {
+      return (
+        <RichTextField {...(props as RichTextFieldProps)} hasInsert={true} />
+      )
+    }
+    case 'richtext': {
+      return <RichTextField {...(props as RichTextFieldProps)} />
+    }
+    case 'select': {
+      return <SelectField {...(props as SelectFieldProps)} />
+    }
+    case 'tagSelect': {
+      return <TagsSelectField {...(props as TagSelectFieldProps)} />
+    }
+    case 'tags': {
+      return <TagsField {...(props as TagsFieldProps)} />
+    }
+    case 'text': {
+      return <InputField {...(props as InputFieldProps)} />
+    }
+    case 'time': {
+      return <InputField type="time" {...(props as InputFieldProps)} />
+    }
+    case 'title': {
+      return <InputField {...(props as InputFieldProps)} />
+    }
+    case 'url': {
+      return <InputField type="url" {...(props as InputFieldProps)} />
+    }
+    case 'video': {
+      return <UploadVideoField {...(props as UploadVideoFieldProps)} />
+    }
+    case 'videos': {
+      return <UploadVideoField {...(props as UploadVideoFieldProps)} />
+    }
+
+    default:
+      return null
+  }
 }
 
 export function GetFieldIcon({

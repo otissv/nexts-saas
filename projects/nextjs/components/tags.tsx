@@ -1,24 +1,42 @@
 'use client'
+
 import React from 'react'
-import { Check, ChevronDown, X } from 'lucide-react'
+import { Check, ChevronDown, Plus, X } from 'lucide-react'
+import * as SelectPrimitive from '@radix-ui/react-select'
 
 import { cn } from '@/lib/utils'
 import { Badge, BadgeProps } from '@/components/ui/badge'
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
 
-import { Button } from '@/components/ui/button'
+import { Button, ButtonProps } from '@/components/ui/button'
 import { isEmpty } from 'c-ufunc/libs/isEmpty'
 
-export interface TagProps extends React.InputHTMLAttributes<HTMLDivElement> {}
-export function TagsInput({ children, className }: TagProps) {
+export type TagInputItem = {
+  id: string
+  value: string
+}
+
+export type TagSelectSelectedItem = TagInputItem
+
+export type TagSelectSelected = {
+  selectedItems: TagInputItem[]
+  items: TagInputItem[]
+}
+
+export interface TagsInputProps
+  extends React.InputHTMLAttributes<HTMLDivElement> {}
+export function TagsInput({ children, className }: TagsInputProps) {
   return (
     <div
       className={cn(
-        'relative flex gap-2 h-10 border rounded-md w-full px-2 ',
+        'relative flex gap-2 h-10 border rounded-md pl-2',
         className
       )}
     >
@@ -31,7 +49,13 @@ export interface TagItemProps extends BadgeProps {
   value: string
   onRemoveItem: (id: string) => void
 }
-export function TagItem({ id, value, onRemoveItem, ...props }: TagItemProps) {
+export function TagItem({
+  className,
+  id,
+  value,
+  onRemoveItem,
+  ...props
+}: TagItemProps) {
   const handleOnRemove = (e: React.MouseEvent<HTMLButtonElement>) => {
     onRemoveItem && onRemoveItem(e.currentTarget.id)
   }
@@ -41,7 +65,10 @@ export function TagItem({ id, value, onRemoveItem, ...props }: TagItemProps) {
       {...props}
       aria-labelledby={`tag-input-item=${id}`}
       aria-current="false"
-      className="bg-accent text-foreground rounded-md px-2 py-1 h-6 self-center"
+      className={cn(
+        'bg-accent text-foreground text-base rounded-md px-2 py-1 h-6 self-center',
+        className
+      )}
       variant="outline"
     >
       <span className="whitespace-nowrap">{value}</span>
@@ -52,125 +79,242 @@ export function TagItem({ id, value, onRemoveItem, ...props }: TagItemProps) {
   )
 }
 
-export type TagInputItem = {
-  id: string
-  value: string
-}
 export interface TagInputProps
   extends Omit<React.InputHTMLAttributes<HTMLElement>, 'value'> {
-  value?: TagInputItem
+  value?: string
   onUpdate: (items: TagInputItem[]) => void
-  hasSelect?: boolean
-  items?: TagInputItem[]
   selectedItems?: TagInputItem[]
 }
 export function TagInput({
   className,
-  value: initialValue,
+  value: initialValue = '',
   onUpdate,
-  autoComplete,
-  items,
   placeholder,
   selectedItems = [],
+  id,
   ...props
 }: TagInputProps) {
-  const [state, setState] = React.useState(initialValue)
-  const [open, setOpen] = React.useState<boolean>(false)
+  const [value, setValue] = React.useState(initialValue)
 
-  const value = state?.value || ''
+  const updateValue = () => {
+    const exitingItem = selectedItems?.find((f) => f.id === value)
 
-  const handleOnMouseDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key == 'Enter' && onUpdate && state?.value.trim() !== '') {
-      onUpdate(state as TagInputItem)
-      setState({} as TagInputItem)
+    if (onUpdate && !exitingItem) {
+      onUpdate([...selectedItems, { id: value, value }])
+    }
+    setValue('')
+  }
+
+  const handleOnKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key == 'Enter' || e.key == ' ') {
+      updateValue()
     }
   }
 
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setState({
-      ...state,
-      value: e.target.value,
-    })
+    setValue(e.target.value)
   }
 
-  const handleOnSelectClick = (item: TagInputItem) => () => {
+  return (
+    <div className="ml-auto">
+      <input
+        id={id}
+        aria-labelledby={id}
+        autoComplete="off"
+        autoCorrect="off"
+        autoCapitalize="off"
+        onChange={handleOnChange}
+        {...props}
+        className={cn(
+          'min-w-16 max-w-48 h-10 ml-2 bg-transparent focus:outline-none',
+          className
+        )}
+        value={value}
+        onKeyDown={handleOnKeyDown}
+        type="text"
+        placeholder={placeholder}
+      />
+
+      <Button
+        className="rounded-tl-none rounded-bl-none border-none border-l-1"
+        title="Add button"
+        onClick={() => updateValue()}
+      >
+        <Plus className="h-4 w-4 mr-1" /> Add
+      </Button>
+    </div>
+  )
+}
+
+export const TagSelectGroup = SelectGroup
+export const TagSelectLabel = SelectLabel
+export const TagSelectValue = SelectValue
+
+export interface TagSelectProps extends SelectPrimitive.SelectProps {
+  className?: React.ReactNode
+  open?: boolean
+  onOpenChange?: (open: boolean) => void
+}
+export function TagSelect({
+  className,
+  children,
+  open,
+  onOpenChange,
+}: TagSelectProps) {
+  return (
+    <div
+      className={cn('relative grid grid-rows-2 grid-col-1 ml-auto', className)}
+    >
+      <Select open={open} onOpenChange={onOpenChange}>
+        {children}
+      </Select>
+    </div>
+  )
+}
+
+export interface TagSelectTriggerProps
+  extends Omit<
+    SelectPrimitive.SelectTriggerProps & React.RefAttributes<HTMLButtonElement>,
+    'ref' | 'type'
+  > {
+  selectedItems?: TagSelectSelectedItem[]
+  type?: 'single' | 'multiple'
+}
+export function TagSelectTrigger({
+  className,
+  children,
+  placeholder,
+  selectedItems = [],
+  type,
+  ...props
+}: TagSelectTriggerProps) {
+  return (
+    <SelectTrigger asChild>
+      <Button
+        {...props}
+        aria-multiselectable={type === 'multiple'}
+        variant="ghost"
+        className={cn('flex gap-2 h-10 py-0 border-0 text-base', className)}
+      >
+        {children ? (
+          <>children</>
+        ) : (
+          <>
+            {isEmpty(selectedItems) ? <>{placeholder}</> : null}
+            <ChevronDown className="h-4 w-4" />
+          </>
+        )}
+      </Button>
+    </SelectTrigger>
+  )
+}
+
+export interface TagSelectContentProps
+  extends Omit<
+    SelectPrimitive.SelectContentProps & React.RefAttributes<HTMLDivElement>,
+    'ref'
+  > {}
+export function TagSelectContent({
+  className,
+  children,
+}: TagSelectContentProps) {
+  return (
+    <SelectContent className={cn('relative p-0 ', className)}>
+      {children}
+    </SelectContent>
+  )
+}
+
+export interface TagSelectItemProps extends Omit<ButtonProps, 'ref'> {
+  isSelected?: boolean
+}
+export function TagSelectItem({
+  id,
+  onSelect,
+  value,
+  isSelected,
+  onClick,
+  ...props
+}: TagSelectItemProps) {
+  return (
+    <Button
+      {...props}
+      variant="ghost"
+      className="flex items-center gap-4 w-full justify-start pr-12"
+      onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+        onSelect({ id, value })
+        onClick && onClick(e)
+      }}
+    >
+      <Check
+        className={cn('h-4 w-4 inline-flex', !isSelected && 'text-transparent')}
+      />
+      {value}
+    </Button>
+  )
+}
+
+export interface TagSelectItemsProps
+  extends Omit<React.HtmlHTMLAttributes<HTMLButtonElement>, 'onSelect'> {
+  items?: TagInputItem[]
+  selectedItems?: TagSelectSelectedItem[]
+  type?: 'single' | 'multiple'
+  value?: string[]
+  onSelect: (
+    nextSelectedItems: TagSelectSelectedItem[],
+    previousSelectedItems: TagSelectSelectedItem[]
+  ) => void
+}
+export function TagSelectItems({
+  items = [],
+  selectedItems = [],
+  type = 'multiple',
+  onSelect,
+}: TagSelectItemsProps) {
+  const isMultiSelect = type === 'multiple'
+
+  const handleOnSelect = (item: TagInputItem) => {
     const exitingItem = selectedItems?.find((f) => f.id === item.id)
-    if (exitingItem) {
-      onUpdate && onUpdate(selectedItems.filter((f) => f.id !== exitingItem.id))
-    } else {
-      onUpdate && onUpdate([...selectedItems, item])
+    const hasItem = Boolean(exitingItem && onSelect)
+
+    switch (true) {
+      case isMultiSelect && hasItem:
+        return (
+          onSelect &&
+          onSelect(
+            selectedItems.filter((f) => f.id !== exitingItem?.id),
+            selectedItems
+          )
+        )
+      case isMultiSelect: {
+        return onSelect([...selectedItems, item], selectedItems)
+      }
+      case !isMultiSelect && hasItem: {
+        return onSelect && onSelect([], selectedItems)
+      }
+      case !isMultiSelect: {
+        return onSelect && onSelect([item], selectedItems)
+      }
     }
   }
 
-  const handleOpen = () => {
-    setOpen(!open)
-  }
+  return items ? (
+    <>
+      {items.map(({ id, value }) => {
+        const isSelected = !!selectedItems?.find(
+          (item) => item.id.toLowerCase() === id.toLowerCase()
+        )
 
-  return !isEmpty(items) ? (
-    <div className=" relative grid grid-rows-2 grid-col-1">
-      <DropdownMenu open={open} onOpenChange={handleOpen}>
-        <DropdownMenuTrigger asChild>
-          <>
-            <div>{placeholder || 'Select...'} hello</div>
-
-            <Button variant="ghost" className="flex h10 w-10 p-0">
-              <ChevronDown className="h-4 w-4" />
-            </Button>
-          </>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent className="relative justify-start p-0 pt-8 ">
-          {items
-            ? items
-                .filter((item) => item.value.includes(value))
-                .map(({ id, value }) => {
-                  const isSelected = !!selectedItems?.find(
-                    (item) => item.id.toLowerCase() === id.toLowerCase()
-                  )
-
-                  return (
-                    <Button
-                      key={id}
-                      variant="ghost"
-                      className="flex items-center gap-4 w-full justify-star pr-12"
-                      onClick={handleOnSelectClick({ id, value })}
-                    >
-                      <Check
-                        className={cn(
-                          'h-3 w-3 inline-flex',
-                          !isSelected && 'text-transparent'
-                        )}
-                      />
-
-                      {value}
-                    </Button>
-                  )
-                })
-            : null}
-          <button
-            className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary"
-            onClick={handleOpen}
-          >
-            <X className="h-4 w-4" />
-            <span className="sr-only">Close</span>
-          </button>
-        </DropdownMenuContent>
-      </DropdownMenu>
-    </div>
-  ) : (
-    <input
-      autoComplete="off"
-      autoCorrect="off"
-      autoCapitalize="off"
-      onChange={handleOnChange}
-      {...props}
-      className={cn(
-        'w-32 h-10 ml-2 bg-transparent focus:outline-none',
-        className
-      )}
-      value={value}
-      onKeyDown={handleOnMouseDown}
-      type="text"
-      placeholder={placeholder}
-    />
-  )
+        return (
+          <TagSelectItem
+            key={id}
+            id={id}
+            value={value}
+            isSelected={isSelected}
+            onSelect={handleOnSelect}
+          />
+        )
+      })}
+    </>
+  ) : null
 }

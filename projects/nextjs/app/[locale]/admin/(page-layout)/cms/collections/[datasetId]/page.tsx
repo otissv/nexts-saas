@@ -75,18 +75,19 @@ export default async function Collection({
     })
   }
 
-  const {
-    columnOrder,
-    columns,
-    data,
-    collectionName,
-    id: collectionId,
-    type,
-  } = collections?.data[0] || {}
+  const { columnOrder, columns, data, collectionName, type } =
+    collections?.data[0] || {}
 
-  if (!columns || !collectionId || !collectionName || !data?.[0]) {
+  if (!columns || !collectionName) {
     return <>Collection not Found</>
   }
+
+  // ?.[0]
+  //   ? documents
+  //   : columns.map(({ columnName }) => ({
+  //       datasetId,
+  //       data: [],
+  //     }))
 
   const columnVisibility = columns.reduce((acc: any, column) => {
     acc[column.fieldId] = column.visibility

@@ -144,31 +144,50 @@ export function cmsCollectionDb(db: PostgresDatabase) {
               .from(tables.cmsCollectionColumns)
               .where(eq(tables.cmsCollectionColumns.datasetId, datasetId))
 
-            const documentsSq = db.$with('sq').as(
-              db
-                .select({
-                  id: tables.cmsCollectionDocuments.id,
-                  collectionName: schema.collectionName,
-                  datasetId: schema.datasetId,
-                  type: schema.type,
-                  columnOrder: schema.columnOrder,
-                  data,
-                  createdAt: tables.cmsCollectionDocuments.createdAt,
-                  createdBy: tables.cmsCollectionDocuments.createdBy,
-                  updatedAt: tables.cmsCollectionDocuments.updatedAt,
-                  updatedBy: tables.cmsCollectionDocuments.updatedBy,
-                  totalPages:
-                    sql`jsonb_array_length(${tables.cmsCollectionDocuments.data})`.as(
-                      'totalPages'
-                    ),
-                })
-                .from(tables.cmsCollectionDocuments)
-                .leftJoin(schema, eq(schema.datasetId, datasetId))
-                .where(
-                  eq(schema.datasetId, tables.cmsCollectionDocuments.datasetId)
-                )
-                .limit(limit)
-            )
+            const documents = await db
+              .select({
+                id: tables.cmsCollectionDocuments.id,
+                data,
+                createdAt: tables.cmsCollectionDocuments.createdAt,
+                createdBy: tables.cmsCollectionDocuments.createdBy,
+                updatedAt: tables.cmsCollectionDocuments.updatedAt,
+                updatedBy: tables.cmsCollectionDocuments.updatedBy,
+                totalPages:
+                  sql`jsonb_array_length(${tables.cmsCollectionDocuments.data})`.as(
+                    'totalPages'
+                  ),
+              })
+              .from(tables.cmsCollectionDocuments)
+
+              .where(eq(tables.cmsCollectionDocuments.datasetId, datasetId))
+              .limit(limit)
+
+            // const documentsSq = db.$with('sq').as(
+            //   db
+            //     .select({
+            //       // id: tables.cmsCollectionDocuments.id,
+            //       collectionName: schema.collectionName,
+            //       datasetId: schema.datasetId,
+            //       type: schema.type,
+            //       columnOrder: schema.columnOrder,
+            //       // data,
+            //       // createdAt: tables.cmsCollectionDocuments.createdAt,
+            //       // createdBy: tables.cmsCollectionDocuments.createdBy,
+            //       // updatedAt: tables.cmsCollectionDocuments.updatedAt,
+            //       // updatedBy: tables.cmsCollectionDocuments.updatedBy,
+            //       // totalPages:
+            //       //   sql`jsonb_array_length(${tables.cmsCollectionDocuments.data})`.as(
+            //       //     'totalPages'
+            //       //   ),
+            //     })
+            //     .from(schema)
+            //     .leftJoin(
+            //       tables.cmsCollectionDocuments,
+            //       eq(tables.cmsCollectionDocuments.datasetId, datasetId)
+            //     )
+            //     .where(eq(schema.datasetId, datasetId))
+            //     .limit(limit)
+            // )
 
             const totalPages = await db
               .select({
@@ -181,36 +200,69 @@ export function cmsCollectionDb(db: PostgresDatabase) {
               )
               .where(eq(schema.datasetId, datasetId))
 
-            return (
-              db
-                .with(documentsSq)
-                .select(select as any)
-                .from(documentsSq)
-                .groupBy(...groupBy)
-                // .orderBy(sql`${data_item} ->> 'services' DESC`)
-                // .orderBy(sql.raw(`data_item ->> 'title' DESC`))
-                // .orderBy(desc(data_item['services'], 'desc'))
-                .then((res) => {
-                  return [
-                    res.reduce(
-                      (acc, doc) => {
-                        return {
-                          ...doc,
-                          columns,
-                          data: [...acc.data, doc.data],
-                        }
-                      },
-                      { columns, data: [] }
+            return db
+              .select({
+                collectionName: schema.collectionName,
+                datasetId: schema.datasetId,
+                type: schema.type,
+                columnOrder: schema.columnOrder,
+              })
+              .from(schema)
+              .where(eq(schema.datasetId, datasetId))
+              .limit(limit)
+              .then((res) => {
+                return [
+                  {
+                    ...res[0],
+                    datasetId,
+                    columns,
+                    data: documents.reduce(
+                      (acc: Record<string, any[]>[], { data, ...doc }) => [
+                        ...acc,
+                        { ...doc, ...(data as any) },
+                      ],
+                      []
                     ),
-                  ]
-                })
-                .then(serverResponse)
+                  },
+                ]
+              })
+              .then(serverResponse)
+              .then(getTotalPages(totalPages))
+              .catch(
+                errorResponse(422)
+              ) as SeverReturnType<CmsCollectionDocument>
 
-                .then(getTotalPages(totalPages))
-                .catch(
-                  errorResponse(422)
-                ) as SeverReturnType<CmsCollectionDocument>
-            )
+            // return (
+            //   db
+            //     .with(documentsSq)
+            //     .select(select as any)
+            //     .from(documentsSq)
+            //     .groupBy(...groupBy)
+            //     // .orderBy(sql`${data_item} ->> 'services' DESC`)
+            //     // .orderBy(sql.raw(`data_item ->> 'title' DESC`))
+            //     // .orderBy(desc(data_item['services'], 'desc'))
+            //     .then((res) => {
+            //       console.log('========res: ', res)
+            //       // return [
+            //       //   res.reduce(
+            //       //     (acc, doc) => {
+            //       //       return {
+            //       //         ...doc,
+            //       //         columns,
+            //       //         data: [...acc.data, doc.data],
+            //       //       }
+            //       //     },
+            //       //     { columns, data: [] }
+            //       //   ),
+            //       // ]
+            //     })
+            //     .then(serverResponse)
+
+            //     .then(getTotalPages(totalPages))
+            //     .catch(
+            //       errorResponse(422)
+            //     ) as SeverReturnType<CmsCollectionDocument>
+            // )
           })
         }
 

@@ -22,6 +22,8 @@ let title = 'title' as const
 let url = 'url' as const
 let video = 'video' as const
 let videos = 'videos' as const
+let tagSelect = 'tagSelect' as const
+let select = 'select' as const
 
 export type CmsColumnTypes =
   | typeof address
@@ -36,11 +38,13 @@ export type CmsColumnTypes =
   | typeof image
   | typeof multiReference
   | typeof number
-  | typeof privateText
   | typeof privateNumber
+  | typeof privateText
   | typeof reference
   | typeof richContent
   | typeof richtext
+  | typeof select
+  | typeof tagSelect
   | typeof tags
   | typeof text
   | typeof time
@@ -62,11 +66,13 @@ export const cmsColumnTypes = [
   'image',
   'multiReference',
   'number',
-  'privateText',
   'privateNumber',
+  'privateText',
   'reference',
   'richContent',
   'richtext',
+  'select',
+  'tagSelect',
   'tags',
   'text',
   'time',

@@ -2,6 +2,7 @@ const createNextIntlPlugin = require('next-intl/plugin')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  profiler: true,
   transpilePackages: ['c-ufunc'],
   images: {
     remotePatterns: [
