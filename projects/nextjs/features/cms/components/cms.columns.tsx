@@ -251,7 +251,7 @@ export function dynamicColumn({
               fieldId={fieldId}
               type={type}
               {...values}
-              defaultValue={values as any}
+              fieldOptions={values as any}
               onEditColumn={onEditColumn}
               process="edit"
             >

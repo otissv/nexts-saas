@@ -30,6 +30,7 @@ import {
   GetFieldIcon,
   fieldTypeConfig,
 } from '@/features/cms/components/cms.input-fields'
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 
 export type SetError = (error: string) => void
 export type Field<Value> = {
@@ -77,7 +78,7 @@ export function ColumnDialog({
   fieldId = '',
   type = 'text',
   help = '',
-  defaultValue,
+  fieldOptions,
   validation,
   onAddColumn,
   onEditColumn,
@@ -86,7 +87,7 @@ export function ColumnDialog({
   process: 'add' | 'edit'
   step: 1 | 2
   children: React.ReactNode
-  defaultValue?: string
+  fieldOptions?: string
   columnName?: string
   fieldId?: string
   help?: string
@@ -174,13 +175,17 @@ export function ColumnDialog({
     validate: () => true,
   })
 
-  const [defaultValueField, setDefaultValueField] = React.useState<
-    Field<CmsCollectionColumn['defaultValue']>
+  const [fieldOptionsField, setFieldOptionsField] = React.useState<
+    Field<CmsCollectionColumn['fieldOptions']>
   >({
-    value:
-      defaultValue || type === 'richContent' || type === 'richtext'
-        ? [{ type: 'p', children: [{ text: '' }] }]
-        : '',
+    value: {
+      ...fieldOptions,
+      defaultValue:
+        fieldOptions || type === 'richContent' || type === 'richtext'
+          ? [{ type: 'p', children: [{ text: '' }] }]
+          : '',
+    },
+
     error: '',
     validate: () => true,
   })
@@ -213,7 +218,7 @@ export function ColumnDialog({
     setNameField({ ...columnNameField, value: '' })
     setFieldIdField({ ...fieldIdField, value: '' })
     setHelpField({ ...helpField, value: '' })
-    setDefaultValueField({ ...defaultValueField, value: '' })
+    setFieldOptionsField({ ...fieldOptionsField, value: '' })
     setValidationField({
       ...validationField,
       value: {
@@ -242,7 +247,7 @@ export function ColumnDialog({
         [columnNameField, setError(columnNameField, setNameField)],
         [fieldIdField, setError(fieldIdField, setFieldIdField)],
         [helpField, setError(helpField, setHelpField)],
-        [defaultValueField, setError(defaultValueField, setDefaultValueField)],
+        [fieldOptionsField, setError(fieldOptionsField, setFieldOptionsField)],
       ])
     ) {
       return
@@ -253,8 +258,8 @@ export function ColumnDialog({
       columnName: columnNameField.value as CmsCollectionColumn['columnName'],
       fieldId: fieldIdField.value as CmsCollectionColumn['fieldId'],
       help: helpField.value as CmsCollectionColumn['help'],
-      defaultValue:
-        defaultValueField.value as CmsCollectionColumn['defaultValue'],
+      fieldOptions:
+        fieldOptionsField.value as CmsCollectionColumn['fieldOptions'],
       validation: validationField.value as CmsCollectionColumn['validation'],
     }
 
@@ -284,14 +289,14 @@ export function ColumnDialog({
           columnNameField={columnNameField}
           fieldIdField={fieldIdField}
           helpField={helpField}
-          defaultValueField={defaultValueField}
+          fieldOptionsField={fieldOptionsField}
           setTypeField={setTypeField}
           setNameField={setNameField}
           setFieldIdField={setFieldIdField}
           setHelpField={setHelpField}
           validationField={validationField}
           setValidationField={setValidationField}
-          setDefaultValueField={setDefaultValueField}
+          setFieldOptionsField={setFieldOptionsField}
         />
 
         <div className="flex justify-start mt-2">
@@ -313,14 +318,14 @@ export function ColumnDialog({
 }
 
 export function ColumnDialogContent({
-  defaultValueField,
+  fieldOptionsField,
   fieldIdField,
   helpField,
   columnNameField,
   step = 1,
   typeField,
   validationField,
-  setDefaultValueField,
+  setFieldOptionsField,
   setFieldIdField,
   setHelpField,
   setNameField,
@@ -329,15 +334,15 @@ export function ColumnDialogContent({
   setValidationField,
 }: {
   step: 1 | 2
-  defaultValueField: Field<CmsCollectionColumn['defaultValue']>
+  fieldOptionsField: Field<CmsCollectionColumn['fieldOptions']>
   fieldIdField: Field<CmsCollectionColumn['fieldId']>
   helpField: Field<CmsCollectionColumn['help']>
   columnNameField: Field<CmsCollectionColumn['columnName']>
   typeField: Field<CmsCollectionColumn['type'] | ''>
   validationField: Field<CmsCollectionColumn['validation']>
   setStep: React.Dispatch<React.SetStateAction<1 | 2>>
-  setDefaultValueField: React.Dispatch<
-    React.SetStateAction<Field<CmsCollectionColumn['defaultValue']>>
+  setFieldOptionsField: React.Dispatch<
+    React.SetStateAction<Field<CmsCollectionColumn['fieldOptions']>>
   >
   setFieldIdField: React.Dispatch<
     React.SetStateAction<Field<CmsCollectionColumn['fieldId']>>
@@ -418,11 +423,12 @@ export function ColumnDialogContent({
           <TabsList className="grid w-full grid-cols-3 mb-5">
             <TabsTrigger value="setting">Setting</TabsTrigger>
             <TabsTrigger value="validations">Validations</TabsTrigger>
-            <TabsTrigger value="defaultValue">Default Value</TabsTrigger>
+            <TabsTrigger value="options">Options</TabsTrigger>
           </TabsList>
+
           <TabsContent value="setting">
             <div className="mb-4">
-              <Label htmlFor="type" className="mb-2 text-sm">
+              <Label htmlFor="type" className="mb-2">
                 Column Type
               </Label>
               <div className="relative flex items-center">
@@ -434,7 +440,7 @@ export function ColumnDialogContent({
                   className="pl-8 text-muted-foreground w-30"
                   id="type"
                   defaultValue={typeField.value}
-                  disable
+                  disabled
                 />
 
                 {typeField.value !== 'title' && (
@@ -452,14 +458,13 @@ export function ColumnDialogContent({
 
             <div className="grid grid-col-2 gap-4 mb-4">
               <div>
-                <Label htmlFor="name" className="mb-2 text-sm" required>
+                <Label htmlFor="name" className="mb-2" required>
                   Column Name
                 </Label>
                 <Input
                   required
                   id="name"
                   value={columnNameField.value}
-                  disable
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                     setFieldIdField({
                       ...columnNameField,
@@ -470,14 +475,13 @@ export function ColumnDialogContent({
               </div>
 
               <div>
-                <Label htmlFor="fieldId" className="mb-2 text-sm" required>
+                <Label htmlFor="fieldId" className="mb-2" required>
                   Column ID
                 </Label>
                 <Input
                   required
                   id="fieldId"
                   value={fieldIdField.value}
-                  disable
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                     setFieldIdField({
                       ...fieldIdField,
@@ -489,14 +493,13 @@ export function ColumnDialogContent({
             </div>
 
             <div className="mb-4">
-              <Label htmlFor="help" className="mb-2 text-sm">
+              <Label htmlFor="help" className="mb-2">
                 Help text (optional)
               </Label>
               <Input
                 required
                 id="help"
                 value={helpField.value}
-                disable
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                   setFieldIdField({
                     ...helpField,
@@ -513,17 +516,11 @@ export function ColumnDialogContent({
               setValidationField={setValidationField}
             />
           </TabsContent>
-          <TabsContent value="defaultValue">
-            <Label htmlFor="defaultValue" className="mb-2 block">
-              Default column value
-            </Label>
-
-            <GetFieldComponent
+          <TabsContent value="options">
+            <FieldOptions
               type={typeField.value}
-              value={defaultValueField.value}
-              onBlur={() => {}}
-              setValue={() => {}}
-              fieldId={fieldIdField.value}
+              fieldOptionsField={fieldOptionsField}
+              setFieldOptions={setFieldOptionsField}
             />
           </TabsContent>
         </Tabs>
@@ -837,4 +834,240 @@ export function Validation({
   return Component ? (
     <Component validationField={validationField} onUpdate={onUpdate} />
   ) : null
+}
+
+export function DefaultOptions({ type = 'text', value, onUpdate }) {
+  return (
+    <div className="mb-6">
+      <Label htmlFor="defaultValue" className="flex mb-2">
+        Default Value
+      </Label>
+
+      <GetFieldComponent
+        id="defaultValue"
+        type={type}
+        value={value.defaultValue}
+        onUpdate={onUpdate}
+      />
+    </div>
+  )
+}
+
+export function BooleanOptions({ type = 'text', value, onUpdate }) {
+  return (
+    <>
+      <div className="mb-6">
+        <Label htmlFor="defaultValue" className="flex mb-2">
+          Default Value
+        </Label>
+
+        <GetFieldComponent
+          id="defaultValue"
+          type={type}
+          value={value.defaultValue}
+          onUpdate={onUpdate}
+        />
+      </div>
+
+      <div className="mb-6 grid grid-cols-2 gap-4">
+        <div>
+          <Label htmlFor="defaultValue" className="flex mb-2">
+            True Value
+          </Label>
+
+          <Input
+            id="trueValue"
+            type={type}
+            value={value.trueValue}
+            onUpdate={onUpdate}
+          />
+        </div>
+        <div className="mb-6">
+          <Label htmlFor="defaultValue" className="flex mb-2">
+            False Value
+          </Label>
+
+          <Input
+            id="falseValue"
+            type={type}
+            value={value.falseValue}
+            onUpdate={onUpdate}
+          />
+        </div>
+      </div>
+    </>
+  )
+}
+
+export function DateOptions({ type = 'text', value, onUpdate }) {
+  return (
+    <>
+      <div className="mb-6">
+        <Label htmlFor="defaultValue" className="flex mb-2">
+          Default Value
+        </Label>
+
+        <GetFieldComponent
+          id="defaultValue"
+          type={type}
+          value={value.showTime}
+          onUpdate={onUpdate}
+        />
+      </div>
+
+      <div className="mb-6">
+        <Label htmlFor="showTime" className="flex mb-2">
+          Show Time Input
+        </Label>
+
+        <Switch
+          id="showTime"
+          checked={Boolean(value.showTime)}
+          onCheckedChange={onUpdate}
+        />
+      </div>
+    </>
+  )
+}
+
+export function PrivateOptions({ type = 'text', value, onUpdate }) {
+  return (
+    <>
+      <div className="mb-6">
+        <Label htmlFor="defaultValue" className="flex mb-2">
+          Default Value
+        </Label>
+
+        <GetFieldComponent
+          id="defaultValue"
+          type={type}
+          value={value.defaultValue}
+          onUpdate={onUpdate}
+        />
+      </div>
+      <div className="mb-6">
+        <Label htmlFor="toggleVisibility" className="flex mb-2">
+          Allow toggle visibility
+        </Label>
+
+        <Switch
+          id="toggleVisibility"
+          checked={Boolean(value.toggleVisibility)}
+          onCheckedChange={onUpdate}
+        />
+      </div>
+    </>
+  )
+}
+
+export function SelectOptions({
+  type = 'text',
+  value,
+  onUpdate,
+  canAddItems = true,
+}) {
+  return (
+    <>
+      <div className="mb-6">
+        <Label htmlFor="defaultValue" className="flex mb-2">
+          Default Value
+        </Label>
+
+        <Input
+          id="defaultValue"
+          value={value.defaultValue}
+          onUpdate={onUpdate}
+        />
+      </div>
+
+      <RadioGroup className="mb-6" defaultValue="single" onChange={onUpdate}>
+        <div className="flex items-center space-x-2">
+          <RadioGroupItem value="single" id="single" />
+          <Label htmlFor="single">Single item</Label>
+        </div>
+        <div className="flex items-center space-x-2">
+          <RadioGroupItem value="multiple" id="multiple" />
+          <Label htmlFor="multiple">Multiple items</Label>
+        </div>
+      </RadioGroup>
+
+      {canAddItems ? (
+        <div className="mb-6">
+          <Label htmlFor="items" className="flex mb-2">
+            Select List
+          </Label>
+
+          <GetFieldComponent
+            id="items"
+            type="tags"
+            value={value.tags}
+            onUpdate={onUpdate}
+          />
+        </div>
+      ) : null}
+    </>
+  )
+}
+
+export function FieldOptions({
+  type,
+  onUpdate,
+  // fieldOptionsField,#
+
+  setFieldOptions,
+}: {
+  type: CmsCollectionColumn['type']
+  onUpdate: (props: ValidationUpdateTypes) => void
+}) {
+  switch (type) {
+    case 'boolean':
+      return <BooleanOptions type="boolean" value={{}} />
+
+    case 'url':
+
+    case 'number':
+      return <DefaultOptions type="number" value={{}} />
+    case 'privateText':
+      return <PrivateOptions />
+    case 'privateNumber':
+      return <PrivateOptions type="number" value={{}} />
+
+    case 'tagSelect':
+    case 'select':
+      return <SelectOptions value={{}} type="select" />
+
+    case 'tags':
+      return <SelectOptions value={{}} canAddItems={false} />
+    case 'address':
+      return <DefaultOptions value={{}} type="address" />
+
+    case 'date':
+      return <DateOptions value={{}} type="date" />
+
+    case 'multiReference':
+    case 'reference':
+
+    case 'dateRange':
+    case 'time':
+
+    case 'audio':
+    case 'audioFiles':
+
+    case 'document':
+    case 'documents':
+
+    case 'gallery':
+    case 'image':
+
+    case 'video':
+    case 'videos':
+
+    case 'richContent':
+    case 'richtext':
+    case 'title':
+    case 'text':
+      return <DefaultOptions value={{}} />
+    default:
+      return null
+  }
 }

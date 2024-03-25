@@ -30,10 +30,7 @@ export function cmsCollectionsService(db: PostgresDatabase) {
       /* Queries */
 
       selectCollection: async (
-        props: SelectProps<
-          Omit<CmsCollectionDocument, 'columns'>,
-          DBTables
-        > = {}
+        props: SelectProps<CmsCollection, DBTables> = {}
       ) => {
         return cmsCollections
           .selectCollection({

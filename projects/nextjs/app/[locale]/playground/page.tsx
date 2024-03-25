@@ -1,14 +1,73 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
+import { Plus, X } from 'lucide-react'
+import { Input } from '@/components/ui/input'
+import { Button } from '@/components/ui/button'
 
-import {
-  TagsInput,
-  TagInput,
-  TagItem,
-  TagInputItem,
-  TagInputSelect,
-} from '@/components/tags'
+interface TagProps {
+  label: string
+  onDelete: () => void
+}
+
+const Tag: React.FC<TagProps> = ({ label, onDelete }) => {
+  return (
+    <div className="inline-flex items-center px-2 py-1 bg-blue-500 text-white rounded">
+      <span className="mr-2">{label}</span>
+      <button
+        onClick={onDelete}
+        className="rounded-full p-1 hover:bg-blue-600 focus:outline-none"
+      >
+        <X size={16} color="white" />
+      </button>
+    </div>
+  )
+}
+
+const TagsInput: React.FC = ({ tags, setTags }) => {
+  const [inputValue, setInputValue] = useState('')
+
+  const handleDelete = (index: number) => {
+    setTags(tags.filter((_, i) => i !== index))
+  }
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter' && inputValue) {
+      if (!tags.includes(inputValue)) {
+        setTags([...tags, inputValue])
+        setInputValue('')
+      }
+    }
+  }
+
+  return (
+    <div className="flex items-center border rounded p-1">
+      {tags.map((tag, index) => (
+        <Tag key={tag} label={tag} onDelete={() => handleDelete(index)} />
+      ))}
+      <Input
+        variant="ghost"
+        type="text"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+        onKeyDown={handleKeyDown}
+        placeholder="Fruits..."
+        className="outline-none"
+      />
+      <Button
+        className="ml-2 text-blue-500"
+        onClick={() => {
+          if (inputValue.trim() && !tags.includes(inputValue.trim())) {
+            setTags([...tags, inputValue.trim()])
+            setInputValue('')
+          }
+        }}
+      >
+        <Plus className="h-4 w-4" /> Add
+      </Button>
+    </div>
+  )
+}
 
 const fruits = [
   { id: 'apple', value: 'Apples' },
@@ -64,51 +123,20 @@ const fruits = [
 ]
 
 export default function Playground() {
-  const [state, setState] = React.useState<TagInputItem[]>([])
-  const [selectedState, setSelectedState] = React.useState<TagInputItem[]>([])
+  const [tags, setTags] = useState<string[]>([])
 
   return (
-    <div className="grid p-4 justify-center grid-rows-2 gap-8">
-      <TagsInput>
-        {state.map(({ id, value }) => {
-          return (
-            <TagItem
-              key={id}
-              id={id}
-              value={value}
-              onRemoveItem={(id: string) =>
-                setState(state.filter((item) => item.id !== id))
-              }
-            />
-          )
-        })}
-        <TagInput
-          placeholder="Fruits..."
-          selectedItems={state}
-          onUpdate={setState}
-        />
-      </TagsInput>
-
-      <TagsInput>
-        {selectedState.map(({ id, value }) => {
-          return (
-            <TagItem
-              key={id}
-              id={id}
-              value={value}
-              onRemoveItem={(id: string) =>
-                setSelectedState(selectedState.filter((s) => s.id !== id))
-              }
-            />
-          )
-        })}
-        <TagInputSelect
-          selectedItems={selectedState}
-          items={fruits}
-          onUpdate={setSelectedState}
-          placeholder="Select"
-        />
-      </TagsInput>
+    <div className="App">
+      <h1>Tags Input Example</h1>
+      <TagsInput tags={tags} setTags={setTags} />
+      <div className="mt-4">
+        <strong>Tags:</strong>
+        <ul>
+          {tags.map((tag, index) => (
+            <li key={index}>{tag}</li>
+          ))}
+        </ul>
+      </div>
     </div>
   )
 }

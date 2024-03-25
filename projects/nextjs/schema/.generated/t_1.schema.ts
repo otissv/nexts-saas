@@ -28,7 +28,7 @@ type ColumnType = {
   displayName: string
   fieldId: string
   type: ColumnTypes
-  defaultValue?: string
+  fieldOptions?: string
   enableDelete?: boolean
   enableSort?: boolean
   enableHide?: boolean
@@ -153,7 +153,7 @@ const cmsCollectionColumn = {
   columnName: varchar('column_name', { length: 100 }).notNull(),
   fieldId: varchar('field_id', { length: 15 }).notNull(),
   type: varchar('type', { length: 100 }).notNull(),
-  defaultValue: jsonb('default_value').$type<string[]>(),
+  fieldOptions: jsonb('default_value').$type<string[]>(),
   help: text('help').default(''),
   enableDelete: boolean('enable_delete').default(true),
   enableSortBy: boolean('enable_sort_by').default(true),

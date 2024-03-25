@@ -8,72 +8,71 @@ import { cn } from '@/lib/utils'
 export type ToggleSwitchProps = React.ForwardRefExoticComponent<
   SwitchPrimitives.SwitchProps & {
     onOff?:
-      | 'onOff'
-      | 'enableDisable'
-      | 'startStop'
-      | 'subscribeUnsubscribe'
-      | 'acceptDecline'
-      | 'activeInactive'
-      | 'allowBlock'
-      | 'approveReject'
-      | 'optInOptOut'
-      | 'trueFalse'
-      | 'yesNo'
+      | 'on,off'
+      | 'enable,disable'
+      | 'start,stop'
+      | 'subscribe,unsubscribe'
+      | 'accept,decline'
+      | 'active,inactive'
+      | 'allow,block'
+      | 'approve,reject'
+      | 'opt in,opt out'
+      | 'true,false'
+      | 'yes,no'
+      | string
   } & React.RefAttributes<HTMLButtonElement>
 >
 
 const ToggleSwitch = React.forwardRef<
   React.ElementRef<ToggleSwitchProps>,
   React.ComponentPropsWithoutRef<ToggleSwitchProps>
->(({ onOff = 'onOff', className, ...props }, ref) => {
-  let on = 'On'
-  let off = 'Off'
+>(({ onOff = 'true,false', className, ...props }, ref) => {
+  let on
+  let off
 
-  if (onOff === 'enableDisable') {
+  if (onOff === 'on,off') {
+    on = 'On'
+    off = 'Off'
+  } else if (onOff === 'enable,disable') {
     on = 'Enable'
     off = 'Disable'
-  }
-  if (onOff === 'startStop') {
+  } else if (onOff === 'start,stop') {
     on = 'Start'
     off = 'Stop'
-  }
-  if (onOff === 'subscribeUnsubscribe') {
+  } else if (onOff === 'subscribe,unsubscribe') {
     on = 'Subscribe'
     off = 'Unsubscribe'
-  }
-  if (onOff === 'acceptDecline') {
+  } else if (onOff === 'accept,decline') {
     on = 'Accept'
     off = 'Decline'
-  }
-  if (onOff === 'activeInactive') {
+  } else if (onOff === 'active,inactive') {
     on = 'Active'
     off = 'Inactive'
-  }
-  if (onOff === 'allowBlock') {
+  } else if (onOff === 'allow,block') {
     on = 'Allow'
     off = 'Block'
-  }
-  if (onOff === 'approveReject') {
+  } else if (onOff === 'approve,reject') {
     on = 'Approve'
     off = 'Reject'
-  }
-  if (onOff === 'optInOptOut') {
+  } else if (onOff === 'opt in,opt out') {
     on = 'Opt In'
     off = 'Opt Out'
-  }
-  if (onOff === 'trueFalse') {
+  } else if (onOff === 'true,false') {
     on = 'True'
     off = 'False'
-  }
-  if (onOff === 'yesNo') {
+  } else if (onOff === 'yes,no') {
     on = 'yes'
     off = 'No'
+  } else {
+    const [_on, _off] = onOff.split(',')
+    on = _on
+    off = _off
   }
 
   return (
     <SwitchPrimitives.Root
       className={cn(
-        'relative peer inline-flex h-10 cursor-pointer items-center rounded-md border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-accent data-[state=unchecked]:bg-input',
+        'relative peer inline-flex h-10 cursor-pointer items-center rounded-md border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground data-[state=unchecked]:bg-input',
         className
       )}
       {...props}

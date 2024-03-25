@@ -9,6 +9,7 @@ import { format, parseISO } from 'date-fns'
 
 import { cn } from '@/lib/utils'
 import {
+  Building,
   Calendar as CalendarIcon,
   CalendarRange,
   CircleX,
@@ -27,12 +28,15 @@ import {
   Image,
   Images,
   Link,
+  Mail,
   MapPin,
+  MapPinned,
   RectangleEllipsis,
   Replace,
   ReplaceAll,
   ScrollText,
   SquareAsterisk,
+  Tag,
   Tags,
   TextCursorInput,
   ToggleLeft,
@@ -49,7 +53,7 @@ import { TooltipProvider } from '@/components/plate-ui/tooltip'
 import { Input } from '@/components/ui/input'
 
 import { Button } from '@/components/ui/button'
-import { Calendar, CalendarMode, CalendarProps } from '@/components/ui/calendar'
+import { Calendar, CalendarProps } from '@/components/ui/calendar'
 import {
   Popover,
   PopoverContent,
@@ -501,9 +505,12 @@ function AddressInputFields({
 }: AddressInputFieldsProps) {
   return (
     <>
-      <div className="mb-4">
-        <Label className="mb-2" htmlFor={fieldId && '-streetAddress'}>
-          Street Address
+      <div className="mb-4 grid gap-1">
+        <Label
+          className="flex items-center"
+          htmlFor={fieldId && '-streetAddress'}
+        >
+          <MapPin className="h-4 w-4 inline-flex mr-2" /> Street Address
         </Label>
         <Input
           id={fieldId && '-streetAddress'}
@@ -520,8 +527,11 @@ function AddressInputFields({
           }
         />
       </div>
-      <div className="mb-4">
-        <Label className="mb-2" htmlFor={fieldId && '-secondStreetAddress'}>
+      <div className="mb-4 grid gap-1">
+        <Label
+          className="flex items-center"
+          htmlFor={fieldId && '-secondStreetAddress'}
+        >
           Address 2
         </Label>
         <Input
@@ -539,9 +549,9 @@ function AddressInputFields({
           }
         />
       </div>
-      <div className="mb-4">
-        <Label className="mb-2" htmlFor={fieldId && '-city'}>
-          City
+      <div className="mb-4 grid gap-1">
+        <Label className="flex items-center" htmlFor={fieldId && '-city'}>
+          <Building className="h-4 w-4 inline-flex mr-2" /> City
         </Label>
         <Input
           id={fieldId && '-city'}
@@ -558,9 +568,9 @@ function AddressInputFields({
           }
         />
       </div>
-      <div className="mb-4">
-        <Label className="mb-2" htmlFor={fieldId && '-value'}>
-          Sate
+      <div className="mb-4 grid gap-1">
+        <Label className="flex items-center" htmlFor={fieldId && '-value'}>
+          <MapPinned className="h-4 w-4 inline-flex mr-2" /> State / Province
         </Label>
         <Input
           id={fieldId && '-value'}
@@ -577,9 +587,9 @@ function AddressInputFields({
           }
         />
       </div>
-      <div className="mb-4">
-        <Label className="mb-2" htmlFor={fieldId && '-country'}>
-          Country
+      <div className="mb-4 grid gap-1">
+        <Label className="flex items-center" htmlFor={fieldId && '-country'}>
+          <Flag className="h-4 w-4 inline-flex mr-2" /> Country
         </Label>
         <Input
           id={fieldId && '-country'}
@@ -596,9 +606,9 @@ function AddressInputFields({
           }
         />
       </div>
-      <div className="mb-4">
-        <Label className="mb-2" htmlFor={fieldId && '-zipCode'}>
-          Country
+      <div className="mb-4 grid gap-1">
+        <Label className="flex items-center" htmlFor={fieldId && '-zipCode'}>
+          <Mail className="h-4 w-4 inline-flex mr-2" /> Zip / Postal Code
         </Label>
         <Input
           id={fieldId && '-zipCode'}
@@ -734,7 +744,7 @@ export function BooleanField({
 
 export type DateFieldProps = CmsField<HTMLInputElement> &
   Omit<CalendarProps, 'selected'> & {
-    type: CalendarMode
+    type: CalendarMode | 'time'
     onUpdate: (newValue: (string | undefined)[]) => void
     value?: string[]
   }
@@ -750,9 +760,7 @@ export function DateField({
   onUpdate,
 }: DateFieldProps) {
   const handleOnUpdate = (newValue?: Date | DateRange) => {
-    console.log('handleOnUpdate: ', newValue)
-
-    if (type === 'single') {
+    if (type === 'single' || type === 'time') {
       onUpdate && onUpdate([(newValue as Date)?.toISOString()])
     } else {
       onUpdate &&
@@ -766,7 +774,7 @@ export function DateField({
   let date: Date | DateRange | undefined
 
   let label
-  if (type === 'single') {
+  if (type === 'single' || type === 'time') {
     date = value[0] ? parseISO(value[0]) : undefined
     label = date ? format(date as Date, 'PPP') : <span>Pick a date</span>
   } else {
@@ -798,6 +806,16 @@ export function DateField({
     }
   }
 
+  const handleOnTimeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (date instanceof Date) {
+      const [hours, minutes] = e.target.value.split(':')
+      date.setHours(Number(hours))
+      date.setMinutes(Number(minutes))
+
+      onUpdate && onUpdate([date.toISOString()])
+    }
+  }
+
   return (
     <Popover>
       <PopoverTrigger asChild>
@@ -813,13 +831,26 @@ export function DateField({
           {label}
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-auto p-0">
+      <PopoverContent className="relative w-auto p-0">
         <Calendar
-          mode={type as any}
+          mode={type === 'time' ? 'single' : (type as any)}
           selected={date}
           onSelect={handleOnUpdate}
           initialFocus
         />
+
+        {type === 'time' && date instanceof Date ? (
+          <div className="flex items-center justify-center border-t px-6">
+            <Label htmlFor={`${fieldId}-time`}>Time</Label>
+            <Input
+              id={`${fieldId}-time`}
+              type="time"
+              className="p-0 border-0 ml-3 w-auto"
+              value={format(date, 'HH:mm')}
+              onChange={handleOnTimeChange}
+            />
+          </div>
+        ) : null}
       </PopoverContent>
     </Popover>
   )
@@ -843,6 +874,7 @@ export function InputField({
   const [state, setState] = React.useState(value || '')
 
   const handleOnBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+    console.log(state, value, Boolean(onUpdate))
     if (state !== value && onUpdate) {
       onUpdate(state)
     }
@@ -1057,7 +1089,7 @@ export function SelectField({
     items: [],
   },
   onUpdate,
-  defaultValue,
+  fieldOptions,
   ...props
 }: SelectFieldProps) {
   const [state, setValue] = React.useState<SelectFieldValue>(initialValue)
@@ -1144,7 +1176,7 @@ export function TagsField({
     }
   }, [isOpen, value, state])
 
-  return (
+  return isInline ? (
     <Popover open={isOpen} onOpenChange={setIsOpen}>
       <PopoverTrigger asChild>
         <div
@@ -1158,25 +1190,37 @@ export function TagsField({
         </div>
       </PopoverTrigger>
 
-      <PopoverContent className={cn('w-full min-w-80 p-0')}>
-        <TagsInput>
+      <PopoverContent className={cn('w-full min-w-80 p-0 border-0')}>
+        <TagsInput className="flex items-center ">
           {tagItems}
           <TagInput
             id={fieldId}
-            placeholder="Fruits..."
+            placeholder="Items..."
             selectedItems={state}
             onUpdate={setState}
           />
         </TagsInput>
       </PopoverContent>
     </Popover>
+  ) : (
+    <TagsInput>
+      {tagItems}
+      <TagInput
+        id={fieldId}
+        placeholder="Items..."
+        selectedItems={state}
+        onUpdate={setState}
+      />
+    </TagsInput>
   )
 }
 
-export type TagSelectFieldProps = CmsField<HTMLInputElement> & {
+export type TagSelectFieldProps = Omit<CmsField<HTMLInputElement>, 'type'> & {
   value: TagSelectSelected
   onUpdate: (selectItem: TagSelectSelected) => void
   items?: TagInputItem[]
+  type?: 'single' | 'multiple'
+  url?: RequestInfo
 }
 export function TagsSelectField({
   value: initialValue = {
@@ -1189,6 +1233,8 @@ export function TagsSelectField({
   isSelected,
   onUpdate,
   onBlur,
+  type = 'multiple',
+  url,
 }: TagSelectFieldProps) {
   const [{ items, selectedItems }, setState] =
     React.useState<TagSelectSelected>({
@@ -1200,6 +1246,26 @@ export function TagsSelectField({
     initialValue.selectedItems || []
   )
   const [isOpen, setIsOpen] = React.useState(false)
+  const [isLoading, setIsLoading] = React.useState<boolean>(false)
+  const [error, setError] = React.useState<string | null>(null)
+
+  const fetchData = async () => {
+    setIsLoading(true)
+    try {
+      const response = await fetch(url as RequestInfo)
+      if (!response.ok) throw new Error('Network response was not ok')
+
+      const { data: items } = await response.json()
+      setState({
+        selectedItems,
+        items,
+      })
+    } catch (error: any) {
+      setError(error.message)
+    } finally {
+      setIsLoading(false)
+    }
+  }
 
   React.useEffect(() => {
     if (
@@ -1213,6 +1279,12 @@ export function TagsSelectField({
       onUpdate && onUpdate({ items, selectedItems })
     }
   }, [isOpen, initialValue, selectedItems])
+
+  React.useEffect(() => {
+    if (isOpen && url) {
+      fetchData()
+    }
+  }, [url, isOpen])
 
   const updateState = (
     nextSelectedItems: TagSelectSelected['selectedItems'],
@@ -1243,10 +1315,15 @@ export function TagsSelectField({
         )
       })}
       <TagSelect open={isOpen} onOpenChange={setIsOpen}>
-        <TagSelectTrigger placeholder="Select" selectedItems={selectedItems} />
+        <TagSelectTrigger
+          placeholder="Select"
+          selectedItems={selectedItems}
+          type={type}
+        />
         <TagSelectContent>
           <TagSelectGroup>
             <TagSelectItems
+              type={type}
               items={items}
               selectedItems={selectedItems}
               onSelect={updateState}
@@ -1611,7 +1688,10 @@ export function GetFieldComponent({
       return <UploadImageField {...(props as UploadImageFieldProps)} />
     }
     case 'multiReference': {
-      return <TagsField {...(props as TagFieldProps)} />
+      const url = encodeURI(
+        '/admin/cms/collections/api?columns=["id", "collectionName"]'
+      ).toString()
+      return <TagsSelectField {...(props as TagSelectFieldProps)} url={url} />
     }
     case 'number': {
       return <InputField {...(props as InputFieldProps)} type="number" />
@@ -1623,7 +1703,16 @@ export function GetFieldComponent({
       return <PrivateField {...(props as PrivateFieldProps)} />
     }
     case 'reference': {
-      return <TagsField {...(props as TagFieldProps)} type="single" />
+      const url = encodeURI(
+        '/admin/cms/collections/api?columns=["id", "collectionName"]'
+      ).toString()
+      return (
+        <TagsSelectField
+          {...(props as TagSelectFieldProps)}
+          type="single"
+          url={url}
+        />
+      )
     }
     case 'richContent': {
       return (

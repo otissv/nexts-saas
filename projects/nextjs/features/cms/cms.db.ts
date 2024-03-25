@@ -73,10 +73,7 @@ export function cmsCollectionDb(db: PostgresDatabase) {
       /* Queries */
 
       selectCollection: async (
-        props: SelectProps<
-          Omit<CmsCollectionDocument, 'columns'>,
-          DBTables
-        > = {}
+        props: SelectProps<CmsCollection, DBTables> = {}
       ) => {
         const query = async (props: any) => {
           const total = await db
@@ -392,10 +389,10 @@ export function cmsCollectionDb(db: PostgresDatabase) {
           ...props,
           data: {
             ...data,
-            ...((data.defaultValue
-              ? { defaultValue: [data.defaultValue] }
+            ...((data.fieldOptions
+              ? { fieldOptions: [data.fieldOptions] }
               : {}) as any),
-            ...(data.filter ? { defaultValue: [data.filter] } : {}),
+            ...(data.filter ? { fieldOptions: [data.filter] } : {}),
           },
         })
       },

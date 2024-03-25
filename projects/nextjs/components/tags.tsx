@@ -17,6 +17,7 @@ import {
 
 import { Button, ButtonProps } from '@/components/ui/button'
 import { isEmpty } from 'c-ufunc/libs/isEmpty'
+import { Skeleton } from './ui/skeleton'
 
 export type TagInputItem = {
   id: string
@@ -99,7 +100,7 @@ export function TagInput({
   const updateValue = () => {
     const exitingItem = selectedItems?.find((f) => f.id === value)
 
-    if (onUpdate && !exitingItem) {
+    if (onUpdate && !exitingItem && value.trim() !== '') {
       onUpdate([...selectedItems, { id: value, value }])
     }
     setValue('')
@@ -116,7 +117,7 @@ export function TagInput({
   }
 
   return (
-    <div className="ml-auto">
+    <div className="flex items-center ml-auto">
       <input
         id={id}
         aria-labelledby={id}
@@ -126,7 +127,7 @@ export function TagInput({
         onChange={handleOnChange}
         {...props}
         className={cn(
-          'min-w-16 max-w-48 h-10 ml-2 bg-transparent focus:outline-none',
+          'min-w-16 max-w-48 h-10 px-2 ml-2 bg-transparent focus:outline-none focus:bg-accent',
           className
         )}
         value={value}
@@ -298,7 +299,7 @@ export function TagSelectItems({
     }
   }
 
-  return items ? (
+  return items.length > 0 ? (
     <>
       {items.map(({ id, value }) => {
         const isSelected = !!selectedItems?.find(
@@ -316,5 +317,11 @@ export function TagSelectItems({
         )
       })}
     </>
-  ) : null
+  ) : (
+    <div className="grid gap-1">
+      <Skeleton className="h-8" />
+      <Skeleton className="h-8" />
+      <Skeleton className="h-8" />
+    </div>
+  )
 }

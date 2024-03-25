@@ -37,7 +37,7 @@ export default async function Collection({
 
   const queryParams = decodeSearchParams(searchParams)
 
-  const collections = await selectCmsCollectionsDocumentsByDatasetIdAction({
+  const collection = await selectCmsCollectionsDocumentsByDatasetIdAction({
     datasetId,
   })
 
@@ -76,7 +76,7 @@ export default async function Collection({
   }
 
   const { columnOrder, columns, data, collectionName, type } =
-    collections?.data[0] || {}
+    collection?.data[0] || {}
 
   if (!columns || !collectionName) {
     return <>Collection not Found</>
@@ -117,7 +117,7 @@ export default async function Collection({
         collectionName={collectionName}
         columnVisibility={columnVisibility}
         datasetId={datasetId}
-        totalPages={collections?.totalPages}
+        totalPages={collection?.totalPages}
         queryParams={queryParams}
       />
     </div>
