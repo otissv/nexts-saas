@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { RefreshCcw, CheckCircle2Icon } from 'lucide-react'
+import { RefreshCcw, CheckCircle2Icon, CalendarOff } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
 import { CmsCollectionColumn, CmsStateInsert } from '@/features/cms/cms.types'
@@ -31,6 +31,16 @@ import {
   fieldTypeConfig,
 } from '@/features/cms/components/cms.input-fields'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
+import { isEmpty } from 'c-ufunc/libs/isEmpty'
+import {
+  AutocompleteCheckbox,
+  AutocompleteCheckboxContent,
+  AutocompleteCheckboxInput,
+  AutocompleteCheckboxList,
+  AutocompleteCheckboxOption,
+  handleAutocompleteCheckboxOnSelect,
+} from '@/components/autocomplete-checkbox'
+import { TagInput, TagInputItem, TagItem, TagsInput } from '@/components/tags'
 
 export type SetError = (error: string) => void
 export type Field<Value> = {
@@ -71,6 +81,79 @@ type ValidationUpdateTypes =
   | FilesValidationUpdate
   | NumberValidationUpdate
 
+export type DefaultOption = { defaultValue?: string | number | boolean }
+export type BooleanOption = {
+  defaultValue?: boolean
+  falseValue?: string
+  trueValue?: string
+}
+export type DateOption = {
+  type?: 'date' | 'dateRange'
+  betweenDates?: Date[]
+  defaultValue?: Date
+  excludeDates?: Date[]
+  selectType?: 'single' | 'multiple'
+  showTime?: boolean
+}
+export type PrivateOption = {
+  type?: 'text' | 'number'
+  defaultValue?: string
+  toggleVisibility?: boolean
+}
+export type SelectOption = {
+  canAddItems?: boolean
+  defaultValue?: string
+  items?: TagInputItem[]
+  selectType?: 'single' | 'multiple'
+}
+
+export type ReferenceOption = {
+  type?: 'reference' | 'multiReference'
+  canAddItems?: boolean
+  defaultValue?: TagInputItem[]
+  items?: TagInputItem[]
+  selectType?: 'single' | 'multiple'
+}
+
+export type UploadOption = {
+  items?: AutocompleteCheckboxOption[]
+  canAddItems?: boolean
+  defaultValue?: AutocompleteCheckboxOption[]
+  selectType?: 'single' | 'multiple'
+} & (
+  | {
+      type: 'audio' | 'audioFiles'
+      accept: {
+        'audio/*': ('.mp3' | '.aac' | '.flac')[]
+      }
+    }
+  | {
+      type: 'image' | 'gallery'
+      accept: {
+        'image/*': ('.gif' | '.jpg' | '.jpeg' | '.png' | '.svg' | '.webp')[]
+      }
+    }
+  | {
+      type: 'video' | 'videos'
+      accept: {
+        'video/*': ('.mp4' | '.webm' | '.ogg')[]
+      }
+    }
+  | {
+      type: 'document' | 'documents'
+      accept?: Record<string, string>
+    }
+)
+
+export type FieldOptionsTypes =
+  | DefaultOption
+  | BooleanOption
+  | DateOption
+  | PrivateOption
+  | SelectOption
+  | ReferenceOption
+  | UploadOption
+
 export function ColumnDialog({
   step: initialStep = 1,
   children,
@@ -87,7 +170,7 @@ export function ColumnDialog({
   process: 'add' | 'edit'
   step: 1 | 2
   children: React.ReactNode
-  fieldOptions?: string
+  fieldOptions?: FieldOptionsTypes
   columnName?: string
   fieldId?: string
   help?: string
@@ -181,9 +264,11 @@ export function ColumnDialog({
     value: {
       ...fieldOptions,
       defaultValue:
-        fieldOptions || type === 'richContent' || type === 'richtext'
-          ? [{ type: 'p', children: [{ text: '' }] }]
-          : '',
+        type === 'richContent' || type === 'richtext'
+          ? fieldOptions?.defaultValue || [
+              { type: 'p', children: [{ text: '' }] },
+            ]
+          : undefined,
     },
 
     error: '',
@@ -836,7 +921,19 @@ export function Validation({
   ) : null
 }
 
-export function DefaultOptions({ type = 'text', value, onUpdate }) {
+export type DefaultOptionsProps = {
+  type: CmsCollectionColumn['type']
+  onUpdate: (props: Omit<DefaultOption, 'type'>) => void
+} & DefaultOption
+
+export function DefaultOptions({
+  defaultValue,
+  onUpdate,
+}: DefaultOptionsProps) {
+  const handleOnUpdate = (defaultValue: string | number | boolean) => {
+    onUpdate && onUpdate({ defaultValue })
+  }
+
   return (
     <div className="mb-6">
       <Label htmlFor="defaultValue" className="flex mb-2">
@@ -845,15 +942,35 @@ export function DefaultOptions({ type = 'text', value, onUpdate }) {
 
       <GetFieldComponent
         id="defaultValue"
-        type={type}
-        value={value.defaultValue}
-        onUpdate={onUpdate}
+        type="text"
+        value={defaultValue}
+        onUpdate={handleOnUpdate}
       />
     </div>
   )
 }
 
-export function BooleanOptions({ type = 'text', value, onUpdate }) {
+export type BooleanOptionsProps = {
+  onUpdate: (props: Omit<BooleanOption, 'type'>) => void
+} & BooleanOption
+
+export function BooleanOptions({
+  defaultValue,
+  trueValue,
+  falseValue,
+  onUpdate,
+}: BooleanOptionsProps) {
+  const handleOnUpdate =
+    (key: string) => (value: string | number | boolean) => {
+      onUpdate &&
+        onUpdate({
+          defaultValue,
+          trueValue,
+          falseValue,
+          [key]: value,
+        })
+    }
+
   return (
     <>
       <div className="mb-6">
@@ -863,35 +980,35 @@ export function BooleanOptions({ type = 'text', value, onUpdate }) {
 
         <GetFieldComponent
           id="defaultValue"
-          type={type}
-          value={value.defaultValue}
-          onUpdate={onUpdate}
+          type="boolean"
+          value={defaultValue}
+          onUpdate={handleOnUpdate('defaultValue')}
         />
       </div>
 
       <div className="mb-6 grid grid-cols-2 gap-4">
         <div>
-          <Label htmlFor="defaultValue" className="flex mb-2">
+          <Label htmlFor="trueValue" className="flex mb-2">
             True Value
           </Label>
 
           <Input
             id="trueValue"
-            type={type}
-            value={value.trueValue}
-            onUpdate={onUpdate}
+            type="text"
+            value={trueValue}
+            onUpdate={handleOnUpdate('trueValue')}
           />
         </div>
         <div className="mb-6">
-          <Label htmlFor="defaultValue" className="flex mb-2">
+          <Label htmlFor="falseValue" className="flex mb-2">
             False Value
           </Label>
 
           <Input
             id="falseValue"
-            type={type}
-            value={value.falseValue}
-            onUpdate={onUpdate}
+            type="text"
+            value={falseValue}
+            onUpdate={handleOnUpdate('falseValue')}
           />
         </div>
       </div>
@@ -899,7 +1016,32 @@ export function BooleanOptions({ type = 'text', value, onUpdate }) {
   )
 }
 
-export function DateOptions({ type = 'text', value, onUpdate }) {
+export type DateOptionsProps = {
+  onUpdate: (props: Omit<DateOption, 'type'>) => void
+} & DateOption
+
+export function DateOptions({
+  betweenDates,
+  excludeDates,
+  defaultValue,
+  selectType = 'single',
+  showTime,
+  type = 'date',
+  onUpdate,
+}: DateOptionsProps) {
+  const handleOnUpdate =
+    (key: string) => (value: string | number | boolean) => {
+      onUpdate &&
+        onUpdate({
+          betweenDates,
+          excludeDates,
+          defaultValue,
+          selectType,
+          showTime,
+          [key]: value,
+        })
+    }
+
   return (
     <>
       <div className="mb-6">
@@ -910,27 +1052,113 @@ export function DateOptions({ type = 'text', value, onUpdate }) {
         <GetFieldComponent
           id="defaultValue"
           type={type}
-          value={value.showTime}
-          onUpdate={onUpdate}
+          value={defaultValue}
+          onUpdate={handleOnUpdate('defaultValue')}
         />
+
+        <Button
+          variant="outline"
+          className="ml-2"
+          disabled={isEmpty(defaultValue)}
+          onClick={() => onUpdate}
+        >
+          <CalendarOff className="h-4 w-4" />
+        </Button>
+      </div>
+
+      {type === 'date' ? (
+        <RadioGroup
+          className="mb-6"
+          defaultValue={selectType}
+          onValueChange={handleOnUpdate('selectType')}
+        >
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="single" id="single" />
+            <Label htmlFor="single">Single date</Label>
+          </div>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="multiple" id="multiple" />
+            <Label htmlFor="multiple">Multiple dates</Label>
+          </div>
+        </RadioGroup>
+      ) : null}
+
+      <div className="mb-6">
+        <Label htmlFor="betweenDates" className="flex mb-2">
+          Between Dates
+        </Label>
+        <GetFieldComponent
+          id="betweenDates"
+          type="dateRange"
+          value={betweenDates}
+          onUpdate={handleOnUpdate('betweenDates')}
+        />
+        <Button
+          variant="outline"
+          className="ml-2"
+          disabled={isEmpty(betweenDates)}
+          onClick={() => onUpdate}
+        >
+          <CalendarOff className="h-4 w-4" />
+        </Button>
       </div>
 
       <div className="mb-6">
-        <Label htmlFor="showTime" className="flex mb-2">
-          Show Time Input
+        <Label htmlFor="excludeDates" className="flex mb-2">
+          Exclude Dates
         </Label>
-
-        <Switch
-          id="showTime"
-          checked={Boolean(value.showTime)}
-          onCheckedChange={onUpdate}
+        <GetFieldComponent
+          id="excludeDates"
+          type="date"
+          value={excludeDates}
+          onUpdate={handleOnUpdate('excludeDates')}
         />
+        <Button
+          variant="outline"
+          className="ml-2"
+          disabled={isEmpty(excludeDates)}
+          onClick={() => onUpdate}
+        >
+          <CalendarOff className="h-4 w-4" />
+        </Button>
       </div>
+
+      {type === 'date' ? (
+        <div className="mb-6">
+          <Label htmlFor="showTime" className="flex mb-2">
+            Show Time Input
+          </Label>
+
+          <Switch
+            id="showTime"
+            checked={Boolean(showTime)}
+            onCheckedChange={handleOnUpdate('showTime')}
+          />
+        </div>
+      ) : null}
     </>
   )
 }
 
-export function PrivateOptions({ type = 'text', value, onUpdate }) {
+export type PrivateOptionsProps = {
+  onUpdate: (props: Omit<PrivateOption, 'type'>) => void
+} & PrivateOption
+export function PrivateOptions({
+  type = 'text',
+  defaultValue,
+  toggleVisibility,
+  onUpdate,
+}: PrivateOptionsProps) {
+  const handleOnUpdate =
+    (key: string) => (value: string | number | boolean) => {
+      onUpdate &&
+        onUpdate({
+          toggleVisibility,
+          defaultValue,
+          [key]: value,
+        })
+    }
+
   return (
     <>
       <div className="mb-6">
@@ -941,8 +1169,8 @@ export function PrivateOptions({ type = 'text', value, onUpdate }) {
         <GetFieldComponent
           id="defaultValue"
           type={type}
-          value={value.defaultValue}
-          onUpdate={onUpdate}
+          value={defaultValue}
+          onUpdate={handleOnUpdate('defaultValue')}
         />
       </div>
       <div className="mb-6">
@@ -952,20 +1180,36 @@ export function PrivateOptions({ type = 'text', value, onUpdate }) {
 
         <Switch
           id="toggleVisibility"
-          checked={Boolean(value.toggleVisibility)}
-          onCheckedChange={onUpdate}
+          checked={Boolean(toggleVisibility)}
+          onCheckedChange={handleOnUpdate('toggleVisibility')}
         />
       </div>
     </>
   )
 }
 
+export type SelectOptionsProps = {
+  onUpdate: (props: Omit<SelectOption, 'type'>) => void
+} & SelectOption
 export function SelectOptions({
-  type = 'text',
-  value,
-  onUpdate,
+  defaultValue,
   canAddItems = true,
-}) {
+  selectType = 'single',
+  items = [],
+  onUpdate,
+}: SelectOptionsProps) {
+  const handleOnUpdate =
+    (key: string) => (value: string | number | boolean) => {
+      onUpdate &&
+        onUpdate({
+          defaultValue,
+          canAddItems,
+          items,
+          selectType,
+          [key]: value,
+        })
+    }
+
   return (
     <>
       <div className="mb-6">
@@ -975,12 +1219,16 @@ export function SelectOptions({
 
         <Input
           id="defaultValue"
-          value={value.defaultValue}
-          onUpdate={onUpdate}
+          value={defaultValue}
+          onChange={handleOnUpdate('defaultValue')}
         />
       </div>
 
-      <RadioGroup className="mb-6" defaultValue="single" onChange={onUpdate}>
+      <RadioGroup
+        className="mb-6"
+        defaultValue={selectType}
+        onValueChange={handleOnUpdate('selectType')}
+      >
         <div className="flex items-center space-x-2">
           <RadioGroupItem value="single" id="single" />
           <Label htmlFor="single">Single item</Label>
@@ -1000,8 +1248,8 @@ export function SelectOptions({
           <GetFieldComponent
             id="items"
             type="tags"
-            value={value.tags}
-            onUpdate={onUpdate}
+            value={items}
+            onUpdate={handleOnUpdate('items')}
           />
         </div>
       ) : null}
@@ -1009,64 +1257,411 @@ export function SelectOptions({
   )
 }
 
+export type ReferenceOptionsProps = {
+  onUpdate: (props: Omit<ReferenceOption, 'type'>) => void
+} & ReferenceOption
+
+export function ReferenceOptions({
+  type = 'reference',
+  defaultValue,
+  canAddItems = true,
+  selectType = 'single',
+  items = [],
+  onUpdate,
+}: ReferenceOptionsProps) {
+  const handleOnUpdate =
+    (key: string) => (value: string | number | boolean) => {
+      onUpdate &&
+        onUpdate({
+          defaultValue,
+          canAddItems,
+          items,
+          selectType,
+          [key]: value,
+        })
+    }
+
+  return (
+    <>
+      <div className="mb-6">
+        <Label htmlFor="defaultValue" className="flex mb-2">
+          Default Value
+        </Label>
+
+        <GetFieldComponent
+          id="defaultValue"
+          type="reference"
+          value={defaultValue}
+          onUpdate={handleOnUpdate('defaultValue')}
+          url={encodeURI(
+            '/admin/cms/collections/api?columns=["id", "collectionName"]'
+          ).toString()}
+        />
+      </div>
+
+      <RadioGroup
+        className="mb-6"
+        defaultValue={selectType}
+        onValueChange={handleOnUpdate('selectType')}
+      >
+        <div className="flex items-center space-x-2">
+          <RadioGroupItem value="single" id="single" />
+          <Label htmlFor="single">Single item</Label>
+        </div>
+        <div className="flex items-center space-x-2">
+          <RadioGroupItem value="multiple" id="multiple" />
+          <Label htmlFor="multiple">Multiple items</Label>
+        </div>
+      </RadioGroup>
+
+      {canAddItems ? (
+        <div className="mb-6">
+          <Label htmlFor="items" className="flex mb-2">
+            Select List
+          </Label>
+
+          <GetFieldComponent
+            id="items"
+            type={type}
+            value={items}
+            onUpdate={handleOnUpdate('items')}
+            url={encodeURI(
+              '/admin/cms/collections/api?columns=["id", "collectionName"]'
+            ).toString()}
+          />
+        </div>
+      ) : null}
+    </>
+  )
+}
+
+export type UploadOptionsProps = {
+  onUpdate: (props: Omit<UploadOption, 'type'>) => void
+} & UploadOption
+
+export function UploadOptions({
+  items = [],
+  defaultValue,
+  type,
+  accept,
+  onUpdate,
+}: UploadOptionsProps) {
+  const [filter, setFilter] = React.useState('')
+
+  const options = Object.values(accept || [])
+    .flat()
+    .map((ext) => ({ id: ext, value: ext })) as AutocompleteCheckboxOption[]
+
+  const handleOnUpdate = (key: string) => (value: TagInputItem[]) => {
+    onUpdate &&
+      onUpdate({
+        defaultValue,
+        items,
+        [key]: value,
+      })
+  }
+
+  const handleOnSelect = handleAutocompleteCheckboxOnSelect({
+    options,
+    selectedValues: items,
+    onSelect: handleOnUpdate('acceptExtensions'),
+  })
+
+  return (
+    <>
+      <div className="mb-6">
+        {type === 'image' ? (
+          <>
+            <Label htmlFor="defaultValue" className="flex mb-2">
+              Default Value
+            </Label>
+            <GetFieldComponent
+              id="defaultValue"
+              type={type}
+              value={defaultValue}
+              onUpdate={handleOnUpdate('defaultValue')}
+            />
+          </>
+        ) : null}
+      </div>
+
+      {type !== 'document' && type !== 'documents' ? (
+        <div className="mb-6">
+          <Label htmlFor="acceptExtensions" className="flex mb-2">
+            Accept Extensions
+          </Label>
+
+          <AutocompleteCheckbox>
+            <AutocompleteCheckboxInput
+              filter={filter}
+              setFilter={setFilter}
+              placeholder="Filter"
+            />
+            <AutocompleteCheckboxContent>
+              <AutocompleteCheckboxList
+                filter={filter}
+                options={options}
+                selectedValues={items}
+                onSelect={handleOnSelect}
+              />
+            </AutocompleteCheckboxContent>
+          </AutocompleteCheckbox>
+        </div>
+      ) : (
+        <div className="mb-6">
+          <Label htmlFor="defaultValue" className="flex mb-2">
+            Accept Extensions
+          </Label>
+          <TagsInput className="flex items-center ">
+            {items.map(({ id, value }) => {
+              return (
+                <TagItem
+                  key={id}
+                  id={id}
+                  value={value}
+                  onRemoveItem={(id: string) =>
+                    onUpdate &&
+                    onUpdate({
+                      items: items.filter((item) => item.id !== id),
+                    })
+                  }
+                />
+              )
+            })}
+            <TagInput
+              id="SelectedItems"
+              placeholder="Items..."
+              selectedItems={items}
+              onUpdate={handleOnUpdate('items')}
+            />
+          </TagsInput>
+        </div>
+      )}
+    </>
+  )
+}
+
 export function FieldOptions({
   type,
-  onUpdate,
-  // fieldOptionsField,#
-
+  fieldOptionsField,
   setFieldOptions,
 }: {
+  fieldOptionsField: FieldOptionsTypes
   type: CmsCollectionColumn['type']
-  onUpdate: (props: ValidationUpdateTypes) => void
+  onUpdate: (props: { felidOptions: FieldOptionsTypes }) => void
+  setFieldOptions: (felidOptions: FieldOptionsTypes) => void
 }) {
-  switch (type) {
-    case 'boolean':
-      return <BooleanOptions type="boolean" value={{}} />
+  const handleOnUpdate = (felidOptions: FieldOptionsTypes) => {
+    setFieldOptions && setFieldOptions(felidOptions)
+  }
 
-    case 'url':
+  switch (type) {
+    case 'address':
+      return <DefaultOptions type="address" onUpdate={handleOnUpdate} />
+
+    case 'boolean':
+      return (
+        <BooleanOptions
+          {...(fieldOptionsField as BooleanOption)}
+          onUpdate={handleOnUpdate}
+        />
+      )
+
+    case 'date':
+      return (
+        <DateOptions
+          {...(fieldOptionsField as DateOption)}
+          type="date"
+          onUpdate={handleOnUpdate}
+        />
+      )
+
+    case 'dateRange':
+      return (
+        <DateOptions
+          {...(fieldOptionsField as DateOption)}
+          type="dateRange"
+          onUpdate={handleOnUpdate}
+        />
+      )
 
     case 'number':
-      return <DefaultOptions type="number" value={{}} />
+      return (
+        <DefaultOptions
+          type="number"
+          {...(fieldOptionsField as DefaultOption)}
+          onUpdate={handleOnUpdate}
+        />
+      )
     case 'privateText':
-      return <PrivateOptions />
+      return (
+        <PrivateOptions
+          {...(fieldOptionsField as PrivateOption)}
+          onUpdate={handleOnUpdate}
+          type="text"
+        />
+      )
     case 'privateNumber':
-      return <PrivateOptions type="number" value={{}} />
+      return (
+        <PrivateOptions
+          type="number"
+          {...(fieldOptionsField as PrivateOption)}
+          onUpdate={handleOnUpdate}
+        />
+      )
 
     case 'tagSelect':
     case 'select':
-      return <SelectOptions value={{}} type="select" />
+      return (
+        <SelectOptions
+          {...(fieldOptionsField as SelectOption)}
+          onUpdate={handleOnUpdate}
+        />
+      )
 
     case 'tags':
-      return <SelectOptions value={{}} canAddItems={false} />
-    case 'address':
-      return <DefaultOptions value={{}} type="address" />
-
-    case 'date':
-      return <DateOptions value={{}} type="date" />
+      return (
+        <SelectOptions
+          {...(fieldOptionsField as SelectOption)}
+          canAddItems={false}
+          onUpdate={handleOnUpdate}
+        />
+      )
 
     case 'multiReference':
-    case 'reference':
+      return (
+        <ReferenceOptions
+          {...(fieldOptionsField as ReferenceOption)}
+          type="reference"
+          onUpdate={handleOnUpdate}
+        />
+      )
 
-    case 'dateRange':
+    case 'reference':
+      return (
+        <ReferenceOptions
+          {...(fieldOptionsField as ReferenceOption)}
+          type="multiReference"
+          selectType="single"
+          onUpdate={handleOnUpdate}
+        />
+      )
+
     case 'time':
+      return (
+        <DefaultOptions
+          {...(fieldOptionsField as DefaultOption)}
+          type="time"
+          onUpdate={handleOnUpdate}
+        />
+      )
 
     case 'audio':
+      return (
+        <UploadOptions
+          type="audio"
+          accept={{
+            'audio/*': ['.mp3', '.aac', '.flac'],
+          }}
+          onUpdate={handleOnUpdate}
+        />
+      )
     case 'audioFiles':
-
+      return (
+        <UploadOptions
+          type="audioFiles"
+          accept={{
+            'audio/*': ['.mp3', '.aac', '.flac'],
+          }}
+          onUpdate={handleOnUpdate}
+        />
+      )
     case 'document':
+      return <UploadOptions type="document" onUpdate={handleOnUpdate} />
     case 'documents':
-
+      return <UploadOptions type="documents" onUpdate={handleOnUpdate} />
     case 'gallery':
+      return (
+        <UploadOptions
+          type="gallery"
+          accept={{
+            'image/*': ['.gif', '.jpg', '.jpeg', '.png', '.svg', '.webp'],
+          }}
+          onUpdate={handleOnUpdate}
+        />
+      )
     case 'image':
-
+      return (
+        <UploadOptions
+          type="image"
+          accept={{
+            'image/*': ['.gif', '.jpg', '.jpeg', '.png', '.svg', '.webp'],
+          }}
+          onUpdate={handleOnUpdate}
+        />
+      )
     case 'video':
+      return (
+        <UploadOptions
+          type="video"
+          accept={{
+            'video/*': ['.mp4', '.webm', '.ogg'],
+          }}
+          onUpdate={handleOnUpdate}
+        />
+      )
     case 'videos':
+      return (
+        <UploadOptions
+          type="videos"
+          accept={{
+            'video/*': ['.mp4', '.webm', '.ogg'],
+          }}
+          onUpdate={handleOnUpdate}
+        />
+      )
+
+    case 'url':
+      return (
+        <DefaultOptions
+          type="url"
+          {...(fieldOptionsField as DefaultOption)}
+          onUpdate={handleOnUpdate}
+        />
+      )
 
     case 'richContent':
+      return (
+        <DefaultOptions
+          type="richContent"
+          {...(fieldOptionsField as DefaultOption)}
+          onUpdate={handleOnUpdate}
+        />
+      )
     case 'richtext':
+      return (
+        <DefaultOptions
+          type="richtext"
+          {...(fieldOptionsField as DefaultOption)}
+          onUpdate={handleOnUpdate}
+        />
+      )
     case 'title':
+      return (
+        <DefaultOptions
+          type="title"
+          {...(fieldOptionsField as DefaultOption)}
+          onUpdate={handleOnUpdate}
+        />
+      )
     case 'text':
-      return <DefaultOptions value={{}} />
+      return (
+        <DefaultOptions
+          type="text"
+          {...(fieldOptionsField as DefaultOption)}
+          onUpdate={handleOnUpdate}
+        />
+      )
     default:
       return null
   }

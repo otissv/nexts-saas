@@ -93,7 +93,7 @@ const cmsCollectionColumn = {
   columnName: varchar('column_name', { length: 100 }).notNull(),
   fieldId: varchar('field_id', { length: 15 }).notNull(),
   type: varchar('type', { length: 100 }).notNull(),
-  fieldOptions: jsonb('default_value').$type<string[]>(),
+  fieldOptions: jsonb('default_value').$type<Record<string, any>>(),
   help: text('help').default(''),
   enableDelete: boolean('enable_delete').default(true),
   enableSortBy: boolean('enable_sort_by').default(true),

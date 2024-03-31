@@ -22,25 +22,7 @@ export const cmsCollectionColumnDefaultValidator = z.object({
   datasetId: z.string().min(1).max(50),
   fieldId: z.string().min(1).max(15),
   type: z.enum(cmsColumnTypes),
-  fieldOptions: z
-    .union([
-      z.string(),
-      z.number(),
-      z.boolean(),
-      z.array(
-        z.object({
-          type: z.string(),
-          children: z.array(z.record(z.string(), z.any())),
-        })
-      ),
-      z.array(z.string()),
-      z.array(z.number()),
-      z.object({
-        type: z.string(),
-        children: z.array(z.record(z.string(), z.any())),
-      }),
-    ])
-    .optional(),
+  fieldOptions: z.record(z.string(), z.any()).optional(),
   help: z.string().optional(),
   enableDelete: z.boolean().optional(),
   enableSort: z.boolean().optional(),

@@ -129,6 +129,7 @@ importers:
       class-variance-authority: ^0.7.0
       clsx: ^2.0.0
       cmdk: ^0.2.0
+      debounce: ^2.0.0
       deepmerge: ^4.3.1
       dompurify: ^3.0.6
       dotenv: ^16.3.1
@@ -312,6 +313,7 @@ importers:
       class-variance-authority: 0.7.0
       clsx: 2.0.0
       cmdk: 0.2.0_ew3x2u2ugx4vldoypxrzsnu5mm
+      debounce: 2.0.0
       deepmerge: 4.3.1
       dompurify: 3.0.6
       dotenv: 16.3.1
@@ -5124,6 +5126,11 @@ packages:
     engines: {node: '>=0.11'}
     dependencies:
       '@babel/runtime': 7.23.9
+    dev: false
+
+  /debounce/2.0.0:
+    resolution: {integrity: sha512-xRetU6gL1VJbs85Mc4FoEGSjQxzpdxRyFhe3lmWFyy2EzydIcD4xzUvRJMD+NPDfMwKNhxa3PvsIOU32luIWeA==}
+    engines: {node: '>=18'}
     dev: false
 
   /debug/4.3.4:
