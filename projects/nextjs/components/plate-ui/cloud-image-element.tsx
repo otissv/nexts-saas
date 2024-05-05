@@ -1,15 +1,15 @@
-'use client';
+'use client'
 
-import React from 'react';
-import { cn } from '@udecode/cn';
+import React from 'react'
+import { cn } from '@udecode/cn'
 import {
   TCloudImageElement,
   useCloudImageElementState,
-} from '@udecode/plate-cloud';
-import { PlateElement, PlateElementProps, Value } from '@udecode/plate-common';
+} from '@udecode/plate-cloud'
+import { PlateElement, PlateElementProps, Value } from '@udecode/plate-common'
 
-import { ResizeControls } from './cloud-resize-controls';
-import { StatusBar } from './cloud-status-bar';
+import { ResizeControls } from './cloud-resize-controls'
+import { StatusBar } from './cloud-status-bar'
 
 export interface CloudImageElementProps
   extends PlateElementProps<Value, TCloudImageElement> {}
@@ -18,10 +18,10 @@ export function CloudImageElement({
   className,
   ...props
 }: CloudImageElementProps) {
-  const { children, element } = props;
+  const { children, element } = props
 
   const { focused, selected, src, srcSet, size, upload, setSize } =
-    useCloudImageElementState({ element });
+    useCloudImageElementState({ element })
 
   return (
     <PlateElement
@@ -94,5 +94,5 @@ export function CloudImageElement({
       </span>
       {children}
     </PlateElement>
-  );
+  )
 }

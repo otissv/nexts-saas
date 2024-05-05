@@ -1,19 +1,19 @@
-'use client';
+'use client'
 
-import React from 'react';
-import { cn } from '@udecode/cn';
+import React from 'react'
+import { cn } from '@udecode/cn'
 import {
   CommentNewSubmitButton,
   CommentNewTextarea,
   useCommentsSelectors,
-} from '@udecode/plate-comments';
+} from '@udecode/plate-comments'
 
-import { buttonVariants } from './button';
-import { CommentAvatar } from './comment-avatar';
-import { inputVariants } from './input';
+import { buttonVariants } from './button'
+import { CommentAvatar } from './comment-avatar'
+import { inputVariants } from './input'
 
 export function CommentCreateForm() {
-  const myUserId = useCommentsSelectors().myUserId();
+  const myUserId = useCommentsSelectors().myUserId()
 
   return (
     <div className="flex w-full space-x-2">
@@ -29,5 +29,5 @@ export function CommentCreateForm() {
         </CommentNewSubmitButton>
       </div>
     </div>
-  );
+  )
 }

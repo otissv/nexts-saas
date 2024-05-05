@@ -1,11 +1,11 @@
-import React from 'react';
-import { cn, withRef } from '@udecode/cn';
-import { PlateElement } from '@udecode/plate-common';
+import React from 'react'
+import { cn, withRef } from '@udecode/cn'
+import { PlateElement } from '@udecode/plate-common'
 
 export const TableRowElement = withRef<
   typeof PlateElement,
   {
-    hideBorder?: boolean;
+    hideBorder?: boolean
   }
 >(({ hideBorder, children, ...props }, ref) => {
   return (
@@ -17,5 +17,5 @@ export const TableRowElement = withRef<
     >
       <tr>{children}</tr>
     </PlateElement>
-  );
-});
+  )
+})

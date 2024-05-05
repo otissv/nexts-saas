@@ -1,23 +1,19 @@
-import React from 'react';
-import { cn, withRef } from '@udecode/cn';
-import { PlateElement, withHOC } from '@udecode/plate-common';
-import { ELEMENT_IMAGE, Image, useMediaState } from '@udecode/plate-media';
-import { ResizableProvider, useResizableStore } from '@udecode/plate-resizable';
+import React from 'react'
+import { cn, withRef } from '@udecode/cn'
+import { PlateElement, withHOC } from '@udecode/plate-common'
+import { ELEMENT_IMAGE, Image, useMediaState } from '@udecode/plate-media'
+import { ResizableProvider, useResizableStore } from '@udecode/plate-resizable'
 
-import { Caption, CaptionTextarea } from './caption';
-import { MediaPopover } from './media-popover';
-import {
-  mediaResizeHandleVariants,
-  Resizable,
-  ResizeHandle,
-} from './resizable';
+import { Caption, CaptionTextarea } from './caption'
+import { MediaPopover } from './media-popover'
+import { mediaResizeHandleVariants, Resizable, ResizeHandle } from './resizable'
 
 export const ImageElement = withHOC(
   ResizableProvider,
   withRef<typeof PlateElement>(
     ({ className, children, nodeProps, ...props }, ref) => {
-      const { readOnly, focused, selected, align = 'center' } = useMediaState();
-      const width = useResizableStore().get.width();
+      const { readOnly, focused, selected, align = 'center' } = useMediaState()
+      const width = useResizableStore().get.width()
 
       return (
         <MediaPopover pluginKey={ELEMENT_IMAGE}>
@@ -64,7 +60,7 @@ export const ImageElement = withHOC(
             {children}
           </PlateElement>
         </MediaPopover>
-      );
+      )
     }
   )
-);
+)

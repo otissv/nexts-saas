@@ -82,13 +82,6 @@ export default async function Collection({
     return <>Collection not Found</>
   }
 
-  // ?.[0]
-  //   ? documents
-  //   : columns.map(({ columnName }) => ({
-  //       datasetId,
-  //       data: [],
-  //     }))
-
   const columnVisibility = columns.reduce((acc: any, column) => {
     acc[column.fieldId] = column.visibility
     return acc

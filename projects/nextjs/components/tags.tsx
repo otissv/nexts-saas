@@ -220,16 +220,18 @@ export function TagSelectContent({
   children,
 }: TagSelectContentProps) {
   return (
-    <SelectContent className={cn('relative p-0 ', className)}>
+    <SelectContent className={cn('relative p-0', className)}>
       {children}
     </SelectContent>
   )
 }
 
-export interface TagSelectItemProps extends Omit<ButtonProps, 'ref'> {
+export interface TagSelectItemProps extends Omit<ButtonProps, 'ref' | 'type'> {
+  type?: 'single' | 'multiple'
   isSelected?: boolean
 }
 export function TagSelectItem({
+  type = 'single',
   id,
   onSelect,
   value,
@@ -240,6 +242,8 @@ export function TagSelectItem({
   return (
     <Button
       {...props}
+      aria-checked={Boolean(value)}
+      role="checkbox"
       variant="ghost"
       className="flex items-center gap-4 w-full justify-start pr-12"
       onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
@@ -248,9 +252,15 @@ export function TagSelectItem({
       }}
     >
       <Check
-        className={cn('h-4 w-4 inline-flex', !isSelected && 'text-transparent')}
+        className={cn(
+          'h-6 w-6 inline-fle',
+
+          type === 'multiple' &&
+            'border rounded-md p-1 border-white hover:border-accent-foreground',
+          !isSelected && 'text-transparent'
+        )}
       />
-      {value}
+      <span className="whitespace-nowrap">{value}</span>
     </Button>
   )
 }
@@ -300,7 +310,7 @@ export function TagSelectItems({
   }
 
   return items.length > 0 ? (
-    <>
+    <div>
       {items.map(({ id, value }) => {
         const isSelected = !!selectedItems?.find(
           (item) => item.id.toLowerCase() === id.toLowerCase()
@@ -308,6 +318,7 @@ export function TagSelectItems({
 
         return (
           <TagSelectItem
+            type={type}
             key={id}
             id={id}
             value={value}
@@ -316,7 +327,7 @@ export function TagSelectItems({
           />
         )
       })}
-    </>
+    </div>
   ) : (
     <div className="grid gap-1">
       <Skeleton className="h-8" />

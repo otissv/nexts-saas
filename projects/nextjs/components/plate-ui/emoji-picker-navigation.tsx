@@ -1,33 +1,31 @@
-import React from 'react';
-import { cn } from '@udecode/cn';
+import React from 'react'
+import { cn } from '@udecode/cn'
 import {
   EmojiCategoryList,
   IEmojiFloatingLibrary,
   UseEmojiPickerType,
-} from '@udecode/plate-emoji';
+} from '@udecode/plate-emoji'
 
 export type EmojiPickerNavigationProps = Pick<
   UseEmojiPickerType,
   'i18n' | 'emojiLibrary' | 'icons' | 'focusedCategory'
 > & {
-  onClick: (id: EmojiCategoryList) => void;
-};
+  onClick: (id: EmojiCategoryList) => void
+}
 
 const getBarProperty = (
   emojiLibrary: IEmojiFloatingLibrary,
   focusedCategory?: EmojiCategoryList
 ) => {
-  let width = 0;
-  let position = 0;
+  let width = 0
+  let position = 0
   if (focusedCategory) {
-    width = 100 / emojiLibrary.getGrid().size;
-    position = focusedCategory
-      ? emojiLibrary.indexOf(focusedCategory) * 100
-      : 0;
+    width = 100 / emojiLibrary.getGrid().size
+    position = focusedCategory ? emojiLibrary.indexOf(focusedCategory) * 100 : 0
   }
 
-  return { width, position };
-};
+  return { width, position }
+}
 
 export function EmojiPickerNavigation({
   i18n,
@@ -36,7 +34,7 @@ export function EmojiPickerNavigation({
   focusedCategory,
   onClick,
 }: EmojiPickerNavigationProps) {
-  const { width, position } = getBarProperty(emojiLibrary, focusedCategory);
+  const { width, position } = getBarProperty(emojiLibrary, focusedCategory)
 
   return (
     <nav
@@ -75,5 +73,5 @@ export function EmojiPickerNavigation({
         />
       </div>
     </nav>
-  );
+  )
 }

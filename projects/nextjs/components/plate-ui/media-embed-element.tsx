@@ -1,23 +1,19 @@
-import React from 'react';
-import { cn, withRef } from '@udecode/cn';
-import { PlateElement, withHOC } from '@udecode/plate-common';
+import React from 'react'
+import { cn, withRef } from '@udecode/cn'
+import { PlateElement, withHOC } from '@udecode/plate-common'
 import {
   ELEMENT_MEDIA_EMBED,
   parseTwitterUrl,
   parseVideoUrl,
   useMediaState,
-} from '@udecode/plate-media';
-import { ResizableProvider, useResizableStore } from '@udecode/plate-resizable';
-import LiteYouTubeEmbed from 'react-lite-youtube-embed';
-import { Tweet } from 'react-tweet';
+} from '@udecode/plate-media'
+import { ResizableProvider, useResizableStore } from '@udecode/plate-resizable'
+import LiteYouTubeEmbed from 'react-lite-youtube-embed'
+import { Tweet } from 'react-tweet'
 
-import { Caption, CaptionTextarea } from './caption';
-import { MediaPopover } from './media-popover';
-import {
-  mediaResizeHandleVariants,
-  Resizable,
-  ResizeHandle,
-} from './resizable';
+import { Caption, CaptionTextarea } from './caption'
+import { MediaPopover } from './media-popover'
+import { mediaResizeHandleVariants, Resizable, ResizeHandle } from './resizable'
 
 export const MediaEmbedElement = withHOC(
   ResizableProvider,
@@ -33,9 +29,9 @@ export const MediaEmbedElement = withHOC(
       isYoutube,
     } = useMediaState({
       urlParsers: [parseTwitterUrl, parseVideoUrl],
-    });
-    const width = useResizableStore().get.width();
-    const provider = embed?.provider;
+    })
+    const width = useResizableStore().get.width()
+    const provider = embed?.provider
 
     return (
       <MediaPopover pluginKey={ELEMENT_MEDIA_EMBED}>
@@ -131,6 +127,6 @@ export const MediaEmbedElement = withHOC(
           {children}
         </PlateElement>
       </MediaPopover>
-    );
+    )
   })
-);
+)

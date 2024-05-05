@@ -1,16 +1,16 @@
-'use client';
+'use client'
 
-import React from 'react';
-import { cn } from '@udecode/cn';
+import React from 'react'
+import { cn } from '@udecode/cn'
 import {
   TCloudAttachmentElement,
   useCloudAttachmentElementState,
-} from '@udecode/plate-cloud';
-import { PlateElement, PlateElementProps, Value } from '@udecode/plate-common';
+} from '@udecode/plate-cloud'
+import { PlateElement, PlateElementProps, Value } from '@udecode/plate-common'
 
-import { Icons } from '@/components/icons';
+import { Icons } from '@/components/icons'
 
-import { StatusBar } from './cloud-status-bar';
+import { StatusBar } from './cloud-status-bar'
 
 export interface CloudAttachmentElementProps
   extends PlateElementProps<Value, TCloudAttachmentElement> {}
@@ -19,11 +19,11 @@ export function CloudAttachmentElement({
   className,
   ...props
 }: CloudAttachmentElementProps) {
-  const { children, element } = props;
+  const { children, element } = props
 
   const { focused, selected, upload } = useCloudAttachmentElementState({
     element,
-  });
+  })
 
   return (
     <PlateElement
@@ -62,5 +62,5 @@ export function CloudAttachmentElement({
       </div>
       {children}
     </PlateElement>
-  );
+  )
 }

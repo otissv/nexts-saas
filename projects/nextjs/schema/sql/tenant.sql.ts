@@ -29,6 +29,8 @@ export function tenantsSql(schemaId: number) {
 		"type" varchar (100) NOT NULL,
 		"default_value" jsonb,
 		"help" text DEFAULT '',
+		"fieldOptions" jsonb,
+		"validation" jsonb,
 		"enable_delete" boolean DEFAULT true,
 		"enable_sort_by" boolean DEFAULT true,
 		"enable_hide" boolean DEFAULT true,

@@ -1,14 +1,14 @@
-'use client';
+'use client'
 
-import React from 'react';
-import { cn } from '@udecode/cn';
+import React from 'react'
+import { cn } from '@udecode/cn'
 import {
   CommentEditActions,
   CommentEditTextarea,
-} from '@udecode/plate-comments';
+} from '@udecode/plate-comments'
 
-import { buttonVariants } from './button';
-import { inputVariants } from './input';
+import { buttonVariants } from './button'
+import { inputVariants } from './input'
 
 export function CommentValue() {
   return (
@@ -29,5 +29,5 @@ export function CommentValue() {
         </CommentEditActions.SaveButton>
       </div>
     </div>
-  );
+  )
 }

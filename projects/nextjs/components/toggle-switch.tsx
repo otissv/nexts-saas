@@ -5,21 +5,23 @@ import * as SwitchPrimitives from '@radix-ui/react-switch'
 
 import { cn } from '@/lib/utils'
 
+export type ToggleSwitchOnOffTypes =
+  | 'on,off'
+  | 'enable,disable'
+  | 'start,stop'
+  | 'subscribe,unsubscribe'
+  | 'accept,decline'
+  | 'active,inactive'
+  | 'allow,block'
+  | 'approve,reject'
+  | 'opt in,opt out'
+  | 'true,false'
+  | 'yes,no'
+  | string
+
 export type ToggleSwitchProps = React.ForwardRefExoticComponent<
   SwitchPrimitives.SwitchProps & {
-    onOff?:
-      | 'on,off'
-      | 'enable,disable'
-      | 'start,stop'
-      | 'subscribe,unsubscribe'
-      | 'accept,decline'
-      | 'active,inactive'
-      | 'allow,block'
-      | 'approve,reject'
-      | 'opt in,opt out'
-      | 'true,false'
-      | 'yes,no'
-      | string
+    onOff?: ToggleSwitchOnOffTypes
   } & React.RefAttributes<HTMLButtonElement>
 >
 

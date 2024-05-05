@@ -1,23 +1,23 @@
-import React from 'react';
-import { withRef } from '@udecode/cn';
+import React from 'react'
+import { withRef } from '@udecode/cn'
 import {
   ELEMENT_UL,
   useListToolbarButton,
   useListToolbarButtonState,
-} from '@udecode/plate-list';
+} from '@udecode/plate-list'
 
-import { Icons } from '@/components/icons';
+import { Icons } from '@/components/icons'
 
-import { ToolbarButton } from './toolbar';
+import { ToolbarButton } from './toolbar'
 
 export const ListToolbarButton = withRef<
   typeof ToolbarButton,
   {
-    nodeType?: string;
+    nodeType?: string
   }
 >(({ nodeType = ELEMENT_UL, ...rest }, ref) => {
-  const state = useListToolbarButtonState({ nodeType });
-  const { props } = useListToolbarButton(state);
+  const state = useListToolbarButtonState({ nodeType })
+  const { props } = useListToolbarButton(state)
 
   return (
     <ToolbarButton
@@ -28,5 +28,5 @@ export const ListToolbarButton = withRef<
     >
       {nodeType === ELEMENT_UL ? <Icons.ul /> : <Icons.ol />}
     </ToolbarButton>
-  );
-});
+  )
+})

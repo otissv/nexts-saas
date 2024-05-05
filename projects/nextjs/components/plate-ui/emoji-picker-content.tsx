@@ -1,11 +1,11 @@
-import React, { memo, useCallback } from 'react';
-import { cn } from '@udecode/cn';
+import React, { memo, useCallback } from 'react'
+import { cn } from '@udecode/cn'
 import {
   Emoji,
   EmojiSettings,
   GridRow,
   UseEmojiPickerType,
-} from '@udecode/plate-emoji';
+} from '@udecode/plate-emoji'
 
 export type EmojiPickerContentProps = Pick<
   UseEmojiPickerType,
@@ -18,21 +18,21 @@ export type EmojiPickerContentProps = Pick<
   | 'visibleCategories'
   | 'refs'
   | 'settings'
->;
+>
 
 export type EmojiButtonProps = {
-  index: number;
-  emoji: Emoji;
-  onSelect: (emoji: Emoji) => void;
-  onMouseOver: (emoji?: Emoji) => void;
-};
+  index: number
+  emoji: Emoji
+  onSelect: (emoji: Emoji) => void
+  onMouseOver: (emoji?: Emoji) => void
+}
 
 export type RowOfButtonsProps = Pick<
   UseEmojiPickerType,
   'onMouseOver' | 'onSelectEmoji' | 'emojiLibrary'
 > & {
-  row: GridRow;
-};
+  row: GridRow
+}
 
 const Button = memo(
   ({ index, emoji, onSelect, onMouseOver }: EmojiButtonProps) => {
@@ -55,10 +55,10 @@ const Button = memo(
           {emoji.skins[0].native}
         </span>
       </button>
-    );
+    )
   }
-);
-Button.displayName = 'Button';
+)
+Button.displayName = 'Button'
 
 const RowOfButtons = memo(
   ({ row, emojiLibrary, onSelectEmoji, onMouseOver }: RowOfButtonsProps) => (
@@ -74,8 +74,8 @@ const RowOfButtons = memo(
       ))}
     </div>
   )
-);
-RowOfButtons.displayName = 'RowOfButtons';
+)
+RowOfButtons.displayName = 'RowOfButtons'
 
 export function EmojiPickerContent({
   i18n,
@@ -88,24 +88,24 @@ export function EmojiPickerContent({
   refs,
   settings = EmojiSettings,
 }: EmojiPickerContentProps) {
-  const getRowWidth = settings.perLine.value * settings.buttonSize.value;
+  const getRowWidth = settings.perLine.value * settings.buttonSize.value
 
   const isCategoryVisible = useCallback(
     (categoryId: any) => {
       return visibleCategories.has(categoryId)
         ? visibleCategories.get(categoryId)
-        : false;
+        : false
     },
     [visibleCategories]
-  );
+  )
 
   const EmojiList = useCallback(() => {
     return emojiLibrary
       .getGrid()
       .sections()
       .map(({ id: categoryId }) => {
-        const section = emojiLibrary.getGrid().section(categoryId);
-        const { buttonSize } = settings;
+        const section = emojiLibrary.getGrid().section(categoryId)
+        const { buttonSize } = settings
 
         return (
           <div
@@ -135,8 +135,8 @@ export function EmojiPickerContent({
                   ))}
             </div>
           </div>
-        );
-      });
+        )
+      })
   }, [
     emojiLibrary,
     getRowWidth,
@@ -145,7 +145,7 @@ export function EmojiPickerContent({
     onSelectEmoji,
     onMouseOver,
     settings,
-  ]);
+  ])
 
   const SearchList = useCallback(() => {
     return (
@@ -165,7 +165,7 @@ export function EmojiPickerContent({
           ))}
         </div>
       </div>
-    );
+    )
   }, [
     emojiLibrary,
     getRowWidth,
@@ -173,7 +173,7 @@ export function EmojiPickerContent({
     searchResult,
     onSelectEmoji,
     onMouseOver,
-  ]);
+  ])
 
   return (
     <div
@@ -192,5 +192,5 @@ export function EmojiPickerContent({
         {isSearching ? SearchList() : EmojiList()}
       </div>
     </div>
-  );
+  )
 }

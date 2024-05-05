@@ -1,18 +1,18 @@
-import React from 'react';
-import { cn, withRef } from '@udecode/cn';
-import { PlateElement } from '@udecode/plate-common';
+import React from 'react'
+import { cn, withRef } from '@udecode/cn'
+import { PlateElement } from '@udecode/plate-common'
 import {
   useTodoListElement,
   useTodoListElementState,
-} from '@udecode/plate-list';
+} from '@udecode/plate-list'
 
-import { Checkbox } from './checkbox';
+import { Checkbox } from './checkbox'
 
 export const TodoListElement = withRef<typeof PlateElement>(
   ({ className, children, ...props }, ref) => {
-    const { element } = props;
-    const state = useTodoListElementState({ element });
-    const { checkboxProps } = useTodoListElement(state);
+    const { element } = props
+    const state = useTodoListElementState({ element })
+    const { checkboxProps } = useTodoListElement(state)
 
     return (
       <PlateElement
@@ -37,6 +37,6 @@ export const TodoListElement = withRef<typeof PlateElement>(
           {children}
         </span>
       </PlateElement>
-    );
+    )
   }
-);
+)

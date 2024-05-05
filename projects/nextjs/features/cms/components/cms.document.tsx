@@ -5,7 +5,7 @@ import { HTML5Backend } from 'react-dnd-html5-backend'
 import { Plus } from 'lucide-react'
 
 import { CmsCollection, CmsCollectionDocument } from '@/features/cms/cms.types'
-import { GetFieldComponent } from '@/features/cms/components/cms.input-fields'
+import { GetFieldComponent } from '@/features/cms/components/cms-config'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { TypographyH1 } from '@/components/typography/h1.typography'
@@ -54,12 +54,12 @@ export const Document = ({
               </Button>
             </CardHeader>
             <CardContent className="pt-6">
-              {columns.map(({ fieldId, displayName, type }) => {
+              {columns.map(({ fieldId, columnName, type }) => {
                 return (
                   <div key={fieldId} className="mb-6">
-                    {displayName && (
+                    {columnName && (
                       <Label className="mb-2" htmlFor={fieldId}>
-                        {displayName}
+                        {columnName}
                       </Label>
                     )}
                     <div>

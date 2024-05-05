@@ -33,7 +33,8 @@
     ".next/types/**/*.ts",
     "**/*.d.ts",
     "lib/session",
-    "app/[locale]/admin/api/route"
+    "app/[locale]/admin/api/route",
+    "features/cms/components/cms-config.tsx"
   ],
   "exclude": ["node_modules"]
 }

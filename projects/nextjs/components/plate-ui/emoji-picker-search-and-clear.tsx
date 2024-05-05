@@ -1,13 +1,13 @@
-import React from 'react';
-import { cn } from '@udecode/cn';
-import { UseEmojiPickerType } from '@udecode/plate-emoji';
+import React from 'react'
+import { cn } from '@udecode/cn'
+import { UseEmojiPickerType } from '@udecode/plate-emoji'
 
-import { Icons } from '@/components/icons';
+import { Icons } from '@/components/icons'
 
 export type EmojiPickerSearchAndClearProps = Pick<
   UseEmojiPickerType,
   'i18n' | 'searchValue' | 'clearSearch'
->;
+>
 
 export function EmojiPickerSearchAndClear({
   i18n,
@@ -37,5 +37,5 @@ export function EmojiPickerSearchAndClear({
         </button>
       )}
     </>
-  );
+  )
 }

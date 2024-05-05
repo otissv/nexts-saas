@@ -23,12 +23,12 @@ import {
 } from 'lucide-react'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import { DndProvider } from 'react-dnd'
-import { isEmpty } from 'c-ufunc/libs/isEmpty'
 
 import {
+  CmsActions,
   CmsCollection,
   CmsCollectionColumn,
-  CmsCollectionDocument,
+  CmsState,
   CmsStateInsert,
   CmsStateUpdate,
   CmsStateUpdateColumn,
@@ -64,69 +64,8 @@ import {
   TableRow,
 } from '@/components/ui/table'
 import { Pagination, usePagination } from '@/components/page/pagination'
-import { fieldTypeConfig } from './cms.input-fields'
-
-export type CmsState = {
-  collectionName: CmsCollection['collectionName']
-  datasetId: CmsCollection['datasetId']
-  collectionType: CmsCollection['type']
-  columns: CmsCollectionColumn[]
-  columnVisibility: VisibilityState
-  data: CmsCollectionDocument[]
-  isColumnDialogOpen: boolean
-  columnOrder: string[]
-}
-
-export type CmsActionAddData = {
-  type: 'addData'
-  data: CmsState['data']
-}
-
-export type CmsActionUpdateData = {
-  type: 'updateData'
-  data: CmsState['data']
-}
-
-export type CmsActionAddColumns = {
-  type: 'addColumns'
-  columns: CmsState['columns']
-}
-
-export type CmsActionColumnAddVisibility = {
-  type: 'addColumnVisibility'
-  field: string
-  value: boolean
-}
-
-export type CmsActionSetState = {
-  type: 'setState'
-  set:
-    | Partial<{ [K in keyof CmsState]: CmsState[K] }>
-    | ((state: CmsState) => CmsState)
-}
-
-export type CmsActionUpdateColumn = {
-  type: 'updateColumn'
-  column: CmsStateUpdateColumn
-}
-
-export type CmsActions =
-  | CmsActionAddData
-  | CmsActionUpdateData
-  | CmsActionAddColumns
-  | CmsActionColumnAddVisibility
-  | CmsActionSetState
-  | CmsActionUpdateColumn
-
-export function maybeToMap<Value>(value: Value) {
-  return isEmpty(value)
-    ? new Map<any, Value>()
-    : new Map<any, Value>((value as any[]).entries())
-}
-
-export function mapToArray<TMap extends Map<string, any>>(map: TMap) {
-  return [...(map || []).values()]
-}
+import { fieldTypeConfig } from './cms-config'
+import { isValidString } from 'c-ufunc/libs/isValidString'
 
 export function CollectionDataTable<TData extends Record<string, any>>({
   collectionName,
@@ -165,6 +104,7 @@ export function CollectionDataTable<TData extends Record<string, any>>({
     datasetId: datasetId || '',
     isColumnDialogOpen: false,
     columnOrder: ['_select', '_action', ...initialColumnOrder],
+    errors: new Map(),
   }
 
   const reducer = (state: CmsState, action: CmsActions): CmsState => {
@@ -190,22 +130,25 @@ export function CollectionDataTable<TData extends Record<string, any>>({
       case 'updateColumn': {
         const { column } = action
         const fieldId = column.fieldId as string
-        const index = columns.findIndex((col) => col.fieldId === fieldId)
+        const index = state.columns.findIndex((col) => col.fieldId === fieldId)
 
         let updatedColumns: CmsCollectionColumn[]
 
         if (index === 0) {
-          updatedColumns = [{ ...columns[0], ...column }, ...columns.slice(1)]
-        } else if (index === columns.length - 1) {
           updatedColumns = [
-            ...columns.slice(0, columns.length - 1),
-            { ...columns[columns.length - 1], ...column },
+            { ...state.columns[0], ...column },
+            ...state.columns.slice(1),
+          ]
+        } else if (index === state.columns.length - 1) {
+          updatedColumns = [
+            ...state.columns.slice(0, state.columns.length - 1),
+            { ...state.columns[state.columns.length - 1], ...column },
           ]
         } else {
           updatedColumns = [
-            ...columns.slice(0, index),
-            { ...columns[index], ...column },
-            ...columns.slice(index + 1),
+            ...state.columns.slice(0, index),
+            { ...state.columns[index], ...column },
+            ...state.columns.slice(index + 1),
           ]
         }
 
@@ -249,10 +192,9 @@ export function CollectionDataTable<TData extends Record<string, any>>({
     }
   }
 
-  const [
-    { columns, collectionType, columnVisibility, data, columnOrder },
-    dispatch,
-  ] = React.useReducer(reducer, initialState)
+  const [state, dispatch] = React.useReducer(reducer, initialState)
+
+  console.log('cms: ', state)
 
   const pagination = usePagination({
     total: totalPages,
@@ -270,7 +212,7 @@ export function CollectionDataTable<TData extends Record<string, any>>({
   // }
 
   const handleOnAddColumn = (column: CmsStateInsert) => {
-    const updatedColumns = [...columns, column] as CmsCollectionColumn[]
+    const updatedColumns = [...state.columns, column] as CmsCollectionColumn[]
 
     dispatch({
       type: 'setState',
@@ -290,9 +232,7 @@ export function CollectionDataTable<TData extends Record<string, any>>({
       column,
     })
 
-    console.log(column)
-
-    // update(column as CmsStateUpdateColumn)
+    update(column as CmsStateUpdateColumn)
   }
 
   const handleOnColumnOrderChange: OnChangeFn<ColumnOrderState> = async (
@@ -345,30 +285,42 @@ export function CollectionDataTable<TData extends Record<string, any>>({
   const handleOnDeleteItem = () => {}
   const handleOnDupliacteItem = (fieldId: string, withContent: boolean) => {}
 
-  const handleOnUpdateData = (
-    rowIndex: number,
-    columnId: string,
+  const handleOnCellUpdateData = ({
+    rowIndex,
+    columnId,
+    value,
+    errorMessage,
+  }: {
+    rowIndex: number
+    columnId: string
     value: string
-  ) => {
-    console.log('handleOnUpdateData: ', {
-      rowIndex,
-      columnId,
-      value,
-    })
-
+    errorMessage: string
+  }) => {
     dispatch({
       type: 'setState',
-      set: (state) => ({
-        ...state,
-        data: state.data.map((row, index) =>
-          index === rowIndex
-            ? {
-                ...state.data[rowIndex],
-                [columnId]: value,
-              }
-            : row
-        ),
-      }),
+      set: (state) => {
+        let errors = new Map(state.errors)
+        const errorId = `${columnId}:${rowIndex}`
+
+        if (isValidString(errorMessage)) {
+          errors.set(errorId, errorMessage)
+        } else {
+          errors.delete(errorId)
+        }
+
+        return {
+          ...state,
+          data: state.data.map((row, index) =>
+            index === rowIndex
+              ? {
+                  ...state.data[rowIndex],
+                  [columnId]: value,
+                }
+              : row
+          ),
+          errors,
+        }
+      },
     })
 
     //TODO: added database, rollback if fail
@@ -377,22 +329,23 @@ export function CollectionDataTable<TData extends Record<string, any>>({
   const tableColumns = React.useMemo(
     () =>
       getTableColumns({
-        collectionType,
-        collectionName,
-        columns,
+        collectionName: state.collectionName,
+        collectionType: state.collectionType,
+        columns: state.columns,
+        errors: state.errors,
         onEditColumn: handleOnColumnEdit,
         onSortColumn: handleOnColumnSort,
         onVisibilityToggle: handleOnColumnVisibility,
       }),
-    [columns.join(',')]
+    [state.columns.join(','), state.errors]
   )
 
   const table = useReactTable<TData>({
     state: {
-      columnVisibility,
-      columnOrder,
+      columnVisibility: state.columnVisibility,
+      columnOrder: state.columnOrder,
     },
-    data: data as any,
+    data: state.data as any,
     columns: tableColumns,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
@@ -400,7 +353,7 @@ export function CollectionDataTable<TData extends Record<string, any>>({
     getFilteredRowModel: getFilteredRowModel(),
     onColumnOrderChange: handleOnColumnOrderChange,
     meta: {
-      updateData: handleOnUpdateData,
+      updateData: handleOnCellUpdateData,
     },
   })
 
@@ -454,7 +407,7 @@ export function CollectionDataTable<TData extends Record<string, any>>({
                   </Button>
                 </div>
                 <div className="h-full overflow-y-auto">
-                  {columnOrder.map((fieldId) => {
+                  {state.columnOrder.map((fieldId) => {
                     const column = table.getColumn(fieldId)
                     const values = (column?.columnDef as any).values
 

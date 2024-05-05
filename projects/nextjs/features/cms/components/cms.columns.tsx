@@ -16,6 +16,7 @@ import {
   Trash2,
   ArrowUpRightFromSquare,
   GripVertical,
+  Info,
 } from 'lucide-react'
 import {
   ColumnDef,
@@ -26,10 +27,20 @@ import {
 } from '@tanstack/react-table'
 
 import { cn } from '@/lib/utils'
-import { CmsCollection, CmsCollectionColumn } from '@/features/cms/cms.types'
+import {
+  CmsCollection,
+  CmsCollectionColumn,
+  CmsErrorState,
+} from '@/features/cms/cms.types'
 import { DataTableCell } from '@/features/cms/components/cms.data-table-cell'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -40,10 +51,13 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { ColumnDialog } from '@/features/cms/components/cms.column.dialog'
 
+import { fieldTypeConfig } from './cms-config'
+
 export function getTableColumns<TData, TValue>({
   collectionName,
   collectionType,
   columns,
+  errors,
   onEditColumn,
   onSortColumn,
   onVisibilityToggle,
@@ -51,6 +65,7 @@ export function getTableColumns<TData, TValue>({
   collectionName: string
   collectionType: CmsCollection['type']
   columns: CmsCollectionColumn[]
+  errors: CmsErrorState
   onEditColumn: (values: Partial<CmsCollectionColumn>) => void
   onVisibilityToggle: (
     column: any
@@ -127,17 +142,31 @@ export function getTableColumns<TData, TValue>({
       enableHiding: false,
     },
 
-    ...columns.map(({ columnName, fieldId, type, ...values }) =>
-      dynamicColumn({
-        collectionType,
+    ...columns.map(
+      ({
         columnName,
         fieldId,
         type,
-        values,
-        onEditColumn,
-        onSortColumn,
-        onVisibilityToggle,
-      })
+        help,
+        fieldOptions,
+        validation,
+        ...values
+      }) => {
+        return dynamicColumn({
+          collectionType,
+          columnName,
+          fieldId,
+          type,
+          help: help || '',
+          fieldOptions: fieldOptions || {},
+          validation: validation || {},
+          values,
+          onEditColumn,
+          onSortColumn,
+          onVisibilityToggle,
+          errors,
+        })
+      }
     ),
   ]
 }
@@ -210,16 +239,24 @@ export function ColumnHeader({
 export function dynamicColumn({
   collectionType,
   columnName,
+  errors,
   fieldId,
   type,
   values,
   onEditColumn,
   onSortColumn,
   onVisibilityToggle,
+  help,
+  fieldOptions,
+  validation,
 }: {
   collectionType: CmsCollection['type']
   columnName: string
+  errors: CmsErrorState
   fieldId: string
+  help: string
+  fieldOptions: Record<string, any>
+  validation: Record<string, any>
   type: CmsCollectionColumn['type']
   values: Partial<CmsCollectionColumn>
   onEditColumn: (values: Partial<CmsCollectionColumn>) => void
@@ -240,18 +277,37 @@ export function dynamicColumn({
       column: TanstackColumn<any>
       table: TanstackTable<any>
     }) => {
+      const field = (fieldTypeConfig as any)[fieldId]
+
+      const Icon =
+        field?.Icon ||
+        function () {
+          return null
+        }
+
       return (
         <ColumnHeader column={column} table={table}>
           <GripVertical className="h-4 p-0" />
-          {columnName}
+          <Icon /> {columnName}
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger className="ml-2">
+                <Info className="h-4" />
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{field.description}</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
           <ColumnDropdownMenu className="ml-auto">
             <ColumnDialog
               step={2}
               columnName={columnName}
               fieldId={fieldId}
               type={type}
-              {...values}
-              fieldOptions={values as any}
+              help={help}
+              fieldOptions={fieldOptions}
+              validation={validation}
               onEditColumn={onEditColumn}
               process="edit"
             >
@@ -312,15 +368,25 @@ export function dynamicColumn({
         </ColumnHeader>
       )
     },
-    cell: <TData, TValue>(props: CellContext<TData, TValue>) => (
-      <DataTableCell {...props} />
-    ),
+    cell: <TData, TValue>(props: CellContext<TData, TValue>) => {
+      return (
+        <DataTableCell
+          {...props}
+          fieldId={fieldId}
+          type={type}
+          errors={errors}
+        />
+      )
+    },
     values: {
       columnName,
       fieldId,
       type,
+      fieldOptions: (fieldTypeConfig as any)[fieldId]?.fieldOptions || {},
+      validation: (fieldTypeConfig as any)[fieldId]?.validation || {},
       ...values,
     },
+    validate: (fieldTypeConfig as any)[fieldId]?.validate,
   }
 }
 

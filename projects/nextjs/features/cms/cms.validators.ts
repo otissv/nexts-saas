@@ -23,6 +23,7 @@ export const cmsCollectionColumnDefaultValidator = z.object({
   fieldId: z.string().min(1).max(15),
   type: z.enum(cmsColumnTypes),
   fieldOptions: z.record(z.string(), z.any()).optional(),
+  validation: z.record(z.string(), z.any()).optional(),
   help: z.string().optional(),
   enableDelete: z.boolean().optional(),
   enableSort: z.boolean().optional(),
@@ -43,107 +44,128 @@ export const cmsCollectionColumnDefaultValidator = z.object({
   updatedBy: z.number().int().positive(),
 })
 
-const cmsCollectionRequiredColumn = cmsCollectionColumnDefaultValidator.extend({
-  validation: z
-    .object({
-      required: z.boolean().optional(),
-    })
-    .optional(),
-})
-const cmsCollectionStringColumn = cmsCollectionColumnDefaultValidator.extend({
-  validation: z
-    .object({
-      required: z.boolean().optional(),
-      minLength: z.number().optional(),
-      maxLength: z.number().optional(),
-    })
-    .optional(),
-})
-const cmsCollectionNumberColumn = cmsCollectionColumnDefaultValidator.extend({
-  validation: z
-    .object({
-      required: z.boolean().optional(),
-      min: z.number().optional(),
-      max: z.number().optional(),
-    })
-    .optional(),
-})
-const cmsCollectionFileColumn = cmsCollectionColumnDefaultValidator.extend({
-  validation: z
-    .object({
-      required: z.boolean().optional(),
-      size: z.number(),
-    })
-    .optional(),
-})
-const cmsCollectionFilesColumn = cmsCollectionColumnDefaultValidator.extend({
-  validation: z
-    .object({
-      required: z.boolean().optional(),
-      size: z.number(),
-      minItems: z.number().optional(),
-      maxItems: z.number().optional(),
-    })
-    .optional(),
-})
-const cmsCollectionDateColumn = cmsCollectionColumnDefaultValidator.extend({
-  validation: z
-    .object({
-      required: z.boolean().optional(),
-      before: z.coerce.date().optional(),
-      after: z.coerce.date().optional(),
-      start: z.coerce.date().optional(),
-      end: z.coerce.date().optional(),
-    })
-    .optional(),
-})
-const cmsCollectionTimeColumn = cmsCollectionColumnDefaultValidator.extend({
-  validation: z
-    .object({
-      required: z.boolean().optional(),
-      start: z.coerce.date().optional(),
-      end: z.coerce.date().optional(),
-    })
-    .optional(),
-})
-const cmsCollectionTagsColumn = cmsCollectionColumnDefaultValidator.extend({
-  validation: z
-    .object({
-      required: z.boolean().optional(),
-      minItems: z.number().optional(),
-      maxItems: z.number().optional(),
-      minLength: z.number().optional(),
-      maxLength: z.number().optional(),
-    })
-    .optional(),
-})
+export const cmsCollectionRequiredColumnValidator =
+  cmsCollectionColumnDefaultValidator.extend({
+    validation: z
+      .object({
+        required: z.boolean().optional(),
+      })
+      .optional(),
+  })
+export const cmsCollectionEmailColumnValidator =
+  cmsCollectionColumnDefaultValidator.extend({
+    validation: z
+      .object({
+        required: z.boolean().optional(),
+        minLength: z.number().optional(),
+        maxLength: z.number().optional(),
+        disallowCharacters: z.string().optional(),
+      })
+      .optional(),
+  })
+export const cmsCollectionTextColumnValidator =
+  cmsCollectionColumnDefaultValidator.extend({
+    validation: z
+      .object({
+        required: z.boolean().optional(),
+        minLength: z.number().optional(),
+        maxLength: z.number().optional(),
+        disallowCharacters: z.string().optional(),
+      })
+      .optional(),
+  })
+export const cmsCollectionNumberColumnValidator =
+  cmsCollectionColumnDefaultValidator.extend({
+    validation: z
+      .object({
+        required: z.boolean().optional(),
+        min: z.number().optional(),
+        max: z.number().optional(),
+      })
+      .optional(),
+  })
+export const cmsCollectionFileColumnValidator =
+  cmsCollectionColumnDefaultValidator.extend({
+    validation: z
+      .object({
+        required: z.boolean().optional(),
+        size: z.number().optional(),
+      })
+      .optional(),
+  })
+export const cmsCollectionFilesColumnValidator =
+  cmsCollectionColumnDefaultValidator.extend({
+    validation: z
+      .object({
+        required: z.boolean().optional(),
+        size: z.number(),
+        minItems: z.number().optional(),
+        maxItems: z.number().optional(),
+      })
+      .optional(),
+  })
+export const cmsCollectionDateColumnValidator =
+  cmsCollectionColumnDefaultValidator.extend({
+    validation: z
+      .object({
+        required: z.boolean().optional(),
+        before: z.coerce.date().optional(),
+        after: z.coerce.date().optional(),
+        start: z.coerce.date().optional(),
+        end: z.coerce.date().optional(),
+      })
+      .optional(),
+  })
+export const cmsCollectionTimeColumnValidator =
+  cmsCollectionColumnDefaultValidator.extend({
+    validation: z
+      .object({
+        required: z.boolean().optional(),
+        start: z.coerce.date().optional(),
+        end: z.coerce.date().optional(),
+      })
+      .optional(),
+  })
+export const cmsCollectionTagsColumnValidator =
+  cmsCollectionColumnDefaultValidator.extend({
+    validation: z
+      .object({
+        required: z.boolean().optional(),
+        minItems: z.number().optional(),
+        maxItems: z.number().optional(),
+        minLength: z.number().optional(),
+        maxLength: z.number().optional(),
+        disallowCharacters: z.string().optional(),
+      })
+      .optional(),
+  })
 
 export const cmsCollectionColumnValidator = z.union([
-  cmsCollectionRequiredColumn,
-  cmsCollectionStringColumn,
-  cmsCollectionNumberColumn,
-  cmsCollectionFileColumn,
-  cmsCollectionFilesColumn,
-  cmsCollectionDateColumn,
-  cmsCollectionTimeColumn,
-  cmsCollectionTagsColumn,
+  cmsCollectionRequiredColumnValidator,
+  cmsCollectionTextColumnValidator,
+  cmsCollectionNumberColumnValidator,
+  cmsCollectionFileColumnValidator,
+  cmsCollectionFilesColumnValidator,
+  cmsCollectionDateColumnValidator,
+  cmsCollectionTimeColumnValidator,
+  cmsCollectionTagsColumnValidator,
 ])
 export const cmsCollectionColumnInsertValidator = z.union([
-  cmsCollectionRequiredColumn.omit({
+  cmsCollectionRequiredColumnValidator.omit({
     id: true,
     fieldId: true,
   }),
-  cmsCollectionStringColumn.omit({
+  cmsCollectionTextColumnValidator.omit({
     id: true,
     fieldId: true,
   }),
-  cmsCollectionNumberColumn.omit({
+  cmsCollectionNumberColumnValidator.omit({
     id: true,
     fieldId: true,
   }),
 ])
 export const cmsCollectionColumnUpdateValidator = z.union([
-  cmsCollectionRequiredColumn
+  cmsCollectionRequiredColumnValidator
     .omit({
       id: true,
       fieldId: true,
@@ -151,7 +173,7 @@ export const cmsCollectionColumnUpdateValidator = z.union([
       updatedBy: true,
     })
     .partial(),
-  cmsCollectionStringColumn
+  cmsCollectionTextColumnValidator
     .omit({
       id: true,
       fieldId: true,
@@ -159,7 +181,7 @@ export const cmsCollectionColumnUpdateValidator = z.union([
       updatedBy: true,
     })
     .partial(),
-  cmsCollectionNumberColumn
+  cmsCollectionNumberColumnValidator
     .omit({
       id: true,
       fieldId: true,

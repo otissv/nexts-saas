@@ -75,7 +75,7 @@ importers:
       '@types/qs': ^6.9.9
       '@types/react': 18.2.33
       '@types/react-dom': ^18.2.14
-      '@udecode/cn': ^29.0.1
+      '@udecode/cn': ^31.0.0
       '@udecode/plate': ^30.7.0
       '@udecode/plate-alignment': ^30.5.3
       '@udecode/plate-autoformat': ^30.5.3
@@ -260,7 +260,7 @@ importers:
       '@radix-ui/react-tooltip': 1.0.7_niceheoxzop6u6jvjqp6k2hesq
       '@react-hook/throttle': 2.2.0_react@18.2.0
       '@tanstack/react-table': 8.11.8_biqbaboplfbrettd7655fr4n2y
-      '@udecode/cn': 29.0.1_elpnornvsasjz6qrakro4ilnxu
+      '@udecode/cn': 31.0.0_elpnornvsasjz6qrakro4ilnxu
       '@udecode/plate': 30.7.0_ert3iay4qsu2b5rqggdu2pvyla
       '@udecode/plate-alignment': 30.5.3_4n7tvfh5psuj7l4crfislw3qyi
       '@udecode/plate-autoformat': 30.5.3_4n7tvfh5psuj7l4crfislw3qyi
@@ -3338,15 +3338,15 @@ packages:
     resolution: {integrity: sha512-ue/hDUpPjC85m+PM9OQDMZr3LywT+CT6mPsQq8OJtCLiERkGRcQUFvu9XASF5XWqyZFXbf15lvb3JFJ4dRLWPg==}
     dev: false
 
-  /@udecode/cn/29.0.1_elpnornvsasjz6qrakro4ilnxu:
-    resolution: {integrity: sha512-U41vXvTBKU+06CiQivy4pIWB7RzfaB3DlqkQMNv8UNK164pJhM3v6P0D45kFpbU2uOSOCGpYRSo4kMp9y8RtcQ==}
+  /@udecode/cn/31.0.0_elpnornvsasjz6qrakro4ilnxu:
+    resolution: {integrity: sha512-ZjYL0uSbJIAx63+VAEmIJOMomL7oSi0AB52tUDcTCUxzCu7c7NVcAdJQBlFA9piF7IyLPo5qU0MJ98yTtvWZ4w==}
     peerDependencies:
       class-variance-authority: '>=0.7.0'
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
       tailwind-merge: '>=2.2.0'
     dependencies:
-      '@udecode/react-utils': 29.0.1_ew3x2u2ugx4vldoypxrzsnu5mm
+      '@udecode/react-utils': 31.0.0_ew3x2u2ugx4vldoypxrzsnu5mm
       class-variance-authority: 0.7.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -4561,6 +4561,21 @@ packages:
       - '@types/react'
     dev: false
 
+  /@udecode/react-utils/31.0.0_ew3x2u2ugx4vldoypxrzsnu5mm:
+    resolution: {integrity: sha512-zvXVIOELvKeizFK9a7nCBGizH/tO7EFOl4N7YSL8fUrd6SZPIoHTNEZg5YKC3bcdB7LUoBno1BJOcWOZDHE5SA==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      '@radix-ui/react-slot': 1.0.2_o5ysialsahsznabqayk7pree4e
+      '@udecode/utils': 31.0.0
+      clsx: 1.2.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    transitivePeerDependencies:
+      - '@types/react'
+    dev: false
+
   /@udecode/slate-react/29.0.1_asr7r5uamlcswbehx2grfwb3au:
     resolution: {integrity: sha512-DOiGXxfL43tVyNg0LneTQGQBW/HkF2srwIM8b0Al/x082HHfo2PP2WkFqPqTh1uGUAa2RBRh9xFKmNkKeuyWSw==}
     peerDependencies:
@@ -4608,6 +4623,10 @@ packages:
 
   /@udecode/utils/24.3.0:
     resolution: {integrity: sha512-/Y2lh/Ih1wx4zN35Ky2Z1G1/5f7cSAS7F6dkhrcbJUnDF0srTidoEIRabK+og/yIK/MCEFfOsQGetoV7Ert5hg==}
+    dev: false
+
+  /@udecode/utils/31.0.0:
+    resolution: {integrity: sha512-06JTl1UAm3mzLLAx8hdMUFw4XRQG727z9JoJ9PeBnmFb9q4Cg3DdmbFnhVJMrBPWlyOwoHtPrBjnanTFeiP36Q==}
     dev: false
 
   /@ungap/structured-clone/1.2.0:

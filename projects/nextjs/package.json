@@ -76,7 +76,7 @@
     "@radix-ui/react-tooltip": "^1.0.7",
     "@react-hook/throttle": "^2.2.0",
     "@tanstack/react-table": "^8.11.8",
-    "@udecode/cn": "^29.0.1",
+    "@udecode/cn": "^31.0.0",
     "@udecode/plate": "^30.7.0",
     "@udecode/plate-alignment": "^30.5.3",
     "@udecode/plate-autoformat": "^30.5.3",

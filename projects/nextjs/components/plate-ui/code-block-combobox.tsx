@@ -1,25 +1,25 @@
-'use client';
+'use client'
 
-import React, { useState } from 'react';
-import { cn } from '@udecode/cn';
+import React, { useState } from 'react'
+import { cn } from '@udecode/cn'
 import {
   CODE_BLOCK_LANGUAGES,
   CODE_BLOCK_LANGUAGES_POPULAR,
   useCodeBlockCombobox,
   useCodeBlockComboboxState,
-} from '@udecode/plate-code-block';
+} from '@udecode/plate-code-block'
 
-import { Icons } from '@/components/icons';
+import { Icons } from '@/components/icons'
 
-import { Button } from './button';
+import { Button } from './button'
 import {
   Command,
   CommandEmpty,
   CommandInput,
   CommandItem,
   CommandList,
-} from './command';
-import { Popover, PopoverContent, PopoverTrigger } from './popover';
+} from './command'
+import { Popover, PopoverContent, PopoverTrigger } from './popover'
 
 const languages: { value: string; label: string }[] = [
   { value: 'text', label: 'Plain Text' },
@@ -30,15 +30,15 @@ const languages: { value: string; label: string }[] = [
     value: key,
     label: val as string,
   })),
-];
+]
 
 export function CodeBlockCombobox() {
-  const state = useCodeBlockComboboxState();
-  const { commandItemProps } = useCodeBlockCombobox(state);
+  const state = useCodeBlockComboboxState()
+  const { commandItemProps } = useCodeBlockCombobox(state)
 
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
 
-  if (state.readOnly) return null;
+  if (state.readOnly) return null
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -69,8 +69,8 @@ export function CodeBlockCombobox() {
                 value={language.value}
                 className="cursor-pointer"
                 onSelect={(_value) => {
-                  commandItemProps.onSelect(_value);
-                  setOpen(false);
+                  commandItemProps.onSelect(_value)
+                  setOpen(false)
                 }}
               >
                 <Icons.check
@@ -86,5 +86,5 @@ export function CodeBlockCombobox() {
         </Command>
       </PopoverContent>
     </Popover>
-  );
+  )
 }

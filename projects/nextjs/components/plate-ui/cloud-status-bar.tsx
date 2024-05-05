@@ -1,22 +1,22 @@
-'use client';
+'use client'
 
-import React, { HTMLAttributes, useEffect, useRef, useState } from 'react';
-import { cn } from '@udecode/cn';
-import { Upload, UploadProgress } from '@udecode/plate-cloud';
+import React, { HTMLAttributes, useEffect, useRef, useState } from 'react'
+import { cn } from '@udecode/cn'
+import { Upload, UploadProgress } from '@udecode/plate-cloud'
 
 export function ProgressBar({
   upload,
   className,
   ...props
 }: {
-  upload: UploadProgress;
+  upload: UploadProgress
 } & HTMLAttributes<HTMLDivElement>) {
-  const [width, setWidth] = useState<null | number>(null);
-  const ref = useRef<HTMLDivElement>(null);
+  const [width, setWidth] = useState<null | number>(null)
+  const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (ref.current) setWidth(ref.current.offsetWidth);
-  }, []);
+    if (ref.current) setWidth(ref.current.offsetWidth)
+  }, [])
 
   /**
    * This formula looks a little funny because we want the `0` value of the
@@ -33,7 +33,7 @@ export function ProgressBar({
   const progressWidth =
     width == null
       ? 0
-      : (upload.sentBytes / upload.totalBytes) * (width - 16) + 16;
+      : (upload.sentBytes / upload.totalBytes) * (width - 16) + 16
 
   return (
     <div
@@ -48,7 +48,7 @@ export function ProgressBar({
         }}
       />
     </div>
-  );
+  )
 }
 
 export function FailBar({
@@ -63,29 +63,29 @@ export function FailBar({
       )}
       {...props}
     />
-  );
+  )
 }
 
 export function StatusBar(props: {
-  upload: Upload;
-  children?: React.ReactNode;
+  upload: Upload
+  children?: React.ReactNode
 }) {
-  const { upload, children } = props;
+  const { upload, children } = props
   switch (upload.status) {
     case 'progress': {
-      return <ProgressBar upload={upload} />;
+      return <ProgressBar upload={upload} />
     }
     case 'error': {
-      return <FailBar>Upload Failed</FailBar>;
+      return <FailBar>Upload Failed</FailBar>
     }
     case 'not-found': {
-      return <FailBar>Uploading...</FailBar>;
+      return <FailBar>Uploading...</FailBar>
     }
     case 'success': {
-      return children || null;
+      return children || null
     }
     default: {
-      throw new Error(`Should be unreachable`);
+      throw new Error(`Should be unreachable`)
     }
   }
 }

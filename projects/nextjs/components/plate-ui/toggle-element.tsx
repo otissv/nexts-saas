@@ -1,14 +1,14 @@
-import { withRef } from '@udecode/cn';
-import { PlateElement, useElement } from '@udecode/plate-common';
-import { useToggleButton, useToggleButtonState } from '@udecode/plate-toggle';
+import { withRef } from '@udecode/cn'
+import { PlateElement, useElement } from '@udecode/plate-common'
+import { useToggleButton, useToggleButtonState } from '@udecode/plate-toggle'
 
-import { Icons } from '@/components/icons';
+import { Icons } from '@/components/icons'
 
 export const ToggleElement = withRef<typeof PlateElement>(
   ({ children, ...props }, ref) => {
-    const element = useElement();
-    const state = useToggleButtonState(element.id as string);
-    const { open, buttonProps } = useToggleButton(state);
+    const element = useElement()
+    const state = useToggleButtonState(element.id as string)
+    const { open, buttonProps } = useToggleButton(state)
 
     return (
       <PlateElement ref={ref} asChild {...props}>
@@ -23,6 +23,6 @@ export const ToggleElement = withRef<typeof PlateElement>(
           {children}
         </div>
       </PlateElement>
-    );
+    )
   }
-);
+)

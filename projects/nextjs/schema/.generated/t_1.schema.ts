@@ -16,66 +16,6 @@ import {
   pgSchema,
 } from '../../database/pg/data-types.pg'
 
-export type ColumnTypes =
-  | 'text'
-  | 'multi-reference'
-  | 'reference'
-  | 'number'
-  | 'rich-text'
-  | 'rich-content'
-
-type ColumnType = {
-  displayName: string
-  fieldId: string
-  type: ColumnTypes
-  fieldOptions?: string
-  enableDelete?: boolean
-  enableSort?: boolean
-  enableHide?: boolean
-  enableFilter?: boolean
-
-  index?: {
-    direction: 'asc' | 'desc'
-    nulls: 'first' | 'last'
-  }
-
-  // user settings
-  order?: number
-  filter?: string
-}
-
-export type MultiReferenceColumn = ColumnType & {
-  validation?: { required?: boolean }
-}
-
-export type NumberColumn = ColumnType & {
-  validation?: { required?: boolean; min?: number; max?: number }
-}
-
-export type ReferenceColumn = ColumnType & {
-  validation?: { required?: boolean }
-}
-
-export type RichContentColumn = ColumnType & {
-  validation?: { required?: boolean }
-}
-
-export type RichTextColumn = ColumnType & {
-  validation?: { required?: boolean }
-}
-
-export type TextColumn = ColumnType & {
-  validation?: { required?: boolean; minLength?: number; maxLength?: number }
-}
-
-export type Column =
-  | MultiReferenceColumn
-  | NumberColumn
-  | ReferenceColumn
-  | RichContentColumn
-  | RichContentColumn
-  | TextColumn
-
 // const PRICING_TYPE = ['one_time', 'recurring']
 // const PRICING_INTERVALS = ['month', 'year']
 // const SUBSCRIPTION_STATUS = [
@@ -153,7 +93,8 @@ const cmsCollectionColumn = {
   columnName: varchar('column_name', { length: 100 }).notNull(),
   fieldId: varchar('field_id', { length: 15 }).notNull(),
   type: varchar('type', { length: 100 }).notNull(),
-  fieldOptions: jsonb('default_value').$type<string[]>(),
+  fieldOptions: jsonb('field_options').$type<Record<string, any>>(),
+  validation: jsonb('validation').$type<Record<string, any>>(),
   help: text('help').default(''),
   enableDelete: boolean('enable_delete').default(true),
   enableSortBy: boolean('enable_sort_by').default(true),
